@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://music-encoding.org/schema/4.0.1/mei-CMN.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei">
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title>Musikalischer Text.mei</title>
+            </titleStmt>
+            <pubStmt></pubStmt>
+        </fileDesc>
+    </meiHead>
+    <music>
+        <genDesc ordered="true">
+            <genState xml:id="state1"><!-- ante revisionem --></genState>
+            <genState xml:id="state2">
+                <!-- Revisionsanweisung -->
+                <desc>
+                    <annot plist="docR.tei#statement1"/>
+                    <!-- hier evtl. eine Auflistung der einzelnen Monita -->
+                </desc>
+            </genState>
+            <genState xml:id="state3"><!-- post revisionem --></genState>
+        </genDesc>
+        <body>
+            <mdiv>
+                <score>
+                    <scoreDef key.sig="5s">
+                        <staffGrp>
+                            <staffDef>
+                                <clef/>
+                                
+                            </staffDef>
+                        </staffGrp>
+                    </scoreDef>
+                    <section>
+                        <measure></measure>
+                        <measure></measure>
+                        <scoreDef key.sig="7f"/>
+                        <measure></measure>
+                        <measure facs="docA.mei#shapeXY docZ.mei#shapeXYZ"/>
+                        <measure xml:id="scharnierterTakt" facs="docA.mei#shapeYZ docZ.mei#ashdjkahsdjka">
+                            <metaMark function="clarification" state="#state2">
+                                <supplied resp="#Lvb"><clef facs="docR.tei#shapeClef"/></supplied>
+                                <supplied resp="#AS">Vorzeichnung</supplied>
+                                
+                            </metaMark>
+                            
+                            <add state="#state2">
+                                <dynam facs="docR.tei#shapeA docZ.mei#shapeB">PIANO</dynam>
+                            </add>
+                        </measure>
+                        <choice>
+                            <orig>
+                                <!-- Textfassung 1 aus Zieldokument Z1 -->                                    
+                            </orig>
+                            <orig>
+                                <!-- Textfassung 2 aus Zieldokument Z2 -->
+                            </orig>
+                            
+                        </choice>
+                    </section>
+                </score>
+            </mdiv>
+        </body>
+    </music>
+    
+    <!-- Datei docR.tei -->
+    <TEI>
+        <svg-shapes>
+            <path id="word3"/>
+        </svg-shapes>
+        <p>
+            Ich war lecker essen, und übrigens, <seg xml:id="statement1" type="änderungsImperativ" facs="#RechteckUmDieAussage">im 2. tutti soll noch an 
+                dieser Stelle [Notenbeispiel: mus.text.mei#scharnierterTakt] ein p hinzugefügt werden</seg>. 
+            
+        </p>
+        
+    </TEI>
+    
+</mei>

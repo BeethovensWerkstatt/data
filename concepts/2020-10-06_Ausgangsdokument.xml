@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://music-encoding.org/schema/4.0.1/mei-CMN.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei">
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title>Ausgangsdokument</title>
+            </titleStmt>
+            <pubStmt/>
+        </fileDesc>
+    </meiHead>
+    <music>
+        <facsimile>
+            <surface label="page1 klavier">
+                <graphic target="iiif-link" width="5600px" height="3900px">
+                    <zone xml:id="measureZonePiano1" data="#measure1-kl" ulx="10" uly="10" lrx="20" lry="20"/>
+                </graphic>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <path id="A-shapeNote1" d="…"/>
+                    <path id="A-shapeNote2" d="…"/>
+                </svg>
+            </surface>
+            <surface label="page23 violine">
+                <graphic target="iiif-link" width="5600px" height="3900px">
+                    <zone xml:id="measureZoneViolin1" data="#measure1-vl" ulx="10" uly="10" lrx="20" lry="20"/>
+                </graphic>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <path id="clefShape" d="…"/>
+                    <path id="keySigShape1" d="…"/>
+                    <path id="keySigShape2" d="…"/>
+                    <path id="keySigShape3" d="…"/>
+                </svg>
+            </surface>
+        </facsimile>
+        <body>
+            <mdiv>
+                <parts>
+                    <part label="klavier">
+                        <scoreDef key.sig="5s">
+                            <staffGrp>
+                                <staffDef>
+                                    <clef/>
+                                </staffDef>
+                            </staffGrp>
+                        </scoreDef>
+                        <section>
+                            <measure n="1" xml:id="measure1-kl" facs="#measureZonePiano1"/>
+                        </section>
+                    </part>
+                    <part label="violine">
+                        <scoreDef key.sig="5s">
+                            <staffGrp>
+                                <staffDef>
+                                    <clef/>
+                                </staffDef>
+                            </staffGrp>
+                        </scoreDef>
+                        <section>
+                            <measure n="1" xml:id="measure1-vl" facs="#measureZoneViolin1"/>
+                        </section>
+                    </part>
+                </parts>
+            </mdiv>
+        </body>
+    </music>
+</mei>
