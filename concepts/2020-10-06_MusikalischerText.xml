@@ -54,7 +54,9 @@
                 <!-- Revisionsanweisung -->
                 <desc>
                     <!-- hier evtl. eine Auflistung der einzelnen Monita? eher nein -->
-                    <annot plist="docR.tei#statement1"/>
+                    <annot xml:id="monitum1" plist="docR.tei#monitum1"/>
+                    <annot plist="docR.tei#monitum1"/>
+                    <annot plist="docR.tei#monitum1"/>
                     
                     <!-- stattdessen vielleicht der Einfachheit halber eine Beschreibung wie folgt: -->
                     Liste mit <num unit="monita">12</num> Monita.
@@ -80,10 +82,12 @@
                             wir uns alles nötige dann per XSLT / XQuery zusammen… 
                             
                             Alle IDs werden natürlich hinterher als UUIDs umgesetzt.
+                            
+                            Wenn es im Revisionsdokument ganze Takte (als MEI) gibt, dann können hier die entsprechenden zones auch verlinkt werden.
                         -->
-                        <measure n="1" facs="./2020-10-06_Zieldokument.xml#measureZone1"><!-- ggf. @metcon, @join -->
+                        <measure n="1" facs="./2020-10-06_Zieldokument.xml#measureZone1 ./2020-10-06_AusgangsdokumentInPartitur.xml#measureZone1"><!-- ggf. @metcon, @join -->
                             <staff n="1" facs="./2020-10-06_Ausgangsdokument.xml#measureZoneViolin1"/>
-                            <staff n="1" facs="./2020-10-06_Ausgangsdokument.xml#measureZonePiano1"/>
+                            <staff n="2" facs="./2020-10-06_Ausgangsdokument.xml#measureZonePiano1"/>
                         </measure>
                         <measure>
                             <!-- … -->
@@ -92,15 +96,11 @@
                         <measure>
                             <!-- … -->
                         </measure>
-                        <measure xml:id="scharnierterTakt" facs="docA.mei#shapeYZ docZ.mei#ashdjkahsdjka">
-                            <!-- uninteressante Stimmen:
-                                * lieber mit Gap vermerken, dass die nicht codiert sind
-                                * oder staff/layer/mSpace? -->
-                            <gap extent="1 3 4 5" unit="staff" reason="codingPrinciples"/>
+                        <measure xml:id="scharnierterTakt" facs="siehe oben">
                             
-                            <staff n="2">
+                            <staff n="2" facs="siehe oben">
                                 <layer n="1">
-                                    <supplied resp="#LvB" source="#R1"><!-- oder metaMark drumherum? Dann als controlEvent am Taktende… -->
+                                    <supplied resp="#LvB" source="#R1" reason="context"><!-- oder metaMark drumherum? Dann als controlEvent am Taktende… -->
                                         <clef line="2" shape="G" facs="./2020-10-06_Revisionsdokument.xml#clefShape"/>
                                         <keySig sig="3f" facs="./2020-10-06_Revisionsdokument.xml#keySigShape1 ./2020-10-06_Revisionsdokument.xml#keySigShape2 ./2020-10-06_Revisionsdokument.xml#keySigShape3"/>
                                     </supplied>
@@ -131,12 +131,11 @@
                                 <dynam facs="docR.tei#shapeA docZ.mei#shapeB">p</dynam>
                             </corr>
                             
-                            <!-- hier die Alternative -->
+                            <!-- hier die Alternative, intern aber abgelehnt -->
                             <metaMark tstamp="1" staff="2" function="clarification" state="#state2">
                                 <supplied resp="#Lvb"><clef facs="docR.tei#shapeClef"/></supplied>
                                 <supplied resp="#AS">Vorzeichnung</supplied>
                             </metaMark>
-                            
                             
                         </measure>
                     </section>
