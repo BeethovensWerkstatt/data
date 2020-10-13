@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="s">Beethovens Werkstatt, Modul 3</title>
+            <title level="a">Beethoven an Breitkopf &amp; Härtel in Leipzig, Wien
+               <lb/>Wien, Montag, 6. Mai 1811</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>published by Beethovens Werkstatt</p>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc type="autograph">
+               <msIdentifier>
+                  <collection>Beethoven-Haus Bonn, Sammlung H. C. Bodmer, HCB BBr 9, HCB Br 94</collection>
+               </msIdentifier>
+               <physDesc>
+                  <p>Autograph, 1 Doppelblatt, 4 beschriebene Seiten</p>
+               </physDesc>
+            </msDesc>
+            <biblStruct>
+               <monogr>
+                  <imprint>
+                     <publisher><orgName ref="#BGA">Beethoven-Gesamtausgabe</orgName></publisher>
+                     <pubPlace ref="#Bonn">Bonn</pubPlace>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+            <listPerson>
+               <person xml:id="LvB">
+                  <persName>Ludwig van Beethoven</persName>
+                  <idno type="GND" xml:base="http://d-nb.info/gnd/">118508288</idno>
+                  <occupation xml:base="https://www.loc.gov/marc/relators/relacode.html">cmp</occupation>
+               </person>
+               <person xml:id="KH">
+                  <persName>Kristin Herold</persName>
+                  <idno type="gitHub" xml:base="https://github.com/">krHERO</idno>
+               </person>
+            </listPerson>
+            <listOrg>
+               <org xml:id="BuH">
+                  <orgName>Breitkopf &amp; Härtel</orgName>
+                  <placeName>
+                     <settlement ref="#Leipzig">Leipzig</settlement>
+                  </placeName>
+                  <idno xml:base="http://d-nb.info/gnd/">64766-4</idno>
+               </org>
+               <org xml:id="BGA">
+                  <orgName>Beethoven Gesamtausgabe</orgName>
+                  <placeName>
+                     <settlement ref="#Leipzig">Leipzig</settlement>
+                  </placeName>
+                  <idno xml:base="http://d-nb.info/gnd/">64766-4</idno>
+               </org>
+            </listOrg>
+            <listPlace>
+               <place xml:id="Leipzig">
+                  <settlement>Leipzig</settlement>
+                  <idno type="geoNames" xml:base="https://www.geonames.org/">2879139</idno>
+               </place>
+               <place xml:id="Wien">
+                  <settlement>Wien</settlement>
+                  <idno type="geoNames" xml:base="https://www.geonames.org/">2761369</idno>
+               </place>
+               <place xml:id="Bonn">
+                  <settlement>Bonn</settlement>
+                  <idno type="geoNames" xml:base="https://www.geonames.org/">2946447</idno>
+               </place>
+            </listPlace>
+            <list type="work">
+               <item xml:id="op80">
+                  <name>Fantasie, op. 80 (c-Moll)</name>
+                  <idno type="GND" xml:base="http://d-nb.info/gnd/">300015186</idno>
+               </item>
+            </list>
+         </sourceDesc>
+      </fileDesc>
+     <profileDesc>
+        <correspDesc>
+           <correspAction type="sent">
+              <persName ref="http://d-nb.info/gnd/118508288">Ludwig van Beethoven</persName>
+              <date when="1811-05-06">6. Mai 1811</date>
+              <placeName ref="https://www.geonames.org/2761369/vienna.html">Wien</placeName>
+           </correspAction>
+           <correspAction type="received">
+              <orgName ref="http://d-nb.info/gnd/64766-4">Breitkopf &amp; Härtel</orgName>
+              <placeName ref="https://www.geonames.org/2879139/">Leipzig</placeName>
+           </correspAction>
+        </correspDesc>
+        <handNotes>
+           <handNote style="handwritten" medium="blackInk">
+              <persName ref="#LvB">Ludwig van Beethoven</persName>
+              <dim facs="#BGA_496_1.jpeg #BGA_496_2.jpeg"></dim>
+           </handNote>
+           <handNote xml:id="copyist" style="handwritten" medium="blackInk">
+              <persName>Kopist</persName>
+              <p>1 Blatt, 2 beschriebene Seiten</p>
+              <dim facs="#BGA_496_3.jpeg #BGA_496_4.jpeg"/>
+           </handNote>
+        </handNotes>
+     </profileDesc>
+     <revisionDesc>
+        <change n="1">
+           <persName ref="#KH">Kristin Herold</persName>
+           <date when-iso="2020-09-10"/>
+           <p>initial transfer from BGA 496 to TEI by hand</p>
+        </change>
+     </revisionDesc>
+  </teiHeader>
+  <text type="letter">
+      <body>
+         <div type="writingSession" resp="#LvB">
+            <opener>
+               <dateline><placeName><settlement ref="#Wien">Vien</settlement></placeName> am <date when="1811-05-06">6ten May</date> <add resp="#BGA">1811</add></dateline>
+            </opener>
+            <head>P.P.</head>
+            <p>Fehler – Fehler – sie sind selbst
+               <lb/>ein einziger Fehler – da muß
+               <lb/>ich meinen Kopisten hinschicken, dort
+               <lb/>muß ich selbst hin, wenn ich will, daß
+               <lb/>meine Werke – nicht als
+               <lb/>Bloße Fehler erscheinen – das
+               <lb/><rs type="org" ref="#BuH">Musick-tribunal</rs> in <placeName><settlement ref="#Leipzig">L.<add resp="#BGA">eipzig</add></settlement></placeName>
+               <lb/>bringst wie es scheint, nicht
+               <lb/>einen einzigen ordentlichen
+               <lb/>Korrektor hervor, dabey schicken
+               <lb/>sie noch, ehe sie die K.<add resp="#BGA">orrekturen</add> erhalten
+               <lb/>die Werke ab – wenigstens
+               <lb/>sollte man bey größern
+               <lb/>Werken mit andern Stimmen
+               <lb/>doch die Täkte abzählen – 
+               <lb/>aber das sieht man bey der
+               <lb/><rs type="work" ref="#op80">Fantasie</rs> etc – wie es geschieht –
+               <lb/>sehn sie in dem Klawier
+               <lb/>auszuge von <hi rend="latintype"><rs type="work">Egmont´s</rs> overture</hi>
+               <lb/>fehlt ein ganzer Takt –
+               <lb/>hier das Verzeichniß
+               <lb/>der Fehler (<hi rend="latintype">erata</hi>)
+               <lb/>Meinen heißesten Dank,
+               <lb/>daß sie mich für eine
+               <lb/>so interessante Sache so
+               <lb/>sehr iin Bewegung sezen –
+               <lb/>leben sie wohl, ich hoffe
+               <lb/>Beßerung – die <rs type="work" ref="#op80">Fantasie</rs>
+               <lb/>ist schon fort, auch die
+               <lb/>Sonate geht morgen fort
+               <lb/>von hier – Fehlen sie
+               <lb/>soviel sie wollen, laßen
+               <lb/>sie so viel Fehler wie sie wollen –
+               <lb/>sie sind bey mir doch hoch
+               <lb break="no"/>geschäzt, dies ist ja der
+               <lb/>Gebrauch bey den Menschen,
+               <lb/>daß man sie, weil sie nicht noch
+               <lb/>großre Fehler gemacht haben,
+               <lb/>schäzt –
+            </p>
+            <closer>ihr ergebenster
+               <lb/>Diener
+               <lb/><persName ref="#LVB">Beethowen</persName></closer>
+            <postscript>
+               <p>Nb: </p>
+            </postscript>
+         </div>
+      </body>
+  </text>
+</TEI>
