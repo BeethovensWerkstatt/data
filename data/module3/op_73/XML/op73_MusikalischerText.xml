@@ -1055,10 +1055,11 @@
                                 </layer>
                             </staff>
                             <staff n="20" xml:id="x0c6d7ba7-7307-446b-aadb-441fb10ab608"/>
-                            <!-- to do: controlevents mit startid und endid oder mit tstamp versehen? -->
                             <add resp="#LvB" state="#state2">
-                            <dynam xml:id="x6b7f1984-9889-4a84-bb83-efa847202290" startid="#xd251f7d0-c7af-4045-9580-e2932c2e737f">sf:</dynam>
-                            <dynam xml:id="xfe8eeae0-a5b1-4885-9e41-591dfc312cf4" startid="#x730cac0e-9e39-418a-8d04-4c952c314bd0">sf:</dynam>
+                                <dynam xml:id="x6b7f1984-9889-4a84-bb83-efa847202290" startid="#xd251f7d0-c7af-4045-9580-e2932c2e737f">sf:</dynam>
+                            </add>
+                            <add resp="#LvB" state="#state2">
+                                <dynam xml:id="xfe8eeae0-a5b1-4885-9e41-591dfc312cf4" startid="#x730cac0e-9e39-418a-8d04-4c952c314bd0">sf:</dynam>
                             </add>
                         </measure>
                         <measure n="40" label="40" xml:id="x2921f67e-5561-405d-8dca-9bd713a6e461">
@@ -10976,6 +10977,7 @@
                             <staff n="18" xml:id="x2102c0c2-e3b0-46a5-aeda-b0f5e9f03eca"/>
                             <staff n="19" xml:id="xcfdf54d8-e821-4237-b1fc-a0586f3163cd"/>
                             <staff n="20" xml:id="x765607da-f5ed-4ed8-aa4e-c3c5498bd4c9"/>
+                            <dynam staff="20" tstamp="1">cres</dynam>
                         </measure>
                         <measure n="469" label="469" xml:id="x026d81ad-5bd5-4d67-86cb-04505cb6e3ba" type="monitum8">
                             <staff n="1" xml:id="xa203b651-4c3d-40eb-9633-19b5de5b4da1"/>
@@ -11147,7 +11149,7 @@
                                         </note>
                                     </beam>
                                     <!-- Taktstrich, der fälschlicherweise in dem Takt steht, aber ausgewischt wurde. Nicht Teil des Änderungsimperativs -->
-                                    <del resp="#LvB" state="#state2"><barLine/></del>
+                                    <del instant="true" resp="#LvB" state="#state2"><add resp="LvB" state="#state2"><sic resp="#BW"><barLine/></sic></add></del>
                                         <beam xml:id="xec848951-f2ce-498d-a6dc-529903d5430b">
                                             <note xml:id="xf7c79621-a18b-4e6f-a7eb-4f82d34849d4" pname="b" oct="5" dur="16">
                                                 <accid xml:id="x7fc70259-e53b-4aff-9173-7f4a826ca7dd" accid.ges="f"/>
@@ -11214,7 +11216,7 @@
                                         </note>
                                     </beam>
                                     <!-- taktstrich, der fälschlicherweise in dem Takt steht, aber von Beethoven auch gestrichen wurde. Nicht Teil des Änderungsimperativs -->
-                                   <del resp="#LvB" state="#state2"><barLine/></del>       
+                                    <del instant="true" resp="#LvB" state="#state2"><add resp="LvB" state="#state2"><sic resp="#BW"><barLine/></sic></add></del>       
                                         <beam xml:id="x2a95a729-3838-4497-92e9-9a0556a54497">
                                             <note xml:id="x44e788c8-5454-4a59-8950-0c1a2b56bdee" pname="b" oct="5" oct.ges="6" dur="16">
                                                 <accid xml:id="x7dda086c-c6ec-497f-8e20-187daab07e0f" accid.ges="f"/>
