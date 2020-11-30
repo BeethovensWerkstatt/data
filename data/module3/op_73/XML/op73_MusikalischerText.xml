@@ -13104,8 +13104,30 @@
                             <staff n="19" xml:id="xd7221cf0-fd7d-4141-8c93-8ab06e5f2fae"/>
                             <staff n="20" xml:id="x38d62ea0-6686-46f1-ac6f-8e36bb5b22bd"/>
                         </measure>
-                        <measure n="556" label="556" xml:id="xf7f51e93-5fd4-4caf-b790-59f218ce3ba4">
-                            <staff n="1" xml:id="xe2213481-b3e5-4447-be33-ebf738cb3f07"/>
+                        <measure n="556" label="556" xml:id="xf7f51e93-5fd4-4caf-b790-59f218ce3ba4" type="monitumRevB">
+                            <staff n="1" xml:id="xe2213481-b3e5-4447-be33-ebf738cb3f07">
+                                    <layer n="1">
+                                        <supplied resp="#LvB" source="#R1" reason="context"><!-- ? -->
+                                            <clef line="2" shape="G"/>
+                                            <keySig sig="3f"/>
+                                        </supplied>
+                                        <rest dur="4"/>
+                                        <space dur="2" layer="1"/>
+                                        <beam cue="true">
+                                            <note xml:id="g_5931f0e7-33c9-4939-babd-8838287952e0" pname="a" oct="5" cue="true" dur="8" dots="1"/>
+                                            <note pname="a" oct="5" cue="true" dur="16"/>
+                                        </beam>
+                                    </layer>
+                                    <layer n="2">
+                                        <space dur="4"/>
+                                        <beam>
+                                            <note pname="a" oct="4" dur="8" dots="1"/>
+                                            <note pname="a" oct="4" dur="16"/>
+                                        </beam>
+                                        <note pname="a" oct="4" dur="4"/>
+                                        <rest dur="4"/>
+                                    </layer>
+                            </staff>
                             <staff n="2" xml:id="x6908b5b0-c001-4a52-9b66-6e7eff4bd78a"/>
                             <staff n="3" xml:id="x1721577f-0207-4e84-b30f-da6adc4decb2"/>
                             <staff n="4" xml:id="x0585b5a5-e687-4324-a776-44e90e6b9d92"/>
@@ -13125,6 +13147,10 @@
                             <staff n="18" xml:id="x945a43f0-140d-4ee6-b671-969ad1686dbd"/>
                             <staff n="19" xml:id="x961543cc-08ff-4c0e-b08e-a39d97b3b15a"/>
                             <staff n="20" xml:id="x9dc541b5-3b6c-49af-847d-b17453f84bd6"/>
+                            <add resp="#LvB" state="#state2">
+                                <dynam startid="#g_5931f0e7-33c9-4939-babd-8838287952e0" place="below">p</dynam>
+                            </add>
+                            <!-- in der Ausführung im Zieldokument ist das piano unter der nächsten Zählzeit -->
                         </measure>
                         <measure n="557" label="557" xml:id="xd795c976-4870-43be-93b5-6c9d8db3ab1a">
                             <staff n="1" xml:id="xa6a2ce66-5d0f-40f2-bca9-d58db7435d86"/>
