@@ -24,9 +24,19 @@
                 <persName>Agnes Seipelt</persName>
              </respStmt>
              <changeDesc>
-                <p>key.sig hinzugefügt</p>
+                <p>added key.sig</p>
              </changeDesc>
              <date isodate="2020-11-30">30.11.2020</date>
+          </change>
+          <change n="3">
+             <respStmt>
+                <persName>Agnes Seipelt</persName>
+             </respStmt>
+             <changeDesc>
+                <p>Added monita 1 and 5</p>
+                <p>Added toDos</p>
+             </changeDesc>
+             <date isodate="2020-12-21">21.12.2020</date>
           </change>
        </revisionDesc>
     </meiHead>
@@ -63,6 +73,7 @@
                 <zone xml:id="zone_b17d5ee2-f5b5-4fb4-a92a-3a19dd95e353" type="measure" ulx="3084" uly="4447" lrx="3405" lry="5166"/>
                 <zone xml:id="zone_8bd76b6a-b016-4925-b6ed-69d56ccac041" type="measure" ulx="3365" uly="4447" lrx="3598" lry="5166"/>
                 <zone xml:id="zone_382a659f-dfc7-4db0-8928-6ac23cf4074b" type="measure" ulx="3558" uly="4447" lrx="3953" lry="5166"/>
+                <!-- toDo: in relevanten surface-elementen an dieser Stelle mit xinclude auf shapes-datei für entsprechende Seite verweisen (xi:include href="shapes_pageXY") -->
             </surface>
             <surface xml:id="surface_6e5a5af5-6e22-4166-9282-05205331fc92" n="4" label="Piano" ulx="0" uly="0" lrx="4448" lry="5776">
                 <graphic xml:id="graphic_b30b95ec-a10f-454e-8ec8-70135a82c4ee" target="op.73_4.jpg" type="facsimile" width="4448" height="5776"/>
@@ -10690,7 +10701,51 @@
                         <measure n="41" label="36" xml:id="measure_2d19e28f-8f76-4b5f-8fd3-b3cb16bfbe61" facs="#zone_75acaa3d-4620-4569-bd62-290a98c8f8f4"/>
                         <measure n="42" label="37" xml:id="measure_bd4de70d-85bf-4db1-81a3-3d61c3075eed" facs="#zone_082026d3-ff75-4171-91a1-4a2b86d1f5e0"/>
                         <measure n="43" label="38" xml:id="measure_93edc7bd-ef25-4f6b-bdef-2ce21736f3e8" facs="#zone_5c6d517e-1f1b-4551-973f-2d422fe8ca4f"/>
-                        <measure n="44" label="39" xml:id="measure_fd14f7dd-95d5-4d24-bca1-3fcf4a1b9e10" facs="#zone_f2bbc563-1d28-4279-9e55-7b3ade8d8bb7"/>
+                          <measure n="44" label="39"
+                             xml:id="measure_fd14f7dd-95d5-4d24-bca1-3fcf4a1b9e10"
+                             facs="#zone_f2bbc563-1d28-4279-9e55-7b3ade8d8bb7" type="monitum1">
+                             <staff n="1">
+                                <layer>
+                                  <!-- toDo: svg-shapes verlinken -->
+                                   <beam cue="true">
+                                      <note pname="g" oct="5" dur="16" cue="true">
+                                         <accid accid="f"/>
+                                      </note>
+                                      <note pname="g" oct="5" dur="16" cue="true"/>
+                                      <note pname="f" oct="5" dur="16" cue="true"/>
+                                      <note pname="f" oct="5" dur="16" cue="true"/>
+                                   </beam>
+                                   <beam cue="true">
+                                      <note pname="c" oct="6" dur="16" cue="true">
+                                         <accid accid="f"/>
+                                      </note>
+                                      <note pname="c" oct="6" dur="16" cue="true"/>
+                                      <note pname="b" oct="5" dur="16" cue="true"/>
+                                      <note pname="b" oct="5" dur="16" cue="true"/>
+                                   </beam>
+                                   <beam cue="true">
+                                      <note pname="g" oct="5" dur="16" cue="true"/>
+                                      <note pname="g" oct="5" dur="16" cue="true"/>
+                                      <note pname="f" oct="5" dur="16" cue="true"/>
+                                      <note pname="f" oct="5" dur="16" cue="true"/>
+                                   </beam>
+                                   <beam cue="true">
+                                      <note pname="c" oct="6" dur="16" cue="true"/>
+                                      <note pname="c" oct="6" dur="16" cue="true"/>
+                                      <note pname="b" oct="5" dur="16" cue="true"/>
+                                      <note pname="b" oct="5" dur="16" cue="true"/>
+                                   </beam>
+                                </layer>
+                             </staff>
+                             <staff n="2">
+                                <layer>
+                                   <mRest/>
+                                </layer>
+                             </staff>
+                             <annot xml:id="g_1d838986-48e9-4b54-a12d-c51eea5dad64" staff="1" tstamp="1" tstamp2="0m+5">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_d42c8f9d-2dcd-4cb9-b325-884fc963e1b0"/>
+                             </annot>
+                          </measure>
                         
                         <measure n="45" label="40" xml:id="measure_8ddd8873-126f-4a17-93a7-3705ec324ce5" facs="#zone_aa0f1daf-71f3-40cf-86b3-8e1158f4da22"/>
                         <measure n="46" label="41" xml:id="measure_b2cb0095-6573-4f9f-b6d7-183b97690e73" facs="#zone_18965366-86e8-46ba-b5b8-aa374f4c653e"/>
@@ -11105,7 +11160,149 @@
                         <measure n="373" label="367" xml:id="measure_5613af49-8fc3-4337-94c5-134978f01ff1" facs="#zone_c80a0d30-315b-4a46-b4d9-641a9442d0f8"/>
                         
                         <measure n="374" label="368" xml:id="measure_f9389aab-599e-4c05-b6f3-c7ebaee8a581" facs="#zone_2721bb00-47c0-4eaf-a18d-437bf4bee1dd"/>
-                        <measure n="375" label="369" xml:id="measure_9858f7b6-e0dd-49c5-b921-6a20a909b58b" facs="#zone_b4542c57-5d1c-4b6c-92a9-5bcfac6e095f"/>
+                          <measure n="375" label="369" facs="#zone_b4542c57-5d1c-4b6c-92a9-5bcfac6e095f" type="monitum5">
+                             <staff n="1">
+                                <layer>
+                                   <rest dur="16"/>
+                                   <beam>
+                                      <chord dur="16">
+                                         <note pname="a" oct="5">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                         <note pname="a" oct="4">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                      </chord>
+                                      <rest dur="16"/>
+                                      <chord dur="16">
+                                         <note pname="e" oct="5">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                         <note pname="e" oct="4">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                      </chord>
+                                   </beam>
+                                   <rest dur="16"/>
+                                   <beam>
+                                      <chord dur="16">
+                                         <note pname="e" oct="5">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                         <note pname="e" oct="4">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                      </chord>
+                                      <rest dur="16"/>
+                                      <chord dur="16">
+                                         <note pname="c" oct="5"/>
+                                         <note pname="c" oct="4"/>
+                                      </chord>
+                                   </beam>
+                                   <rest dur="16"/>
+                                   <beam>
+                                      <chord dur="16">
+                                         <note pname="c" oct="5"/>
+                                         <note pname="c" oct="4"/>
+                                      </chord>
+                                      <rest dur="16"/>
+                                      <chord dur="16">
+                                         <note pname="a" oct="4">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                         <note pname="a" oct="3">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                      </chord>
+                                   </beam>
+                                   <rest dur="16"/>
+                                   <beam>
+                                      <chord dur="16">
+                                         <note pname="e" oct="4">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                         <note pname="e" oct="3" staff="2">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                      </chord>
+                                      <rest dur="16"/>
+                                      <chord dur="16">
+                                         <note pname="c" oct="4"/>
+                                         <note pname="c" oct="3" staff="2"/>
+                                      </chord>
+                                   </beam>
+                                </layer>
+                             </staff>
+                             <staff n="2">
+                                <layer>
+                                   <clef shape="F"/>
+                                   <beam>
+                                      <chord dur="16">
+                                         <note pname="e" oct="3"/>
+                                         <note pname="e" oct="4"/>
+                                      </chord>
+                                      <rest dur="16"/>
+                                      <chord dur="16">
+                                         <note pname="c" oct="3"/>
+                                         <note pname="c" oct="4"/>
+                                      </chord>
+                                   </beam>
+                                   <rest dur="16"/>
+                                   <beam>
+                                      <chord dur="16">
+                                         <note pname="c" oct="3"/>
+                                         <note pname="c" oct="4"/>
+                                      </chord>
+                                      <rest dur="16"/>
+                                      <chord dur="16">
+                                         <note pname="a" oct="3">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                         <note pname="a" oct="2">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                      </chord>
+                                   </beam>
+                                   <rest dur="16"/>
+                                   <beam>
+                                      <chord dur="16">
+                                         <note pname="a" oct="3">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                         <note pname="a" oct="2">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                      </chord>
+                                      <rest dur="16"/>
+                                      <chord dur="16">
+                                         <note pname="e" oct="3"/>
+                                         <note pname="e" oct="2"/>
+                                      </chord>
+                                   </beam>
+                                   <rest dur="16"/>
+                                   <beam>
+                                      <chord dur="16">
+                                         <note pname="e" oct="3"/>
+                                         <note pname="e" oct="2"/>
+                                      </chord>
+                                      <rest dur="16"/>
+                                      <chord dur="16">
+                                         <note pname="a" oct="2">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                         <note pname="a" oct="1">
+                                            <accid accid.ges="f"/>
+                                         </note>
+                                      </chord>
+                                   </beam>
+                                   <rest dur="16"/>
+                                </layer>
+                             </staff>
+                             <annot xml:id="g_a4c0e291-eef0-4e59-829a-d537caaf52b5" staff="1 2" tstamp="1" tstamp2="0m+5">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_cb0fa992-7383-4079-97e0-a9e98aa547bc" synch="#state2"/>
+                                <relation rel="hasSuccessor" target="Op.73_A-Wn_SH.Beethoven.323.xml"/>
+                             </annot>
+                          </measure>
                         <measure n="376" label="370" xml:id="measure_e0d6de2b-aee2-4a12-ab9e-902764f43460" facs="#zone_1be3629a-96c3-4521-8436-15cec23f89fe"/>
                         
                         
