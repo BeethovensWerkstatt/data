@@ -2,9 +2,7 @@
 This repository is supposed to hold the data for Beethovens Werkstatt, starting
 with module 3 onwards
 
-Each module will receive a separate folder inside the /data path. Within the
-/exist folder, an eXist application will be build up, which is supposed to serve
-the data through a REST api, using the following (preliminary) paths:
+Each module will receive a separate folder inside the /data path. The content itself will be made accessible through the BeethovensWerkstatt/api repo. 
 
 * /module1 -> /var
 * /module2 -> /arr
