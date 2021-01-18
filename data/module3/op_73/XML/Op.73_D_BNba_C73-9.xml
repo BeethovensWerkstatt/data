@@ -10659,10 +10659,10 @@
                 <parts>
                     <part label="Piano" n="1">
                      <scoreDef key.sig="3f">
-                         <staffGrp>
-                             <staffDef n="1" lines="5"/>
-                             <staffDef n="2" lines="5"/>
-                         </staffGrp>
+                        <staffGrp>
+                           <staffDef n="1" lines="5" clef.line="2" clef.shape="G"/>
+                           <staffDef n="2" lines="5" clef.line="4" clef.shape="F"/>
+                        </staffGrp>
                      </scoreDef>
                        <section>
                         <measure n="1" label="1" xml:id="measure_d36facd7-7fa5-4b59-afe6-e258c36990fa" facs="#zone_376e8b88-99d6-45a3-9b42-17575d7aa1c0"/>
@@ -36648,8 +36648,8 @@
                  <part label="Piano" n="1">
                     <scoreDef key.sig="5s">
                        <staffGrp>
-                          <staffDef n="1" lines="5"/>
-                          <staffDef n="2" lines="5"/>
+                          <staffDef n="1" lines="5" clef.line="2" clef.shape="G"/>
+                          <staffDef n="2" lines="5" clef.line="4" clef.shape="F"/>
                        </staffGrp>
                     </scoreDef>
                     <section>
@@ -39152,8 +39152,8 @@
                  <part label="Piano" n="1">
                     <scoreDef key.sig="3f">
                        <staffGrp>
-                          <staffDef n="1" lines="5"/>
-                          <staffDef n="2" lines="5"/>
+                          <staffDef n="1" lines="5" clef.line="2" clef.shape="G"/>
+                          <staffDef n="2" lines="5" clef.line="4" clef.shape="F"/>
                        </staffGrp>
                     </scoreDef>
                     <section>
@@ -39461,9 +39461,53 @@
                         <measure n="302" label="302" xml:id="measure_4bf07d67-798d-46be-b86f-8c6c57be3c9a" facs="#zone_76b4c27e-913a-4e41-853f-c0600574fb7e"/>
                         <measure n="303" label="303" xml:id="measure_56333d1c-08a0-4972-a9e1-05fdf58bceb8" facs="#zone_e686b925-bd6e-4141-9380-f402fe7ec1ab"/>
                         <measure n="304" label="304" xml:id="measure_216fd3e6-8eaa-4927-97c0-c47046744de8" facs="#zone_a3bcfbe9-9457-4b6d-b329-bac688ba2800"/>
-                        <measure n="305" label="305" xml:id="measure_7cf2985d-fd7d-43cf-af8b-ff14121f5db2" facs="#zone_8dfa5306-2dc8-4272-b2f1-c97496664973"/>
+                        <measure n="305" label="305" xml:id="measure_7cf2985d-fd7d-43cf-af8b-ff14121f5db2" facs="#zone_8dfa5306-2dc8-4272-b2f1-c97496664973">
+                           <staff n="1" xml:id="x66f93d2b-7e8a-4007-9775-86e464137f27">
+                              <layer xml:id="xdda3da21-f5dd-4a8f-8191-f141bef4f277">
+                                 <chord xml:id="x65fcc4b8-d146-4892-a57d-2bafbdc395f9" dur="4">
+                                    <note xml:id="xaf1a7f9f-4f65-4afd-8afc-5d43b79ac039" pname="a" oct="5">
+                                       <accid xml:id="x4303b2a5-5716-4551-93c4-7144e00b7eaa" accid.ges="f"/>
+                                    </note>
+                                    <note xml:id="x0fbdfcba-b613-4f79-8e48-263850f5031d" pname="f" oct="5"/>
+                                    <note xml:id="xf5b448f8-32f2-481a-a509-6297e5bac1cf" pname="d" oct="5"/>
+                                    <note xml:id="x62aa76a3-bba1-48a5-aca0-e8b24c585c7a" pname="b" oct="4">
+                                       <accid xml:id="xaf2fa559-ae38-4d5a-ba22-c2d9ed182b3b" accid.ges="f"/>
+                                    </note>
+                                    <note xml:id="x1e076f00-aa94-4cbb-a2d1-9b487482d890" pname="a" oct="4">
+                                       <accid xml:id="xc9c5d9ae-33f2-4c12-9a4d-d11b74ac329c" accid.ges="f"/>
+                                    </note>
+                                 </chord>
+                                 <rest xml:id="xc27d5895-5c6a-4fa4-9307-af32ba6b4f1b" dur="8"/>
+                                 <rest xml:id="x307f14e8-0abe-4fdb-a22d-2228ea213011" dur="4" dots="1"/>
+                              </layer>
+                           </staff>
+                           <staff n="2" xml:id="xde757fd0-8b48-43fe-b056-d196206c1a7c">
+                              <layer xml:id="x4437c4d7-07c3-4a5a-8ef8-2234b0df83c5">
+                                 <clef xml:id="x1a2a9a25-0efb-4e59-a5f4-877e06cf3fa4" shape="G" line="2"/>
+                                 <chord xml:id="xec8e4f3a-537b-4a2a-9d08-94b1d794314b" dur="4">
+                                    <note xml:id="x82f50706-81e7-4172-9033-692fc50b61d6" pname="f" oct="5"/>
+                                    <note xml:id="x46d99757-3047-4fff-95fe-c58f7d591ff0" pname="d" oct="5"/>
+                                    <note xml:id="x742b9cf7-adc4-42aa-a045-1d7609e06dac" pname="b" oct="4">
+                                       <accid xml:id="x8d7bb60e-6841-4778-8033-62bf11db945c" accid.ges="f"/>
+                                    </note>
+                                    <note xml:id="x887daaf0-ad19-4852-8347-7f5d30b35366" pname="a" oct="4">
+                                       <accid xml:id="xd6dd17ac-cd23-4fd9-985c-679cc831ca0f" accid.ges="f"/>
+                                    </note>
+                                    <note xml:id="x666ff945-8c95-41e2-962e-21116024d1e8" pname="f" oct="4"/>
+                                 </chord>
+                              </layer>
+                           </staff>
+                           <dynam xml:id="x83771cc9-4d7f-4249-aa76-7885498aaa8f" staff="1 2" tstamp="1">ff</dynam>
+                        </measure>
                         <measure n="306" label="306" xml:id="measure_a6efe454-86e7-4ecf-b134-bc5e05c664c2" facs="#zone_646d42d1-613d-460a-bdc8-4e168ea74ab9"/>
-                        <measure n="307" label="307" xml:id="measure_b884c4ee-fc4a-4aaa-9527-896eaeb4bc21" facs="#zone_57050ba7-f219-4236-807f-7e3ec41071a1"/>
+                        <measure n="307" label="307" xml:id="measure_b884c4ee-fc4a-4aaa-9527-896eaeb4bc21" facs="#zone_57050ba7-f219-4236-807f-7e3ec41071a1">
+                           <staff n="1">
+                              
+                           </staff>
+                           <staff n="2">
+                              
+                           </staff>
+                        </measure>
                         <measure n="308" label="308" xml:id="measure_28cb653f-4149-47ec-8f8f-2394fb53a91d" facs="#zone_0f661031-b60a-4b44-9063-1b515509a3d2"/>
                         <measure n="309" label="309" xml:id="measure_33f8e4ea-edb3-4e06-b3ca-95b700690844" facs="#zone_a8237c91-0329-4796-a56e-ae2aa3d28d38"/>
                         <measure n="310" label="310" xml:id="measure_9c47006b-7f82-4017-a199-4f082e598600" facs="#zone_26f7f9f8-77a5-494c-8b6f-739719a58d3f"/>
@@ -39579,7 +39623,7 @@
                                  </beam>
                               </layer>
                            </staff>
-                           <annot xml:id="x071172ec-6544-4f41-b0c3-fb97688a6ea6" staff="1" startid="#x73036fa6-7892-4a87-abaf-3eb49e4ec0d0">
+                           <annot xml:id="x071172ec-6544-4f41-b0c3-fb97688a6ea6" staff="1" tstamp="1" tstamp2="0m+5">
                               <relation rel="isEmbodimentOf" target="op73.xml#xa3ab7531-259d-4e01-8f88-ee54c51dfbb8"/></annot>
                         </measure>
                         <measure n="379" label="379" xml:id="measure_e430b0c1-10da-4223-8669-c5e47550a385" facs="#zone_a4d9d9f9-f479-488d-91d1-98cb2fe029fd"/>
