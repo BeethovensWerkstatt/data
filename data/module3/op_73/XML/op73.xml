@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://music-encoding.org/schema/4.0.1/mei-CMN.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/4.0.1/mei-CMN.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <mei xmlns="http://www.music-encoding.org/ns/mei" xml:id="xf07b16aa-ddbe-4548-9e78-0b3f1752bf0c">
     <meiHead>
         <fileDesc>
             <titleStmt>
-                <title>Musikalischer Text.mei</title>
+                <title xml:lang="de">Konzert für Klavier und Orchester Nr. 5 (Es-Dur) op. 73</title>
+                <composer>
+                    <persName xml:id="LvB" auth="GND" auth.uri="http://d-nb.info/gnd/" codedval="118508288">Ludwig van Beethoven</persName>
+                </composer>
+                <editor>
+                    <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens Werkstatt</corpName>
+                </editor>
+                <funder>
+                    <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der Wissenschaften und der Literatur Mainz</corpName>
+                </funder>
             </titleStmt>
-            <pubStmt></pubStmt>
+            <pubStmt/>
+            <seriesStmt>
+                <title xml:lang="de" level="s">Beethoven als Bearbeiter eigener Werke</title>
+                <identifier auth.uri="https://beethovens-werkstatt.de/modul-3/">corr</identifier>
+            </seriesStmt>
         </fileDesc>
         <manifestationList>
-            <manifestation xml:id="A" sameas="./Op.73_D_BNba_C73-9.xml"/>
-            <manifestation xml:id="Z" sameas="./Op.73_A-Wn_SH.Beethoven.323.xml"/>
-            <manifestation xml:id="R1" sameas="./Op.73_US-NYj_31_B393cp_no.5_errata.xml"/>
-            <manifestation xml:id="R2" sameas="./Op.73_D-BNba_Slg.H.C.Bodmer_HCB_Br_94.xml"/>
-            
+            <manifestation label="Ausgangsdokument" sameas="./Op.73_D_BNba_C73-9.xml"/>
+            <manifestation label="Zieldokument" sameas="./Op.73_A-Wn_SH.Beethoven.323.xml"/>
+            <manifestation label="Revisionsliste 1" sameas="./Op.73_US-NYj_31_B393cp_no.5_errata.xml"/>
+            <manifestation label="Revisionsliste 2" sameas="./Op.73_D-BNba_Slg.H.C.Bodmer_HCB_Br_94.xml"/>
         </manifestationList>
     <revisionDesc>
             <change n="1" isodate="2020-10-20">
@@ -67,32 +80,32 @@
                 * ante revisionem
                 * die Summe aller Revisionsanweisungen, die keine Zwischenstände kennen
                 * post revisionem
-                Bei zwei Revisionsdokumenten kann es bis zu 5 Zustände geben, wobei die zeitliche Reihenfolge nur teilweise 
+                Bei zwei Revisionsdokumenten kann es bis zu 5 Zustände geben, wobei die zeitliche Reihenfolge nur teilweise
                 bekannt sein kann. Wenn beide R1 und R2 als komplementär zu verstehen sind, dann führen sie zu einem gemeinsamen
-                Zieltext; sind sie unabhängig, entstehen evtl. zwei (dann verschiedene) Zieltexte. 
-                
+                Zieltext; sind sie unabhängig, entstehen evtl. zwei (dann verschiedene) Zieltexte.
+
                 Ein <genState> ist damit aber nicht der Ort, ein einzelnes Monitum zu codieren. Alle anderen Orte im Header sind
-                allerdings noch ungeeigneter (manifestation/history/list…). Es gibt mehrere Möglichlichkeiten, damit umzugehen: 
-                
-                * Wir könnten hier tag abuse mit <desc> in <genState> versuchen und z.B. pro Monitum ein <add> / <subst> / <del> / 
-                  <corr> o.ä. nutzen, um eine ID zu bekommen. Das funktioniert, weil in MEI natürlich auch in Beschreibungen 
-                  Korrekturen vorkommen dürfen. Wir würden das aber eher strukturiert gebrauchen, und so ist es nicht gemeint. 
-                * Gleiches gilt im Grunde auch für die unten angedeutete Lösung mit <annot>s. 
-                
+                allerdings noch ungeeigneter (manifestation/history/list…). Es gibt mehrere Möglichlichkeiten, damit umzugehen:
+
+                * Wir könnten hier tag abuse mit <desc> in <genState> versuchen und z.B. pro Monitum ein <add> / <subst> / <del> /
+                  <corr> o.ä. nutzen, um eine ID zu bekommen. Das funktioniert, weil in MEI natürlich auch in Beschreibungen
+                  Korrekturen vorkommen dürfen. Wir würden das aber eher strukturiert gebrauchen, und so ist es nicht gemeint.
+                * Gleiches gilt im Grunde auch für die unten angedeutete Lösung mit <annot>s.
+
                 Es erscheint deshalb sinnvoller, die Monita in den Revisionsdokumenten zu "transkribieren". Wenn es also eine
-                Revisionsliste innerhalb eines Briefs ist, dann müssen wir dort den entsprechenden Ausschnitte als <ab> oder 
+                Revisionsliste innerhalb eines Briefs ist, dann müssen wir dort den entsprechenden Ausschnitte als <ab> oder
                 ähnliches direkt fassen. Zusätzlich nutzen wir @class, um diese Bereiche sauber zu erkennen (prüfen: Können wir
-                @class in beiden Formaten MEI / TEI konsistent nutzen?). Auch in MEI-Dateien können wir mit <section>, <metaMark> 
+                @class in beiden Formaten MEI / TEI konsistent nutzen?). Auch in MEI-Dateien können wir mit <section>, <metaMark>
                 oder ähnlichem arbeiten, um solche Bereiche zu identifizieren und zu klassifizieren. Das bedeutet, dass wir in der
-                musikalischerText.mei-Datei Monita nicht strukturiert erfassen. Die Änderungsimperative können wir dagegen gut auf 
-                die einzelnen <add> etc. im Text mappen. Wo das etwa aufgrund von XML-Strukturen nicht ganz passt, können wir ggf. 
-                mit @sameas mehrere <add> zusammenfassen. 
-                
-                Wenn wir die Monita in den Revisionslisten erfassen, bedeutet das aber auch, dass diese etwas Inhalt brauchen. Bei 
-                Briefen (= TEI) haben wir ohnehin eine Übertragung, das ist also unproblematisch. Wenn die Monita in ein Ausgangsdokument 
-                eingetragen sind, haben wir auch kein Problem (oder ein anderes – welche Dateien codieren wir in dem Fall eigentlich??). 
-                Lustig wird es nur, wenn wir ein separates MEI-Dokument brauchen, aber auch hier hätten wir ja mindestens eine 
-                "Basis-Vertaktung", in die wir die nötigen Strukturen einarbeiten könnten. 
+                musikalischerText.mei-Datei Monita nicht strukturiert erfassen. Die Änderungsimperative können wir dagegen gut auf
+                die einzelnen <add> etc. im Text mappen. Wo das etwa aufgrund von XML-Strukturen nicht ganz passt, können wir ggf.
+                mit @sameas mehrere <add> zusammenfassen.
+
+                Wenn wir die Monita in den Revisionslisten erfassen, bedeutet das aber auch, dass diese etwas Inhalt brauchen. Bei
+                Briefen (= TEI) haben wir ohnehin eine Übertragung, das ist also unproblematisch. Wenn die Monita in ein Ausgangsdokument
+                eingetragen sind, haben wir auch kein Problem (oder ein anderes – welche Dateien codieren wir in dem Fall eigentlich??).
+                Lustig wird es nur, wenn wir ein separates MEI-Dokument brauchen, aber auch hier hätten wir ja mindestens eine
+                "Basis-Vertaktung", in die wir die nötigen Strukturen einarbeiten könnten.
             -->
             <genState xml:id="state1"><!-- ante revisionem --></genState>
             <genState xml:id="state2">
@@ -102,7 +115,7 @@
                     <annot xml:id="monitum1" plist="docR.tei#monitum1"/>
                     <annot plist="docR.tei#monitum1"/>
                     <annot plist="docR.tei#monitum1"/>
-                    
+
                     <!-- stattdessen vielleicht der Einfachheit halber eine Beschreibung wie folgt: -->
                     Liste mit <num unit="monita">12</num> Monita.
                 </desc>
@@ -119,7 +132,7 @@
                                 <label>Violino Primo</label>
                                 <labelAbbr>V I</labelAbbr>
                             </staffDef>
-                                
+
                             <staffDef xml:id="x9d52216d-4bbe-490b-adcd-456f06bbbdd2" n="2" lines="5" clef.line="2" clef.shape="G">
                                 <label>Violino Secondo</label>
                                 <labelAbbr>V II</labelAbbr>
@@ -1617,7 +1630,7 @@
                             <staff n="18" xml:id="xe9306581-2fa5-4d29-9ca9-8460879b8da1"/>
                             <staff n="19" xml:id="xe7fa339b-34ab-4b9d-8192-ed545bd62361"/>
                             <staff n="20" xml:id="x6e1890b7-01a9-4c24-8756-cbc056f562f9"/>
-                            <!-- hier keine Auszeichnung der crescendo Verlängerungsstriche, weil es den Text nicht verändert -->    
+                            <!-- hier keine Auszeichnung der crescendo Verlängerungsstriche, weil es den Text nicht verändert -->
                             <dynam xml:id="x23f65b71-fe8e-4488-85b1-0efe88051a95" tstamp="1" tstamp2="1m+5" staff="2" place="above">cres:</dynam>
                             <annot type="monitum2" staff="1 4 5" tstamp="1" tstamp2="1m+5" xml:id="g_576d23b9-3b8b-4c2f-9efa-742ca71b2956"/>
                         </measure>
@@ -1750,8 +1763,8 @@
                             <staff n="18" xml:id="xd8d7f0fb-6f88-493f-9d07-10b084c15420"/>
                             <staff n="19" xml:id="x2120dec1-7e38-4c97-a996-82ab5889cade"/>
                             <staff n="20" xml:id="xf1c919bb-52b0-4dcd-8cc0-050316f6da8c"/>
-                                
-                            
+
+
                         </measure>
                         <measure n="62" label="62" xml:id="xdd96ed6c-4a6b-4d0f-8d11-06ceec203e8c">
                             <staff n="1" xml:id="x9166806c-cb66-416b-9cd7-a5f4a0270478"/>
@@ -5095,7 +5108,7 @@
                                             <corr resp="#BW">
                                                 <note pname="f" oct="3" dur="8"/>
                                             </corr>
-                                        </choice>       
+                                        </choice>
                                         <note xml:id="x10695414-6aac-4601-b216-727d4c47e91c" pname="e" oct="4" dur="8">
                                             <accid xml:id="x29c21638-e5e4-41c3-b1b7-06da1620f261" accid.ges="f"/>
                                         </note>
@@ -11232,7 +11245,7 @@
                                         <clef xml:id="xaef1d0ac-1e1b-49dd-940a-530b32cb9767" shape="G" line="2"/>
                                         <note xml:id="x69c371e7-9ce1-4c2f-8eee-e256cc3b12c5" pname="e" oct="4" dur="4">
                                             <accid xml:id="x7540a1bc-174b-4294-a87c-b90ed5f7166c" accid.ges="f"/>
-                                        </note> 
+                                        </note>
                                         <clef xml:id="x9fe7e6d8-ed13-4850-adad-978760c1be7e" shape="F" line="4"/>
                                         <note xml:id="x8062119f-36d6-46b9-bcc0-ce2dc93cd3b6" pname="e" oct="3" dur="8">
                                             <accid xml:id="x196c5124-8832-4cd4-9785-fc375fe4b383" accid.ges="f"/>
@@ -11403,7 +11416,7 @@
                                         </note>
                                     </beam>
                                     <!-- taktstrich, der fälschlicherweise in dem Takt steht, aber von Beethoven auch gestrichen wurde. Nicht Teil des Änderungsimperativs -->
-                                    <del instant="true" resp="#LvB" state="#state2"><add resp="LvB" state="#state2"><sic resp="#BW"><barLine/></sic></add></del>       
+                                    <del instant="true" resp="#LvB" state="#state2"><add resp="LvB" state="#state2"><sic resp="#BW"><barLine/></sic></add></del>
                                         <beam xml:id="x2a95a729-3838-4497-92e9-9a0556a54497">
                                             <note xml:id="x44e788c8-5454-4a59-8950-0c1a2b56bdee" pname="b" oct="5" oct.ges="6" dur="16">
                                                 <accid xml:id="x7dda086c-c6ec-497f-8e20-187daab07e0f" accid.ges="f"/>
@@ -11432,12 +11445,12 @@
                                         <space xml:id="x2f903160-d40a-4984-9d1d-4f82e536bed1" dur="16"/>
                                         <space xml:id="xf397d9ed-f8e1-4c1a-b746-6a68805c8a5a" dur="16"/>
                                         <space xml:id="x0c2522d6-f913-436d-9ec9-7ebaedba62dd" dur="16"/>
-                                        
+
                                         <space xml:id="x7bd613f6-82d3-44a1-8c7d-3372c90cb163" dur="16"/>
                                         <space xml:id="x907cec2d-e4ff-4f76-9d43-aeb0023fd567" dur="16"/>
                                         <space xml:id="xbd339fb1-836e-4af4-bf0d-4f75f5c1e3c8" dur="16"/>
                                         <space xml:id="x75f399bd-ad7b-4af8-bb2b-ee8705d0f405" dur="16"/>
-                                    
+
                                 </layer>
                             </staff>
                             <staff n="20" xml:id="x192c8afa-946d-467c-95c8-5fc01f5342d3"/>
@@ -13856,7 +13869,7 @@
                                     <label>Violino Primo</label>
                                     <labelAbbr>V I</labelAbbr>
                                 </staffDef>
-                                
+
                                 <staffDef xml:id="x1edbb033-d662-4827-9626-846b053dbec6" n="2" lines="5" clef.line="2" clef.shape="G">
                                     <label>Violino Secondo</label>
                                     <labelAbbr>V II</labelAbbr>
@@ -14895,7 +14908,7 @@
                             <staff n="19" xml:id="xb8e3574d-995f-48fe-aca7-af0f31e4b2f6"/>
                             <staff n="20" xml:id="xe5d14a06-21fa-4d6f-8c01-e982ddf338d4"/>
                         </measure>
-                        <measure n="40" label="40" xml:id="xae100c7a-434b-4ae3-ac61-0059a2a72a8e" type="monitum12"> 
+                        <measure n="40" label="40" xml:id="xae100c7a-434b-4ae3-ac61-0059a2a72a8e" type="monitum12">
                             <staff n="1" xml:id="xa5f56af1-8383-45ca-aa5b-eb3dc5870710"/>
                             <staff n="2" xml:id="x294eac2d-1b1d-442c-9f5f-109911572aac"/>
                             <staff n="3" xml:id="x862ea876-b3b5-4e76-9765-2147941a72a7"/>
@@ -15865,7 +15878,7 @@
                             <staff n="19" xml:id="xd5a41c02-6217-4a00-8566-aace5b1e2a96"/>
                             <staff n="20" xml:id="x2f3393c1-2d40-4838-af79-11bb1e5ec0ec"/>
                         </measure>
-                        <measure n="81" label="81" xml:id="xc98a9cc7-80e2-456c-bcf2-cd0a1a7dbab5" type="monitum13"> 
+                        <measure n="81" label="81" xml:id="xc98a9cc7-80e2-456c-bcf2-cd0a1a7dbab5" type="monitum13">
                             <staff n="1" xml:id="x29ff65a4-38f6-4ad7-a11f-6aa7e397d804"/>
                             <staff n="2" xml:id="x74685624-b520-4744-8478-90d061b651fa"/>
                             <staff n="3" xml:id="x0fa2d070-117c-405a-82ed-166b5068226f"/>
@@ -16003,7 +16016,7 @@
                                     <label>Violino Primo</label>
                                     <labelAbbr>V I</labelAbbr>
                                 </staffDef>
-                                
+
                                 <staffDef xml:id="x5618138d-a326-4afe-95f2-993f17923ad9" n="2" lines="5" clef.line="2" clef.shape="G">
                                     <label>Violino Secondo</label>
                                     <labelAbbr>V II</labelAbbr>
@@ -17171,7 +17184,7 @@
                                         <accid xml:id="x77ddfc91-cffa-4186-ad75-1680cfff83e3" accid.ges="f"/>
                                     </note>
                                 </layer>
-                                <layer n="2">                 
+                                <layer n="2">
                                     <mSpace/><!-- ? -->
                                 </layer>
                             </staff>
@@ -18964,7 +18977,7 @@
                                     <octave startid="#x03da44cb-1898-4ac7-82fa-ddbab6b5948f" endid="#xf35676d2-46c3-4bc6-9362-708a283df967" dis="8" dis.place="above"/>
                                 </corr>
                             </choice>
-                            
+
                         </measure>
                         <measure n="119" label="119" xml:id="x2b0777af-a0ef-4715-b5fb-e8cd450def85">
                             <staff n="1" xml:id="x20da51eb-f92f-415a-bac8-7c716c4e8c98"/>
@@ -19647,7 +19660,7 @@
                             </staff>
                             <staff n="20" xml:id="x9f216d7b-ba3f-4e98-9060-15e015bb287b"/>
                             <dir xml:id="xf991f3d2-ee8a-413c-89bc-1b2483e352fb" startid="#x452f218e-fbef-46c4-bb32-caf68f9e9b94">loco</dir>
-                            <trill xml:id="x385a5c78-4a58-48e9-9353-33e69d33c2f3" startid="#xc9836a8f-7f06-41f9-9fb2-fa54fe7ea390" accidlower="n"/> 
+                            <trill xml:id="x385a5c78-4a58-48e9-9353-33e69d33c2f3" startid="#xc9836a8f-7f06-41f9-9fb2-fa54fe7ea390" accidlower="n"/>
                             <!-- ist @accidlower hier richtig? -->
                         </measure>
                         <measure n="146" label="146" xml:id="xff46cc6f-4d43-4bad-8b2c-c3555ea7cd93">
@@ -24340,7 +24353,7 @@
                                         <accid xml:id="g_61075b48-6e21-4d02-9629-a6d891cca593" accid.ges="f"/>
                                     </note>
                                 </layer>
-                                <layer n="2"> 
+                                <layer n="2">
                                     <chord dur="8">
                                         <note pname="c" oct="5"/>
                                         <note pname="a" oct="4"/>
