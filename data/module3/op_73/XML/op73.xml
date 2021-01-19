@@ -1055,7 +1055,7 @@
                             <staff n="1" xml:id="x5bfd5225-cc8b-41ae-ab89-d9a499c2749d">
                                 <layer xml:id="xcf2c43cc-0173-4103-be16-b6fa0bdff90d">
                                     <beam xml:id="x30694544-fecc-4685-80ec-7d2a19b9081b">
-                                        <note xml:id="x5f25288a-b819-407d-bc0c-baca237ff761" pname="g" oct="5" dur="16" facs="#shapeX">
+                                        <note xml:id="x5f25288a-b819-407d-bc0c-baca237ff761" pname="g" oct="5" dur="16">
                                             <accid xml:id="x1d717bc6-9b17-4c01-9d90-5edcdc571441" accid="f"/>
                                         </note>
                                         <note xml:id="xa4ddae7f-63bd-4341-a706-b245405441f3" pname="g" oct="5" dur="16"/>
@@ -1112,8 +1112,8 @@
                                 </layer>
                             </staff>
                             <!-- hier keine Auszeichnung der sforzati mit add, weil es den musikalischen Text nicht verändert -->
-                            <dynam xml:id="x6b7f1984-9889-4a84-bb83-efa847202290" startid="#xd251f7d0-c7af-4045-9580-e2932c2e737f" facs="#shapeXY">sf</dynam>
-                            <dynam xml:id="xfe8eeae0-a5b1-4885-9e41-591dfc312cf4" startid="#x730cac0e-9e39-418a-8d04-4c952c314bd0" facs="#shapeZ">sf</dynam>
+                            <dynam xml:id="x6b7f1984-9889-4a84-bb83-efa847202290" startid="#xd251f7d0-c7af-4045-9580-e2932c2e737f">sf</dynam>
+                            <dynam xml:id="xfe8eeae0-a5b1-4885-9e41-591dfc312cf4" startid="#x730cac0e-9e39-418a-8d04-4c952c314bd0">sf</dynam>
                             <annot type="monitum1" staff="1" tstamp="1" tstamp2="0m+5" xml:id="g_d42c8f9d-2dcd-4cb9-b325-884fc963e1b0"/>
                         </measure>
                         <measure n="40" label="40" xml:id="x2921f67e-5561-405d-8dca-9bd713a6e461">
@@ -8805,7 +8805,7 @@
                                     <!--<space xml:id="x0b721d2d-ca3b-4cd5-a671-65d3a21ade17" dur="4"/>
                                     <space xml:id="x082b26d2-c0ab-492b-8513-baba7dd742c1" dur="4"/>
                                     <space xml:id="x8f2e589f-ec22-47ca-8502-900a9562e8e1" dur="4"/>-->
-                                    <clef shape="F"/>
+                                    <clef shape="F" line="4"/>
                                     <beam>
                                         <chord dur="16">
                                             <note pname="e" oct="3"/>
@@ -11349,7 +11349,7 @@
                                         </note>
                                     </beam>
                                     <!-- Taktstrich, der fälschlicherweise in dem Takt steht, aber ausgewischt wurde. Nicht Teil des Änderungsimperativs -->
-                                    <del instant="true" resp="#LvB" state="#state2"><add resp="LvB" state="#state2"><sic resp="#BW"><barLine/></sic></add></del>
+                                    <del instant="true" resp="#LvB" state="#state2"><add resp="#LvB" state="#state2"><sic resp="#BW"><barLine/></sic></add></del>
                                         <beam xml:id="xec848951-f2ce-498d-a6dc-529903d5430b">
                                             <note xml:id="xf7c79621-a18b-4e6f-a7eb-4f82d34849d4" pname="b" oct="5" dur="16">
                                                 <accid xml:id="x7fc70259-e53b-4aff-9173-7f4a826ca7dd" accid.ges="f"/>
@@ -11416,7 +11416,7 @@
                                         </note>
                                     </beam>
                                     <!-- taktstrich, der fälschlicherweise in dem Takt steht, aber von Beethoven auch gestrichen wurde. Nicht Teil des Änderungsimperativs -->
-                                    <del instant="true" resp="#LvB" state="#state2"><add resp="LvB" state="#state2"><sic resp="#BW"><barLine/></sic></add></del>
+                                    <del instant="true" resp="#LvB" state="#state2"><add resp="#LvB" state="#state2"><sic resp="#BW"><barLine/></sic></add></del>
                                         <beam xml:id="x2a95a729-3838-4497-92e9-9a0556a54497">
                                             <note xml:id="x44e788c8-5454-4a59-8950-0c1a2b56bdee" pname="b" oct="5" oct.ges="6" dur="16">
                                                 <accid xml:id="x7dda086c-c6ec-497f-8e20-187daab07e0f" accid.ges="f"/>
@@ -13259,22 +13259,18 @@
                             <staff n="19" xml:id="xd7221cf0-fd7d-4141-8c93-8ab06e5f2fae"/>
                             <staff n="20" xml:id="x38d62ea0-6686-46f1-ac6f-8e36bb5b22bd"/>
                         </measure>
-                        <measure n="556" label="556" xml:id="xf7f51e93-5fd4-4caf-b790-59f218ce3ba4" type="monitumRevB">
+                        <!-- Revisionsdokument2; im Ausgangsdokument ist ebenfalls ein p ergänzt auf der 4. Zählzeit (von LvB?) -->
+                        <measure n="556" label="556" xml:id="xf7f51e93-5fd4-4caf-b790-59f218ce3ba4" type="Revisionsdokument2_monitum1">
                             <staff n="1" xml:id="xe2213481-b3e5-4447-be33-ebf738cb3f07">
                                     <layer n="1">
-                                        <supplied resp="#LvB" source="#R1" reason="context"><!-- ? -->
-                                            <clef line="2" shape="G"/>
-                                            <keySig sig="3f"/>
-                                        </supplied>
-                                        <rest dur="4"/>
-                                        <space dur="2" layer="1"/>
+                                        <space dur="2" layer="1" dots="1"/>
                                         <beam cue="true">
                                             <note xml:id="g_5931f0e7-33c9-4939-babd-8838287952e0" pname="a" oct="5" cue="true" dur="8" dots="1"/>
                                             <note pname="a" oct="5" cue="true" dur="16"/>
                                         </beam>
                                     </layer>
                                     <layer n="2">
-                                        <space dur="4"/>
+                                        <rest dur="4"/>
                                         <beam>
                                             <note pname="a" oct="4" dur="8" dots="1"/>
                                             <note pname="a" oct="4" dur="16"/>
@@ -13302,7 +13298,7 @@
                             <staff n="18" xml:id="x945a43f0-140d-4ee6-b671-969ad1686dbd"/>
                             <staff n="19" xml:id="x961543cc-08ff-4c0e-b08e-a39d97b3b15a"/>
                             <staff n="20" xml:id="x9dc541b5-3b6c-49af-847d-b17453f84bd6"/>
-                            <add resp="#LvB" state="#state2">
+                            <add resp="#LvB" state="#state1">
                                 <dynam startid="#g_5931f0e7-33c9-4939-babd-8838287952e0" place="below">p</dynam>
                             </add>
                             <!-- in der Ausführung im Zieldokument ist das piano unter der nächsten Zählzeit -->
@@ -17529,7 +17525,7 @@
                                 </layer>
                             </staff>
                             <add resp="#LvB" state="#state2">
-                                <arpeg xml:id="x54eee173-216c-4080-8f73-29fd39a6c2ee" startid="#x1c23241c-8a43-4a79-8440-71f2178fc071"/>
+                                <arpeg xml:id="x54eee173-216c-4080-8f73-29fd39a6c2ee" startid="#xdb9ce620-2402-4e66-ae67-72edac79f104"/>
                             <arpeg xml:id="x9c9a3b97-39fb-48d6-ba37-f032f2234183" startid="#xdb9ce620-2402-4e66-ae67-72edac79f104"/>
                             </add>
                         </measure>
@@ -23304,7 +23300,7 @@
                                 </layer>
                             </staff>
                             <dynam xml:id="x398294ed-5a7b-464e-bcb4-c32485e76236" staff="1 2" place="between" tstamp="1">ff</dynam>
-                            <pedal xml:id="xacc1f374-499c-43ca-a617-245fcedd9955" dir="down" staff="2" place="above"/>
+                            <pedal xml:id="xacc1f374-499c-43ca-a617-245fcedd9955" dir="down" staff="2" tstamp="1" place="above"/>
                             <octave xml:id="x2fc7593b-3c95-45d9-be1b-d3aea36df5ae" tstamp="1" tstamp2="2m+1" dis="8" dis.place="above">8.a</octave>
                             <add resp="#LvB" state="#state2">
                                 <arpeg xml:id="x8c3a0d0d-ce93-498c-97e5-1ce3cf02fa32" startid="#x73778022-9b2a-4e47-a052-852d80bb78e6"/>
@@ -23390,11 +23386,11 @@
                             </staff>
                             <dynam xml:id="x05469bd3-7b52-47cf-afda-79d55a4036eb" staff="1 2" place="between" tstamp="1">ff</dynam>
                             <add resp="#unknown" state="#state3"><dir xml:id="x5e6610c7-046c-49e1-b16a-a241d2c99a5a" staff="1" place="above" tstamp="1">loco</dir></add>
-                            <pedal xml:id="x5dade524-8112-472d-a3f8-0783ce1e9baf" dir="down" staff="2" place="below"/>
+                            <pedal xml:id="x5dade524-8112-472d-a3f8-0783ce1e9baf" dir="down" staff="2" tstamp="1" place="below"/>
                             <add resp="#LvB" state="#state2">
                                 <arpeg xml:id="x01bf4d6d-7ebc-4c4e-bcd9-3e6a4d471830" startid="#xd1d6fca2-4e65-45b1-af45-478a977bb88b"/>
                             </add>
-                            <add resp="LvB" state="#state2">
+                            <add resp="#LvB" state="#state2">
                                 <arpeg xml:id="xbb419421-3c41-496f-b109-5e7b0787ae6e" startid="#x008d4f4a-ee91-44ef-95cd-667df16a5c4b"/>
                             </add>
                             <annot type="monitum24" staff="19 20" tstamp="1" tstamp2="0m+5" xml:id="xea6ef4b9-ce40-4e5a-b6de-be21b366c736" corresp="#x131aa2bc-940a-4298-a542-554e86f35435"/>
