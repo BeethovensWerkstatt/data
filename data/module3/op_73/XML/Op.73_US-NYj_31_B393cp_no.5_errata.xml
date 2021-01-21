@@ -1519,21 +1519,43 @@
                                         <note xml:id="x1965e7a0-b7d5-4977-b2e9-bb35bcaa59fb" pname="c" oct="6" dur="16" cue="true"/>
                                     </beam>
                                 </layer>
-                                <layer xml:id="xd81a469f-2a6f-46eb-9dc4-81141d8334f6" n="2"> <!-- ggf. anders codieren -->
-                                    <space xml:id="x239a02d0-d8b4-4c43-b5e6-62ae2906ab07" dur="8"/>
-                                    <space xml:id="x23f06a37-d568-4474-8e68-0e1758a0115a" dur="4"/>
-                                    <space xml:id="xd1cd65d3-5775-4d16-969c-4addcb4928ef" dur="4"/>
-                                    <rest xml:id="x04505c03-81e4-4708-a110-fd50f26a495f" dur="8"/>
+                                <layer xml:id="xd81a469f-2a6f-46eb-9dc4-81141d8334f6" n="2">
+                                    <sic>
+                                        <chord dur="8">
+                                            <note pname="c" oct="5"/>
+                                            <note pname="a" oct="4"/>
+                                        </chord>
+                                        <chord dur="4">
+                                            <note xml:id="x9813a4af-7520-4f8e-8043-155c5b547c8e" pname="e" oct="5"/>
+                                            <note xml:id="x61c6bdfa-d66d-43d4-ba26-a8c0f81b3229" pname="c" oct="5"/>
+                                            <note xml:id="x1b796ea7-b079-4b16-87ce-bd00a89837bc" pname="a" oct="4"/>
+                                        </chord>
+                                        <chord dur="4">
+                                            <note xml:id="xb89f8b22-b080-4f1c-965e-06884247fcdb" pname="e" oct="5"/>
+                                            <note xml:id="x1a0c5200-7420-49d0-824e-f017df8b6d9d" pname="c" oct="5"/>
+                                            <note xml:id="xb33678e0-08e4-45fb-bda0-fd7ffc211da6" pname="a" oct="4"/>
+                                        </chord>
+                                    </sic>
+                                    <add>
+                                        <rest xml:id="x04505c03-81e4-4708-a110-fd50f26a495f" dur="8"/>
+                                    </add>
                                 </layer>
                             </staff>
                             <sic>
                                 <slur staff="1" curvedir="above" startid="#x8152b69e-6c92-42ad-9831-c2efa62fdb3c" endid="#x1965e7a0-b7d5-4977-b2e9-bb35bcaa59fb"/>
                             </sic>
-                            <dir xml:id="xe89b8169-18c3-4b67-9824-2cc0d4dbbd21" startid="#x746b1479-2e68-4b85-bb70-8c249a5e6642">Solo</dir> <!-- ggf. anders codieren -->
                             <octave xml:id="xc9ea15c2-0374-40aa-901f-011184a9ef53" startid="#x746b1479-2e68-4b85-bb70-8c249a5e6642" endid="#x48bdb862-9511-4e99-b5df-170b53963168" dis="8" dis.place="above"/>
-                            <tie xml:id="x612040b2-b90c-4117-8178-43fb4b92364a" startid="#x18f9c07c-8f2c-48a4-90ce-1a579739866f" endid="#x48bdb862-9511-4e99-b5df-170b53963168"/>
+                            <sic>
+                                <tie xml:id="x612040b2-b90c-4117-8178-43fb4b92364a" startid="#x18f9c07c-8f2c-48a4-90ce-1a579739866f" endid="#x48bdb862-9511-4e99-b5df-170b53963168"/>
+                            </sic>
+                            <sic><tie staff="1" layer="2" curvedir="above" startid="#x9813a4af-7520-4f8e-8043-155c5b547c8e" endid="#xb89f8b22-b080-4f1c-965e-06884247fcdb"/></sic>
+                            <sic><tie staff="1" layer="2" curvedir="above" startid="#x61c6bdfa-d66d-43d4-ba26-a8c0f81b3229" endid="#x1a0c5200-7420-49d0-824e-f017df8b6d9d"/></sic>
+                            <sic><tie staff="1" layer="2" curvedir="below" startid="#x1b796ea7-b079-4b16-87ce-bd00a89837bc" endid="#xb33678e0-08e4-45fb-bda0-fd7ffc211da6"/></sic>
                             <dir xml:id="x6c1cca7a-6eee-4c8e-99b4-c9478557b460" startid="#x8152b69e-6c92-42ad-9831-c2efa62fdb3c">loco</dir>
                             <dir xml:id="xffd8e51d-fa96-4c3c-8927-afbfb36f0a06" startid="#x8152b69e-6c92-42ad-9831-c2efa62fdb3c">Tutti</dir>
+                            <annot xml:id="xb7f6b7b1-900c-4ef4-9c9e-1558c01525a9" staff="1" tstamp="1" tstamp2="1m+7" type="monitum20">
+                                <relation rel="isEmbodimentOf" target="op73.xml#x35d83f3e-1de3-4027-81d8-73477945be46"/>
+                            </annot>
                         </measure>
                         <measure xml:id="xf4ef6b0f-aeae-4f2a-b5f9-d828571ff6ab" n="2">
                             <staff xml:id="x5b062459-8757-4c59-bccf-9dfea8946f29" n="1">
@@ -1558,6 +1580,12 @@
                                 </layer>
                             </staff>
                             <sic><slur staff="1" curvedir="above" startid="#x813fc923-750e-4106-91d0-4605adcda900" endid="#xcd07e6ae-66de-43dc-bcae-51dd7e099c5b"/></sic>
+                            <metamark staff="1" place="below" tstamp="5" function="question">x</metamark><!-- Attraktor -->
+                            <metamark staff="1" place="rightmar" function="clarification">x<lb/>2mal komts<lb/>so</metamark>
+                            <metamark staff="1" place="botmar" function="clarification">Nb: Diese stelle kom<supplied resp="#BW">t</supplied> später</metamark>
+                            <annot xml:id="xd148ee87-65e4-4466-b5cf-38a8060936cb" staff="1" tstamp="1" tstamp2="0m+7" type="monitum20">
+                                <relation rel="isEmbodimentOf" target="op73.xml#x35d83f3e-1de3-4027-81d8-73477945be46" corresp="#xb7f6b7b1-900c-4ef4-9c9e-1558c01525a9"/>
+                            </annot>
                         </measure>
                     </section>
                     
