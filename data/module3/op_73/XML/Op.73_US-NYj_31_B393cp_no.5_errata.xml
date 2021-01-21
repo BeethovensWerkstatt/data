@@ -7,6 +7,15 @@
             <titleStmt>
                 <title>Klavierkonzert Nr. 5 in Es-Dur op. 73 - Korrekturliste der Klavierstimme</title>
                 <title type="subordinate">An electronic transcription</title>
+                <composer>
+                    <persName xml:id="LvB" auth="GND" auth.uri="http://d-nb.info/gnd/" codedval="118508288">Ludwig van Beethoven</persName>
+                </composer>
+                <editor>
+                    <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens Werkstatt</corpName>
+                </editor>
+                <funder>
+                    <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der Wissenschaften und der Literatur Mainz</corpName>
+                </funder>
             </titleStmt>
             <pubStmt/>
             <sourceDesc>
@@ -1458,8 +1467,7 @@
                     <section xml:id="x07a097b7-2a5c-4a5f-a5aa-711511507f17" n="19" label="Monitum 19">
                         <!-- <scoreDef xml:id="x03ef08f4-fe45-46e4-913e-de901fb89ed9" label="III. Satz" key.sig="3f" meter.count="6" meter.unit="8"/> -->
                         <measure xml:id="x593982f6-e161-4166-a2e4-bd84e437d9f2" n="1">
-                            <staff xml:id="x965a7bc9-9cda-4fda-858d-9c4ccfcc8b17" n="1"/>
-                            <staff xml:id="xacf3f4d0-3368-478d-ade8-f2f5fe1da2e9" n="2">
+                            <staff xml:id="xacf3f4d0-3368-478d-ade8-f2f5fe1da2e9" n="1">
                                 <layer xml:id="x203df6ba-803d-4320-9496-eb78ade0fd57">
                                     <space xml:id="xc3d0c143-6222-463d-aecd-75a2e5a9edd3" dur="4"/>
                                     <chord xml:id="x976a6339-527c-4cb9-a588-c2905e525399" dur="8">
@@ -1468,17 +1476,17 @@
                                     </chord>
                                     <beam xml:id="x45eb6c4d-6d65-4f6e-9480-f6791db33565">
                                         <chord xml:id="xe70b4e88-e895-4a17-a1bf-62de7e47739b" dur="8" dots="1">
-                                            <artic xml:id="x76b2a3f7-0cdd-4bb1-93d4-86bf5f3e1b80" artic="stacciss"/>
+                                            <add resp="#LvB"><artic xml:id="x76b2a3f7-0cdd-4bb1-93d4-86bf5f3e1b80" artic="stacciss"/></add>
                                             <note xml:id="xb911112e-943e-42df-a33c-e158c1b48856" pname="c" oct="5"/>
                                             <note xml:id="xd512b623-717d-4d2b-9270-44fd72cc05e8" pname="c" oct="6"/>
                                         </chord>
                                         <chord xml:id="x29c1e7f8-c2c1-4c12-b5f0-70a721250f8e" dur="16">
-                                            <artic xml:id="xd622ffea-da46-499f-8ff3-0cf26824a8a0" artic="stacciss"/>
-                                            <note xml:id="x4171a789-929a-4c73-aa7d-9f7b09cb9704" pname="d" oct="5"/>
+                                            <add resp="#LvB"><artic xml:id="xd622ffea-da46-499f-8ff3-0cf26824a8a0" artic="stacciss"/>
+                                            <note xml:id="x4171a789-929a-4c73-aa7d-9f7b09cb9704" pname="d" oct="5"/></add>
                                             <note xml:id="x4e8222f2-b19d-4ec2-9830-39636661fc5d" pname="d" oct="6"/>
                                         </chord>
                                         <chord xml:id="x7059d146-bd18-404d-ac16-3d22699a9e89" dur="8">
-                                            <artic xml:id="xec71caa4-1fe6-41ee-8b7b-e9edf0717618" artic="stacciss"/>
+                                            <add resp="#LvB"><artic xml:id="xec71caa4-1fe6-41ee-8b7b-e9edf0717618" artic="stacciss"/></add>
                                             <note xml:id="xd9965fa7-3721-4e23-9e1f-76b1ab54e8dd" pname="e" oct="5">
                                                 <accid xml:id="x0ba72580-e5e0-499e-b43e-f2ba667f37d0" accid="n"/>
                                             </note>
@@ -1489,8 +1497,13 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff xml:id="xd854b2ad-3acf-4c3b-a4e4-8d6df51af203" n="3"/>
                         </measure>
+                        <sic><dynam staff="1" place="below" tstamp="3"/></sic>
+                        <metamark staff="1" place="above" tstamp="3" function="question">x</metamark><!-- Attraktor -->
+                        <metamark staff="1" place="leftmar" function="confirmation">&#x1D17C; &#x1D17C; &#x1D17C;<lb/>x</metamark>
+                        <annot xml:id="xf775548e-0cf7-4829-9517-82ccaa5ff0ed" staff="1" tstamp="1" tstamp2="0m+7" type="monitum19">
+                            <relation rel="isEmbodimentOf" target="op73.xml#x67de7816-6b73-402b-ad68-93429e5372d6"/>
+                        </annot>
                     </section>
                     
                     <section xml:id="xfec4719d-80be-40ab-8247-4f931ba4e737" n="20" label="Monitum 20">
