@@ -157,13 +157,7 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <dynam xml:id="x23f65b71-fe8e-4488-85b1-0efe88051a95" tstamp="1" tstamp2="1m+5">cres:</dynam>
-                        <!-- wie soll die hinzugefügte Verlängerungsstriche codiert werden?
-                            <subst>
-                                <del><dynam xml:id="g_ef7a4d48-6e58-4b92-8a7a-147e61d364e4" tstamp="1">cres:</dynam></del>
-                                <add><dynam xml:id="g_ab159649-c89c-421a-a86c-976d88f783df" tstamp="1" tstamp2="1m+5" extender="true">cres:</dynam></add>
-                            </subst>
-                            -->
+                            <dynam xml:id="g_ab159649-c89c-421a-a86c-976d88f783df" tstamp="1" tstamp2="1m+5" extender="true">cres:</dynam>
                             <metaMark staff="1" place="right" function="clarification">= =</metaMark>
                             <annot type="Revisionsdokument1_monitum2" staff="1 2" tstamp="1" tstamp2="1m+5" xml:id="g_b2fe65ff-b071-4d56-8992-d053592d1efb">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_576d23b9-3b8b-4c2f-9efa-742ca71b2956"/>
@@ -245,13 +239,27 @@
                                     <clef xml:id="x7479963f-742b-4185-9fd6-2d7c2742f724" shape="F" line="4"/>
                                     <beam xml:id="xb1fd6693-a3df-46cc-9ea7-b66d3276ee5a">
                                         <note xml:id="xcfe5208e-05c3-4212-979e-8f0ba9b0aa06" pname="d" oct="4" dur="8"/>
+                                        <choice>
+                                            <sic resp="#LvB">
                                         <note xml:id="xf47512fb-54b4-4760-af9f-0996e202b284" pname="d" oct="3" dur="8"/>
+                                            </sic>
+                                            <corr resp="#BW">
+                                                <note pname="f" oct="3" dur="8"/>
+                                            </corr>
+                                        </choice>
                                         <note xml:id="x10695414-6aac-4601-b216-727d4c47e91c" pname="e" oct="4" dur="8">
                                             <accid xml:id="x29c21638-e5e4-41c3-b1b7-06da1620f261" accid.ges="f"/>
                                         </note>
-                                        <note xml:id="xb93b8a75-94c0-4a80-9084-da59a3a4f00c" pname="e" oct="3" dur="8">
-                                            <accid xml:id="xa70b2d3f-4339-4d7d-8cca-4927212f3bd0" accid.ges="f"/>
-                                        </note>
+                                        <choice>
+                                            <sic resp="#LvB">
+                                                <note xml:id="xb93b8a75-94c0-4a80-9084-da59a3a4f00c" pname="e" oct="3" dur="8">
+                                                    <accid xml:id="xa70b2d3f-4339-4d7d-8cca-4927212f3bd0" accid.ges="f"/>
+                                                </note> 
+                                            </sic>
+                                            <corr resp="#BW">
+                                                <note pname="f" oct="3" dur="8"/>
+                                            </corr>
+                                        </choice>
                                     </beam>
                                     <beam xml:id="xa49cd360-e13e-45ee-bb53-b6395202b07b">
                                         <note xml:id="x0c6e252a-eddd-44ee-9a13-36ca9315cd28" pname="f" oct="4" dur="8"/>
@@ -263,7 +271,7 @@
                             </staff>
                             <staff xml:id="x3255b7be-0d84-4ab3-82ca-9a65df84dad6" n="3"/>
                         </measure>
-                        <measure xml:id="xbc8a648e-f32d-4c72-a28d-e0b196066974" n="2">
+                       <measure xml:id="x3f5d1776-c187-4618-ab37-6aaaf168ffaf" n="2">
                             <staff xml:id="x44b74248-0389-4421-b04c-6d60d179e75b" n="1"/>
                             <staff xml:id="xd709892f-68be-4ffa-a6a7-7fd27d037a18" n="2">
                                 <layer xml:id="x1210eaeb-6654-4c83-8b40-78e3771a48b2">
@@ -291,7 +299,13 @@
                                 </layer>
                             </staff>
                             <staff xml:id="x2c9c95fa-9717-49b2-9231-876d319e5659" n="3"/>
-                        </measure>
+                       <dynam staff="1 2" place="between" tstamp="1" tstamp2="3m+5" extender="true">(cres)</dynam>
+                            <metaMark staff="1" place="right" function="clarification">= =</metaMark>
+                            <annot type="Revisionsdokument1_monitum3" staff="1 2" place="between" tstamp="1" tstamp2="3m+5" xml:id="g_2eac4417-57df-4ea2-88a6-f0acef63650b">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_61d56c58-a7d7-4a4a-878a-2e2564ad0c6f" synch="op73.xml#state2"/>
+                                <relation rel="hasSuccessor" target="Op.73_A-Wn_SH.Beethoven.323.xml"/>
+                            </annot>
+                       </measure>
                        <measure xml:id="x709da573-3a08-498a-98f7-56374e21b9b8" n="3">
                            <staff xml:id="x5e8f0847-99a7-4e0e-bd1c-101a043bb944" n="1"/>
                            <staff xml:id="x3c6d6ad6-96f9-43dc-ae73-bde6e230d7a6" n="2">
@@ -437,8 +451,12 @@
                                 </layer>
                             </staff>
                             <staff xml:id="x36502dd2-ba73-4669-89ba-b1b53e83840b" n="3"/>
-                            <trill xml:id="x298f93c5-dcb0-4ebe-a075-115609b2d3e5" startid="#x95885868-0188-4103-8228-c08021483929"/>
+                                <trill xml:id="x298f93c5-dcb0-4ebe-a075-115609b2d3e5" startid="#x95885868-0188-4103-8228-c08021483929"/>
                             <tie xml:id="x6dc9ba5a-0435-4ab1-a365-4dc4f9147819" startid="#x95885868-0188-4103-8228-c08021483929" endid="#xcb4905b0-cce8-4506-ac56-01a39c9dc5e0"/>
+                            <metaMark staff="1" place="right" function="clarification">weg den <lb/>tr</metaMark>
+                            <annot type="Revisionsdokument1_monitum4" staff="1" tstamp="1" tstamp2="3" xml:id="g_b6d7b165-4509-4eeb-a514-3a8603a3555e">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_0c43fca2-3015-406e-87f5-62833e888785" synch="op73.xml#state2"/>
+                            </annot>
                         </measure>
                     </section>
                     
@@ -541,6 +559,12 @@
                                     <rest xml:id="x5008fc55-15d0-4010-b9f7-406689271cdb" dur="16"/>
                                 </layer>
                             </staff>
+                            <metaMark staff="2" tstamp="4" function="question">x<!--Attraktor--></metaMark>
+                            <metaMark staff="2" place="right" function="clarification">+ c c statt E E</metaMark>
+                            <annot xml:id="g_0f1d1619-5152-4062-ad70-6bf8cdcb1197" staff="2" tstamp="4" tstamp2="5" type="Revisionsdokument1_monitum5">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_cb0fa992-7383-4079-97e0-a9e98aa547bc" synch="op73.xml#state2"/>
+                                <relation rel="hasSuccessor" target="Op.73_A-Wn_SH.Beethoven.323.xml"/>
+                            </annot>
                         </measure>
                     </section>
                     
@@ -603,6 +627,11 @@
                             <staff xml:id="x104cea9d-0846-4b76-a929-05a66c738ec9" n="3"/>
                             <octave xml:id="xb4196eb7-179b-4e80-8d5d-c7ea9cac582f" startid="#xe416ced6-6f63-49d2-a57b-789e614711a7" endid="#x45cfb829-0e45-45b9-aff5-2f50af42522f" dis="8" dis.place="above"/>
                             <dir xml:id="xbee49f89-9d9f-40c3-8a83-1468cf1715d7" startid="#xfcc07773-79c9-4105-9cc2-3e93b58f11f9" place="above">loco</dir><!-- ggf. anders codieren -->
+                            <metaMark staff="2" place="right" function="clarification">8va loco</metaMark>
+                            <annot type="Revisionsdokument1_monitum6" tstamp="2.333" tstamp2="0m+4" staff="2">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_d7c1b561-aaad-4345-a49a-f4215dc16e80" synch="op73.xml#state2"/>
+                                <relation rel="hasSuccessor" target="Op.73_A-Wn_SH.Beethoven.323.xml"/>
+                            </annot>
                         </measure>
                     </section>
                     
@@ -660,7 +689,11 @@
                                 </layer>
                             </staff>
                             <staff xml:id="xbdd3fff5-ad0d-4876-87c2-c490465cbd72" n="3"/>
-                            <!--  <dir xml:id="x4026ba80-b84d-4ee5-89c1-cbbf5dafb9fd" startid="#xd3715ad0-e70f-4498-a0d0-9cc234093664" place="below">durchgekreuzter Kreis</dir>-->
+                            <dir xml:id="g_ad1f3d9a-d71f-4178-afe9-21ad86976ac5" startid="#xd3715ad0-e70f-4498-a0d0-9cc234093664" place="below">+ [durchgekreuzter Kreis] &#xe655;</dir>
+                            <annot type="Revisionsdokument1_monitum7" staff="2" plist="#xd3715ad0-e70f-4498-a0d0-9cc234093664">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_f87791bf-f4eb-46e5-b102-bf232da620d5" synch="op73.xml#state2"/>
+                                <relation rel="hasSuccessor" target="Op.73_A-Wn_SH.Beethoven.323.xml"/>
+                            </annot>
                         </measure>
                     </section>
                     
@@ -687,6 +720,12 @@
                                 </layer>
                             </staff>
                             <staff xml:id="xb01f1f67-cf4b-4ad5-ad4d-72988aac1bc3" n="3"/>
+                            <dynam staff="2" place="above" tstamp="3" tstamp2="6m+3" extender="true">(cres)</dynam>
+                            <metaMark staff="2" place="right" function="clarification">+ =<lb/>=</metaMark>
+                            <annot type="Revisionsdokument1_monitum8" xml:id="g_dd516ed7-86de-4065-bdf7-62da558aba94" staff="2" tstamp="1" tstamp2="6m+3">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_c930dfb1-4b92-44e9-8402-cd89cdbfa361" synch="op73.xml#state2"/> 
+                                <relation rel="hasSuccessor" target="Op.73_A-Wn_SH.Beethoven.323.xml"/>
+                            </annot>
                         </measure>
                         <measure xml:id="x2fa14feb-0eca-489d-8fe2-a004f23c2b6a" n="2">
                             <staff xml:id="xc6e30f57-ca84-4c3a-ad2d-716c9532c1b7" n="1"/>
