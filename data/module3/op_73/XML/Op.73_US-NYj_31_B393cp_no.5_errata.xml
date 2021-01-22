@@ -18,6 +18,10 @@
                 </funder>
             </titleStmt>
             <pubStmt/>
+            <seriesStmt>
+                <title xml:lang="de" level="s">Beethoven als Bearbeiter eigener Werke</title>
+                <identifier auth.uri="https://beethovens-werkstatt.de/modul-3/">corr</identifier>
+            </seriesStmt>
             <sourceDesc>
                 <source>
                     <bibl>
@@ -38,7 +42,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change n="4">
+            <change n="1">
                 <respStmt>
                     <persName>Salome Obert</persName>
                     <persName>Agnes Seipelt</persName>
@@ -46,9 +50,9 @@
                 <changeDesc>
                     <p>initial transcription of the whole "Korrekturliste"</p>
                 </changeDesc>
-                <date startdate="2020-01" enddate="2020-02"></date>
+                <date startdate="2020-10" enddate="2020-11"></date>
             </change>
-            <change n="4">
+            <change n="2">
                 <respStmt>
                     <persName auth.uri="https://github.com/" codedval="ran-mo">Ran Mo</persName>
                     <persName auth.uri="https://github.com/" codedval="krHERO">Kristin Herold</persName>
@@ -57,7 +61,7 @@
                     <p>enhance all monita, especially following elements: metamark, sic, subst, del, add </p>
                     <p>several corrections and modifications</p>
                 </changeDesc>
-                <date startdate="2020-01" enddate="2020-02"></date>
+                <date startdate="2021-01" enddate="2021-02"></date>
             </change>
         </revisionDesc>
     </meiHead>
@@ -1447,8 +1451,7 @@
                     <section xml:id="x25383bb0-838b-473b-b704-2c762074c039" n="18" label="Monitum 18">
                         <!-- <scoreDef xml:id="x340971ba-206b-4ab6-8e1b-b996fd281ca2" label="III. Satz" key.sig="3f" meter.count="6" meter.unit="8"/> -->
                         <measure xml:id="x3a041ef7-33ec-46d9-a066-b29164f13e83" n="1">
-                            <staff xml:id="x7875c4b4-0bf8-4ec9-8f70-f8eb5ee4217f" n="1"/>
-                            <staff xml:id="x21dd6c24-c21e-43d6-90d5-ffc20a7f6af4" n="2">
+                            <staff xml:id="x21dd6c24-c21e-43d6-90d5-ffc20a7f6af4" n="1">
                                 <layer xml:id="x39e368ee-7728-4a2e-9b32-c957128ee2c3">
                                     <space xml:id="x38b26d2f-29f6-4a5b-9e96-bd07a8958832" dur="4"/>
                                     <space xml:id="xdbb0a9f1-8cc3-45f6-8acf-fdeddc9200c3" dur="8"/>
@@ -1464,11 +1467,12 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff xml:id="xf8b239e6-ca72-4ead-8b3e-f1232f1bb79c" n="3"/>
+                            <annot xml:id="xa5b1872b-3699-40c3-bdcb-0b532032af1f" staff="1" tstamp="1" tstamp2="1m+7" type="monitum18">
+                                <relation rel="isEmbodimentOf" target="op73.xml#x33084807-2fba-4292-a95a-f4dda2e3793b"/>
+                            </annot>
                         </measure>
                         <measure xml:id="x3cb7eab2-00b3-4d8d-b4a8-c4554e35f9d5" n="2">
-                            <staff xml:id="x86b072ff-1416-456c-99df-8d6eb2300b23" n="1"/>
-                            <staff xml:id="x9be7f07c-2fa2-4be7-8035-c09c2e3401b8" n="2">
+                            <staff xml:id="x9be7f07c-2fa2-4be7-8035-c09c2e3401b8" n="1">
                                 <layer xml:id="x915e80ba-046c-49ed-80e0-2463f1037b26">
                                     <beam xml:id="x796253d3-7bbf-44f8-8d53-9eccca5ca08e">
                                         <note xml:id="x03da44cb-1898-4ac7-82fa-ddbab6b5948f" pname="f" oct="5" dur="16"/>
@@ -1498,8 +1502,15 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff xml:id="x1a015731-298b-42b2-863e-4c74fa39d3b6" n="3"/>
-                            <octave xml:id="x9fadec50-79c1-4f28-b215-0216858c243b" startid="#x03da44cb-1898-4ac7-82fa-ddbab6b5948f" endid="#x5ed06bbf-e11a-41aa-b2ec-5a4b92849e8e" dis="8" dis.place="above"/>
+                            <sic><dynam staff="1 2" place="between" tstamp="1">cres</dynam></sic>
+                            <sic><dir staff="1" place="above" tstamp="4">loco</dir></sic>
+                            <sic><octave xml:id="x9fadec50-79c1-4f28-b215-0216858c243b" startid="#x03da44cb-1898-4ac7-82fa-ddbab6b5948f" endid="#x5ed06bbf-e11a-41aa-b2ec-5a4b92849e8e" dis="8" dis.place="above"/></sic>
+                            <metamark staff="1" place="below" tstamp="6" function="question">x</metamark><!-- Attraktor -->
+                            <!-- todo: add SVG-shapes in <metamark><fig/> -->
+                            <metamark staff="1" place="rightmar" function=" substitution" target="#x73ce208c-fba4-45a3-8f00-160f8b0ebaf1 #x2bb1602c-cdf4-493f-8927-fd500fc733aa">FF <fig facs="#SVG_shapes" label="Notenbeispielvon zwei dreigestrichenen Noten"/><lb/>statt d</metamark>
+                            <annot xml:id="x9621baa6-3ea4-4ee0-8656-db51014063ef" staff="1" tstamp="1" tstamp2="0m+7" type="monitum18">
+                                <relation rel="isEmbodimentOf" target="op73.xml#x33084807-2fba-4292-a95a-f4dda2e3793b" corresp="#xa5b1872b-3699-40c3-bdcb-0b532032af1f"/>
+                            </annot>
                         </measure>
                     </section>
                     
