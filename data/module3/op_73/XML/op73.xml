@@ -10916,7 +10916,7 @@
                                 </layer>
                             </staff>
                             <staff n="20" xml:id="x07b25baa-321f-4427-9564-8984d7185ce2"/>
-                            <add resp="#LvB" synch="#state2">
+                            <add resp="#LvB" state="#state2">
                             <dir xml:id="x4026ba80-b84d-4ee5-89c1-cbbf5dafb9fd" startid="#xd3715ad0-e70f-4498-a0d0-9cc234093664" place="below">durchgekreuzter Kreis<!-- &#xe655; --></dir>
                             <!-- wie Pedalauflöser einzeln addressieren? Außerdem hat es das Zeichen einer Coda.. smufl coda zeichen dafür benutzen obwohl semantisch falsch? -->
                             <annot xml:id="g_f87791bf-f4eb-46e5-b102-bf232da620d5" staff="19" plist="#x4026ba80-b84d-4ee5-89c1-cbbf5dafb9fd" type="Revisionsdokument1_monitum7"/>
@@ -14271,6 +14271,7 @@
                             <staff n="18" xml:id="x5dd28528-d555-4954-bc69-c10cb756d0ff"/>
                             <staff n="19" xml:id="x13ebf1ac-7602-4b7c-a4a4-39c0bc4ce7f9"/>
                             <staff n="20" xml:id="x37fe8eb0-326d-42d9-84d6-7b34cef4c39b"/>
+                            <annot xml:id="g_cd0c9a3c-9408-4252-9d66-097e8cd1abae" type="Revisionsdokument1_monitum9" staff="1" plist="#x9bc513dc-bffb-41c6-b9ca-a2a71dbb493f"></annot>
                         </measure>
                         <measure n="15" label="15" xml:id="x0e6f8f5e-bb1d-4140-b379-8143015e977a">
                             <staff n="1" xml:id="x0f53ccee-e68e-41b1-83ce-a9c94a0c94a4"/>
@@ -14709,6 +14710,7 @@
                             <!-- "etc." mit codieren? -->
                             <staff n="20" xml:id="xa77ba384-dc95-40a8-9610-6ddc20bfccca"/>
                             <slur xml:id="x85fb7b7d-1bf9-47b9-ab44-9bc49a07a3de" startid="#x65da762d-e456-4d93-9f35-098d918e010a" endid="#x32170a38-f80a-44e4-a8e6-ba0292ab0a9a"/>
+                            <annot xml:id="g_7d9a6ddf-85a9-47f9-b905-47bb2b2625c6" type="Revisionsdokument1_monitum10" staff="19" plist="#xca311713-99e5-447f-8734-a8c279dd98ec"/>
                         </measure>
                         <measure n="33" label="33" xml:id="xd9d77ec2-6274-4ead-8f9b-bdb59662c06b">
                             <staff n="1" xml:id="xc62b46c6-ad1b-4ca9-891b-a8cdf4638110"/>
@@ -14751,10 +14753,10 @@
                             <staff n="5" xml:id="x0098705d-08d5-4250-96d5-d90a4428aa76">
                                 <layer>
                                     <space dur="2"/>
-                                    <note pname="g" oct="3" dur="4">
+                                    <note xml:id="x127ac92f-1af3-4f97-b7da-3e0729a9b7a8" pname="g" oct="3" dur="4">
                                         <accid accid="n"/>
                                     </note>
-                                    <note pname="g" oct="3" dur="4">
+                                    <note xml:id="xfe196712-17c5-4ada-a2ad-6bb84158a7df" pname="g" oct="3" dur="4">
                                         <accid accid="s"/>
                                     </note>
                                 </layer>
@@ -14773,9 +14775,27 @@
                             <staff n="17" xml:id="xa669da94-a4e9-4e2d-af29-382457b68e4c"/>
                             <staff n="18" xml:id="x709f2430-8dfc-4af5-843f-02cd92a04815"/>
                             <staff n="19" xml:id="x07b25b9a-e054-4d12-866f-db9b1c78974b"/>
-                            <staff n="20" xml:id="x71d6b767-a9a3-44f9-9f62-5c21f3c0b268"/>
-                                <dynam xml:id="x319259f2-4e2d-42a4-96d0-6f02241d59c6" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="below">cres:</dynam>
-                                <slur xml:id="xf3d45ced-46fb-4ecc-b3e9-8abc83d2520f" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" endid="#xe126e66d-8a32-4231-b914-c24ab51df521"/>
+                            <staff n="20" xml:id="x71d6b767-a9a3-44f9-9f62-5c21f3c0b268">
+                                <layer>
+                                    <space dur="2"/>
+                                    <note xml:id="xd9c1a45b-73dc-4108-b81d-67541fe9f5f5" pname="g" oct="3" dur="4">
+                                        <accid accid="n"/>
+                                    </note>
+                                    <note xml:id="x84e5b0c8-d90e-4d98-ace8-4cda8f6b0e91" pname="g" oct="3" dur="4">
+                                        <accid accid="s"/>
+                                    </note>
+                                </layer>
+                            </staff>
+                            <add resp="#LvB" state="#state2">
+                                <dynam xml:id="x319259f2-4e2d-42a4-96d0-6f02241d59c6" startid="#xd9c1a45b-73dc-4108-b81d-67541fe9f5f5" place="below">cres:</dynam>
+                            </add>
+                            <add resp="#LvB" state="#state2">
+                                    <slur xml:id="xf3d45ced-46fb-4ecc-b3e9-8abc83d2520f" startid="#xd9c1a45b-73dc-4108-b81d-67541fe9f5f5" endid="#x84e5b0c8-d90e-4d98-ace8-4cda8f6b0e91"/>
+                                </add>
+                            <dynam xml:id="xfd3105b6-f7fd-43c1-b1c2-976dfe2e9574" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="below">cres:</dynam>
+                            <dynam xml:id="x881dbd58-e2be-408a-b240-7340124ae7b5" startid="#x127ac92f-1af3-4f97-b7da-3e0729a9b7a8" place="below">cres:</dynam>
+                            <slur xml:id="x5144483f-754e-4402-8849-b2ebb0c7cfb1" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" endid="#xe126e66d-8a32-4231-b914-c24ab51df521"/>
+                            <slur xml:id="xe757ff15-5842-43ee-99f8-61d2852b0d83" startid="#x127ac92f-1af3-4f97-b7da-3e0729a9b7a8" endid="#xfe196712-17c5-4ada-a2ad-6bb84158a7df"/>
                             <harm xml:id="x993fdbf6-cc8b-4d67-86a0-16dd50d06e08" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="above">
                                 <fb xml:id="xb94f8c6c-3eb2-4280-98a0-1bc711295aeb">
                                     <f xml:id="x7232f4d4-93d9-4513-8e33-f8bb9520e954">5</f>
@@ -14787,6 +14807,7 @@
                                     <f xml:id="x3339cdd1-9555-438c-8c1d-10ec6b984a0b">5</f>
                                 </fb>
                             </harm>
+                            <annot staff="20" xml:id="g_cd2f564e-d9e5-453f-9443-73c607071329" type="Revisionsdokument1_monitum11" tstamp="3" tstamp2="0m+5"/>
                         </measure>
                         <measure n="35" label="35" xml:id="x19abba34-8c29-435e-aba4-bd6a04dee41c">
                             <staff n="1" xml:id="x0e93588f-62cf-4d28-b940-b3d7c0f33f9e"/>
@@ -14938,10 +14959,16 @@
                             <trill xml:id="x98cbc572-17d5-4f0e-a789-bcd341a2ad71" startid="#xc7cb28b6-2d70-4f70-b6e9-6835512e3a32"/>
                             <trill xml:id="xa7ad77aa-2777-4ccb-a2c8-83e74d277c66" startid="#x6d1c898a-728d-43ee-9225-f8f170730316"/>
                             <trill xml:id="x4d676367-4154-4bf0-9271-d6852a57c7cc" startid="#xf3cd9164-7bfe-47cb-a83e-336eb6b3cca9"/>
+                           <subst>
+                               <del resp="#LvB" state="#state2">
+                                   <dynam staff="19" place="below" tstamp="1"><supplied resp="#BW">cres:</supplied></dynam>
+                               </del>
                             <add resp="#LvB" state="#state2">
-                                <dynam staff="19" place="below" tstamp="1" tstamp2="4m+1"><supplied resp="#BW">cres:</supplied></dynam>
+                                <dynam staff="19" place="below" tstamp="1" tstamp2="4m+1" extender="true"><supplied resp="#BW">cres:</supplied></dynam>
                             </add>
+                           </subst>
                             <!-- das konkrete wort "cres" ist nicht im Revisionsdokument, nur die Verlängerungsstriche -->
+                            <annot staff="19" tstamp="1" tstamp2="4m+1" xml:id="g_038f92a5-c034-4c07-a860-8813ffa3afa7" type="Revisionsdokument1_monitum12"/>
                         </measure>
                         <measure n="41" label="41" xml:id="xd5c15867-0842-4c1b-8f3f-6671ef74a67d" type="monitum12">
                             <staff n="1" xml:id="xe906209f-cfc7-446f-b962-f563d1e41bd8"/>
@@ -15927,13 +15954,11 @@
                                             </supplied>
                                             <!-- ? -->
                                         </note>
+                                        <note xml:id="x91ab54c3-888b-468e-8b5c-e6100091e5fd" pname="b" oct="5" dur="8">
+                                            <accid xml:id="x72e8b30d-2741-45bf-8579-4d5f51ca61ee" accid.ges="f"/>
+                                        </note>
                                     </beam>
-                                    <note xml:id="x91ab54c3-888b-468e-8b5c-e6100091e5fd" pname="b" oct="5" dur="4">
-                                        <accid xml:id="x72e8b30d-2741-45bf-8579-4d5f51ca61ee" accid.ges="f"/>
-                                    </note>
-                                    <space dur="8"/>
-                                    <space dur="8"/>
-                                    <space dur="16"/>
+                                    <space dur="4"/>
                                   </layer>
                                 <layer n="2">
                                     <mSpace/><!-- ? -->
@@ -15947,6 +15972,7 @@
                             <add resp="#LvB" state="#state2">
                                 <dir xml:id="x673c6502-9d0b-41c7-8743-385d07ee1fc4" startid="#xd0dc1b7a-3a5d-48c8-a07b-840c93700210">etc</dir>
                             </add>
+                            <annot type="Revisionsdokument1_monitum13" xml:id="g_fe5ba449-9bfe-41d7-8c4f-2d7ca54f662a" staff="19" plist="#x47ea95f7-ae30-40b6-8659-4b495950e836 #x3750480d-51e1-45a8-9e4e-c3aecc273cbd"/>
                         </measure>
                         <measure n="82" label="82" xml:id="x15d26f50-1b8f-4ddf-93e5-79cf1079937b" type="monitum13">
                             <staff n="1" xml:id="xb4cef587-131f-43a1-b29b-ac13c348a185"/>
@@ -17181,7 +17207,7 @@
                             <staff n="20" xml:id="x30ceb387-da1a-4bf1-8ca6-f0e989cf6a99">
                                 <layer xml:id="x5bfd2ea9-a01f-42c9-b09d-0146bb4ea6bb" n="1">
                                     <add resp="#LvB" state="#state2">
-                                        <clef shape="F" line="4"/>
+                                        <clef xml:id="xafac34d3-f87b-4195-9419-4dd6890924c6" shape="F" line="4"/>
                                     </add>
                                     <beam xml:id="x3a830c5d-802c-48d9-af67-42a88f90ef20">
                                         <note xml:id="x076db9cc-5fb7-49f2-8a33-b23acfbf8575" pname="g" oct="3" dur="8"/>
@@ -17206,7 +17232,8 @@
                                     <mSpace/>
                                 </layer>
                             </staff>
-                            <turn xml:id="x9252aedb-7cf4-46ae-b2f6-b2d770e63caa" form="upper" staff="2" tstamp="1.5"/> <!-- Salome: hier ggf. klären, wie der Doppelschlag codiert werden soll. Ids scheinen mir nicht so passend zu sein, da er zwischen zwei Noten steht -->
+                            <turn xml:id="x9252aedb-7cf4-46ae-b2f6-b2d770e63caa" form="upper" staff="19" tstamp="1.5"/> <!-- Salome: hier ggf. klären, wie der Doppelschlag codiert werden soll. Ids scheinen mir nicht so passend zu sein, da er zwischen zwei Noten steht -->
+                            <annot type="Revisionsdokument1_monitum14" xml:id="g_84ab3cae-709e-4935-ac4d-d16e66f83188" plist="#xafac34d3-f87b-4195-9419-4dd6890924c6"/>
                         </measure>
                         <measure n="50" label="50" xml:id="xf1f08f69-ed4c-4d6f-a668-f2d949a49fb1">
                             <staff n="1" xml:id="x5bd70664-a7b3-49d1-97f0-1f8893aaccd0"/>
@@ -17449,6 +17476,7 @@
                                 <arpeg xml:id="x281b5de0-9c9f-4040-bfa3-7a9d4e2079e9" startid="#x5ae0bea2-cac4-46d1-90e7-613598bcde11"/>
                                 <arpeg xml:id="x4762a436-0b72-45c9-a141-a00b96928caa" startid="#xc04ffd5e-1680-4276-85d1-8263f3bd9d9e"/>
                             </add>
+                            <annot xml:id="g_59eecfaf-e134-4772-a9f0-7e833c4e734d" type="Revisionsdokument1_monitum15" plist="#x281b5de0-9c9f-4040-bfa3-7a9d4e2079e9 #x4762a436-0b72-45c9-a141-a00b96928caa #x54eee173-216c-4080-8f73-29fd39a6c2ee #x9c9a3b97-39fb-48d6-ba37-f032f2234183" staff="19 20"/>
                         </measure>
                         <measure n="59" label="59" xml:id="x9f28d918-d806-49d2-a638-9f41c61c5884">
                             <staff n="1" xml:id="x715a3285-b967-48df-beeb-cbfe3cbb84f1"/>
@@ -17491,7 +17519,24 @@
                             <staff n="16" xml:id="x1c649f3d-8d8c-470d-9def-44417a00ed11"/>
                             <staff n="17" xml:id="xb7e54a4d-6d3a-4c2c-b9f1-f9b670d787cc"/>
                             <staff n="18" xml:id="xbc681977-79dc-482f-a1ed-fd09f9992c41"/>
-                            <staff n="19" xml:id="x5cdcefaa-42f1-4c0c-bd9f-1121f312a89e"/>
+                            <staff n="19" xml:id="x5cdcefaa-42f1-4c0c-bd9f-1121f312a89e">
+                                <layer>
+                                <chord xml:id="xbc3c84e1-4046-4500-980b-a027794058c9" dur="4">
+                                    <note pname="f" oct="5"/>
+                                    <note pname="a" oct="5">
+                                        <accid accid="f"/>
+                                    </note>
+                                    <note pname="b" oct="5">
+                                        <accid accid="n"/>
+                                    </note>
+                                    <note pname="d" oct="6"/>
+                                    <note  pname="f" oct="6"/>
+                                </chord>
+                                <rest dur="8"/>
+                                <rest dur="4"/>
+                                <rest dur="8"/>
+                                </layer>
+                            </staff>
                             <staff n="20" xml:id="x08c5fe1b-4eaa-4e71-b85c-e469699e8e42">
                                 <layer>
                                     <clef shape="F" line="4"/>
@@ -17512,7 +17557,7 @@
                                 </layer>
                             </staff>
                             <add resp="#LvB" state="#state2">
-                                <arpeg xml:id="x54eee173-216c-4080-8f73-29fd39a6c2ee" startid="#xdb9ce620-2402-4e66-ae67-72edac79f104"/>
+                                <arpeg xml:id="x54eee173-216c-4080-8f73-29fd39a6c2ee" startid="#xbc3c84e1-4046-4500-980b-a027794058c9"/>
                             <arpeg xml:id="x9c9a3b97-39fb-48d6-ba37-f032f2234183" startid="#xdb9ce620-2402-4e66-ae67-72edac79f104"/>
                             </add>
                         </measure>
