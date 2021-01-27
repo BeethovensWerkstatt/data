@@ -161,7 +161,7 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <dynam xml:id="g_ab159649-c89c-421a-a86c-976d88f783df" tstamp="1" tstamp2="1m+5" extender="true">cres:</dynam>
+                            <add><dynam xml:id="g_ab159649-c89c-421a-a86c-976d88f783df" tstamp="1" tstamp2="1m+5" extender="true">cres:</dynam></add>
                             <metaMark staff="1" place="right" function="clarification">= =</metaMark>
                             <annot type="Revisionsdokument1_monitum2" staff="1 2" tstamp="1" tstamp2="1m+5" xml:id="g_b2fe65ff-b071-4d56-8992-d053592d1efb">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_576d23b9-3b8b-4c2f-9efa-742ca71b2956"/>
@@ -303,7 +303,10 @@
                                 </layer>
                             </staff>
                             <staff xml:id="x2c9c95fa-9717-49b2-9231-876d319e5659" n="3"/>
-                       <dynam staff="1 2" place="between" tstamp="1" tstamp2="3m+5" extender="true">(cres)</dynam>
+                       <subst>
+                           <del><dynam staff="1 2" place="between" tstamp="1" extender="true">(cres)</dynam></del>
+                           <add><dynam staff="1 2" place="between" tstamp="1" tstamp2="3m+5" extender="true">(cres)</dynam></add>
+                       </subst>
                             <metaMark staff="1" place="right" function="clarification">= =</metaMark>
                             <annot type="Revisionsdokument1_monitum3" staff="1 2" place="between" tstamp="1" tstamp2="3m+5" xml:id="g_2eac4417-57df-4ea2-88a6-f0acef63650b">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_61d56c58-a7d7-4a4a-878a-2e2564ad0c6f" synch="op73.xml#state2"/>
@@ -455,7 +458,7 @@
                                 </layer>
                             </staff>
                             <staff xml:id="x36502dd2-ba73-4669-89ba-b1b53e83840b" n="3"/>
-                                <trill xml:id="x298f93c5-dcb0-4ebe-a075-115609b2d3e5" startid="#x95885868-0188-4103-8228-c08021483929"/>
+                                <del><trill xml:id="x298f93c5-dcb0-4ebe-a075-115609b2d3e5" startid="#x95885868-0188-4103-8228-c08021483929"/></del>
                             <tie xml:id="x6dc9ba5a-0435-4ab1-a365-4dc4f9147819" startid="#x95885868-0188-4103-8228-c08021483929" endid="#xcb4905b0-cce8-4506-ac56-01a39c9dc5e0"/>
                             <metaMark staff="1" place="right" function="clarification">weg den <lb/>tr</metaMark>
                             <annot type="Revisionsdokument1_monitum4" staff="1" tstamp="1" tstamp2="0m+5" xml:id="g_b6d7b165-4509-4eeb-a514-3a8603a3555e">
@@ -546,10 +549,18 @@
                                     <space xml:id="x082b26d2-c0ab-492b-8513-baba7dd742c1" dur="4"/>
                                     <space xml:id="x8f2e589f-ec22-47ca-8502-900a9562e8e1" dur="4"/>
                                     <beam xml:id="x0033acb7-4a15-47f2-89f5-46fc64efae2f">
-                                        <chord xml:id="xb882f397-e8ce-4d23-93a3-cf4840bb65d4" dur="16">
-                                            <note xml:id="xc890e956-2b7e-4a54-b135-4b28352bc515" pname="c" oct="3"/>
-                                            <note xml:id="xd6207a96-d7f4-44c0-b304-72b20bc9fd2a" pname="c" oct="2"/>
-                                        </chord>
+                                        <subst>
+                                            <del>
+                                                <chord dur="16">
+                                                <note pname="e" oct="3"/>
+                                                <note pname="e" oct="2"/>
+                                            </chord></del>
+                                            <add><chord xml:id="xb882f397-e8ce-4d23-93a3-cf4840bb65d4" dur="16">
+                                                <note xml:id="xc890e956-2b7e-4a54-b135-4b28352bc515" pname="c" oct="3"/>
+                                                <note xml:id="xd6207a96-d7f4-44c0-b304-72b20bc9fd2a" pname="c" oct="2"/>
+                                            </chord></add>
+                                        </subst>
+                                        
                                         <rest xml:id="x4e6e2358-c337-43ca-87b7-aa562214c78f" dur="16"/>
                                         <chord xml:id="x097ef378-0488-4128-b057-9aca9f1bb0da" dur="16">
                                             <note xml:id="xd0df1e60-430b-421e-a30c-8daf03cbfe6e" pname="a" oct="2">
@@ -629,8 +640,10 @@
                                 </layer>
                             </staff>
                             <staff xml:id="x104cea9d-0846-4b76-a929-05a66c738ec9" n="3"/>
-                            <octave xml:id="xb4196eb7-179b-4e80-8d5d-c7ea9cac582f" startid="#xe416ced6-6f63-49d2-a57b-789e614711a7" endid="#x45cfb829-0e45-45b9-aff5-2f50af42522f" dis="8" dis.place="above"/>
-                            <dir xml:id="xbee49f89-9d9f-40c3-8a83-1468cf1715d7" startid="#xfcc07773-79c9-4105-9cc2-3e93b58f11f9" place="above">loco</dir><!-- ggf. anders codieren -->
+                            <add>
+                                <octave xml:id="xb4196eb7-179b-4e80-8d5d-c7ea9cac582f" startid="#xe416ced6-6f63-49d2-a57b-789e614711a7" endid="#x45cfb829-0e45-45b9-aff5-2f50af42522f" dis="8" dis.place="above"/>
+                                <dir xml:id="xbee49f89-9d9f-40c3-8a83-1468cf1715d7" startid="#xfcc07773-79c9-4105-9cc2-3e93b58f11f9" place="above">loco</dir><!-- ggf. anders codieren -->
+                            </add>
                             <metaMark staff="2" place="right" function="clarification">8va loco</metaMark>
                             <annot type="Revisionsdokument1_monitum6" tstamp="1" tstamp2="0m+6" staff="2">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_d7c1b561-aaad-4345-a49a-f4215dc16e80" synch="op73.xml#state2"/>
@@ -693,7 +706,7 @@
                                 </layer>
                             </staff>
                             <staff xml:id="xbdd3fff5-ad0d-4876-87c2-c490465cbd72" n="3"/>
-                            <dir xml:id="g_ad1f3d9a-d71f-4178-afe9-21ad86976ac5" startid="#xd3715ad0-e70f-4498-a0d0-9cc234093664" place="below">+ [durchgekreuzter Kreis] &#xe655;</dir>
+                            <add><dir xml:id="g_ad1f3d9a-d71f-4178-afe9-21ad86976ac5" startid="#xd3715ad0-e70f-4498-a0d0-9cc234093664" place="below">+ [durchgekreuzter Kreis] &#xe655;</dir></add>
                             <annot type="Revisionsdokument1_monitum7" staff="2" tstamp="1" tstamp2="0m+5" plist="#xd3715ad0-e70f-4498-a0d0-9cc234093664">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_f87791bf-f4eb-46e5-b102-bf232da620d5" synch="op73.xml#state2"/>
                                 <relation rel="hasSuccessor" target="Op.73_A-Wn_SH.Beethoven.323.xml"/>
@@ -724,7 +737,11 @@
                                 </layer>
                             </staff>
                             <staff xml:id="xb01f1f67-cf4b-4ad5-ad4d-72988aac1bc3" n="3"/>
-                            <dynam staff="2" place="above" tstamp="3" tstamp2="6m+3" extender="true">(cres)</dynam>
+                            <subst>
+                                <del><dynam staff="2" place="above" tstamp="1">(cres)</dynam></del>
+                                <add><dynam staff="2" place="above" tstamp="3" tstamp2="6m+3" extender="true">(cres)</dynam></add>
+                            </subst>
+                            
                             <metaMark staff="2" place="right" function="clarification">+ =<lb/>=</metaMark>
                             <annot type="Revisionsdokument1_monitum8" xml:id="g_dd516ed7-86de-4065-bdf7-62da558aba94" staff="2" tstamp="1" tstamp2="6m+3">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_c930dfb1-4b92-44e9-8402-cd89cdbfa361" synch="op73.xml#state2"/> 
@@ -962,9 +979,17 @@
                             <staff xml:id="x4a1b7ebc-8552-41b0-82a7-ac418de03001" n="1"/>
                             <staff xml:id="x2207df8f-cd0b-406a-98d8-058a5ec1c57a" n="2">
                                 <layer xml:id="xaadd5764-1bc4-4786-b75f-2771f77e836e">
-                                    <note xml:id="x9bc513dc-bffb-41c6-b9ca-a2a71dbb493f" pname="d" oct="5" dur="4" cue="true">
-                                        <accid xml:id="xf920d902-79b1-4dd2-a848-60edbe59b41f" accid.ges="s"/>
-                                    </note>
+                                    <subst>
+                                        <del>
+                                            <note pname="b" oct="4" dur="4" cue="true"/>
+                                        </del>
+                                        <add>
+                                            <note xml:id="x9bc513dc-bffb-41c6-b9ca-a2a71dbb493f" pname="d" oct="5" dur="4" cue="true">
+                                            <accid xml:id="xf920d902-79b1-4dd2-a848-60edbe59b41f" accid.ges="s"/>
+                                        </note>
+                                        </add>
+                                    </subst>
+                                    
                                     <rest xml:id="x8ab497e2-6749-47cb-84ba-63b178f8d48a" dur="4" cue="true"/>
                                     <note xml:id="xc6699e0e-3d10-4034-83c9-ddd47689cb4a" pname="e" oct="5" dur="4" cue="true"/>
                                     <note xml:id="xab6f5206-3a24-440c-8f95-21fc544ae2ce" pname="c" oct="5" dur="4" cue="true">
@@ -1013,7 +1038,7 @@
                                             </note>
                                             <note xml:id="xca311713-99e5-447f-8734-a8c279dd98ec" pname="e" oct="5" dur="8">
                                                 <accid xml:id="x3746f801-32ba-4ccb-83cd-17094666bcc4" accid.ges="s"/>
-                                                <artic xml:id="x69659f22-6cd5-44f3-b127-2c2a4b83aaf9" artic="stacciss"/>
+                                                <add><artic xml:id="x69659f22-6cd5-44f3-b127-2c2a4b83aaf9" artic="stacciss"/></add>
                                             </note>
                                         </tuplet>
                                     </beam>
@@ -1057,8 +1082,8 @@
                                 </layer>
                             </staff>
                             <!-- Verovio zeigt diese Elemente unterhalb der staffs nicht an. Ich weiß leider nicht, warum. -->
-                            <dynam xml:id="x319259f2-4e2d-42a4-96d0-6f02241d59c6" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="below">cres:</dynam>
-                            <slur xml:id="xf3d45ced-46fb-4ecc-b3e9-8abc83d2520f" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" endid="#xe126e66d-8a32-4231-b914-c24ab51df521"/>
+                            <add><dynam xml:id="x319259f2-4e2d-42a4-96d0-6f02241d59c6" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="below">cres:</dynam></add>
+                            <add><slur xml:id="xf3d45ced-46fb-4ecc-b3e9-8abc83d2520f" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" endid="#xe126e66d-8a32-4231-b914-c24ab51df521"/></add>
                             <harm xml:id="x993fdbf6-cc8b-4d67-86a0-16dd50d06e08" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="above">
                                 <fb xml:id="xb94f8c6c-3eb2-4280-98a0-1bc711295aeb">
                                     <f xml:id="x7232f4d4-93d9-4513-8e33-f8bb9520e954">5</f>
@@ -1103,7 +1128,10 @@
                             <trill xml:id="x98cbc572-17d5-4f0e-a789-bcd341a2ad71" startid="#xc7cb28b6-2d70-4f70-b6e9-6835512e3a32"/>
                             <trill xml:id="xa7ad77aa-2777-4ccb-a2c8-83e74d277c66" startid="#x6d1c898a-728d-43ee-9225-f8f170730316"/>
                             <trill xml:id="x4d676367-4154-4bf0-9271-d6852a57c7cc" startid="#xf3cd9164-7bfe-47cb-a83e-336eb6b3cca9"/>
-                            <dynam tstamp="1" tstamp2="4m+1" staff="2" place="below" extender="true">(cres)</dynam>
+                            <subst>
+                                <del><dynam tstamp="1" staff="2" place="below">(cres)</dynam></del>
+                                <add><dynam tstamp="1" tstamp2="4m+1" staff="2" place="below" extender="true">(cres)</dynam></add>
+                            </subst>
                             <!-- das konkrete wort "cres" ist nicht im Revisionsdokument, nur die Verlängerungsstriche -->
                             <metaMark staff="2" place="right" function="clarification">= = = =</metaMark>
                             <annot staff="2" tstamp="1" tstamp2="4m+1" xml:id="g_857fd03a-b08d-42e3-a851-fa7d3b6c7964" type="Revisionsdokument1_monitum12">
@@ -1236,9 +1264,9 @@
                                 </layer>
                             </staff>
                             <staff xml:id="x574cc6f4-c6f1-4829-af3c-a7fbc0374867" n="3"/>
-                            <slur xml:id="xa09961d9-30ba-4d0a-a2fa-5ba94e87cc6f" startid="#x609757fd-acc1-465a-ab7b-b3aac039af96" endid="#x20496195-e539-4b19-b983-819d4ecff641"/>
+                            <add><slur xml:id="xa09961d9-30ba-4d0a-a2fa-5ba94e87cc6f" startid="#x609757fd-acc1-465a-ab7b-b3aac039af96" endid="#x20496195-e539-4b19-b983-819d4ecff641"/></add>
                             <dir xml:id="x673c6502-9d0b-41c7-8743-385d07ee1fc4" startid="#xd0dc1b7a-3a5d-48c8-a07b-840c93700210">etc</dir>
-                            <slur xml:id="x9bdeb4b1-d4bc-4cb3-8807-249d994237a3" startid="#x60b7579a-f796-4407-af91-925184c0bacd" endid="#x15a6e33d-59f1-4e3c-8789-6b596be7f70f"/>
+                            <add><slur xml:id="x9bdeb4b1-d4bc-4cb3-8807-249d994237a3" startid="#x60b7579a-f796-4407-af91-925184c0bacd" endid="#x15a6e33d-59f1-4e3c-8789-6b596be7f70f"/></add>
                             <metaMark staff="2" place="right" function="clarification">+ + 2 Bögen</metaMark>
                             <annot type="Revisionsdokument1_monitum13" xml:id="g_21bb6577-18de-461a-a978-0eea5144ec6d" tstamp="1" tstamp2="1m+5" staff="2" plist="#xa09961d9-30ba-4d0a-a2fa-5ba94e87cc6f #x9bdeb4b1-d4bc-4cb3-8807-249d994237a3">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_fe5ba449-9bfe-41d7-8c4f-2d7ca54f662a" synch="op73.xml#state2"/>
@@ -1264,7 +1292,7 @@
                             </staff>
                             <staff xml:id="x5095959a-24c9-4d70-83b2-fca471189673" n="3">
                                 <layer xml:id="x5bfd2ea9-a01f-42c9-b09d-0146bb4ea6bb">
-                                    <clef shape="F" line="4" xml:id="xa674576f-6f64-49bf-bd00-96fe1c8788b4"/>
+                                    <add><clef shape="F" line="4" xml:id="xa674576f-6f64-49bf-bd00-96fe1c8788b4"/></add>
                                     <beam xml:id="x3a830c5d-802c-48d9-af67-42a88f90ef20">
                                         <note xml:id="x076db9cc-5fb7-49f2-8a33-b23acfbf8575" pname="g" oct="3" dur="8"/>
                                         <note xml:id="x98283bed-aad5-4bc6-9263-d4e75c6a80db" pname="b" oct="3" dur="8">
@@ -1368,10 +1396,12 @@
                                     <space xml:id="x013277d3-1777-4f7f-9152-a78686884b29" dur="8"/>
                                 </layer>
                             </staff>
-                            <arpeg xml:id="x281b5de0-9c9f-4040-bfa3-7a9d4e2079e9" startid="#x5ae0bea2-cac4-46d1-90e7-613598bcde11"/>
-                            <arpeg xml:id="x54eee173-216c-4080-8f73-29fd39a6c2ee" startid="#x1c23241c-8a43-4a79-8440-71f2178fc071"/>
-                            <arpeg xml:id="x4762a436-0b72-45c9-a141-a00b96928caa" startid="#xc04ffd5e-1680-4276-85d1-8263f3bd9d9e"/>
-                            <arpeg xml:id="x9c9a3b97-39fb-48d6-ba37-f032f2234183" startid="#xdb9ce620-2402-4e66-ae67-72edac79f104"/>
+                            <add>
+                                <arpeg xml:id="x281b5de0-9c9f-4040-bfa3-7a9d4e2079e9" startid="#x5ae0bea2-cac4-46d1-90e7-613598bcde11"/>
+                                <arpeg xml:id="x54eee173-216c-4080-8f73-29fd39a6c2ee" startid="#x1c23241c-8a43-4a79-8440-71f2178fc071"/>
+                                <arpeg xml:id="x4762a436-0b72-45c9-a141-a00b96928caa" startid="#xc04ffd5e-1680-4276-85d1-8263f3bd9d9e"/>
+                                <arpeg xml:id="x9c9a3b97-39fb-48d6-ba37-f032f2234183" startid="#xdb9ce620-2402-4e66-ae67-72edac79f104"/>
+                            </add>
                             <annot type="Revisionsdokument1_monitum15" xml:id="g_786bb544-1180-4732-846b-8809ee7ac89c" staff="2 3" tstamp="1" tstamp2="0m+3" plist="#x281b5de0-9c9f-4040-bfa3-7a9d4e2079e9 #x54eee173-216c-4080-8f73-29fd39a6c2ee #x4762a436-0b72-45c9-a141-a00b96928caa #x9c9a3b97-39fb-48d6-ba37-f032f2234183">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_59eecfaf-e134-4772-a9f0-7e833c4e734d" synch="op73.xml#state2"/>
                                 <relation rel="hasSuccessor" target="Op.73_A-Wn_SH.Beethoven.323.xml"/>
