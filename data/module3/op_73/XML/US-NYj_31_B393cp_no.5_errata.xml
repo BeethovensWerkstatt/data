@@ -558,7 +558,7 @@
                                     </beam>
                                     <rest xml:id="x201e63c6-4f29-4f11-be46-47016cd506c6" dur="16"/>
                                     <beam xml:id="x9c55a7ce-74ab-48cb-895c-27bdfe53ee36">
-                                        <chord xml:id="xcf50e5fe-b101-435c-be93-67f8bb8d40de" dur="16">
+                                        <chord xml:id="xcf50e5fe-b101-435c-be93-67f8bb8d40de" dur="16" stem.dir="up">
                                             <note xml:id="x9b91e143-edf4-48f1-a47b-81d620cdd414" pname="e" oct="4">
                                                 <accid xml:id="x511977cb-d80c-4bab-b1c9-159ab172000b" accid.ges="f"/>
                                             </note>
@@ -567,7 +567,7 @@
                                             </note>
                                         </chord>
                                         <rest xml:id="xfb7abd5a-0f6f-475d-8a4a-0c7a0a4a25eb" dur="16"/>
-                                        <chord xml:id="x6580ad2c-0085-41fe-91d1-0153e2bdfb6c" dur="16">
+                                        <chord xml:id="x6580ad2c-0085-41fe-91d1-0153e2bdfb6c" dur="16" stem.dir="up">
                                             <note xml:id="x4e637289-cb39-4ae8-a431-8eafebc5243d" pname="c" oct="4"/>
                                             <note xml:id="x75bc3f18-2230-4201-b574-a005e39bd50f" pname="c" oct="3" staff="3"/>
                                         </chord>
@@ -582,18 +582,22 @@
                                     <beam xml:id="x0033acb7-4a15-47f2-89f5-46fc64efae2f">
                                         <subst>
                                             <del>
-                                                <chord dur="16">
-                                                <note pname="e" oct="3"/>
-                                                <note pname="e" oct="2"/>
-                                            </chord></del>
-                                            <add><chord xml:id="xb882f397-e8ce-4d23-93a3-cf4840bb65d4" dur="16">
-                                                <note xml:id="xc890e956-2b7e-4a54-b135-4b28352bc515" pname="c" oct="3"/>
-                                                <note xml:id="xd6207a96-d7f4-44c0-b304-72b20bc9fd2a" pname="c" oct="2"/>
-                                            </chord></add>
+                                                <chord dur="16" stem.dir="down">
+                                                    <note pname="e" oct="3"/>
+                                                    <note pname="e" oct="2"/>
+                                                </chord>
+                                            </del>
+                                            <add>
+                                                <chord xml:id="xb882f397-e8ce-4d23-93a3-cf4840bb65d4" dur="16" stem.dir="down">
+                                                    <note xml:id="xc890e956-2b7e-4a54-b135-4b28352bc515" pname="c" oct="3"/>
+                                                    <note xml:id="xd6207a96-d7f4-44c0-b304-72b20bc9fd2a" pname="c" oct="2"/>
+                                                </chord>
+                                            </add>
                                         </subst>
-                                        
-                                        <rest xml:id="x4e6e2358-c337-43ca-87b7-aa562214c78f" dur="16"/>
-                                        <chord xml:id="x097ef378-0488-4128-b057-9aca9f1bb0da" dur="16">
+                                        <sic>
+                                            <rest xml:id="x4e6e2358-c337-43ca-87b7-aa562214c78f" dur="16"/>
+                                        </sic>
+                                        <chord xml:id="x097ef378-0488-4128-b057-9aca9f1bb0da" dur="16" stem.dir="down">
                                             <note xml:id="xd0df1e60-430b-421e-a30c-8daf03cbfe6e" pname="a" oct="2">
                                                 <accid xml:id="xa9d42eaf-7f79-4632-ba0a-128fddd90b70" accid.ges="f"/>
                                             </note>
@@ -602,13 +606,15 @@
                                             </note>
                                         </chord>
                                     </beam>
-                                    <rest xml:id="x5008fc55-15d0-4010-b9f7-406689271cdb" dur="16"/>
+                                    <sic>
+                                        <rest xml:id="x5008fc55-15d0-4010-b9f7-406689271cdb" dur="16"/>
+                                    </sic>
                                 </layer>
                             </staff>
-                            <metaMark staff="2" tstamp="4" function="question">x<!--Attraktor--></metaMark>
-                            <metaMark staff="2" place="rightmar" function="substitution">+ c c statt E E</metaMark>
-                            <annot xml:id="g_0f1d1619-5152-4062-ad70-6bf8cdcb1197" staff="2" tstamp="1" tstamp2="0m+5" type="Revisionsdokument1_monitum5">
-                                <relation rel="isEmbodimentOf" target="op73.xml#g_cb0fa992-7383-4079-97e0-a9e98aa547bc" synch="op73.xml#state2"/>
+                            <metaMark staff="3" tstamp="4" place="below" function="question">x<!--Attraktor--></metaMark>
+                            <metaMark staff="3" place="rightmar" function="substitution">+ c c statt E E</metaMark>
+                            <annot xml:id="g_0f1d1619-5152-4062-ad70-6bf8cdcb1197" staff="3" tstamp="1" tstamp2="0m+5" type="Revisionsdokument1_monitum5">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_cb0fa992-7383-4079-97e0-a9e98aa547bc" synch="op73.xml#state2 op73.xml#state3"/>
                             </annot>
                         </measure>
                     </section>
