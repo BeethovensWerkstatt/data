@@ -1200,13 +1200,13 @@
                     
                     <section xml:id="xaaea6b90-fef2-41f9-a13e-a9e0fc9c3963" n="13" label="Monitum 13">
                         <!-- <scoreDef xml:id="xfd327610-ae6f-4e7c-9237-d54dd27c1519" label="II. Satz" meter.sym="cut" key.sig="5s"/> -->
-                        <measure xml:id="xe10f19e7-306a-47bb-9369-9b20ccb61ff3" n="1" metcon="false">
+                        <measure xml:id="xe10f19e7-306a-47bb-9369-9b20ccb61ff3" n="1" right="invis">
                             <staff xml:id="xa3dff0e5-673e-45fd-b6f6-b214ef226ecd" n="1"/>
                             <staff xml:id="xbae2e04a-b255-46dd-a11a-c2733b0886b5" n="2">
                                 <layer xml:id="x1270bee5-d0c8-4ee9-9b80-96046552e6dc">
                                     <beam xml:id="x1c71758f-9317-4a64-9391-571bea0fb86b">
                                         <note xml:id="x4e2cbd7c-9754-4df1-931d-a111d0756454" pname="b" oct="4" dur="16">
-                                            <accid xml:id="x59d129e9-8369-45bc-93c9-54c466acbfa2" accid="f"/>
+                                            <supplied resp="#BW"><accid xml:id="x59d129e9-8369-45bc-93c9-54c466acbfa2" accid="f"/></supplied>
                                         </note>
                                         <note xml:id="x5d5d29e7-07cb-4b31-9e62-c3f0de91ad6f" pname="e" oct="5" dur="16">
                                             <accid xml:id="x4fc14d35-8e59-4c78-978b-46808badecb2" accid="f"/>
@@ -1222,24 +1222,43 @@
                                         </note>
                                     </beam>
                                     <rest xml:id="x342ce03c-a2b7-4e80-8a73-3ecc2e79dfba" dur="16"/>
-                                    <rest xml:id="x34002a43-6ec1-455f-9535-00c78ab13db9" dur="16"/>
-                                    <note xml:id="xb70d4e5e-26fd-4eaf-b12c-898e30bc29d3" pname="g" oct="5" dur="16">
-                                        <accid xml:id="xd89c916c-b4f0-4860-a747-b057ddb83472" accid.ges="n"/>
-                                    </note>
+                                    <supplied resp="#BW">
+                                        <rest xml:id="x34002a43-6ec1-455f-9535-00c78ab13db9" dur="16"/>
+                                    </supplied>
+                                    <note xml:id="xb70d4e5e-26fd-4eaf-b12c-898e30bc29d3" pname="g" oct="5" dur="16"><accid xml:id="xd89c916c-b4f0-4860-a747-b057ddb83472" accid.ges="n"/></note>
                                     <beam xml:id="xc97d4865-13bc-465c-907d-607e96c3997f">
                                         <note xml:id="x609757fd-acc1-465a-ab7b-b3aac039af96" pname="g" oct="5" dur="32">
                                             <accid xml:id="x9b6a707d-d8e7-49af-abed-ab92add2c3f3" accid.ges="n"/>
                                         </note>
                                         <note xml:id="x20496195-e539-4b19-b983-819d4ecff641" pname="b" oct="5" dur="32">
-                                            <accid xml:id="x76a17c9a-952c-418e-bbd3-86e46104b1b6" accid="f"/>
+                                            <supplied resp="#BW"><accid xml:id="x76a17c9a-952c-418e-bbd3-86e46104b1b6" accid="f"/></supplied>
                                         </note>
                                         <note xml:id="x91ab54c3-888b-468e-8b5c-e6100091e5fd" pname="b" oct="5" dur="4">
                                             <accid xml:id="x72e8b30d-2741-45bf-8579-4d5f51ca61ee" accid.ges="f"/>
                                         </note>
                                     </beam>
-                                    <barLine xml:id="x1be2fdd0-86d2-4b22-95a1-c24fc7d43306" metcon="false" visible="false"/><!-- Hier wurden zwei Takte ohne Taktstrich in einen notiert. Zudem ist der (reguläre) zweite metrisch unvollständig. Ich weiß nicht, ob letzteres semantisch korrekt wiedergegeben ist.  -->
                                     <space xml:id="xd0dc1b7a-3a5d-48c8-a07b-840c93700210" dur="4"/>
-                                    <space xml:id="xe035dbf5-ab1d-4f22-b82a-d271cad74af2" dur="4"/>
+                                </layer>
+                            </staff>
+                            <staff n="3"/>
+                            <supplied resp="#BW">
+                                <slur startid="#x4e2cbd7c-9754-4df1-931d-a111d0756454" endid="#x5d5d29e7-07cb-4b31-9e62-c3f0de91ad6f"/>
+                            </supplied>
+                            <supplied resp="#BW">
+                                <slur startid="#xc3fff1d6-3780-4251-be82-928b19ae5115" endid="#xd378766c-b0a5-4b96-aaf8-7c6b543d33eb"/>
+                            </supplied>
+                            <add><slur xml:id="xa09961d9-30ba-4d0a-a2fa-5ba94e87cc6f" startid="#x609757fd-acc1-465a-ab7b-b3aac039af96" endid="#x20496195-e539-4b19-b983-819d4ecff641"/></add>
+                            <metaMark staff="2" place="rightmar" function="addition">+ [Bogen]<lb/>+ [Bogen]</metaMark>
+                            <annot type="Revisionsdokument1_monitum13" xml:id="g_21bb6577-18de-461a-a978-0eea5144ec6d" tstamp="1" tstamp2="1m+5" staff="2">
+                                <relation rel="isEmbodimentOf" target="op73.xml#g_fe5ba449-9bfe-41d7-8c4f-2d7ca54f662a" synch="op73.xml#state2"/>
+                            </annot>
+                        </measure>
+                        <measure left="invis">
+                            <staff n="1"/>
+                            <staff n="2">
+                                <layer>
+                                    <space dur="4"/>
+                                    <space dur="4"/>
                                     <beam xml:id="x607b6bf2-4ef3-410b-af5a-1ae5e9f7a9e5">
                                         <note xml:id="x60b7579a-f796-4407-af91-925184c0bacd" pname="b" oct="5" dur="32">
                                             <accid xml:id="x1e17b8c5-94af-444c-afef-98bdf7f4c518" accid.ges="f"/>
@@ -1251,18 +1270,13 @@
                                             <accid xml:id="xb68a4c42-b49d-4318-9e86-e42adc2b14f1" accid.ges="f"/>
                                         </note>
                                     </beam>
-                                    <space xml:id="x8d631944-812f-443c-b3e1-ad8b949f57cf" dur="8" dots="1"/>
-                                    <space xml:id="x392712c1-616c-4d7e-b8cf-7cbcd29eebbe" dur="16"/>
+                                    <space xml:id="x8d631944-812f-443c-b3e1-ad8b949f57cf" dur="4"/>
                                 </layer>
                             </staff>
+                            <staff n="3"></staff>
                             <staff xml:id="x574cc6f4-c6f1-4829-af3c-a7fbc0374867" n="3"/>
-                            <add><slur xml:id="xa09961d9-30ba-4d0a-a2fa-5ba94e87cc6f" startid="#x609757fd-acc1-465a-ab7b-b3aac039af96" endid="#x20496195-e539-4b19-b983-819d4ecff641"/></add>
-                            <dir xml:id="x673c6502-9d0b-41c7-8743-385d07ee1fc4" startid="#xd0dc1b7a-3a5d-48c8-a07b-840c93700210">etc</dir>
+                            <metaMark xml:id="x673c6502-9d0b-41c7-8743-385d07ee1fc4" startid="#xe035dbf5-ab1d-4f22-b82a-d271cad74af2" place="within" staff="2">etc</metaMark>
                             <add><slur xml:id="x9bdeb4b1-d4bc-4cb3-8807-249d994237a3" startid="#x60b7579a-f796-4407-af91-925184c0bacd" endid="#x15a6e33d-59f1-4e3c-8789-6b596be7f70f"/></add>
-                            <metaMark staff="2" place="rightmar" function="addition">+ + 2 Bögen</metaMark>
-                            <annot type="Revisionsdokument1_monitum13" xml:id="g_21bb6577-18de-461a-a978-0eea5144ec6d" tstamp="1" tstamp2="1m+5" staff="2" plist="#xa09961d9-30ba-4d0a-a2fa-5ba94e87cc6f #x9bdeb4b1-d4bc-4cb3-8807-249d994237a3">
-                                <relation rel="isEmbodimentOf" target="op73.xml#g_fe5ba449-9bfe-41d7-8c4f-2d7ca54f662a" synch="op73.xml#state2"/>
-                            </annot>
                         </measure>
                     </section>
                     
