@@ -1057,9 +1057,6 @@
                                     </note>
                                 </layer>
                             </staff>
-                            <!-- Verovio zeigt diese Elemente unterhalb der staffs nicht an. Ich weiß leider nicht, warum. -->
-                            <add><dynam xml:id="x319259f2-4e2d-42a4-96d0-6f02241d59c6" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="below">cres:</dynam></add>
-                            <add><slur xml:id="xf3d45ced-46fb-4ecc-b3e9-8abc83d2520f" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" endid="#xe126e66d-8a32-4231-b914-c24ab51df521"/></add>
                             <harm xml:id="x993fdbf6-cc8b-4d67-86a0-16dd50d06e08" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="above">
                                 <fb xml:id="xb94f8c6c-3eb2-4280-98a0-1bc711295aeb">
                                     <f xml:id="x7232f4d4-93d9-4513-8e33-f8bb9520e954">5</f>
@@ -1071,8 +1068,14 @@
                                     <f xml:id="x3339cdd1-9555-438c-8c1d-10ec6b984a0b">5</f>
                                 </fb>
                             </harm>
-                            <metaMark staff="3" place="rightmar" function="clarification">x cres:</metaMark>
-                            <annot staff="3" xml:id="g_d33c286d-81ff-417a-a196-0fae0476a1da" type="Revisionsdokument1_monitum11" tstamp="3" tstamp2="0m+5">
+                            <add>
+                                <dynam xml:id="x319259f2-4e2d-42a4-96d0-6f02241d59c6" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" place="below">cres:</dynam>
+                            </add>
+                            <add>
+                                <slur xml:id="xf3d45ced-46fb-4ecc-b3e9-8abc83d2520f" startid="#xe9ff0cc8-dc56-475c-b187-322deeb5f966" endid="#xe126e66d-8a32-4231-b914-c24ab51df521" curvedir="above"/>
+                            </add>
+                            <metaMark staff="3" place="rightmar" function="clarification">x cres:<lb/>+ [Bogen]</metaMark>
+                            <annot staff="3" xml:id="g_d33c286d-81ff-417a-a196-0fae0476a1da" type="Revisionsdokument1_monitum11" tstamp="1" tstamp2="0m+5">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_cd2f564e-d9e5-453f-9443-73c607071329" synch="op73.xml#state2"/>
                             </annot>
                         </measure>
