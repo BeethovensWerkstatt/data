@@ -654,9 +654,14 @@
                             <staff xml:id="x012b0141-5e7d-46a5-a381-299af70d4b56" n="1"/>
                             <staff xml:id="x15e16cfc-8389-44aa-9e40-2f12aa67976a" n="2">
                                 <layer xml:id="x9d234afc-f861-4805-b1b2-644e2f5d9bcf">
-                                    <sic>
-                                        <note xml:id="x8524b993-d3f9-4279-ad57-efa2eee85b24" pname="g" oct="5" dur="4"/>
-                                    </sic>
+                                    <choice>
+                                        <orig resp="#LvB">
+                                            <note xml:id="x8524b993-d3f9-4279-ad57-efa2eee85b24" pname="g" oct="5" dur="4"/>
+                                        </orig>
+                                        <corr resp="#BW">
+                                            <note xml:id="xd21c5851-0abe-46a8-bc39-b7ce395ab6cf" pname="g" oct="5" dur="16"/>
+                                        </corr>
+                                    </choice>
                                     <beam xml:id="x3957a387-6852-480e-bc69-702be0616d68">
                                         <tuplet xml:id="x2f253261-ef31-43bf-8883-985a11b6dcd0" num="3" numbase="2" num.visible="true">
                                             <chord xml:id="x99dd4382-fbb0-4f78-90a9-56e0b92906d0" dur="8" artic="stacciss">
@@ -707,11 +712,10 @@
                             <add>
                                 <octave xml:id="xb4196eb7-179b-4e80-8d5d-c7ea9cac582f" startid="#xe416ced6-6f63-49d2-a57b-789e614711a7" endid="#x45cfb829-0e45-45b9-aff5-2f50af42522f" dis="8" dis.place="above"/>
                             </add>
-                            <sic>
-                                <add>
-                                    <dir xml:id="xbee49f89-9d9f-40c3-8a83-1468cf1715d7" startid="#xfcc07773-79c9-4105-9cc2-3e93b58f11f9" place="above">loc[o]</dir>
-                                </add>
-                            </sic>
+                            <add>
+                                <dir startid="#x45cfb829-0e45-45b9-aff5-2f50af42522f" place="above">loco</dir>
+                            </add>
+                            <metaMark staff="2" place="above" function="clarification">loc[o]</metaMark>
                             <metaMark staff="2" place="rightmar" function="addition">8va loco</metaMark>
                             <annot type="Revisionsdokument1_monitum6" tstamp="1" tstamp2="0m+6" staff="2">
                                 <relation rel="isEmbodimentOf" target="op73.xml#g_d7c1b561-aaad-4345-a49a-f4215dc16e80" synch="op73.xml#state2"/>
