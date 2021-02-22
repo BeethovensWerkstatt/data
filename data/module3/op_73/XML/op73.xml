@@ -22,12 +22,21 @@
                 <identifier auth.uri="https://beethovens-werkstatt.de/modul-3/">corr</identifier>
             </seriesStmt>
         </fileDesc>
+        <encodingDesc>
+            <classDecls>
+                <taxonomy>
+                    <category xml:id="initialVersion"/>
+                    <category xml:id="revisedVersion"/>
+                    <category xml:id="revisionList"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
         <manifestationList>
-            <manifestation label="Ausgangsdokument" sameas="./D-BNba_C73-9.xml"/>
-            <manifestation label="Zieldokument" sameas="./A-Wn_SH.Beethoven.323.xml"/>
-            <manifestation label="Revisionsliste 1" sameas="./US-NYj_31_B393cp_no.5_errata.xml"/>
-            <manifestation label="Revisionsliste 2" sameas="./D-BNba_Slg.H.C.Bodmer_HCB_Br_94.xml"/>
-        </manifestationList>
+            <manifestation label="Ausgangsdokument" sameas="./D-BNba_C73-9.xml" class="#initialVersion"/>
+            <manifestation label="Zieldokument" sameas="./A-Wn_SH.Beethoven.323.xml" class="#revisedVersion"/>
+            <manifestation label="Revisionsliste 1" sameas="./US-NYj_31_B393cp_no.5_errata.xml" class="#revisionList"/>
+            <manifestation label="Revisionsliste 2" sameas="./D-BNba_Slg.H.C.Bodmer_HCB_Br_94.xml" class="#revisionList"/>
+        </manifestationList>        
     <revisionDesc>
             <change n="1">
                 <respStmt>
