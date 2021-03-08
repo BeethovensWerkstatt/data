@@ -23106,7 +23106,7 @@
                                     <note xml:id="xd068917b-eaf6-462f-82c8-3fd89414e245" pname="e" oct="5" dur="4">
                                         <accid xml:id="x9324f1fc-ddad-4903-8ae2-0e06d9b4219c" accid.ges="f"/>
                                     </note>
-                                    <note xml:id="xf0eade35-61bb-485a-bc00-e0398edfc32d" pname="b" oct="4" dur="8">
+                                    <note xml:id="xf0eade35-61bb-485a-bc00-e0398edfc32d" pname="b" oct="4" dur="8" stem.dir="up">
                                         <accid xml:id="xec3b9021-47ee-490c-8e50-c5ac706ae3fd" accid.ges="f"/>
                                     </note>
                                 </layer>
@@ -23115,13 +23115,37 @@
                                     <note xml:id="x895704ba-ea94-4a6d-b356-e13695c23623" pname="g" oct="4" dur="4"/>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="xa7ac2ce4-9013-45a0-974a-4d65a658806d"/>
-                            <trill xml:id="x57461ad8-6d77-4448-a71a-5f143124ee6f" startid="#x057ec302-93e6-4c4d-abce-0a73b40e2b8b"/>
-                            <slur xml:id="x59bac1a0-a220-4ec7-9f6a-13b1dd6f8f13" startid="#x057ec302-93e6-4c4d-abce-0a73b40e2b8b" endid="#xd068917b-eaf6-462f-82c8-3fd89414e245"/>
-                            <add resp="#LvB" state="#state2">
-                                <slur xml:id="xb6e1ddeb-0758-4965-a672-40bca3a5a1cc" startid="#xc2af819b-3550-494b-a55c-09c6d5622ea3" endid="#x895704ba-ea94-4a6d-b356-e13695c23623"/>
+                            <staff n="20" xml:id="xa7ac2ce4-9013-45a0-974a-4d65a658806d">
+                                <layer n="1">
+                                    <beam>
+                                        <note pname="g" oct="3" dur="8"/>
+                                        <note pname="b" oct="3" dur="8">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="e" oct="4" dur="8">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                    </beam>
+                                    <beam>
+                                        <note pname="g" oct="3" dur="8"/>
+                                        <note pname="b" oct="3" dur="8">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="e" oct="4" dur="8">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                    </beam>
+                                </layer>
+                                <layer n="2">
+                                    <note pname="e" oct="3" dur="2" dots="1"/>
+                                </layer>
+                            </staff>
+                            <trill xml:id="x57461ad8-6d77-4448-a71a-5f143124ee6f" staff="19" place="above" startid="#x057ec302-93e6-4c4d-abce-0a73b40e2b8b"/>
+                            <slur xml:id="x59bac1a0-a220-4ec7-9f6a-13b1dd6f8f13" staff="19" curvedir="above" startid="#x057ec302-93e6-4c4d-abce-0a73b40e2b8b" endid="#xd068917b-eaf6-462f-82c8-3fd89414e245"/>
+                            <add resp="#LvB" state="#state2" label="Revisionsdokument 1">
+                                <tie xml:id="xb6e1ddeb-0758-4965-a672-40bca3a5a1cc" staff="19" curvedir="below" startid="#xc2af819b-3550-494b-a55c-09c6d5622ea3" endid="#x895704ba-ea94-4a6d-b356-e13695c23623"/>
                             </add>
-                            <annot type="Revisionsdokumet1_monitum23" staff="19" tstamp="1" tstamp2="0m+5" xml:id="x2c24b971-5d4f-4b2f-9ebc-30f2909df020"/>
+                            <annot type="Revisionsdokumet1_monitum23" staff="19 20" tstamp="1" tstamp2="0m+7" xml:id="x2c24b971-5d4f-4b2f-9ebc-30f2909df020"/>
                         </measure>
                         <measure n="298" label="298" xml:id="x197e166d-6595-42fd-b82a-fcfe4733e26a">
                             <staff n="1" xml:id="x0c4aa3e2-b9a7-414d-b79e-a50e983e6feb"/>
