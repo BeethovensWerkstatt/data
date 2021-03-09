@@ -19116,28 +19116,31 @@
                             <staff n="18" xml:id="x7ce6f133-aa59-4ee8-8c4c-933e4f52f9bf"/>
                             <staff n="19" xml:id="x34dab3be-9469-4394-8fc6-d0c3b78bf554">
                                 <layer xml:id="x203df6ba-803d-4320-9496-eb78ade0fd57">
-                                    <rest xml:id="xc3d0c143-6222-463d-aecd-75a2e5a9edd3" dur="4"/>
+                                    <chord xml:id="xc3d0c143-6222-463d-aecd-75a2e5a9edd3" dur="4" cue="true">
+                                        <note pname="g" oct="5" cue="true"/>
+                                        <note pname="g" oct="6" cue="true"/>
+                                    </chord>
                                     <chord xml:id="x976a6339-527c-4cb9-a588-c2905e525399" dur="8">
                                         <note xml:id="x3057f875-c57c-4443-82be-9f836dbe9c82" pname="c" oct="5"/>
                                         <note xml:id="xcc61404a-ac27-4a72-814f-d5a0030bfb7b" pname="c" oct="6"/>
                                     </chord>
                                     <beam xml:id="x45eb6c4d-6d65-4f6e-9480-f6791db33565">
                                         <chord xml:id="xe70b4e88-e895-4a17-a1bf-62de7e47739b" dur="8" dots="1">
-                                            <add resp="#LvB" state="#state2">
+                                            <add resp="#LvB" state="#state2" label="Revisionsdokument 1">
                                                 <artic xml:id="x76b2a3f7-0cdd-4bb1-93d4-86bf5f3e1b80" artic="stacciss"/>
                                             </add>
                                             <note xml:id="xb911112e-943e-42df-a33c-e158c1b48856" pname="c" oct="5"/>
                                             <note xml:id="xd512b623-717d-4d2b-9270-44fd72cc05e8" pname="c" oct="6"/>
                                         </chord>
                                         <chord xml:id="x29c1e7f8-c2c1-4c12-b5f0-70a721250f8e" dur="16">
-                                            <add resp="#LvB" state="#state2">
+                                            <add resp="#LvB" state="#state2" label="Revisionsdokument 1">
                                                 <artic xml:id="xd622ffea-da46-499f-8ff3-0cf26824a8a0" artic="stacciss"/>
                                             </add>
                                             <note xml:id="x4171a789-929a-4c73-aa7d-9f7b09cb9704" pname="d" oct="5"/>
                                             <note xml:id="x4e8222f2-b19d-4ec2-9830-39636661fc5d" pname="d" oct="6"/>
                                         </chord>
                                         <chord xml:id="x7059d146-bd18-404d-ac16-3d22699a9e89" dur="8">
-                                            <add resp="#LvB" state="#state2">
+                                            <add resp="#LvB" state="#state2" label="Revisionsdokument 1">
                                                 <artic xml:id="xec71caa4-1fe6-41ee-8b7b-e9edf0717618" artic="stacciss"/>
                                             </add>
                                             <note xml:id="xd9965fa7-3721-4e23-9e1f-76b1ab54e8dd" pname="e" oct="5">
@@ -19152,19 +19155,27 @@
                             </staff>
                             <staff n="20" xml:id="xc0cc3706-a244-4d01-a879-2c5906b29704">
                                 <layer>
-                                    <rest dur="4"/>
+                                    <note pname="e" oct="6" dur="4" cue="true">
+                                        <accid accid.ges="f"/>
+                                    </note>
                                     <clef line="2" shape="G"/>
                                     <note pname="c" oct="4" dur="8"/>
                                     <beam>
                                         <note pname="c" oct="4" dur="8" dots="1">
-                                            <supplied resp="#BW"><add resp="#LvB" state="#state2"><artic artic="stacciss" place="below"/></add></supplied>
+                                            <add resp="#unknown" state="#state2" label="Zieldokument">
+                                                <artic artic="stacciss" place="below"/>
+                                            </add>
                                         </note>
                                         <note pname="d" oct="4" dur="16">
-                                            <supplied resp="#BW"><add resp="#LvB" state="#state2"><artic artic="stacciss" place="below"/></add></supplied>
+                                            <add resp="#unknown" state="#state2" label="Zieldokument">
+                                                <artic artic="stacciss" place="below"/>
+                                            </add>
                                         </note>
                                         <note pname="e" oct="4" dur="8">
                                             <accid accid="n"/>
-                                            <supplied resp="#BW"><add resp="#LvB" state="#state2"><artic artic="stacciss" place="below"/></add></supplied>
+                                            <add resp="#unknown" state="#state2" label="Zieldokument">
+                                                <artic artic="stacciss" place="below"/>
+                                            </add>
                                         </note>
                                     </beam>
                                 </layer>
@@ -23218,9 +23229,7 @@
                                 <layer xml:id="xfebc1577-7b29-43db-b9d3-494e3e81fd67" n="2">
                                     <note xml:id="xc2af819b-3550-494b-a55c-09c6d5622ea3" pname="g" oct="4" dur="4" dots="1"/>
                                     <note xml:id="x895704ba-ea94-4a6d-b356-e13695c23623" pname="g" oct="4" dur="4"/>
-                                    <supplied resp="#BW">
-                                        <rest dur="8"/>
-                                    </supplied>
+                                    <space dur="8"/>
                                 </layer>
                             </staff>
                             <staff n="20" xml:id="xa7ac2ce4-9013-45a0-974a-4d65a658806d">
@@ -23452,9 +23461,7 @@
                                     <rest dur="8"/>
                                 </layer>
                                 <layer n="2">
-                                    <supplied resp="#BW">
-                                        <rest dur="4" dots="1"/>
-                                    </supplied>
+                                    <space dur="4" dots="1"/>
                                     <beam cue="true">
                                         <note pname="a" oct="4" dur="8" cue="true">
                                             <accid accid.ges="f"/>
@@ -23589,9 +23596,7 @@
                                 <rest dur="8"/>
                                </layer>
                                 <layer n="2">
-                                    <supplied resp="#BW">
-                                        <rest dur="4" dots="1"/>
-                                    </supplied>
+                                    <space dur="4" dots="1"/>
                                     <beam cue="true">
                                         <note pname="b" oct="5" dur="8">
                                             <accid accid.ges="f"/>
