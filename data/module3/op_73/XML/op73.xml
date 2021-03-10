@@ -17989,13 +17989,13 @@
                                             <accid xml:id="x7250eaaf-b82c-40cf-96bf-48722ffc8de8" accid.ges="f"/>
                                         </note>
                                     </chord>
-                                    <space xml:id="xe6d136b5-91aa-4418-8296-f4fede77816b" dur="8"/>
-                                    <space xml:id="xd60f14e6-c02e-470d-880a-e7c0466197fc" dur="4"/>
-                                    <space xml:id="xe1ff8d4b-f26e-4348-80f8-4e6d8aafe41c" dur="8"/>
+                                    <rest xml:id="xe6d136b5-91aa-4418-8296-f4fede77816b" dur="8"/>
+                                    <rest xml:id="xd60f14e6-c02e-470d-880a-e7c0466197fc" dur="4"/>
+                                    <rest xml:id="xe1ff8d4b-f26e-4348-80f8-4e6d8aafe41c" dur="8"/>
                                 </layer>
                             </staff>
                             <staff n="20" xml:id="xd903dab3-ae14-4496-a448-e2abe25ee48e">
-                                <layer xml:id="x49d3c8d2-0d13-42d1-ada8-5527bf362b0c">
+                                <layer xml:id="x49d3c8d2-0d13-42d1-ada8-5527bf362b0c" n="1">
                                     <chord xml:id="xc04ffd5e-1680-4276-85d1-8263f3bd9d9e" dur="4">
                                         <note xml:id="x023d72d3-ad0a-4628-9cf3-410933c22075" pname="c" oct="4"/>
                                         <note xml:id="x3bbb1d84-f72e-480c-b5c0-de0130308fd3" pname="e" oct="4">
@@ -18007,16 +18007,35 @@
                                         </note>
                                         <note xml:id="x5e893c45-7833-4ab8-a894-856d29c90b04" pname="c" oct="5"/>
                                     </chord>
-                                    <space xml:id="xc338c5ef-71fc-4f16-a19f-860b5d4076ec" dur="8"/>
-                                    <space xml:id="x03001baa-7f64-4889-9dd1-7f8f571515b6" dur="4"/>
-                                    <space xml:id="xbc018df2-0e5a-4561-85de-3eb7fc6a0123" dur="8"/>
+                                    <rest xml:id="xc338c5ef-71fc-4f16-a19f-860b5d4076ec" dur="8"/>
+                                    <rest xml:id="x03001baa-7f64-4889-9dd1-7f8f571515b6" dur="4"/>
+                                    <rest xml:id="xbc018df2-0e5a-4561-85de-3eb7fc6a0123" dur="8"/>
+                                </layer>
+                                <layer n="2">
+                                    <space dur="4" dots="1"/>
+                                    <beam place="above" cue="true">
+                                        <note pname="e" oct="4" dur="8" cue="true">
+                                            <artic artic="stacciss" place="below"/>
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="d" oct="4" dur="8" cue="true">
+                                            <artic artic="stacciss" place="below"/>
+                                        </note>
+                                        <note pname="c" oct="4" dur="8" cue="true">
+                                            <artic artic="stacciss" place="below"/>
+                                        </note>
+                                    </beam>
                                 </layer>
                             </staff>
-                            <add resp="#LvB" state="#state2">
+                            <dynam staff="19 20" place="between" tstamp="1">f</dynam>
+                            <dir staff="20" place="above" tstamp="3">Fag</dir>
+                            <add resp="#LvB" state="#state2" label="Revisionsdokument 1">
                                 <arpeg xml:id="x281b5de0-9c9f-4040-bfa3-7a9d4e2079e9" startid="#x5ae0bea2-cac4-46d1-90e7-613598bcde11"/>
+                            </add>
+                            <add resp="#LvB" state="#state2" label="Revisionsdokument 1">
                                 <arpeg xml:id="x4762a436-0b72-45c9-a141-a00b96928caa" startid="#xc04ffd5e-1680-4276-85d1-8263f3bd9d9e"/>
                             </add>
-                            <annot xml:id="g_59eecfaf-e134-4772-a9f0-7e833c4e734d" tstamp2="0m+7" tstamp="1" type="Revisionsdokument1_monitum15" staff="19 20"/>
+                            <annot xml:id="g_59eecfaf-e134-4772-a9f0-7e833c4e734d" tstamp2="2m+7" tstamp="1" type="Revisionsdokument1_monitum15" staff="19 20"/>
                         </measure>
                         <measure n="59" label="59" xml:id="x9f28d918-d806-49d2-a638-9f41c61c5884">
                             <staff n="1" xml:id="x715a3285-b967-48df-beeb-cbfe3cbb84f1"/>
@@ -18037,8 +18056,31 @@
                             <staff n="16" xml:id="xf273f60b-ba4c-41ea-8622-557ba498b6e2"/>
                             <staff n="17" xml:id="xca3467e3-3ae2-4b7e-bf1d-411b2c9f25b6"/>
                             <staff n="18" xml:id="x9737c986-2570-4a0c-9c10-978d85eb6485"/>
-                            <staff n="19" xml:id="x8cc51f39-597b-4fce-a31e-2aaeb6cc4555"/>
-                            <staff n="20" xml:id="x93ff1c9b-1201-4972-b678-c4a3529d4d65"/>
+                            <staff n="19" xml:id="x8cc51f39-597b-4fce-a31e-2aaeb6cc4555">
+                                <layer>
+                                    <mRest/>
+                                </layer>
+                            </staff>
+                            <staff n="20" xml:id="x93ff1c9b-1201-4972-b678-c4a3529d4d65">
+                                <layer n="1">
+                                    <mRest/>
+                                </layer>
+                                <layer n="2">
+                                    <beam place="above" cue="true">
+                                        <note pname="b" oct="3" dur="8" cue="true">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="a" oct="3" dur="8" cue="true">
+                                            <accid accid="n"/>
+                                        </note>
+                                        <note pname="g" oct="3" dur="8" cue="true">
+                                            <artic artic="stacciss" place="below"/>
+                                        </note>
+                                    </beam>
+                                    <note pname="f" oct="3" dur="4"/>
+                                    <note pname="f" oct="3" dur="8"/>
+                                </layer>
+                            </staff>
                         </measure>
                         <measure n="60" label="60" xml:id="x59df1bf6-6ecb-45b5-b3a2-65866cf440d1" type="Revisionsdokument1_monitum15">
                             <staff n="1" xml:id="xf2f1fcd0-89d3-4151-8777-b3a5ca353dbe"/>
@@ -18060,7 +18102,7 @@
                             <staff n="17" xml:id="xb7e54a4d-6d3a-4c2c-b9f1-f9b670d787cc"/>
                             <staff n="18" xml:id="xbc681977-79dc-482f-a1ed-fd09f9992c41"/>
                             <staff n="19" xml:id="x5cdcefaa-42f1-4c0c-bd9f-1121f312a89e">
-                                <layer>
+                                <layer n="1">
                                     <chord xml:id="xbc3c84e1-4046-4500-980b-a027794058c9" dur="4">
                                         <note pname="f" oct="5"/>
                                         <note pname="a" oct="5">
@@ -18075,6 +18117,21 @@
                                     <rest dur="8"/>
                                     <rest dur="4"/>
                                     <rest dur="8"/>
+                                </layer>
+                                <layer n="2">
+                                    <space dur="4" dots="1"/>
+                                    <beam cue="true">
+                                        <note xml:id="x17667a7a-b1b9-48f0-99a9-d28f25199dc6" pname="f" oct="5" dur="8" cue="true">
+                                            <artic artic="stacciss"/>
+                                        </note>
+                                        <note pname="e" oct="5" dur="8" cue="true">
+                                            <accid accid.ges="f"/>
+                                            <artic artic="stacciss"/>
+                                        </note>
+                                        <note pname="d" oct="5" dur="8" cue="true">
+                                            <artic artic="stacciss"/>
+                                        </note>
+                                    </beam>
                                 </layer>
                             </staff>
                             <staff n="20" xml:id="x08c5fe1b-4eaa-4e71-b85c-e469699e8e42">
@@ -18091,16 +18148,18 @@
                                         </note>
                                         <note xml:id="xd7792761-0f7d-47be-9228-acb6429ed410" pname="d" oct="4"/>
                                     </chord>
-                                    <space xml:id="xb250a7e2-bf1f-4dfa-9db5-a0b0489bb1cf" dur="8"/>
-                                    <space xml:id="xf5b951d6-2623-4f46-91fc-0d60a54c3297" dur="4"/>
-                                    <space xml:id="x013277d3-1777-4f7f-9152-a78686884b29" dur="8"/>
+                                    <rest xml:id="xb250a7e2-bf1f-4dfa-9db5-a0b0489bb1cf" dur="8"/>
+                                    <rest xml:id="xf5b951d6-2623-4f46-91fc-0d60a54c3297" dur="4"/>
+                                    <rest xml:id="x013277d3-1777-4f7f-9152-a78686884b29" dur="8"/>
                                 </layer>
                             </staff>
+                            <dir staff="19" place="above" startid="#x17667a7a-b1b9-48f0-99a9-d28f25199dc6">Clar.</dir>
                             <add resp="#LvB" state="#state2">
                                 <arpeg xml:id="x54eee173-216c-4080-8f73-29fd39a6c2ee" startid="#xbc3c84e1-4046-4500-980b-a027794058c9"/>
-                                <arpeg xml:id="x9c9a3b97-39fb-48d6-ba37-f032f2234183" startid="#xdb9ce620-2402-4e66-ae67-72edac79f104"/>
                             </add>
-                            <annot xml:id="g_b298f39e-fd61-46e8-937d-47e3b508e1a7" sameas="#g_59eecfaf-e134-4772-a9f0-7e833c4e734d" tstamp2="0m+7" tstamp="1" type="Revisionsdokument1_monitum15" staff="19 20"/>
+                            <add resp="#LvB" state="#state2">
+                                <arpeg xml:id="x9c9a3b97-39fb-48d6-ba37-f032f2234183" startid="#xdb9ce620-2402-4e66-ae67-72edac79f104"/> 
+                            </add>
                         </measure>
                         <measure n="61" label="61" xml:id="x839ab5ec-c05c-47c2-ab31-96e4cb03a8e4">
                             <staff n="1" xml:id="xda794765-ae62-4437-944d-bd0d4644ca7c"/>
