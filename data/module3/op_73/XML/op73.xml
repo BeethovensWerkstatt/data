@@ -201,7 +201,7 @@
                                 <label>Timpani in Es.</label>
                                 <labelAbbr>Timp</labelAbbr>
                             </staffDef>
-                            <staffGrp>
+                            <staffGrp bar.thru="false">
                                 <label>Pianoforte</label>
                                 <labelAbbr>Pf</labelAbbr>
                                 <staffDef xml:id="x497e38c5-7ac2-4e37-878c-77823ad18396" n="19" lines="5" clef.line="2" clef.shape="G">
@@ -1099,14 +1099,47 @@
                             <staff n="17" xml:id="x8a4a29af-b2b2-416b-8d74-bf7b18faa360"/>
                             <staff n="18" xml:id="x731e56b8-57e8-4a5b-8111-d2925bdc9b14"/>
                             <staff n="19" xml:id="xe6a2695b-9db5-4ad7-b0d5-0dadb8f502a3">
-                                <layer n="1">
+                                <layer><!-- Stichnoten V I -->
+                                    <beam cue="true">
+                                        <note pname="g" oct="5" dur="16" cue="true" stem.dir="down">
+                                            <accid accid="f"/>
+                                        </note>
+                                        <note pname="g" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="f" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="f" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                    </beam>
+                                    <beam cue="true">
+                                        <note pname="c" oct="6" dur="16" cue="true" stem.dir="down">
+                                            <accid accid="f"/>
+                                        </note>
+                                        <note pname="c" oct="6" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="b" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="b" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                    </beam>
+                                    <beam>
+                                        <note pname="g" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="g" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="f" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="f" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                    </beam>
+                                    <beam>
+                                        <note pname="c" oct="6" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="c" oct="6" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="b" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                        <note pname="b" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                    </beam>
+                                </layer>
+                            </staff>
+                            <staff n="20" xml:id="x0c6d7ba7-7307-446b-aadb-441fb10ab608">
+                                <layer>
                                     <mRest/>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="x0c6d7ba7-7307-446b-aadb-441fb10ab608"/>
+                            <dynam staff="1" place="below" tstamp="2">sf</dynam>
+                            <dynam staff="1" place="below" tstamp="4">sf</dynam>
                             <!-- hier keine Auszeichnung der sforzati mit add, weil es den musikalischen Text nicht verändert -->
-                            <dynam xml:id="x6b7f1984-9889-4a84-bb83-efa847202290" startid="#xd251f7d0-c7af-4045-9580-e2932c2e737f">sf</dynam>
-                            <dynam xml:id="xfe8eeae0-a5b1-4885-9e41-591dfc312cf4" startid="#x730cac0e-9e39-418a-8d04-4c952c314bd0">sf</dynam>
+                            <add resp="#LvB" label="Revisionsliste 1" state="#state2"><dynam xml:id="x6b7f1984-9889-4a84-bb83-efa847202290" staff="19" place="below" tstamp="2">sf</dynam></add>
+                            <add resp="#LvB" label="Revisionsliste 1" state="#state2"><dynam xml:id="xfe8eeae0-a5b1-4885-9e41-591dfc312cf4" staff="19" place="below" tstamp="4">sf</dynam></add>
                             <annot type="Revisionsdokument1_monitum1" staff="1 19" tstamp="1" tstamp2="0m+5" xml:id="g_d42c8f9d-2dcd-4cb9-b325-884fc963e1b0"/>
                         </measure>
                         <measure n="40" label="40" xml:id="x2921f67e-5561-405d-8dca-9bd713a6e461">
@@ -1551,7 +1584,6 @@
                         </measure>
                         <measure n="60" label="60" xml:id="xdad5cccc-3c90-4569-94be-bbe4c9f528e3" type="Revisionsdokument1_monitum2">
                             <staff n="1" xml:id="xe5720940-6d90-4633-95d7-736a3e438a9a">
-                                <!-- Stichnoten für Vl.1 -->
                                 <layer xml:id="x3f8538ee-b756-41a1-9fc1-254b175292bd">
                                     <note xml:id="xabb50235-d556-41d8-bf2b-6f85cc98950f" pname="b" oct="5" dur="4"/>
                                     <rest xml:id="xbb780f83-2996-4a9c-ac6b-d200b1a28d2c" dur="4"/>
@@ -1561,18 +1593,15 @@
                             <staff n="2" xml:id="xa6107167-3694-4033-8355-081c2967c42e"/>
                             <staff n="3" xml:id="x6b85ec68-db8d-4df1-80c2-b3b6d84c92f1"/>
                             <staff n="4" xml:id="x3de0fe3c-0176-41f4-9084-b102ea239a0a">
-                                <!-- Stichnoten für Vlc/Bass -->
                                 <layer xml:id="xc0cc49d6-463b-4a0f-bea9-a51fc8b1093e">
                                     <note xml:id="xce8bb6fc-3ff7-48af-af1f-b64f78f377a1" pname="g" oct="2" dur="2"/>
                                     <beam xml:id="x158e61a6-42e6-4108-ab16-cd9b37b82988">
                                         <note xml:id="xace9bdab-0d89-4e21-9fcc-98527993d41f" pname="g" oct="2" dur="8"/>
-                                        <beam xml:id="x5ee211a4-5ae9-449e-a812-d8cb28bcc5e9">
                                             <tuplet xml:id="xb76d6c06-c240-4387-a61d-38bdc685ffd6" num="3" numbase="2" num.visible="true">
                                                 <note xml:id="x25eb45ce-ab13-4323-b02f-3307ce89d3d9" pname="a" oct="2" dur="16"/>
                                                 <note xml:id="xa24721e6-cfd8-4467-a54b-ee2e01b9bd18" pname="g" oct="2" dur="16"/>
                                                 <note xml:id="x13ea03a1-ee0b-4fea-96d3-d23a93ab9891" pname="f" oct="2" dur="16"/>
                                             </tuplet>
-                                        </beam>
                                     </beam>
                                     <beam xml:id="x33934ff0-698d-441b-9d08-ac3d22372419">
                                         <note xml:id="x363821c1-dbd4-4f75-b18b-48cc59d1bb4a" pname="g" oct="2" dur="8">
@@ -1585,18 +1614,15 @@
                                 </layer>
                             </staff>
                             <staff n="5" xml:id="x8e535ab1-5f16-446d-9bce-45ca3a60084e">
-                                <!-- Stichnoten für Vlc/Bass -->
                                 <layer>
                                     <note pname="g" oct="2" dur="2"/>
                                     <beam>
                                         <note pname="g" oct="2" dur="8"/>
-                                        <beam>
                                             <tuplet num="3" numbase="2" num.visible="true">
                                                 <note pname="a" oct="2" dur="16"/>
                                                 <note pname="g" oct="2" dur="16"/>
                                                 <note pname="f" oct="2" dur="16"/>
                                             </tuplet>
-                                        </beam>
                                     </beam>
                                     <beam>
                                         <note pname="g" oct="2" dur="8">
@@ -1622,17 +1648,40 @@
                             <staff n="17" xml:id="xe1820bec-af4b-4028-ab4d-90815ccecc2d"/>
                             <staff n="18" xml:id="xe9306581-2fa5-4d29-9ca9-8460879b8da1"/>
                             <staff n="19" xml:id="xe7fa339b-34ab-4b9d-8192-ed545bd62361">
-                                <layer>
-                                    <mRest/>
+                                <layer><!-- Stichnoten für V I -->
+                                    <note pname="b" oct="5" dur="4" cue="true"/>
+                                    <rest dur="4" cue="true"/>
+                                    <rest dur="2" cue="true"/>
                                 </layer>
                             </staff>
                             <staff n="20" xml:id="x6e1890b7-01a9-4c24-8756-cbc056f562f9">
-                                <layer>
-                                    <mRest/>
+                                <layer><!-- Stichnoten für Vc/B -->
+                                    <note xml:id="x58effd78-2c2a-4110-a741-435233ec1009" pname="g" oct="2" dur="2" cue="true">
+                                        <accid accid="n"/>
+                                    </note>
+                                    <beam cue="true">
+                                        <note xml:id="xca78f430-0799-463d-bc37-9b7a929fa121" pname="g" oct="2" dur="8" cue="true"/>
+                                            <tuplet num="3" numbase="2" num.visible="true">
+                                                <note pname="a" oct="2" dur="16" cue="true"/>
+                                                <note pname="g" oct="2" dur="16" cue="true"/>
+                                                <note pname="f" oct="2" dur="16" cue="true"/>
+                                            </tuplet>
+                                    </beam>
+                                    <beam cue="true">
+                                        <note pname="g" oct="2" dur="8" cue="true">
+                                            <artic artic="stacciss"/>
+                                        </note>
+                                        <note pname="a" oct="2" dur="8" cue="true">
+                                            <artic artic="stacciss"/>
+                                        </note>
+                                    </beam>
                                 </layer>
                             </staff>
+                            <tie staff="20" startid="#x58effd78-2c2a-4110-a741-435233ec1009" endid="#xca78f430-0799-463d-bc37-9b7a929fa121"/>
                             <!-- hier kein add der crescendo Verlängerungsstriche, weil es den Text nicht verändert -->
                             <dynam xml:id="x23f65b71-fe8e-4488-85b1-0efe88051a95" tstamp="1" tstamp2="1m+5" staff="1 4 5" extender="true" place="below">cres</dynam>
+                            <dynam tstamp="1" place="between" staff="19 20">cres</dynam>
+                            <add resp="#LvB" label="Revisionsliste 1" state="#state2"><dynam tstamp="1.25" staff="19 20" place="between" extender="true" tstamp2="1m+5"/></add>
                             <annot type="Revisionsdokument1_monitum2" staff="1 4 5 19 20" tstamp="1" tstamp2="1m+5" xml:id="g_576d23b9-3b8b-4c2f-9efa-742ca71b2956"/>
                         </measure>
                         <measure n="61" label="61" xml:id="xd14a714a-9c68-4f28-9110-462a77674ec4" type="Revisionsdokument1_monitum2">
@@ -1658,7 +1707,7 @@
                                 <layer xml:id="xe1b5d86f-d126-4faf-a825-de30c5194f0e">
                                     <beam xml:id="xf41efca2-d7f4-43ab-b5d9-e85bc9602425">
                                         <note xml:id="x94b5a103-455b-4f4f-8846-72335298ddb2" pname="b" oct="2" dur="8"/>
-                                        <beam xml:id="x7b392968-5e2b-4dcf-9f80-de7edf036a2e">
+                                        
                                             <tuplet xml:id="x5e20f4bf-d47c-4cf6-bf23-1993abfc5110" num="3" numbase="2" num.visible="true">
                                                 <note xml:id="xc002aa1c-a3f1-4084-946f-fe775201991c" pname="c" oct="3" dur="16"/>
                                                 <note xml:id="x2a1c9077-a036-4821-ab94-fbaf0183b2e3" pname="b" oct="2" dur="16"/>
@@ -1666,7 +1715,7 @@
                                                     <accid xml:id="x763c61ac-9c6d-471c-9a26-314f4a3bc540" accid="n"/>
                                                 </note>
                                             </tuplet>
-                                        </beam>
+                                        
                                     </beam>
                                     <beam xml:id="x07bdaab3-ba04-4947-9e81-060f7ecc8c5b">
                                         <note xml:id="x99b3a63b-14a2-46d7-b9de-0e17dab34fe5" pname="b" oct="2" dur="8">
@@ -1680,7 +1729,6 @@
                                         <note xml:id="x28f6ed11-bfa9-46e4-8550-75bc45e23932" pname="d" oct="3" dur="8">
                                             <accid xml:id="xa3f615cd-f980-4fac-96ff-7d2292bcf077" accid="f"/>
                                         </note>
-                                        <beam xml:id="x388581f6-7636-4ccc-b57f-954e91912b0c">
                                             <tuplet xml:id="xd4b64bd9-042b-4cc8-8723-59024b32d546" num="3" numbase="2" num.visible="true">
                                                 <note xml:id="x0fccb2d3-9e60-4993-9028-8aae27d96a6a" pname="e" oct="3" dur="16"/>
                                                 <note xml:id="xd3652bc0-dc28-4354-9354-81aa7bde8b93" pname="d" oct="3" dur="16"/>
@@ -1688,7 +1736,6 @@
                                                     <accid xml:id="x42c69032-8aad-4471-8182-7d2110e9cb10" accid="n"/>
                                                 </note>
                                             </tuplet>
-                                        </beam>
                                     </beam>
                                     <beam xml:id="x22cbcb74-2eb0-4213-ae88-dac28cd92d69">
                                         <note xml:id="xdc9e7255-4010-422c-ac59-736f3db1edfd" pname="d" oct="3" dur="8">
@@ -1706,7 +1753,6 @@
                                 <layer>
                                     <beam>
                                         <note pname="b" oct="2" dur="8"/>
-                                        <beam>
                                             <tuplet num="3" numbase="2" num.visible="true">
                                                 <note pname="c" oct="3" dur="16"/>
                                                 <note pname="b" oct="2" dur="16"/>
@@ -1714,7 +1760,6 @@
                                                     <accid accid="n"/>
                                                 </note>
                                             </tuplet>
-                                        </beam>
                                     </beam>
                                     <beam>
                                         <note pname="b" oct="2" dur="8">
@@ -1728,7 +1773,6 @@
                                         <note pname="d" oct="3" dur="8">
                                             <accid accid="f"/>
                                         </note>
-                                        <beam>
                                             <tuplet num="3" numbase="2" num.visible="true">
                                                 <note pname="e" oct="3" dur="16"/>
                                                 <note pname="d" oct="3" dur="16"/>
@@ -1736,7 +1780,6 @@
                                                     <accid accid="n"/>
                                                 </note>
                                             </tuplet>
-                                        </beam>
                                     </beam>
                                     <beam>
                                         <note pname="d" oct="3" dur="8">
@@ -1763,14 +1806,63 @@
                             <staff n="17" xml:id="x4fb48555-bf66-4a9b-b0b7-1046b7964396"/>
                             <staff n="18" xml:id="xd8d7f0fb-6f88-493f-9d07-10b084c15420"/>
                             <staff n="19" xml:id="x2120dec1-7e38-4c97-a996-82ab5889cade">
+                                <!-- Stichnoten für Vl1 -->
                                 <layer>
-                                    <mRest/>
+                                    <rest dur="8" cue="true"/>
+                                    <note pname="b" oct="5" dur="4" cue="true"/>
+                                        <note pname="b" oct="5" dur="4" cue="true"/>
+                                        <note pname="b" oct="5" dur="8" cue="true"/>
+                                        <beam cue="true">
+                                            <note pname="b" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                            <note pname="a" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                            <note pname="g" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                            <note pname="f" oct="5" dur="16" cue="true" stem.dir="down"/>
+                                    </beam>
                                 </layer>
                             </staff>
                             <staff n="20" xml:id="xf1c919bb-52b0-4dcd-8cc0-050316f6da8c">
-                                <layer>
-                                    <mRest/>
-                                </layer>
+                                    <!-- Stichnoten für Vlc/Bass -->
+                                    <layer>
+                                        <beam cue="true">
+                                            <note pname="b" oct="2" dur="8" cue="true"/>
+                                            <tuplet num="3" numbase="2" num.visible="true">
+                                                <note pname="c" oct="3" dur="16" cue="true"/>
+                                                <note pname="b" oct="2" dur="16" cue="true"/>
+                                                <note pname="a" oct="2" dur="16" cue="true">
+                                                    <accid accid="n"/>
+                                                </note>
+                                            </tuplet>
+                                        </beam>
+                                        <beam>
+                                            <note pname="b" oct="2" dur="8" cue="true">
+                                                <artic artic="stacciss"/>
+                                            </note>
+                                            <note pname="c" oct="3" dur="8" cue="true">
+                                                <artic artic="stacciss"/>
+                                            </note>
+                                        </beam>
+                                        <beam cue="true">
+                                            <note pname="d" oct="3" dur="8" cue="true">
+                                                <accid accid="f"/>
+                                            </note>
+                                            <tuplet num="3" numbase="2" num.visible="true">
+                                                <note pname="e" oct="3" dur="16" cue="true"/>
+                                                <note pname="d" oct="3" dur="16" cue="true"/>
+                                                <note pname="c" oct="3" dur="16" cue="true">
+                                                    <accid accid="n"/>
+                                                </note>
+                                            </tuplet>
+                                        </beam>
+                                        <beam cue="true">
+                                            <note pname="d" oct="3" dur="8" cue="true">
+                                                <artic artic="stacciss"/>
+                                            </note>
+                                            <note pname="d" oct="3" dur="8" cue="true">
+                                                <accid accid="f"/>
+                                                <artic artic="stacciss"/>
+                                            </note>
+                                        </beam>
+                                    </layer>
                             </staff>
                         </measure>
                         <measure n="62" label="62" xml:id="xdd96ed6c-4a6b-4d0f-8d11-06ceec203e8c">
@@ -5070,16 +5162,78 @@
                             <staff n="16" xml:id="xb3fa0970-4da0-4285-92b8-0c93bf21454e"/>
                             <staff n="17" xml:id="x3e6d4353-6827-4096-8b26-16b5f6addf8f"/>
                             <staff n="18" xml:id="xf142d6fe-f253-4634-bddf-c9cdb219647f"/>
-                            <staff n="19" xml:id="xbb3d2eef-9a6b-4cfd-bbdf-a93f6228d286"/>
-                            <staff n="20" xml:id="x959aa9ef-414d-45d6-8e7e-9876fa588c16"/>
-                            <subst resp="#LvB" state="#state2">
-                                <del resp="#LvB" state="#state2">
-                                    <dynam staff="19 20" place="between" tstamp="1" tstamp2="1">cres</dynam>
-                                </del>
-                                <add resp="#LvB" state="#state2">
-                                    <dynam staff="19 20" place="between" tstamp="1" tstamp2="5m+5" extender="true">cres</dynam>
-                                </add>
-                            </subst>
+                            <staff n="19" xml:id="xbb3d2eef-9a6b-4cfd-bbdf-a93f6228d286">
+                                <layer>
+                                    <beam>
+                                        <note pname="f" oct="3" dur="8" staff="20">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="f" oct="3" dur="8" staff="20">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="g" oct="3" dur="8" staff="20">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="a" oct="3" dur="8" staff="20">
+                                            <artic artic="stacc"/>
+                                            <accid accid="n"/>
+                                        </note>
+                                    </beam>
+                                    <beam>
+                                        <note pname="b" oct="3" dur="8" staff="20">
+                                            <accid accid.ges="f"/>
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="f" oct="3" dur="8" staff="20">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="c" oct="4" dur="8" staff="20">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="f" oct="3" dur="8" staff="20">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                    </beam>
+                                </layer>
+                            </staff>
+                            <staff n="20" xml:id="x959aa9ef-414d-45d6-8e7e-9876fa588c16">
+                                <layer>
+                                    <beam>
+                                        <note pname="f" oct="2" dur="8">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="f" oct="2" dur="8">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="g" oct="2" dur="8">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="a" oct="2" dur="8">
+                                            <artic artic="stacc"/>
+                                            <accid accid="n"/>
+                                        </note>
+                                    </beam>
+                                    <beam>
+                                        <note pname="b" oct="2" dur="8">
+                                            <accid accid.ges="f"/>
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="f" oct="2" dur="8">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="c" oct="3" dur="8">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                        <note pname="f" oct="2" dur="8">
+                                            <artic artic="stacc"/>
+                                        </note>
+                                    </beam>
+                                </layer>
+                            </staff>
+                            <dynam staff="19 20" place="between" tstamp="1">cres</dynam>
+                            <add resp="#LvB" state="#state2" label="Revisionsliste 1">
+                                <dynam staff="19 20" place="between" tstamp="1.25" tstamp2="5m+5" extender="true"/>
+                            </add>
                             <annot type="Revisionsdokument1_monitum3" staff="19 20" tstamp="1" tstamp2="5m+5" xml:id="g_61d56c58-a7d7-4a4a-878a-2e2564ad0c6f"/>
                         </measure>
                         <measure n="212" label="212" xml:id="xbfdc78d8-f4a3-42ce-bdb0-c89ae7ff2c59" type="Revisionsdokument1_monitum3">
@@ -5105,21 +5259,38 @@
                                 <layer xml:id="xb4e0fbfc-312a-49d5-a926-615e6e705d8a">
                                     <beam xml:id="xb1fd6693-a3df-46cc-9ea7-b66d3276ee5a">
                                         <note xml:id="xcfe5208e-05c3-4212-979e-8f0ba9b0aa06" pname="d" oct="4" dur="8"/>
-                                        <note xml:id="xf1e2d49c-41ec-4567-82aa-b44f859b90c6" pname="f" oct="3" dur="8"/>
+                                        <note xml:id="xf1e2d49c-41ec-4567-82aa-b44f859b90c6" pname="f" oct="3" dur="8" staff="20"/>
                                         <note xml:id="x10695414-6aac-4601-b216-727d4c47e91c" pname="e" oct="4" dur="8">
                                             <accid xml:id="x29c21638-e5e4-41c3-b1b7-06da1620f261" accid.ges="f"/>
                                         </note>
-                                        <note xml:id="xb93b8a75-94c0-4a80-9084-da59a3a4f00c" pname="f" oct="3" dur="8"/>
+                                        <note xml:id="xb93b8a75-94c0-4a80-9084-da59a3a4f00c" pname="f" oct="3" dur="8" staff="20"/>
                                     </beam>
                                     <beam xml:id="xa49cd360-e13e-45ee-bb53-b6395202b07b">
                                         <note xml:id="x0c6e252a-eddd-44ee-9a13-36ca9315cd28" pname="f" oct="4" dur="8"/>
-                                        <note xml:id="x86acf96b-8973-4775-8129-206ed7a5d5f5" pname="f" oct="3" dur="8"/>
+                                        <note xml:id="x86acf96b-8973-4775-8129-206ed7a5d5f5" pname="f" oct="3" dur="8" staff="20"/>
                                         <note xml:id="xdc86f5d3-c056-49b4-9bd2-7a82c7629942" pname="g" oct="4" dur="8"/>
-                                        <note xml:id="xef913d48-ec6e-4d61-b64d-c45eb7d3b230" pname="g" oct="3" dur="8"/>
+                                        <note xml:id="xef913d48-ec6e-4d61-b64d-c45eb7d3b230" pname="g" oct="3" dur="8" staff="20"/>
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="x79d625d1-ab58-4ddc-8de8-d4ad4a326bae"/>
+                            <staff n="20" xml:id="x79d625d1-ab58-4ddc-8de8-d4ad4a326bae">
+                                <layer>
+                                    <beam>
+                                        <note pname="d" oct="3" dur="8"/>
+                                        <note pname="f" oct="2" dur="8"/>
+                                        <note pname="e" oct="3" dur="8">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="f" oct="2" dur="8"/>
+                                    </beam>
+                                    <beam>
+                                        <note pname="f" oct="3" dur="8"/>
+                                        <note pname="f" oct="2" dur="8"/>
+                                        <note pname="g" oct="3" dur="8"/>
+                                        <note pname="g" oct="2" dur="8"/>
+                                    </beam>
+                                </layer>
+                            </staff>
                         </measure>
                         <measure n="213" label="213" xml:id="x873674e5-2e1d-4eb9-b4f3-ceeab56255bd" type="Revisionsdokument1_monitum3">
                             <staff n="1" xml:id="xa112cf88-ee11-4a64-9076-ab31e98faa1e"/>
@@ -5142,7 +5313,7 @@
                             <staff n="18" xml:id="xa9a7b7d9-607c-41a3-9ac9-2df77a6b0f05"/>
                             <staff n="19" xml:id="xeebbc104-36ec-4d33-ad38-26da69ee8f26">
                                 <layer xml:id="x1210eaeb-6654-4c83-8b40-78e3771a48b2">
-                                    <clef xml:id="xba027b90-de18-4359-86c9-8193785cfe88" shape="G" line="2"/>
+                                    <!--<clef xml:id="xba027b90-de18-4359-86c9-8193785cfe88" shape="G" line="2"/>-->
                                     <beam xml:id="x0cfee92e-801b-440c-ac90-81585a8d9573">
                                         <note xml:id="x29874d27-f185-4388-b028-d6dbf043c9bc" pname="a" oct="4" dur="8">
                                             <accid xml:id="x9006b495-ef28-45a8-b4e0-f376a75cb6c8" accid="n"/>
@@ -5165,7 +5336,30 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="xd2dc4a5e-9e1b-481b-80ac-e044d79c8757"/>
+                            <staff n="20" xml:id="xd2dc4a5e-9e1b-481b-80ac-e044d79c8757">
+                                <layer>
+                                <beam>
+                                    <note pname="a" oct="1" dur="8">
+                                        <accid accid="n"/>
+                                    </note>
+                                    <note pname="a" oct="2" dur="8">
+                                        <accid accid="n"/>
+                                    </note>
+                                    <note pname="b" oct="1" dur="8">
+                                        <accid accid.ges="f"/>
+                                    </note>
+                                    <note pname="b" oct="2" dur="8">
+                                        <accid accid.ges="f"/>
+                                    </note>
+                                </beam>
+                                <beam>
+                                    <note pname="c" oct="2" dur="8"/>
+                                    <note pname="c" oct="3" dur="8"/>
+                                    <note pname="d" oct="2" dur="8"/>
+                                    <note pname="d" oct="3" dur="8"/>
+                                </beam>
+                                </layer>
+                            </staff>
                         </measure>
                         <measure n="214" label="214" xml:id="xdf88b5a2-3a39-479c-9e3b-64f0d891b316" type="Revisionsdokument1_monitum3">
                             <staff n="1" xml:id="xc5b35879-5514-401e-8544-e2a12c250617"/>
@@ -5210,7 +5404,30 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="xb430fb80-163d-4ad8-94ad-9d8415777004"/>
+                            <staff n="20" xml:id="xb430fb80-163d-4ad8-94ad-9d8415777004">
+                                <layer>
+                                    <beam>
+                                        <note pname="e" oct="2" dur="8">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="e" oct="3" dur="8">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="f" oct="2" dur="8"/>
+                                        <note pname="f" oct="3" dur="8"/>
+                                    </beam>
+                                    <beam>
+                                        <note pname="g" oct="2" dur="8"/>
+                                        <note pname="g" oct="3" dur="8"/>
+                                        <note pname="a" oct="2" dur="8">
+                                            <accid accid="n"/>
+                                        </note>
+                                        <note pname="a" oct="3" dur="8">
+                                            <accid accid="n"/>
+                                        </note>
+                                    </beam>
+                                </layer>
+                            </staff>
                         </measure>
                         <measure n="215" label="215" xml:id="xc2e43ce2-61df-44b6-bec3-d4647756dfb7" type="Revisionsdokument1_monitum3">
                             <staff n="1" xml:id="xae01a6ef-b9ae-4593-9de2-03902d032f3e"/>
@@ -5275,8 +5492,52 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="x4a9890f0-55b3-46f3-8269-2fa434f8fdd5"/>
-                            <octave xml:id="x3b00f876-8c4e-40a4-bb7b-6e872a9c1250" startid="#xa0fe48ed-e470-4ad5-8f6f-88de2620fa7c" endid="#x66a112a4-150b-4e47-88ff-93046af5de92" dis="8" dis.place="above"/>
+                            <staff n="20" xml:id="x4a9890f0-55b3-46f3-8269-2fa434f8fdd5">
+                                <layer>
+                                    <beam>
+                                        <note pname="b" oct="2" dur="16">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="b" oct="3" dur="16">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="c" oct="3" dur="16"/>
+                                        <note pname="c" oct="4" dur="16"/>
+                                    </beam>
+                                    <beam>
+                                        <note pname="d" oct="3" dur="16"/>
+                                        <note pname="d" oct="4" dur="16"/>
+                                        <note pname="e" oct="3" dur="16">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="e" oct="4" dur="16">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                    </beam>
+                                    <beam>
+                                        <note pname="f" oct="3" dur="16"/>
+                                        <note pname="f" oct="4" dur="16"/>
+                                        <note pname="g" oct="3" dur="16"/>
+                                        <note pname="g" oct="4" dur="16"/>
+                                    </beam>
+                                    <clef shape="G" line="2"/>
+                                    <beam>
+                                        <note pname="a" oct="3" dur="16">
+                                            <accid accid="n"/>
+                                        </note>
+                                        <note pname="a" oct="4" dur="16">
+                                            <accid accid="n"/>
+                                        </note>
+                                        <note pname="b" oct="3" dur="16">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="b" oct="4" dur="16">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                    </beam>
+                                </layer>
+                            </staff>
+                            <octave xml:id="x3b00f876-8c4e-40a4-bb7b-6e872a9c1250" staff="19" tstamp="1" tstamp2="2m+3" dis="8" dis.place="above"/>
                         </measure>
                         <measure n="216" label="216" xml:id="x01d8e52d-db5b-417e-96a4-7c473477d68d" type="Revisionsdokument1_monitum3">
                             <staff n="1" xml:id="xfccd204f-07df-4149-b775-4b1e4c197f37"/>
@@ -5333,7 +5594,42 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="x5d25360f-e038-4f9c-a8a5-f33a0f743398"/>
+                            <staff n="20" xml:id="x5d25360f-e038-4f9c-a8a5-f33a0f743398">
+                                <layer>
+                                    <beam>
+                                        <note pname="c" oct="4" dur="16"/>
+                                        <note pname="c" oct="5" dur="16"/>
+                                        <note pname="d" oct="4" dur="16"/>
+                                        <note pname="d" oct="5" dur="16"/>
+                                    </beam>
+                                    <beam>
+                                        <note pname="e" oct="4" dur="16">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="e" oct="5" dur="16">
+                                            <accid accid.ges="f"/>
+                                        </note>
+                                        <note pname="e" oct="4" dur="16">
+                                            <accid accid="n"/>
+                                        </note>
+                                        <note pname="e" oct="5" dur="16">
+                                            <accid accid="n"/>
+                                        </note>
+                                    </beam>
+                                    <beam>
+                                        <note pname="f" oct="4" dur="16"/>
+                                        <note pname="f" oct="5" dur="16"/>
+                                        <note pname="f" oct="4" dur="16"/>
+                                        <note pname="f" oct="5" dur="16"/>
+                                    </beam>
+                                    <beam>
+                                        <note pname="d" oct="4" dur="16"/>
+                                        <note pname="d" oct="5" dur="16"/>
+                                        <note pname="b" oct="3" dur="16"/>
+                                        <note pname="b" oct="4" dur="16"/>
+                                    </beam>
+                                </layer>
+                            </staff>
                         </measure>
                         <measure n="217" label="217" xml:id="x480cc239-4f4e-4b3d-b61e-8feababa253f">
                             <staff n="1" xml:id="xa438546b-e718-49f5-9e76-97a9ffd2c4c3"/>
@@ -24891,7 +25187,7 @@
                                 <layer n="2">
                                     <beam>
                                         <chord dur="8">
-                                            <note xml:id="xb817e3d2-2f26-4311-9165-5d9c701e5d55" pname="a" oct="4"
+                                            <note xml:id="xb817e3d2-2f26-4311-9165-5d9c701e5d55" pname="a" oct="4">
                                                 <accid accid.ges="f"/>
                                             </note>
                                             <note xml:id="x1e189b4d-888f-4f45-8eed-8344628daa33" pname="c" oct="5"/>
@@ -24905,7 +25201,7 @@
                                     </beam>
                                     <beam>
                                         <chord dur="8">
-                                            <note xml:id="x39364295-c9a7-45f6-95f4-429259743eed" pname="e" oct="5"
+                                            <note xml:id="x39364295-c9a7-45f6-95f4-429259743eed" pname="e" oct="5">
                                                 <accid accid.ges="f"/>
                                             </note>
                                             <note xml:id="x07dbfe2e-ec95-457e-84e1-06177d816cb4" pname="c" oct="5"/>
@@ -24941,7 +25237,7 @@
                                             <note pname="e" oct="3">
                                                 <accid accid.ges="f"/>
                                             </note>
-                                            <note pname="a" oct="3"
+                                            <note pname="a" oct="3">
                                                 <accid accid.ges="f"/>
                                             </note>
                                             <note pname="c" oct="4"/>
@@ -24958,7 +25254,7 @@
                                             <note pname="e" oct="3">
                                                 <accid accid.ges="f"/>
                                             </note>
-                                            <note pname="a" oct="3"
+                                            <note pname="a" oct="3">
                                                 <accid accid.ges="f"/>
                                             </note>
                                             <note pname="c" oct="4"/>
@@ -25095,7 +25391,7 @@
                                             <note pname="e" oct="3">
                                                 <accid accid.ges="f"/>
                                             </note>
-                                            <note pname="a" oct="3"
+                                            <note pname="a" oct="3">
                                                 <accid accid.ges="f"/>
                                             </note>
                                             <note pname="c" oct="4"/>
@@ -25112,7 +25408,7 @@
                                             <note pname="e" oct="3">
                                                 <accid accid.ges="f"/>
                                             </note>
-                                            <note pname="a" oct="3"
+                                            <note pname="a" oct="3">
                                                 <accid accid.ges="f"/>
                                             </note>
                                             <note pname="c" oct="4"/>
