@@ -204,7 +204,7 @@
                             </staffDef>
                             <staffGrp bar.thru="false" symbol="brace">
                                 <label>Pianoforte</label>
-                                <labelAbbr>Pf</labelAbbr>
+                                <labelAbbr>Pfte</labelAbbr>
                                 <staffDef xml:id="x497e38c5-7ac2-4e37-878c-77823ad18396" n="19" lines="5" clef.line="2" clef.shape="G">
                                 </staffDef>
                                 <staffDef xml:id="x1708ce0e-b2f7-4d18-888d-a72bc66c3e70" n="20" lines="5" clef.line="4" clef.shape="F">
@@ -14659,7 +14659,7 @@
             </mdiv>
             <mdiv xml:id="x23c773ce-5239-4321-878e-4679274666fe" n="2" label="Adagio">
                 <score>
-                    <scoreDef xml:id="x2be27a65-1591-4db3-9318-2616d7475b27" meter.count="4" meter.unit="4" meter.sym="common" key.sig="5s" key.mode="major">
+                    <scoreDef xml:id="x2be27a65-1591-4db3-9318-2616d7475b27" meter.count="2" meter.unit="2" meter.sym="cut" key.sig="5s" key.mode="major">
                         <staffGrp>
                             <staffGrp xml:id="x3ca9eab4-d4e9-40ab-a0d7-4981beabbc50" symbol="bracket" bar.thru="true">
                                 <staffDef xml:id="x46833d91-1866-484e-b53f-cf9d32159e59" n="1" lines="5" clef.line="2" clef.shape="G">
@@ -14738,9 +14738,9 @@
                                 <label>Timpani in Es.</label>
                                 <labelAbbr>Timp</labelAbbr>
                             </staffDef>
-                            <staffGrp>
+                            <staffGrp bar.thru="false" symbol="brace">
                                 <label>Pianoforte</label>
-                                <labelAbbr>Pf</labelAbbr>
+                                <labelAbbr>Pfte</labelAbbr>
                                 <staffDef xml:id="xd2c467a7-72c0-4d3c-9c97-e9368267344e" n="19" lines="5" clef.line="2" clef.shape="G">
                                 </staffDef>
                                 <staffDef xml:id="x98219827-0493-4e94-ae0e-0f6720d9e696" n="20" lines="5" clef.line="4" clef.shape="F">
@@ -15042,11 +15042,34 @@
                             <staff n="17" xml:id="xe2af861f-305a-4d50-857c-15fc22f501eb"/>
                             <staff n="18" xml:id="x92c69083-a90d-45b6-9904-c8b3ff6c4f7d"/>
                             <staff n="19" xml:id="x4d5579f5-1064-418f-8e49-99c7f1ac60d3">
-                                <layer>
-                                    <mRest/>
+                                <layer><!-- Stichnoten für V I -->
+                                    <note pname="b" oct="4" dur="4" cue="true"/>
+                                    <rest dur="4" cue="true"/>
+                                    <note pname="e" oct="5" dur="4" cue="true"/>
+                                    <note pname="c" oct="5" dur="4" cue="true">
+                                        <accid accid.ges="s"/>
+                                    </note>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="xc917e6ed-554a-4d0a-9aaa-e51465a8a364"/>
+                            <staff n="20" xml:id="xc917e6ed-554a-4d0a-9aaa-e51465a8a364">
+                                <layer n="1"><!-- Stichnoten für Vc -->
+                                    <note xml:id="xa3901e53-c8bf-4ee4-9c74-e17dced10e23" pname="b" oct="3" dur="4" cue="true"/>
+                                    <note pname="g" oct="3" dur="4" cue="true">
+                                        <accid accid="n"/>
+                                    </note>
+                                    <note pname="f" oct="3" dots="1" dur="4" cue="true">
+                                        <accid accid.ges="s"/>
+                                    </note>
+                                    <note xml:id="x79b0b7c8-4f02-4c4a-ac6f-81f228189403" pname="a" oct="3" dur="8" cue="true">
+                                        <accid accid.ges="s"/>
+                                    </note>
+                                </layer>
+                                <layer n="2"><!-- Stichnoten für B -->
+                                    <note pname="b" dur="1" oct="2" cue="true"/>
+                                </layer>
+                            </staff>
+                            <slur startid="#xa3901e53-c8bf-4ee4-9c74-e17dced10e23" endid="#x79b0b7c8-4f02-4c4a-ac6f-81f228189403" staff="20"/>
+                            <dir place="below" staff="20" tstamp="1">tasto solo </dir>
                             <slur xml:id="xaa1f1ccd-d3b6-48af-89a2-fefe692d4e08" startid="#x042245dd-dd58-4e3d-9505-754d921d3ffd" endid="#xa3b967b2-fe38-4dba-b16f-8d1978e9b861"/>
                             <annot xml:id="g_cd0c9a3c-9408-4252-9d66-097e8cd1abae" tstamp="1" tstamp2="1m+5" type="Revisionsdokument1_monitum9" staff="1 19"/>
                         </measure>
@@ -15082,10 +15105,43 @@
                             <staff n="18" xml:id="x5dd28528-d555-4954-bc69-c10cb756d0ff"/>
                             <staff n="19" xml:id="x13ebf1ac-7602-4b7c-a4a4-39c0bc4ce7f9">
                                 <layer>
-                                    <mRest/>
+                                    <subst resp="#LvB" label="Revisionsliste 1">
+                                    <del resp="#LvB" state="#state2">
+                                    <note pname="d" oct="5" dur="4" cue="true">
+                                        <accid accid.ges="s"/>
+                                    </note>
+                                    </del>
+                                    <add resp="#LvB" state="#state2">
+                                        <note pname="d" oct="5" dur="4" cue="true">
+                                        <accid accid.ges="s"/>
+                                    </note>
+                                    </add>
+                                    </subst>
+                                    <rest dur="4"/>
+                                    <note pname="e" oct="5" dur="4" cue="true"/>
+                                    <note pname="c" oct="5" dur="4" cue="true">
+                                        <accid accid.ges="s"/>
+                                    </note>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="x37fe8eb0-326d-42d9-84d6-7b34cef4c39b"/>
+                            <staff n="20" xml:id="x37fe8eb0-326d-42d9-84d6-7b34cef4c39b">
+                                <layer n="1"><!-- Stichnoten für Vc -->
+                                    <note xml:id="x7edc71a4-9a31-45e1-a82c-41b5decfa154" pname="b" oct="3" dur="4" cue="true"/>
+                                    <note pname="g" oct="3" dur="4" cue="true">
+                                        <accid accid="n"/>
+                                    </note>
+                                    <note pname="f" oct="3" dots="1" dur="4" cue="true">
+                                        <accid accid.ges="s"/>
+                                    </note>
+                                    <note xml:id="x9323a08f-402c-4f05-bac9-8451acfb3f07" pname="a" oct="3" dur="8" cue="true">
+                                        <accid accid.ges="s"/>
+                                    </note>
+                                </layer>
+                                <layer n="2"><!-- Stichnoten für B -->
+                                    <note pname="b" dur="1" oct="2" cue="true"/>
+                                </layer>
+                            </staff>
+                            <slur startid="#x7edc71a4-9a31-45e1-a82c-41b5decfa154" endid="#x9323a08f-402c-4f05-bac9-8451acfb3f07" staff="20"/>
                         </measure>
                         <measure n="15" label="15" xml:id="x0e6f8f5e-bb1d-4140-b379-8143015e977a">
                             <staff n="1" xml:id="x0f53ccee-e68e-41b1-83ce-a9c94a0c94a4"/>
