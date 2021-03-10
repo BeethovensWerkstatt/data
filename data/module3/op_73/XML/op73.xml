@@ -15045,7 +15045,7 @@
                                 <layer><!-- Stichnoten für V I -->
                                     <note pname="b" oct="4" dur="4" cue="true"/>
                                     <rest dur="4" cue="true"/>
-                                    <note pname="e" oct="5" dur="4" cue="true"/>
+                                    <note xml:id="xfacad787-ae75-4405-a91d-2af425d859d2" pname="e" oct="5" dur="4" cue="true"/>
                                     <note pname="c" oct="5" dur="4" cue="true">
                                         <accid accid.ges="s"/>
                                     </note>
@@ -15068,9 +15068,11 @@
                                     <note pname="b" dur="1" oct="2" cue="true"/>
                                 </layer>
                             </staff>
+                            <dir place="below" staff="20" tstamp="1">tasto solo</dir>
+                            <slur xml:id="xaa1f1ccd-d3b6-48af-89a2-fefe692d4e08" startid="#xa0753624-d22f-4760-a09b-82c20574cab0" endid="#x9bc513dc-bffb-41c6-b9ca-a2a71dbb493f" staff="1"/>
+                            <slur tstamp="2" tstamp2="1m+1" curvedir="above" staff="19"/>
+                            
                             <slur startid="#xa3901e53-c8bf-4ee4-9c74-e17dced10e23" endid="#x79b0b7c8-4f02-4c4a-ac6f-81f228189403" staff="20"/>
-                            <dir place="below" staff="20" tstamp="1">tasto solo </dir>
-                            <slur xml:id="xaa1f1ccd-d3b6-48af-89a2-fefe692d4e08" startid="#x042245dd-dd58-4e3d-9505-754d921d3ffd" endid="#xa3b967b2-fe38-4dba-b16f-8d1978e9b861"/>
                             <annot xml:id="g_cd0c9a3c-9408-4252-9d66-097e8cd1abae" tstamp="1" tstamp2="1m+5" type="Revisionsdokument1_monitum9" staff="1 19"/>
                         </measure>
                         <measure n="14" label="14" xml:id="x458515ce-bbb4-453b-8096-b39fb2490ef7" type="Revisionsdokument1_monitum9">
@@ -15538,10 +15540,14 @@
                             <staff n="18" xml:id="x7eed349f-f8bd-4af9-8fca-ccefce4c5202"/>
                             <staff n="19" xml:id="xec3e7f2f-e20f-47ed-8103-ca09ea8bbb44">
                                 <layer xml:id="xb9648577-d3be-43ff-926b-502bed2ab832">
-                                    <space xml:id="xc6dff789-f850-48fe-88bd-bd399469025e" dur="4"/>
-                                    <space xml:id="x8b058e33-020c-4c48-8bf7-77e0583fd10e" dur="4"/>
+                                    <note pname="f" dur="4" oct="4">
+                                        <accid accid.ges="s"/>
+                                    </note>
+                                    <note pname="a" oct="4" dur="8">
+                                        <accid accid="n"/>
+                                    </note>
                                     <beam xml:id="x11e6f92b-e5d6-4c7c-b46f-9646f0711654">    
-                                        <tuplet xml:id="x5f0fa8fa-d961-4d83-8bdc-4abaa47e02bb" num="3" numbase="2">
+                                        <tuplet xml:id="x5f0fa8fa-d961-4d83-8bdc-4abaa47e02bb" num="3" numbase="2" num.visible="false">
                                             <note xml:id="xe27c281e-9e4a-46f5-b6ce-b1f4baff86ed" pname="a" oct="4" dur="8">
                                                 <accid xml:id="xc0ffadd5-3a2e-4353-bb9e-76daf6ae51f7" accid.ges="s"/>
                                             </note>
@@ -15554,7 +15560,7 @@
                                         </tuplet>
                                     </beam>
                                     <beam xml:id="xa35c60a8-7a35-40b5-93ff-d75163941d69">
-                                        <tuplet xml:id="x602062c3-8178-42bb-97b3-69dc12fdfa27" num="3" numbase="2">
+                                        <tuplet xml:id="x602062c3-8178-42bb-97b3-69dc12fdfa27" num="3" numbase="2" num.visible="false">
                                             <note xml:id="x65da762d-e456-4d93-9f35-098d918e010a" pname="g" oct="5" dur="8">
                                                 <accid xml:id="x64e631ec-7502-49bc-8d52-fad30b84d028" accid.ges="n"/>
                                             </note>
@@ -15563,7 +15569,7 @@
                                             </note>
                                             <note xml:id="xca311713-99e5-447f-8734-a8c279dd98ec" pname="e" oct="5" dur="8">
                                                 <accid xml:id="x3746f801-32ba-4ccb-83cd-17094666bcc4" accid.ges="s"/>
-                                                <add resp="#LvB" state="#state2">
+                                                <add resp="#LvB" state="#state2" label="Revisionsliste 1">
                                                     <artic xml:id="x69659f22-6cd5-44f3-b127-2c2a4b83aaf9" artic="stacciss"/>
                                                 </add>
                                             </note>
@@ -15571,7 +15577,46 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <staff n="20" xml:id="xa77ba384-dc95-40a8-9610-6ddc20bfccca"/>
+                            <staff n="20" xml:id="xa77ba384-dc95-40a8-9610-6ddc20bfccca">
+                                <layer n="1">
+                                    <chord dur="4" stem.dir="down">
+                                        <note pname="d" oct="4">
+                                            <accid accid.ges="n"/>
+                                        </note>
+                                        <note pname="d" oct="3">
+                                            <accid accid.ges="n"/>
+                                        </note>
+                                    </chord>
+                                    <rest dur="4"/>
+                                    <rest dur="2"/>
+                                </layer>
+                                <layer n="2"><!-- Stichnoten für Cor -->
+                                    <clef shape="G" line="2"/>
+                                    <chord dur="4" stem.dir="up" cue="true">
+                                        <note pname="d" oct="4" cue="true">
+                                            <accid accid.ges="s"/>
+                                        </note>
+                                        <note pname="f" oct="3" cue="true">
+                                            <accid accid.ges="s"/>
+                                        </note>
+                                    </chord>
+                                    <chord dur="4" stem.dir="up" cue="true">
+                                        <note pname="e" oct="4" cue="true"/>
+                                        <note pname="a" oct="3" cue="true">
+                                            <accid accid.ges="s"/>
+                                        </note>
+                                    </chord>
+                                    <chord dur="4" stem.dir="up" cue="true">
+                                        <note pname="f" oct="4" cue="true">
+                                            <accid accid.ges="s"/>
+                                        </note>
+                                        <note pname="d" oct="4" cue="true">
+                                            <accid accid.ges="s"/>
+                                        </note>
+                                    </chord>
+                                    <rest dur="4" cue="true"/>
+                                </layer>
+                            </staff>
                             <slur staff="2" startid="#xe27c281e-9e4a-46f5-b6ce-b1f4baff86ed" endid="#x0c07f3c1-3382-4f44-99fd-59e79c3c67b4"></slur>
                             <slur xml:id="x85fb7b7d-1bf9-47b9-ab44-9bc49a07a3de" startid="#x65da762d-e456-4d93-9f35-098d918e010a" endid="#x32170a38-f80a-44e4-a8e6-ba0292ab0a9a"/>
                             <annot xml:id="g_7d9a6ddf-85a9-47f9-b905-47bb2b2625c6" type="Revisionsdokument1_monitum10" staff="19" tstamp="1" tstamp2="0m+5" plist="#xca311713-99e5-447f-8734-a8c279dd98ec"/>
