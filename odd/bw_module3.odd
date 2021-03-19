@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+  This ODD customization is based on Work of the Music Encoding Initiative. 
+
+-->
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Beethovens Werkstatt – ODD Customization for the third module</title>
+        <respStmt>
+          <resp>Authored by</resp>
+          <name xml:id="JK">Johannes Kepper</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p/>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <divGen type="toc"/>
+    </front>
+    <body>
+
+      <!-- Limit the set of possible start elements -->
+      <schemaSpec ident="mei" ns="http://www.music-encoding.org/ns/mei" prefix="mei_"
+        start="mei">
+
+        <!-- Declare MEI and XLink namespaces for use in Schematron -->
+        <constraintSpec ident="set_ns" scheme="schematron" mode="add">
+          <constraint>
+            <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="mei"
+              uri="http://www.music-encoding.org/ns/mei"/>
+            <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="xlink"
+              uri="http://www.w3.org/1999/xlink"/>
+            <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="svg"
+              uri="http://www.w3.org/2000/svg"/>           
+          </constraint>
+        </constraintSpec>
+
+        <!-- Include all modules -->
+        
+        <moduleRef key="MEI"/>
+        <!--<moduleRef key="MEI.analytical"/>-->
+        
+        <moduleRef key="MEI.cmn"/>
+        <moduleRef key="MEI.cmnOrnaments"/>
+        
+        <moduleRef key="MEI.critapp"/>
+        <!--<moduleRef key="MEI.drama"/>-->
+        <moduleRef key="MEI.edittrans"/>
+        <!--<moduleRef key="MEI.externalsymbols"/>-->
+        <moduleRef key="MEI.facsimile"/>
+        <moduleRef key="MEI.figtable"/>
+        <moduleRef key="MEI.fingering"/>
+        <moduleRef key="MEI.frbr"/>
+        <moduleRef key="MEI.genetic"/>
+        <moduleRef key="MEI.gestural"/>
+        <moduleRef key="MEI.harmony"/>
+        <moduleRef key="MEI.header"/>
+        <moduleRef key="MEI.lyrics"/>
+        
+        <moduleRef key="MEI.msDesc"/>
+        <moduleRef key="MEI.namesdates"/>
+        
+        <!--<moduleRef key="MEI.performance"/>-->
+        <moduleRef key="MEI.ptrref"/>
+        <moduleRef key="MEI.shared"/>
+        <!--<moduleRef key="MEI.stringtab"/>-->
+        <moduleRef key="MEI.text"/>
+        <!--<moduleRef key="MEI.usersymbols"/>-->
+        <moduleRef key="MEI.visual"/>
+
+        <!-- Include SVG -->
+        <moduleRef url="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/svg11.rng"
+          prefix="svg_">
+          <content>
+            <rng:define name="mei_model.graphicLike" combine="choice">
+              <rng:ref name="svg_svg"/>
+            </rng:define>
+          </content>
+        </moduleRef>
+        
+
+        <!-- Disable mensural- and neume-specific model classes in the shared module -->
+        <classSpec ident="model.scorePart.mensuralAndNeumes" module="MEI.shared" type="model"
+          mode="delete"/>
+        <classSpec ident="model.sectionPart.mensuralAndNeumes" module="MEI.shared" type="model"
+          mode="delete"/>
+        <classSpec ident="model.staffPart.mensuralAndNeumes" module="MEI.shared" type="model"
+          mode="delete"/>
+        <classSpec ident="model.layerPart.mensuralAndNeumes" module="MEI.shared" type="model"
+          mode="delete"/>
+
+        <!-- Move model.noteModifierLike from layerPart.mensuralAndNeumes to editTransPart.music -->
+        <classSpec ident="model.noteModifierLike" module="MEI.shared" type="model" mode="replace">
+          <desc>Groups elements that modify note-like features.</desc>
+          <classes>
+            <memberOf key="model.editTransPart.music"/>
+          </classes>
+        </classSpec>
+        
+        <!-- allow @facs references to SVG shapes -->
+        <classSpec ident="att.facsimile" module="MEI.facsimile" type="atts" mode="replace">
+          <desc>Attributes that associate a feature corresponding with all or part of an image.</desc>
+          <attList org="group">
+            <attDef ident="facs" usage="opt">
+              <desc>Permits the current element to reference a facsimile surface or image zone which corresponds to it.</desc>
+              <datatype maxOccurs="unbounded" minOccurs="1">
+                <rng:ref name="data.URI" />
+              </datatype>
+              <constraintSpec ident="check_facsTarget" scheme="isoschematron" mode="replace">
+                <constraint>
+                  <sch:rule context="@facs">
+                    <sch:assert role="warning" test="not(normalize-space(.) eq '')">@facs attribute should have content.</sch:assert>
+                    <sch:assert role="warning" test="every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+            </attDef>
+          </attList>
+        </classSpec>
+        
+        <!-- add schematron constraints -->
+        <elementSpec ident="add" module="MEI.edittrans" mode="change">
+          <constraintSpec ident="add_hasState" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:add">
+                <sch:assert role="error" test="@state">Every add element needs to have a @state attribute.</sch:assert>
+                <sch:assert role="error" test="not(contains(@state,' '))">Only a single state may be referenced from an add element.</sch:assert>
+                <sch:assert role="error" test="starts-with(@state, '#') and substring(@state,2) = //mei:genState/@xml:id">Every add needs to point to a genState element's @xml:id</sch:assert>                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
+
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
