@@ -199,17 +199,21 @@
         
         
         <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
-            <!-- add 4 more options to place of metaMark -->
-          <constraintSpec ident="metaMark_place" scheme="isoschematron" mode="add"><!-- !!! does not work yet... -->
-              <constraint>
-                <sch:rule context="mei:metaMark">
-                  <sch:assert role="error" test="(@place='rightmar') or (@place='leftmar') or (@place='botmar') or (@place='topmar')">
-                    a metaMark position is allowed besides above, below, between or within staff(s) also at the foot, top, left or right of the page
-                  </sch:assert>
-                </sch:rule>
-              </constraint>
-            </constraintSpec>
-          
+            <!-- add 4 more options to place besides above, below, between and within (already in MEI schema) of metaMark -->
+          <attList>
+            <attDef ident="place" mode="replace">
+              <valList type="closed">
+                <valItem ident="rightmar"/>
+                <valItem ident="leftmar"/>
+                <valItem ident="botmar"/>
+                <valItem ident="topmar"/>
+                <valItem ident="above"/>
+                <valItem ident="below"/>
+                <valItem ident="between"/>
+                <valItem ident="within"/>
+              </valList>
+            </attDef>
+          </attList>
           <!-- make @startid, @tstamp, @tstamp.ges or @tstamp.real not a must have anymore -->
           <constraintSpec ident="metaMark_duration" scheme="isoschematron" mode="add"><!-- !!! does not work yet... -->
             <constraint>
@@ -220,7 +224,6 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
-          
           <!-- metaMark must have @source -->
           <constraintSpec ident="metaMark_source" scheme="isoschematron" mode="add">
             <constraint>
