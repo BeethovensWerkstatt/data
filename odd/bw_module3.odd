@@ -35,7 +35,7 @@
       <schemaSpec ident="mei" ns="http://www.music-encoding.org/ns/mei" prefix="mei_"
         start="mei">
 
-        <!-- Declare MEI and XLink namespaces for use in Schematron -->
+        <!-- Declare MEI and XLink and SVG namespaces for use in Schematron -->
         <constraintSpec ident="set_ns" scheme="schematron" mode="add">
           <constraint>
             <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="mei"
@@ -47,18 +47,12 @@
           </constraint>
         </constraintSpec>
 
-        <!-- Include all modules -->
-        
         <moduleRef key="MEI"/>
-        <!--<moduleRef key="MEI.analytical"/>-->
-        
+        <moduleRef key="MEI.analytical" />
         <moduleRef key="MEI.cmn"/>
         <moduleRef key="MEI.cmnOrnaments"/>
-        
         <moduleRef key="MEI.critapp"/>
-        <!--<moduleRef key="MEI.drama"/>-->
         <moduleRef key="MEI.edittrans"/>
-        <!--<moduleRef key="MEI.externalsymbols"/>-->
         <moduleRef key="MEI.facsimile"/>
         <moduleRef key="MEI.figtable"/>
         <moduleRef key="MEI.fingering"/>
@@ -68,16 +62,11 @@
         <moduleRef key="MEI.harmony"/>
         <moduleRef key="MEI.header"/>
         <moduleRef key="MEI.lyrics"/>
-        
         <moduleRef key="MEI.msDesc"/>
         <moduleRef key="MEI.namesdates"/>
-        
-        <!--<moduleRef key="MEI.performance"/>-->
         <moduleRef key="MEI.ptrref"/>
         <moduleRef key="MEI.shared"/>
-        <!--<moduleRef key="MEI.stringtab"/>-->
         <moduleRef key="MEI.text"/>
-        <!--<moduleRef key="MEI.usersymbols"/>-->
         <moduleRef key="MEI.visual"/>
 
         <!-- Include SVG -->
@@ -143,7 +132,107 @@
           </constraintSpec>        
         </elementSpec>
         
-
+        <!-- corr schematron constraints -->
+        <elementSpec ident="corr" module="MEI.edittrans" mode="change">
+          <constraintSpec ident="corr_hasState" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:corr">
+                <sch:assert role="error" test="@state">Every corr element needs to have a @state attribute.</sch:assert>
+                <sch:assert role="error" test="not(contains(@state,' '))">Only a single state may be referenced from an corr element.</sch:assert>
+                <sch:assert role="error" test="starts-with(@state, '#') and substring(@state,2) = //mei:genState/@xml:id">Every corr needs to point to a genState element's @xml:id</sch:assert>                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
+        <!-- del schematron constraints -->
+        <elementSpec ident="del" module="MEI.edittrans" mode="change">
+          <constraintSpec ident="del_hasState" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:del">
+                <sch:assert role="error" test="@state">Every del element needs to have a @state attribute.</sch:assert>
+                <sch:assert role="error" test="not(contains(@state,' '))">Only a single state may be referenced from an del element.</sch:assert>
+                <sch:assert role="error" test="starts-with(@state, '#') and substring(@state,2) = //mei:genState/@xml:id">Every del needs to point to a genState element's @xml:id</sch:assert>                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
+        <!-- orig schematron constraints --> 
+        <elementSpec ident="orig" module="MEI.edittrans" mode="change">
+          <constraintSpec ident="orig_hasState" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:orig">
+                <sch:assert role="error" test="@state">Every orig element needs to have a @state attribute.</sch:assert>
+                <sch:assert role="error" test="not(contains(@state,' '))">Only a single state may be referenced from an orig element.</sch:assert>
+                <sch:assert role="error" test="starts-with(@state, '#') and substring(@state,2) = //mei:genState/@xml:id">Every orig needs to point to a genState element's @xml:id</sch:assert>                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
+        <!-- reg schematron constraints -->
+        <elementSpec ident="reg" module="MEI.edittrans" mode="change">
+          <constraintSpec ident="reg_hasState" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:reg">
+                <sch:assert role="error" test="@state">Every reg element needs to have a @state attribute.</sch:assert>
+                <sch:assert role="error" test="not(contains(@state,' '))">Only a single state may be referenced from an reg element.</sch:assert>
+                <sch:assert role="error" test="starts-with(@state, '#') and substring(@state,2) = //mei:genState/@xml:id">Every reg needs to point to a genState element's @xml:id</sch:assert>                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
+        <!-- sic schematron constraints -->
+        <elementSpec ident="sic" module="MEI.edittrans" mode="change">
+          <constraintSpec ident="sic_hasState" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:sic">
+                <sch:assert role="error" test="@state">Every sic element needs to have a @state attribute.</sch:assert>
+                <sch:assert role="error" test="not(contains(@state,' '))">Only a single state may be referenced from an sic element.</sch:assert>
+                <sch:assert role="error" test="starts-with(@state, '#') and substring(@state,2) = //mei:genState/@xml:id">Every sic needs to point to a genState element's @xml:id</sch:assert>                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
+        
+        <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
+            <!-- add 4 more options to place of metaMark -->
+          <constraintSpec ident="metaMark_place" scheme="isoschematron" mode="add"><!-- !!! does not work yet... -->
+              <constraint>
+                <sch:rule context="mei:metaMark">
+                  <sch:assert role="error" test="(@place='rightmar') or (@place='leftmar') or (@place='botmar') or (@place='topmar')">
+                    a metaMark position is allowed besides above, below, between or within staff(s) also at the foot, top, left or right of the page
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          
+          <!-- make @startid, @tstamp, @tstamp.ges or @tstamp.real not a must have anymore -->
+          <constraintSpec ident="metaMark_duration" scheme="isoschematron" mode="add"><!-- !!! does not work yet... -->
+            <constraint>
+              <sch:rule context="mei:metaMark">
+                <sch:assert role="error" test="@startid or not(@startid) or (@tstamp) or not(@tstamp) or @tstamp.ges or not(@tstamp.ges) or (@tstamp.real) or not(@tstamp.real)">
+                  @startid, @tstamp, @tstamp.ges or @tstamp.real can be used with metaMark, but they are not a must have 
+                </sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+          
+          <!-- metaMark must have @source -->
+          <constraintSpec ident="metaMark_source" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:metaMark">
+                <sch:assert role="error" test="@source">
+                  metaMark must have a @source attribute
+                </sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+        </elementSpec>
+        
       </schemaSpec>
     </body>
   </text>
