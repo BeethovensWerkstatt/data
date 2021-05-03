@@ -33,7 +33,7 @@
 
       <!-- Limit the set of possible start elements -->
       <schemaSpec ident="mei" ns="http://www.music-encoding.org/ns/mei" prefix="mei_"
-        start="mei">
+        start="mei meiCorpus notesStmt">
 
         <!-- Declare MEI and XLink and SVG namespaces for use in Schematron -->
         <constraintSpec ident="set_ns" scheme="schematron" mode="add">
@@ -62,6 +62,7 @@
         <moduleRef key="MEI.harmony"/>
         <moduleRef key="MEI.header"/>
         <moduleRef key="MEI.lyrics"/>
+        <moduleRef key="MEI.corpus"/>
         <moduleRef key="MEI.msDesc"/>
         <moduleRef key="MEI.namesdates"/>
         <moduleRef key="MEI.ptrref"/>
@@ -111,7 +112,7 @@
                 <constraint>
                   <sch:rule context="@facs">
                     <sch:assert role="warning" test="not(normalize-space(.) eq '')">@facs attribute should have content.</sch:assert>
-                    <sch:assert role="warning" test="every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
+                    <sch:assert role="warning" test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)) or ancestor::mei:mei/@xml:id = 'xf07b16aa-ddbe-4548-9e78-0b3f1752bf0c'">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
                   </sch:rule>
                 </constraint>
               </constraintSpec>
