@@ -1151,16 +1151,21 @@
                                     facs="#shape_e5d9505f-4164-4246-9e2d-65fcab430404 #shape_28fc9267-7ce4-4b0b-aad4-5d7d7494167e #shape_2345f487-37bc-4b46-a3ba-bb17211245db #shape_d1d95b37-d48e-4ab5-bc67-5645bdfa07e5 #shape_a84bdc07-d30d-4031-99af-eef4f1a8595e #shape_89e22dae-0595-4882-966d-b017d2ba197e #shape_4c0c613b-c1fe-48ea-944a-657946a0dd8b"
                                     >sf</dynam>
                             </add>
-                            <metaMark xml:id="m1101ed99-ba09-4ea3-baa6-7b8f58ee9029" label="Monitum 1"
+                            <!--<metaMark xml:id="m1101ed99-ba09-4ea3-baa6-7b8f58ee9029" label="Monitum 1"
                                 class="#bw_monitum #bw_fully_implemented #Korrektur" staff="19" tstamp="1"
                                 tstamp2="0m+5" function="revision" state="#postRevision" source="#US-NYj_31_B393cp_no.5_errata">
                                 <relation rel="hasContext" target="#m422cad3e-2055-4b60-9cef-6e1dcb0ef123"/>
                                 <relation rel="isRevisionOf" target="#D-BNba_C73-9"/>
                                 <relation rel="hasRevision" target="#A-Wn_SH.Beethoven.323"/>
-                            </metaMark>
+                            </metaMark>-->
                             <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
                             <annot xml:id="m422cad3e-2055-4b60-9cef-6e1dcb0ef123" label="Context of Monitum 1"
-                                class="#bw_monitum_context" staff="19 20" tstamp="1" tstamp2="0m+5"/>
+                                class="#bw_monitum_context" staff="19 20" tstamp="1" tstamp2="0m+5">
+                                <relation rel="hasRevFocus" target="US-NYj_31_B393cp_no.5_errata.xml#m1101ed99-ba09-4ea3-baa6-7b8f58ee9029"/>
+                                <relation rel="hasAnteContext" target="D-BNba_C73-9#g_1d838986-48e9-4b54-a12d-c51eea5dad64"/>
+                                <relation rel="hasPostContext" target="A-Wn_SH.Beethoven.323#g_1d838986-48e9-4b54-a12d-c51eea5dad64"/>
+                                
+                            </annot>
                         </measure>
                         <measure n="40" label="40" xml:id="x2921f67e-5561-405d-8dca-9bd713a6e461">
                             <staff n="1" xml:id="x05bcc100-dca1-4a07-86d1-0feb3015969b"/>
@@ -1721,16 +1726,20 @@
                                 </add>
                             </subst>
                             <metaMark staff="19" place="rightmar" function="clarification" facs="#shape_c7050d15-bef0-45f0-8769-d32dd2e2d92c #shape_b1a2617e-2470-4eab-afe6-e7e2d0e6ebc2 #shape_235e7aa1-eb52-4c78-a296-d2fdbfaa1439 #shape_9460a211-e05e-4a5f-9f53-e050354f4f84" source="#US-NYj_31_B393cp_no.5_errata">= =</metaMark>
-                            <metaMark xml:id="m3af6cc3d-5fd7-40bd-a0d2-f1467e645f5e" label="Monitum 2"
+                            <!--<metaMark xml:id="m3af6cc3d-5fd7-40bd-a0d2-f1467e645f5e" label="Monitum 2"
                                 class="#bw_monitum #bw_fully_implemented #Korrektur" staff="19 20" tstamp="1"
                                 tstamp2="1m+5" function="revision" state="#postRevision" source="#US-NYj_31_B393cp_no.5_errata">
                                 <relation rel="hasContext" target="#m225f0afa-e5a8-4337-b3ff-675cd9ff1237"/>
                                 <relation rel="isRevisionOf" target="#D-BNba_C73-9"/>
                                 <relation rel="hasRevision" target="#A-Wn_SH.Beethoven.323"/>
-                            </metaMark>
+                            </metaMark>-->
                             <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
                             <annot xml:id="m225f0afa-e5a8-4337-b3ff-675cd9ff1237" label="Context of Monitum 2"
-                                class="#bw_monitum_context" staff="1 4 5 19 20" tstamp="1" tstamp2="1m+5"/>
+                                class="#bw_monitum_context" staff="1 4 5 19 20" tstamp="1" tstamp2="1m+5">
+                                <relation rel="hasRevFocus" target="US-NYj_31_B393cp_no.5_errata.xml#m3af6cc3d-5fd7-40bd-a0d2-f1467e645f5e"/>
+                                <relation rel="hasAnteContext" target="D-BNba_C73-9.xml#g_c8503abd-d798-494c-9bd3-d3993d9fee20"/>
+                                <relation rel="hasPostContext" target="A-Wn_SH.Beethoven.323.xml#g_bd78567b-5be4-4eea-8312-f5f5e225df5a"/>                 
+                            </annot>
                         </measure>
                         <measure n="61" label="61" xml:id="xd14a714a-9c68-4f28-9110-462a77674ec4"
                             type="Revisionsdokument1_monitum2">
@@ -5344,7 +5353,11 @@
                             </subst>
                             <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
                             <annot xml:id="m07207e9c-73e8-40f6-9c58-04342322ea7a" label="Context of Monitum 3"
-                                class="#bw_monitum_context" staff="19 20" tstamp="1" tstamp2="5m+5"/>
+                                class="#bw_monitum_context" staff="19 20" tstamp="1" tstamp2="5m+5">
+                                <relation rel="hasRevFocus" target="US-NYj_31_B393cp_no.5_errata.xml#mfbfbb161-1d9b-47c6-aeb4-c61b692b17ee"/>
+                                <relation rel="hasAnteContext" target="D-BNba_C73-9.xml#g_ccd10c39-f00b-4410-bca9-4083b20314fe"/>
+                                <relation rel="hasPostContext" target="A-Wn_SH.Beethoven.323.xml#g_bf012a6c-a549-41d8-a1b0-21b925595a90"/>    
+                            </annot>
                         </measure>
                         <measure n="212" label="212" xml:id="xbfdc78d8-f4a3-42ce-bdb0-c89ae7ff2c59"
                             type="Revisionsdokument1_monitum3">
@@ -5422,13 +5435,13 @@
                                 </layer>
                             </staff>
                             <metaMark staff="19" place="rightmar" function="clarification" facs="#shape_e308bef3-3e31-42e4-87f7-3de35f3aa8a4 #shape_7a219ab5-7d09-426e-a451-f0d6e0536dcc #shape_eb0bc28a-9796-4531-8fd1-adb6ee860cd3 #shape_b446cf2a-9d87-4c42-b46e-f554245d6a56" source="#US-NYj_31_B393cp_no.5_errata">= =</metaMark>
-                            <metaMark xml:id="mfbfbb161-1d9b-47c6-aeb4-c61b692b17ee" label="Monitum 3"
+                            <!--<metaMark xml:id="mfbfbb161-1d9b-47c6-aeb4-c61b692b17ee" label="Monitum 3"
                                 class="#bw_monitum #bw_fully_implemented #Korrektur" staff="19" tstamp="1"
                                 tstamp2="4m+5" function="revision" state="#postRevision" source="#US-NYj_31_B393cp_no.5_errata">
                                 <relation rel="hasContext" target="#m07207e9c-73e8-40f6-9c58-04342322ea7a"/>
                                 <relation rel="isRevisionOf" target="#D-BNba_C73-9"/>
                                 <relation rel="hasRevision" target="#A-Wn_SH.Beethoven.323"/>
-                            </metaMark>
+                            </metaMark>-->
                         </measure>
                         <measure n="213" label="213" xml:id="x873674e5-2e1d-4eb9-b4f3-ceeab56255bd"
                             type="Revisionsdokument1_monitum3">
@@ -6377,16 +6390,20 @@
                                 startid="#x95885868-0188-4103-8228-c08021483929"
                                 endid="#xcb4905b0-cce8-4506-ac56-01a39c9dc5e0" facs="#shape_e92a403c-1d6a-4e84-b498-f347ef790772"/>
                             <metaMark staff="19" place="rightmar" function="clarification" facs="#shape_70a31dc2-0208-4123-baa9-0be9586f1aab #shape_ede222e9-58ec-4686-9dac-119a4122c485 #shape_70e06893-94b1-4521-9c8f-1e5a4ba38258" source="#US-NYj_31_B393cp_no.5_errata">weg den <lb/>tr</metaMark>
-                            <metaMark xml:id="m65dbb86f-f49c-4e5a-8915-0f0ce0efcf44" label="Monitum 4"
+                            <!--<metaMark xml:id="m65dbb86f-f49c-4e5a-8915-0f0ce0efcf44" label="Monitum 4"
                                 class="#bw_monitum #bw_fully_implemented #Korrektur" staff="19" tstamp="1"
                                 tstamp2="0m+5" function="revision" state="#postRevision" source="#US-NYj_31_B393cp_no.5_errata">
                                 <relation rel="hasContext" target="#mb9bca9f8-e47c-415a-a4e1-004ff6fda027"/>
                                 <relation rel="isRevisionOf" target="#D-BNba_C73-9"/>
                                 <relation rel="hasRevision" target="#A-Wn_SH.Beethoven.323"/>
-                            </metaMark>
+                            </metaMark>-->
                             <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
                             <annot xml:id="mb9bca9f8-e47c-415a-a4e1-004ff6fda027" label="Context of Monitum 4"
-                                class="#bw_monitum_context" staff="1 19 20" tstamp="1" tstamp2="0m+5"/>
+                                class="#bw_monitum_context" staff="1 19 20" tstamp="1" tstamp2="0m+5">
+                                <relation rel="hasRevFocus" target="US-NYj_31_B393cp_no.5_errata.xml#m65dbb86f-f49c-4e5a-8915-0f0ce0efcf44"/>
+                                <relation rel="hasAnteContext" target="D-BNba_C73-9.xml#g_5a4c024b-6995-4fb2-8ef1-a279b3a9442c"/>
+                                <relation rel="hasPostContext" target="A-Wn_SH.Beethoven.323.xml#g_bcbc7d79-668d-44f5-a373-e31f28b4a1ac"/>
+                            </annot>
                         </measure>
                         <measure n="235" label="235" xml:id="xb1514e71-2379-409f-9e61-8f97c480f97d">
                             <staff n="1" xml:id="xdaa7387c-4143-4b5d-a521-2b5f0b4f26e4"/>
