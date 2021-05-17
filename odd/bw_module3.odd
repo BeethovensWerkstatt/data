@@ -200,21 +200,7 @@
         
         
         <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
-            <!-- add 4 more options to place besides above, below, between and within (already in MEI schema) of metaMark -->
-          <attList>
-            <attDef ident="place" mode="replace">
-              <valList type="closed">
-                <valItem ident="rightmar"/>
-                <valItem ident="leftmar"/>
-                <valItem ident="botmar"/>
-                <valItem ident="topmar"/>
-                <valItem ident="above"/>
-                <valItem ident="below"/>
-                <valItem ident="between"/>
-                <valItem ident="within"/>
-              </valList>
-            </attDef>
-          </attList>
+          
           <!-- make @startid, @tstamp, @tstamp.ges or @tstamp.real not a must have anymore -->
           <constraintSpec ident="metaMark_duration" scheme="isoschematron" mode="add"><!-- !!! does not work yet... -->
             <constraint>
@@ -236,6 +222,34 @@
             </constraint>
           </constraintSpec>
         </elementSpec>
+        
+        <!-- this is only a bugfix which hopefully will be fixed in MEI itself -->
+        <classSpec ident="att.metaMark.log" module="MEI.edittrans" type="atts" mode="replace">
+          <desc>Logical domain attributes.</desc>
+          <classes>
+            <memberOf key="att.controlEvent"/>
+            <memberOf key="att.startEndId"/>
+            <memberOf key="att.timestamp2.logical"/>
+            <memberOf key="att.edit"/>
+            <memberOf key="att.trans"/>
+          </classes>
+        </classSpec>
+        
+        <classSpec ident="att.metaMark.vis" module="MEI.edittrans" type="atts" mode="replace">
+          <desc>Visual domain attributes.</desc>
+          <!--<classes>
+            <memberOf key="att.placementRelStaff"/>
+          </classes>-->
+          <attList>
+            <attDef ident="place" usage="opt">
+              <desc>Location of the annotation.</desc>
+              <datatype maxOccurs="unbounded">
+                <rng:ref name="data.PLACEMENT"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </classSpec>
+        
         
       </schemaSpec>
     </body>
