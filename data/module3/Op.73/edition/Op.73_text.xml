@@ -68,6 +68,17 @@
                 </changeDesc>
                 <date isodate="2021-03"/>
             </change>
+            <change n="4">
+                <respStmt>
+                    <persName auth.uri="https://github.com/" codedval="ran-mo">Ran Mo</persName>
+                    <persName auth.uri="https://github.com/" codedval="krHERO">Kristin Herold</persName>
+                </respStmt>
+                <changeDesc>
+                    <p>several corrections regarding SVG</p>
+                    <p>several code corrections and work on restructuring data</p>
+                </changeDesc>
+                <date startdate="2021-03" enddate="2021-06"></date>
+            </change>
         </revisionDesc>
     </meiHead>
     <music meiversion="5.0.0-dev">
@@ -1025,7 +1036,8 @@
                             <staff n="19" xml:id="xa8eb4a79-e2f5-4196-816b-078280cd90dd"/>
                             <staff n="20" xml:id="xeb87f188-efa3-429c-a686-bde0f7088300"/>
                         </measure>
-                        <measure n="39" label="39" xml:id="xcdbf0735-07d8-40a4-bd8c-a5495cb14d10" type="Revisionsdokument1_monitum1">
+                        <!--  Revisionsdokument1_monitum1 -->
+                        <measure n="39" label="39" xml:id="xcdbf0735-07d8-40a4-bd8c-a5495cb14d10">
                             <staff n="1" xml:id="x5bfd5225-cc8b-41ae-ab89-d9a499c2749d">
                                 <layer xml:id="xcf2c43cc-0173-4103-be16-b6fa0bdff90d">
                                     <beam xml:id="x30694544-fecc-4685-80ec-7d2a19b9081b">
@@ -1139,30 +1151,21 @@
                             </staff>
                             <dynam staff="1" place="below" tstamp="2">sf</dynam>
                             <dynam staff="1" place="below" tstamp="4">sf</dynam>
-                            <add resp="#LvB" state="#postRevision">
+                            <add xml:id="xf0ed3e7a-af34-4773-8de8-c9de84361cbb" resp="#LvB" state="#postRevision">
                                 <dynam xml:id="x6b7f1984-9889-4a84-bb83-efa847202290" staff="19" place="below" tstamp="2"
                                     facs="#shape_c9040a09-dd18-489c-b43f-948d5d52af5f #shape_a3b4451c-fccb-4bf1-b28b-184062147391 #shape_e7070838-4ae2-4bf0-b292-bea6be47da1a #shape_848d3b11-a14e-43e8-944a-ba7984ae0400 #shape_1b779759-a3e0-4e9e-ac91-fee45a780718 #shape_2e1a2ef3-943b-47dd-96c0-3190dd6f7a3b #shape_3f3c6ebf-1a34-48f1-80f2-49ab348b11a5 #shape_41bc50cd-2928-4348-b3d2-bed0bca9314f"
                                     >sf</dynam>
                             </add>
-                            <add resp="#LvB" state="#postRevision">
+                            <add xml:id="x6ec2b8ba-7fec-4f48-b0ba-36a3f414e405" resp="#LvB" state="#postRevision">
                                 <dynam xml:id="xfe8eeae0-a5b1-4885-9e41-591dfc312cf4" staff="19" place="below" tstamp="4"
                                     facs="#shape_e5d9505f-4164-4246-9e2d-65fcab430404 #shape_28fc9267-7ce4-4b0b-aad4-5d7d7494167e #shape_2345f487-37bc-4b46-a3ba-bb17211245db #shape_d1d95b37-d48e-4ab5-bc67-5645bdfa07e5 #shape_a84bdc07-d30d-4031-99af-eef4f1a8595e #shape_89e22dae-0595-4882-966d-b017d2ba197e #shape_4c0c613b-c1fe-48ea-944a-657946a0dd8b"
                                     >sf</dynam>
                             </add>
-                            <!--<metaMark xml:id="m1101ed99-ba09-4ea3-baa6-7b8f58ee9029" label="Monitum 1"
-                                class="#bw_monitum #bw_fully_implemented #Korrektur" staff="19" tstamp="1"
-                                tstamp2="0m+5" function="revision" state="#postRevision" source="#US-NYj_31_B393cp_no.5_errata">
-                                <relation rel="hasContext" target="#m422cad3e-2055-4b60-9cef-6e1dcb0ef123"/>
-                                <relation rel="isRevisionOf" target="#D-BNba_C73-9"/>
-                                <relation rel="hasRevision" target="#A-Wn_SH.Beethoven.323"/>
-                            </metaMark>-->
-                            <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
-                            <annot xml:id="m422cad3e-2055-4b60-9cef-6e1dcb0ef123" label="Context of Monitum 1"
-                                class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="0m+5">
-                                <relation rel="constituent" target="#m1101ed99-ba09-4ea3-baa6-7b8f58ee9029"/>
+                            <annot xml:id="m422cad3e-2055-4b60-9cef-6e1dcb0ef123" class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="0m+5" plist="#xf0ed3e7a-af34-4773-8de8-c9de84361cbb #x6ec2b8ba-7fec-4f48-b0ba-36a3f414e405">
                                 <relation rel="succeeding" target="#g_1d838986-48e9-4b54-a12d-c51eea5dad64"/>
                                 <relation rel="preceding" target="#g_1d838986-48e9-4b54-a12d-c51eea5dad64"/>
-                                
+                                <relation rel="original" target="#m1101ed99-ba09-4ea3-baa6-7b8f58ee9029"/>
+                                <relation rel="constituent" target="#m1101ed99-ba09-4ea3-baa6-7b8f58ee9029"/>
                             </annot>
                         </measure>
                         <measure n="40" label="40" xml:id="x2921f67e-5561-405d-8dca-9bd713a6e461">
