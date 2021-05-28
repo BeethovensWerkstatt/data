@@ -6163,8 +6163,8 @@
                             <staff n="19" xml:id="x8615db96-1018-40fc-ae5b-3592719ad70a"/>
                             <staff n="20" xml:id="xdd8c27ed-e2b4-4f8b-8b12-585f80b5d128"/>
                         </measure>
-                        <measure n="234" label="234" xml:id="x4bcfd2f1-3aa6-40f3-97bf-d4d695ff78db"
-                            type="Revisionsdokument1_monitum4">
+                        <!-- Revisionsdokument1_monitum4 -->
+                        <measure n="234" label="234" xml:id="x4bcfd2f1-3aa6-40f3-97bf-d4d695ff78db">
                             <!-- Vl -->
                             <staff n="1" xml:id="x72a59da9-7383-47a6-aaf1-2a93abc61d15">
                                 <layer xml:id="x881a7119-894b-403f-9dc5-080aac3642f5">
@@ -6318,7 +6318,7 @@
                             <tie startid="#x165df6a9-7a87-4e0f-9d53-a68b0cff391b"
                                 endid="#xd822cc3b-eefb-4f23-bc45-155160c10482" staff="19"
                                 facs="#shape_f9ee8db1-e242-462b-9036-8d1d73d02ada #shape_06e04ed2-4976-4cb2-817a-d750cde9dc06"/>
-                            <del resp="#LvB" state="#postRevision">
+                            <del xml:id="x277c8109-89bc-4476-82e5-8b4523fb09c5" resp="#LvB" state="#postRevision">
                                 <trill staff="19" place="above" tstamp="1"
                                     facs="#shape_2508c472-29fa-4856-bb3d-4f112a44c3d8 #shape_b11b61fc-5d40-4081-a344-058550080a2a #shape_62baadd3-6bd8-49d3-b40d-f10dd84ab9d1 #shape_6b834dc0-8819-4817-b4d5-3490e64bd69a #shape_0c07d731-a3a1-4b00-87ab-2575e6f2fc05"
                                 />
@@ -6327,19 +6327,13 @@
                             <tie staff="1" xml:id="x6dc9ba5a-0435-4ab1-a365-4dc4f9147819"
                                 startid="#x95885868-0188-4103-8228-c08021483929"
                                 endid="#xcb4905b0-cce8-4506-ac56-01a39c9dc5e0" facs="#shape_e92a403c-1d6a-4e84-b498-f347ef790772"/>
-                            <!--<metaMark xml:id="m65dbb86f-f49c-4e5a-8915-0f0ce0efcf44" label="Monitum 4"
-                                class="#bw_monitum #bw_fully_implemented #Korrektur" staff="19" tstamp="1"
-                                tstamp2="0m+5" function="revision" state="#postRevision" source="#US-NYj_31_B393cp_no.5_errata">
-                                <relation rel="hasContext" target="#mb9bca9f8-e47c-415a-a4e1-004ff6fda027"/>
-                                <relation rel="isRevisionOf" target="#D-BNba_C73-9"/>
-                                <relation rel="hasRevision" target="#A-Wn_SH.Beethoven.323"/>
-                            </metaMark>-->
-                            <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
-                            <annot xml:id="mb9bca9f8-e47c-415a-a4e1-004ff6fda027" label="Context of Monitum 4"
-                                class="#bw_monitum_effect" staff="1 19 20" tstamp="1" tstamp2="0m+5">
-                                <relation rel="constituent" target="#m65dbb86f-f49c-4e5a-8915-0f0ce0efcf44"/>
+                            <annot xml:id="mb9bca9f8-e47c-415a-a4e1-004ff6fda027"
+                                class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="0m+5"
+                                plist="#x277c8109-89bc-4476-82e5-8b4523fb09c5">
                                 <relation rel="succeeding" target="#g_5a4c024b-6995-4fb2-8ef1-a279b3a9442c"/>
                                 <relation rel="preceding" target="#g_bcbc7d79-668d-44f5-a373-e31f28b4a1ac"/>
+                                <relation rel="original" target="#x277c8109-89bc-4476-82e5-8b4523fb09c5"/>
+                                <relation rel="constituent" target="#m65dbb86f-f49c-4e5a-8915-0f0ce0efcf44"/>
                             </annot>
                         </measure>
                         <measure n="235" label="235" xml:id="xb1514e71-2379-409f-9e61-8f97c480f97d">
