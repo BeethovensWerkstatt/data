@@ -11844,8 +11844,8 @@
                             </staff>
                             <pedal dir="down" staff="19 20" place="between" tstamp="0"/>
                         </measure>
-                        <measure n="457" label="457" xml:id="xeb353826-47ee-4b2a-9ac8-20156c457177"
-                            type="Revisionsdokument1_monitum7">
+                        <!-- Revisionsdokument1_monitum7 -->
+                        <measure n="457" label="457" xml:id="xeb353826-47ee-4b2a-9ac8-20156c457177">
                             <staff n="1" xml:id="x36534aee-a98a-403a-ac54-399650ca2d16"/>
                             <staff n="2" xml:id="xb7f6947a-0ed3-47cd-8648-72241b4aab8d"/>
                             <staff n="3" xml:id="x59c3dc9d-9c6f-4fcf-826d-0fd96788455c"/>
@@ -12006,23 +12006,16 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <add resp="#LvB" state="#postRevision">
+                            <add xml:id="x623f4190-3fdd-43c9-b475-4ee6e1ed970e" resp="#LvB" state="#postRevision">
                                 <pedal dir="up" staff="19 20" startid="#xd3715ad0-e70f-4498-a0d0-9cc234093664"
                                     place="between" facs="#shape_6c35dbf7-8e56-4318-95ac-b57d4336c5b6 #shape_d40f8965-1b84-48f0-9c68-3f38890d8c46 #shape_6ed13cd5-9769-4f46-b6dd-51718549cb01 #shape_7de39966-2a35-4216-bcad-1e9225b007bd"/>
                             </add>
-                            <!--<metaMark staff="19" place="rightmar" facs="#shape_5c993b61-9eb4-4ad7-a7d2-6b85d628fb0b #shape_329b265d-c48e-49ba-b4f6-a534a5e73b76 #shape_c3fcded8-6f80-4eb7-9ed1-94f456b50bea #shape_67f91fc0-052c-4ea4-8201-fca36ab9564a #shape_61dcb223-77a6-46ec-b98c-36bac98f0355" source="#US-NYj_31_B393cp_no.5_errata">[Verweiskreuz] [Pedalauflöser]</metaMark>--><!-- durchgekreuzter Kreis: Pedalauflöser  -->
-                            <!--<metaMark xml:id="m25f0c3c5-b82c-441b-8de1-48fb42b710f0" label="Monitum 7"
-                                class="#bw_monitum #bw_fully_implemented #Korrektur" staff="19" tstamp="1"
-                                tstamp2="0m+5" function="revision" state="#postRevision" source="#US-NYj_31_B393cp_no.5_errata">
-                                <relation rel="hasContext" target="#m86140e6d-783a-44ee-a2a7-97815cad5e70"/>
-                                <relation rel="isRevisionOf" target="#D-BNba_C73-9"/>
-                                <relation rel="hasRevision" target="#A-Wn_SH.Beethoven.323"/>
-                            </metaMark>-->
-                            <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
-                            <annot xml:id="x6302e74d-4d27-4dc5-be72-5435d753b96a" label="Context of Monitum 7" class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="0m+5">
-                                <relation rel="constituent" target="#m25f0c3c5-b82c-441b-8de1-48fb42b710f0"/>
+                            <annot xml:id="x6302e74d-4d27-4dc5-be72-5435d753b96a" class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="0m+5"
+                                plist="#x623f4190-3fdd-43c9-b475-4ee6e1ed970e">
                                 <relation rel="succeeding" target="#g_12537f97-b34c-49a5-bd2c-f791ca2e6b94"/>
                                 <relation rel="preceding" target="#g_6ad4eb92-9722-482e-a9a1-a9190e4c1d72"/>
+                                <relation rel="original" target="#x2cefab82-0770-4f8a-abc3-b0b3cd915b86"/>
+                                <relation rel="constituent" target="#m25f0c3c5-b82c-441b-8de1-48fb42b710f0"/>
                             </annot>
                         </measure>
                         <measure n="458" label="458" xml:id="x0df1bed3-2a0c-4ff1-aea0-c46f26a68bb8">
