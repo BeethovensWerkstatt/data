@@ -21775,7 +21775,8 @@
                             <staff n="19" xml:id="x79198dc9-86a6-4da4-b50b-e4ef7263354a"/>
                             <staff n="20" xml:id="xdb2460c7-c5df-4157-80b2-f23efdebdc7d"/>
                         </measure>
-                        <measure n="103" label="103" xml:id="x3fc1c773-3f81-4233-b201-e0ba368185d3" type="Revisionsdokument1_monitum17">
+                            <!-- Revisionsdokument1_monitum17 -->
+                        <measure n="103" label="103" xml:id="x3fc1c773-3f81-4233-b201-e0ba368185d3">
                             <staff n="1" xml:id="xdfa71436-da2c-4e2a-9e7b-693d8de1d0b7"/>
                             <staff n="2" xml:id="x880b7055-4231-41b7-8da9-4da803a8af32"/>
                             <staff n="3" xml:id="xe1c34b10-4f3a-49e5-bab0-f6910b841d3c"/>
@@ -21804,12 +21805,12 @@
                                     <beam xml:id="x3cb7d0b5-e6c5-4f9f-b2b4-b0f455389ee1" facs="#shape_df55adfc-25c4-4a90-8739-b63ddb7e5f73 #shape_82c08b0a-f512-4688-a004-0b12d95f36a1 #shape_77262e6f-a296-4c0e-be2e-7e9467c3ab53 #shape_8e585ef5-49bc-45e0-9482-efcddcb549cb #shape_0b1ab5f6-9010-4c65-862e-ba8bdcf1b755 #shape_f72b8b93-46c2-4587-a6c2-6f4f3581ba25">
                                         <chord xml:id="x00ad83ca-0849-4dd5-91b1-bf5b38561545" dur="16" stem.dir="up" facs="#shape_fecae861-1c2b-4d52-9b19-c7478173fb15 #shape_0b9640e9-9db4-41de-bd32-010f70374cf8">
                                             <note xml:id="x4213c2d7-b8b7-4171-b8bd-8cad77e6d03b" pname="f" oct="5" facs="#shape_e540b0a0-8b61-4d5b-91a3-7fb0b417a98c #shape_85f41ab0-94fa-4983-b459-b21500bf4e58 #shape_2535349e-6ce2-4126-a875-a21f796fcf01">
-                                                <add resp="#LvB" state="#postRevision" label="Revisionsdokument 1">
+                                                <add xml:id="x13d3cd78-a9ac-40c6-acf6-c106f70a9279" resp="#LvB" state="#postRevision">
                                                     <accid xml:id="x7d0eb035-6f68-4319-bedb-7a23342691d5" accid="f" facs="#shape_5639d668-912b-4c80-ae41-88c00db4f3a6 #shape_ff972dfd-2bd7-4db1-b3c1-88c0305e4b1a #shape_ac09a6b2-c3ce-4e1c-baf5-8c8c593e1a2b"/>
                                                 </add>
                                             </note>
                                             <note xml:id="x1f1e5cbc-015b-4dcc-97f6-0002463d919f" pname="f" oct="4" facs="#shape_0c0c25d9-74ca-4e95-a271-3586c864bd13 #shape_d0d1a1fa-fb75-46b6-91e1-7845cbee309f #shape_8b0c18a9-0916-42c8-92a3-0e30b5c0d5d0">
-                                                <add resp="#LvB" state="#postRevision" label="Revisionsdokument 1">
+                                                <add xml:id="x8d150bb7-2c14-435e-859f-811c0ff8cb7c" resp="#LvB" state="#postRevision">
                                                     <accid xml:id="x667eaa32-7557-4697-a1d0-7e13a90fab41" accid="f" facs="#shape_0d815cca-5b49-4ada-9819-e23e062f2554 #shape_039c2f06-b312-4a8f-9332-5e8f03aefe87 #shape_fe7dfe83-5b4f-4243-902c-7de56a739a47"/>
                                                 </add>
                                             </note>
@@ -21906,12 +21907,13 @@
                             </staff>
                             <slur staff="19" curvedir="below" startid="#x00ad83ca-0849-4dd5-91b1-bf5b38561545" endid="#xe862c8c0-b2e7-4079-9fc6-c9a122a237d2" facs="#shape_0de6c320-7ea0-4a66-bf54-356b9b9fd7a7 #shape_54c9b5d2-c4dd-43be-b0b8-c50bb76d3bae"/>
                             <slur staff="19" curvedir="below" startid="#xbc5bf7ee-a6d5-4ff3-825c-e385e8f78603" endid="#x9e0e84eb-e4b7-4a31-8ca8-ccda19b7d364" facs="#shape_1dd11b87-427f-42d5-97cc-00bbe1862252 #shape_d50b2350-07f3-4b23-93ae-48eff561a833"/>
-                            <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
-                            <annot xml:id="m18d15f71-a613-4db0-b8e0-772a52955b7e" label="Context of Monitum 17"
-                                class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="0m+7">
-                                <relation rel="constituent" target="#xa1f5b507-c28f-4456-a5fc-bd8c668cc463"/>
-                                <relation rel="succeeding" target="#xe7b67a7f-e5d6-4959-abd4-7af05f4525bb"/>
+                            <annot xml:id="m18d15f71-a613-4db0-b8e0-772a52955b7e"
+                                class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="0m+7"
+                                plist="#x13d3cd78-a9ac-40c6-acf6-c106f70a9279 #x8d150bb7-2c14-435e-859f-811c0ff8cb7c">
+                                <relation rel="succeeding" target="#xb8695953-0d4e-4313-94bf-a1d7afe3ff76"/>
                                 <relation rel="preceding" target="#xf71d3275-9bc9-42fe-9f3d-ca840f352612"/>
+                                <relation rel="original" target="#xa1f5b507-c28f-4456-a5fc-bd8c668cc463"/>
+                                <relation rel="constituent" target="#x085a652e-25e0-4cda-9139-27aa3b01bc58"/>
                             </annot>
                         </measure>
                         <measure n="104" label="104" xml:id="x811b27ca-5658-47c6-8c0a-ade9b0fe985d">
@@ -22200,8 +22202,8 @@
                             <staff n="19" xml:id="xd03306be-2e77-4f91-ab81-7ff7a8a1cbf2"/>
                             <staff n="20" xml:id="xa39408cf-6b81-447a-853f-a9ab554efff7"/>
                         </measure>
-                        <measure n="117" label="117" xml:id="xbbeaab19-ea06-4ce9-9a59-c4cdd39ae501"
-                            type="Revisionsdokument1_monitum18">
+                            <!-- Revisionsdokument1_monitum18 -->
+                        <measure n="117" label="117" xml:id="xbbeaab19-ea06-4ce9-9a59-c4cdd39ae501">
                             <staff n="1" xml:id="xf7907713-96c7-4bde-bacf-b356c97c3b87"/>
                             <staff n="2" xml:id="xf2150c18-f21d-4533-949d-39147c046795"/>
                             <staff n="3" xml:id="x6f9cad01-bf83-4954-9013-1edc34955776"/>
@@ -22239,28 +22241,22 @@
                                         </note>
                                         <note xml:id="x77312649-c092-41c0-955f-6a89c7ab4e34" pname="c" oct="6" dur="16"
                                             facs="#shape_7f1dc30b-2eea-40cf-bed3-49130596c1ef #shape_cc1043dc-1683-41de-90d0-32cff1cd79b6 #shape_a20c75a4-2c01-468c-9a5a-e43fb5026671 #shape_eacb9e3d-9692-4079-9554-e45a8f5c8234 #shape_32a402bf-85e9-42d7-bd9c-a8de5c0bd9a4 #shape_9bb967b5-a403-4534-9a9b-f7e0e2718edf #shape_2320fab9-3874-47a8-9a67-aa5941e434f6 #shape_873253ba-a61c-46d2-84e6-045449a3574d #shape_524517fd-c1b0-4456-bdce-3592cd0f1263 #shape_3f4b73a8-2648-42ab-9c84-5eaedc6aec81 #shape_160dd752-128a-4fc4-b57c-3263512309ef"/>
-                                        <subst resp="#LvB" state="#postRevision" label="Revisionsdokument 1">
-                                            <del resp="#LvB" state="#postRevision" label="Ausgangsdokument">
-                                                <note xml:id="x73ce208c-fba4-45a3-8f00-160f8b0ebaf1" pname="d" oct="6"
-                                                    dur="16"
+                                        <del xml:id="xeea02d79-b91f-47fc-9f89-ae9b886809d1" resp="#LvB" state="#postRevision">
+                                            <note xml:id="x73ce208c-fba4-45a3-8f00-160f8b0ebaf1" pname="d" oct="6" dur="16"
                                                     facs="#shape_ff23d82b-23c8-4cee-ab9a-89b7bb3af041 #shape_77d13a01-5258-4afa-9eba-1b8002a45ca8 #shape_0f859a49-aea3-40b2-8e36-48c48a53c624 #shape_c61a4799-eb94-4918-b5c3-e4b6d29e5317 #shape_d838721b-417b-44f6-883a-39389d30fc96 #shape_ae89b3ba-6157-4b99-b15d-059d2533c5ba #shape_1dc0a7a9-cdbb-43d2-9eb3-156b76846f55"/>
-                                            </del>
-                                            <add resp="#LvB" state="#postRevision">
-                                                <note pname="f" oct="6" dur="16"
-                                                    facs="#shape_af3a42e3-19e7-4db6-9485-07904ede64f9 #shape_9467c305-7b80-42db-b368-f4679f10c8c0 #shape_95083117-c915-4024-8d08-77180a368a1e #shape_d01b9b53-2d63-47a9-b777-8fec844a30a3 #shape_80eccdbd-1024-481b-a608-cd83f5390b07"/>
-                                            </add>
-                                        </subst>
-                                        <subst resp="#LvB" state="#postRevision">
-                                            <del  resp="#LvB" state="#postRevision">
-                                                <note xml:id="x2bb1602c-cdf4-493f-8927-fd500fc733aa" pname="d" oct="6"
-                                                    dur="16"
+                                        </del>
+                                        <add xml:id="x7fb11271-8cef-4fda-921d-650fee37894f" resp="#LvB" state="#postRevision">
+                                            <note pname="f" oct="6" dur="16"
+                                                facs="#shape_af3a42e3-19e7-4db6-9485-07904ede64f9 #shape_9467c305-7b80-42db-b368-f4679f10c8c0 #shape_95083117-c915-4024-8d08-77180a368a1e #shape_d01b9b53-2d63-47a9-b777-8fec844a30a3 #shape_80eccdbd-1024-481b-a608-cd83f5390b07"/>
+                                        </add>
+                                        <del xml:id="xcd82692a-eee3-4e9b-8ca0-66cd7d09ee7c"  resp="#LvB" state="#postRevision">
+                                           <note xml:id="x2bb1602c-cdf4-493f-8927-fd500fc733aa" pname="d" oct="6" dur="16"
                                                     facs="#shape_c8d40614-f334-4422-a6c2-df7736059774 #shape_8fb9a84c-9d4a-433b-a24d-f46ca921ea5d #shape_803b9d7e-18ac-4d4f-adfb-9c3a1d659f47 #shape_a7bb37b3-e02e-41cf-a67e-a72bfd3a0cc2 #shape_9182f177-6a35-435d-b2b6-b3c22dc3a1d9 #shape_58ca63cf-9a23-4f6b-9089-685cd1d3bf47 #shape_2e5ec0c3-672c-44fb-bcbd-1b7adaffc834 #shape_62a74dd5-511c-42a2-a7cd-85f9b4c9282c"/>
-                                            </del>
-                                            <add  resp="#LvB" state="#postRevision">
-                                                <note pname="f" oct="6" dur="16"
-                                                    facs="#shape_78290cf8-9366-43c9-b292-93627318f08d #shape_61f85d5b-04f5-4cde-88ff-0a78349960b9 #shape_606fbaa7-fce8-49a1-b4fa-a4263008cf8a #shape_ddc8d31f-6d77-43ff-ac47-e78233674711 #shape_3a2bdc38-d6ca-4229-be19-bcbf56b681c4"/>
-                                            </add>
-                                        </subst>
+                                        </del>
+                                        <add xml:id="x6a2105d1-beed-4ab3-91fb-e6747ab58371" resp="#LvB" state="#postRevision">
+                                            <note pname="f" oct="6" dur="16"
+                                                facs="#shape_78290cf8-9366-43c9-b292-93627318f08d #shape_61f85d5b-04f5-4cde-88ff-0a78349960b9 #shape_606fbaa7-fce8-49a1-b4fa-a4263008cf8a #shape_ddc8d31f-6d77-43ff-ac47-e78233674711 #shape_3a2bdc38-d6ca-4229-be19-bcbf56b681c4"/>
+                                        </add>
                                     </beam>
                                 </layer>
                             </staff>
@@ -22314,16 +22310,15 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <!--TODO: Check @class, potentially adjust @tstamp / @tstamp2-->
-                            <annot xml:id="m28da7386-a7f6-47a4-84c7-0bce98dbd0e0" label="Context of Monitum 18"
-                                class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="1m+7">
-                                <relation rel="constituent" target="#xa5b1872b-3699-40c3-bdcb-0b532032af1f"/>
+                            <annot xml:id="m28da7386-a7f6-47a4-84c7-0bce98dbd0e0" class="#bw_monitum_effect" staff="19 20" tstamp="1" tstamp2="1m+7"
+                                plist="#xeea02d79-b91f-47fc-9f89-ae9b886809d1 #x7fb11271-8cef-4fda-921d-650fee37894f #xcd82692a-eee3-4e9b-8ca0-66cd7d09ee7c #x6a2105d1-beed-4ab3-91fb-e6747ab58371">
                                 <relation rel="succeeding" target="#x51489b70-14fc-4ad5-aa5e-2e7d1f3cba3a"/>
                                 <relation rel="preceding" target="#x8a87dee9-8d68-481f-ae82-c418f611f9ce"/>
+                                <relation rel="original" target="#x22112c93-a416-4df4-a0b9-2c898bb7b5a9"/>
+                                <relation rel="constituent" target="#xa5b1872b-3699-40c3-bdcb-0b532032af1f"/>
                             </annot>
                         </measure>
-                        <measure n="118" label="118" xml:id="x966959d3-f816-4209-b888-2c4aaf69ffcb"
-                            type="Revisionsdokument1_monitum18">
+                        <measure n="118" label="118" xml:id="x966959d3-f816-4209-b888-2c4aaf69ffcb">
                             <staff n="1" xml:id="x6b4c3f17-6ad2-46f9-82d9-a9dade40e973"/>
                             <staff n="2" xml:id="x943faf9f-b30a-479e-92bf-e0096777978f"/>
                             <staff n="3" xml:id="xe1098187-09d0-45c6-b5be-5fed4fc25885"/>
@@ -22428,17 +22423,10 @@
                                     </beam>
                                 </layer>
                             </staff>
-                            <choice>
-                                <sic resp="#LvB" source="#US-NYj_31_B393cp_no.5_errata">
-                                    <octave startid="#x03da44cb-1898-4ac7-82fa-ddbab6b5948f" endid="#x5ed06bbf-e11a-41aa-b2ec-5a4b92849e8e" dis="8" dis.place="above" facs="#shape_e989e880-d8ca-4247-92b0-77423cc7af88 #shape_5406af35-51ac-4ce0-bce2-46ad1564eeed #shape_d1babc38-6c3f-49bd-b5a1-129891fed672 #shape_5a2a1622-0248-4cd6-ad48-9592f5900914 #shape_101d75b0-02da-4e6c-8929-0149848b94bb"/>
-                                </sic>
-                                <corr source="#D-BNba_C73-9 #A-Wn_SH.Beethoven.323">
-                                    <octave staff="19" xml:id="x9fadec50-79c1-4f28-b215-0216858c243b"
+                            <octave staff="19" xml:id="x9fadec50-79c1-4f28-b215-0216858c243b"
                                         startid="#x03da44cb-1898-4ac7-82fa-ddbab6b5948f"
                                         endid="#xf35676d2-46c3-4bc6-9362-708a283df967" dis="8" dis.place="above"
                                         facs="#shape_a3089679-8b2e-4b7f-b7fa-73925812813b #shape_1d2d705e-0d8b-4b60-acd6-87877ac2e904 #shape_003d9724-324d-4651-a78b-b963293f4dee #shape_4c2804d5-db18-4a09-92a2-ef0fa5037353 #shape_b39cbe5e-4603-45f1-9236-4d4b4ca1d228 #shape_399b9ad5-37d0-4e97-abd1-e10edff81d1b #shape_0ac7db11-1b15-4d72-a69c-b7e0f0026c4a #shape_5f566dba-52c5-4de4-a8a9-f1ddd2668c1c">8.a</octave>
-                                </corr>
-                            </choice>
                             <dir staff="19" place="above" tstamp="4"
                                 facs="#shape_d3e34d78-2ce6-4c51-8997-e5e42b571a09 #shape_10ccef0e-0c41-4d74-b278-abaccf6897ad #shape_c1590544-2402-4698-be40-edf3a7f88216 #shape_0867844c-f27c-4b73-8248-23da48332626 #shape_13f49e9f-cb8d-4e9b-a559-db74a5d77bf3 #shape_c03f2c03-bc2d-4170-9d50-20d49ac94ef0 #shape_d5b76dd9-eff2-45f3-bf31-200d1cff5627 #shape_398df3be-8dcb-4994-bf7f-e4471f292325"
                                 >loco</dir>
