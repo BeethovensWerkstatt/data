@@ -198,6 +198,17 @@
           </constraintSpec>        
         </elementSpec>
         
+        <!-- mdiv schematron constraints -->
+        <elementSpec ident="mdiv" module="MEI.shared" mode="change">
+          <constraintSpec ident="mdiv_constraints" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:mdiv">
+                <sch:assert role="error" test="@xml:id and string-length(@xml:id) gt 5">Every mdiv element needs an @xml:id, and it needs to have a sufficient length. You should use UUIDs!</sch:assert>                                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
         
         <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
           
