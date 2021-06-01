@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2021-05-17T10:05:47Z. .
+Schema generated from ODD source 2021-06-01T10:07:39Z. .
 TEI Edition: Version 5.0.0
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -6350,6 +6350,10 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Parentheses: ( and ).</a:documentation>
          <value>brack</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Square brackets: [ and ].</a:documentation>
+         <value>box</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Box.</a:documentation>
+         <value>none</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">None.</a:documentation>
       </choice>
    </define>
    <define name="mei_data.FILL">
@@ -6912,14 +6916,6 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Black mensural notation.</a:documentation>
          <value>mensural.white</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">White mensural notation.</a:documentation>
-         <value>tab.lute.french</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Letters for fret and courses closest to the ground when playing are at the top of the stave.</a:documentation>
-         <value>tab.lute.italian</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Numbers for fret and courses closest to the ground when playing are at the bottom of the stave.</a:documentation>
-         <value>tab.lute.german</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">No staff lines, although vertical position may imply voicing and symbols (based on letters) for fret and course.</a:documentation>
-         <value>tab.guitar</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Numbers for frets and courses closest to the ground when playing are at the top of the stave.</a:documentation>
          <value>neume</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Neumatic notation.</a:documentation>
          <value>tab</value>
@@ -7617,7 +7613,6 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.notationType-notationsubtype-When_notationsubtype-constraint-rule-5">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -7684,9 +7679,6 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
       <empty/>
    </define>
    <define name="mei_att.clefGrp.anl.attributes">
-      <empty/>
-   </define>
-   <define name="mei_att.course.anl.attributes">
       <empty/>
    </define>
    <define name="mei_att.cpMark.anl.attributes">
@@ -8122,7 +8114,6 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.beamRend-place-check_beam_place-constraint-rule-6">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -8132,7 +8123,6 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
          <sch:assert test="count(distinct-values(descendant::mei:*[local-name() eq 'note' or local-name() eq 'chord']/@stem.dir)) &gt; 1">Opposing stem directions are required for a beam with @place="mixed".</sch:assert>
       </sch:rule>
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9380,7 +9370,6 @@ Suggested values include: 1] sustain; 2] soft; 3] sostenuto; 4] silent</a:docume
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-attacca-attacca_start-type_attributes_required-constraint-rule-8">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9414,7 +9403,6 @@ Suggested values include: 1] sustain; 2] soft; 3] sostenuto; 4] silent</a:docume
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-beam-When_not_copyof_beam_content-constraint-rule-9">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9439,7 +9427,6 @@ Suggested values include: 1] sustain; 2] soft; 3] sostenuto; 4] silent</a:docume
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-beamSpan-beamspan_start-_and_end-type_attributes_required-constraint-rule-10">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9481,7 +9468,6 @@ Suggested values include: 1] sustain; 2] soft; 3] sostenuto; 4] silent</a:docume
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-bend-bend_start-_and_end-type_attributes_required-constraint-rule-11">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9513,7 +9499,6 @@ Suggested values include: 1] sustain; 2] soft; 3] sostenuto; 4] silent</a:docume
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-bracketSpan-bracketSpan_start-_and_end-type_attributes_required-constraint-rule-12">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9553,7 +9538,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-breath-breath_start-type_attributes_required-constraint-rule-13">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9594,7 +9578,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-fermata-fermata_start-type_attributes_required-constraint-rule-14">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9652,7 +9635,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-gliss-gliss_start-_and_end-type_attributes_required-constraint-rule-15">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9687,7 +9669,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-graceGrp-When_not_copyof_graceGrp_content-constraint-rule-16">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9699,7 +9680,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-graceGrp-When_graced-constraint-rule-17">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9724,7 +9704,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-hairpin-hairpin_start-_and_end-type_attributes_required-constraint-rule-18">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9764,7 +9743,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-harpPedal-harpPedal_start-type_attributes_required-constraint-rule-19">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9788,7 +9766,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-lv-lv_start-_and_end-type_attributes_required-constraint-rule-20">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9800,7 +9777,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-lv-lv_containing_curve-constraint-rule-21">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -9873,7 +9849,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-meterSigGrp-check_meterSigGrpContent-constraint-rule-22">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10001,7 +9976,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-octave-octave_start-_and_end-type_attributes_required-constraint-rule-23">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10071,7 +10045,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
             </interleave>
          </choice>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
@@ -10130,7 +10103,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-pedal-pedal_start-type_attributes_required-constraint-rule-26">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10174,7 +10146,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-slur-slur_start-_and_end-type_attributes_required-constraint-rule-27">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10188,7 +10159,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-slur-slur_containing_curve-constraint-rule-28">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10215,7 +10185,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-tie-tie_start-_and_end-type_attributes_required-constraint-rule-29">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10229,7 +10198,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-tie-tie_containing_curve-constraint-rule-30">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10278,7 +10246,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-tupletSpan-tupletSpan_start-_and_end-type_attributes_required-constraint-rule-31">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10455,7 +10422,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-mordent-mordent_start-type_attributes_required-constraint-rule-32">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10480,7 +10446,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-trill-trill_start-type_attributes_required-constraint-rule-33">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10505,7 +10470,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-turn-turn_start-type_attributes_required-constraint-rule-34">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -10909,7 +10873,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-cpMark-cpMark_start-_and_end-type_attributes_required-constraint-rule-37">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11139,7 +11102,6 @@ Suggested values include: 1] coloration; 2] cross-rhythm; 3] ligature</a:documen
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-metaMark-metaMark_start-type_attributes_required-constraint-rule-43">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11611,7 +11573,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-graphic-graphic_attributes-constraint-rule-48">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11620,7 +11581,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
             children.</sch:assert>
             </sch:rule>
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11629,7 +11589,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
             startid attribute or ulx and uly attributes.</sch:assert>
             </sch:rule>
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11820,7 +11779,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-fing-fing_start-type_attributes_required-constraint-rule-51">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11832,7 +11790,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-fing-stack_exclusion-constraint-rule-52">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11863,7 +11820,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-fingGrp-require_fingeringLike_children-constraint-rule-53">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -11873,7 +11829,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
             </sch:rule>
          </pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
@@ -12110,7 +12065,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-manifestation-check_singleton-constraint-rule-56">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12179,7 +12133,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.geneticState-check_changeState.targets-constraint-rule-57">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12249,7 +12202,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.accidental.gestural-accid.ges-check_accid_duplication-constraint-rule-58">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12349,9 +12301,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
    <define name="mei_att.cpMark.ges.attributes">
       <ref name="mei_att.duration.gestural.attributes"/>
       <ref name="mei_att.timestamp2.gestural.attributes"/>
-   </define>
-   <define name="mei_att.course.ges.attributes">
-      <empty/>
    </define>
    <define name="mei_att.custos.ges.attributes">
       <empty/>
@@ -12579,7 +12528,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.note.ges-extremis_disallows_gestural_pitch-constraint-rule-59">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12795,7 +12743,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.harm.log-chordref-check_chordrefTarget-constraint-rule-60">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -12964,7 +12911,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-harm-harm_start-type_attributes_required-constraint-rule-61">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -13234,7 +13180,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-componentList-checkComponentList-constraint-rule-62">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -13246,7 +13191,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-componentList-checkComponents-constraint-rule-63">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -13345,7 +13289,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-attUsage-context_attribute_requires_content-constraint-rule-64">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -13472,7 +13415,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-category-category_id-constraint-rule-65">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -13533,7 +13475,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-change-check_change-constraint-rule-66">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -13640,7 +13581,6 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-contents-checkContentsLabels-constraint-rule-67">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14011,7 +13951,6 @@ Suggested values include: 1] cut; 2] rip</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-handList-checkHandListLabels-constraint-rule-68">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14042,7 +13981,6 @@ Suggested values include: 1] cut; 2] rip</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-history-history_restriction-constraint-rule-69">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14063,7 +14001,6 @@ Suggested values include: 1] cut; 2] rip</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-incipCode-Check_incipCode_form_mimetype-constraint-rule-70">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14211,7 +14148,6 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-meiHead-check_meiHead_type-constraint-rule-71">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14220,7 +14156,6 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
             only when the document element is "mei".</sch:assert>
             </sch:rule>
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14229,7 +14164,6 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
             'corpus' only when the document element is "meiCorpus".</sch:assert>
             </sch:rule>
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14363,7 +14297,6 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-patch-check_attached_position-constraint-rule-74">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14782,7 +14715,6 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-source-check_source_target-constraint-rule-75">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14884,7 +14816,6 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-tagUsage-context_attribute_requires_content-constraint-rule-76">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -14958,7 +14889,6 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-termList-checkTermListLabels-constraint-rule-77">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -15332,7 +15262,6 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.componentType-comptype-checkComponentType-constraint-rule-78">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -16953,7 +16882,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.attacca.log-target-check_attaccaTarget-constraint-rule-79">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -16995,7 +16923,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.augmentDots-dots-dots_attribute_requires_dur-constraint-rule-80">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17063,7 +16990,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.barring-bar.method-check_barmethod-constraint-rule-81">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17163,7 +17089,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.classed-class-check_classURI-constraint-rule-82">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17228,7 +17153,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.cleffing.log-clef_shape_requires_clef_line-constraint-rule-83">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17237,7 +17161,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
             specified.</sch:assert>
       </sch:rule>
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17263,7 +17186,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.clefShape-shape_requires_line-constraint-rule-85">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17360,9 +17282,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
          </attribute>
       </optional>
    </define>
-   <define name="mei_att.course.log.attributes">
-      <ref name="mei_att.pitched.attributes"/>
-   </define>
    <define name="mei_att.cue.attributes">
       <ref name="mei_att.cue.attribute.cue"/>
    </define>
@@ -17456,7 +17375,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.custos.log-target-check_custosTarget-constraint-rule-86">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17533,7 +17451,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.dataPointing-data-check_dataTarget-constraint-rule-87">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17566,7 +17483,6 @@ Suggested values include: 1] paper; 2] parch; 3] mixed</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.metadataPointing-decls-check_declsTarget-constraint-rule-88">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17812,7 +17728,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.extent-extent-check_extent-constraint-rule-89">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17821,7 +17736,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
                 recommended.</sch:assert>
       </sch:rule>
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17879,7 +17793,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.handIdent-hand-check_handTarget-constraint-rule-91">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -17953,7 +17866,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.joined-join-check_joinTarget-constraint-rule-92">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18046,7 +17958,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.layer.log-def-check_defTarget_layer-constraint-rule-93">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18162,7 +18073,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.lineRend.base-lsegs-check_lsegs-constraint-rule-94">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18200,7 +18110,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-copyof-When_copyof_element_empty-constraint-rule-95">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18213,7 +18122,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-copyof-check_copyofTarget-constraint-rule-96">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18241,7 +18149,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-corresp-check_correspTarget-constraint-rule-97">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18269,7 +18176,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-follows-check_followsTarget-constraint-rule-98">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18297,7 +18203,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-next-check_nextTarget-constraint-rule-99">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18325,7 +18230,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-precedes-check_precedesTarget-constraint-rule-100">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18353,7 +18257,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-prev-check_prevTarget-constraint-rule-101">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18381,7 +18284,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-sameas-check_sameasTarget-constraint-rule-102">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18409,7 +18311,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.linking-synch-check_synchTarget-constraint-rule-103">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18725,7 +18626,6 @@ Suggested values include: 1] byte; 2] char; 3] cm; 4] deg; 5] in; 6] issue; 7] f
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.name-nymref-check_nymrefTarget-constraint-rule-104">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18819,7 +18719,6 @@ Suggested values include: 1] byte; 2] char; 3] cm; 4] deg; 5] in; 6] issue; 7] f
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.noteHeads-head.altsym-check_head.altsymTarget-constraint-rule-105">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18847,7 +18746,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.noteHeads-head.auth-check_head.auth-constraint-rule-106">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -18912,7 +18810,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.noteHeads-head.shape-check_headshape_num-constraint-rule-107">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19066,7 +18963,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.origin.timestamp.logical-origin.tstamp2-origin.tstamp2_requires_origin.tstamp-constraint-rule-108">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19184,7 +19080,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.partIdent-part-check_part_attr_all-constraint-rule-109">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19210,7 +19105,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.partIdent-partstaff-check_partstaff_attr_all-constraint-rule-110">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19297,7 +19191,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.plist-plist-check_plistTarget-constraint-rule-111">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19446,7 +19339,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.ranging-confidence-check_confidence-constraint-rule-112">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19473,7 +19365,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.responsibility-resp-check_respTarget-constraint-rule-113">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19587,7 +19478,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.source-source-check_sourceTarget-constraint-rule-114">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19662,7 +19552,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.staff.log-def-check_defTarget_staff-constraint-rule-115">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19820,7 +19709,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.startEndId-endid-check_endidTarget-constraint-rule-116">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19847,7 +19735,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.startId-startid-check_startidTarget-constraint-rule-117">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -19914,7 +19801,6 @@ Suggested values include: 1] smufl</a:documentation>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.stems-stem.sameas-check_stem.sameasTarget-constraint-rule-118">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -20225,31 +20111,6 @@ Suggested values include: 1] smufl</a:documentation>
          <attribute name="trans.semi">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Records the amount of pitch shift in semitones, e.g., C to C♯ = 1, C to D♭ = 1, necessary to calculate the sounded pitch from the written one.</a:documentation>
             <data type="decimal"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="mei_att.tuning.log.attribute.tuning.standard">
-      <optional>
-         <attribute name="tuning.standard">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Describes the tuning standard used.
-Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D; 4] guitar.open.G; 5] guitar.open.A; 6] lute.renaissance.6; 7] lute.baroque.d.major</a:documentation>
-            <choice>
-               <value>guitar.standard</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Standard tuning for current guitars. The courses are tuned to E2 A2 D3 G3 B3 E4.</a:documentation>
-               <value>guitar.drop.D</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Drop D tuning for guitars. The lowest course is tuned down to D, while all other courses are kept to their regular pitches. D2 A2 D3 G3 B3 E4.</a:documentation>
-               <value>guitar.open.D</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Open D tuning for guitars. D2 A2 D3 F3s A3 D4.</a:documentation>
-               <value>guitar.open.G</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Open G tuning for guitars. D2 G2 D2 G2 B3 D4.</a:documentation>
-               <value>guitar.open.A</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Open A tuning for guitars. E2 A2 E3 A3 C4s E4.</a:documentation>
-               <value>lute.renaissance.6</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Renaissance tuning for lutes with 10 strings on 6 courses. G2G3 C3C4 F3F4 A4A4 D4 G4.</a:documentation>
-               <value>lute.baroque.d.major</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Baroque tuning for lutes with 6 stable courses, and additional bass courses tuned to the key of D Major.</a:documentation>
-               <data type="NMTOKEN"/>
-            </choice>
          </attribute>
       </optional>
    </define>
@@ -22348,7 +22209,6 @@ Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-annot-Check_annot_data-constraint-rule-119">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -22474,7 +22334,6 @@ Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-biblList-checkBiblLabels-constraint-rule-120">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -22571,7 +22430,6 @@ Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-caesura-caesura_start-type_attributes_required-constraint-rule-121">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -22721,7 +22579,6 @@ Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-clef-Clef_position_lines-constraint-rule-123">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -22734,7 +22591,6 @@ Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-clef-Clef_position_nolines-constraint-rule-124">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -22812,7 +22668,6 @@ Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-contributor-check_contributor_role-constraint-rule-125">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -22832,18 +22687,6 @@ Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D
                <text/>
             </attribute>
          </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="mei_course">
-      <element name="course">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Describes the tuning of a course.</a:documentation>
-         <empty/>
-         <ref name="mei_att.common.attributes"/>
-         <ref name="mei_att.course.log.attributes"/>
-         <ref name="mei_att.course.vis.attributes"/>
-         <ref name="mei_att.course.ges.attributes"/>
-         <ref name="mei_att.course.anl.attributes"/>
          <empty/>
       </element>
    </define>
@@ -22915,7 +22758,6 @@ Suggested values include: 1] guitar.standard; 2] guitar.drop.D; 3] guitar.open.D
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-dedicatee-check_dedicatee-constraint-rule-126">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23017,7 +22859,6 @@ Suggested values include: 1] alt; 2] angle; 3] circum; 4] depth; 5] diameter; 6]
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-dimensions-check_dimensions-constraint-rule-127">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23052,7 +22893,6 @@ Suggested values include: 1] alt; 2] angle; 3] circum; 4] depth; 5] diameter; 6]
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-dir-dir_start-type_attributes_required-constraint-rule-128">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23180,7 +23020,6 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-dynam-dynam_start-type_attributes_required-constraint-rule-129">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23192,7 +23031,6 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-dynam-dynam_end-type_attributes-constraint-rule-130">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23433,7 +23271,6 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-grpSym-check_grpSym_attributes_scoreDef-constraint-rule-131">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23445,7 +23282,6 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-grpSym-check_grpSym_attributes_staffDef-constraint-rule-132">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23587,7 +23423,6 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-keyAccid-Check_keyAccidPlacement-constraint-rule-133">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23628,7 +23463,6 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-keySig-check_keyAccid_oct-constraint-rule-134">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23641,7 +23475,6 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-keySig-check_keySig_editorial-constraint-rule-135">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23836,6 +23669,15 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
                <ref name="mei_model.mdivLike"/>
             </zeroOrMore>
          </choice>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="mei-mdiv-mdiv_constraints-constraint-rule-136">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="mei:mdiv">
+               <sch:assert role="error" test="@xml:id and string-length(@xml:id) gt 5">Every mdiv element needs an @xml:id, and it needs to have a sufficient length. You should use UUIDs!</sch:assert>
+            </sch:rule>
+         </pattern>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
          <ref name="mei_att.metadataPointing.attributes"/>
@@ -23852,9 +23694,8 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <ref name="mei_meiHead"/>
          <ref name="mei_music"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-mei-Check_staff-constraint-rule-136">
+                  id="mei-mei-Check_staff-constraint-rule-137">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -23970,9 +23811,8 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-name-nameParts-constraint-rule-137">
+                  id="mei-name-nameParts-constraint-rule-138">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24075,9 +23915,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-ornam-ornam_start-type_attributes_required-constraint-rule-138">
+                  id="mei-ornam-ornam_start-type_attributes_required-constraint-rule-139">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24307,9 +24146,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
       <element name="phrase">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indication of 1) a "unified melodic idea" or 2) performance technique.</a:documentation>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-phrase-phrase_start-_and_end-type_attributes_required-constraint-rule-139">
+                  id="mei-phrase-phrase_start-_and_end-type_attributes_required-constraint-rule-140">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24321,9 +24159,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-phrase-phrase_containing_curve-constraint-rule-140">
+                  id="mei-phrase-phrase_containing_curve-constraint-rule-141">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24439,9 +24276,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Describes a relationship or linkage amongst entities.</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-relation-FRBR_relation-constraint-rule-141">
+                  id="mei-relation-FRBR_relation-constraint-rule-142">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24564,9 +24400,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-respStmt-check_respStmt-constraint-rule-142">
+                  id="mei-respStmt-check_respStmt-constraint-rule-143">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24595,9 +24430,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-rest-Check_restline-constraint-rule-143">
+                  id="mei-rest-Check_restline-constraint-rule-144">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24746,9 +24580,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-section-Check_sectionexpansion-constraint-rule-144">
+                  id="mei-section-Check_sectionexpansion-constraint-rule-145">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24875,9 +24708,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staff-checkStaff_n-constraint-rule-145">
+                  id="mei-staff-checkStaff_n-constraint-rule-146">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24919,9 +24751,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             <ref name="mei_ambitus"/>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staffDef-Check_staffDefn-constraint-rule-146">
+                  id="mei-staffDef-Check_staffDefn-constraint-rule-147">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24936,9 +24767,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staffDef-Check_ancestor_staff-constraint-rule-147">
+                  id="mei-staffDef-Check_ancestor_staff-constraint-rule-148">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24949,9 +24779,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staffDef-Check_ancestor_staff_lines-constraint-rule-148">
+                  id="mei-staffDef-Check_ancestor_staff_lines-constraint-rule-149">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24963,9 +24792,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staffDef-Check_clef_position_staffDef-constraint-rule-149">
+                  id="mei-staffDef-Check_clef_position_staffDef-constraint-rule-150">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24975,9 +24803,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staffDef-Check_clef_position_staffDef_nolines-constraint-rule-150">
+                  id="mei-staffDef-Check_clef_position_staffDef_nolines-constraint-rule-151">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -24990,9 +24817,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staffDef-Check_tab_strings_lines-constraint-rule-151">
+                  id="mei-staffDef-Check_tab_strings_lines-constraint-rule-152">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -25004,9 +24830,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staffDef-Check_tab_strings_nolines-constraint-rule-152">
+                  id="mei-staffDef-Check_tab_strings_nolines-constraint-rule-153">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -25020,7 +24845,6 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
@@ -25040,7 +24864,6 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
@@ -25052,7 +24875,6 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
@@ -25099,9 +24921,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             <ref name="mei_grpSym"/>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-staffGrp-Check_staffGrp_unique_staff_n_values-constraint-rule-157">
+                  id="mei-staffGrp-Check_staffGrp_unique_staff_n_values-constraint-rule-158">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -25149,9 +24970,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A reference to a previously defined symbol.</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-symbol-symbolDef_symbol_attributes_required-constraint-rule-158">
+                  id="mei-symbol-symbolDef_symbol_attributes_required-constraint-rule-159">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -25184,9 +25004,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-tempo-tempo_in_header_disallow_most_attrs-constraint-rule-159">
+                  id="mei-tempo-tempo_in_header_disallow_most_attrs-constraint-rule-160">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -25197,9 +25016,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-tempo-tempo_start-type_attributes_required-constraint-rule-160">
+                  id="mei-tempo-tempo_start-type_attributes_required-constraint-rule-161">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -25229,9 +25047,8 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-term-Check_term_dataTarget-constraint-rule-161">
+                  id="mei-term-Check_term_dataTarget-constraint-rule-162">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -25772,9 +25589,8 @@ Suggested values include: 1] alternative; 2] arrangement; 3] carrier; 4] date; 5
             <ref name="mei_li"/>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-list-list_type_constraint-constraint-rule-162">
+                  id="mei-list-list_type_constraint-constraint-rule-163">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -26193,6 +26009,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
    </define>
    <define name="mei_att.clef.vis.attributes">
       <ref name="mei_att.color.attributes"/>
+      <ref name="mei_att.enclosingChars.attributes"/>
       <ref name="mei_att.typography.attributes"/>
       <ref name="mei_att.visibility.attributes"/>
       <ref name="mei_att.visualOffset.attributes"/>
@@ -26218,9 +26035,6 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
       </optional>
    </define>
    <define name="mei_att.clefGrp.vis.attributes">
-      <empty/>
-   </define>
-   <define name="mei_att.course.vis.attributes">
       <empty/>
    </define>
    <define name="mei_att.cpMark.vis.attributes">
@@ -26277,6 +26091,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
    </define>
    <define name="mei_att.fermata.vis.attributes">
       <ref name="mei_att.color.attributes"/>
+      <ref name="mei_att.enclosingChars.attributes"/>
       <ref name="mei_att.placementRelStaff.attributes"/>
       <ref name="mei_att.typography.attributes"/>
       <ref name="mei_att.visualOffset.attributes"/>
@@ -26363,9 +26178,8 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="mei-att.fTrem.vis-beams.float-check_beams.floating-constraint-rule-163">
+            id="mei-att.fTrem.vis-beams.float-check_beams.floating-constraint-rule-164">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -26567,6 +26381,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
    </define>
    <define name="mei_att.meterSig.vis.attributes">
       <ref name="mei_att.color.attributes"/>
+      <ref name="mei_att.enclosingChars.attributes"/>
       <ref name="mei_att.typography.attributes"/>
       <ref name="mei_att.meterSig.vis.attribute.form"/>
    </define>
@@ -26603,6 +26418,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
    </define>
    <define name="mei_att.mordent.vis.attributes">
       <ref name="mei_att.color.attributes"/>
+      <ref name="mei_att.enclosingChars.attributes"/>
       <ref name="mei_att.placementRelStaff.attributes"/>
       <ref name="mei_att.typography.attributes"/>
       <ref name="mei_att.visualOffset.attributes"/>
@@ -26676,6 +26492,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
    </define>
    <define name="mei_att.ornam.vis.attributes">
       <ref name="mei_att.color.attributes"/>
+      <ref name="mei_att.enclosingChars.attributes"/>
       <ref name="mei_att.placementRelStaff.attributes"/>
       <ref name="mei_att.visualOffset.attributes"/>
       <ref name="mei_att.visualOffset2.ho.attributes"/>
@@ -26968,6 +26785,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
    </define>
    <define name="mei_att.trill.vis.attributes">
       <ref name="mei_att.color.attributes"/>
+      <ref name="mei_att.enclosingChars.attributes"/>
       <ref name="mei_att.extender.attributes"/>
       <ref name="mei_att.placementRelStaff.attributes"/>
       <ref name="mei_att.typography.attributes"/>
@@ -27026,6 +26844,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
    </define>
    <define name="mei_att.turn.vis.attributes">
       <ref name="mei_att.color.attributes"/>
+      <ref name="mei_att.enclosingChars.attributes"/>
       <ref name="mei_att.placementRelStaff.attributes"/>
       <ref name="mei_att.typography.attributes"/>
       <ref name="mei_att.visualOffset.attributes"/>
