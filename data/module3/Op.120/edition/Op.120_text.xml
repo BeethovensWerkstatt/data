@@ -1598,7 +1598,14 @@
                   <measure n="3" label="2" xml:id="xccfd33ef-2463-47c0-9779-5883664a040e">
                      <staff xml:id="xccb92cfd-3b62-496b-973e-3903fc9f09a3" n="1">
                         <layer n="1">
-                           <note xml:id="x17be3bd5-ee6d-4133-a379-b045ae53770c" pname="e" oct="4" dur="2"/>
+                           <chord dur="2">
+                              <note xml:id="x17be3bd5-ee6d-4133-a379-b045ae53770c" pname="e" oct="4"/>
+                              <del xml:id="x39c51b7c-0971-452e-be58-aff46c444a1f" resp="#LvB" state="#postRevision">
+                                 <note xml:id="xa60bb06a-5ba8-4803-8c5a-8a979ceb2c17" pname="c" oct="4"/>
+                              </del>
+                              
+                           </chord>
+                           
                            <beam>
                               <chord xml:id="x64d77d31-fee6-43c4-9392-9134d327b6d0" dur="8">
                                  <note xml:id="xc2de5445-9eb6-4073-970c-8f9333421a7f" pname="e" oct="5"/>
@@ -1617,7 +1624,9 @@
                            </beam>
                         </layer>
                         <layer n="2">
-                           <note xml:id="x38d61eda-2877-4e8b-bc71-e43838e076ea" pname="c" oct="4" dur="2"/>
+                           <add xml:id="x84c00344-b389-40ed-9808-0555a8341b87" resp="#LvB" state="#postRevision"><note xml:id="x38d61eda-2877-4e8b-bc71-e43838e076ea" pname="c" oct="4" dur="2"/>
+                           </add>
+                           
                         </layer>
                      </staff>
                      <staff xml:id="x01f053a6-d6ad-447c-b28c-9065f0896d54" n="2">
@@ -1636,6 +1645,12 @@
                            <note xml:id="x1edec4c1-3e8f-4497-b958-933ff39093ad" pname="g" oct="3" dur="2" dots="1"/>
                         </layer>
                      </staff>
+                     <annot xml:id="x5728148e-dde2-4956-80d6-207984b948ab" class="#bw_monitum_effect" staff="1 2" tstamp="1" tstamp2="0m+4" plist="#x39c51b7c-0971-452e-be58-aff46c444a1f #x84c00344-b389-40ed-9808-0555a8341b87">
+                        <relation rel="succeeding" target="#x73cf4cff-79e1-47a4-960d-ec5100bc295f"/>
+                        <relation rel="preceding" target="#x491d3018-b96a-4316-a668-557cebf24a45"/>
+                        <relation rel="original" target="#x608a7c86-a3b8-4004-9482-3985f23b6094"/>
+                        <relation rel="constituent" target="#xd10838d3-aab3-467d-bc71-c23c2b662421"/>
+                     </annot>
                   </measure>
                   <measure n="4" label="3" xml:id="xd4dcfbdb-407d-41e7-adf7-564c647500dd">
                      <staff xml:id="xa6f30b56-b67d-42c5-9283-732698922060" n="1"/>
@@ -1838,12 +1853,15 @@
                      <staff xml:id="x7bcc47f6-7edb-4e1a-bb5d-eacdc7c578dc" n="1">
                         <layer>
                            <chord xml:id="x588bfcc0-d46b-48a8-8c5c-d7ec50a5fdf3" dur="2">
+                              <add xml:id="xb502b310-9e22-4ec3-9b4f-04fabbaf2d58" resp="#LvB" state="#postRevision">
+                                 <dot n="1"/>
+                              </add>
                               <note xml:id="xd280c5da-7166-4513-84de-9a8903b9a529" pname="g" oct="5"/>
                               <note xml:id="x44b07328-90ae-4818-abe4-91072fa0b712" pname="e" oct="5"/>
                            </chord>
                            <beam>
-                              <note xml:id="x23518666-d16a-4a5d-bd94-fcfba0b9e497" pname="g" oct="3" dur="8"/>
-                              <note xml:id="x96afc4be-410c-44fe-968f-53e5d3cba1ad" pname="g" oct="3" dur="8"/>
+                              <note xml:id="x23518666-d16a-4a5d-bd94-fcfba0b9e497" pname="g" oct="3" dur="8" staff="2"/>
+                              <note xml:id="x96afc4be-410c-44fe-968f-53e5d3cba1ad" pname="g" oct="3" dur="8" staff="2"/>
                            </beam>
                         </layer>
                      </staff>
@@ -1853,6 +1871,12 @@
                         </layer>
                      </staff>
                      <dynam staff="1 2" tstamp="3" place="between">pp</dynam>
+                     <annot xml:id="x096e995a-ddd8-461f-87d2-cdbf8bfd6bd7" class="#bw_monitum_effect" staff="1 2" tstamp="1" tstamp2="0m+3" plist="#xb502b310-9e22-4ec3-9b4f-04fabbaf2d58">
+                        <relation rel="succeeding" target="#xf5fb7ae0-c1d1-4eb9-a86a-a106d8d0548d"/>
+                        <relation rel="preceding" target="#xb7ed5f45-bccb-4be2-a5e4-37794d987abd"/>
+                        <relation rel="original" target="#x150db36f-e5b6-49d4-8b4a-e4704f362480"/>
+                        <relation rel="constituent" target="#xc707e500-dc76-40c2-86a2-7c7839144d24"/>
+                     </annot>
                   </measure>
                   <!-- 2. ending -->
                   <measure n="36" label="32b" xml:id="x44007d1b-5636-400a-a7af-c61a240db044">
@@ -1968,10 +1992,24 @@
                         <layer>
                            <note xml:id="x21510d57-04c3-4562-aa1c-7de03345134e" pname="c" oct="2" dur="4"/>
                            <rest xml:id="xd121410d-9dad-4a3e-a825-6acff4d1d349" dur="4"/>
-                           <note xml:id="xc76b3b6d-172d-43d4-a81b-9335cc4290b8" pname="b" oct="2" dur="4"/>
+                           <subst xml:id="xcaa1de92-934e-458d-9e70-c9b54345c26b" resp="#LvB" state="#postRevision">
+                              <add xml:id="xd4a13e22-8f6c-42fc-b6de-8a2dfc459926" resp="#LvB" state="#postRevision">
+                                 <note xml:id="xc76b3b6d-172d-43d4-a81b-9335cc4290b8" pname="b" oct="3" dur="4"/>
+                              </add>
+                              <del xml:id="x2dafd466-da8a-420e-ad7b-313570f61340" resp="#LvB" state="#postRevision">
+                                 <note xml:id="x26931805-d429-443f-8ea7-4e45ea8ade0e" pname="b" oct="2" dur="4"/>
+                              </del>
+                           </subst>
+                           
                         </layer>
                      </staff>
                      <trill staff="2" tstamp="3" place="above"/>
+                     <annot xml:id="xf4179a1b-a880-49d6-b697-c207d9f4adce" class="#bw_monitum_effect" staff="1 2" tstamp="1" tstamp2="1m+4" plist="#xef35aa10-e23d-4c96-90d1-7ea539fb41bb #x2dafd466-da8a-420e-ad7b-313570f61340 #xd4a13e22-8f6c-42fc-b6de-8a2dfc459926 #xcaa1de92-934e-458d-9e70-c9b54345c26b #x0b885991-2515-4550-8e4b-b60631d4f726 #xcba1f87a-e335-44f8-9bc3-5ccedd4a5b8a #xc1ce784f-e6ad-457c-bc72-583d41de1faf #xc203f260-7856-4ce3-9113-2604bd0faf7b #xebda3530-0262-44c2-925c-9be2fb1d14cd #x0e17e0c6-f66c-4529-ac6c-4f42c6703b0c #xabbe328c-27d2-4828-8626-11daeb164cba #x88737cdf-7e35-4590-aa3a-5cb8d19455c4 #x468a9e90-0470-4141-842c-774e4a19a0b6 #x4a0038d7-5c9f-46e5-b887-0a7edeec0c11 #x8d6a2dfd-211a-4727-bca0-4d63275ad579">
+                        <relation rel="succeeding" target="#x67e8046e-8f97-436c-8e34-4e44cd310aeb"/>
+                        <relation rel="preceding" target="#x5489a3a6-8694-4ebb-ba5a-576cd2df0c86"/>
+                        <relation rel="original" target="#xe3a604c6-44eb-4fb6-b157-f1ad9b6824af"/>
+                        <relation rel="constituent" target="#xa92586e6-90d5-48f4-89fe-11921ce7dc1c"/>
+                     </annot>
                   </measure>
                   <measure n="5" label="4" xml:id="xc0c82de5-6de5-4caa-bd35-bf1c0897f8a2" type="monitum6">
                      <staff xml:id="x7dc6d5aa-dcdc-424b-9ece-0fa925b34a98" n="1">
@@ -1983,13 +2021,45 @@
                      </staff>
                      <staff xml:id="x62fdc82a-3717-443f-a6a5-e2a00b48d1fa" n="2">
                         <layer>
-                           <note xml:id="x62b700fd-5c43-4209-be76-08e74c923aa3" pname="c" oct="3" dur="4" dots="1"/>
+                           <subst xml:id="xef35aa10-e23d-4c96-90d1-7ea539fb41bb" resp="#LvB" state="#postRevision">
+                              <del xml:id="x0b885991-2515-4550-8e4b-b60631d4f726" resp="#LvB" state="#postRevision">
+                                 <note xml:id="x62b700fd-5c43-4209-be76-08e74c923aa3" pname="c" oct="4" dur="4" dots="1"/>
+                              </del>
+                              <add xml:id="xcba1f87a-e335-44f8-9bc3-5ccedd4a5b8a" resp="#LvB" state="#postRevision">
+                                 <note xml:id="x7c884796-63b5-4e48-8f5c-560ad31265ff" pname="c" oct="3" dur="4" dots="1"/>
+                              </add>
+                           </subst>
+                           
                            <beam>
-                              <note xml:id="xc78ebf54-4856-4326-a6dd-f217bb049e2a" pname="g" oct="2" dur="16"/>
-                              <note xml:id="x3356cd0c-ceb4-44cd-8954-3c84bd2b4669" pname="e" oct="2" dur="16"/>
+                              <subst xml:id="xc1ce784f-e6ad-457c-bc72-583d41de1faf" resp="#LvB" state="#postRevision">
+                                 <del xml:id="xc203f260-7856-4ce3-9113-2604bd0faf7b" resp="#LvB" state="#postRevision">
+                                    <note xml:id="xc78ebf54-4856-4326-a6dd-f217bb049e2a" pname="g" oct="3" dur="16"/>
+                                 </del>
+                                 <add xml:id="xebda3530-0262-44c2-925c-9be2fb1d14cd" resp="#LvB" state="#postRevision">
+                                    <note xml:id="x0b24159b-680a-4fca-bdcc-bd187951b7cb" pname="g" oct="2" dur="16"/>
+                                 </add>
+                              </subst>
+                              <subst xml:id="x0e17e0c6-f66c-4529-ac6c-4f42c6703b0c" resp="#LvB" state="#postRevision">
+                                 <del xml:id="xabbe328c-27d2-4828-8626-11daeb164cba" resp="#LvB" state="#postRevision">
+                                    <note xml:id="x8f1685f5-91b6-4fb5-bd05-3800eaec5193" pname="e" oct="3" dur="16"/>
+                                 </del>
+                                 <add xml:id="x88737cdf-7e35-4590-aa3a-5cb8d19455c4" resp="#LvB" state="#postRevision">
+                                    <note xml:id="x3356cd0c-ceb4-44cd-8954-3c84bd2b4669" pname="e" oct="2" dur="16"/>
+                                 </add>
+                              </subst>
+                              
+                              
                            </beam>
                            <beam>
-                              <note xml:id="x66723b8b-4ac7-48a3-b9a8-ca7a07e8d65a" pname="c" oct="2" dur="16"/>
+                              <subst xml:id="x468a9e90-0470-4141-842c-774e4a19a0b6" resp="#LvB" state="#postRevision">
+                                 <del xml:id="x4a0038d7-5c9f-46e5-b887-0a7edeec0c11" resp="#LvB" state="#postRevision">
+                                    <note xml:id="x901f2859-9203-4070-9ad1-a51103622851" pname="c" oct="3" dur="16"/>
+                                 </del>
+                                 <add xml:id="x8d6a2dfd-211a-4727-bca0-4d63275ad579" resp="#LvB" state="#postRevision">
+                                    <note xml:id="x66723b8b-4ac7-48a3-b9a8-ca7a07e8d65a" pname="c" oct="2" dur="16"/>
+                                 </add>
+                              </subst>
+                              
                               <note xml:id="xd36a3345-b4e1-43aa-811c-4a16e702509e" pname="g" oct="2" dur="16"/>
                               <note xml:id="xe0782c6f-607a-4a4a-9432-41ac7b782662" pname="e" oct="2" dur="16"/>
                               <note xml:id="x60ffaa95-d5bb-4c8d-9a24-ba93639824a0" pname="c" oct="2" dur="16"/>
@@ -2091,10 +2161,19 @@
                         </layer>
                      </staff>
                      <slur staff="2" startid="#x4c7116d6-1f59-414a-be08-ea24fe2edec2" endid="#xc7f75f3a-c5f8-4e96-877a-d937e3cb4c86"/>
+                     <annot xml:id="xb8f25d7b-bd0e-4f5a-8b80-d9d730724011" class="#bw_monitum_effect" staff="1 2" tstamp="1" tstamp2="1m+2" plist="#xd1dd65a5-4394-47fe-bf0c-18e55707cc2e">
+                        <relation rel="succeeding" target="#xc1d6d7c2-3bc8-47da-a8c5-5bf698cc14cc"/>
+                        <relation rel="preceding" target="#x7dff89b2-25c5-47de-9d75-23dc25104c73"/>
+                        <relation rel="original" target="#x80a3bcbf-4649-4c39-9df6-bb6a60794741"/>
+                        <relation rel="constituent" target="#x01bf96a2-9a66-44a7-bfa0-d18980260c39"/>
+                     </annot>
                   </measure>
                   </ending>
                   <!-- Auftakt zu T.17 -->
                   <measure n="19" label="17" xml:id="xd3372026-7237-40bd-9565-be2132b3391d" left="rptstart">
+                     <add xml:id="xd1dd65a5-4394-47fe-bf0c-18e55707cc2e" resp="#LvB" state="#postRevision">
+                        <!-- wiederholungzeichen left="rptstart" -->
+                     </add>
                      <staff xml:id="x4f50617d-883d-4a1f-8bc2-08526699dda3" n="1">
                         <layer>
                            <rest dur="4"/>
