@@ -915,6 +915,7 @@
                      <slur staff="1" startid="#x1187e332-85e3-4bf0-a083-8d8223a8703a" endid="#x6032a49e-b556-4847-b5ed-012b05a88737"/>
                      <slur staff="2" startid="#x3682b3d0-9430-406e-a12c-3082d4a8251a" endid="#x471f8028-d798-41d7-a222-07a5cee0da0c"/>
                   </measure>
+                  <!-- monitum1 -->
                   <measure n="11" label="10" xml:id="xf9734f8a-35c7-4054-b803-dfab6cca4d63" type="monitum1">
                      <staff xml:id="xda4a48fd-4b37-4960-8ea3-2bc414ee8544" n="1">
                         <layer>
@@ -954,6 +955,13 @@
                      <slur staff="1" startid="#x7a3adfc8-e36c-4613-aa3d-5130d9eec85b" endid="#x761f39da-584a-405b-8ab8-4bac67288987"/>
                      <slur staff="2" startid="#x471f8028-d798-41d7-a222-07a5cee0da0c" endid="#x65c6ce09-8e56-49f1-9b25-abaa1854f573"/>
                      <tie staff="2" startid="#xe3f708bc-1843-4399-846e-11489e12f0da" endid="#x51aad18e-eb8a-4f14-ad46-e17bfdf9b21a"/>
+                     <annot xml:id="x649cc05c-1cda-4b92-bb53-048d55064c09" class="#bw_monitum_effect" staff="1 2" tstamp="1" tstamp2="4m+4"
+                        plist="#x84f0c00b-2a7e-4f5a-b6c0-0b90aa2d346d #x3abe8ee0-f102-4017-aec1-2446780427fa #xc4a621ce-8807-4b74-914f-066d1889ec3a #x502fbb1f-9b09-4e3c-93a6-6c419991b2b8">
+                        <relation rel="succeeding" target="#x51b26ee3-730f-4a75-9fe9-385e77dc79e8"/>
+                        <relation rel="preceding" target="#x4da71625-dfd5-4f07-a5a4-8b3c43889b15"/>
+                        <relation rel="original" target="#x1078af94-b250-43ff-aa69-b90476597681"/>
+                        <relation rel="constituent" target="#xf8863816-a9f8-48fa-b51d-26dc84009dc9"/>
+                     </annot>
                   </measure>
                   <measure n="12" label="11" xml:id="x7cbf26e4-6401-4275-b06b-a8438aae7cdd" type="monitum1">
                      <staff xml:id="xc31ab4eb-602b-4116-bbef-9438480ad88b" n="1">
@@ -967,7 +975,9 @@
                            <chord xml:id="x761f39da-584a-405b-8ab8-4bac67288987" dur="4">
                               <note xml:id="x1aa115b4-363f-429f-9a6c-d53afea885ab" pname="g" oct="4"/>
                               <note xml:id="x144892b4-2586-460b-9d7e-afa4d93a2402" pname="b" oct="3">
-                                 <accid accid="n"/>
+                                 <add xml:id="x84f0c00b-2a7e-4f5a-b6c0-0b90aa2d346d" resp="#LvB" state="#postRevision">
+                                    <accid accid="n"/>
+                                 </add>
                               </note>
                            </chord>
                            <note xml:id="xae119c91-08d2-4dde-83a8-6290d1cce0c5" pname="c" oct="5" dur="4"/>
@@ -999,7 +1009,9 @@
                            <chord xml:id="xff4e3f95-be1a-4f63-b136-4a24fdfa44cf" dur="4">
                               <note xml:id="x90b36ede-9ce7-430d-889d-efd5cf2885df" pname="b" oct="4"/>
                               <note xml:id="x6281066e-27d1-4ec5-84e1-dc709a54ba65" pname="g" oct="4">
-                                 <accid accid.ges="n"/>
+                                 <add xml:id="x3abe8ee0-f102-4017-aec1-2446780427fa" resp="#LvB" state="#postRevision">
+                                    <accid accid.ges="n"/>
+                                 </add>
                               </note>
                            </chord>
                            <note xml:id="x7c3be0fb-aec5-4e33-bc31-bb5c4feff448" pname="f" oct="5" dur="4">
@@ -1063,7 +1075,12 @@
                            </chord>
                         </layer>
                      </staff>
-                     <slur staff="1" startid="#x31cf2c2e-198c-425b-bb42-2e447cd7ac05" endid="#x541d26bd-b89f-40f5-a684-5304dada1d54"/>
+                     <add xml:id="xc4a621ce-8807-4b74-914f-066d1889ec3a" resp="#LvB" state="#postRevision">
+                        <slur staff="1" startid="#x9f621f2f-a421-44a2-9f76-50e27f9596a6" tstamp2="2m+1" curvedir="above"/>
+                     </add>
+                     <add xml:id="x502fbb1f-9b09-4e3c-93a6-6c419991b2b8" resp="#LvB" state="#postRevision">
+                        <slur staff="1" startid="#x4b258f61-7a1e-4402-b077-8cb3e88185c7" endid="#x73d004c3-90e1-4c9a-8c5c-2b91d7972624" curvedir="below"/>
+                     </add>
                      <tie staff="1" startid="#x31cf2c2e-198c-425b-bb42-2e447cd7ac05" endid="#x32003d7e-a8df-47bb-be0b-86ab7a944009"/>
                      <hairpin form="dim" tstamp="1" tstamp2="1m+2"/>
                   </measure>
