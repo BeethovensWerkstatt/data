@@ -790,7 +790,6 @@
                   </staffGrp>
                </scoreDef>
                <section>
-
                   <measure n="1" label="1" xml:id="xc503ff2d-7df6-430a-b813-1225780a6796">
                      <staff xml:id="x3c3f4bf8-be4a-4e37-b6a6-383577d05831" n="1"/>
                      <staff xml:id="x5c02d1c0-e259-483e-b7ae-a9c5bbb899d2" n="2"/>
@@ -819,7 +818,8 @@
                      <staff xml:id="xfc3e1c69-daa9-43d6-a460-fc00915cdaa4" n="1"/>
                      <staff xml:id="xa997a451-e570-4807-8b7f-36be339c2d35" n="2"/>
                   </measure>
-                  <measure n="8" label="7" xml:id="xff52013f-3f1a-4949-8a04-183e87b2c61a" type="monitum4">
+                  <!-- monitum 4 -->
+                  <measure n="8" label="7" xml:id="xff52013f-3f1a-4949-8a04-183e87b2c61a">
                      <staff xml:id="x777db047-8fb7-4c3e-9f24-3d393829d618" n="1">
                         <layer n="1">
                            <chord xml:id="x56a4054f-0680-4f79-9ecd-505856e588b2" dur="4">
@@ -849,7 +849,7 @@
                      <slur staff="1" startid="#x56a4054f-0680-4f79-9ecd-505856e588b2" endid="#xac284f5f-9ad9-4bf9-ba36-deb6425c7203"/>
                      <tie staff="2" startid="#xd0a29c71-fdea-4879-a0e7-ef73cc07a00d" endid="#x80ce471e-48f8-4a8d-b7e3-5cdcd77d542b"/>
                   </measure>
-                  <measure n="9" label="8" xml:id="x2a75839a-392d-4ea0-9cbd-2b701f2cd783" type="monitum4">
+                  <measure n="9" label="8" xml:id="x2a75839a-392d-4ea0-9cbd-2b701f2cd783">
                      <staff xml:id="xbde995be-ad61-4b6a-818a-176448cd1d52" n="1">
                         <layer n="1">
                            <chord xml:id="x1acfc259-56d2-485c-81ac-54cb9160ed18" dur="4">
@@ -921,7 +921,7 @@
                      <slur staff="1" startid="#x1187e332-85e3-4bf0-a083-8d8223a8703a" endid="#x6032a49e-b556-4847-b5ed-012b05a88737"/>
                      <slur staff="2" startid="#x3682b3d0-9430-406e-a12c-3082d4a8251a" endid="#x471f8028-d798-41d7-a222-07a5cee0da0c"/>
                   </measure>
-                  <!-- monitum1 -->
+                  <!-- monitum 1 -->
                   <measure n="11" label="10" xml:id="xf9734f8a-35c7-4054-b803-dfab6cca4d63" type="monitum1">
                      <staff xml:id="xda4a48fd-4b37-4960-8ea3-2bc414ee8544" n="1">
                         <layer>
@@ -1138,7 +1138,6 @@
                      <staff xml:id="x03c160ce-d351-4699-9e88-7f9ba576e8f0" n="1"/>
                      <staff xml:id="xc3c6aa3a-c4da-4011-a486-7c5c39955c91" n="2"/>
                   </measure>
-
                   <measure n="19" label="17" xml:id="x789a05cc-6191-4b57-a223-fb9c89a7695b">
                      <staff xml:id="x309b76af-ae36-46da-a2fa-4c062161ad4a" n="1"/>
                      <staff xml:id="x539a8707-e011-440e-bde2-391a2aa9c29f" n="2"/>
@@ -1171,7 +1170,6 @@
                      <staff xml:id="xae697af1-cd32-4513-907b-a71af4f80a7d" n="1"/>
                      <staff xml:id="x9e82f915-5a6a-41fc-b841-0e4c3061d326" n="2"/>
                   </measure>
-
                   <measure n="27" label="25" xml:id="x1b539e9e-56bd-4245-b847-5ec5309f3e46">
                      <staff xml:id="x90724925-da21-469f-a394-c9a3722aaedb" n="1"/>
                      <staff xml:id="x6380d9f2-8322-4036-aa4a-91e30eaaeea2" n="2"/>
@@ -1208,8 +1206,6 @@
                      <staff xml:id="xeff85543-1b82-44bb-a3f5-9121a96e3cbb" n="1"/>
                      <staff xml:id="x513bd854-c779-4c4d-be98-814b06d01350" n="2"/>
                   </measure>
-
-
                </section>
             </score>
          </mdiv>
@@ -1226,7 +1222,6 @@
                   </staffGrp>
                </scoreDef>
                <section>
-
                   <measure n="1" label="1" xml:id="x49446a0f-f7a5-4e92-a2e3-42fc8843a299">
                      <staff xml:id="xecf92057-c6a0-434c-83f8-580cbb9594e4" n="1"/>
                      <staff xml:id="xc6d9f49c-f832-41a8-9f3f-ecea385112e6" n="2"/>
@@ -1264,10 +1259,18 @@
                      <staff xml:id="x1f0ff923-0718-4b10-966e-733ebc7fb354" n="2"/>
                   </measure>
                   <measure n="10" label="9" xml:id="x0378bbdb-a0f7-473e-a803-00c81650dcbd">
-                     <staff xml:id="x9959f18c-5784-44dc-a415-8311bee37bd4" n="1"/>
-                     <staff xml:id="xdf141e6e-aa07-43bd-af58-bec3ecf93eec" n="2"/>
+                     <staff n="1">
+                        <layer n="1"/>
+                        <layer n="2"/>
+                     </staff>
+                     <staff n="2">
+                        <layer n="1"/>
+                        <layer n="2"/>
+                     </staff>
+                     <tie xml:id="xdf876465-9833-46e2-8b51-20787c199a51" tstamp="1" endid="#a86366a7-59ec-4016-ba7b-1755bba513e2" staff="1" layer="1" curvedir="above"/>
+                     <tie xml:id="x8c54be18-398f-40ac-a247-7b368cb95222" tstamp="1" endid="#edbb252b-5054-4f1f-8e86-b84052677803" staff="2" layer="1" curvedir="below"/>
                   </measure>
-                  
+                  <!-- monitum 66 -->
                   <measure n="11" label="10" xml:id="xf5a11fd9-4730-48e5-89da-b20e54adb3af" type="monitum66">
                      <staff xml:id="x9a23331f-0e7e-46bd-a657-49bffaedae3b" n="1">
                         <layer n="1">
@@ -1317,7 +1320,6 @@
                         <relation rel="constituent" target="#x3e23462f-e56a-4fb3-8319-1ee94df71f60"/>
                      </annot>
                   </measure>
-                  
                   <measure n="12" label="11" xml:id="x16cc2fa3-6b23-45af-8d51-93a23aefc8f5">
                      <staff xml:id="x2c3ce59f-08ee-4bb7-96eb-182212cf1274" n="1"/>
                      <staff xml:id="xc796f49c-da9e-424b-8332-471563b175c3" n="2"/>
@@ -1338,7 +1340,6 @@
                      <staff xml:id="x4e140b78-31c9-4a32-af01-785d394c6e83" n="1"/>
                      <staff xml:id="x139bf35f-3c63-4db9-99c7-04a52690f2cc" n="2"/>
                   </measure>
-
                   <measure n="17" label="15" xml:id="x177b7ae0-2113-4947-9de1-f93271559957">
                      <staff xml:id="x426fbcdc-a7bd-4bf9-b6e7-23d9d12900f7" n="1"/>
                      <staff xml:id="x58aaf56d-dde2-4740-96ea-7a7f0705cc27" n="2"/>
@@ -1366,6 +1367,7 @@
                   <measure n="23" label="21" xml:id="xe135f40d-df47-46d0-b153-31dceaee4672">
                      <staff xml:id="x5a383133-1f97-48b9-b2fa-92b3f7fa11d1" n="1"/>
                      <staff xml:id="xd019a92a-4a10-4a96-b2c8-f502682b3b25" n="2"/>
+                     <dynam xml:id="x892aab76-e51e-4cfc-990e-bf4b2ffa3ea8" tstamp="1" tstamp2="7m+4" staff="1 2" extender="true" place="between">cresc.</dynam>
                   </measure>
                   <measure n="24" label="22" xml:id="xd498937c-b69c-4d57-abd4-6a85c1e199e5">
                      <staff xml:id="xcbeb6b9f-03df-4d69-8621-6d218d0b3f0e" n="1"/>
@@ -1375,12 +1377,11 @@
                      <staff xml:id="x3c225294-f571-437d-8796-e2d83b7276bc" n="1"/>
                      <staff xml:id="x4010425f-5ce6-4b96-a305-5bc3008a9102" n="2"/>
                   </measure>
-
                   <measure n="26" label="24" xml:id="x273a4c45-89ae-4077-9366-c6aba343aba3">
                      <staff xml:id="x3dfe3c8e-5f9b-4ef0-974b-7559cc9032d6" n="1"/>
                      <staff xml:id="x484fe452-b318-472b-b1db-9de5baba6f9e" n="2"/>
                   </measure>
-                  <measure n="27" label="25" xml:id="x8798088c-937f-4282-9faf-e5c48b0cb5ac" type="monitum2">
+                  <measure n="27" label="25" xml:id="x8798088c-937f-4282-9faf-e5c48b0cb5ac">
                      <staff xml:id="x0861efb5-ea37-4875-b734-a9de8c153bb0" n="1">
                         <layer>
                            <beam xml:id="xca746b19-84c6-40f3-901f-5e1f88bef4ac">
@@ -1435,7 +1436,8 @@
                      </staff>
                      <slur staff="1" startid="#x9e05b4c0-3339-4897-a630-cf4e30eb0f14" endid="#x395a4d1b-7671-4997-88d4-37df18da38fc"/>
                   </measure>
-                  <measure n="28" label="26" xml:id="xa24f1b42-8331-4903-8660-02f5247373c3" type="monitum2">
+                  <!-- monitum 2 -->
+                  <measure n="28" label="26" xml:id="xa24f1b42-8331-4903-8660-02f5247373c3">
                      <staff xml:id="xe96ffefb-16e8-4872-9c0f-0d28e91aa1f0" n="1">
                         <layer>
                            <beam>
@@ -1478,18 +1480,34 @@
                               <note xml:id="xb9bd4278-803c-45c4-af2b-5b8629fb0e75" pname="e" oct="3"/>
                               <note xml:id="xe69b4afb-4a30-414f-b4d6-077b41327270" pname="e" oct="2"/>
                            </chord>
-                           <beam>
-                              <chord xml:id="x1ad99cb0-fd7a-4eca-b7f6-9cb6d1fb9688" dur="8">
-                                 <note xml:id="x8091d865-9b49-4ff9-b60f-55ed17bb1745" pname="b" oct="2"/>
-                                 <note xml:id="x3717b46a-ae2f-4ff0-9960-3ce609723afb" pname="b" oct="1"/>
+                           <del xml:id="xa93849f1-714b-41dd-bd8d-0d2244521aba" state="#postRevision" resp="#LvB">
+                              <chord xml:id="xf9c2d461-7f88-47bd-8c59-1ca8e8173dea" dur="4">
+                                 <note xml:id="x02e0f453-6d44-4955-8a55-06bfd312e7f6" pname="b" oct="3"/>
+                                 <note xml:id="xb7f0427c-40a3-499b-9277-8dc9b6d42896" pname="b" oct="2"/>
                               </chord>
-                              <chord xml:id="x3a4f23c0-5862-4d49-be4c-daba38f97f66" dur="8">
-                                 <note xml:id="xd34febd0-136d-4da1-a642-e34e438fc73b" pname="b" oct="3"/>
-                                 <note xml:id="x30c024cc-fdd9-4bdf-9913-50de695e575d" pname="b" oct="2"/>
-                              </chord>
-                           </beam>
+                           </del>
+                           <add xml:id="xbb5b2dbd-1e79-4a77-b418-95034414cc40" state="#postRevision" resp="#LvB">
+                              <beam>
+                                 <chord xml:id="x1ad99cb0-fd7a-4eca-b7f6-9cb6d1fb9688" dur="8">
+                                    <note xml:id="x8091d865-9b49-4ff9-b60f-55ed17bb1745" pname="b" oct="2"/>
+                                    <note xml:id="x3717b46a-ae2f-4ff0-9960-3ce609723afb" pname="b" oct="1"/>
+                                 </chord>
+                                 <chord xml:id="x3a4f23c0-5862-4d49-be4c-daba38f97f66" dur="8">
+                                    <note xml:id="xd34febd0-136d-4da1-a642-e34e438fc73b" pname="b" oct="3"/>
+                                    <note xml:id="x30c024cc-fdd9-4bdf-9913-50de695e575d" pname="b" oct="2"/>
+                                 </chord>
+                              </beam>
+                           </add>
                         </layer>
                      </staff>
+                     <slur xml:id="x4cf6074c-1a4f-4692-b094-67823b0a5459" staff="1" startid="#xf94ecd70-3e57-45c9-ad49-cbdba78ed4a5" tstamp2="1m+2.5" curvedir="above"/>
+                     <annot xml:id="xa784fd16-7bcb-47a1-9456-d7e01da916b1" class="#bw_monitum_effect" staff="1 2" tstamp="1" tstamp2="0m+4"
+                        plist="#xa93849f1-714b-41dd-bd8d-0d2244521aba #xbb5b2dbd-1e79-4a77-b418-95034414cc40">
+                        <relation rel="succeeding" target="#x54198419-0ce8-418f-af72-0ee1a3260ea6"/>
+                        <relation rel="preceding" target="#x0dbe5080-d952-49f0-9d26-7762d67728d4"/>
+                        <relation rel="original" target="#xcdb29da6-e871-41ed-86a4-39012a24f2da"/>
+                        <relation rel="constituent" target="#x23ac1954-3cc9-47da-9b43-3ef86117be2e"/>
+                     </annot>
                   </measure>
                   <measure n="29" label="27" xml:id="x04e6724e-5504-4863-85bf-d2d540feb429">
                      <staff xml:id="x4befd584-d73c-46a4-9d53-7c145dc717bd" n="1"/>
@@ -1499,7 +1517,7 @@
                      <staff xml:id="xde7f975f-161d-4288-ac41-14ac9e25f0e4" n="1"/>
                      <staff xml:id="x164a7d15-bd7d-44af-a8f3-aaac050e236d" n="2"/>
                   </measure>
-                  <measure n="31" label="29" xml:id="x5a3e76ac-8acb-4e5a-ba69-81d8c3095b38" type="monitum3">
+                  <measure n="31" label="29" xml:id="x5a3e76ac-8acb-4e5a-ba69-81d8c3095b38">
                      <staff xml:id="xd71f8575-6bf8-4a42-aa51-87f4a369e784" n="1">
                         <layer>
                            <beam>
@@ -1545,6 +1563,7 @@
                      </staff>
                      <slur staff="1" startid="#x3658403f-054b-434d-9297-f35b626dbedc" endid="#x3035f314-df7f-43bb-9b29-0d4ee150644f"/>
                   </measure>
+                  <!-- monitum 3 -->
                   <measure n="32" label="30" xml:id="xc21bb244-dd2d-4b55-9bfb-cbc861e84d41" type="monitum3">
                      <staff xml:id="x7a2da6c1-a03d-4d73-b23e-7444e2ea28a6" n="1">
                         <layer>
