@@ -1367,7 +1367,6 @@
                   <measure n="23" label="21" xml:id="xe135f40d-df47-46d0-b153-31dceaee4672">
                      <staff xml:id="x5a383133-1f97-48b9-b2fa-92b3f7fa11d1" n="1"/>
                      <staff xml:id="xd019a92a-4a10-4a96-b2c8-f502682b3b25" n="2"/>
-                     <dynam xml:id="x892aab76-e51e-4cfc-990e-bf4b2ffa3ea8" tstamp="1" tstamp2="7m+4" staff="1 2" extender="true" place="between">cresc.</dynam>
                   </measure>
                   <measure n="24" label="22" xml:id="xd498937c-b69c-4d57-abd4-6a85c1e199e5">
                      <staff xml:id="xcbeb6b9f-03df-4d69-8621-6d218d0b3f0e" n="1"/>
@@ -1376,6 +1375,7 @@
                   <measure n="25" label="23" xml:id="x6b025cae-5653-4c49-8330-a5ef456620e0">
                      <staff xml:id="x3c225294-f571-437d-8796-e2d83b7276bc" n="1"/>
                      <staff xml:id="x4010425f-5ce6-4b96-a305-5bc3008a9102" n="2"/>
+                     <dynam xml:id="x892aab76-e51e-4cfc-990e-bf4b2ffa3ea8" tstamp="1" tstamp2="7m+4" staff="1 2" extender="true" place="between">cresc.</dynam>
                   </measure>
                   <measure n="26" label="24" xml:id="x273a4c45-89ae-4077-9366-c6aba343aba3">
                      <staff xml:id="x3dfe3c8e-5f9b-4ef0-974b-7559cc9032d6" n="1"/>
@@ -1561,22 +1561,24 @@
                            </chord>
                         </layer>
                      </staff>
-                     <slur staff="1" startid="#x3658403f-054b-434d-9297-f35b626dbedc" endid="#x3035f314-df7f-43bb-9b29-0d4ee150644f"/>
+                     <slur staff="1" startid="#x3658403f-054b-434d-9297-f35b626dbedc" endid="#xb8306c1c-9bc5-480c-8f4c-eada44ca9a3c"/>
                   </measure>
                   <!-- monitum 3 -->
                   <measure n="32" label="30" xml:id="xc21bb244-dd2d-4b55-9bfb-cbc861e84d41" type="monitum3">
                      <staff xml:id="x7a2da6c1-a03d-4d73-b23e-7444e2ea28a6" n="1">
                         <layer>
                            <beam>
-                           <chord xml:id="xb8306c1c-9bc5-480c-8f4c-eada44ca9a3c" dur="8">
-                              <note xml:id="x6329ee19-2f57-4064-a130-eaec594d2a46" pname="f" oct="6"/>
-                              <note xml:id="xef965855-9f93-4b4c-8f23-5d0a7b44d0f6" pname="b" oct="5">
-                                 <accid accid="n"/>
-                              </note>
-                              <note xml:id="xac3cde5d-a580-423f-8d1b-9f2c95140a67" pname="a" oct="5">
-                                 <accid accid="f"/>
-                              </note>
-                           </chord>
+                              <chord xml:id="xb8306c1c-9bc5-480c-8f4c-eada44ca9a3c" dur="8">
+                                 <note xml:id="x6329ee19-2f57-4064-a130-eaec594d2a46" pname="f" oct="6"/>
+                                 <note xml:id="xef965855-9f93-4b4c-8f23-5d0a7b44d0f6" pname="b" oct="5">
+                                    <add resp="#BW">
+                                       <accid accid="n"/>
+                                    </add>
+                                 </note>
+                                 <note xml:id="xac3cde5d-a580-423f-8d1b-9f2c95140a67" pname="a" oct="5">
+                                    <accid accid="f"/>
+                                 </note>
+                              </chord>
                               <note xml:id="x3035f314-df7f-43bb-9b29-0d4ee150644f" pname="f" oct="5" dur="8"/>
                               <chord xml:id="x21d729bb-966f-48d8-94f1-8103492b20a2" dur="8">
                                  <note xml:id="xf506d0bf-a8c9-4f16-9e0b-8e66e728f16b" pname="f" oct="6"/>
@@ -1588,6 +1590,9 @@
                                  </note>
                               </chord>
                               <chord xml:id="x313d5bb1-6425-457b-878f-755c4ba1d76a" dur="8">
+                                 <add xml:id="x370eed33-15d0-4905-84a9-1fa08bdb6ba6" resp="#LvB" state="#postRevision">
+                                    <artic artic="stacc"/>
+                                 </add>
                                  <note xml:id="x1cc8233c-e978-436a-9c68-51279b6c3eae" pname="b" oct="5">
                                     <accid accid.ges="n"/>
                                  </note>
@@ -1625,14 +1630,25 @@
                            </chord>
                         </layer>
                      </staff>
-                     <slur staff="1" startid="#x313d5bb1-6425-457b-878f-755c4ba1d76a" endid="#x0c13051b-8a13-4ca4-bcfc-6deaccbb8ce1"/>
-                     <dynam staff="1 2" place="below" tstamp="3">f</dynam>
+                     <add xml:id="xd2f6226c-34b4-4b13-b255-afffc5205086" state="#postRevision" resp="#LvB">
+                        <slur staff="1" startid="#x313d5bb1-6425-457b-878f-755c4ba1d76a" endid="#x0c13051b-8a13-4ca4-bcfc-6deaccbb8ce1"/>
+                     </add>
+                     <add xml:id="x69d52869-e444-4ed0-b2c2-2a6a9c3db1e2" state="#postRevision" resp="#LvB">
+                        <slur staff="1" startid="#x21d729bb-966f-48d8-94f1-8103492b20a2" endid="#x313d5bb1-6425-457b-878f-755c4ba1d76a"/>
+                     </add>
+                     <dynam staff="1 2" place="between" tstamp="3">f</dynam>
+                     <annot xml:id="xb2861a64-c30b-4988-8399-5c61ae88f617" class="#bw_monitum_effect" staff="1 2" tstamp="1" tstamp2="0m+4"
+                        plist="#x370eed33-15d0-4905-84a9-1fa08bdb6ba6 #xd2f6226c-34b4-4b13-b255-afffc5205086 #x69d52869-e444-4ed0-b2c2-2a6a9c3db1e2">
+                        <relation rel="succeeding" target="#xf9792e2f-6950-41d5-a184-bc0ae541b610"/>
+                        <relation rel="preceding" target="#x6bda2438-0061-4fcb-88d2-ee477aa8c837"/>
+                        <relation rel="original" target="#x080edd98-b0ad-4f98-b88a-73aab192b1ed"/>
+                        <relation rel="constituent" target="#xcbab1203-84ea-4253-b8f2-e081abb50649"/>
+                     </annot>
                   </measure>
                   <measure n="33" label="31" xml:id="xcef7bf4d-c8c8-434d-b435-16f43cb5a757">
                      <staff xml:id="xea99f2e9-6d2e-4b38-9184-a63e7e101ac7" n="1"/>
                      <staff xml:id="x95978331-f7b7-430d-905e-659702fb44bc" n="2"/>
                   </measure>
-
                </section>
             </score>
          </mdiv>
