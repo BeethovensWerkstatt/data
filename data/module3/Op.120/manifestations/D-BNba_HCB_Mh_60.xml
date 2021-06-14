@@ -455,8 +455,73 @@
                                 </staffGrp>
                             </scoreDef>
                         </supplied>
-                        <measure n="1" label="1" xml:id="measure_2fb925e4-e599-4577-8936-afcbb9cbf378" facs="#zone_b2ede9dd-e56d-487d-9db7-c390ed10a09e"/>
-                        <measure n="2" label="2" xml:id="measure_ce28b8cb-3592-4134-8290-b972a1e70483" facs="#zone_522c40e3-eff0-4da3-b12e-26e86b340685"/>
+                        <measure n="1" label="1" xml:id="measure_2fb925e4-e599-4577-8936-afcbb9cbf378" facs="#zone_b2ede9dd-e56d-487d-9db7-c390ed10a09e">
+                            <staff xml:id="x777db047-8fb7-4c3e-9f24-3d393829d618" n="1">
+                                <layer n="1">
+                                    <chord xml:id="x56a4054f-0680-4f79-9ecd-505856e588b2" dur="4">
+                                        <note xml:id="x684cb4e5-8630-4c42-a3ba-a43affb7338a" pname="g" oct="5"/>
+                                        <note xml:id="x40d29c88-d482-4179-bb2f-ca03f1465d5b" pname="a" oct="4"/>
+                                    </chord>
+                                    <chord xml:id="x8a47e894-8219-439c-b075-573098179b85" dur="4">
+                                        <note xml:id="xdb7977cc-d585-4ee7-a1af-c37c3d35c26e" pname="f" oct="5"/>
+                                        <note xml:id="xae14923a-5336-440d-baea-8dea683eef39" pname="b" oct="4"/>
+                                    </chord>
+                                    <chord xml:id="xac284f5f-9ad9-4bf9-ba36-deb6425c7203" dur="4">
+                                        <note xml:id="x6da7c676-51bc-4d94-87a3-26b88feea405" pname="e" oct="5"/>
+                                        <note xml:id="x215736e3-0304-4562-9932-4a142d50e698" pname="c" oct="5"/>
+                                    </chord>
+                                </layer>
+                            </staff>
+                            <staff xml:id="x9910e094-a8e8-48bd-b064-353bb4f5b2e4" n="2">
+                                <layer n="1">
+                                    <note xml:id="x1253494a-4f45-4fa2-8c19-7db565dcb6aa" pname="e" oct="4" dur="4"/>
+                                    <note xml:id="xb44f8558-79e6-4125-8966-161fce115535" pname="d" oct="4" dur="4"/>
+                                    <note xml:id="x8b255d54-e3da-4700-a27f-38625dfcf0f9" pname="c" oct="4" dur="4"/>
+                                </layer>
+                                <layer n="2">
+                                    <note xml:id="xd0a29c71-fdea-4879-a0e7-ef73cc07a00d" pname="g" oct="3" dur="2"/>
+                                </layer>
+                            </staff>
+                            <del xml:id="x4c11566f-8749-4c7e-b6cc-b6c657529b90"  state="#postRevision" resp="#LvB">
+                                <tie staff="1" startid="#x6da7c676-51bc-4d94-87a3-26b88feea405" endid="#x559012c8-c642-42d4-bd8f-581b31229231"/>
+                            </del>
+                            <del xml:id="xe64e46cb-453e-4c48-b6b2-faa3563466b7"  state="#postRevision" resp="#LvB">
+                                <tie staff="1" startid="#x215736e3-0304-4562-9932-4a142d50e698" endid="#x555acfe7-22b7-4ed6-a5b7-a0ea969573d8"/>
+                            </del>
+                            <tie staff="2" startid="#xd0a29c71-fdea-4879-a0e7-ef73cc07a00d" endid="#x4d9e0299-e090-4276-98c4-63442ec4709d"/>
+                            <annot xml:id="x45e1191d-7da8-436f-9429-613e473876fb" class="#bw_monitum_context" staff="1 2" tstamp="1" tstamp2="1m+2"/>
+                            <metaMark xml:id="x64e1910b-3d7b-4671-8da4-33deb9f3d589" class="#bw_monitum #bw_fully_implemented" staff="1 2" tstamp="1" tstamp2="1m+2"/>
+                        </measure>
+                        <measure n="2" label="2" right="dbl" xml:id="measure_ce28b8cb-3592-4134-8290-b972a1e70483" facs="#zone_522c40e3-eff0-4da3-b12e-26e86b340685">
+                            <staff xml:id="xbde995be-ad61-4b6a-818a-176448cd1d52" n="1">
+                                <layer n="1">
+                                    <chord xml:id="x1acfc259-56d2-485c-81ac-54cb9160ed18" dur="4">
+                                        <note xml:id="x559012c8-c642-42d4-bd8f-581b31229231" pname="e" oct="5"/>
+                                        <note xml:id="x555acfe7-22b7-4ed6-a5b7-a0ea969573d8" pname="c" oct="5"/>
+                                    </chord>
+                                    <chord xml:id="x3c54f31a-49b5-48e8-ad29-53ea9638c10a" dur="4">
+                                        <note xml:id="x1936e377-6aec-416b-8ab5-552ab20f6980" pname="d" oct="5"/>
+                                        <note xml:id="x3282ec4f-6ef5-47e1-ae03-1f4511545925" pname="b" oct="4"/>
+                                    </chord>
+                                    <note xml:id="x652480ea-4759-40c7-a13e-61cc0fb70a25" pname="d" oct="5" dur="4">
+                                        <accid accid="f"/>
+                                    </note>
+                                </layer>
+                                <layer n="2">
+                                    <note xml:id="x933dd24e-0e39-4567-a7b9-0692bc58bea1" pname="g" oct="4" dur="2"/>
+                                </layer> 
+                            </staff>
+                            <staff xml:id="xc0d96193-8b49-4b6f-81bc-b71691b266a1" n="2">
+                                <layer n="1">
+                                    <note xml:id="x4d9e0299-e090-4276-98c4-63442ec4709d" pname="g" oct="3" dur="2"/>
+                                    <sic resp="#BW">
+                                        <note xml:id="xd7e6174a-163a-4381-98aa-9d46c86e64fa" pname="g" oct="4" dur="2"/>
+                                    </sic>
+                                    <space dur="4"/>
+                                </layer>
+                            </staff>
+                            <metaMark xml:id="x6d4e82c6-1918-4f70-8afd-fffc6edeb391"  staff="1" place="rightmar" function="confirmation">weg die 2 [Haltebögen] u. nach london angezeigt</metaMark>
+                        </measure>
                     </section>
 
                     <section xml:id="page_1190ed26-1635-44fb-97ee-7238a5071aa7" n="5" label="Monitum5">
