@@ -232,6 +232,16 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
+          <!-- metaMark must be inside measure -->
+          <constraintSpec ident="metaMark_source" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:metaMark">
+                <sch:assert role="error" test="ancestor::mei:measure">
+                  A metaMark must be placed inside measures. 
+                </sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
         </elementSpec>
         
         <!-- this is only a bugfix which hopefully will be fixed in MEI itself -->
