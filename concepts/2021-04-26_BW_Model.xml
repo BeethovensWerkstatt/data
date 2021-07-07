@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <textFile>
+        <!--<facsimile source="ante">
+            <surface>
+                <!-\-<graphic/> no need to duplicate zones-\->
+                <includedSVG/>
+            </surface>
+        </facsimile>
+        <facsimile source="post">
+            <surface>
+                <!-\-<graphic/>-\->
+                <includedSVG/>
+            </surface>
+        </facsimile>
+        <facsimile source="rev">
+            <surface>
+                <!-\-<graphic/>-\->
+                <includedSVG/>
+            </surface>
+        </facsimile>-->
+        
+        <measure label="61">
+            <staff n="1">
+                <layer>
+                    <!-- alt 1: work with links to the same svg shapes -->
+                    <!-- only temporary to generate final structure -->
+                    <rest dur="8" facs="#svg_ante_rest #svg_rev_rest #svg_post_rest"/>
+                    <subst>
+                        <del>
+                            <note pname="b" oct="5" dur="4" facs="#svg_ante_note1"/>
+                        </del>
+                        <add>
+                            <note pname="g" oct="5" dur="4" facs="#svg_rev_note1 #svg_post_note1"/>
+                        </add>
+                    </subst>
+                    <!-- alt 2: work with dedicated annots -->
+                    <!-- final structure -->
+                    <rest xml:id="text_rest" dur="8"/>
+                    <subst>
+                        <del>
+                            <note xml:id="text_note1a" pname="b" oct="5" dur="4"/>
+                        </del>
+                        <add>
+                            <note xml:id="text_note1b" pname="g" oct="5" dur="4"/>
+                        </add>
+                    </subst>
+                    <annot plist="#text_rest">
+                        <relation rel="hasManifestation" target="#ante_rest #rev_rest #post_rest"/>
+                        
+                        <relation rel="hasManifestation" target="#ante_rest"/>
+                        <relation rel="hasManifestation" target="#rev_rest"/>
+                        <relation rel="hasManifestation" target="#post_rest"/>
+                    </annot>
+                    <annot xml:id="annot2" plist="#text_note1a">
+                        <relation rel="manifestation" target="#ante_note"/>
+                    </annot>
+                    <annot xml:id="annot3" plist="#text_note1b">
+                        <relation rel="manifestation" target="#rev_note #post_note"/>
+                        <!--<relation rel="hasAlternative" targets="#annot2"/> is this helpful or necessary? -->
+                    </annot>
+                    <!-- alt 3: use @corresp instead -->
+                            <!-- corresp is inferior to annot with regard to expressivity: We cannot specify
+                                the type of relationship. Is this a problem? -->
+                    <!--<rest dur="8" corresp="#ante_rest #rev_rest #post_rest"/>
+                    <subst>
+                        <del>
+                            <note pname="b" oct="5" dur="4" corresp="#ante_note1"/>
+                        </del>
+                        <add>
+                            <note pname="g" oct="5" dur="4" corresp="#rev_note1 #post_note1"/>
+                        </add>
+                    </subst>-->
+                    
+                    <!-- annot for sketches? -->
+                    <annot tstamp="3" tstamp2="1m+3.75" staff="2">
+                        <relation rel="hasRevision" target="#annotInOtherSketch"/>
+                    </annot>
+                </layer>
+            </staff>
+        </measure>
+    </textFile>
+    
+    <documentFile source="ante">
+        <facsimile source="ante">
+            <surface>
+                <graphic/>
+                <includedSVG/>
+            </surface>
+        </facsimile>
+        
+        <measure label="61">
+            <staff n="1">
+                <layer>
+                    <rest xml:id="ante_rest" dur="8" facs="#svg_ante_rest"/>
+                    <note xml:id="ante_note" pname="b" oct="5" dur="4" facs="#svg_ante_note1"/>
+                </layer>
+            </staff>
+        </measure>
+    </documentFile>
+    
+    <documentFile source="rev">
+        <facsimile source="rev">
+            <surface>
+                <graphic/>
+                <includedSVG/>
+            </surface>
+        </facsimile>
+        
+        <measure label="61">
+            <staff n="1">
+                <layer>
+                    <rest xml:id="rev_rest" dur="8" facs="#svg_rev_rest"/>
+                    <note xml:id="rev_note" pname="b" oct="5" dur="4" facs="#svg_rev_note1"/>
+                </layer>
+            </staff>
+        </measure>
+        
+    </documentFile>
+    
+    <documentFile source="post">
+        <facsimile source="post">
+            <surface>
+                <graphic/>
+                <includedSVG/>
+            </surface>
+        </facsimile>
+        
+        <measure label="61">
+            <staff n="1">
+                <layer>
+                    <rest xml:id="post_rest" dur="8" facs="#svg_post_rest"/>
+                    <note xml:id="post_note" pname="b" oct="5" dur="4" facs="#svg_post_note1"/>
+                </layer>
+            </staff>
+        </measure>
+        
+    </documentFile>
+    
+    <!-- svg-shape based linking means we can only describe equality / invariance, 
+        but not changes between documents -->
+    
+    <!-- use svg solution to enter data in an easy way, but then xslt this to the annot solution and built 
+        software support only for that, as it's more powerful for sketches later on – it allows to make 
+        statements about larger sections of the music, where both @facs and @corresp are strictly limited
+        to 1-to-1 statements between elements. -->
+    
+    <textFile/>
+    <documentFile/>
+    <documentFile/>
+    <documentFile/>
+    <linkFile/>
+    
+    <meiCorpus>
+        <meiHead>
+            <!-- links (evtl. per xi:include?) -->
+        </meiHead>
+        <mei>
+            <!-- textFile per xi:include -->
+        </mei>
+        <mei>
+            <!-- docFile per xi:include -->
+        </mei>
+        <mei>
+            <!-- docFile per xi:include -->
+        </mei>
+    </meiCorpus>
+    
+    <!-- 
+        * metaMark mit dem von Beethoven gewählten Kontextzitat kommt ins revisionDoc 
+        * von da verlinkt per hasContext auf annot (im textFile), mit dem wir den Kontext festlegen, was angezeigt werden soll
+        * alle anderen docFiles (ante und post) haben annots entsprechenden Umfangs, die per @rel="isEmbodimentOf" auf das annot im textFile verlinken
+        
+    
+    -->
+    <textFile>
+        <annot class="#bw_monitum_context">
+            <relation rel="hasRevFocus" target="#rev_focus"/><!-- statt @sameas können wir an verschiedenen Stellen im Text, die auf dasselbe Monitum verweisen, auch wiederholt dasselbe @rev_focus referenzieren -->
+            <relation rel="hasAnteContext" target="#ante_context"/>
+            <relation rel="hasPostContext" target="#post_context"/>
+        </annot>
+    </textFile>
+    <anteFile>
+        <annot xml:id="ante_context"></annot>
+    </anteFile>
+    <revFile>
+        <metaMark xml:id="rev_focus"></metaMark>
+    </revFile>
+    
+</root>

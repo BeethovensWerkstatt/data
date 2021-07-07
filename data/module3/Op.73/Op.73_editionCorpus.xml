@@ -1,0 +1,73 @@
+<?xml-model href="../../../rng/bw_module3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="../../../rng/bw_module3.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<meiCorpus xmlns="http://www.music-encoding.org/ns/mei" xmlns:xi="http://www.w3.org/2001/XInclude" meiversion="5.0.0-dev" xml:id="xf3f76067-b8a1-48ce-878f-41b9a0ef0c8d">
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="de" type="main">Beethoven Op.73</title>
+                <title type="subordinate">Edition File</title>
+                <composer>
+                    <persName xml:id="LvB" auth="GND" auth.uri="http://d-nb.info/gnd/118508288">Ludwig van Beethoven</persName>
+                </composer>
+                <editor>
+                    <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens Werkstatt</corpName>
+                </editor>
+                <funder>
+                    <corpName xml:id="AdW" auth="GND" auth.uri="http://d-nb.info/gnd/35487-9">Akademie der Wissenschaften und der Literatur Mainz</corpName>
+                </funder>
+            </titleStmt>
+            <pubStmt/>
+            <xi:include href="./edition/Op.73_linking.xml"/>
+        </fileDesc>
+        <encodingDesc class="#bw_module3_corpusFile">
+            <classDecls>
+                <taxonomy label="availableTaxonomies">
+                    <category xml:id="document_type"/>
+                    <category xml:id="bw_observation_type"/>
+                    <category xml:id="bw_implementation_completeness"/>
+                    <category xml:id="bw_monitum_category"/>
+                    <category xml:id="bw_file_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="music.print" class="#document_type"/>
+                    <category xml:id="music.manuscript" class="#document_type"/>
+                    <category xml:id="letter.manuscript" class="#document_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_monitum" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="Korrektur" class="#bw_monitum_category"/>
+                    <category xml:id="Variante" class="#bw_monitum_category"/>
+                    <category xml:id="Textpräzisierung" class="#bw_monitum_category"/>
+                    <category xml:id="Schriftbildliche_Verbesserung" class="#bw_monitum_category"/>
+                    <category xml:id="paratextliche_Eingriffe" class="#bw_monitum_category"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
+        <manifestationList>
+            <!-- TODO: find best spot for this in TEI! -->
+            <manifestation xml:id="D-BNba_Slg.H.C.Bodmer_HCB_Br_94" label="Revisionsliste 2" class="#letter.manuscript"/>
+        </manifestationList>
+    </meiHead>
+    <!-- musical text: -->
+    <xi:include href="./edition/Op.73_text.xml"/>
+    <!-- ante document: -->
+    <xi:include href="manifestations/D-BNba_C73-9.xml"/>
+    <!-- revision document: -->
+    <xi:include href="manifestations/US-NYj_31_B393cp_no.5_errata.xml"/>
+    <!-- post document: -->
+    <xi:include href="manifestations/A-Wn_SH.Beethoven.323.xml"/>
+</meiCorpus>
