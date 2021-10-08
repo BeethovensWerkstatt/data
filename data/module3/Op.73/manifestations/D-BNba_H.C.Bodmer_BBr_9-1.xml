@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="x26f83b49-782e-43ac-95a7-12967c0a4ff8" xmlns:mei="http://www.music-encoding.org/ns/mei">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Beethoven an Breitkopf &amp; Härtel in Leipzig, <lb/>Wien, Montag, 6. Mai 1811</title>
+            <title type="suordinate">Revisionsdokument</title>
+            <author ref="#LvB">Ludwig van Beethoven</author>
+            <editor ref="#BW">Beethovens Werkstatt</editor>
+            <funder ref="#AdW">Akademie der Wissenschaften und der Literatur Mainz</funder>
+         </titleStmt>
+         <publicationStmt>
+            <p>published by Beethovens Werkstatt</p>
+         </publicationStmt>
+         <seriesStmt>
+            <title xml:lang="de" level="s">Beethoven als Bearbeiter eigener Werke</title>
+            <idno xml:base="https://beethovens-werkstatt.de/modul-3/">corr</idno>
+         </seriesStmt>
+         <sourceDesc>
+            <msDesc type="autograph">
+               <msIdentifier>
+                  <collection>Beethoven-Haus Bonn, Sammlung H. C. Bodmer, HCB BBr 9, HCB Br 94</collection>
+               </msIdentifier>
+               <physDesc>
+                  <p>Autograph, 1 Doppelblatt, 4 beschriebene Seiten</p>
+                  <!-- obwohl hier <foliation/> vorkommt als Element, scheint es nicht so geeignet für unsere Zwecke, 
+                     da die detaillierte Ablage von folia-Inforamtionen unter <foliation/> nicht gut klappt auf den ersten Blick. 
+                     Deshalb surface-Informationen im <bindingDesc/> -->
+                  <!--<objectDesc>
+                     <supportDesc>
+                        <extent>
+                           <dimensions>
+                              <height></height>
+                              <width></width>
+                           </dimensions>
+                        </extent>
+                        <foliation></foliation>
+                     </supportDesc>
+                  </objectDesc>-->
+                  <bindingDesc>
+                     <decoNote>
+                        <width>8825</width>
+                        <height>5563</height>
+                        <ref type="recto" source="#surface_28f79e38-e7b1-485a-b4c1-a415a8882465"/> .  
+                     </decoNote>
+                     <decoNote>
+                        <width>8825</width>
+                        <height>5563</height>
+                        <ref type="recto" source="#surface_995a7434-f575-40f3-bedb-62d9fbf4f7ba"/>
+                     </decoNote>
+                     <decoNote>
+                        <width>5611</width>
+                        <height>4657</height>
+                        <ref type="recto" source="#surface_4ec5f562-4b1d-4457-86cd-368406603444"/>
+                        <ref type="verso" source="#surface_4772f777-b996-4e22-a6f9-4ece0e4bde7b"/>
+                     </decoNote>
+                  </bindingDesc>
+               </physDesc>
+            </msDesc>
+            <biblStruct>
+               <monogr>
+                  <imprint>
+                     <publisher><orgName ref="#BGA">Beethoven-Gesamtausgabe</orgName></publisher>
+                     <pubPlace ref="#Bonn">Bonn</pubPlace>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+            <listPerson>
+               <person xml:id="LvB">
+                  <persName>Ludwig van Beethoven</persName>
+                  <idno type="GND" xml:base="http://d-nb.info/gnd/">118508288</idno>
+                  <occupation xml:base="https://www.loc.gov/marc/relators/relacode.html">aut</occupation>
+               </person>
+               <person xml:id="KH">
+                  <persName>Kristin Herold</persName>
+                  <idno type="gitHub" xml:base="https://github.com/">krHERO</idno>
+                  <occupation xml:base="https://www.loc.gov/marc/relators/relacode.html">res</occupation>
+               </person>
+               <person xml:id="SO">
+                  <persName>Salome Obert</persName>
+                  <idno type="gitHub" xml:base="https://github.com/">obertsalome</idno>
+                  <occupation xml:base="https://www.loc.gov/marc/relators/relacode.html">res</occupation>
+               </person>
+            </listPerson>
+            <listOrg>
+               <org xml:id="BW" type="edt">
+                  <orgName>Beethovens Werkstatt</orgName>
+                  <placeName>
+                     <settlement ref="#Dt">Detmold</settlement>
+                     <settlement ref="Bonn">Bonn</settlement>
+                  </placeName>
+                  <idno type="URI" xml:base="https://beethovens-werkstatt.de/"/>
+               </org>
+               <org xml:id="BuH" type="pbl">
+                  <orgName>Breitkopf &amp; Härtel</orgName>
+                  <placeName>
+                     <settlement ref="#Leipzig">Leipzig</settlement>
+                  </placeName>
+                  <idno type="GND" xml:base="http://d-nb.info/gnd/">64766-4</idno>
+               </org>
+               <org xml:id="AdW" type="fnd">
+                  <orgName>Akademie der Wissenschaften und der Literatur Mainz</orgName>
+                  <placeName>
+                     <settlement ref="#Mainz">Mainz</settlement>
+                  </placeName>
+                  <idno type="URI" xml:base="http://www.adwmainz.de/"/>
+               </org>
+               <org xml:id="BGA" type="edt">
+                  <orgName>Beethoven-Gesamtausgabe</orgName>
+                  <placeName>
+                     <settlement ref="#Bonn">Bonn</settlement>
+                  </placeName>
+                  <idno type="URI" xml:base="https://www.beethoven.de/"/>
+               </org>
+            </listOrg>
+            <listPlace>
+               <place xml:id="Leipzig">
+                  <settlement>Leipzig</settlement>
+                  <idno type="geoNames" xml:base="https://www.geonames.org/">2879139</idno>
+               </place>
+               <place xml:id="Wien">
+                  <settlement>Wien</settlement>
+                  <idno type="geoNames" xml:base="https://www.geonames.org/">2761369</idno>
+               </place>
+               <place xml:id="Bonn">
+                  <settlement>Bonn</settlement>
+                  <idno type="geoNames" xml:base="https://www.geonames.org/">2946447</idno>
+               </place>
+               <place xml:id="Dt">
+                  <settlement>Detmold</settlement>
+                  <idno type="geoNames" xml:base="https://www.geonames.org/">2937936</idno>
+               </place>
+               <place xml:id="Mainz">
+                  <settlement>Mainz</settlement>
+                  <idno type="geoNames" xml:base="https://www.geonames.org/">2874225</idno>
+               </place>
+            </listPlace>
+            <list type="work">
+               <item xml:id="op80">
+                  <name>Fantasie, op. 80 (c-Moll)</name>
+                  <idno type="GND" xml:base="http://d-nb.info/gnd/">300015186</idno>
+               </item>
+            </list>
+         </sourceDesc>
+      </fileDesc>
+     <profileDesc>
+        <correspDesc>
+           <correspAction type="sent">
+              <persName ref="http://d-nb.info/gnd/118508288">Ludwig van Beethoven</persName>
+              <date when="1811-05-06">6. Mai 1811</date>
+              <placeName ref="https://www.geonames.org/2761369/vienna.html">Wien</placeName>
+           </correspAction>
+           <correspAction type="received">
+              <orgName ref="http://d-nb.info/gnd/64766-4">Breitkopf &amp; Härtel</orgName>
+              <placeName ref="https://www.geonames.org/2879139/">Leipzig</placeName>
+           </correspAction>
+        </correspDesc>
+        <handNotes>
+           <handNote style="handwritten" medium="blackInk">
+              <persName ref="#LvB">Ludwig van Beethoven</persName>
+              <dim facs="#BGA_496_1.jpeg #BGA_496_2.jpeg"></dim>
+           </handNote>
+           <handNote xml:id="copyist" style="handwritten" medium="blackInk">
+              <persName>Kopist</persName>
+              <p>1 Blatt, 2 beschriebene Seiten</p>
+              <dim facs="#BGA_496_3.jpeg #BGA_496_4.jpeg"/>
+           </handNote>
+        </handNotes>
+     </profileDesc>
+     <revisionDesc>
+        <change n="1">
+           <persName ref="#KH">Kristin Herold</persName>
+           <date when-iso="2020-09-10"/>
+           <p>initial setup of file</p>
+        </change>
+        <change n="2">
+           <persName ref="#SO">Salome Obert</persName>
+           <date when-iso="2021-05"/>
+           <p>transfer from BGA 496 to TEI</p>
+           <p>add musical content</p>
+        </change>
+     </revisionDesc>
+  </teiHeader>
+  <text type="letter">
+      <body>
+         <div n="1" type="writingSession">
+            
+            <!-- erste Seite auskommentiert, da wir nur das Monitum zu op.73 benötigen -->
+            <!--<pb n="1r"/>-->
+            
+            <opener>
+               <!--<handShift scribeRef="#LvB"/>
+               <lb/><dateline><hi rend="right-justified"><settlement>Vien</settlement> am <date when="1811-05-06">6ten May <supplied resp="BGA">1811</supplied></date></hi></dateline>
+               <lb/><salute><hi rend="centered">P.P.</hi></salute>-->
+            </opener>
+            
+            <p>
+              <!-- <lb/>Fehler – Fehler – sie sind selbst 
+               <lb/>ein einziger Fehler – da muß 
+               <lb/>ich meinen Kopisten hinschicken, dort 
+               <lb/>muß ich selbst hin, wenn ich will, daß
+               <lb/>meine Werke – nicht als 
+               <lb/>Bloße Fehler erscheinen – das 
+               <lb/>Musick-tribunal in L.<supplied resp="#BGA">eipzig</supplied>
+               <lb/>bringst wie es scheint, nicht 
+               <lb/>einen einzigen ordentlichen 
+               <lb/>Korrektor hervor, dabey schicken 
+               <lb/>sie noch, ehe sie / die K.<supplied resp="#BGA">orrekturen</supplied> erhalten 
+               <lb/>die Werke – ab – wenigstens 
+               <lb/>sollte man bey größern 
+               <lb/>Werken mit andern Stim<supplied resp="#BGA">m</supplied>en 
+               
+               <pb n="1v"/>
+               <lb/>doch die Täkte abzählen – 
+               <lb/>aber das sieht man bey der 
+               <lb/><ref type="work" target="#Fantasie_op80">Fantasie</ref> etc <supplied resp="#BGA">–</supplied> wie es geschieht –<!-\- bei dem ersten Gedankenstrich denke ich eher, dass da etwas von der Vorderseite durchgedrückt ist. -\->
+               <lb/>sehn sie in dem Klawier<lb break="yes"/>-<!-\- Eher Gleichheitszeichen statt Bindestrich? -\->
+               <lb/>auszuge von <ref type="work" target="#Egmont_Ouverture_op84">Egmont's overture</ref>
+               <lb/>fehlt ein ganzer Takt – 
+               <lb/><ref target="#Monita_op73">hier das Verzeichniß der Fehler (erata)</ref>
+               <lb/>Meinen heißesten Dank, 
+               <lb/>daß sie mich für eine 
+               <lb/>so interessante Sache so
+               <lb/>sehr in Bewegung sezen –<!-\- Eher Gleichheitszeichen statt Bindestrich? -\->
+               <lb/>leben sie wohl, ich hoffe 
+               
+               <pb n="2r"/>
+               <lb/>Beßerung – die <ref type="work" target="#Fantasie_op80">Fantasie</ref>
+               <lb/>ist schon fort, auch die 
+               <lb/><ref type="work" target="#Klaviersonate_op81a">Sonate</ref> geht morgen fort 
+               <lb/>von hier – Fehlen sie 
+               <lb/>so viel sie wollen, laßen 
+               <lb/>sie so viel <add place="above" resp="#LvB">Fehler wie</add> sie wollen – 
+               <lb/>sie sind bey mir doch hoch<pc force="inter">:</pc>
+               <lb/>geschäzt, dies ist ja der 
+               <lb/>Gebrauch bey den Menschen, 
+               <lb/>daß man sie, weil sie nicht noch 
+               <lb/>großre Fehler gemacht haben, 
+               <lb/>schäzt – -->
+            </p>
+            
+            <closer>
+              <!-- <salute>
+                  <lb/>ihr ergebenster 
+                  <lb/>Diener 
+                  <lb/><persName resp="#LvB">Beethowen</persName>.</salute>-->
+            </closer>
+            
+            
+            <!--<pb n="2v"/>-->
+            
+            <postscript xml:id="Monita_op73">
+               <p>
+                  <lb/><hi rend="centered"><del rend="overstrike"><unclear reason="cancelled"/></del></hi>
+                  <lb/>Nb: geben sie acht, daß bey 
+                  <lb/>meiner Korrektur des <ref type="work" target="#Klavierkonzert_op73">Konzerts</ref>
+                  <lb/><del rend="overwritten" type="primary">bey</del>in der 1ten Violinstim<supplied resp="#BGA">m</supplied>e im 
+                  <lb/>1ten A<hi rend="superscript">llo</hi> Seite 5 Zeile <del rend="overstrike"><unclear reason="cancelled"/></del> 7 
+                  <lb/>1=ter Takt
+                  <figure>
+                     <notatedMusic><!-- I, VI, T. 556 -->
+                        <mei:music meiversion="4.0.1">
+                           <mei:body>
+                              <mei:mdiv n="1" type="main" label="Klavierkonzert_op73">
+                                 <mei:parts xml:id="xbbd84bef-bbff-488a-a6ca-88a977f7bb45">
+                                    <mei:part xml:id="x77f07f80-5a73-4441-a7a7-ae37afa3074b" n="1" label="Violine I">
+                                       <mei:staffDef xml:id="x4665e81e-5689-45b8-a07b-2bf991164928" n="1" label="Violine I" lines="5" clef.line="2" clef.shape="G" key.sig="3f" meter.sym="common"/>
+                                       <mei:section xml:id="xda497c13-8752-4779-a03a-dd9f8b1da67f" label="Monitum1_op73">
+                                          <mei:measure xml:id="x12bacb61-3ebb-45a1-ba45-f5405f7852c5" n="1">
+                                             <mei:staff xml:id="x6b941372-b093-455f-ad17-94b7045f9a69" n="1">
+                                                <mei:layer xml:id="x8523a985-3880-4a5f-b347-4baa70bcc795">
+                                                   <mei:rest xml:id="xd8843de3-76b6-47d4-a20e-944ebc3aa2b1" dur="4"/>
+                                                   <mei:beam xml:id="xb744cf85-a736-4986-abb7-c909dfdf5b11">
+                                                      <mei:note xml:id="xf53db0af-5f67-4d98-b1a6-5345ec5b2792" pname="a" accid.ges="f" oct="4" dur="8" dots="1" stem.dir="down"/>
+                                                      <mei:note xml:id="xa5dd30bc-f3b0-4245-b61a-d6d7e2d3b3a9" pname="a" accid.ges="f" oct="4" dur="16" stem.dir="down"/>
+                                                   </mei:beam>
+                                                   <mei:note xml:id="xd56d0a68-6c92-4424-abbe-3f9c003535e2" pname="a" accid.ges="f" oct="4" dur="4" stem.dir="down"/>
+                                                   <mei:rest xml:id="x485eb2b3-9798-4eb2-bff2-37693392f6b5" dur="4"/>
+                                                </mei:layer>
+                                             </mei:staff>
+                                             <mei:dynam xml:id="xb8670336-af20-458b-a9d4-c124ec25f57e" staff="1" startid="#x49a71f58-1ef4-4358-8add-f306fb3a0dbb" place="below">p:</mei:dynam> 
+                                             <mei:metaMark xml:id="mfd84375f-3dd0-4ace-a014-a03eb387b0b6" class="#bw_monitum #bw_fully_implemented #Korrektur" staff="1" tstamp="4" function="revision" state="#postRevision"/>
+                                             <mei:annot xml:id="g_c9bc75ad-d13c-4529-b070-13e574844f56" class="#bw_monitum_context" staff="1" tstamp="1" tstamp2="0m+5"/>
+                                          </mei:measure>
+                                       </mei:section>
+                                    </mei:part>
+                                 </mei:parts>
+                              </mei:mdiv>
+                           </mei:body>
+                        </mei:music>
+                     </notatedMusic>
+                  </figure>
+                  das piano
+                  <lb/>unter diese Noten
+                  <figure>
+                     <notatedMusic>
+                        <mei:music meiversion="4.0.1">
+                           <mei:body>
+                              <mei:mdiv n="1" type="main" label="Klavierkonzert_op73">
+                                 <mei:parts>
+                                    <mei:part n="1" label="Violine I">
+                                       <mei:staffDef n="1" lines="5"/>
+                                       <mei:section label="Monitum1_op73">
+                                          <mei:measure n="1">
+                                             <mei:staff>
+                                                <mei:layer n="1" label="cuesOfOboe">
+                                                   <mei:beam >
+                                                      <mei:note pname="a" accid.ges="f" oct="5" dur="8" dots="1" stem.dir="up" cue="true"/>
+                                                      <mei:note pname="a" accid.ges="f" oct="5" dur="16" stem.dir="up" cue="true"/>
+                                                   </mei:beam>
+                                                </mei:layer>
+                                             </mei:staff>
+                                             <mei:dynam staff="1" startid="#1966289c-1794-4e90-aba8-eb5d36eae07e" place="below">p:</mei:dynam> 
+                                          </mei:measure>
+                                       </mei:section>
+                                    </mei:part>
+                                 </mei:parts>
+                              </mei:mdiv>
+                           </mei:body>
+                        </mei:music>
+                     </notatedMusic>
+                  </figure>
+                  nicht 
+                  <lb/>aber umgekehrt p unter die<!-- Das p fehlt in der BGA-Transkription. --> 
+                  <lb/>Violin-Noten gesezt werde – </p>
+            </postscript>
+         </div>
+      </body>
+  </text>
+</TEI>
