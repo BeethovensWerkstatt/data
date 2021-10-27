@@ -43,7 +43,9 @@
             <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="xlink"
               uri="http://www.w3.org/1999/xlink"/>
             <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="svg"
-              uri="http://www.w3.org/2000/svg"/>           
+              uri="http://www.w3.org/2000/svg"/>
+            <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="tei"
+              uri="http://www.tei-c.org/ns/1.0"/>
           </constraint>
         </constraintSpec>
 
@@ -80,7 +82,44 @@
           </content>
         </moduleRef>
         
-
+        <moduleRef url="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
+          prefix="tei_">
+          <content>
+            <rng:define name="mei_model.divLike" combine="choice">
+              <rng:ref name="tei_div"/>
+            </rng:define>
+            <rng:define name="tei_notatedMusic" combine="choice">
+              <!-- allow complete music examples to be embedded in notatedMusic -->
+              <rng:element name="notatedMusic">
+                <rng:zeroOrMore>
+                  <rng:choice>
+                    <rng:ref name="tei_model.labelLike"/>
+                    <!--<rng:ref name="tei_model.ptrLike"/>-->
+                    <rng:ref name="tei_graphic"/>
+                    <rng:ref name="mei_section"/>
+                    <!--<rng:ref name="tei_binaryObject"/>-->
+                    <!--<rng:ref name="tei_seg"/>-->
+                  </rng:choice>
+                </rng:zeroOrMore>
+                <rng:ref name="tei_att.global.attributes"/>
+                <rng:ref name="tei_att.placement.attributes"/>
+                <rng:ref name="tei_att.typed.attributes"/>
+                <rng:empty/>
+              </rng:element>  
+            </rng:define>
+          </content>
+        </moduleRef>
+        
+        <elementSpec ident="section" module="MEI.shared" mode="change">
+          <constraintSpec ident="section_in_tei" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:section[parent::tei:notatedMusic]">
+                <sch:assert role="error" test="child::element()[1][local-name() = 'scoreDef']">An mei:section embedded into TEI needs to have a scoreDef as first child.</sch:assert>                                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
         <!-- Disable mensural- and neume-specific model classes in the shared module -->
         <classSpec ident="model.scorePart.mensuralAndNeumes" module="MEI.shared" type="model"
           mode="delete"/>
