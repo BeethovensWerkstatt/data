@@ -16,6 +16,11 @@
         </xd:desc>
     </xd:doc>
     
+    <!-- TODOs: 
+        * scaleFactor as relation between physical size and svg size 
+        * adjust unit (in Verovio options) to match the distance between two individual staff lines in mm (between 6 and 20)
+    -->
+    
     <xsl:output indent="yes" method="xml"/>
     
     <xsl:key name="path" match="svg:path" use="@id"/>
