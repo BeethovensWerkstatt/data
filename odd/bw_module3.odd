@@ -81,12 +81,18 @@
             </rng:define>
           </content>
         </moduleRef>
-        
+        <!--  ../rng/tei_bw.rng -->
         <moduleRef url="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
           prefix="tei_">
           <content>
             <rng:define name="mei_model.divLike" combine="choice">
               <rng:ref name="tei_div"/>
+            </rng:define>
+            <rng:define name="tei_model.noteLike" combine="choice">
+              <rng:choice>
+                <rng:ref name="mei_metaMark"/>
+                <rng:ref name="mei_annot"/>  
+              </rng:choice>
             </rng:define>
             <rng:define name="tei_notatedMusic" combine="choice">
               <!-- allow complete music examples to be embedded in notatedMusic -->
@@ -251,22 +257,12 @@
         
         <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
           
-          <!-- make @startid, @tstamp, @tstamp.ges or @tstamp.real not a must have anymore -->
-          <constraintSpec ident="metaMark_duration" scheme="isoschematron" mode="add"><!-- !!! does not work yet... -->
-            <constraint>
-              <sch:rule context="mei:metaMark">
-                <sch:assert role="error" test="@startid or not(@startid) or (@tstamp) or not(@tstamp) or @tstamp.ges or not(@tstamp.ges) or (@tstamp.real) or not(@tstamp.real)">
-                  @startid, @tstamp, @tstamp.ges or @tstamp.real can be used with metaMark, but they are not a must have 
-                </sch:assert>
-              </sch:rule>
-            </constraint>
-          </constraintSpec>
           <!-- metaMark must have @source -->
           <constraintSpec ident="metaMark_source" scheme="isoschematron" mode="add">
             <constraint>
               <sch:rule context="mei:metaMark">
-                <sch:assert role="error" test="@source">
-                  metaMark must have a @source attribute
+                <sch:assert role="error" test="@source or ancestor::mei:mei//mei:manifestation">
+                  metaMark must have a @source attribute or be used in the context of a source file
                 </sch:assert>
               </sch:rule>
             </constraint>
@@ -275,13 +271,26 @@
           <constraintSpec ident="metaMark_source" scheme="isoschematron" mode="add">
             <constraint>
               <sch:rule context="mei:metaMark">
-                <sch:assert role="error" test="ancestor::mei:measure">
+                <sch:assert role="error" test="ancestor::mei:measure or (not(ancestor::tei:notatedMusic) and ancestor::tei:div)">
                   A metaMark must be placed inside measures. 
                 </sch:assert>
               </sch:rule>
             </constraint>
           </constraintSpec>
         </elementSpec>
+        
+        
+        <!-- bugfix to allow zero staff lines -->
+        <classSpec ident="att.staffDef.log" module="MEI.shared" type="atts" mode="change">
+          <attList>
+            <attDef ident="lines" usage="opt" mode="change">
+              <datatype>
+                <rng:data type="nonNegativeInteger"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </classSpec>
+        
         
         <!-- this is only a bugfix which hopefully will be fixed in MEI itself -->
         <classSpec ident="att.metaMark.log" module="MEI.edittrans" type="atts" mode="replace">
