@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2021-12-02T23:05:08Z. .
+Schema generated from ODD source 2021-12-03T10:54:02Z. .
 TEI Edition: Version 4.0.0
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -30484,7 +30484,9 @@ Suggested values include: 1] sustain; 2] soft; 3] sostenuto; 4] silent</a:docume
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="mei:metaMark">
-               <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real or @place = ('rightmar')">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real</sch:assert>
+               <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real or @place = ('rightmar','leftmar')">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real</sch:assert>
+               <sch:assert role="warning"
+                           test="not(@place = 'leftmar') or @type = 'translate_dir place_above'">A metaMark on the left margin needs to be translated to a dir in order to be displayed with Verovio. Currently only supported with @type="translate_dir place_above".</sch:assert>
             </sch:rule>
          </pattern>
          <ref name="mei_att.common.attributes"/>

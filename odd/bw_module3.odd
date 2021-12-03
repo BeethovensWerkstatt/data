@@ -235,7 +235,8 @@
           <constraintSpec ident="metaMark_start-type_attributes_required" scheme="schematron" mode="change">
             <constraint>
               <sch:rule context="mei:metaMark">
-                <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real or @place = ('rightmar')">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real</sch:assert>
+                <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real or @place = ('rightmar','leftmar')">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real</sch:assert>
+                <sch:assert role="warning" test="not(@place = 'leftmar') or @type = 'translate_dir place_above'">A metaMark on the left margin needs to be translated to a dir in order to be displayed with Verovio. Currently only supported with @type="translate_dir place_above".</sch:assert>
               </sch:rule>
             </constraint>
           </constraintSpec>
