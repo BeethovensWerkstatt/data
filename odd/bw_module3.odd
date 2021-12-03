@@ -71,6 +71,7 @@
         <moduleRef key="MEI.shared"/>
         <moduleRef key="MEI.text"/>
         <moduleRef key="MEI.visual"/>
+        <moduleRef key="MEI.externalsymbols"/>
 
         <!-- Include SVG -->
         <moduleRef url="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/svg11.rng"
@@ -157,6 +158,7 @@
                 <constraint>
                   <sch:rule context="@facs">
                     <sch:assert role="warning" test="not(normalize-space(.) eq '')">@facs attribute should have content.</sch:assert>
+                    <sch:assert role="warning" test="normalize-space(.) = .">@facs should use normalized space</sch:assert>
                     <sch:assert role="warning" test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)) or ancestor::mei:mei/@xml:id = 'xf07b16aa-ddbe-4548-9e78-0b3f1752bf0c'">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
                   </sch:rule>
                 </constraint>
@@ -237,6 +239,27 @@
               <sch:rule context="mei:metaMark">
                 <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real or @place = ('rightmar','leftmar')">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real</sch:assert>
                 <sch:assert role="warning" test="not(@place = 'leftmar') or @type = 'translate_dir place_above'">A metaMark on the left margin needs to be translated to a dir in order to be displayed with Verovio. Currently only supported with @type="translate_dir place_above".</sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+        </elementSpec>
+        
+        <elementSpec ident="annot" module="MEI.shared" mode="change">
+          
+          <!-- check classes on annots -->
+          <constraintSpec ident="annot_classes" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:annot[contains(@class,'#bw_monitum_effect')]/mei:relation">
+                <sch:assert role="error" test="@target and starts-with(@target,'#') and normalize-space(@target) = @target">Every relation needs a properly formatted @target.</sch:assert>
+                <sch:assert role="error" test="not(contains(@target,' '))">If there are multiple targets, they should be encoded with multiple relation elements of the same type (@rel).</sch:assert>
+                <sch:assert role="error" test="not(@rel = ('succeeding', 'preceding', 'original')) or 
+                  substring(@target,2) = collection(substring-before(document-uri(/),'/edition') || '/manifestations/?select=*.xml')//mei:annot/@xml:id[contains(parent::mei:annot/@class,'#bw_monitum_context')]">
+                  succeeding / preceding / original relations must point to #bw_monitum_context annots in manifestation files.
+                </sch:assert>
+                <sch:assert role="error" test="not(@rel = ('consituent')) or 
+                  substring(@target,2) = collection(substring-before(document-uri(/),'/edition') || '/manifestations/?select=*.xml')//mei:metaMark/@xml:id[contains(parent::mei:metaMark/@class,'#bw_monitum')]">
+                  consituent relations must point to #bw_monitum metaMark in manifestation files.
+                </sch:assert>
               </sch:rule>
             </constraint>
           </constraintSpec>
