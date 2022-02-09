@@ -266,11 +266,14 @@
                               <mei:mdiv n="1" type="main" label="Klavierkonzert_op73">
                                  <mei:parts xml:id="xbbd84bef-bbff-488a-a6ca-88a977f7bb45">
                                     <mei:part xml:id="x77f07f80-5a73-4441-a7a7-ae37afa3074b" n="1" label="Violine I">
-                                       <mei:staffDef xml:id="x4665e81e-5689-45b8-a07b-2bf991164928" n="1" label="Violine I" lines="5" clef.line="2" clef.shape="G" key.sig="3f" meter.sym="common"/>
+                                       <mei:staffDef xml:id="x4665e81e-5689-45b8-a07b-2bf991164928" n="1" label="Violine I" lines="5" clef.line="2" clef.shape="G" key.sig="3f">
+                                          <mei:labelAbbr>V I</mei:labelAbbr>
+                                       </mei:staffDef>
                                        <mei:section xml:id="xda497c13-8752-4779-a03a-dd9f8b1da67f" label="Monitum1_op73">
-                                          <mei:measure xml:id="x12bacb61-3ebb-45a1-ba45-f5405f7852c5" n="1">
+                                          <mei:measure xml:id="x12bacb61-3ebb-45a1-ba45-f5405f7852c5" n="1" label="556">
                                              <mei:staff xml:id="x6b941372-b093-455f-ad17-94b7045f9a69" n="1">
                                                 <mei:layer xml:id="x8523a985-3880-4a5f-b347-4baa70bcc795">
+                                                   <mei:supplied resp="#BW"><mei:meterSig sym="C" count="4" unit="4"/></mei:supplied>
                                                    <mei:rest xml:id="xd8843de3-76b6-47d4-a20e-944ebc3aa2b1" dur="4"/>
                                                    <mei:beam xml:id="xb744cf85-a736-4986-abb7-c909dfdf5b11">
                                                       <mei:note xml:id="xf53db0af-5f67-4d98-b1a6-5345ec5b2792" pname="a" accid.ges="f" oct="4" dur="8" dots="1" stem.dir="down"/>
@@ -280,7 +283,7 @@
                                                    <mei:rest xml:id="x485eb2b3-9798-4eb2-bff2-37693392f6b5" dur="4"/>
                                                 </mei:layer>
                                              </mei:staff>
-                                             <mei:dynam xml:id="xb8670336-af20-458b-a9d4-c124ec25f57e" staff="1" startid="#x49a71f58-1ef4-4358-8add-f306fb3a0dbb" place="below">p:</mei:dynam> 
+                                             <mei:add xml:id="x83ceca74-fd29-44b6-82d8-08c607f49591" resp="#LvB" state="#postRevision"><mei:dynam xml:id="xb8670336-af20-458b-a9d4-c124ec25f57e" staff="1" tstamp="4" place="below">p:</mei:dynam></mei:add>
                                              <mei:metaMark xml:id="mfd84375f-3dd0-4ace-a014-a03eb387b0b6" class="#bw_monitum #bw_fully_implemented #Korrektur" staff="1" tstamp="4" function="revision" state="#postRevision"/>
                                              <mei:annot xml:id="g_c9bc75ad-d13c-4529-b070-13e574844f56" class="#bw_monitum_context" staff="1" tstamp="1" tstamp2="0m+5"/>
                                           </mei:measure>
@@ -312,7 +315,7 @@
                                                    </mei:beam>
                                                 </mei:layer>
                                              </mei:staff>
-                                             <mei:dynam staff="1" startid="#1966289c-1794-4e90-aba8-eb5d36eae07e" place="below">p:</mei:dynam> 
+                                             <mei:add xml:id="x8c17a397-e185-4c09-bed7-3ca72693eef1" resp="#LvB" state="#postRevision"><mei:dynam staff="1" tstamp="1" place="below">p:</mei:dynam></mei:add>
                                           </mei:measure>
                                        </mei:section>
                                     </mei:part>
