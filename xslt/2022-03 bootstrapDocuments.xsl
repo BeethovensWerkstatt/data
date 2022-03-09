@@ -17,7 +17,7 @@
     
     <!-- Sample file: 
     
-<doc siglum="A-Wn_tralala" opus="Op.73">
+<doc siglum="A-Wn tralala" opus="Op.73">
     <mdivs>
         <mdiv label="Allegro" measures="13">
             <parts>
@@ -184,6 +184,18 @@
                             </xsl:if>
                         </mdiv>
                     </xsl:for-each>
+                    <xsl:if test="$doc/monita">
+                        <mdiv xml:id="x{uuid:randomUUID()}">
+                            <scoreDef/>
+                            <xsl:for-each select="(1 to xs:integer($doc/monita/@count))">
+                                <section xml:id="x{uuid:randomUUID()}">
+                                    <measure n="1" label="1" xml:id="x{uuid:randomUUID()}">
+                                        <xsl:comment>Monitum <xsl:value-of select="position()"/> goes here</xsl:comment>
+                                    </measure>
+                                </section>
+                            </xsl:for-each>
+                        </mdiv>
+                    </xsl:if>
                 </body>
             </music>
         </mei>    
