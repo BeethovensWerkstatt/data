@@ -18,6 +18,11 @@
     <!-- Sample file: 
     
 <doc siglum="A-Wn tralala" opus="Op.73">
+
+    <monita count="6"/>
+    
+    ODER:
+    
     <mdivs>
         <mdiv label="Allegro" measures="13">
             <parts>
