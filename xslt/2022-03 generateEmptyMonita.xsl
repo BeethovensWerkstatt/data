@@ -32,12 +32,14 @@
                 (Remove relations when a given document is missing)</xsl:comment>
             <annot 
                 xml:id="{$textAnnot}"
-                class="#bw_monitum_effect"
-                staff="X">
+                class="#bw_monitum_effect #bw_module3_staticExample"
+                staff="X"
+                data="https://dossier#monitumID">
                 <relation rel="succeeding" target="#{$originAnnot}"/>
                 <relation rel="preceding" target="#{$targetAnnot}"/>
                 <relation rel="original" target="#{$revisionAnnot}"/>
                 <relation rel="constituent" target="#{$revisionMetamark}"/>
+                <!-- <relation rel="hasSupplement" target="https://dossier#monitumID"/> -->
             </annot>
             <xsl:text>
                 
