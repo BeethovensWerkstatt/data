@@ -242,6 +242,14 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
+          
+          <constraintSpec ident="metaMark_checkState" scheme="schematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:metaMark">
+                <sch:assert test="@state or not('#bw_monitum' = tokenize(normalize-space(@class)))">A monitum needs to have state information</sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
         </elementSpec>
         
         <elementSpec ident="annot" module="MEI.shared" mode="change">
