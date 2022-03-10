@@ -6,6 +6,6 @@ Each module will receive a separate folder inside the /data path. The content it
 
 * /module1 -> /var
 * /module2 -> /arr
-* /module3 -> /corr
+* /module3 -> /corr or /rev
 * /module4 -> /sk
 * /module5 -> /ed
