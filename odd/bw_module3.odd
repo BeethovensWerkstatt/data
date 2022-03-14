@@ -167,6 +167,19 @@
           </attList>
         </classSpec>
         
+        <!-- add manifestation constraints -->
+        <elementSpec ident="manifestation" module="MEI.frbr" mode="change">
+          <constraintSpec ident="manifestationDetails" scheme="isoschematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:add">
+                <sch:assert role="error" test="mei:physLoc">Every manifestation needs a physLoc child element.</sch:assert>
+                <sch:assert role="error" test="mei:physLoc/mei:repository/mei:identifier[@auth.uri]/text()">We need an identifier for the repo holding the document.</sch:assert>
+                <sch:assert role="error" test="mei:physLoc/mei:identifier/text()">We need the siglum within the holding repository.</sch:assert>                
+              </sch:rule>
+            </constraint>
+          </constraintSpec>        
+        </elementSpec>
+        
         <!-- add schematron constraints -->
         <elementSpec ident="add" module="MEI.edittrans" mode="change">
           <constraintSpec ident="add_hasState" scheme="isoschematron" mode="add">
