@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2022-03-14T11:15:06Z. .
+Schema generated from ODD source 2022-03-15T10:07:52Z. .
 TEI Edition: Version 4.0.0
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -30741,7 +30741,7 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
          <sch:assert role="warning" test="not(normalize-space(.) eq '')">@facs attribute should have content.</sch:assert>
          <sch:assert role="warning" test="normalize-space(.) = .">@facs should use normalized space</sch:assert>
          <sch:assert role="warning"
-                     test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)) or ancestor::mei:mei/@xml:id = 'xf07b16aa-ddbe-4548-9e78-0b3f1752bf0c'">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
+                     test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)) or ancestor::mei:mei//mei:encodingDesc['#bw_module3_textFile' = tokenize(@class,' ')]">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
       </sch:rule>
    </pattern>
    <define name="mei_facsimile">
@@ -31420,7 +31420,7 @@ Suggested values include: 1] confirmation; 2] addition; 3] deletion; 4] substitu
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      context="mei:add">
+                      context="mei:manifestation">
                <sch:assert role="error" test="mei:physLoc">Every manifestation needs a physLoc child element.</sch:assert>
                <sch:assert role="error"
                            test="mei:physLoc/mei:repository/mei:identifier[@auth.uri]/text()">We need an identifier for the repo holding the document.</sch:assert>
