@@ -263,6 +263,14 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
+          
+          <constraintSpec ident="metaMark_checkPositioning" scheme="schematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:metaMark">
+                <sch:assert test="not('translate_dir' = tokenize(normalize-space(@type),' ') and @place = 'rightmar')">A right margin monitum must not use the translate to dir instruction – placement will be done automatically. Otherwise, it would be duplicated in the output.</sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
         </elementSpec>
         
         <elementSpec ident="annot" module="MEI.shared" mode="change">
