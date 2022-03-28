@@ -223,16 +223,6 @@
           </constraintSpec>        
         </elementSpec>
         
-        <elementSpec ident="annot" module="MEI.shared" mode="change">
-          <constraintSpec ident="Check_annot_data" scheme="isoschematron" mode="replace">
-            <constraint>
-              <sch:rule context="mei:annot[@data]">
-                <sch:assert test="ancestor::mei:notesStmt or (@class and '#bw_module3_staticExample' = tokenize(normalize-space(@class), ' '))">The @data attribute may only occur on an annotations within the notesStmt element, or when there is a class #bw_module3_staticExample".</sch:assert>
-              </sch:rule>
-            </constraint>
-          </constraintSpec>
-        </elementSpec>
-        
         <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
           
           <!-- metaMark must have @source -->
@@ -283,6 +273,15 @@
         </elementSpec>
         
         <elementSpec ident="annot" module="MEI.shared" mode="change">
+          
+          <!-- allow exception on annots -->
+          <constraintSpec ident="Check_annot_data" scheme="isoschematron" mode="replace">
+            <constraint>
+              <sch:rule context="mei:annot[@data]">
+                <sch:assert test="ancestor::mei:notesStmt or (@class and '#bw_module3_staticExample' = tokenize(normalize-space(@class), ' '))">The @data attribute may only occur on an annotations within the notesStmt element, or when there is a class #bw_module3_staticExample".</sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
           
           <!-- check classes on annots -->
           <constraintSpec ident="annot_classes" scheme="isoschematron" mode="add">
