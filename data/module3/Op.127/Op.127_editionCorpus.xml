@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../rng/bw_module3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="../../../rng/bw_module3.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<meiCorpus xmlns="http://www.music-encoding.org/ns/mei" xmlns:xi="http://www.w3.org/2001/XInclude" meiversion="5.0.0-dev" xml:id="t0c09f04e-e36d-4eaa-a064-029b5a232332">
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="de" type="main">Beethoven Op.127</title>
+                <title type="subordinate">Edition File</title>
+                <composer>
+                    <persName xml:id="LvB" auth="GND" auth.uri="http://d-nb.info/gnd/118508288">Ludwig van Beethoven</persName>
+                </composer>
+                <editor>
+                    <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens Werkstatt</corpName>
+                </editor>
+                <funder>
+                    <corpName xml:id="AdW" auth="GND" auth.uri="http://d-nb.info/gnd/35487-9">Akademie der Wissenschaften und der Literatur Mainz</corpName>
+                </funder>
+            </titleStmt>
+            <pubStmt/>
+            <!--<xi:include href="./edition/Op.127_linking.xml"/>-->
+        </fileDesc>
+        <encodingDesc class="#bw_module3_corpusFile #bw_module3_staticExample">
+            <classDecls>
+                <taxonomy label="availableTaxonomies">
+                    <category xml:id="document_type"/>
+                    <category xml:id="bw_observation_type"/>
+                    <category xml:id="bw_implementation_completeness"/>
+                    <category xml:id="bw_file_type"/>
+                    <category xml:id="bw_monitum_comment"/>
+                    <category xml:id="bw_monitum_classification"/>
+                    <category xml:id="bw_monitum_textoperation"/>
+                    <category xml:id="bw_monitum_object"/>
+                    <category xml:id="bw_monitum_kontext"/>
+                    <category xml:id="bw_monitum_konkordanz"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="music.print" class="#document_type"/>
+                    <category xml:id="music.manuscript" class="#document_type"/>
+                    <category xml:id="letter.manuscript" class="#document_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_monitum" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+                </taxonomy>
+                <taxonomy><!-- Klassifizierung -->
+                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
+                </taxonomy>
+                <taxonomy><!-- Textoperation -->
+                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/><!--oder erweiterung-->
+                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
+                </taxonomy>
+                <taxonomy><!-- Revisionsobjekt, wird nicht benutzt -->
+                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
+                </taxonomy>
+                <taxonomy><!-- kontextzitat -->
+                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
+                </taxonomy>
+                <taxonomy><!-- konkordanz -->
+                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
+                </taxonomy>
+              <!--  <taxonomy>
+                    <category xml:id="Korrektur" class="#bw_monitum_category"/>
+                    <category xml:id="Variante" class="#bw_monitum_category"/>
+                    <category xml:id="Textpräzisierung" class="#bw_monitum_category"/>
+                    <category xml:id="Schriftbildliche_Verbesserung" class="#bw_monitum_category"/>
+                    <category xml:id="paratextliche_Eingriffe" class="#bw_monitum_category"/>
+                </taxonomy>-->
+                <taxonomy>
+                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
+        <!--<manifestationList>
+            <!-\- TODO: find best spot for this in TEI! -\->
+            <manifestation xml:id="D-BNba_Slg.H.C.Bodmer_HCB_Br_94" label="Revisionsliste 2" class="#letter.manuscript"/>
+        </manifestationList>-->
+    </meiHead>
+    <!-- musical text: -->
+    <xi:include href="./edition/Op.127_text.xml"/>
+    <!-- ante documents: -->
+    <xi:include href="manifestations/D-BNba_C127-9_C127-10.xml"/>
+    <xi:include href="manifestations/D-BNba_HCB_CMd_79-8.xml"/>
+    <xi:include href="manifestations/D-BNba_C127-2.xml"/>
+    <!-- revision document: -->
+    <xi:include href="manifestations/D-MZs_Hs_III_71-Nr.27.xml"/>
+</meiCorpus>
