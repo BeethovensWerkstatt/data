@@ -159,7 +159,7 @@
                   <sch:rule context="@facs">
                     <sch:assert role="warning" test="not(normalize-space(.) eq '')">@facs attribute should have content.</sch:assert>
                     <sch:assert role="warning" test="normalize-space(.) = .">@facs should use normalized space</sch:assert>
-                    <sch:assert role="warning" test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)) or ancestor::mei:mei/@xml:id = 'xf07b16aa-ddbe-4548-9e78-0b3f1752bf0c'">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
+                    <sch:assert role="warning" test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)) or ancestor::mei:mei//mei:encodingDesc['#bw_module3_textFile' = tokenize(@class,' ')]">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
                   </sch:rule>
                 </constraint>
               </constraintSpec>
@@ -171,7 +171,7 @@
         <elementSpec ident="manifestation" module="MEI.frbr" mode="change">
           <constraintSpec ident="manifestationDetails" scheme="isoschematron" mode="add">
             <constraint>
-              <sch:rule context="mei:add">
+              <sch:rule context="mei:manifestation">
                 <sch:assert role="error" test="mei:physLoc">Every manifestation needs a physLoc child element.</sch:assert>
                 <sch:assert role="error" test="mei:physLoc/mei:repository/mei:identifier[@auth.uri]/text()">We need an identifier for the repo holding the document.</sch:assert>
                 <sch:assert role="error" test="mei:physLoc/mei:identifier/text()">We need the siglum within the holding repository.</sch:assert>                
@@ -223,7 +223,6 @@
           </constraintSpec>        
         </elementSpec>
         
-        
         <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
           
           <!-- metaMark must have @source -->
@@ -263,9 +262,26 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
+          
+          <constraintSpec ident="metaMark_checkPositioning" scheme="schematron" mode="add">
+            <constraint>
+              <sch:rule context="mei:metaMark">
+                <sch:assert test="not('translate_dir' = tokenize(normalize-space(@type),' ') and @place = 'rightmar')">A right margin monitum must not use the translate to dir instruction – placement will be done automatically. Otherwise, it would be duplicated in the output.</sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
         </elementSpec>
         
         <elementSpec ident="annot" module="MEI.shared" mode="change">
+          
+          <!-- allow exception on annots -->
+          <constraintSpec ident="Check_annot_data" scheme="isoschematron" mode="replace">
+            <constraint>
+              <sch:rule context="mei:annot[@data]">
+                <sch:assert test="ancestor::mei:notesStmt or (@class and '#bw_module3_staticExample' = tokenize(normalize-space(@class), ' '))">The @data attribute may only occur on an annotations within the notesStmt element, or when there is a class #bw_module3_staticExample".</sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
           
           <!-- check classes on annots -->
           <constraintSpec ident="annot_classes" scheme="isoschematron" mode="add">
