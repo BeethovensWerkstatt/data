@@ -50,7 +50,7 @@
                 xml:id="{$originAnnot}"
                 class="#bw_monitum_context"
                 staff="X">
-                <annot xml:id="{uuid:randomUUID()}" class="#bw_monitum_comment"><p/></annot>
+                <annot xml:id="a{uuid:randomUUID()}" class="#bw_monitum_comment"><p/></annot>
             </annot>
             <xsl:text>
                 
@@ -95,7 +95,7 @@
                 xml:id="{$revisionAnnot}"
                 class="#bw_monitum_context"
                 staff="X">
-                <annot xml:id="{uuid:randomUUID()}" class="#bw_monitum_comment"><p/></annot>
+                <annot xml:id="a{uuid:randomUUID()}" class="#bw_monitum_comment"><p/></annot>
             </annot>
             <xsl:text>
                 
@@ -110,7 +110,7 @@
                 xml:id="{$targetAnnot}"
                 class="#bw_monitum_context #bw_monitum_fully_implemented"
                 staff="X">
-                <annot xml:id="{uuid:randomUUID()}" class="#bw_monitum_comment"><p/></annot>
+                <annot xml:id="a{uuid:randomUUID()}" class="#bw_monitum_comment"><p/></annot>
             </annot>
         </monitumData>
     </xsl:template>
