@@ -18,11 +18,11 @@
     
     <xsl:template match="/">
         
-        <xsl:variable name="textAnnot" select="uuid:randomUUID()" as="xs:string"/>
-        <xsl:variable name="originAnnot" select="uuid:randomUUID()" as="xs:string"/>
-        <xsl:variable name="revisionAnnot" select="uuid:randomUUID()" as="xs:string"/>
-        <xsl:variable name="revisionMetamark" select="uuid:randomUUID()" as="xs:string"/>
-        <xsl:variable name="targetAnnot" select="uuid:randomUUID()" as="xs:string"/>
+        <xsl:variable name="textAnnot" select="'t' || uuid:randomUUID()" as="xs:string"/>
+        <xsl:variable name="originAnnot" select="'o' || uuid:randomUUID()" as="xs:string"/>
+        <xsl:variable name="revisionAnnot" select="'r' || uuid:randomUUID()" as="xs:string"/>
+        <xsl:variable name="revisionMetamark" select="'m' || uuid:randomUUID()" as="xs:string"/>
+        <xsl:variable name="targetAnnot" select="'t' || uuid:randomUUID()" as="xs:string"/>
         
         <monitumData xmlns="http://www.music-encoding.org/ns/mei">
             <xsl:text>
