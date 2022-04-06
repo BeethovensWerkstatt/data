@@ -11,7 +11,7 @@
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Mar 8, 2022</xd:p>
             <xd:p><xd:b>Author:</xd:b> johannes</xd:p>
-            <xd:p>This XSLT will generate a source document.</xd:p>
+            <xd:p>This XSLT will generate a source document. It operates on a an XML-file that contains the basic structure of the desired document (as shown in the comment below).</xd:p>
         </xd:desc>
     </xd:doc>
     
@@ -19,7 +19,7 @@
     
 <doc siglum="A-Wn tralala" opus="Op.73">
 
-    <monita count="6"/>
+    <monita count="6"/>  (when the desired document needs only sections like a revision list)
     
     ODER:
     
