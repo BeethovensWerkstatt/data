@@ -78,8 +78,8 @@
                     </titleStmt>
                     <pubStmt/>
                     <seriesStmt>
-                        <title xml:lang="de" level="s">Beethoven als Bearbeiter eigener Werke</title>
-                        <identifier auth.uri="https://beethovens-werkstatt.de/modul-3/">corr</identifier>
+                        <title xml:lang="de" level="s">Auf der Suche nach dem Werktext: Originalausgaben, variante Drucke und Beethovens Revisionsdokumente</title>
+                        <identifier auth.uri="https://beethovens-werkstatt.de/modul-3/">rev</identifier>
                     </seriesStmt>
                 </fileDesc>
                 <encodingDesc class="#bw_module3_documentFile #bw_module3_staticExample"/>
