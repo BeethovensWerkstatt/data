@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI  xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Data Model specification for Beethovens Werkstatt – Module 2</title>
+                <respStmt>
+                    <resp>Authored by</resp>
+                    <name xml:id="KH">Kristin Herold</name>
+                    <name xml:id="JK">Johannes Kepper</name>
+                </respStmt>
+                <respStmt>
+                    <resp>In collaboration with</resp>
+                    <name xml:id="BRA">Bernhard R. Appel</name>
+                    <name xml:id="SC">Susanne Cox</name>
+                    <name xml:id="RM">Ran Mo</name>
+                    <name xml:id="AM">Andreas Münzmay</name>
+                    <name xml:id="EN">Elisa Novara</name>
+                    <name xml:id="RS">Richard Sänger</name>
+                    <name xml:id="AS">Agnes Seipelt</name>
+                    <name xml:id="JV">Joachim Veit</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p/>
+            </publicationStmt>
+            <sourceDesc>
+                <p/>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change n="1" when="2019-01-28" who="#KH #JK">
+                <desc>Initial setup of the ODD.</desc>
+            </change>
+            <change n="2" from="2019-02" to="2020-04" who="#AS #JK #KH #RM">
+                <desc>continous extensions and adjustments due to the work on modul 2 of the project beethovens werkstatt</desc>
+            </change>
+            <change n="3" when="2020-04" who="#KH #AS">
+                <desc>add Transkriptions- und Codierungsrichtlinien, prepared by Agnes Seipelt</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            
+            <div type="main">
+                <head type="main">Transkriptions- und Codierungsrichtlinien</head>
+                <div type="sub_1">
+                <head type="sub_1" xml:id="m546ea305-7899-4d7b-8575-43a6e6c2df07">Primäre Notation / events</head>
+                    <div type="sub_2">
+                    <head type="sub_2" xml:id="x0204f956-9fac-4394-a65f-c20ba8a7b7a6">Rahmennotation</head>
+                    
+                    <div type="sub_3">
+                        <!--<div type="metrum">-->
+                        <head type="sub_3" xml:id="x5e118354-38c2-454c-928a-14ff91a5a175">Metrum</head>
+                        <list type="transkription">
+                                <item>In <name type="org">Beethovens Werkstatt</name> wird das Metrum nach Vorlage in der <tag>scoreDef</tag> codiert
+                                </item>
+                            <item>Metrumangaben in der ersten <tag>scoreDef</tag> eines <tag>mDiv</tag> sind obligatorisch</item>
+                            <item>Metrumangaben in der <tag>staffDef</tag> sind nicht erlaubt</item>
+                                
+                            </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <scoreDef xml:id="xf25244be" meter.count="2" meter.unit="2" meter.sym="cut"/>
+                        </egXML>
+                        <p><ref target="#check_meter">check_meter</ref></p>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="x3bf50c62-400d-41f1-b3c0-919354aa7644">Schlüssel und Schlüsselwechsel</head>
+                        <list type="transkription">
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Schlüssel und Schlüsselwechsel nach Vorlage mit dem Element <tag>clef</tag> codiert</item>
+                            <item><att>tstamp</att> und <att>tstamp2</att> sind nicht erlaubt
+                            </item>
+                        </list>
+                        <p><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <clef xml:id="xecf5be6d" shape="F" line="4"/>
+                        </egXML></p>
+                        <p>
+                            <ref target="#check_clef">check_clef</ref>
+                        </p>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="x55cb0212-1241-4e50-8950-814cefd821cf">Tonartwechsel</head>
+                        <list type="transkription">
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Tonartwechsel nach Vorlage in einer neuen <tag>scoreDef</tag> codiert
+                            </item>
+                        </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"><scoreDef xml:id="x1ab89" meter.count="3" meter.unit="4" key.sig="0" key.mode="major" keysig.showchange="true">
+                            <staffGrp xml:id="xb7d0e" symbol="bracket" bar.thru="false">
+                                <staffDef xml:id="xa028f " n="1">
+                                    <label xml:id="xb3d76c">piano</label>
+                                    </staffDef>
+                            <staffDef xml:id="xa6c32" n="2">
+                                        <label xml:id="x9f39">piano</label>
+                                    </staffDef>
+                                </staffGrp> 
+                        </scoreDef></egXML>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="xe111fe91-fd37-4628-8f4e-fad4e9aca0b1">Stimmbezeichnung</head>
+                        <list>
+                            <item>Die Bezeichnung der Stimmen richtet sich nach der Neuen Beethoven Gesamtausgabe</item>
+                        </list>
+                    </div>
+                </div>
+                    
+                <div type="sub_2">
+                    <head type="sub_2" xml:id="x50598ddd-4af9-4c6d-9ba2-840bb8666507">Noten</head>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="xab100033-2a55-4e0c-b3a5-5f0142d59e53">Vorschlagsnoten</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Vorschlagsnoten nach Vorlage mit dem Attribut <att>grace</att> codiert</item>
+                            <item>nur der Wert "unknown" ist erlaubt</item>
+                        </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <note xml:id="x2d35" grace="unknown" pname="a" oct="5" dur="32" accid="n"/>
+                        </egXML>
+                        <p><ref target="#check_gracenote">check_gracenote</ref></p>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="x380ba72c-0861-4681-8896-b9bae57402ea">Vorzeichen und Versetzungszeichen</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Vorzeichen und Versetzungszeichen nach Vorlage codiert</item>
+                            <item>Versetzungszeichen werden mit dem Attribut <att>accid</att> an den Noten angegeben</item>
+                            <item>Doppelkreuze in Originalausgaben werden mit <att>accid</att>="x" codiert</item>
+                        </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <note xml:id="x420db " pname="f" accid="x"
+                                oct="5" dur="4" artic="stacc"/> 
+                        </egXML>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="xcacad184-aee7-4e7c-9224-5289639f805c">Notenhalsrichtung</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> wird die Notenhalsrichtung nicht explizit codiert</item>
+                            <item>Ausnahme: Wenn es zu Überlagerung der Stimmen/schlechte Lesbarkeit der Stimmführung im Klavier führen würde</item>
+                            <item>Angabe der Halsrichtung bei Ganzen Noten ist nicht erlaubt</item>
+                        </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <note xml:id="x329b8ef8" stem.dir="down"
+                                pname="e" oct="5" dur="16" accid.ges="f"/>
+                        </egXML>
+                        <p><ref target="#check_stem.dir_dur1">check_stem.dir_dur1</ref></p>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="x4a3670e6-2e74-4577-9697-491698242e81">Triolen</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Triolen nach Vorlage mit dem Element <tag>tuplet</tag> codiert</item>
+                            <item><tag>tupletSpan</tag> ist nicht erlaubt</item>
+                        </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <tuplet xml:id="x40c" num="3" numbase="2" num.place="above">
+                                <note xml:id="x7a0c8" dur="8" oct="3"
+                                    pname="f"/>
+                                <note xml:id="xd9e3" dur="8" oct="3"
+                                    pname="g"/>
+                                <note xml:id="x7325" dur="8" oct="3"
+                                    pname="a"/>
+                            </tuplet>
+                        </egXML>
+                    </div>
+                </div>
+                <div type="sub_2">
+                    <head type="sub_2" xml:id="x1ab5affd-f90d-44dd-ad85-5425bc5fa16b">Singtext</head>
+                    <list>
+                        <item>In <name type="org">Beethovens Werkstatt</name> wird der Singtext mit den Elementen <tag>verse</tag> und <tag>syl</tag> innerhalb einer Note codiert</item>
+                        <item>Singtext wird in den Stimmen hinzugefügt, auch wenn er in der Vorlage nicht steht (z.B. beim Klavierauszug der OA von op. 122)</item>
+                        <item>Silbentrennung geschieht nach Vorlage; normierte Silbentrennung im Fall von Platzmangel ergänzt</item>
+                        <item>Rechtschreibung geschieht nach Vorlage</item>
+                        <item>Verlängerungsstriche werden nicht codiert (graphische Variante)</item>
+                    </list>
+                </div>
+                </div>
+                
+                <div type="sub_1">
+                <head type="sub_1" xml:id="m2a538a69-022e-4fb2-a96e-6cb1ca0df039">Sekundäre Notation / controlevents</head>
+                    <div type="sub_2">
+                    <head type="sub_2" xml:id="xb18142fb-cd6c-4f70-9a90-7f5752f70494">Bogensetzung</head>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="x0ea35e47-b8c8-4a71-bc3a-ecdb79f23787">Bindebögen</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Bindebögen nach Vorlage mit dem Element <tag>slur</tag> codiert</item>
+                            <item>Bindebögen werden mit <att>startid</att> und <att>endid</att> an die jeweiligen Noten oder Akkorde geknüpft</item>
+                        </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <slur xml:id="x93b9272b" layer="1" staff="2" startid="#x278f22e5" endid="#x6adaacfe"/>
+                        </egXML>
+                        <p><ref target="#controlevents">controlevents_slur</ref></p>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="x03024728-65f4-4dcd-b5b3-8a6940d1a5c3">Bogenrichtung</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> wird die Bogenrichtung nicht explizit angegeben</item>
+                            <item>Ausnahme: Wenn es zu schlechter Lesbarkeit der Stimmführung im Klavier führen würde, dann wird sie mit <att>curvedir</att> angegeben</item>
+                        </list>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="x9a008f68-b61c-4600-97e8-5d28dd71f32c">Haltebögen</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Haltebögen nach Vorlage mit dem Element <tag>tie</tag> codiert</item>
+                            <item>Haltebögen werden mit <att>startid</att> und <att>endid</att> an jeweilige Noten oder Akkorde geknüpft
+                            </item>
+                        </list>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <tie xml:id="xb2f614ee" staff="4" startid="#x07a8ae91" endid="#xd600c086"/>
+                        </egXML>
+                        <p><ref target="#controlevents">controlevents_tie</ref><ref target="#check_notes">check_notes</ref><ref target="#check_chords">check_chords</ref></p>
+                    </div>
+                </div>
+                
+                <div type="sub_2">
+                    <head type="sub_2" xml:id="x9a936376-082d-4827-8c38-5c4157e3c56f">Dynamik</head>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="xfbcb3dbe-47a8-4658-8865-800ea944e8d5">Dynamikangaben</head>
+                        <list>
+                            <item>z.B. <hi rend="italic">f</hi>, <hi rend="italic">p</hi>, <hi rend="italic">sf</hi>, etc., <hi rend="italic">cresc</hi>. und <hi rend="italic">decresc</hi>.</item>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Dynamikangaben nach Vorlage mit dem Element <tag>dynam</tag> codiert</item>
+                            <item><att>label</att> ist nicht erlaubt</item>
+                            <item>in op.133 und 134 wurden Dynamikangaben normalisiert (z.B. F: zu f)</item>
+                            <item>Die Dynamik steht in allen Stimmen unterhalb, außer bei Singstimmen, dort oberhalb wegen des Singtexts</item>
+                        </list>
+                        
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <dynam xml:id="xe7fae01c" tstamp="2" place="below" staff="1">p</dynam>
+                        </egXML>
+                        <p><att>tstamp2</att> nur, wenn <att>extender</att>=true vorhanden,   bei crescendo-Fortsetzungsstrichen</p>
+                        <p>
+                            <ref target="#check_dynam">check_dynam</ref>
+                            <ref target="#controlevents">controlevents_dynam</ref>
+                        </p>
+                        <list>
+                            <item>Bei Dynamikangaben, die sich zwischen zwei Klaviersystemen befinden und sich auf beide beziehen, werden beide staves angegeben</item>
+                        </list>
+                        
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <dynam xml:id="x557e0add" place="between" staff="6 7" tstamp="3" tstamp2="0m+5" extender="true">cres</dynam>
+                        </egXML>
+                        
+                        <p><ref target="#check_dynam_between_space">check_dynam_between_space</ref></p>
+                    </div>
+                    <div type="sub_3">
+                        <head type="sub_3" xml:id="xdbc3dca2-13ed-43f6-866f-d145acfcc02d">Crescendo- und decrescendo-Gabeln</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Crescendo- und decrescendo-Gabeln nach Vorlage mit dem Element <tag>hairpin</tag> codiert</item>
+                            <item>nur <att>tstamp</att> und <att>tstamp2</att> sind erlaubt</item>
+                            <item><hi rend="italic">cresc</hi>.u. <hi rend="italic">decresc</hi>.-Gabeln, die sich auf zwei Klaviersysteme beziehen, bekommen die Angabe beider Systeme</item>
+                        </list>
+                        
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <hairpin xml:id="x0e0f7bfa" staff="2" tstamp="2.5" tstamp2="0m+2.75" form="dim" place="below"/>
+                        </egXML>
+                        
+                        <p>
+                            <ref target="#controlevents">controlevents_hairpin</ref>
+                            <ref target="#hairpin_between_space">check_hairpin_between_space</ref>
+                        </p>
+                    </div>
+                </div>
+                    <div type="sub_2">
+                        <head type="sub_2" xml:id="xc7eabadd-55ce-4bfd-9cfa-60d96331662d">Fermaten</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Fermaten nach Vorlage mit dem Element <tag>fermata</tag> codiert</item>
+                            <item>nur <att>startid</att> ist erlaubt, außer die Fermate steht auf einem Taktstrich, dann ist auch <att>tstamp</att> erlaubt</item>
+                            <item>keine Ortsangabe nötig, außer wenn sie unterhalb des Systems steht, dann <att>place</att>=“below“</item>
+                            <item><att>form</att> und <att>shape</att> sind nicht erlaubt</item>
+                        </list>
+                        
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <fermata xml:id="x02265c21" staff="3" startid="#xf6e96376"/> 
+                        </egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <fermata xml:id="xeb595273" staff="7" tstamp="3" place="below"/>
+                        </egXML>
+                        
+                        <p>
+                            <ref target="#controlevents">controlevents_fermata</ref><lb/>
+                            <ref target="#check_fermata_place">check_fermata_place</ref><lb/>
+                            <ref target="#fermata_form_shape">check_fermata_form_shape</ref>
+                        </p>
+                    </div>
+                    <div type="sub_2">
+                        <head type="sub_2" xml:id="x98f43989-437a-4b2e-9c05-a79c517b7f89">Oktavierung</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden 8va-Zeichen nach Vorlage mit dem Element <tag>octave</tag> codiert</item>
+                            <item>Es gibt keine Angaben zur Linienform</item>
+                            <item>8va-Zeichen werden mit <att>startid</att> an Noten oder Akkorde geknüpft</item>
+                            <item><att>tstamp</att> ist nicht erlaubt</item>
+                            <item><att>oct.ges</att> muss an betreffenden Noten bzw. Akkorden ergänzt werden</item>
+                        </list>
+                    </div>
+                <div type="sub_2">
+                    <head type="sub_2" xml:id="x9c043f6a-546b-4c88-9686-3ece733ea71c">Artikulation</head>
+                    <list>
+                        <item>In <name type="org">Beethovens Werkstatt</name> wird Artikulation nach Vorlage mit dem Element <tag>dir</tag> codiert</item>
+                    </list>
+                    
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <dir xml:id="xb45e5d31" layer="1" staff="3" place="below" tstamp="1">sempre staccato</dir></egXML>
+                    
+                    <p>
+                        <ref target="#check_dir">check_dir</ref>
+                    </p>
+                </div>
+                    <div type="sub_2">
+                        <head type="sub_2" xml:id="x7c531aa3-595c-44a9-8279-7697907ff5ef">Tempoangaben</head>
+                        <list>
+                            <item>In <name type="org">Beethovens Werkstatt</name> werden Tempoangaben nach Vorlage mit dem Element <tag>dir</tag> codiert</item>
+                        </list>
+                        
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <dir xml:id="x926d2a72" tstamp="1" place="above" staff="1">Allegretto</dir> 
+                        </egXML>
+                        
+                        <p><ref target="#check_dir">check_dir</ref></p>
+                    </div>
+                
+                <div type="sub_2">
+                    <head type="sub_2" xml:id="xfa88c5ae-9faf-48d9-9c66-db6556034220">Studierzeichen</head>
+                    <list>
+                        <item>In <name type="org">Beethovens Werkstatt</name> werden Studierzeichen nach Vorlage mit dem Element <tag>reh</tag> codiert</item>
+                    </list>
+                    
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <reh xml:id="x07512ac9" tstamp="1" staff="1" place="above">A</reh> 
+                    </egXML>
+                    
+                    <p><ref target="#check_reh">check_reh</ref></p>
+                </div>
+                
+                <div type="sub_2">
+                    <head type="sub_2" xml:id="xc00ee2dc-9177-40db-943c-f1732102a5a6">Triller</head>
+                    <list>
+                        <item>In <name type="org">Beethovens Werkstatt</name> werden Triller nach Vorlage mit dem Element <tag>trill</tag> codiert</item>
+                        <item>Triller werden mit <att>startid</att> mit einer Note verknüpft</item>
+                    </list>
+                    
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <trill xml:id="x885bc" staff="1" startid="#note_xcv6 " place="above"/> 
+                    </egXML>
+                    
+                    <p><ref target="#controlevents">controlevents_trill</ref></p>
+                </div>
+                
+                    
+                
+                </div>
+                <div type="sub_1">
+                    <head type="sub_1" xml:id="m9a5088c3-2099-481e-9c0a-b75400e7bf92">Editorische Entscheidungen</head>
+                    <div type="sub_2">
+                        <head type="sub_2" xml:id="xf48025ff-793c-4a99-9c78-1c215f7c0e4e">Abgekürzte und alte Schreibweisen</head>
+                        <list>
+                            <item>werden aufgelöst und/oder normalisiert</item>
+                            <item>z.B. <tag>bTrem</tag>, <tag>multiRpt</tag>, <tag>beatRpt</tag> etc. sind nicht erlaubt</item>
+                        </list>
+                        <p><ref target="#mei_cmn">mei_cmn</ref></p>
+                    </div>
+                    <div type="sub_2">
+                        <head type="sub_2" xml:id="x677b52ff-e693-4abe-abe9-86e44e7a9efd">Fehler</head>
+                        <div type="sub_3">
+                            <head type="sub_3" xml:id="x77edf5b2-2a62-458b-8157-195584afa94b">Gravierende Fehler/Inkonsistenzen</head>
+                            <list>
+                                <item>Fehler, die Folgefehler produzieren, z.B. fehlender Notenschlüssel, werden korrigiert, in den Daten markiert und mit der betreffenden Stelle verknüpft</item>
+                            </list>
+                            
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <annot type="sic" resp="#BW" plist="#note_x0a0ks359b3e">missing clef change in the first edition; corrected</annot>
+                            </egXML>
+                            
+                        </div>
+                        <div type="sub_3">
+                            <head type="sub_3" xml:id="xff1c89cc-bbba-4039-a007-a9a5a89adeba">Lokale, offensichtliche Fehler</head>
+                            <list>
+                                <item>Fehler, die keine Folgefehler hervorrufen (z.B. fehlende Pause, Punkt oder Vorzeichen) werden nicht korrigiert, aber in den Daten markiert</item>
+                            </list>
+                            
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <annot type="sic" resp="#BW" plist="#note_49ee-b5a1">Wrong duration of the last note, it should be 8 instead of 4; not corrected</annot>
+                            </egXML>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <schemaSpec ident="mei" start="mei" prefix="mei_" ns="http://www.music-encoding.org/ns/mei">
+                
+                <!-- Declare MEI and XLink namespaces for use in Schematron -->
+                <constraintSpec ident="set_ns" scheme="isoschematron" mode="add">
+                    <constraint>
+                        <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="mei"
+                            uri="http://www.music-encoding.org/ns/mei"/>
+                        <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="xlink"
+                            uri="http://www.w3.org/1999/xlink"/>
+                    </constraint>
+                </constraintSpec>
+                
+                <moduleRef key="MEI"/>
+                <moduleRef key="MEI.analytical"/>
+                <moduleRef key="MEI.cmn" xml:id="mei_cmn" except="beamSpan beatRpt bend bracketSpan halfmRpt meterSig meterSigGrp mRpt mRpt2 mSpace multiRpt tupletSpan bTrem"/>
+                <moduleRef key="MEI.cmnOrnaments"/>
+                <moduleRef key="MEI.frbr"/>
+                <moduleRef key="MEI.gestural"/>
+                <moduleRef key="MEI.harmony" include="harm"/>
+                <moduleRef key="MEI.header" include="componentList altId appInfo application attUsage availability change changeDesc classDecls classification dedication editionsStmt editorialDecl encodingDesc fileDesc langUsage meiHead notesStmt perfMedium perfRes prefResList physDesc physMedium plateNum projectDesc pubStmt revisionDesc segmentation seriesStmt source sourceDesc tagsDecl tagUsage titleStmt unpub work workList"/>
+                <moduleRef key="MEI.lyrics"/>
+                <moduleRef key="MEI.namesdates" include="corpName geogName persName roleName"/>
+                <moduleRef key="MEI.ptrref"/>
+                <moduleRef key="MEI.shared"
+                    include="address annot barLine bibl biblList biblScope biblStruct body castGrp castItem castList chord clef clefGrp date desc dir dynam ending expansion head identifier label labelAbbr layer layerDef mdiv mei music name note p part parts physLoc pubPlace relation relationList repository resp respStmt rest role roleDesc score scoreDef section space staff staffDef staffGrp syl title titlePage"/>
+                <moduleRef key="MEI.visual"/>
+                
+                <elementSpec ident="mdiv" module="MEI.shared" mode="change">
+                    
+                    <constraintSpec xml:id="check_meter" ident="check_meter" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:scoreDef">
+                                <sch:let name="context" value="ancestor::mei:*[local-name() = ('score','part')][1]"/>
+                                <sch:assert test="(exists(@meter.count) and exists(@meter.unit)) or ($context//mei:scoreDef[1]/@meter.count and $context//mei:scoreDef[1]/@meter.unit)">
+                                    The first scoreDef in an mdiv needs @meter.count and @meter.unit.
+                                </sch:assert>
+                                <sch:assert test="not(.//mei:staffDef[@meter.count or @meter.unit])">
+                                    StaffDefs are not supposed to have @meter.count or @meter.unit. 
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec ident="check_key" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:scoreDef">
+                                <sch:let name="context" value="ancestor::mei:*[local-name() = ('score','part')][1]"/>
+                                <sch:assert test="(exists(@key.sig) and exists(@key.mode)) or ($context//mei:scoreDef[1]/@key.sig and $context//mei:scoreDef[1]/@key.mode)">
+                                    The first scoreDef in an mdiv needs @key.sig and @key.mode.
+                                </sch:assert>
+                                <sch:assert test="not(@trans.diat) and not(@trans.semi)">
+                                    @trans.diat and @trans.semi are not allowed in the scoreDef
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec ident="check_key_at_parts" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:parts">
+                                <sch:let name="parts" value="child::mei:part"/>
+                                <sch:let name="scoreDefs" value="for $part in $parts return ($part//mei:scoreDef)[1]"/>
+                                <sch:let name="first.scoreDef" value="$scoreDefs[1]"/>
+                                <sch:assert test="every $scoreDef in $scoreDefs satisfies ($scoreDef/@key.sig = $first.scoreDef/@key.sig and $scoreDef/@key.mode = $first.scoreDef/@key.mode)">
+                                    All scoreDefs in parts need to have the same values for @key.sig and @key.mode.
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec ident="check_transposing_staffDefs" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:staffDef">
+                                <sch:assert test="(@trans.diat and @trans.semi and @key.sig and @key.mode) or (not(@trans.diat) and not(@trans.semi) and not(@key.sig) and not(@key.mode))">
+                                    Transposing instruments need a staffDef with @trans.diat, @trans.semi, @key.sig and @key.mode. All other staffDefs may not use these at all, not even single ones of these attributes.
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_tstamp2" ident="check_tstamp2" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="@tstamp2">
+                                <sch:assert test="contains(.,'m+')">
+                                    tstamp2 values always need a measure reference. If targeting at the same measure as the start, add '0m+' in front.
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="controlevents" ident="check_controlevents" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:dir">
+                                <sch:assert test="(not(@tstamp2) or (@extender = 'true')) and @tstamp and not(@endid) and not(@startid)">
+                                    dir elements are supposed to have a @tstamp only.
+                                </sch:assert>
+                            </sch:rule>
+                            <sch:rule context="mei:dynam">
+                                <sch:assert test="(not(@tstamp2) or (@extender = 'true')) and @tstamp and not(@endid) and not(@startid)">
+                                    dynam elements are supposed to have a @tstamp only.
+                                </sch:assert>
+                            </sch:rule>
+                            <sch:rule context="mei:fermata">
+                                <sch:let name="meter" value="preceding::mei:*[@meter.count][1]/xs:integer(@meter.count)"/>
+                                <sch:assert role="warning" test="(not(@tstamp2) and not(@endid)) and ((@startid and not(@tstamp)) or (not(@startid) and @tstamp and number(@tstamp = $meter + 1)))">
+                                    fermata elements are supposed to have a @startid only. Unless it is on a barline, then a @tstamp is allowed.
+                                </sch:assert>
+                            </sch:rule>
+                            <sch:rule context="mei:hairpin">
+                                <sch:assert test="@tstamp2 and @tstamp and not(@endid) and not(@startid)">
+                                    hairpin elements are supposed to have a @tstamp and @tstamp2.
+                                </sch:assert>
+                            </sch:rule>
+                            <sch:rule context="mei:slur">
+                                <sch:assert test="not(@tstamp2) and not(@tstamp) and @endid and @startid">
+                                    slur elements are supposed to have a @startid and @endid.
+                                </sch:assert>
+                            </sch:rule>
+                            <sch:rule context="mei:tie">
+                                <sch:assert test="not(@tstamp2) and not(@tstamp) and @endid and @startid">
+                                    tie elements are supposed to have a @startid and @endid.
+                                </sch:assert>
+                            </sch:rule>
+                            <sch:rule context="mei:trill">
+                                <sch:assert test="not(@tstamp2) and not(@tstamp) and (not(@endid) or @extender='true') and @startid">
+                                    trill elements are supposed to have a @startid only.
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec ident="check_layer_content" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:layer">
+                                <sch:assert test="not(count(child::mei:*)=0)">
+                                    layers need content
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_stem.dir_dur1" ident="check_stem.dir_dur1" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:note">
+                                <sch:assert test="not(@dur='1' and @stem.dir)">
+                                    notes with dur="1" are not allowed to have a @stem.dir Attribute
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_text_attributes" ident="check_text_attributes" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:syl">
+                                <sch:assert test="(@wordpos='i' and @con='d') 
+                                    or (@wordpos='m' and @con='d') 
+                                    or (@wordpos='t' and @con='u')
+                                    or (@wordpos='t' and not(@con)) 
+                                    or (not(@wordpos) and not(@con))">
+                                    for attribute @con only 'd' is allowed. if syl is longer than one note, of course @con="u" is allowed.
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_gracenote" ident="check_gracenote" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:note">
+                                <sch:assert test="not(@grace) or @grace='unknown'">
+                                    for attribute @grace only 'unknown' is allowed.
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_notes" ident="check_notes" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:note">
+                                <sch:assert test="not(@fontsize) and not(@visible) and not(@tie) and not(@tstamp) and not(@tstamp2)">
+                                    notes are not allowed to have @fontsize, @visible, @tie, @tstamp and @tstamp2
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_chords" ident="check_chord" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:chord">
+                                <sch:assert test="not(@tie) and not(@tstamp) and not(@tstamp2)">
+                                    chords are not allowed to have @tie, @tstamp and @tstamp2
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="fermata_form_shape" ident="check_fermata_form_shape" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:fermata">
+                                <sch:assert test="not(form) and not(shape)">
+                                    fermata is not allowed to have @form and @shape
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    
+                    <constraintSpec xml:id="check_fermata_place" ident="check_fermata_place" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:fermata">
+                                <sch:assert test="not(@place) or @place='below'">
+                                generally @place for fermata is not needed, only @place="below" is allowed if the fermata stands below
+                                </sch:assert>
+                        </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec ident="check_beam" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:beam">
+                                <sch:assert test="not(@place)">
+                                    beam is not allowed to have a @place
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_octave" ident="check_octave" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:octave">
+                                <sch:assert test="not(@lform) and @startid and @endid and not(@tstamp) and not(@tstamp2)">
+                                    octave is not allowed to have @lform; octave must have @startid and @endid, but is not allowed to have @tstamp and @tstamp2
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_dir" ident="check_dir" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:dir">
+                                <sch:assert test="not(@label)">
+                                    dir is not allowed to have @label
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_reh" ident="check_reh" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:reh">
+                                <sch:assert test="not(@label) and @tstamp and not(@endid) and not(@startid)">
+                                    reh should only contain a tstamp and is not allowed to have @label
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_dynam" ident="check_dynam" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:dynam">
+                                <sch:assert test="not(@label)">
+                                    dynam is not allowed to have @label
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec ident="check_rest" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:rest">
+                                <sch:assert test="not(@ploc) and not(@oloc) and not(@tstamp) and not(@tstamp2)">
+                                    rest is not allowed to have @ploc, @oloc, @tstamp and @tstamp2 
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                   <constraintSpec ident="check_mrest" scheme="isoschematron" mode="add">
+                       <constraint>
+                           <sch:rule context="mei:mrest">
+                               <sch:assert test="not(@tstamp) and not(@tstamp2)">
+                                   mrest is not allowed to have @tstamp and @tstamp2
+                               </sch:assert>
+                           </sch:rule>
+                       </constraint>
+                   </constraintSpec> 
+                    
+                   <constraintSpec ident="check_mdiv" scheme="isoschematron" mode="add">
+                       <constraint>
+                           <sch:rule context="mei:mdiv">
+                               <sch:assert test="@n">
+                                   mdiv must have @n
+                               </sch:assert>
+                           </sch:rule>
+                       </constraint>
+                   </constraintSpec>
+                    
+                   <constraintSpec xml:id="check_clef" ident="check_clef" scheme="isoschematron" mode="add">
+                       <constraint>
+                           <sch:rule context="mei:clef">
+                               <sch:assert test="not(@tstamp) and not(@tstamp2)">
+                                   clefs in a measure are not allowed to have @tstamp and @tstamp2
+                               </sch:assert>
+                           </sch:rule>
+                       </constraint>
+                   </constraintSpec>
+                     
+                     
+                    <constraintSpec ident="check_key_in_scoreDef" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:scoreDef">
+                                <sch:let name="first.in.score" value="parent::mei:score and count(preceding-sibling::mei:*) = 0"/>
+                                <sch:let name="first.in.part" value="parent::mei:part and count(preceding-sibling::mei:*) = 0"/>
+                                <sch:let name="has.all.info" value="@key.sig and @key.mode"/>
+                                <sch:let name="parent.section" value="exists(parent::mei:section)"/>
+                                <sch:let name="has.preceding" value="exists(preceding-sibling::mei:scoreDef) and exists(parent::mei:score)"/>
+                                <sch:let name="all.or.nothing" value="(@key.sig and @key.mode) or (not(@key.sig) and not(@key.mode))"/>
+                                <sch:assert test="($first.in.score and $has.all.info) or ($first.in.part and $has.all.info) or (($parent.section or $has.preceding) and $all.or.nothing)">
+                                    scoreDef in score must have @key.sig and @key.mode; scoreDef in section must have @key.sig and @key.mode together or none of both (but not only one of this two attributes)
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>   
+                    
+                  <constraintSpec ident="check_keysig.showchange" scheme="isoschematron" mode="add">
+                      <constraint>
+                          <sch:rule context="mei:staffDef">
+                              <sch:assert test="not(@keysig.showchange)">
+                                  at staffDef @keysig.showchange is not allowed (use it in scoreDef)
+                              </sch:assert>
+                          </sch:rule>
+                      </constraint>
+                  </constraintSpec>
+                 
+                 <constraintSpec ident="check_ending_section_relationship" scheme="isoschematron" mode="add">
+                     <constraint>
+                         <sch:rule context="mei:ending">
+                             <sch:assert role="warning" test="not(ancestor::mei:section)">
+                                 A section should not contain ending elements.
+                             </sch:assert>
+                         </sch:rule>
+                         <sch:rule context="mei:section">
+                             <sch:assert role="warning" test="not(ancestor::mei:ending)">
+                                 An ending should not contain section elements.
+                             </sch:assert>
+                         </sch:rule>
+                     </constraint>
+                 </constraintSpec>
+                    
+                    <!-- @todo -->
+                    <constraintSpec ident="check_tie_similarity" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:tie">
+                                <sch:let name="mdiv" value="ancestor::mei:mdiv"/>
+                                <sch:let name="start.id" value="replace(@startid,'#','')"/>
+                                <sch:let name="start.note" value="$mdiv//mei:*[@xml:id = $start.id]"/>
+                                <sch:let name="end.id" value="replace(@endid,'#','')"/>
+                                <sch:let name="end.note" value="$mdiv//mei:*[@xml:id = $end.id]"/>
+                                <sch:let name="start.accid" value="if($start.note/@accid.ges) then($start.note/@accid.ges) else if($start.note/@accid) then($start.note/@accid) else('')"/>
+                                <sch:let name="end.accid" value="if($end.note/@accid.ges) then($end.note/@accid.ges) else if($end.note/@accid) then($end.note/@accid) else('')"/>
+                                <sch:let name="end.is.explicit" value="$end.note/@accid"/>
+                                <sch:let name="start.is.chord" value="local-name($start.note) = 'chord'"/>
+                                <sch:let name="end.is.chord" value="local-name($end.note) = 'chord'"/>
+                                <sch:let name="both.ends.are.chords" value="$start.is.chord and $end.is.chord"/>
+                                <sch:let name="has.one.chord" value="$start.is.chord or $end.is.chord and $start.is.chord ne $end.is.chord"/>
+                                <sch:assert test="$both.ends.are.chords or $has.one.chord or ($start.note/@pname = $end.note/@pname)">
+                                    The start and end note of a tie need to have the same @pname ("<sch:value-of select="$start.note/@pname"/>" vs. "<sch:value-of select="$end.note/@pname"/>").
+                                </sch:assert>
+                                <sch:assert test="$both.ends.are.chords or $has.one.chord or ($start.note/@oct = $end.note/@oct)">
+                                    The start and end note of a tie need to have the same @oct  ("<sch:value-of select="$start.note/@oct"/>" vs. "<sch:value-of select="$end.note/@oct"/>").
+                                </sch:assert>
+                                <sch:assert test="$both.ends.are.chords or $has.one.chord or ($start.accid = $end.accid)">
+                                    The start and end note of a tie need to have the same accidental settings  ("<sch:value-of select="$start.accid"/>" vs. "<sch:value-of select="$end.accid"/>").
+                                </sch:assert>
+                                <sch:assert test="$both.ends.are.chords or $has.one.chord or (($start.accid = $end.accid) and not($end.is.explicit))" role="info">
+                                    The accidental of the end note of the tie is an @acc, not an @acc.ges as it is common, it may occured because of a page break or system break in the source
+                                </sch:assert>
+                                <sch:assert test="not(local-name($start.note) = 'chord' and local-name($end.note) = 'chord') or (count($start.note//mei:note) = count($end.note//mei:note))">
+                                    Tied chords need to have the same number of notes  (<sch:value-of select="count($start.note//mei:note)"/> vs. <sch:value-of select="count($end.note//mei:note)"/>).
+                                </sch:assert>
+                                <sch:report role="info" test="local-name($start.note) = 'chord' and local-name($end.note) = 'chord'">
+                                    Ties that connect chords need to be checked manually whether pitches conform.
+                                </sch:report>                                
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="hairpin_between_space" ident="check_hairpin_between_space" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:hairpin">
+                                <sch:assert test="not(@place='between') or (@place='between' and contains(normalize-space(@staff),' '))">
+                                    if hairpin has @place=between, @staff must have a space
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <constraintSpec xml:id="check_dynam_between_space" ident="check_dynam_between_space" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:rule context="mei:dynam">
+                                <sch:assert test="not(@place='between') or (@place='between' and contains(normalize-space(@staff),' '))">
+                                    if dynam has @place=between, @staff must have a space
+                                </sch:assert>
+                            </sch:rule>
+                        </constraint>
+                    </constraintSpec>
+                    
+                </elementSpec>
+                
+                <classSpec type="atts" ident="att.note.anl.cmn" mode="delete"> 
+                </classSpec>
+                
+                
+            </schemaSpec>
+        </body>
+    </text>
+</TEI>
