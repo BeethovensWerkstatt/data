@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://music-encoding.org/schema/dev/mei-all_anyStart.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/dev/mei-all_anyStart.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei">
+    <!-- explores how to encode layoutDesc, i.e. rastrums on pages -->
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title></title>
+            </titleStmt>
+            <pubStmt></pubStmt>
+        </fileDesc>
+        <manifestationList>
+            <manifestation>
+                <physDesc>
+                    <layoutDesc>
+                        <layout xml:id="layout1" ruledstaves="12">
+                            <rastrierung>
+                                <rastrum
+                                    xml:id="page1rastrum1"
+                                    systems="3" system.height="14mm" system.dist="20mm"
+                                    system.leftmar="23mm" system.topmar="43mm"
+                                    width="273mm" height="82mm"
+                                    rotate="0.5"/>
+                                <rastrum 
+                                    xml:id="page1rastrum2"
+                                    systems="3" system.height="14mm" system.dist="20mm"
+                                    system.leftmar="25mm" system.topmar="137mm"
+                                    width="271mm" height="82mm"
+                                    rotate="0.8"/>
+                                <!-- Gesamthöhe: 14 + 20 + 14 + 20 + 14 = 82mm – nicht codieren, sondern berechnen? -->
+                            </rastrierung>
+                        </layout>
+                    </layoutDesc>
+                </physDesc>
+            </manifestation>
+        </manifestationList>
+    </meiHead>
+    <music>
+        <!-- facsimile is available only for documents existing today, i.e. Landsberg 8.1 -->
+        <facsimile>
+            <!-- x pages ignored -->
+            <surface xml:id="s1" decls="#layout1">
+                <!-- s1 has one system -->
+                <graphic xml:id="graphic1" width="6000px" height="4000px"/>
+            </surface>
+            <surface xml:id="s2">
+                <!-- s2 has two systems -->
+                <graphic xml:id="graphic2" width="5000px" height="3000px"/>
+            </surface>
+        </facsimile>
+        <body>
+            <mdiv>
+                <drafts>
+                    <!-- Workflow:
+                        * Alle SVG-Shapes liegen vor. 
+                        * wir müssen in layoutDesc die <rastrum>s anlegen
+                        * Dann legen wir Schreibzonen an. Damit wird ein <svg:g> angelegt, und ein <draft>
+                        * Per FacsEx werden Shapes zu Schreibzonen zugeordnet
+                        * wir machen unsere Zuordnung von annotTrans zu diploTrans
+                            * damit wissen wir, wieviele Systeme es in der Transkription gibt
+                            * wir machen dann mit einer Metadatenmaske eine Zuordnung, auf welchen Rastren das passiert
+                            * UI dafür ist noch zu klären
+                            
+                        
+                    
+                    -->
+                    
+                    <draft label="diplotrans, die das untere System des ersten und obere System des zweiten Rastrals nutzt">
+                        <scoreDef>
+                            <staffGrp>
+                                <staffDef n="1"/>
+                                <staffDef n="2"/>
+                            </staffGrp>
+                        </scoreDef>
+                        <section>
+                            <measure>
+                                <staff n="1">
+                                    <layer>
+                                        <sb placement.rastrum="#page1rastrum1" placement.system="3" placement.leftmar="120mm"/>
+                                        <!-- ist placement.leftmar wirklich nötig??? -->
+                                    </layer>
+                                </staff>
+                                <staff n="2">
+                                    <layer>
+                                        <sb placement.rastrum="#page1rastrum2" placement.system="1" placement.leftmar="120mm"/>
+                                    </layer>
+                                </staff>
+                            </measure>
+                        </section>
+                    </draft>    
+                </drafts>
+            </mdiv>
+        </body>
+    </music>
+</mei>

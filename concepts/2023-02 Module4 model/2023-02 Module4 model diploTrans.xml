@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://music-encoding.org/schema/dev/mei-all_anyStart.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/dev/mei-all_anyStart.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei">
+    <!-- explores how to encode layoutDesc, i.e. rastrums on pages -->
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title></title>
+            </titleStmt>
+            <pubStmt></pubStmt>
+        </fileDesc>
+        <manifestationList>
+            <manifestation>
+                <physDesc>
+                    
+                </physDesc>
+            </manifestation>
+        </manifestationList>
+    </meiHead>
+    <music>
+        <body>
+            <mdiv>
+                <drafts>
+                    <draft>
+                        <scoreDef></scoreDef>
+                        <section>
+                            <measure>
+                                <staff n="1">
+                                    <layer>
+                                        <sb/><!-- Lokalisierung auf Systemen -->
+                                        <note loc="2" head.shape="quarter" stem.dir="up" stem.len="12" facs="#svgShape" coord.x1="pixel"/>
+                                        <accid loc="2" accid="n" coord.x1="pixel"/>
+                                        <rest dur="2" coord.x1="pixel"/>
+                                        <barLine len="12" coord.x1="pixel"/>
+                                        <beamSpan type="8"/>
+                                        <dynam coord.x1="pixel">fo</dynam>
+                                        <hairpin form="cres" y="loc" y2="loc" coord.x1="leftPixel" coord.x2="rightPixel"/>
+                                        <artic artic="acc" loc="2" coord.x1="pixel"/>
+                                        <dir staff="2" place="above" coord.x1="pixel">Text</dir>
+                                        <!-- what else? -->
+                                    </layer>
+                                </staff>
+                            </measure>
+                        </section>
+                    </draft>
+                </drafts>                
+            </mdiv>
+        </body>
+    </music>
+</mei>
