@@ -1,121 +1,148 @@
 <?xml-model href="https://music-encoding.org/schema/dev/mei-all_anyStart.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://music-encoding.org/schema/dev/mei-all_anyStart.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg" meiversion="5.0.0-dev" xml:id="x933afd96-4830-43b1-9cef-32e06762c88d">
-    <meiHead>
-      <fileDesc>
-        <titleStmt>
-          <title>Ludwig van Beethoven, Skizzenblatt zur Sinfonie Nr. 9 op. 125, 1. Satz, Autograph</title>
-           <composer>
-             <persName>Beethoven, Ludwig van</persName>
-           </composer>
-           <editor>
-             <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens Werkstatt</corpName>
-           </editor>
-           <funder>
-             <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der Wissenschaften und der Literatur Mainz</corpName>
-           </funder>
-        </titleStmt>
-        <pubStmt/>
-        <seriesStmt>
-           <title xml:lang="de" level="s">Skizzenbuchedition</title>
-           <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">sk</identifier>
-        </seriesStmt>
-        <sourceDesc>
-          <source/><!-- TODO: IIF Manifest ergänzen -->
-        </sourceDesc>
-     </fileDesc>
-     <encodingDesc class="#bw_module4_diplomaticTranscript">
-       <classDecls>
-         <taxonomy label="availableTaxonomies">
-           <category xml:id="document_type"/>
-           <category xml:id="bw_observation_type"/><category xml:id="bw_implementation_completeness"/>
-           <!--<category xml:id="bw_monitum_category"/>-->
-           <category xml:id="bw_file_type"/>
-           <category xml:id="bw_monitum_comment"/>
-           <category xml:id="bw_monitum_classification"/>
-           <category xml:id="bw_monitum_textoperation"/>
-           <category xml:id="bw_monitum_object"/>
-           <category xml:id="bw_monitum_kontext"/>
-           <category xml:id="bw_monitum_konkordanz"/>
-         </taxonomy>
-         <taxonomy>
-           <category xml:id="music.print" class="#document_type"/>
-           <category xml:id="music.manuscript" class="#document_type"/>
-           <category xml:id="letter.manuscript" class="#document_type"/>
-         </taxonomy>
-         <taxonomy xml:id="temp">
-           <category xml:id="bw_module4_diplomaticTranscript"/>
-           <category xml:id="diplomaticTranscript"/>
-         </taxonomy>
-       </classDecls>
-     </encodingDesc>
-     <manifestationList>
-        <manifestation label="…" class="#music.manuscript">
-           <physDesc>
-             <foliaDesc>
-                 <folium n="…" recto="…" verso="…" width="…" height="…" unit="mm" type="music"/>
-             </foliaDesc>
-           </physDesc>
-           <physLoc>
-             <repository>
-               <identifier auth.uri="http://www.rism.info/" auth="RISM">D-BNba</identifier>
-             </repository>
-             <identifier>D-BNba, BSk 21/69</identifier>
-           </physLoc>
-        </manifestation>
-     </manifestationList>
-      <revisionDesc>
-        <change n="2">
-          <respStmt>
-            <persName authURI="https://github.com/ran-mo">Ran Mo</persName>
-          </respStmt>
-          <changeDesc>
-            <p>Pages extracted from Notirungbuch_K.xml</p>
-          </changeDesc>
-          <date isodate="2023-02-15"/>
-        </change>
-        <change n="1">
-          <respStmt>
-            <persName authURI="https://github.com/kepper">Johannes Kepper</persName>
-            <persName authURI="https://github.com/jpvoigt">Jan-Peter Voigt</persName>
-          </respStmt>
-          <changeDesc>
-            <p>File initially generated from IIIF Manifests mentioned in
-              /fileDesc//source.</p>
-          </changeDesc>
-          <date isodate="2022-08-16"/>
-        </change>
-      </revisionDesc>
-    </meiHead>
-    <music meiversion="5.0.0-dev">
-        <facsimile>
-          <!-- D-BNba, BSk 21/69 -->
-          <surface xml:id="x731b0f02-032a-49d6-a417-d16500bea745" n="1" label="1r">
-            <graphic xml:id="x5485142f-058f-4635-a4bc-9cd3bedb1e09" target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69r.jpg"
-              type="facsimile" width="7504" height="6000"/>
-            <!-- INFO: SVG file with shapes for the complete page. By default stored in "./svg" subfolder, and using 
+<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg"
+  meiversion="5.0.0-dev" xml:id="x933afd96-4830-43b1-9cef-32e06762c88d">
+  <meiHead>
+    <fileDesc>
+      <titleStmt>
+        <title>Ludwig van Beethoven, Skizzenblatt zur Sinfonie Nr. 9 op. 125, 1. Satz,
+          Autograph</title>
+        <composer>
+          <persName>Beethoven, Ludwig van</persName>
+        </composer>
+        <editor>
+          <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens
+            Werkstatt</corpName>
+        </editor>
+        <funder>
+          <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der Wissenschaften und
+            der Literatur Mainz</corpName>
+        </funder>
+      </titleStmt>
+      <pubStmt/>
+      <seriesStmt>
+        <title xml:lang="de" level="s">Skizzenbuchedition</title>
+        <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">sk</identifier>
+      </seriesStmt>
+      <sourceDesc>
+        <source/>
+        <!-- TODO: IIF Manifest ergänzen -->
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc class="#bw_module4_diplomaticTranscript">
+      <classDecls>
+        <taxonomy label="availableTaxonomies">
+          <category xml:id="document_type"/>
+          <category xml:id="bw_observation_type"/>
+          <category xml:id="bw_implementation_completeness"/>
+          <!--<category xml:id="bw_monitum_category"/>-->
+          <category xml:id="bw_file_type"/>
+          <category xml:id="bw_monitum_comment"/>
+          <category xml:id="bw_monitum_classification"/>
+          <category xml:id="bw_monitum_textoperation"/>
+          <category xml:id="bw_monitum_object"/>
+          <category xml:id="bw_monitum_kontext"/>
+          <category xml:id="bw_monitum_konkordanz"/>
+        </taxonomy>
+        <taxonomy>
+          <category xml:id="music.print" class="#document_type"/>
+          <category xml:id="music.manuscript" class="#document_type"/>
+          <category xml:id="letter.manuscript" class="#document_type"/>
+        </taxonomy>
+        <taxonomy xml:id="temp">
+          <category xml:id="bw_module4_diplomaticTranscript"/>
+          <category xml:id="diplomaticTranscript"/>
+          <category xml:id="geneticOrder_documentLevel"/>
+          <category xml:id="geneticOrder_pageLevel"/>
+          <category xml:id="geneticOrder_writingZoneLevel"/>
+          <category xml:id="geneticOrder_finalState"/>
+        </taxonomy>
+      </classDecls>
+    </encodingDesc>
+    <manifestationList>
+      <manifestation label="…" class="#music.manuscript">
+        <physDesc>
+          <foliaDesc>
+            <folium n="…" recto="…" verso="…" width="…" height="…" unit="mm" type="music"/>
+          </foliaDesc>
+        </physDesc>
+        <physLoc>
+          <repository>
+            <identifier auth.uri="http://www.rism.info/" auth="RISM">D-BNba</identifier>
+          </repository>
+          <identifier>D-BNba, BSk 21/69</identifier>
+        </physLoc>
+      </manifestation>
+    </manifestationList>
+    <revisionDesc>
+      <change n="2">
+        <respStmt>
+          <persName authURI="https://github.com/ran-mo">Ran Mo</persName>
+        </respStmt>
+        <changeDesc>
+          <p>Pages extracted from Notirungbuch_K.xml</p>
+        </changeDesc>
+        <date isodate="2023-02-15"/>
+      </change>
+      <change n="1">
+        <respStmt>
+          <persName authURI="https://github.com/kepper">Johannes Kepper</persName>
+          <persName authURI="https://github.com/jpvoigt">Jan-Peter Voigt</persName>
+        </respStmt>
+        <changeDesc>
+          <p>File initially generated from IIIF Manifests mentioned in /fileDesc//source.</p>
+        </changeDesc>
+        <date isodate="2022-08-16"/>
+      </change>
+    </revisionDesc>
+  </meiHead>
+  <music meiversion="5.0.0-dev">
+    <facsimile>
+      <!-- D-BNba, BSk 21/69 -->
+      <surface xml:id="x731b0f02-032a-49d6-a417-d16500bea745" n="1" label="1r">
+        <graphic xml:id="x5485142f-058f-4635-a4bc-9cd3bedb1e09"
+          target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69r.jpg"
+          type="facsimile" width="7504" height="6000"/>
+        <!-- INFO: SVG file with shapes for the complete page. By default stored in "./svg" subfolder, and using 
             same name as MEI file, plus "_p", followed by three digits for the page number (matching @n on surface). 
             @type is "shapes". -->
-            <graphic xml:id="t45545762-6971-47fc-ba0d-3574a7daa08c" target="./svg/D-BNba_BSk_21-69_p001.svg"
-              type="shapes"/>
-          </surface>
-          <surface xml:id="xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9" n="2" label="1v">
-            <graphic xml:id="x9f407fc4-e494-40f9-a73d-3edd0e476452"              target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69v.jpg"
-              type="facsimile" width="7504" height="6000"/>
-          </surface>
-        </facsimile>
-        <body>
-          <mdiv>
-            <!-- INFO: Each draft matches one diplomatic transcript -->
-            <drafts>
-              <draft class="#diplomaticTranscript">
-                <pb facs="#x731b0f02-032a-49d6-a417-d16500bea745"/>
-                <scoreDef>
-                </scoreDef>
-                <section></section>
-              </draft>
-            </drafts>
-          </mdiv>
-        </body>
-    </music>
+        <graphic xml:id="t45545762-6971-47fc-ba0d-3574a7daa08c"
+          target="./svg/D-BNba_BSk_21-69_p001.svg" type="shapes"/>
+      </surface>
+      <surface xml:id="xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9" n="2" label="1v">
+        <graphic xml:id="x9f407fc4-e494-40f9-a73d-3edd0e476452"
+          target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69v.jpg"
+          type="facsimile" width="7504" height="6000"/>
+      </surface>
+    </facsimile>
+    <genDesc class="#geneticOrder_documentLevel" ordered="false">
+      <genDesc class="#geneticOrder_pageLevel" ordered="false" corresp="#x731b0f02-032a-49d6-a417-d16500bea745">
+        <!-- INFO: Every writingZone will have a <genDesc>. It will use @corresp to point to an svg:g[@class='writingZone'] -->
+        <genDesc xml:id="t6351c080-9a63-4891-b315-4f42e0305be8" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#t1e2933df-5487-4d94-90a3-bb779e046a57">
+          <!-- INFO: The last state of a writingZone will be stored as <genState>. It will use @corresp to point to an svg:g[@class='writingLayer'] -->
+          <genState class="#geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p001.svg#t4f49bf84-a3cf-4148-8670-4c31c24e97a4"/>
+        </genDesc>
+      </genDesc>
+    </genDesc>
+    <body>
+      <mdiv>
+        <!-- INFO: Each draft here matches one diplomatic transcript -->
+        <!-- INFO: Annotated Transcripts will be linked from that end -->
+        <drafts>
+          <!-- INFO: The draft (diplomatic transcript) will link to the SVG writing zone with its @corresp attribute -->
+          <!-- INFO: The draft will link to the corresponding <genDesc> with @state -->
+          <draft xml:id="tf3b6eb4f-08ca-4005-a3a9-b34d7b17a2d5" class="#diplomaticTranscript"
+            corresp="./svg/D-BNba_BSk_21-69_p001.svg#t1e2933df-5487-4d94-90a3-bb779e046a57"
+            state="#t6351c080-9a63-4891-b315-4f42e0305be8">
+            <!-- INFO: Every draft should start with a pagebegin (<pb) with @facs pointing to the surface -->
+            <pb facs="#x731b0f02-032a-49d6-a417-d16500bea745"/>
+
+            <!-- INFO: An additional <sb> with detailed placement info will be added in each <staff> -->
+            <scoreDef> </scoreDef>
+            <section> </section>
+          </draft>
+        </drafts>
+      </mdiv>
+    </body>
+  </music>
 </mei>
