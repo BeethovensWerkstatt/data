@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg"
-  meiversion="5.0.0-dev" xml:id="m3c453397-6392-433e-a598-6cf366af28b5">
-  <meiHead>
+<mei xmlns="http://www.music-encoding.org/ns/mei"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  meiversion="5.0.0-dev"
+  xml:id="m3c453397-6392-433e-a598-6cf366af28b5">
+  <meiHead meiversion="5.0.0-dev">
     <fileDesc>
       <titleStmt>
         <title>BnF, département Musique, MS-57 (2)</title>
@@ -29,12 +31,151 @@
           class="http://iiif.io/api/presentation/2#Manifest"/>
       </sourceDesc>
     </fileDesc>
-    <encodingDesc class="#bw_module4_diplomaticTranscript"/>
+    <encodingDesc class="#bw_diplomatic_transcript #bw_document_file #bw_module4">
+      <classDecls>
+        <taxonomy label="availableTaxonomies">
+          <category xml:id="document_type"/>
+          <category xml:id="bw_observation_type"/>
+          <category xml:id="bw_implementation_completeness"/>
+          <!--<category xml:id="bw_monitum_category"/>-->
+          <category xml:id="bw_file_type"/>
+          <category xml:id="bw_monitum_comment"/>
+          <category xml:id="bw_monitum_classification"/>
+          <category xml:id="bw_monitum_textoperation"/>
+          <category xml:id="bw_monitum_object"/>
+          <category xml:id="bw_monitum_kontext"/>
+          <category xml:id="bw_monitum_konkordanz"/>
+          <category xml:id="bw_transcription_type"/>
+          <category xml:id="bw_module"/>
+        </taxonomy>
+        <taxonomy>
+          <category xml:id="music.print" class="#document_type"/>
+          <category xml:id="music.manuscript" class="#document_type"/>
+          <category xml:id="letter.manuscript" class="#document_type"/>
+          <category xml:id="music.sketchbook" class="#document_type"/>
+        </taxonomy>
+        <taxonomy>
+          <category xml:id="bw_monitum" class="#bw_observation_type"/>
+          <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+          <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+        </taxonomy>
+        <taxonomy>
+          <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+          <category xml:id="bw_partially_implemented"
+            class="#bw_implementation_completeness"/>
+          <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+        </taxonomy>
+        <taxonomy>
+          <!-- Klassifizierung -->
+          <category xml:id="bw_classification_korrektur"
+            label="Korrektur"
+            class="#bw_monitum_classification"/>
+          <category xml:id="bw_classification_variante"
+            label="Variante"
+            class="#bw_monitum_classification"/>
+          <category xml:id="bw_classification_textpraezisierung"
+            label="Textpräzisierung"
+            class="#bw_monitum_classification"/>
+          <category xml:id="bw_classification_schriftbildliche_verbesserung"
+            label="Schriftbildliche Verbesserung"
+            class="#bw_monitum_classification"/>
+          <category xml:id="bw_classification_paratextliche_eingriffe"
+            label="Paratextliche Eingriffe"
+            class="#bw_monitum_classification"/>
+        </taxonomy>
+        <taxonomy>
+          <!-- Textoperation -->
+          <category xml:id="bw_textoperation_einfuegung"
+            label="Einfuegung"
+            class="#bw_monitum_textoperation"/>
+          <!--oder erweiterung-->
+          <category xml:id="bw_textoperation_tilgung"
+            label="Tilgung"
+            class="#bw_monitum_textoperation"/>
+          <category xml:id="bw_textoperation_ersetzung"
+            label="Ersetzung"
+            class="#bw_monitum_textoperation"/>
+          <category xml:id="bw_textoperation_umstellung"
+            label="Umstellung"
+            class="#bw_monitum_textoperation"/>
+        </taxonomy>
+        <taxonomy>
+          <!-- Revisionsobjekt -->
+          <category xml:id="bw_object_dynamic"
+            label="Dynamik"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_pitch"
+            label="Tonbuchstabe"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_bogensetzung"
+            label="Bogensetzung"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_rhythm"
+            label="Rhythmus"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_ornament"
+            label="Verzierung"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_octave"
+            label="Oktavierung"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+          <category xml:id="bw_object_articulation"
+            label="Artikulation"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_clef"
+            label="Notenschlüssel"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_arpeggio"
+            label="Arpeggiozeichen"
+            class="#bw_monitum_object"/>
+          <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+          <category xml:id="bw_object_fingering"
+            label="Fingersatz"
+            class="#bw_monitum_object"/>
+        </taxonomy>
+        <taxonomy>
+          <!-- kontextzitat -->
+          <category xml:id="bw_kontext_korrekt"
+            label="korrekt"
+            class="#bw_monitum_kontext"/>
+          <category xml:id="bw_kontext_unvollstaendig"
+            label="unvollständig"
+            class="#bw_monitum_kontext"/>
+          <category xml:id="bw_kontext_korrumpiert"
+            label="korrumpiert"
+            class="#bw_monitum_kontext"/>
+        </taxonomy>
+        <taxonomy>
+          <!-- konkordanz -->
+          <category xml:id="bw_konkordanz"
+            label="konkordanz"
+            class="#bw_monitum_konkordanz"/>
+        </taxonomy>
+        <taxonomy>
+          <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+          <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+          <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+          <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+          <category xml:id="bw_document_file" class="#bw_file_type"/>
+          <category xml:id="bw_work_file" class="#bw_file_type"/>
+          <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+        </taxonomy>
+        <taxonomy>
+          <category xml:id="bw_module4" class="#bw_module"/>
+        </taxonomy>
+        <taxonomy>
+          <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+        </taxonomy>
+      </classDecls>
+    </encodingDesc>
     <manifestationList>
       <manifestation label="…" class="#music.manuscript">
         <physDesc>
           <foliaDesc>
-            <folium n="…" recto="…" verso="…" width="…" height="…" unit="mm" type="music"/>
+            <unknownFoliation xml:id="u3448ec3b-6729-471d-9602-ff3f9978e41b"
+              recto="#s91ca4a8e-856d-4cd0-91f1-8c43d4728c59"
+              verso="#s20df2be0-17c4-45d6-9924-eec1898ae075"/>
           </foliaDesc>
         </physDesc>
         <physLoc>
@@ -60,35 +201,35 @@
   </meiHead>
   <music meiversion="5.0.0-dev">
     <facsimile>
-
-      <surface xmlns="http://www.music-encoding.org/ns/mei"
-        xml:id="s91ca4a8e-856d-4cd0-91f1-8c43d4728c59" n="1" ulx="0" uly="0" lrx="3910" lry="3043"
-        label="NP">
+      <surface xml:id="s91ca4a8e-856d-4cd0-91f1-8c43d4728c59"
+        n="1"
+        ulx="0"
+        uly="0"
+        lrx="3910"
+        lry="3043"
+        label="NP"
+        rotate="0">
         <graphic xml:id="gc001a601-50cc-400e-a335-78b88c5c547a"
           target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b550025366/f1/info.json"
-          type="facsimile" width="3910" height="3043"/>
+          type="facsimile"
+          width="3910"
+          height="3043"/>
       </surface>
-      <surface xmlns="http://www.music-encoding.org/ns/mei"
-        xml:id="s20df2be0-17c4-45d6-9924-eec1898ae075" n="2" ulx="0" uly="0" lrx="3869" lry="2993"
-        label="NP">
+      <surface xml:id="s20df2be0-17c4-45d6-9924-eec1898ae075"
+        n="2"
+        ulx="0"
+        uly="0"
+        lrx="3869"
+        lry="2993"
+        label="NP"
+        rotate="0">
         <graphic xml:id="g4788d5d5-b4b3-4c11-8733-3e246dd30c8a"
           target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b550025366/f2/info.json"
-          type="facsimile" width="3869" height="2993"/>
+          type="facsimile"
+          width="3869"
+          height="2993"/>
       </surface>
     </facsimile>
-    <body>
-      <pages type="transcription">
-        <page xmlns="http://www.music-encoding.org/ns/mei" page.width="3910" page.height="3043"
-          page.leftmar="0" page.rightmar="0" xml:id="p68e7e1f9-fa9e-4b09-ae1d-e1894966882a"
-          surface="#s91ca4a8e-856d-4cd0-91f1-8c43d4728c59">
-          <!--page NP-->
-        </page>
-        <page xmlns="http://www.music-encoding.org/ns/mei" page.width="3869" page.height="2993"
-          page.leftmar="0" page.rightmar="0" xml:id="p7089907d-989a-4c3f-8c55-61c4c6df4d76"
-          surface="#s20df2be0-17c4-45d6-9924-eec1898ae075">
-          <!--page NP-->
-        </page>
-      </pages>
-    </body>
+    
   </music>
 </mei>

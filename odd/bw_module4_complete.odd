@@ -195,6 +195,25 @@
             </classSpec>
             
             
+            <elementSpec ident="unknownFoliation" module="MEI.header" mode="add">
+               <desc xml:lang="en">Captures two subsequent surfaces for which the foliation / binding is unknown.</desc>
+               <classes>
+                  <memberOf key="att.common"/>
+                  <memberOf key="att.dimensions"/>
+                  <memberOf key="att.measurement"/>
+                  <memberOf key="att.foliumSurfaces"/>
+                  <memberOf key="model.foliumLike"/>
+               </classes>
+               <content>
+                  <rng:zeroOrMore>
+                     <rng:ref name="model.paperModLike"/>
+                  </rng:zeroOrMore>
+               </content>
+               <remarks xml:lang="en">
+                  <p>When the exact folium setup can't be identified, it is advised to use <gi scheme="MEI">folium</gi> elements only (and not guess about the presence of <gi scheme="MEI">bifolium</gi>s in the document).</p>
+               </remarks>
+            </elementSpec>
+            
             
 
             <elementSpec ident="mei" module="MEI.shared" mode="change">
