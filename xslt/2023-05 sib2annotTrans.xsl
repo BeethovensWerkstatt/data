@@ -121,10 +121,8 @@
         
         
         <xsl:template match="//mei:instrDef"/>
-        <xsl:template match="//mei:accid[@accid]/@accid.ges"/>
         <xsl:template match="//@color"/>
         <xsl:template match="//@midi.bpm"/>  
-        <xsl:template match="//mei:note[@accid]/@accid.ges"/>
         <xsl:template match="//mei:pb"/>
         <xsl:template match="//mei:sb"/>
         <xsl:template match="//mei:rend">
@@ -188,20 +186,6 @@
             </xsl:for-each>
         </xsl:template>-->
         
-        <xsl:template match="//mei:note/@accid"/>
-        <xsl:template match="//mei:note/@accid.ges"/>
-        
-        <xsl:template match="mei:staffDef/@xml:id">
-            <xsl:attribute name="xml:id" select="'x'||uuid:randomUUID()"/>
-        </xsl:template>
-        <xsl:template match="mei:staffGrp/@xml:id">
-            <xsl:attribute name="xml:id" select="'x'||uuid:randomUUID()"/>
-        </xsl:template>
-        
-        <xd:doc>
-            <xd:desc>delete keySig-elements</xd:desc>
-        </xd:doc>
-        <xsl:template match="mei:keySig"/>
         
         <!-- copy templates -->
         <xsl:template match="node() | @*">
