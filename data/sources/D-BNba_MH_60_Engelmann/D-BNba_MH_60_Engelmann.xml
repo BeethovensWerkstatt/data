@@ -1,1 +1,694 @@
-Æioz»"¢
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     meiversion="5.0.0-dev"
+     xml:id="x2de3d5ba-dabd-4bfb-bc29-b7780665b1fb">
+   <meiHead meiversion="5.0.0-dev">
+      <fileDesc>
+         <titleStmt>
+            <title>Ludwig van Beethoven, Skizzenbuch "Engelmann" zu den Diabelli-Variationen op. 120 und der 9. Sinfonie op. 125, Autograph</title>
+            <composer>
+               <persName>Beethoven, Ludwig van</persName>
+            </composer>
+            <editor>
+               <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens Werkstatt</corpName>
+            </editor>
+            <funder>
+               <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der Wissenschaften und der Literatur Mainz</corpName>
+            </funder>
+         </titleStmt>
+         <pubStmt/>
+         <seriesStmt>
+            <title xml:lang="de" level="s">Skizzenbuchedition</title>
+            <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">sk</identifier>
+         </seriesStmt>
+         <sourceDesc>
+            <source/>
+            <!-- TODO: IIF Manifest ergÃ¤nzen -->
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc class="#bw_diplomatic_transcript #bw_document_file #bw_module4">
+         <classDecls>
+            <taxonomy label="availableTaxonomies">
+               <category xml:id="document_type"/>
+               <category xml:id="bw_observation_type"/>
+               <category xml:id="bw_implementation_completeness"/>
+               <!--<category xml:id="bw_monitum_category"/>-->
+               <category xml:id="bw_file_type"/>
+               <category xml:id="bw_monitum_comment"/>
+               <category xml:id="bw_monitum_classification"/>
+               <category xml:id="bw_monitum_textoperation"/>
+               <category xml:id="bw_monitum_object"/>
+               <category xml:id="bw_monitum_kontext"/>
+               <category xml:id="bw_monitum_konkordanz"/>
+               <category xml:id="bw_transcription_type"/>
+               <category xml:id="bw_module"/>
+            </taxonomy>
+            <taxonomy>
+               <category xml:id="music.print" class="#document_type"/>
+               <category xml:id="music.manuscript" class="#document_type"/>
+               <category xml:id="letter.manuscript" class="#document_type"/>
+               <category xml:id="music.sketchbook" class="#document_type"/>
+            </taxonomy>
+            <taxonomy>
+               <category xml:id="bw_monitum" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+            </taxonomy>
+            <taxonomy>
+               <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+               <category xml:id="bw_partially_implemented"
+                         class="#bw_implementation_completeness"/>
+               <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+            </taxonomy>
+            <taxonomy>
+            <!-- Klassifizierung -->
+               <category xml:id="bw_classification_korrektur"
+                         label="Korrektur"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_variante"
+                         label="Variante"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_textpraezisierung"
+                         label="TextprÃ¤zisierung"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_schriftbildliche_verbesserung"
+                         label="Schriftbildliche Verbesserung"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_paratextliche_eingriffe"
+                         label="Paratextliche Eingriffe"
+                         class="#bw_monitum_classification"/>
+            </taxonomy>
+            <taxonomy>
+            <!-- Textoperation -->
+               <category xml:id="bw_textoperation_einfuegung"
+                         label="Einfuegung"
+                         class="#bw_monitum_textoperation"/>
+               <!--oder erweiterung-->
+               <category xml:id="bw_textoperation_tilgung"
+                         label="Tilgung"
+                         class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_ersetzung"
+                         label="Ersetzung"
+                         class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_umstellung"
+                         label="Umstellung"
+                         class="#bw_monitum_textoperation"/>
+            </taxonomy>
+            <taxonomy>
+            <!-- Revisionsobjekt -->
+               <category xml:id="bw_object_dynamic"
+                         label="Dynamik"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pitch"
+                         label="Tonbuchstabe"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_bogensetzung"
+                         label="Bogensetzung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rhythm"
+                         label="Rhythmus"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_ornament"
+                         label="Verzierung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_octave"
+                         label="Oktavierung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_articulation"
+                         label="Artikulation"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_clef"
+                         label="NotenschlÃ¼ssel"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_arpeggio"
+                         label="Arpeggiozeichen"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_fingering"
+                         label="Fingersatz"
+                         class="#bw_monitum_object"/>
+            </taxonomy>
+            <taxonomy>
+            <!-- kontextzitat -->
+               <category xml:id="bw_kontext_korrekt"
+                         label="korrekt"
+                         class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_unvollstaendig"
+                         label="unvollstÃ¤ndig"
+                         class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_korrumpiert"
+                         label="korrumpiert"
+                         class="#bw_monitum_kontext"/>
+            </taxonomy>
+            <taxonomy>
+            <!-- konkordanz -->
+               <category xml:id="bw_konkordanz"
+                         label="konkordanz"
+                         class="#bw_monitum_konkordanz"/>
+            </taxonomy>
+            <taxonomy>
+               <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+               <category xml:id="bw_document_file" class="#bw_file_type"/>
+               <category xml:id="bw_work_file" class="#bw_file_type"/>
+               <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+            </taxonomy>
+            <taxonomy>
+               <category xml:id="bw_module4" class="#bw_module"/>
+            </taxonomy>
+            <taxonomy>
+               <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+            </taxonomy>
+         </classDecls>
+      </encodingDesc>
+      <manifestationList>
+         <manifestation label="â€¦" class="#music.manuscript">
+            <physDesc>
+               <foliaDesc>
+                  <unknownFoliation xml:id="ua3c331c2-44ac-4789-bc29-328b53ce1993"
+                                    recto="#x50723649-9aef-480f-8395-94ff3552a90a"
+                                    verso="#x9050bab9-22bd-43d3-9381-c43b7a3711a7"/>
+                  <unknownFoliation xml:id="ufd324d16-9816-4a7c-9e87-102e30eadf38"
+                                    recto="#x623a7072-aec5-4de5-839c-cdab0643a514"
+                                    verso="#xbd598e91-2bd5-46c0-b590-438eb101c9d5"/>
+                  <unknownFoliation xml:id="u85083526-b790-4df1-afc4-911704762500"
+                                    recto="#x2433e745-3d60-4043-9258-10ab1f1aeb47"
+                                    verso="#x57291b2b-71f2-40b4-b3a2-a4b4994ef961"/>
+                  <unknownFoliation xml:id="uffa824be-c903-4610-8410-9fd93148be21"
+                                    recto="#xe1e069ed-67a2-4a63-b4f1-c6b227242876"
+                                    verso="#xe0df306c-077d-49ea-8e0f-3e3440d50a5d"/>
+                  <unknownFoliation xml:id="uda56d454-f445-447e-87bb-b1bab356feb7"
+                                    recto="#xef927fa2-1f31-495f-83f9-9e00a850e003"
+                                    verso="#x717cfb28-9f73-4a31-a0ec-f6c781f772a5"/>
+                  <unknownFoliation xml:id="ua227df00-6f5e-4f49-a37a-00415d8dc110"
+                                    recto="#x6d6721df-b995-479b-a227-cf1bd05dfe7d"
+                                    verso="#xb14dce0a-0617-4be8-8272-522706548ae9"/>
+                  <unknownFoliation xml:id="ua5d5d812-734f-4de1-9eb2-2482748768ce"
+                                    recto="#x506637f0-9b11-4643-a220-9bbd77965bf7"
+                                    verso="#xf2f94a93-e5fe-4b94-9518-dcd35b27a88e"/>
+                  <unknownFoliation xml:id="ud0735aec-8dc7-4e31-b726-311e775d8938"
+                                    recto="#x13167dbf-459c-4408-a8ee-df7c582e2255"
+                                    verso="#x69931b4f-66d0-4d26-9f4b-8a076f22a60c"/>
+                  <unknownFoliation xml:id="ue38e5f5e-fb86-41b7-ad85-9c3fa98d09bd"
+                                    recto="#x5ac4fa83-c044-4c2b-858b-7a95888a5332"
+                                    verso="#x8933a040-58f0-4865-9be6-530eeb25157c"/>
+                  <unknownFoliation xml:id="u455fa992-96a7-4ebd-9ad0-3e9f982d1b8c"
+                                    recto="#x616c11a1-7377-48bd-a6d7-ec03ce718eb2"
+                                    verso="#x989f416b-6af5-4615-82da-09eed754b965"/>
+                  <unknownFoliation xml:id="u644437fc-c8f1-4232-a4ae-ae081a9801ec"
+                                    recto="#x6e6bb355-b7bb-4d8f-b8ea-d23d9e9ae795"
+                                    verso="#xedf924c8-5e68-4508-bf57-5eee7904f096"/>
+                  <unknownFoliation xml:id="u6545254a-4e7a-4344-be1b-0788eb049026"
+                                    recto="#xcd55dabb-8f39-43a4-abbf-138c32f1f93b"
+                                    verso="#x7dcbd745-fe04-4731-8c56-7b6c6fd61ce9"/>
+                  <unknownFoliation xml:id="ue74dd216-ebac-45c3-879f-59f07005a466"
+                                    recto="#xf94dcffd-1999-4278-9711-5bdfb9e1ee85"
+                                    verso="#x1b0b15a1-cf03-491c-9fda-d15d4fbe5e66"/>
+                  <unknownFoliation xml:id="u96eb41e7-475c-4e38-82e5-afc1f4823b1b"
+                                    recto="#xc595ffad-c5c4-488b-ba92-45f4e5b4c450"
+                                    verso="#x73cd7cec-9873-4fd4-9f36-6d96e97ed881"/>
+                  <unknownFoliation xml:id="ub24b957e-101f-4906-83a7-b09f47e8d8ee"
+                                    recto="#x50b7ec35-6d68-4ad7-91eb-59a315af7e0c"
+                                    verso="#x3ff8c2a2-81ef-40cc-8f3f-e135b610fe87"/>
+                  <unknownFoliation xml:id="uc3cb18e7-ffea-4d75-b81e-1dd698f7e644"
+                                    recto="#x301c694b-9bea-4c50-8213-4a92143caeb4"
+                                    verso="#xca097347-c5ad-4863-8d7b-66f50c0550bf"/>
+                  <unknownFoliation xml:id="u03c23b18-4c3a-4fb6-9bfa-28be2edfa32b"
+                                    recto="#xac8888c6-90dc-4e7b-b704-c2f1be8c333d"
+                                    verso="#x58a60b82-2e9e-4adf-9415-6ca3063a1f29"/>
+                  <unknownFoliation xml:id="u4e1d1fa0-1709-402c-ae20-52ec018640c9"
+                                    recto="#xaa2712a5-69c9-4a96-bc6c-84f326b61b4e"
+                                    verso="#x8ca2a944-2b00-4184-af2b-58e2bd33e205"/>
+                  <unknownFoliation xml:id="ucf5b714c-3d84-463b-952e-55ee92b4840d"
+                                    recto="#xa5c51527-c2ed-4565-91db-c6723d3a5d25"
+                                    verso="#x2433eb34-9ae9-44be-a41a-ff81446a672a"/>
+                  <unknownFoliation xml:id="u568299ee-9794-4ab9-9e1a-91b0d8e1b251"
+                                    recto="#xb2d5df6e-f52a-4021-b5b3-656d1e915c1f"
+                                    verso="#x9d3af3e9-b9bb-4392-b1e2-1978c50e0e44"/>
+                  <unknownFoliation xml:id="u8c963104-9f2c-4639-88c0-71b2d7ec9c37"
+                                    recto="#xbafcb5f6-d42e-4eed-b8c5-d4a93069400f"
+                                    verso="#x8a2db5b1-e555-424c-ab52-15c588abd75a"/>
+               </foliaDesc>
+            </physDesc>
+            <physLoc>
+               <repository>
+                  <identifier auth.uri="http://www.rism.info/" auth="RISM">D-BNba</identifier>
+               </repository>
+               <identifier>Mus.ms.autogr. Beethoven, L. v., Landsberg 8</identifier>
+            </physLoc>
+         </manifestation>
+      </manifestationList>
+      <revisionDesc>
+         <change n="2">
+            <respStmt>
+               <persName auth.uri="https://github.com/ran-mo">Ran Mo</persName>
+            </respStmt>
+            <changeDesc>
+               <p>Pages extracted from Notirungbuch_K.xml</p>
+            </changeDesc>
+            <date isodate="2023-02-15"/>
+         </change>
+         <change n="1">
+            <respStmt>
+               <persName auth.uri="https://github.com/kepper">Johannes Kepper</persName>
+               <persName auth.uri="https://github.com/jpvoigt">Jan-Peter Voigt</persName>
+            </respStmt>
+            <changeDesc>
+               <p>File initially generated from IIIF Manifests mentioned in
+             /fileDesc//source.</p>
+            </changeDesc>
+            <date isodate="2022-08-16"/>
+         </change>
+      </revisionDesc>
+   </meiHead>
+   <music meiversion="5.0.0-dev">
+      <facsimile>
+         <surface xml:id="x50723649-9aef-480f-8395-94ff3552a90a"
+                  n="1"
+                  label="I"
+                  rotate="0">
+            <graphic xml:id="xca69d45b-f8a5-40b8-91f6-8b658c00f35a"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_01.jpg"
+                     type="facsimile"
+                     width="7776"
+                     height="6032"/>
+         </surface>
+         <surface xml:id="x9050bab9-22bd-43d3-9381-c43b7a3711a7"
+                  n="2"
+                  label="II"
+                  rotate="0">
+            <graphic xml:id="x19f7b1cf-400d-4916-9d8f-afce08b8294a"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_02.jpg"
+                     type="facsimile"
+                     width="7696"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x623a7072-aec5-4de5-839c-cdab0643a514"
+                  n="3"
+                  label="III"
+                  rotate="0">
+            <graphic xml:id="x40c7c42e-709b-40ad-ad8c-4a5f72d6322e"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_03.jpg"
+                     type="facsimile"
+                     width="7696"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="xbd598e91-2bd5-46c0-b590-438eb101c9d5"
+                  n="4"
+                  label="IV"
+                  rotate="0">
+            <graphic xml:id="x59777ce0-2e17-4375-9044-ac3c25e19a39"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_04.jpg"
+                     type="facsimile"
+                     width="6000"
+                     height="7584"/>
+         </surface>
+         <surface xml:id="x2433e745-3d60-4043-9258-10ab1f1aeb47"
+                  n="5"
+                  label="1"
+                  rotate="0">
+            <graphic xml:id="x278192be-a776-4436-a083-8eb3f7383799"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_05.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x57291b2b-71f2-40b4-b3a2-a4b4994ef961"
+                  n="6"
+                  label="2"
+                  rotate="0">
+            <graphic xml:id="x58fdb0cd-fc30-47bc-acfa-627d8b8a1207"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_06.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xe1e069ed-67a2-4a63-b4f1-c6b227242876"
+                  n="7"
+                  label="3"
+                  rotate="0">
+            <graphic xml:id="x221d8290-c3a2-4f16-aae7-616304a6b3b0"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_07.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="xe0df306c-077d-49ea-8e0f-3e3440d50a5d"
+                  n="8"
+                  label="4"
+                  rotate="0">
+            <graphic xml:id="x917ace1e-e5e5-430c-8d46-3641cc15173c"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_08.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xef927fa2-1f31-495f-83f9-9e00a850e003"
+                  n="9"
+                  label="5"
+                  rotate="0">
+            <graphic xml:id="xbf876b4f-2e97-4e97-b597-480d740168cb"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_09.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x717cfb28-9f73-4a31-a0ec-f6c781f772a5"
+                  n="10"
+                  label="6"
+                  rotate="0">
+            <graphic xml:id="xf838ea49-e67a-4044-82bb-9f7905041e54"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_10.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="x6d6721df-b995-479b-a227-cf1bd05dfe7d"
+                  n="11"
+                  label="7"
+                  rotate="0">
+            <graphic xml:id="xa5983fa8-3ff8-444f-afaa-82c4b2aaeb2d"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_11.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="xb14dce0a-0617-4be8-8272-522706548ae9"
+                  n="12"
+                  label="8"
+                  rotate="0">
+            <graphic xml:id="x046312ea-2f08-452c-894e-25cc6b5114b0"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_12.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="x506637f0-9b11-4643-a220-9bbd77965bf7"
+                  n="13"
+                  label="9"
+                  rotate="0">
+            <graphic xml:id="x591ebc58-ce44-4639-8f54-694754536343"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_13.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="xf2f94a93-e5fe-4b94-9518-dcd35b27a88e"
+                  n="14"
+                  label="10"
+                  rotate="0">
+            <graphic xml:id="x7aa84fb9-d01b-47c6-a3bb-ba76eac3ff95"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_14.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="x13167dbf-459c-4408-a8ee-df7c582e2255"
+                  n="15"
+                  label="11"
+                  rotate="0">
+            <graphic xml:id="x4387181d-a4e0-493a-a73f-275ed45e4622"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_15.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x69931b4f-66d0-4d26-9f4b-8a076f22a60c"
+                  n="16"
+                  label="12"
+                  rotate="0">
+            <graphic xml:id="xef20b283-7eb0-4132-8fb5-31161b7af06a"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_16.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="x5ac4fa83-c044-4c2b-858b-7a95888a5332"
+                  n="17"
+                  label="13"
+                  rotate="0">
+            <graphic xml:id="x5d7c6907-f5d0-4115-baa2-eb1245274ecd"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_17.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x8933a040-58f0-4865-9be6-530eeb25157c"
+                  n="18"
+                  label="14"
+                  rotate="0">
+            <graphic xml:id="xac68dc54-4839-4d32-b6e0-ad0a88e44462"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_18.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="x616c11a1-7377-48bd-a6d7-ec03ce718eb2"
+                  n="19"
+                  label="15"
+                  rotate="0">
+            <graphic xml:id="x575bf590-ce47-41b3-86e5-50b93497c558"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_19.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x989f416b-6af5-4615-82da-09eed754b965"
+                  n="20"
+                  label="16"
+                  rotate="0">
+            <graphic xml:id="x50da273b-1ff7-4264-a856-f7718a54d350"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_20.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="x6e6bb355-b7bb-4d8f-b8ea-d23d9e9ae795"
+                  n="21"
+                  label="17"
+                  rotate="0">
+            <graphic xml:id="x0d64bb23-ed4d-4a9f-86af-982d6135236d"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_21.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="xedf924c8-5e68-4508-bf57-5eee7904f096"
+                  n="22"
+                  label="18"
+                  rotate="0">
+            <graphic xml:id="x54d43e4b-cac5-4663-8864-137dd366e553"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_22.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xcd55dabb-8f39-43a4-abbf-138c32f1f93b"
+                  n="23"
+                  label="19"
+                  rotate="0">
+            <graphic xml:id="x196b3c91-d4c4-49c5-88e3-4d038969f0b6"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_23.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x7dcbd745-fe04-4731-8c56-7b6c6fd61ce9"
+                  n="24"
+                  label="20"
+                  rotate="0">
+            <graphic xml:id="x7eb124c3-d62e-4c4e-aef6-4172d91fe8cd"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_24.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xf94dcffd-1999-4278-9711-5bdfb9e1ee85"
+                  n="25"
+                  label="21"
+                  rotate="0">
+            <graphic xml:id="x4ed2e371-c6e8-4eaa-822f-ced3a59f2315"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_25.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x1b0b15a1-cf03-491c-9fda-d15d4fbe5e66"
+                  n="26"
+                  label="22"
+                  rotate="0">
+            <graphic xml:id="x510774c3-5d83-402f-97cc-113daa63ebd2"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_26.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xc595ffad-c5c4-488b-ba92-45f4e5b4c450"
+                  n="27"
+                  label="23"
+                  rotate="0">
+            <graphic xml:id="x7b5e4683-36ba-4b58-ae47-47f843c5c05e"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_27.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x73cd7cec-9873-4fd4-9f36-6d96e97ed881"
+                  n="28"
+                  label="24"
+                  rotate="0">
+            <graphic xml:id="x76f64598-b855-4359-a3b2-fd0fa6d442de"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_28.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="x50b7ec35-6d68-4ad7-91eb-59a315af7e0c"
+                  n="29"
+                  label="25"
+                  rotate="0">
+            <graphic xml:id="x796a3d62-979e-40a8-81af-60b9556d2ffc"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_29.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x3ff8c2a2-81ef-40cc-8f3f-e135b610fe87"
+                  n="30"
+                  label="26"
+                  rotate="0">
+            <graphic xml:id="x614b083a-d653-459b-b255-928f4df9c97a"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_30.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="x301c694b-9bea-4c50-8213-4a92143caeb4"
+                  n="31"
+                  label="27"
+                  rotate="0">
+            <graphic xml:id="xb0cd1323-9930-4992-bbe6-d801f9c9f79b"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_31.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="xca097347-c5ad-4863-8d7b-66f50c0550bf"
+                  n="32"
+                  label="28"
+                  rotate="0">
+            <graphic xml:id="x18d725a1-d0d9-438b-b9ce-a10008983f57"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_32.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xac8888c6-90dc-4e7b-b704-c2f1be8c333d"
+                  n="33"
+                  label="29"
+                  rotate="0">
+            <graphic xml:id="x23656086-39f0-4a83-a291-c18f4904b7a2"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_33.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x58a60b82-2e9e-4adf-9415-6ca3063a1f29"
+                  n="34"
+                  label="30"
+                  rotate="0">
+            <graphic xml:id="x5103cfc7-0d1e-454d-a134-4380d095e0af"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_34.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xaa2712a5-69c9-4a96-bc6c-84f326b61b4e"
+                  n="35"
+                  label="31"
+                  rotate="0">
+            <graphic xml:id="x832778d1-55b0-4c4f-a62b-66760aa87b6b"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_35.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x8ca2a944-2b00-4184-af2b-58e2bd33e205"
+                  n="36"
+                  label="32"
+                  rotate="0">
+            <graphic xml:id="x322570e2-ecd6-46f6-8f99-f9b1ae1beda7"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_36.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xa5c51527-c2ed-4565-91db-c6723d3a5d25"
+                  n="37"
+                  label="33"
+                  rotate="0">
+            <graphic xml:id="x6894a3bf-dba5-4fd3-848e-17b850a2c674"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_37.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x2433eb34-9ae9-44be-a41a-ff81446a672a"
+                  n="38"
+                  label="34"
+                  rotate="0">
+            <graphic xml:id="x7fad6dc7-38df-4440-883a-298c9d1f901e"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_38.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xb2d5df6e-f52a-4021-b5b3-656d1e915c1f"
+                  n="39"
+                  label="35"
+                  rotate="0">
+            <graphic xml:id="x6b260e83-7398-47d2-9fb0-d930bbea0e83"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_39.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x9d3af3e9-b9bb-4392-b1e2-1978c50e0e44"
+                  n="40"
+                  label="36"
+                  rotate="0">
+            <graphic xml:id="x22c5ec38-6fec-4033-8862-7b6172ea769d"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_40.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+         <surface xml:id="xbafcb5f6-d42e-4eed-b8c5-d4a93069400f"
+                  n="41"
+                  label="37"
+                  rotate="0">
+            <graphic xml:id="x9576c2e8-f41a-44fd-9524-7e42de45aa69"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_41.jpg"
+                     type="facsimile"
+                     width="7712"
+                     height="6000"/>
+         </surface>
+         <surface xml:id="x8a2db5b1-e555-424c-ab52-15c588abd75a"
+                  n="42"
+                  label="38"
+                  rotate="0">
+            <graphic xml:id="xce09ab54-5549-465b-a904-629ffb16605d"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_Mh_60%2FHCB_Mh_60_42.jpg"
+                     type="facsimile"
+                     width="7856"
+                     height="6048"/>
+         </surface>
+      </facsimile>
+   </music>
+</mei>
