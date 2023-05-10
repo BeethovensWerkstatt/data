@@ -164,6 +164,7 @@
         <xsl:template match="mei:*/@vel"/>
         <xsl:template match="mei:*/@lyric.name"/>
         <xsl:template match="mei:*/@music.name"/>
+        <xsl:template match="mei:annot[@type='duration']"/>
     
         <xsl:template match="mei:*[@artic]">
             <xsl:copy>
