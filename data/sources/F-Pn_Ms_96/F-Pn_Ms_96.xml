@@ -173,18 +173,19 @@
          <manifestation label="…" class="#music.manuscript">
             <physDesc>
                <foliaDesc>
-                  <unknownFoliation xml:id="u31b21b41-233a-4801-8c8e-0d6ae9639e45"
-                                    recto="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"
-                                    verso="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"/>
-                  <unknownFoliation xml:id="u36e54a59-0d74-41be-a98f-b26f4ad68b2f"
-                                    recto="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"
-                                    verso="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"/>
-                  <unknownFoliation xml:id="ue078d07f-4a87-4ff5-ae08-e65f56db9c4d"
-                                    recto="#s549e45a1-051e-465c-b973-048f5d3f65cf"
-                                    verso="#s49809936-9ab7-4f47-9fb6-d98c03f75703"/>
-                  <unknownFoliation xml:id="u06ccf7df-7817-405f-8fdd-aac25304e5b3"
-                                    recto="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"
-                                    verso="#s7437e117-4a2a-4e99-a09a-49e435ac2486"/>
+                  <bifolium xml:id="u31b21b41-233a-4801-8c8e-0d6ae9639e45" width="305" height="232" unit="mm" 
+                     outer.recto="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c" 
+                     inner.verso="#s14ea2bc2-5406-4618-9754-0091b0c1a13f" 
+                     inner.recto="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26" 
+                     outer.verso="#s7437e117-4a2a-4e99-a09a-49e435ac2486">
+                     <bifolium xml:id="u36e54a59-0d74-41be-a98f-b26f4ad68b2f" width="305" height="232" unit="mm" 
+                        outer.recto="#sd4d26df4-8997-4f6c-a26f-069241baa8bb" 
+                        inner.verso="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f" 
+                        inner.recto="#s549e45a1-051e-465c-b973-048f5d3f65cf" 
+                        outer.verso="#s49809936-9ab7-4f47-9fb6-d98c03f75703">
+                     </bifolium>
+                  </bifolium>
+                 
                </foliaDesc>
             </physDesc>
             <physLoc>
@@ -196,6 +197,15 @@
          </manifestation>
       </manifestationList>
       <revisionDesc>
+         <change n="2">
+            <respStmt>
+               <persName auth.uri="https://github.com/aseipelt">Agnes Seipelt</persName>
+            </respStmt>
+            <changeDesc>
+               <p>Set up foliaDesc</p>
+            </changeDesc>
+            <date isodate="2023-05-11"></date>
+         </change>
          <change n="1">
             <respStmt>
                <persName auth.uri="https://github.com/kepper">Johannes Kepper</persName>
