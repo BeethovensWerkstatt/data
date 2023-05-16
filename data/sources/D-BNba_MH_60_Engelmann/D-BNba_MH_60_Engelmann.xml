@@ -45,6 +45,14 @@
                <category xml:id="bw_monitum_konkordanz"/>
                <category xml:id="bw_transcription_type"/>
                <category xml:id="bw_module"/>
+               <category xml:id="bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy>
+               <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrderfinalState" class="#bw_geneticOrder"/>
             </taxonomy>
             <taxonomy>
                <category xml:id="music.print" class="#document_type"/>
@@ -179,70 +187,87 @@
                                     recto="#x623a7072-aec5-4de5-839c-cdab0643a514"/>
                   <unknownFoliation xml:id="g_a95f8014-8f55-4834-b20a-aaacfb27bf73"
                                     recto="#xbd598e91-2bd5-46c0-b590-438eb101c9d5"/>
-                  
-                  <bifolium xml:id="u85083526-b790-4df1-afc4-911704762500" width="305" height="232" unit="mm" 
-                     outer.recto="#x2433e745-3d60-4043-9258-10ab1f1aeb47"
-                     inner.verso="#x57291b2b-71f2-40b4-b3a2-a4b4994ef961"
-                     inner.recto="#x6d6721df-b995-479b-a227-cf1bd05dfe7d"
-                     outer.verso="#xb14dce0a-0617-4be8-8272-522706548ae9">
+                  <bifolium xml:id="u85083526-b790-4df1-afc4-911704762500"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="#x2433e745-3d60-4043-9258-10ab1f1aeb47"
+                            inner.verso="#x57291b2b-71f2-40b4-b3a2-a4b4994ef961"
+                            inner.recto="#x6d6721df-b995-479b-a227-cf1bd05dfe7d"
+                            outer.verso="#xb14dce0a-0617-4be8-8272-522706548ae9">
                      <bifolium xml:id="uffa824be-c903-4610-8410-9fd93148be21"
-                        outer.recto="#xe1e069ed-67a2-4a63-b4f1-c6b227242876"
-                        inner.verso="#xe0df306c-077d-49ea-8e0f-3e3440d50a5d"
-                        inner.recto="#xef927fa2-1f31-495f-83f9-9e00a850e003"
-                        outer.verso="#x717cfb28-9f73-4a31-a0ec-f6c781f772a5">
+                               outer.recto="#xe1e069ed-67a2-4a63-b4f1-c6b227242876"
+                               inner.verso="#xe0df306c-077d-49ea-8e0f-3e3440d50a5d"
+                               inner.recto="#xef927fa2-1f31-495f-83f9-9e00a850e003"
+                               outer.verso="#x717cfb28-9f73-4a31-a0ec-f6c781f772a5">
                      </bifolium>
                   </bifolium>
-                  
-                  <bifolium xml:id="ua5d5d812-734f-4de1-9eb2-2482748768ce" width="305" height="232" unit="mm"
-                     outer.recto="#x506637f0-9b11-4643-a220-9bbd77965bf7"
-                     inner.verso="#xf2f94a93-e5fe-4b94-9518-dcd35b27a88e"
-                     inner.recto="#x13167dbf-459c-4408-a8ee-df7c582e2255"
-                     outer.verso="#x69931b4f-66d0-4d26-9f4b-8a076f22a60c">
+                  <bifolium xml:id="ua5d5d812-734f-4de1-9eb2-2482748768ce"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="#x506637f0-9b11-4643-a220-9bbd77965bf7"
+                            inner.verso="#xf2f94a93-e5fe-4b94-9518-dcd35b27a88e"
+                            inner.recto="#x13167dbf-459c-4408-a8ee-df7c582e2255"
+                            outer.verso="#x69931b4f-66d0-4d26-9f4b-8a076f22a60c">
                   </bifolium>
-                  
-                  <bifolium xml:id="ue38e5f5e-fb86-41b7-ad85-9c3fa98d09bd" width="305" height="232" unit="mm" 
-                     outer.recto="#x5ac4fa83-c044-4c2b-858b-7a95888a5332" 
-                     inner.verso="#x8933a040-58f0-4865-9be6-530eeb25157c" 
-                     inner.recto="#xcd55dabb-8f39-43a4-abbf-138c32f1f93b" 
-                     outer.verso="#x7dcbd745-fe04-4731-8c56-7b6c6fd61ce9">
-                     <bifolium xml:id="u455fa992-96a7-4ebd-9ad0-3e9f982d1b8c" width="305" height="232" unit="mm" 
-                        outer.recto="#x616c11a1-7377-48bd-a6d7-ec03ce718eb2" 
-                        inner.verso="#x989f416b-6af5-4615-82da-09eed754b965" 
-                        inner.recto="#x6e6bb355-b7bb-4d8f-b8ea-d23d9e9ae795" 
-                        outer.verso="#xedf924c8-5e68-4508-bf57-5eee7904f096">
+                  <bifolium xml:id="ue38e5f5e-fb86-41b7-ad85-9c3fa98d09bd"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="#x5ac4fa83-c044-4c2b-858b-7a95888a5332"
+                            inner.verso="#x8933a040-58f0-4865-9be6-530eeb25157c"
+                            inner.recto="#xcd55dabb-8f39-43a4-abbf-138c32f1f93b"
+                            outer.verso="#x7dcbd745-fe04-4731-8c56-7b6c6fd61ce9">
+                     <bifolium xml:id="u455fa992-96a7-4ebd-9ad0-3e9f982d1b8c"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="#x616c11a1-7377-48bd-a6d7-ec03ce718eb2"
+                               inner.verso="#x989f416b-6af5-4615-82da-09eed754b965"
+                               inner.recto="#x6e6bb355-b7bb-4d8f-b8ea-d23d9e9ae795"
+                               outer.verso="#xedf924c8-5e68-4508-bf57-5eee7904f096">
                      </bifolium>
                   </bifolium>
-                  
-                  <bifolium xml:id="ue74dd216-ebac-45c3-879f-59f07005a466" width="305" height="232" unit="mm" 
-                     outer.recto="#xf94dcffd-1999-4278-9711-5bdfb9e1ee85" 
-                     inner.verso="#x1b0b15a1-cf03-491c-9fda-d15d4fbe5e66" 
-                     inner.recto="#x301c694b-9bea-4c50-8213-4a92143caeb4" 
-                     outer.verso="#xca097347-c5ad-4863-8d7b-66f50c0550bf">
-                     <bifolium xml:id="u96eb41e7-475c-4e38-82e5-afc1f4823b1b" width="305" height="232" unit="mm" 
-                        outer.recto="#xc595ffad-c5c4-488b-ba92-45f4e5b4c450" 
-                        inner.verso="#x73cd7cec-9873-4fd4-9f36-6d96e97ed881" 
-                        inner.recto="#x50b7ec35-6d68-4ad7-91eb-59a315af7e0c" 
-                        outer.verso="#x3ff8c2a2-81ef-40cc-8f3f-e135b610fe87">
+                  <bifolium xml:id="ue74dd216-ebac-45c3-879f-59f07005a466"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="#xf94dcffd-1999-4278-9711-5bdfb9e1ee85"
+                            inner.verso="#x1b0b15a1-cf03-491c-9fda-d15d4fbe5e66"
+                            inner.recto="#x301c694b-9bea-4c50-8213-4a92143caeb4"
+                            outer.verso="#xca097347-c5ad-4863-8d7b-66f50c0550bf">
+                     <bifolium xml:id="u96eb41e7-475c-4e38-82e5-afc1f4823b1b"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="#xc595ffad-c5c4-488b-ba92-45f4e5b4c450"
+                               inner.verso="#x73cd7cec-9873-4fd4-9f36-6d96e97ed881"
+                               inner.recto="#x50b7ec35-6d68-4ad7-91eb-59a315af7e0c"
+                               outer.verso="#x3ff8c2a2-81ef-40cc-8f3f-e135b610fe87">
                      </bifolium>
                   </bifolium>
-                  
-                  <bifolium xml:id="u03c23b18-4c3a-4fb6-9bfa-28be2edfa32b" width="305" height="232" unit="mm" 
-                     outer.recto="#xac8888c6-90dc-4e7b-b704-c2f1be8c333d" 
-                     inner.verso="#x58a60b82-2e9e-4adf-9415-6ca3063a1f29" 
-                     inner.recto="#xb2d5df6e-f52a-4021-b5b3-656d1e915c1f" 
-                     outer.verso="#x9d3af3e9-b9bb-4392-b1e2-1978c50e0e44">
-                     <bifolium xml:id="u4e1d1fa0-1709-402c-ae20-52ec018640c9" width="305" height="232" unit="mm" 
-                        outer.recto="#xaa2712a5-69c9-4a96-bc6c-84f326b61b4e" 
-                        inner.verso="#x8ca2a944-2b00-4184-af2b-58e2bd33e205" 
-                        inner.recto="#xa5c51527-c2ed-4565-91db-c6723d3a5d25" 
-                        outer.verso="#x2433eb34-9ae9-44be-a41a-ff81446a672a">
+                  <bifolium xml:id="u03c23b18-4c3a-4fb6-9bfa-28be2edfa32b"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="#xac8888c6-90dc-4e7b-b704-c2f1be8c333d"
+                            inner.verso="#x58a60b82-2e9e-4adf-9415-6ca3063a1f29"
+                            inner.recto="#xb2d5df6e-f52a-4021-b5b3-656d1e915c1f"
+                            outer.verso="#x9d3af3e9-b9bb-4392-b1e2-1978c50e0e44">
+                     <bifolium xml:id="u4e1d1fa0-1709-402c-ae20-52ec018640c9"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="#xaa2712a5-69c9-4a96-bc6c-84f326b61b4e"
+                               inner.verso="#x8ca2a944-2b00-4184-af2b-58e2bd33e205"
+                               inner.recto="#xa5c51527-c2ed-4565-91db-c6723d3a5d25"
+                               outer.verso="#x2433eb34-9ae9-44be-a41a-ff81446a672a">
                      </bifolium>
                   </bifolium>
-                  
-                  
                   <folium xml:id="u8c963104-9f2c-4639-88c0-71b2d7ec9c37"
-                                    recto="#xbafcb5f6-d42e-4eed-b8c5-d4a93069400f"
-                                    verso="#x8a2db5b1-e555-424c-ab52-15c588abd75a"/>
+                          recto="#xbafcb5f6-d42e-4eed-b8c5-d4a93069400f"
+                          verso="#x8a2db5b1-e555-424c-ab52-15c588abd75a"/>
                </foliaDesc>
             </physDesc>
             <physLoc>
@@ -261,7 +286,7 @@
             <changeDesc>
                <p>Set up foliaDesc</p>
             </changeDesc>
-            <date isodate="2023-05-11"></date>
+            <date isodate="2023-05-11"/>
          </change>
          <change n="2">
             <respStmt>
@@ -708,5 +733,219 @@
                      height="6048"/>
          </surface>
       </facsimile>
+      <genDesc xml:id="g5ea1a73b-b919-46da-98d6-4fc30932a714"
+               class="#geneticOrder_documentLevel"
+               ordered="false">
+         <genDesc xml:id="g54e151be-69aa-4711-b3c9-ecf46f889ead"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="1"
+                  corresp="#x50723649-9aef-480f-8395-94ff3552a90a"/>
+         <genDesc xml:id="ge39fbdea-68de-4457-8784-61fbf30d869e"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="2"
+                  corresp="#x9050bab9-22bd-43d3-9381-c43b7a3711a7"/>
+         <genDesc xml:id="gcecb5916-8ff8-4f00-8091-3fbf1cdb317f"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="3"
+                  corresp="#x623a7072-aec5-4de5-839c-cdab0643a514"/>
+         <genDesc xml:id="g13680a7f-86b2-40c4-8f22-1d4c795d3f5f"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="4"
+                  corresp="#xbd598e91-2bd5-46c0-b590-438eb101c9d5"/>
+         <genDesc xml:id="g4a295544-8970-4ba0-875f-8ca55d79ab3e"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="5"
+                  corresp="#x2433e745-3d60-4043-9258-10ab1f1aeb47"/>
+         <genDesc xml:id="g6029c612-4814-44e1-afc1-6397eae67ac3"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="6"
+                  corresp="#x57291b2b-71f2-40b4-b3a2-a4b4994ef961"/>
+         <genDesc xml:id="gf525ad17-7eae-4c2c-8489-39ae2b6ea247"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="7"
+                  corresp="#xe1e069ed-67a2-4a63-b4f1-c6b227242876"/>
+         <genDesc xml:id="g88ef602a-1d7b-45f4-a8a5-0ebf2d96362e"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="8"
+                  corresp="#xe0df306c-077d-49ea-8e0f-3e3440d50a5d"/>
+         <genDesc xml:id="gd524c4a7-2b24-46b4-82b9-13b175e0f49d"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="9"
+                  corresp="#xef927fa2-1f31-495f-83f9-9e00a850e003"/>
+         <genDesc xml:id="gcacfc852-16c0-460c-a17f-73cf8494d569"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="10"
+                  corresp="#x717cfb28-9f73-4a31-a0ec-f6c781f772a5"/>
+         <genDesc xml:id="g0c0334fb-9683-4462-b3ef-de880e1485a3"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="11"
+                  corresp="#x6d6721df-b995-479b-a227-cf1bd05dfe7d"/>
+         <genDesc xml:id="gddf86108-5076-479d-81ca-35a5fa966d57"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="12"
+                  corresp="#xb14dce0a-0617-4be8-8272-522706548ae9"/>
+         <genDesc xml:id="gf8292e3d-cadf-4f2a-a190-9c838dd3b3c2"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="13"
+                  corresp="#x506637f0-9b11-4643-a220-9bbd77965bf7"/>
+         <genDesc xml:id="g49dff938-de96-4bf5-bbb3-0bc0f8f926be"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="14"
+                  corresp="#xf2f94a93-e5fe-4b94-9518-dcd35b27a88e"/>
+         <genDesc xml:id="g8a081410-1711-429d-971e-efbf4f656d58"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="15"
+                  corresp="#x13167dbf-459c-4408-a8ee-df7c582e2255"/>
+         <genDesc xml:id="ga21379e5-eb92-4e01-bcd4-c7b2c09936cb"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="16"
+                  corresp="#x69931b4f-66d0-4d26-9f4b-8a076f22a60c"/>
+         <genDesc xml:id="g889a9a3b-a68a-43f5-860a-fe5e2a0ba6f2"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="17"
+                  corresp="#x5ac4fa83-c044-4c2b-858b-7a95888a5332"/>
+         <genDesc xml:id="g5ff5740b-9654-401c-83e4-69c458c7d6fc"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="18"
+                  corresp="#x8933a040-58f0-4865-9be6-530eeb25157c"/>
+         <genDesc xml:id="g6d73fc10-c2d9-49e4-b572-650df3ef29eb"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="19"
+                  corresp="#x616c11a1-7377-48bd-a6d7-ec03ce718eb2"/>
+         <genDesc xml:id="g0f73c0eb-b8ae-4252-a854-e8c4760ec0bd"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="20"
+                  corresp="#x989f416b-6af5-4615-82da-09eed754b965"/>
+         <genDesc xml:id="g740dd288-e831-457c-8403-bcf8816485c4"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="21"
+                  corresp="#x6e6bb355-b7bb-4d8f-b8ea-d23d9e9ae795"/>
+         <genDesc xml:id="g157fede4-a7f0-4879-b192-00c2aea21c58"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="22"
+                  corresp="#xedf924c8-5e68-4508-bf57-5eee7904f096"/>
+         <genDesc xml:id="ge5ac297d-d1fc-4f21-8aba-ea190003f1ad"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="23"
+                  corresp="#xcd55dabb-8f39-43a4-abbf-138c32f1f93b"/>
+         <genDesc xml:id="g52bf26b3-e591-447e-8550-e6120e2826d4"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="24"
+                  corresp="#x7dcbd745-fe04-4731-8c56-7b6c6fd61ce9"/>
+         <genDesc xml:id="g9f5abcb3-ca0f-4cae-be35-158342a8af1e"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="25"
+                  corresp="#xf94dcffd-1999-4278-9711-5bdfb9e1ee85"/>
+         <genDesc xml:id="g89492c1c-e5b8-4cd6-98a5-cd86ceab8809"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="26"
+                  corresp="#x1b0b15a1-cf03-491c-9fda-d15d4fbe5e66"/>
+         <genDesc xml:id="gb81e4691-10ee-4d91-a742-0d78f3d9d716"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="27"
+                  corresp="#xc595ffad-c5c4-488b-ba92-45f4e5b4c450"/>
+         <genDesc xml:id="g0095f9cf-57ca-490e-8e99-144c855d38d3"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="28"
+                  corresp="#x73cd7cec-9873-4fd4-9f36-6d96e97ed881"/>
+         <genDesc xml:id="gf8c0f594-798c-4ba9-9320-d37ea1a14016"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="29"
+                  corresp="#x50b7ec35-6d68-4ad7-91eb-59a315af7e0c"/>
+         <genDesc xml:id="gbbe6c8d4-0662-4bb4-99a0-7ffc0ac9896d"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="30"
+                  corresp="#x3ff8c2a2-81ef-40cc-8f3f-e135b610fe87"/>
+         <genDesc xml:id="g10e94fbd-7c10-4fd8-b2ae-db903d40739c"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="31"
+                  corresp="#x301c694b-9bea-4c50-8213-4a92143caeb4"/>
+         <genDesc xml:id="g5e094bd4-1a38-4b4b-8c96-c8a6e238300b"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="32"
+                  corresp="#xca097347-c5ad-4863-8d7b-66f50c0550bf"/>
+         <genDesc xml:id="g84d77716-3a40-4ca3-b3bd-8595150192bc"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="33"
+                  corresp="#xac8888c6-90dc-4e7b-b704-c2f1be8c333d"/>
+         <genDesc xml:id="g6e94bde0-22f3-4005-8c0c-7bb469f2707a"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="34"
+                  corresp="#x58a60b82-2e9e-4adf-9415-6ca3063a1f29"/>
+         <genDesc xml:id="gabbee0a2-a141-473d-977c-b18fcfa97522"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="35"
+                  corresp="#xaa2712a5-69c9-4a96-bc6c-84f326b61b4e"/>
+         <genDesc xml:id="g25faae4d-4d8f-466d-bda7-f9c765e43ec6"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="36"
+                  corresp="#x8ca2a944-2b00-4184-af2b-58e2bd33e205"/>
+         <genDesc xml:id="g1e97409c-03d4-402a-a16d-0c5e583267a4"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="37"
+                  corresp="#xa5c51527-c2ed-4565-91db-c6723d3a5d25"/>
+         <genDesc xml:id="g85a2a84a-ae6d-4a6c-b49d-749d0c7d946e"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="38"
+                  corresp="#x2433eb34-9ae9-44be-a41a-ff81446a672a"/>
+         <genDesc xml:id="g0b24d794-158e-4d0d-8b3b-0c7abc1018be"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="39"
+                  corresp="#xb2d5df6e-f52a-4021-b5b3-656d1e915c1f"/>
+         <genDesc xml:id="gcca756f1-657e-469a-9da1-865bcccb37e3"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="40"
+                  corresp="#x9d3af3e9-b9bb-4392-b1e2-1978c50e0e44"/>
+         <genDesc xml:id="g63bda6fe-fbf2-4dd9-ad69-fc0ed577848e"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="41"
+                  corresp="#xbafcb5f6-d42e-4eed-b8c5-d4a93069400f"/>
+         <genDesc xml:id="g12e51985-9871-45f0-baca-316242d7f480"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="42"
+                  corresp="#x8a2db5b1-e555-424c-ab52-15c588abd75a"/>
+      </genDesc>
    </music>
 </mei>
