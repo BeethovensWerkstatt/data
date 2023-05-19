@@ -117,7 +117,29 @@
         
         
         <!--  -->
+        <xsl:template match="mei:note[@artic]">
+            <xsl:copy>
+                <xsl:apply-templates select="@* except @artic"/>
+                <artic xmlns="http://www.music-encoding.org/ns/mei" artic="{@artic}"/>
+                <xsl:apply-templates select="node()"/>
+            </xsl:copy>
+        </xsl:template>
         
+        <xsl:template match="mei:octave[@startid and @endid]">
+            <xsl:copy>
+                <xsl:if test="@startid and @endid">
+                    <xsl:apply-templates select="@* except (@tstamp, @tstamp2)"/>
+                </xsl:if>
+            </xsl:copy>
+        </xsl:template>
+        
+        <xsl:template match="mei:tupletSpan[not(@endid)]"/>
+        <xsl:template match="mei:line">
+            <xsl:copy>
+                <xsl:attribute name="type" select="'unchecked'"/>
+                <xsl:apply-templates select="node() | @*"/>
+            </xsl:copy>
+        </xsl:template>
         
         
         <xsl:template match="//mei:instrDef"/>
@@ -166,26 +188,10 @@
         <xsl:template match="mei:*/@music.name"/>
         <xsl:template match="mei:annot[@type='duration']"/>
     
-        <xsl:template match="mei:*[@artic]">
-            <xsl:copy>
-                <xsl:apply-templates select="@* except @artic"/>
-                <artic xmlns="http://www.music-encoding.org/ns/mei" artic="{@artic}"/>
-                <xsl:apply-templates select="node()"/>
-            </xsl:copy>
-        </xsl:template>
+       
         
-        <xsl:template match="@tstamp[parent::mei:*/@startid]"/>
-        <xsl:template match="@tstamp2[parent::mei:*/@endid]"/>
+     
         
-        <!--<xd:doc>
-            <xd:desc>delete startid-attribute if tstamp-attribute exists</xd:desc>
-        </xd:doc>
-        <xsl:template match="mei:dynam">
-            <xsl:for-each select="./@tstamp">
-                <xsl:apply-templates select="@* except @startid"/>
-                <xsl:apply-templates select="node()"/>
-            </xsl:for-each>
-        </xsl:template>-->
         
         
         <!-- copy templates -->

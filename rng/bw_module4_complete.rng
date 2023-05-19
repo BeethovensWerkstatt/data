@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2023-05-08T11:23:20Z. .
+Schema generated from ODD source 2023-05-16T21:25:16Z. .
 TEI Edition: Version 4.0.0
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -30357,6 +30357,47 @@ Suggested values include: 1] smufl</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="mei_genDesc">
+      <element name="genDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(genetic description) - Bundles information about the textual development of a work.</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <ref name="mei_genDesc"/>
+               <ref name="mei_genState"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.metadataPointing.attributes"/>
+         <optional>
+            <attribute name="ordered">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">When set to "true" the child elements are known to be in chronological order. When set to "false" or when not provided, the order of child elements is unknown.</a:documentation>
+               <ref name="mei_data.BOOLEAN"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="mei_genState">
+      <element name="genState">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Describes a distinctive state in the textual development of a work.</a:documentation>
+         <zeroOrMore>
+            <ref name="mei_desc"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="mei_respStmt"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="mei_model.dateLike"/>
+         </optional>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.bibl.attributes"/>
+         <ref name="mei_att.datable.attributes"/>
+         <ref name="mei_att.dataPointing.attributes"/>
+         <ref name="mei_att.metadataPointing.attributes"/>
+         <ref name="mei_att.pointing.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="mei_att.accid.ges.attributes">
       <ref name="mei_att.accidental.ges.attributes"/>
    </define>
@@ -36390,6 +36431,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_model.resourceLike">
       <choice>
          <ref name="mei_facsimile"/>
+         <ref name="mei_genDesc"/>
       </choice>
    </define>
    <define name="mei_model.respLike">

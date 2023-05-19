@@ -47,6 +47,14 @@
                <category xml:id="bw_monitum_konkordanz"/>
                <category xml:id="bw_transcription_type"/>
                <category xml:id="bw_module"/>
+               <category xml:id="bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy>
+               <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrderfinalState" class="#bw_geneticOrder"/>
             </taxonomy>
             <taxonomy>
                <category xml:id="music.print" class="#document_type"/>
@@ -173,18 +181,24 @@
          <manifestation label="…" class="#music.manuscript">
             <physDesc>
                <foliaDesc>
-                  <unknownFoliation xml:id="u31b21b41-233a-4801-8c8e-0d6ae9639e45"
-                                    recto="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"
-                                    verso="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"/>
-                  <unknownFoliation xml:id="u36e54a59-0d74-41be-a98f-b26f4ad68b2f"
-                                    recto="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"
-                                    verso="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"/>
-                  <unknownFoliation xml:id="ue078d07f-4a87-4ff5-ae08-e65f56db9c4d"
-                                    recto="#s549e45a1-051e-465c-b973-048f5d3f65cf"
-                                    verso="#s49809936-9ab7-4f47-9fb6-d98c03f75703"/>
-                  <unknownFoliation xml:id="u06ccf7df-7817-405f-8fdd-aac25304e5b3"
-                                    recto="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"
-                                    verso="#s7437e117-4a2a-4e99-a09a-49e435ac2486"/>
+                  <bifolium xml:id="u31b21b41-233a-4801-8c8e-0d6ae9639e45"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"
+                            inner.verso="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"
+                            inner.recto="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"
+                            outer.verso="#s7437e117-4a2a-4e99-a09a-49e435ac2486">
+                     <bifolium xml:id="u36e54a59-0d74-41be-a98f-b26f4ad68b2f"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"
+                               inner.verso="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"
+                               inner.recto="#s549e45a1-051e-465c-b973-048f5d3f65cf"
+                               outer.verso="#s49809936-9ab7-4f47-9fb6-d98c03f75703">
+                     </bifolium>
+                  </bifolium>
                </foliaDesc>
             </physDesc>
             <physLoc>
@@ -196,6 +210,15 @@
          </manifestation>
       </manifestationList>
       <revisionDesc>
+         <change n="2">
+            <respStmt>
+               <persName auth.uri="https://github.com/aseipelt">Agnes Seipelt</persName>
+            </respStmt>
+            <changeDesc>
+               <p>Set up foliaDesc</p>
+            </changeDesc>
+            <date isodate="2023-05-11"/>
+         </change>
          <change n="1">
             <respStmt>
                <persName auth.uri="https://github.com/kepper">Johannes Kepper</persName>
@@ -323,6 +346,49 @@
                      height="2980"/>
          </surface>
       </facsimile>
-      
+      <genDesc xml:id="gd0f7ce93-a0ea-4a4b-8edb-43d27daad71d"
+               class="#geneticOrder_documentLevel"
+               ordered="false">
+         <genDesc xml:id="g09a48164-60d0-4dad-a389-e0cbcc322e7e"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="1"
+                  corresp="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"/>
+         <genDesc xml:id="g8eea5ce3-740a-4c42-8a8c-7fe00b40eb33"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="2"
+                  corresp="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"/>
+         <genDesc xml:id="g58900d57-367c-4ba8-bf87-7c1edf867f51"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="3"
+                  corresp="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"/>
+         <genDesc xml:id="g47f01a12-a2ff-4a19-961e-5ff4a0b4c889"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="4"
+                  corresp="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"/>
+         <genDesc xml:id="g5bd2c463-9018-46df-a16b-eb8235b20bc0"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="5"
+                  corresp="#s549e45a1-051e-465c-b973-048f5d3f65cf"/>
+         <genDesc xml:id="g0b17a868-f935-4197-8def-5024c22aa73b"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="6"
+                  corresp="#s49809936-9ab7-4f47-9fb6-d98c03f75703"/>
+         <genDesc xml:id="g8ea58f0e-8ef5-4509-8b0d-45b9a04e931c"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="7"
+                  corresp="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"/>
+         <genDesc xml:id="gffd6745d-7fd8-435b-a821-90ebc0c602d5"
+                  class="#geneticOrder_pageLevel"
+                  ordered="false"
+                  n="8"
+                  corresp="#s7437e117-4a2a-4e99-a09a-49e435ac2486"/>
+      </genDesc>
    </music>
 </mei>

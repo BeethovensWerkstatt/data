@@ -85,6 +85,7 @@
             <moduleRef key="MEI.figtable" except="fig figDesc table td th tr"/>
             <moduleRef key="MEI.fingering"/>
             <moduleRef key="MEI.frbr"/>
+            <moduleRef key="MEI.genetic"/>
             <moduleRef key="MEI.gestural"/>
             <moduleRef key="MEI.harmony" except="chordDef chordMember chordTable"/>
             <moduleRef key="MEI.header"
@@ -143,7 +144,7 @@
             </moduleRef>
             
             <elementSpec ident="section" module="MEI.shared" mode="change">
-               <constraintSpec ident="section_in_tei" scheme="isoschematron" mode="add">
+               <constraintSpec ident="section_in_tei" scheme="schematron" mode="add">
                   <constraint>
                      <sch:rule context="mei:section[parent::tei:notatedMusic]">
                         <sch:assert role="error" test="child::element()[1][local-name() = 'scoreDef']">An mei:section embedded into TEI needs to have a scoreDef as first child.</sch:assert>                                
@@ -181,7 +182,7 @@
                      <datatype maxOccurs="unbounded" minOccurs="1">
                         <rng:ref name="data.URI" />
                      </datatype>
-                     <constraintSpec ident="check_facsTarget" scheme="isoschematron" mode="replace">
+                     <constraintSpec ident="check_facsTarget" scheme="schematron" mode="replace">
                         <constraint>
                            <sch:rule context="@facs">
                               <sch:assert role="warning" test="not(normalize-space(.) eq '')">@facs attribute should have content.</sch:assert>
