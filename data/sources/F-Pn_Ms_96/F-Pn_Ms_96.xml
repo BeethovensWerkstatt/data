@@ -1,394 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<mei xmlns="http://www.music-encoding.org/ns/mei"
-     xmlns:svg="http://www.w3.org/2000/svg"
-     meiversion="5.0.0-dev"
-     xml:id="mf6b4f247-5c7d-45ae-bdfb-486317c395d6">
-   <meiHead meiversion="5.0.0-dev">
-      <fileDesc>
-         <titleStmt>
-            <title>BnF, département Musique, MS-96</title>
-            <composer>
-               <persName/>
-            </composer>
-            <editor>
-               <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens
-            Werkstatt</corpName>
-            </editor>
-            <funder>
-               <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der Wissenschaften und
-            der Literatur Mainz</corpName>
-            </funder>
-         </titleStmt>
-         <pubStmt/>
-         <seriesStmt>
-            <title xml:lang="de" level="s">Skizzenbuchedition</title>
-            <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">sk</identifier>
-         </seriesStmt>
-         <sourceDesc>
-            <source target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/manifest.json"
-                    class="http://iiif.io/api/presentation/2#Manifest"/>
-         </sourceDesc>
-      </fileDesc>
-      <encodingDesc class="#bw_diplomatic_transcript #bw_document_file #bw_module4">
-         <classDecls>
-            <taxonomy label="availableTaxonomies">
-               <category xml:id="document_type"/>
-               <category xml:id="bw_observation_type"/>
-               <category xml:id="bw_implementation_completeness"/>
-               <!--<category xml:id="bw_monitum_category"/>-->
-               <category xml:id="bw_file_type"/>
-               <category xml:id="bw_monitum_comment"/>
-               <category xml:id="bw_monitum_classification"/>
-               <category xml:id="bw_monitum_textoperation"/>
-               <category xml:id="bw_monitum_object"/>
-               <category xml:id="bw_monitum_kontext"/>
-               <category xml:id="bw_monitum_konkordanz"/>
-               <category xml:id="bw_transcription_type"/>
-               <category xml:id="bw_module"/>
-               <category xml:id="bw_geneticOrder"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
-               <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
-               <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
-               <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
-               <category xml:id="geneticOrderfinalState" class="#bw_geneticOrder"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="music.print" class="#document_type"/>
-               <category xml:id="music.manuscript" class="#document_type"/>
-               <category xml:id="letter.manuscript" class="#document_type"/>
-               <category xml:id="music.sketchbook" class="#document_type"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_monitum" class="#bw_observation_type"/>
-               <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
-               <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
-               <category xml:id="bw_partially_implemented"
-                         class="#bw_implementation_completeness"/>
-               <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- Klassifizierung -->
-               <category xml:id="bw_classification_korrektur"
-                         label="Korrektur"
-                         class="#bw_monitum_classification"/>
-               <category xml:id="bw_classification_variante"
-                         label="Variante"
-                         class="#bw_monitum_classification"/>
-               <category xml:id="bw_classification_textpraezisierung"
-                         label="Textpräzisierung"
-                         class="#bw_monitum_classification"/>
-               <category xml:id="bw_classification_schriftbildliche_verbesserung"
-                         label="Schriftbildliche Verbesserung"
-                         class="#bw_monitum_classification"/>
-               <category xml:id="bw_classification_paratextliche_eingriffe"
-                         label="Paratextliche Eingriffe"
-                         class="#bw_monitum_classification"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- Textoperation -->
-               <category xml:id="bw_textoperation_einfuegung"
-                         label="Einfuegung"
-                         class="#bw_monitum_textoperation"/>
-               <!--oder erweiterung-->
-               <category xml:id="bw_textoperation_tilgung"
-                         label="Tilgung"
-                         class="#bw_monitum_textoperation"/>
-               <category xml:id="bw_textoperation_ersetzung"
-                         label="Ersetzung"
-                         class="#bw_monitum_textoperation"/>
-               <category xml:id="bw_textoperation_umstellung"
-                         label="Umstellung"
-                         class="#bw_monitum_textoperation"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- Revisionsobjekt -->
-               <category xml:id="bw_object_dynamic"
-                         label="Dynamik"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_pitch"
-                         label="Tonbuchstabe"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_bogensetzung"
-                         label="Bogensetzung"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_rhythm"
-                         label="Rhythmus"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_ornament"
-                         label="Verzierung"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_octave"
-                         label="Oktavierung"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
-               <category xml:id="bw_object_articulation"
-                         label="Artikulation"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_clef"
-                         label="Notenschlüssel"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_arpeggio"
-                         label="Arpeggiozeichen"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
-               <category xml:id="bw_object_fingering"
-                         label="Fingersatz"
-                         class="#bw_monitum_object"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- kontextzitat -->
-               <category xml:id="bw_kontext_korrekt"
-                         label="korrekt"
-                         class="#bw_monitum_kontext"/>
-               <category xml:id="bw_kontext_unvollstaendig"
-                         label="unvollständig"
-                         class="#bw_monitum_kontext"/>
-               <category xml:id="bw_kontext_korrumpiert"
-                         label="korrumpiert"
-                         class="#bw_monitum_kontext"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- konkordanz -->
-               <category xml:id="bw_konkordanz"
-                         label="konkordanz"
-                         class="#bw_monitum_konkordanz"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
-               <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
-               <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
-               <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
-               <category xml:id="bw_document_file" class="#bw_file_type"/>
-               <category xml:id="bw_work_file" class="#bw_file_type"/>
-               <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_module4" class="#bw_module"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
-            </taxonomy>
-         </classDecls>
-      </encodingDesc>
-      <manifestationList>
-         <manifestation label="…" class="#music.manuscript">
-            <physDesc>
-               <foliaDesc>
-                  <bifolium xml:id="u31b21b41-233a-4801-8c8e-0d6ae9639e45"
-                            width="305"
-                            height="232"
-                            unit="mm"
-                            outer.recto="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"
-                            inner.verso="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"
-                            inner.recto="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"
-                            outer.verso="#s7437e117-4a2a-4e99-a09a-49e435ac2486">
-                     <bifolium xml:id="u36e54a59-0d74-41be-a98f-b26f4ad68b2f"
-                               width="305"
-                               height="232"
-                               unit="mm"
-                               outer.recto="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"
-                               inner.verso="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"
-                               inner.recto="#s549e45a1-051e-465c-b973-048f5d3f65cf"
-                               outer.verso="#s49809936-9ab7-4f47-9fb6-d98c03f75703">
-                     </bifolium>
-                  </bifolium>
-               </foliaDesc>
-            </physDesc>
-            <physLoc>
-               <repository>
-                  <identifier auth.uri="http://www.rism.info/" auth="RISM">…</identifier>
-               </repository>
-               <identifier/>
-            </physLoc>
-         </manifestation>
-      </manifestationList>
-      <revisionDesc>
-         <change n="2">
-            <respStmt>
-               <persName auth.uri="https://github.com/aseipelt">Agnes Seipelt</persName>
-            </respStmt>
-            <changeDesc>
-               <p>Set up foliaDesc</p>
-            </changeDesc>
-            <date isodate="2023-05-11"/>
-         </change>
-         <change n="1">
-            <respStmt>
-               <persName auth.uri="https://github.com/kepper">Johannes Kepper</persName>
-               <persName auth.uri="https://github.com/jpvoigt">Jan-Peter Voigt</persName>
-            </respStmt>
-            <changeDesc>
-               <p>File initially generated from IIIF Manifest available at …</p>
-            </changeDesc>
-            <date isodate="2023-02-08"/>
-         </change>
-      </revisionDesc>
-   </meiHead>
-   <music meiversion="5.0.0-dev">
-      <facsimile>
-         <surface xml:id="s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"
-                  n="1"
-                  ulx="0"
-                  uly="0"
-                  lrx="3673"
-                  lry="2948"
-                  label="1"
-                  rotate="0">
-            <graphic xml:id="g6209055d-beb7-4f8e-be44-416d2c8f6076"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f1/info.json"
-                     type="facsimile"
-                     width="3673"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="s14ea2bc2-5406-4618-9754-0091b0c1a13f"
-                  n="2"
-                  ulx="0"
-                  uly="0"
-                  lrx="3673"
-                  lry="2948"
-                  label="2"
-                  rotate="0">
-            <graphic xml:id="g18385051-3dbd-42f6-9747-d60500c59df9"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f2/info.json"
-                     type="facsimile"
-                     width="3673"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="sd4d26df4-8997-4f6c-a26f-069241baa8bb"
-                  n="3"
-                  ulx="0"
-                  uly="0"
-                  lrx="3673"
-                  lry="2948"
-                  label="3"
-                  rotate="0">
-            <graphic xml:id="g230d8912-5bfb-482f-b8d1-82b36dd078c1"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f3/info.json"
-                     type="facsimile"
-                     width="3673"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="s17f3fa15-d4a7-4167-b2dc-87530bc0922f"
-                  n="4"
-                  ulx="0"
-                  uly="0"
-                  lrx="3673"
-                  lry="2948"
-                  label="4"
-                  rotate="0">
-            <graphic xml:id="gbfa260db-a749-4188-929a-319ea6241cf2"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f4/info.json"
-                     type="facsimile"
-                     width="3673"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="s549e45a1-051e-465c-b973-048f5d3f65cf"
-                  n="5"
-                  ulx="0"
-                  uly="0"
-                  lrx="3710"
-                  lry="2965"
-                  label="5"
-                  rotate="0">
-            <graphic xml:id="g247bcddc-ffc1-4b63-a241-f5a7242b61f6"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f5/info.json"
-                     type="facsimile"
-                     width="3710"
-                     height="2965"/>
-         </surface>
-         <surface xml:id="s49809936-9ab7-4f47-9fb6-d98c03f75703"
-                  n="6"
-                  ulx="0"
-                  uly="0"
-                  lrx="3758"
-                  lry="2948"
-                  label="6"
-                  rotate="0">
-            <graphic xml:id="gdde594e1-4e48-4c59-a98a-5641bc938f3f"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f6/info.json"
-                     type="facsimile"
-                     width="3758"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"
-                  n="7"
-                  ulx="0"
-                  uly="0"
-                  lrx="3845"
-                  lry="3007"
-                  label="7"
-                  rotate="0">
-            <graphic xml:id="g1715afa9-ca36-4890-99f3-f5a8e8205d6a"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f7/info.json"
-                     type="facsimile"
-                     width="3845"
-                     height="3007"/>
-         </surface>
-         <surface xml:id="s7437e117-4a2a-4e99-a09a-49e435ac2486"
-                  n="8"
-                  ulx="0"
-                  uly="0"
-                  lrx="3713"
-                  lry="2980"
-                  label="8"
-                  rotate="0">
-            <graphic xml:id="g9a309e76-571f-4df2-81de-8de9a2d70380"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f8/info.json"
-                     type="facsimile"
-                     width="3713"
-                     height="2980"/>
-         </surface>
-      </facsimile>
-      <genDesc xml:id="gd0f7ce93-a0ea-4a4b-8edb-43d27daad71d"
-               class="#geneticOrder_documentLevel"
-               ordered="false">
-         <genDesc xml:id="g09a48164-60d0-4dad-a389-e0cbcc322e7e"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="1"
-                  corresp="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"/>
-         <genDesc xml:id="g8eea5ce3-740a-4c42-8a8c-7fe00b40eb33"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="2"
-                  corresp="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"/>
-         <genDesc xml:id="g58900d57-367c-4ba8-bf87-7c1edf867f51"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="3"
-                  corresp="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"/>
-         <genDesc xml:id="g47f01a12-a2ff-4a19-961e-5ff4a0b4c889"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="4"
-                  corresp="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"/>
-         <genDesc xml:id="g5bd2c463-9018-46df-a16b-eb8235b20bc0"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="5"
-                  corresp="#s549e45a1-051e-465c-b973-048f5d3f65cf"/>
-         <genDesc xml:id="g0b17a868-f935-4197-8def-5024c22aa73b"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="6"
-                  corresp="#s49809936-9ab7-4f47-9fb6-d98c03f75703"/>
-         <genDesc xml:id="g8ea58f0e-8ef5-4509-8b0d-45b9a04e931c"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="7"
-                  corresp="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"/>
-         <genDesc xml:id="gffd6745d-7fd8-435b-a821-90ebc0c602d5"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="8"
-                  corresp="#s7437e117-4a2a-4e99-a09a-49e435ac2486"/>
-      </genDesc>
-   </music>
+<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg" meiversion="5.0.0-dev" xml:id="mf6b4f247-5c7d-45ae-bdfb-486317c395d6">
+    <meiHead meiversion="5.0.0-dev">
+        <fileDesc>
+            <titleStmt>
+                <title>
+                    BnF, département Musique, MS-96
+                </title>
+                <composer>
+                    <persName/>
+                </composer>
+                <editor>
+                    <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">
+                        Beethovens
+            Werkstatt
+                    </corpName>
+                </editor>
+                <funder>
+                    <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">
+                        Akademie der Wissenschaften und
+            der Literatur Mainz
+                    </corpName>
+                </funder>
+            </titleStmt>
+            <pubStmt/>
+            <seriesStmt>
+                <title xml:lang="de" level="s">
+                    Skizzenbuchedition
+                </title>
+                <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">
+                    sk
+                </identifier>
+            </seriesStmt>
+            <sourceDesc>
+                <source target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/manifest.json" class="http://iiif.io/api/presentation/2#Manifest"/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc class="#bw_diplomatic_transcript #bw_document_file #bw_module4">
+            <classDecls>
+                <taxonomy label="availableTaxonomies">
+                    <category xml:id="document_type"/>
+                    <category xml:id="bw_observation_type"/>
+                    <category xml:id="bw_implementation_completeness"/>
+                    <!--<category xml:id="bw_monitum_category"/>-->
+                    <category xml:id="bw_file_type"/>
+                    <category xml:id="bw_monitum_comment"/>
+                    <category xml:id="bw_monitum_classification"/>
+                    <category xml:id="bw_monitum_textoperation"/>
+                    <category xml:id="bw_monitum_object"/>
+                    <category xml:id="bw_monitum_kontext"/>
+                    <category xml:id="bw_monitum_konkordanz"/>
+                    <category xml:id="bw_transcription_type"/>
+                    <category xml:id="bw_module"/>
+                    <category xml:id="bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrderfinalState" class="#bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="music.print" class="#document_type"/>
+                    <category xml:id="music.manuscript" class="#document_type"/>
+                    <category xml:id="letter.manuscript" class="#document_type"/>
+                    <category xml:id="music.sketchbook" class="#document_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_monitum" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- Klassifizierung -->
+                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- Textoperation -->
+                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
+                    <!--oder erweiterung-->
+                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- Revisionsobjekt -->
+                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- kontextzitat -->
+                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- konkordanz -->
+                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+                    <category xml:id="bw_document_file" class="#bw_file_type"/>
+                    <category xml:id="bw_work_file" class="#bw_file_type"/>
+                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_module4" class="#bw_module"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
+        <manifestationList>
+            <manifestation label="…" class="#music.manuscript">
+                <physDesc>
+                    <foliaDesc>
+                        <bifolium xml:id="u31b21b41-233a-4801-8c8e-0d6ae9639e45" width="305" height="232" unit="mm" outer.recto="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c" inner.verso="#s14ea2bc2-5406-4618-9754-0091b0c1a13f" inner.recto="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26" outer.verso="#s7437e117-4a2a-4e99-a09a-49e435ac2486">
+                            <bifolium xml:id="u36e54a59-0d74-41be-a98f-b26f4ad68b2f" width="305" height="232" unit="mm" outer.recto="#sd4d26df4-8997-4f6c-a26f-069241baa8bb" inner.verso="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f" inner.recto="#s549e45a1-051e-465c-b973-048f5d3f65cf" outer.verso="#s49809936-9ab7-4f47-9fb6-d98c03f75703">
+                            </bifolium>
+                        </bifolium>
+                    </foliaDesc>
+                </physDesc>
+                <physLoc>
+                    <repository>
+                        <identifier auth.uri="http://www.rism.info/" auth="RISM">
+                            …
+                        </identifier>
+                    </repository>
+                    <identifier/>
+                </physLoc>
+            </manifestation>
+        </manifestationList>
+        <revisionDesc>
+            <change n="2">
+                <respStmt>
+                    <persName auth.uri="https://github.com/aseipelt">
+                        Agnes Seipelt
+                    </persName>
+                </respStmt>
+                <changeDesc>
+                    <p>
+                        Set up foliaDesc
+                    </p>
+                </changeDesc>
+                <date isodate="2023-05-11"/>
+            </change>
+            <change n="1">
+                <respStmt>
+                    <persName auth.uri="https://github.com/kepper">
+                        Johannes Kepper
+                    </persName>
+                    <persName auth.uri="https://github.com/jpvoigt">
+                        Jan-Peter Voigt
+                    </persName>
+                </respStmt>
+                <changeDesc>
+                    <p>
+                        File initially generated from IIIF Manifest available at …
+                    </p>
+                </changeDesc>
+                <date isodate="2023-02-08"/>
+            </change>
+        </revisionDesc>
+    </meiHead>
+    <music meiversion="5.0.0-dev">
+        <facsimile>
+            <surface xml:id="s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c" n="1" ulx="0" uly="0" lrx="3673" lry="2948" label="1" rotate="0">
+                <graphic xml:id="g6209055d-beb7-4f8e-be44-416d2c8f6076" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f1/info.json" type="facsimile" width="3673" height="2948"/>
+                <graphic xml:id="g1e1256ec-9c9c-4c9c-9d64-afdc18086477" type="shapes" target="./svg/F-Pn_Ms_96_p001.svg"/>
+            </surface>
+            <surface xml:id="s14ea2bc2-5406-4618-9754-0091b0c1a13f" n="2" ulx="0" uly="0" lrx="3673" lry="2948" label="2" rotate="0">
+                <graphic xml:id="g18385051-3dbd-42f6-9747-d60500c59df9" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f2/info.json" type="facsimile" width="3673" height="2948"/>
+                <graphic xml:id="gdef2caa4-cdf6-43e5-afb8-21cd8d3c5005" type="shapes" target="./svg/F-Pn_Ms_96_p002.svg"/>
+            </surface>
+            <surface xml:id="sd4d26df4-8997-4f6c-a26f-069241baa8bb" n="3" ulx="0" uly="0" lrx="3673" lry="2948" label="3" rotate="0">
+                <graphic xml:id="g230d8912-5bfb-482f-b8d1-82b36dd078c1" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f3/info.json" type="facsimile" width="3673" height="2948"/>
+                <graphic xml:id="g30e77d66-6bec-4c19-9281-458b5303a308" type="shapes" target="./svg/F-Pn_Ms_96_p003.svg"/>
+            </surface>
+            <surface xml:id="s17f3fa15-d4a7-4167-b2dc-87530bc0922f" n="4" ulx="0" uly="0" lrx="3673" lry="2948" label="4" rotate="0">
+                <graphic xml:id="gbfa260db-a749-4188-929a-319ea6241cf2" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f4/info.json" type="facsimile" width="3673" height="2948"/>
+            </surface>
+            <surface xml:id="s549e45a1-051e-465c-b973-048f5d3f65cf" n="5" ulx="0" uly="0" lrx="3710" lry="2965" label="5" rotate="0">
+                <graphic xml:id="g247bcddc-ffc1-4b63-a241-f5a7242b61f6" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f5/info.json" type="facsimile" width="3710" height="2965"/>
+                <graphic xml:id="g706f60d3-2f23-4e9f-9894-d3cdd01c6827" type="shapes" target="./svg/F-Pn_Ms_96_p005.svg"/>
+            </surface>
+            <surface xml:id="s49809936-9ab7-4f47-9fb6-d98c03f75703" n="6" ulx="0" uly="0" lrx="3758" lry="2948" label="6" rotate="0">
+                <graphic xml:id="gdde594e1-4e48-4c59-a98a-5641bc938f3f" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f6/info.json" type="facsimile" width="3758" height="2948"/>
+            </surface>
+            <surface xml:id="sa5355af8-fdd8-4f62-adb7-dfe777cf5b26" n="7" ulx="0" uly="0" lrx="3845" lry="3007" label="7" rotate="0">
+                <graphic xml:id="g1715afa9-ca36-4890-99f3-f5a8e8205d6a" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f7/info.json" type="facsimile" width="3845" height="3007"/>
+            </surface>
+            <surface xml:id="s7437e117-4a2a-4e99-a09a-49e435ac2486" n="8" ulx="0" uly="0" lrx="3713" lry="2980" label="8" rotate="0">
+                <graphic xml:id="g9a309e76-571f-4df2-81de-8de9a2d70380" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f8/info.json" type="facsimile" width="3713" height="2980"/>
+                <graphic xml:id="g1a2ef079-27f5-4fa7-a2b8-773792b423c7" type="shapes" target="./svg/F-Pn_Ms_96_p008.svg"/>
+            </surface>
+        </facsimile>
+        <genDesc xml:id="gd0f7ce93-a0ea-4a4b-8edb-43d27daad71d" class="#geneticOrder_documentLevel" ordered="false">
+            <genDesc xml:id="g09a48164-60d0-4dad-a389-e0cbcc322e7e" class="#geneticOrder_pageLevel" ordered="false" n="1" corresp="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"/>
+            <genDesc xml:id="g8eea5ce3-740a-4c42-8a8c-7fe00b40eb33" class="#geneticOrder_pageLevel" ordered="false" n="2" corresp="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"/>
+            <genDesc xml:id="g58900d57-367c-4ba8-bf87-7c1edf867f51" class="#geneticOrder_pageLevel" ordered="false" n="3" corresp="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"/>
+            <genDesc xml:id="g47f01a12-a2ff-4a19-961e-5ff4a0b4c889" class="#geneticOrder_pageLevel" ordered="false" n="4" corresp="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"/>
+            <genDesc xml:id="g5bd2c463-9018-46df-a16b-eb8235b20bc0" class="#geneticOrder_pageLevel" ordered="false" n="5" corresp="#s549e45a1-051e-465c-b973-048f5d3f65cf"/>
+            <genDesc xml:id="g0b17a868-f935-4197-8def-5024c22aa73b" class="#geneticOrder_pageLevel" ordered="false" n="6" corresp="#s49809936-9ab7-4f47-9fb6-d98c03f75703"/>
+            <genDesc xml:id="g8ea58f0e-8ef5-4509-8b0d-45b9a04e931c" class="#geneticOrder_pageLevel" ordered="false" n="7" corresp="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"/>
+            <genDesc xml:id="gffd6745d-7fd8-435b-a821-90ebc0c602d5" class="#geneticOrder_pageLevel" ordered="false" n="8" corresp="#s7437e117-4a2a-4e99-a09a-49e435ac2486"/>
+        </genDesc>
+    </music>
 </mei>
