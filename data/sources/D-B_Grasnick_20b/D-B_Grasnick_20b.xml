@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg" meiversion="5.0.0-dev" xml:id="m653b38db-5d3d-4508-ab30-d61b12f13eac">
@@ -46,7 +45,8 @@
                     <category xml:id="document_type"/>
                     <category xml:id="bw_observation_type"/>
                     <category xml:id="bw_implementation_completeness"/>
-                    <!--<category xml:id="bw_monitum_category"/>-->
+                    <!--<category xml:id="bw_monitum_category"/>
+                    -->
                     <category xml:id="bw_file_type"/>
                     <category xml:id="bw_monitum_comment"/>
                     <category xml:id="bw_monitum_classification"/>
@@ -338,6 +338,8 @@
             <surface xml:id="s386d6927-260e-4a44-ba8a-f664c34f6300" n="44" ulx="0" uly="0" lrx="3475" lry="2850" label="20v [44]" rotate="0">
                 <graphic xml:id="g63a85f42-5fe4-4e4b-a205-2567ac559236" target="https://content.staatsbibliothek-berlin.de/dc/766169545-0044" type="facsimile" width="3475" height="2850"/>
                 <graphic xml:id="gd77844be-77ed-44ca-892a-49485888001c" type="shapes" target="./svg/D-B_Grasnick_20b_p044.svg"/>
+                <zone xml:id="z2d55c84a-39c8-436c-8ce2-571f05281fe0" data="#g552e920f-9fe9-42fd-9aa6-c85ce3205906" ulx="523" uly="106" lrx="3232" lry="598"/>
+                <zone xml:id="z90969dec-0f39-44a5-9f33-14c8716ffc33" data="#g3dbb7203-ce65-4951-a1aa-85012e79bc97" ulx="2100" uly="660" lrx="2227" lry="831"/>
             </surface>
             <surface xml:id="s7d2d2e9b-31af-4284-963b-d428681975ef" n="45" ulx="0" uly="0" lrx="3903" lry="2906" label="21r [45]" rotate="0">
                 <graphic xml:id="g95d1bc92-a346-4781-a0de-19389d3d7259" target="https://content.staatsbibliothek-berlin.de/dc/766169545-0045" type="facsimile" width="3903" height="2906"/>
@@ -414,7 +416,14 @@
             <genDesc xml:id="geef5085e-4a25-41e4-a95c-1597567ebdaa" class="#geneticOrder_pageLevel" ordered="false" n="41" corresp="#s0c286ed8-3533-40fd-ad27-96379d209d1b"/>
             <genDesc xml:id="g20131085-b9df-4964-a565-cb53057f0adc" class="#geneticOrder_pageLevel" ordered="false" n="42" corresp="#sb6fe22c0-08f9-4d53-a093-056b4e6dbeda"/>
             <genDesc xml:id="g0b9feafa-e497-405c-bb3e-dba8bd9c2609" class="#geneticOrder_pageLevel" ordered="false" n="43" corresp="#s611b7677-bc67-44cb-83ce-687a74cbbe49"/>
-            <genDesc xml:id="g502417af-04b1-4440-899c-5e867cd2f07f" class="#geneticOrder_pageLevel" ordered="false" n="44" corresp="#s386d6927-260e-4a44-ba8a-f664c34f6300"/>
+            <genDesc xml:id="g502417af-04b1-4440-899c-5e867cd2f07f" class="#geneticOrder_pageLevel" ordered="false" n="44" corresp="#s386d6927-260e-4a44-ba8a-f664c34f6300">
+                <genDesc xml:id="g552e920f-9fe9-42fd-9aa6-c85ce3205906" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-B_Grasnick_20b_p044.svg#z7d5f75dc-25d0-4fa4-8e5b-4a785561290a" label="1">
+                    <genState xml:id="g72847e64-2c9b-49f7-b2b2-0aa17c13bdaa" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-B_Grasnick_20b_p044.svg#l92fc43ef-fe65-44d8-88f0-4a2ef1162a9c" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g3dbb7203-ce65-4951-a1aa-85012e79bc97" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-B_Grasnick_20b_p044.svg#z4897fad9-93ec-4787-9dd6-6534309eaa40" label="2">
+                    <genState xml:id="g8db30458-b7f3-4caf-b1b8-71c811f9f69d" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-B_Grasnick_20b_p044.svg#l10c458f5-94b1-44c4-bcaf-bcd38a78987e" label="#final"/>
+                </genDesc>
+            </genDesc>
             <genDesc xml:id="g1e753fcd-e2ac-4978-bc38-54a18534ddf1" class="#geneticOrder_pageLevel" ordered="false" n="45" corresp="#s7d2d2e9b-31af-4284-963b-d428681975ef"/>
             <genDesc xml:id="ged59d041-a239-4171-8572-e80a91a94c35" class="#geneticOrder_pageLevel" ordered="false" n="46" corresp="#s6940b2c9-c1b8-4ce5-919f-fdd4c7264080"/>
             <genDesc xml:id="g2638ef47-1ce1-4159-b42d-ed5cebc4089d" class="#geneticOrder_pageLevel" ordered="false" n="47" corresp="#s32221eb5-9f61-4118-bd66-177d7dc48ec3"/>
