@@ -47,7 +47,8 @@
                     <category xml:id="document_type"/>
                     <category xml:id="bw_observation_type"/>
                     <category xml:id="bw_implementation_completeness"/>
-                    <!--<category xml:id="bw_monitum_category"/>-->
+                    <!--<category xml:id="bw_monitum_category"/>
+                    -->
                     <category xml:id="bw_file_type"/>
                     <category xml:id="bw_monitum_comment"/>
                     <category xml:id="bw_monitum_classification"/>
@@ -201,6 +202,9 @@
             <surface xml:id="xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9" n="2" label="1v" rotate="0">
                 <graphic xml:id="x9f407fc4-e494-40f9-a73d-3edd0e476452" target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69v.jpg#xywh=128,165,7172,5639" type="facsimile" width="7504" height="6000"/>
                 <graphic xml:id="g7b10ec15-c822-4ab1-ae9d-ca62ab0dcb9e" type="shapes" target="./svg/D-BNba_BSk_21-69_p002.svg"/>
+                <zone xml:id="z31a766c5-842e-43cd-b5c6-eae91470fbf6" data="#g83c4c865-ed1c-405b-bcb0-33ac10756605" ulx="1568" uly="252" lrx="5566" lry="1259"/>
+                <zone xml:id="zfec6de1c-730b-4943-b943-8fc70a5e880a" data="#g7303bad9-6386-48e0-b87b-61bf34a96a44" ulx="770" uly="1567" lrx="1991" lry="2575"/>
+                <zone xml:id="z90c4ead0-4e35-43a0-bdad-c1c7dbdf1570" data="#ga59e4ecc-29ee-42ce-bda5-70eee8e72808" ulx="3983" uly="767" lrx="4015" lry="788"/>
             </surface>
         </facsimile>
         <genDesc class="#geneticOrder_documentLevel" ordered="false">
@@ -209,7 +213,18 @@
                     <genState xml:id="ta98a430b-6dee-4666-aca3-6c6525a4c213" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p001.svg#t4f49bf84-a3cf-4148-8670-4c31c24e97a4" label="#final"/>
                 </genDesc>
             </genDesc>
-            <genDesc xml:id="t23520bf1-b33b-4737-94d6-57bc74fbf6fa" class="#geneticOrder_pageLevel" n="1" ordered="false" corresp="#xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9"/>
+            <genDesc xml:id="t23520bf1-b33b-4737-94d6-57bc74fbf6fa" class="#geneticOrder_pageLevel" n="1" ordered="false" corresp="#xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9">
+                <genDesc xml:id="g83c4c865-ed1c-405b-bcb0-33ac10756605" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#zcced6578-034d-49bc-ab2e-f188dee08517" label="1">
+                    <genState xml:id="g285bd6ad-89c4-41e6-8d94-033520afc196" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p002.svg#le94a5306-2c9a-433c-9a4a-cdd2bbea04ca" label="#final"/>
+                    <genState xml:id="g4840254c-8c73-4e6f-8b64-8a5de40812f3" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#lcbb69567-044a-4806-87a5-95d979c575f0" label="1"/>
+                </genDesc>
+                <genDesc xml:id="g7303bad9-6386-48e0-b87b-61bf34a96a44" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#ze105ff96-d1e8-4485-a24c-976b3b75e449" label="2">
+                    <genState xml:id="g70538899-d852-4cb1-992e-8bffc725cbea" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p002.svg#lf2701db9-cd66-43da-8083-918ec060fb57" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="ga59e4ecc-29ee-42ce-bda5-70eee8e72808" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#za7f66fd4-7775-4c89-8811-07dcf1cb4029" label="3">
+                    <genState xml:id="g85b5aee6-2bf8-4cb2-be2f-e2a60b2acb57" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p002.svg#l50832c6d-fa9a-40e8-b653-cfc9b7e2d453" label="#final"/>
+                </genDesc>
+            </genDesc>
         </genDesc>
         <body>
             <mdiv>
@@ -217,19 +232,23 @@
                 <!-- INFO: Annotated Transcripts will be linked from that end -->
                 <drafts>
                     <!-- INFO: The draft (diplomatic transcript) will link to the SVG writing zone with its @corresp attribute -->
-                    <!-- INFO: The draft will link to the corresponding <genDesc> with @state -->
-                    <!-- INFO: use label with same naming system to better identify drafts -->
-                    <draft label="NK_p009_wz03" xml:id="tf3b6eb4f-08ca-4005-a3a9-b34d7b17a2d5" class="#diplomaticTranscript" corresp="./svg/D-BNba_BSk_21-69_p001.svg#t1e2933df-5487-4d94-90a3-bb779e046a57" state="#t6351c080-9a63-4891-b315-4f42e0305be8">
-                        <!-- INFO: Every draft should start with a pagebegin (<pb) with @facs pointing to the surface -->
-                        <pb facs="#x731b0f02-032a-49d6-a417-d16500bea745"/>
-                        <!-- INFO: An additional <sb> with detailed placement info will be added in each <staff> -->
-                        <scoreDef>
-                        </scoreDef>
-                        <section>
-                        </section>
-                    </draft>
-                </drafts>
-            </mdiv>
-        </body>
-    </music>
-</mei>
+                    <!-- INFO: The draft will link to the corresponding <genDesc>
+                        with @state -->
+                        <!-- INFO: use label with same naming system to better identify drafts -->
+                        <draft label="NK_p009_wz03" xml:id="tf3b6eb4f-08ca-4005-a3a9-b34d7b17a2d5" class="#diplomaticTranscript" corresp="./svg/D-BNba_BSk_21-69_p001.svg#t1e2933df-5487-4d94-90a3-bb779e046a57" state="#t6351c080-9a63-4891-b315-4f42e0305be8">
+                            <!-- INFO: Every draft should start with a pagebegin (<pb) with @facs pointing to the surface -->
+                                <pb facs="#x731b0f02-032a-49d6-a417-d16500bea745"/>
+                                <!-- INFO: An additional <sb>
+                                    with detailed placement info will be added in each
+                                    <staff>
+                                        -->
+                                        <scoreDef>
+                                        </scoreDef>
+                                        <section>
+                                        </section>
+                                    </draft>
+                                </drafts>
+                            </mdiv>
+                        </body>
+                    </music>
+                </mei>
