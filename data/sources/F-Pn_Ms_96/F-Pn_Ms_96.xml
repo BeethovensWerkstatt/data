@@ -1,394 +1,389 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<mei xmlns="http://www.music-encoding.org/ns/mei"
-     xmlns:svg="http://www.w3.org/2000/svg"
-     meiversion="5.0.0-dev"
-     xml:id="mf6b4f247-5c7d-45ae-bdfb-486317c395d6">
-   <meiHead meiversion="5.0.0-dev">
-      <fileDesc>
-         <titleStmt>
-            <title>BnF, département Musique, MS-96</title>
-            <composer>
-               <persName/>
-            </composer>
-            <editor>
-               <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">Beethovens
-            Werkstatt</corpName>
-            </editor>
-            <funder>
-               <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der Wissenschaften und
-            der Literatur Mainz</corpName>
-            </funder>
-         </titleStmt>
-         <pubStmt/>
-         <seriesStmt>
-            <title xml:lang="de" level="s">Skizzenbuchedition</title>
-            <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">sk</identifier>
-         </seriesStmt>
-         <sourceDesc>
-            <source target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/manifest.json"
-                    class="http://iiif.io/api/presentation/2#Manifest"/>
-         </sourceDesc>
-      </fileDesc>
-      <encodingDesc class="#bw_diplomatic_transcript #bw_document_file #bw_module4">
-         <classDecls>
-            <taxonomy label="availableTaxonomies">
-               <category xml:id="document_type"/>
-               <category xml:id="bw_observation_type"/>
-               <category xml:id="bw_implementation_completeness"/>
-               <!--<category xml:id="bw_monitum_category"/>-->
-               <category xml:id="bw_file_type"/>
-               <category xml:id="bw_monitum_comment"/>
-               <category xml:id="bw_monitum_classification"/>
-               <category xml:id="bw_monitum_textoperation"/>
-               <category xml:id="bw_monitum_object"/>
-               <category xml:id="bw_monitum_kontext"/>
-               <category xml:id="bw_monitum_konkordanz"/>
-               <category xml:id="bw_transcription_type"/>
-               <category xml:id="bw_module"/>
-               <category xml:id="bw_geneticOrder"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
-               <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
-               <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
-               <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
-               <category xml:id="geneticOrderfinalState" class="#bw_geneticOrder"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="music.print" class="#document_type"/>
-               <category xml:id="music.manuscript" class="#document_type"/>
-               <category xml:id="letter.manuscript" class="#document_type"/>
-               <category xml:id="music.sketchbook" class="#document_type"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_monitum" class="#bw_observation_type"/>
-               <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
-               <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
-               <category xml:id="bw_partially_implemented"
-                         class="#bw_implementation_completeness"/>
-               <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- Klassifizierung -->
-               <category xml:id="bw_classification_korrektur"
-                         label="Korrektur"
-                         class="#bw_monitum_classification"/>
-               <category xml:id="bw_classification_variante"
-                         label="Variante"
-                         class="#bw_monitum_classification"/>
-               <category xml:id="bw_classification_textpraezisierung"
-                         label="Textpräzisierung"
-                         class="#bw_monitum_classification"/>
-               <category xml:id="bw_classification_schriftbildliche_verbesserung"
-                         label="Schriftbildliche Verbesserung"
-                         class="#bw_monitum_classification"/>
-               <category xml:id="bw_classification_paratextliche_eingriffe"
-                         label="Paratextliche Eingriffe"
-                         class="#bw_monitum_classification"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- Textoperation -->
-               <category xml:id="bw_textoperation_einfuegung"
-                         label="Einfuegung"
-                         class="#bw_monitum_textoperation"/>
-               <!--oder erweiterung-->
-               <category xml:id="bw_textoperation_tilgung"
-                         label="Tilgung"
-                         class="#bw_monitum_textoperation"/>
-               <category xml:id="bw_textoperation_ersetzung"
-                         label="Ersetzung"
-                         class="#bw_monitum_textoperation"/>
-               <category xml:id="bw_textoperation_umstellung"
-                         label="Umstellung"
-                         class="#bw_monitum_textoperation"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- Revisionsobjekt -->
-               <category xml:id="bw_object_dynamic"
-                         label="Dynamik"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_pitch"
-                         label="Tonbuchstabe"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_bogensetzung"
-                         label="Bogensetzung"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_rhythm"
-                         label="Rhythmus"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_ornament"
-                         label="Verzierung"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_octave"
-                         label="Oktavierung"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
-               <category xml:id="bw_object_articulation"
-                         label="Artikulation"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_clef"
-                         label="Notenschlüssel"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_arpeggio"
-                         label="Arpeggiozeichen"
-                         class="#bw_monitum_object"/>
-               <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
-               <category xml:id="bw_object_fingering"
-                         label="Fingersatz"
-                         class="#bw_monitum_object"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- kontextzitat -->
-               <category xml:id="bw_kontext_korrekt"
-                         label="korrekt"
-                         class="#bw_monitum_kontext"/>
-               <category xml:id="bw_kontext_unvollstaendig"
-                         label="unvollständig"
-                         class="#bw_monitum_kontext"/>
-               <category xml:id="bw_kontext_korrumpiert"
-                         label="korrumpiert"
-                         class="#bw_monitum_kontext"/>
-            </taxonomy>
-            <taxonomy>
-          <!-- konkordanz -->
-               <category xml:id="bw_konkordanz"
-                         label="konkordanz"
-                         class="#bw_monitum_konkordanz"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
-               <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
-               <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
-               <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
-               <category xml:id="bw_document_file" class="#bw_file_type"/>
-               <category xml:id="bw_work_file" class="#bw_file_type"/>
-               <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_module4" class="#bw_module"/>
-            </taxonomy>
-            <taxonomy>
-               <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
-            </taxonomy>
-         </classDecls>
-      </encodingDesc>
-      <manifestationList>
-         <manifestation label="…" class="#music.manuscript">
-            <physDesc>
-               <foliaDesc>
-                  <bifolium xml:id="u31b21b41-233a-4801-8c8e-0d6ae9639e45"
-                            width="305"
-                            height="232"
-                            unit="mm"
-                            outer.recto="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"
-                            inner.verso="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"
-                            inner.recto="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"
-                            outer.verso="#s7437e117-4a2a-4e99-a09a-49e435ac2486">
-                     <bifolium xml:id="u36e54a59-0d74-41be-a98f-b26f4ad68b2f"
-                               width="305"
-                               height="232"
-                               unit="mm"
-                               outer.recto="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"
-                               inner.verso="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"
-                               inner.recto="#s549e45a1-051e-465c-b973-048f5d3f65cf"
-                               outer.verso="#s49809936-9ab7-4f47-9fb6-d98c03f75703">
-                     </bifolium>
-                  </bifolium>
-               </foliaDesc>
-            </physDesc>
-            <physLoc>
-               <repository>
-                  <identifier auth.uri="http://www.rism.info/" auth="RISM">…</identifier>
-               </repository>
-               <identifier/>
-            </physLoc>
-         </manifestation>
-      </manifestationList>
-      <revisionDesc>
-         <change n="2">
-            <respStmt>
-               <persName auth.uri="https://github.com/aseipelt">Agnes Seipelt</persName>
-            </respStmt>
-            <changeDesc>
-               <p>Set up foliaDesc</p>
-            </changeDesc>
-            <date isodate="2023-05-11"/>
-         </change>
-         <change n="1">
-            <respStmt>
-               <persName auth.uri="https://github.com/kepper">Johannes Kepper</persName>
-               <persName auth.uri="https://github.com/jpvoigt">Jan-Peter Voigt</persName>
-            </respStmt>
-            <changeDesc>
-               <p>File initially generated from IIIF Manifest available at …</p>
-            </changeDesc>
-            <date isodate="2023-02-08"/>
-         </change>
-      </revisionDesc>
-   </meiHead>
-   <music meiversion="5.0.0-dev">
-      <facsimile>
-         <surface xml:id="s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"
-                  n="1"
-                  ulx="0"
-                  uly="0"
-                  lrx="3673"
-                  lry="2948"
-                  label="1"
-                  rotate="0">
-            <graphic xml:id="g6209055d-beb7-4f8e-be44-416d2c8f6076"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f1/info.json"
-                     type="facsimile"
-                     width="3673"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="s14ea2bc2-5406-4618-9754-0091b0c1a13f"
-                  n="2"
-                  ulx="0"
-                  uly="0"
-                  lrx="3673"
-                  lry="2948"
-                  label="2"
-                  rotate="0">
-            <graphic xml:id="g18385051-3dbd-42f6-9747-d60500c59df9"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f2/info.json"
-                     type="facsimile"
-                     width="3673"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="sd4d26df4-8997-4f6c-a26f-069241baa8bb"
-                  n="3"
-                  ulx="0"
-                  uly="0"
-                  lrx="3673"
-                  lry="2948"
-                  label="3"
-                  rotate="0">
-            <graphic xml:id="g230d8912-5bfb-482f-b8d1-82b36dd078c1"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f3/info.json"
-                     type="facsimile"
-                     width="3673"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="s17f3fa15-d4a7-4167-b2dc-87530bc0922f"
-                  n="4"
-                  ulx="0"
-                  uly="0"
-                  lrx="3673"
-                  lry="2948"
-                  label="4"
-                  rotate="0">
-            <graphic xml:id="gbfa260db-a749-4188-929a-319ea6241cf2"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f4/info.json"
-                     type="facsimile"
-                     width="3673"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="s549e45a1-051e-465c-b973-048f5d3f65cf"
-                  n="5"
-                  ulx="0"
-                  uly="0"
-                  lrx="3710"
-                  lry="2965"
-                  label="5"
-                  rotate="0">
-            <graphic xml:id="g247bcddc-ffc1-4b63-a241-f5a7242b61f6"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f5/info.json"
-                     type="facsimile"
-                     width="3710"
-                     height="2965"/>
-         </surface>
-         <surface xml:id="s49809936-9ab7-4f47-9fb6-d98c03f75703"
-                  n="6"
-                  ulx="0"
-                  uly="0"
-                  lrx="3758"
-                  lry="2948"
-                  label="6"
-                  rotate="0">
-            <graphic xml:id="gdde594e1-4e48-4c59-a98a-5641bc938f3f"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f6/info.json"
-                     type="facsimile"
-                     width="3758"
-                     height="2948"/>
-         </surface>
-         <surface xml:id="sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"
-                  n="7"
-                  ulx="0"
-                  uly="0"
-                  lrx="3845"
-                  lry="3007"
-                  label="7"
-                  rotate="0">
-            <graphic xml:id="g1715afa9-ca36-4890-99f3-f5a8e8205d6a"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f7/info.json"
-                     type="facsimile"
-                     width="3845"
-                     height="3007"/>
-         </surface>
-         <surface xml:id="s7437e117-4a2a-4e99-a09a-49e435ac2486"
-                  n="8"
-                  ulx="0"
-                  uly="0"
-                  lrx="3713"
-                  lry="2980"
-                  label="8"
-                  rotate="0">
-            <graphic xml:id="g9a309e76-571f-4df2-81de-8de9a2d70380"
-                     target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f8/info.json"
-                     type="facsimile"
-                     width="3713"
-                     height="2980"/>
-         </surface>
-      </facsimile>
-      <genDesc xml:id="gd0f7ce93-a0ea-4a4b-8edb-43d27daad71d"
-               class="#geneticOrder_documentLevel"
-               ordered="false">
-         <genDesc xml:id="g09a48164-60d0-4dad-a389-e0cbcc322e7e"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="1"
-                  corresp="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"/>
-         <genDesc xml:id="g8eea5ce3-740a-4c42-8a8c-7fe00b40eb33"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="2"
-                  corresp="#s14ea2bc2-5406-4618-9754-0091b0c1a13f"/>
-         <genDesc xml:id="g58900d57-367c-4ba8-bf87-7c1edf867f51"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="3"
-                  corresp="#sd4d26df4-8997-4f6c-a26f-069241baa8bb"/>
-         <genDesc xml:id="g47f01a12-a2ff-4a19-961e-5ff4a0b4c889"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="4"
-                  corresp="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"/>
-         <genDesc xml:id="g5bd2c463-9018-46df-a16b-eb8235b20bc0"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="5"
-                  corresp="#s549e45a1-051e-465c-b973-048f5d3f65cf"/>
-         <genDesc xml:id="g0b17a868-f935-4197-8def-5024c22aa73b"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="6"
-                  corresp="#s49809936-9ab7-4f47-9fb6-d98c03f75703"/>
-         <genDesc xml:id="g8ea58f0e-8ef5-4509-8b0d-45b9a04e931c"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="7"
-                  corresp="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"/>
-         <genDesc xml:id="gffd6745d-7fd8-435b-a821-90ebc0c602d5"
-                  class="#geneticOrder_pageLevel"
-                  ordered="false"
-                  n="8"
-                  corresp="#s7437e117-4a2a-4e99-a09a-49e435ac2486"/>
-      </genDesc>
-   </music>
+<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg" meiversion="5.0.0-dev" xml:id="mf6b4f247-5c7d-45ae-bdfb-486317c395d6">
+    <meiHead meiversion="5.0.0-dev">
+        <fileDesc>
+            <titleStmt>
+                <title>
+                    BnF, département Musique, MS-96
+                </title>
+                <composer>
+                    <persName/>
+                </composer>
+                <editor>
+                    <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">
+                        Beethovens
+            Werkstatt
+                    </corpName>
+                </editor>
+                <funder>
+                    <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">
+                        Akademie der Wissenschaften und
+            der Literatur Mainz
+                    </corpName>
+                </funder>
+            </titleStmt>
+            <pubStmt/>
+            <seriesStmt>
+                <title xml:lang="de" level="s">
+                    Skizzenbuchedition
+                </title>
+                <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">
+                    sk
+                </identifier>
+            </seriesStmt>
+            <sourceDesc>
+                <source target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/manifest.json" class="http://iiif.io/api/presentation/2#Manifest"/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc class="#bw_diplomatic_transcript #bw_document_file #bw_module4">
+            <classDecls>
+                <taxonomy label="availableTaxonomies">
+                    <category xml:id="document_type"/>
+                    <category xml:id="bw_observation_type"/>
+                    <category xml:id="bw_implementation_completeness"/>
+                    <!--<category xml:id="bw_monitum_category"/>
+                    -->
+                    <category xml:id="bw_file_type"/>
+                    <category xml:id="bw_monitum_comment"/>
+                    <category xml:id="bw_monitum_classification"/>
+                    <category xml:id="bw_monitum_textoperation"/>
+                    <category xml:id="bw_monitum_object"/>
+                    <category xml:id="bw_monitum_kontext"/>
+                    <category xml:id="bw_monitum_konkordanz"/>
+                    <category xml:id="bw_transcription_type"/>
+                    <category xml:id="bw_module"/>
+                    <category xml:id="bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrderfinalState" class="#bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="music.print" class="#document_type"/>
+                    <category xml:id="music.manuscript" class="#document_type"/>
+                    <category xml:id="letter.manuscript" class="#document_type"/>
+                    <category xml:id="music.sketchbook" class="#document_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_monitum" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- Klassifizierung -->
+                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- Textoperation -->
+                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
+                    <!--oder erweiterung-->
+                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- Revisionsobjekt -->
+                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- kontextzitat -->
+                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
+                </taxonomy>
+                <taxonomy>
+                    <!-- konkordanz -->
+                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+                    <category xml:id="bw_document_file" class="#bw_file_type"/>
+                    <category xml:id="bw_work_file" class="#bw_file_type"/>
+                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_module4" class="#bw_module"/>
+                </taxonomy>
+                <taxonomy>
+                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
+        <manifestationList>
+            <manifestation label="…" class="#music.manuscript">
+                <physDesc>
+                    <foliaDesc>
+                        <bifolium xml:id="u31b21b41-233a-4801-8c8e-0d6ae9639e45" width="305" height="232" unit="mm" outer.recto="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c" inner.verso="#s14ea2bc2-5406-4618-9754-0091b0c1a13f" inner.recto="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26" outer.verso="#s7437e117-4a2a-4e99-a09a-49e435ac2486">
+                            <bifolium xml:id="u36e54a59-0d74-41be-a98f-b26f4ad68b2f" width="305" height="232" unit="mm" outer.recto="#sd4d26df4-8997-4f6c-a26f-069241baa8bb" inner.verso="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f" inner.recto="#s549e45a1-051e-465c-b973-048f5d3f65cf" outer.verso="#s49809936-9ab7-4f47-9fb6-d98c03f75703">
+                            </bifolium>
+                        </bifolium>
+                    </foliaDesc>
+                </physDesc>
+                <physLoc>
+                    <repository>
+                        <identifier auth.uri="http://www.rism.info/" auth="RISM">
+                            …
+                        </identifier>
+                    </repository>
+                    <identifier/>
+                </physLoc>
+            </manifestation>
+        </manifestationList>
+        <revisionDesc>
+            <change n="2">
+                <respStmt>
+                    <persName auth.uri="https://github.com/aseipelt">
+                        Agnes Seipelt
+                    </persName>
+                </respStmt>
+                <changeDesc>
+                    <p>
+                        Set up foliaDesc
+                    </p>
+                </changeDesc>
+                <date isodate="2023-05-11"/>
+            </change>
+            <change n="1">
+                <respStmt>
+                    <persName auth.uri="https://github.com/kepper">
+                        Johannes Kepper
+                    </persName>
+                    <persName auth.uri="https://github.com/jpvoigt">
+                        Jan-Peter Voigt
+                    </persName>
+                </respStmt>
+                <changeDesc>
+                    <p>
+                        File initially generated from IIIF Manifest available at …
+                    </p>
+                </changeDesc>
+                <date isodate="2023-02-08"/>
+            </change>
+        </revisionDesc>
+    </meiHead>
+    <music meiversion="5.0.0-dev">
+        <facsimile>
+            <surface xml:id="s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c" n="1" ulx="0" uly="0" lrx="3673" lry="2948" label="1" rotate="0">
+                <graphic xml:id="g6209055d-beb7-4f8e-be44-416d2c8f6076" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f1/info.json" type="facsimile" width="3673" height="2948"/>
+                <graphic xml:id="g1e1256ec-9c9c-4c9c-9d64-afdc18086477" type="shapes" target="./svg/F-Pn_Ms_96_p001.svg"/>
+                <zone xml:id="z7a2ad2af-2e97-4ed4-ad37-6a45eaf1754d" data="#gf4c1b564-5a2a-4f02-a2b5-d409fb97abae" ulx="413" uly="143" lrx="3314" lry="664"/>
+                <zone xml:id="z3935ce4d-3744-4c90-90f3-0df55665b84b" data="#g0793609f-e6be-4c63-a255-e8471399d0d6" ulx="594" uly="443" lrx="2293" lry="699"/>
+                <zone xml:id="z36815348-789b-4b1f-b4c6-925cc291028b" data="#gd17dd79d-0169-4bdf-82e7-5ebe46cca254" ulx="338" uly="640" lrx="2150" lry="1089"/>
+                <zone xml:id="z40887737-ffad-4567-a6eb-8310fceeb82f" data="#g48053302-3c3c-4f23-a775-007900851a87" ulx="791" uly="1046" lrx="2069" lry="1313"/>
+                <zone xml:id="z2a436b40-399b-4b61-926b-424fb63a021a" data="#g7fe47b69-e862-4801-bf98-40c27ca04391" ulx="2270" uly="670" lrx="3312" lry="1283"/>
+                <zone xml:id="z1d43f10a-98bd-4194-8f4a-a8297a97ab10" data="#g0d6398c4-6907-47aa-aa42-96fc12947243" ulx="425" uly="1217" lrx="2230" lry="1505"/>
+                <zone xml:id="zbb53d375-a18c-4fcf-ba8d-274994bd91ee" data="#gd7d58f3a-e674-4a0e-80b1-dc79e4cdf7d8" ulx="2093" uly="1259" lrx="3182" lry="1496"/>
+                <zone xml:id="z755b06ec-32ac-440b-a218-18910fd0fc37" data="#g9dac5825-fd86-41cc-bcae-7d236701d5d5" ulx="927" uly="1421" lrx="2528" lry="1663"/>
+                <zone xml:id="zb73f748b-769f-46d1-9222-87053044c281" data="#g1913380a-c665-48d4-8087-14b0f504c62b" ulx="457" uly="1634" lrx="1898" lry="2038"/>
+                <zone xml:id="z2b3ff0fa-1b46-4e65-b3b2-96f95d368a42" data="#g6734af37-c8e7-4c6c-9bec-2a07168a1005" ulx="2166" uly="1524" lrx="3630" lry="1857"/>
+                <zone xml:id="zb48290ff-3a29-452a-a48f-1ba0c294b377" data="#g3a086528-c59f-4594-8f58-791df8189fe7" ulx="455" uly="2022" lrx="1665" lry="2431"/>
+                <zone xml:id="z55a537f9-80a0-4e23-be04-3145558fd751" data="#g348a2a66-9fb5-4977-b9d1-5aa2c36959f2" ulx="1917" uly="1955" lrx="3377" lry="2387"/>
+                <zone xml:id="z231f8184-6042-4c6f-bd78-00270edc2128" data="#g2bd78e64-b712-4b9a-ac5f-a36d9b2bd4c6" ulx="261" uly="2354" lrx="1541" lry="2711"/>
+                <zone xml:id="zf5ff3e2e-26ac-4a9d-b63a-1c95d0d49239" data="#g5ffcbaa8-0d25-43e3-ad8b-f86eb07de2b9" ulx="1831" uly="2337" lrx="3323" lry="2617"/>
+            </surface>
+            <surface xml:id="s14ea2bc2-5406-4618-9754-0091b0c1a13f" n="2" ulx="0" uly="0" lrx="3673" lry="2948" label="2" rotate="0">
+                <graphic xml:id="g18385051-3dbd-42f6-9747-d60500c59df9" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f2/info.json" type="facsimile" width="3673" height="2948"/>
+                <graphic xml:id="gdef2caa4-cdf6-43e5-afb8-21cd8d3c5005" type="shapes" target="./svg/F-Pn_Ms_96_p002.svg"/>
+                <zone xml:id="z1c0eac18-f2eb-4468-947b-53c259987267" data="#g6eec2db2-b69e-44b7-9dc1-fb568618fafc" ulx="403" uly="354" lrx="1240" lry="669"/>
+                <zone xml:id="z97f4e5ea-e8f5-4a16-81a2-af53cfaf49f2" data="#ga0882141-7fc4-42c1-913a-48fde3d57c1e" ulx="1839" uly="281" lrx="2614" lry="658"/>
+                <zone xml:id="zca6f6b60-0466-4fc8-b8ea-61666642909b" data="#g0c648cdf-933e-4af4-8feb-2048b3261dec" ulx="380" uly="636" lrx="3333" lry="943"/>
+                <zone xml:id="z4a743d99-7916-4c02-b161-411034a12503" data="#g0d24068d-c616-4137-9f09-cbd04b54a45f" ulx="369" uly="834" lrx="3364" lry="1696"/>
+                <zone xml:id="zc7037ced-c00f-4dea-8cd0-9c5c3534426e" data="#g07ff137e-7ca6-49cd-b8ba-fbb5c310a346" ulx="1588" uly="1285" lrx="2949" lry="1549"/>
+                <zone xml:id="z48e6c9ee-6b77-4dcb-8bb6-379d6ab91f0c" data="#gcbd0205e-b145-4b67-9874-ecbccffe7f61" ulx="1062" uly="1612" lrx="2547" lry="1950"/>
+                <zone xml:id="z3b2abbf2-5e5f-4d9c-9d93-e31d9e0db2de" data="#g5fe4461b-efae-4ed5-8eb3-61acdd57579b" ulx="1372" uly="1866" lrx="2578" lry="2119"/>
+            </surface>
+            <surface xml:id="sd4d26df4-8997-4f6c-a26f-069241baa8bb" n="3" ulx="0" uly="0" lrx="3673" lry="2948" label="3" rotate="0">
+                <graphic xml:id="g230d8912-5bfb-482f-b8d1-82b36dd078c1" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f3/info.json" type="facsimile" width="3673" height="2948"/>
+                <graphic xml:id="g30e77d66-6bec-4c19-9281-458b5303a308" type="shapes" target="./svg/F-Pn_Ms_96_p003.svg"/>
+                <zone xml:id="z450c8a6f-71df-43ea-8f92-5d7da91d5330" data="#ge59b2a33-2623-474c-8c76-35f32418f1ea" ulx="581" uly="156" lrx="3331" lry="691"/>
+                <zone xml:id="z5851f657-c809-48c8-bc40-5fcdaafa3e03" data="#ge3cca442-c4c6-4339-a18d-1b9bbde6af9c" ulx="519" uly="641" lrx="1542" lry="1057"/>
+                <zone xml:id="z71ab5722-f292-4349-ad1f-8aa89f82f487" data="#g57bf4f09-acd6-416f-b4be-980ec8811528" ulx="812" uly="1060" lrx="2318" lry="1629"/>
+            </surface>
+            <surface xml:id="s17f3fa15-d4a7-4167-b2dc-87530bc0922f" n="4" ulx="0" uly="0" lrx="3673" lry="2948" label="4" rotate="0">
+                <graphic xml:id="gbfa260db-a749-4188-929a-319ea6241cf2" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f4/info.json" type="facsimile" width="3673" height="2948"/>
+                <graphic xml:id="gdc13b0ee-7139-4b59-8931-baf1cdaf4e98" type="shapes" target="./svg/F-Pn_Ms_96_p004.svg"/>
+            </surface>
+            <surface xml:id="s549e45a1-051e-465c-b973-048f5d3f65cf" n="5" ulx="0" uly="0" lrx="3710" lry="2965" label="5" rotate="0">
+                <graphic xml:id="g247bcddc-ffc1-4b63-a241-f5a7242b61f6" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f5/info.json" type="facsimile" width="3710" height="2965"/>
+                <graphic xml:id="g706f60d3-2f23-4e9f-9894-d3cdd01c6827" type="shapes" target="./svg/F-Pn_Ms_96_p005.svg"/>
+                <zone xml:id="z70c2d15f-e580-4fc3-95ef-4e9ce23e803f" data="#gd5b99dc4-dea5-4ca0-a0cd-87a6fac16e3d" ulx="496" uly="160" lrx="3353" lry="1138"/>
+                <zone xml:id="z260fc7cc-6546-41a5-b606-6ecc2dee3b0f" data="#gcd75c1e2-f7da-47a8-bfa9-914dc5fec9ec" ulx="526" uly="1171" lrx="3341" lry="2118"/>
+            </surface>
+            <surface xml:id="s49809936-9ab7-4f47-9fb6-d98c03f75703" n="6" ulx="0" uly="0" lrx="3758" lry="2948" label="6" rotate="0">
+                <graphic xml:id="gdde594e1-4e48-4c59-a98a-5641bc938f3f" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f6/info.json" type="facsimile" width="3758" height="2948"/>
+                <graphic xml:id="g8f00d4af-e715-4458-a663-21ba588bf2dc" type="shapes" target="./svg/F-Pn_Ms_96_p006.svg"/>
+            </surface>
+            <surface xml:id="sa5355af8-fdd8-4f62-adb7-dfe777cf5b26" n="7" ulx="0" uly="0" lrx="3845" lry="3007" label="7" rotate="0">
+                <graphic xml:id="g1715afa9-ca36-4890-99f3-f5a8e8205d6a" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f7/info.json" type="facsimile" width="3845" height="3007"/>
+                <graphic xml:id="g374c38f8-a829-45f8-bb37-7c0a19e0405e" type="shapes" target="./svg/F-Pn_Ms_96_p007.svg"/>
+            </surface>
+            <surface xml:id="s7437e117-4a2a-4e99-a09a-49e435ac2486" n="8" ulx="0" uly="0" lrx="3713" lry="2980" label="8" rotate="0">
+                <graphic xml:id="g9a309e76-571f-4df2-81de-8de9a2d70380" target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/f8/info.json" type="facsimile" width="3713" height="2980"/>
+                <graphic xml:id="g1a2ef079-27f5-4fa7-a2b8-773792b423c7" type="shapes" target="./svg/F-Pn_Ms_96_p008.svg"/>
+                <zone xml:id="ze2868c2f-ef92-49f7-99e0-ed72b905a8d1" data="#g922a18ac-6b94-4ac4-ae91-bd4bb70932cb" ulx="392" uly="86" lrx="3290" lry="686"/>
+                <zone xml:id="z3e3ab62b-1c6d-4481-93f2-1ffcba5537fc" data="#ge24d8cc7-2f34-42a2-87d6-8bd79dab226d" ulx="750" uly="657" lrx="1188" lry="877"/>
+                <zone xml:id="zd04367f5-c289-4b0c-9ae4-0ed4a0eccf8a" data="#gdc2e82ae-effa-4567-b0ab-7037f75eee01" ulx="1545" uly="586" lrx="2989" lry="1140"/>
+                <zone xml:id="z00204d95-8da5-4e6b-a965-f3d321c285a2" data="#g7ec8466f-a762-487b-9dc7-606679800a35" ulx="948" uly="999" lrx="1994" lry="1451"/>
+                <zone xml:id="z178ceb3e-d4a1-4cae-8253-41ed4aba54fd" data="#g58a3e3f6-3fea-48a0-ac00-dd8887958e56" ulx="2350" uly="1020" lrx="3448" lry="1356"/>
+                <zone xml:id="zafe16d62-393f-4fe8-8aee-4615decfc3f0" data="#gd69a1b02-265c-4853-86e3-a2d5de40f983" ulx="710" uly="1335" lrx="1803" lry="1746"/>
+                <zone xml:id="z2eb88ee5-eb06-4bbe-b678-514ab9c6ae17" data="#g61db8428-973d-4264-962a-b60650a677e4" ulx="2044" uly="1328" lrx="3476" lry="1924"/>
+                <zone xml:id="zc17fef1f-6bd9-4e19-a246-7c9cb8255f5b" data="#g9b312b44-46c9-4eac-9c54-5629856a7cc9" ulx="395" uly="1774" lrx="3273" lry="2482"/>
+                <zone xml:id="z9423c973-0774-45c0-928f-1c13271a1eb0" data="#gf1f51c15-9119-4092-bfa7-0a710d8bdc7a" ulx="681" uly="2044" lrx="2964" lry="2678"/>
+            </surface>
+        </facsimile>
+        <genDesc xml:id="gd0f7ce93-a0ea-4a4b-8edb-43d27daad71d" class="#geneticOrder_documentLevel" ordered="false">
+            <genDesc xml:id="g09a48164-60d0-4dad-a389-e0cbcc322e7e" class="#geneticOrder_pageLevel" ordered="false" n="1" corresp="#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c">
+                <genDesc xml:id="gf4c1b564-5a2a-4f02-a2b5-d409fb97abae" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z0e47226e-7fdc-41f3-816d-fb44c344a71d" label="1">
+                    <genState xml:id="gf2ea2e9d-b9ed-491f-bb5a-80c687a9d14d" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#l95ff56db-13d8-4a4d-b9b5-b0e51ff69f57" label="#final"/>
+                    <genState xml:id="gfc3f6b9c-db01-43da-8a4c-8b66083ffe63" class="#geneticOrder_writingLayerLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#l534fb158-1136-425c-b5aa-eee5eb63ab8c" label="1"/>
+                </genDesc>
+                <genDesc xml:id="g0793609f-e6be-4c63-a255-e8471399d0d6" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z77a42b6d-0203-4a76-9243-ec6351c19727" label="2">
+                    <genState xml:id="g9aa6e90f-67e9-47d9-a4a9-26a1bc97aa2d" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#l9a877edf-9f07-4708-8d5a-522b18db5d7b" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="gd17dd79d-0169-4bdf-82e7-5ebe46cca254" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#zd6bc484a-37c3-4f7f-a239-eceae47543c4" label="3">
+                    <genState xml:id="g3d324806-6128-4860-b6fe-a751c9b2c56a" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#la3f03ae8-7f85-404d-8962-17dac49bd282" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g48053302-3c3c-4f23-a775-007900851a87" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#zdfc3b0d1-3d12-4054-b163-4bebfa238cfe" label="4">
+                    <genState xml:id="g8840d55f-735d-4e30-b9e1-64325031c48c" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#l706d5b96-5661-4ac1-b723-c83389557858" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g7fe47b69-e862-4801-bf98-40c27ca04391" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z3809b5f2-1e76-474a-b5ed-cd96d1b6fc79" label="5">
+                    <genState xml:id="g5281f022-57e7-4c55-a827-774aeb2bb296" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#la2991379-15a1-4b65-86c5-d48e7fb9aae9" label="#final"/>
+                    <genState xml:id="g4d39e015-6efb-4e42-a49a-175c3040e0f8" class="#geneticOrder_writingLayerLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#ld4be023e-0264-45d5-b908-25de799a1435" label="1"/>
+                </genDesc>
+                <genDesc xml:id="g0d6398c4-6907-47aa-aa42-96fc12947243" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z474b936e-568c-45ad-a9f3-080ca4ac2f65" label="6">
+                    <genState xml:id="gb8663235-48cd-4cc7-a2d2-47c4521a4db2" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#lf070d1b3-34bd-4742-acaa-8aa7e299e4cb" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="gd7d58f3a-e674-4a0e-80b1-dc79e4cdf7d8" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z6ab636e5-35b8-4d11-b3e9-6c541e674517" label="7">
+                    <genState xml:id="gbd384c0c-d1ec-4442-a632-720439aa7a08" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#lbcc6e690-2ac6-4b01-b1e6-e709919d6fa0" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g9dac5825-fd86-41cc-bcae-7d236701d5d5" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z4314e9cc-5a27-497b-98c8-52e8658449f6" label="8">
+                    <genState xml:id="g45a059b3-b30d-4987-938d-b2bd7abcbe03" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#la6ed2240-5af7-49c4-ad8f-07a15d312baf" label="#final"/>
+                    <genState xml:id="g9328e97b-4e4e-4c40-ad45-397546b4722b" class="#geneticOrder_writingLayerLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#lf52fd0d1-a1c4-4af9-bf91-4f0cbc03e556" label="1"/>
+                </genDesc>
+                <genDesc xml:id="g1913380a-c665-48d4-8087-14b0f504c62b" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z37a33956-d8da-42ba-afa1-bae6110201cf" label="9">
+                    <genState xml:id="g578c7541-3018-42eb-adf5-4726fd737183" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#l1963b3d1-30ca-4e69-b55f-2dc3035cc2e1" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g6734af37-c8e7-4c6c-9bec-2a07168a1005" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#zbffc7614-6e56-47f1-b1b4-fa5b058a9fbe" label="10">
+                    <genState xml:id="g00001a32-00fc-4f9a-b69e-64f217e7db65" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#le82c5967-9d9f-4b38-9082-c1044b8df551" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g3a086528-c59f-4594-8f58-791df8189fe7" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z123abfb4-19d8-4dae-8667-65f7f23820e0" label="11">
+                    <genState xml:id="gf1d20a47-c366-43bc-aab5-b769c9213b02" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#lc523dad6-40f3-4419-9b3e-b05bd064a705" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g348a2a66-9fb5-4977-b9d1-5aa2c36959f2" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z81e85dd3-3c37-48d8-af0a-b7d779c93725" label="12">
+                    <genState xml:id="g3ffe8867-4932-4597-8de2-ccf0d7e9a7f7" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#l69d3b0c8-97c0-4ac3-b83a-c0f9f46c752b" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g2bd78e64-b712-4b9a-ac5f-a36d9b2bd4c6" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z5f0a3084-60cc-4ff0-ad42-1479f16a9dcc" label="13">
+                    <genState xml:id="g8f30ed5c-9ad1-4d5b-96cc-114c87fd96f4" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#l3bbd83ee-e3e4-4040-ad87-b4720201b63b" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g5ffcbaa8-0d25-43e3-ad8b-f86eb07de2b9" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p001.svg#z2d0d7ad5-357e-4ebf-b22a-873dc239c950" label="14">
+                    <genState xml:id="g6a0e9607-9642-42a7-b82e-80975d96ef08" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p001.svg#lcd6f81eb-e009-4c35-9991-1aad1818e6c3" label="#final"/>
+                </genDesc>
+            </genDesc>
+            <genDesc xml:id="g8eea5ce3-740a-4c42-8a8c-7fe00b40eb33" class="#geneticOrder_pageLevel" ordered="false" n="2" corresp="#s14ea2bc2-5406-4618-9754-0091b0c1a13f">
+                <genDesc xml:id="g6eec2db2-b69e-44b7-9dc1-fb568618fafc" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p002.svg#zc66f3087-6fba-49c5-ba09-ad9a65268616" label="1">
+                    <genState xml:id="g36f41ea2-88f7-418a-8520-b2eff463a7aa" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p002.svg#l420ac43d-16ac-4199-bf00-e82f1736906d" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="ga0882141-7fc4-42c1-913a-48fde3d57c1e" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p002.svg#z979470cb-6517-4e16-a818-625549a3a820" label="2">
+                    <genState xml:id="gf18b3c66-16bc-4d5d-aa20-4e076879caa3" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p002.svg#ladfa72a7-4dec-419e-adb1-fe8a6941b219" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g0c648cdf-933e-4af4-8feb-2048b3261dec" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p002.svg#zb4c8831a-33f9-4f1c-ba55-cd17361da620" label="3">
+                    <genState xml:id="gadace60d-9045-4efe-b460-adf1384fee9e" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p002.svg#l4739f83d-4180-4549-bee6-62c840b9b89a" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g0d24068d-c616-4137-9f09-cbd04b54a45f" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p002.svg#z7c0df78f-1cf6-44f4-a6d2-980250779da5" label="4">
+                    <genState xml:id="g9d2d933f-ef97-4916-a521-92f2c973eaea" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p002.svg#l7c83a830-e17b-40b8-86cc-84730b50ad77" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g07ff137e-7ca6-49cd-b8ba-fbb5c310a346" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p002.svg#z618e5150-5601-4e3a-80fb-4da12c2364ba" label="5">
+                    <genState xml:id="gc8d4d8de-af8d-4d63-b769-e868c81dc69f" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p002.svg#l7aa3a090-8450-4548-b9ce-73fac8d1b202" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="gcbd0205e-b145-4b67-9874-ecbccffe7f61" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p002.svg#z5260d032-cd2d-42de-ae7a-7962bdca694b" label="6">
+                    <genState xml:id="g59516fac-7185-4e0b-844f-f5b98ee95dfb" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p002.svg#l72364f53-e4f7-43aa-9c82-94c8dc5fb36b" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g5fe4461b-efae-4ed5-8eb3-61acdd57579b" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p002.svg#ze2aefdb4-2e90-45e0-b6f1-c31381beec17" label="7">
+                    <genState xml:id="ga24bceeb-42fd-4cec-9b61-457ef7532b92" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p002.svg#l1e53278b-0891-4a32-99d0-f2c3890fb496" label="#final"/>
+                </genDesc>
+            </genDesc>
+            <genDesc xml:id="g58900d57-367c-4ba8-bf87-7c1edf867f51" class="#geneticOrder_pageLevel" ordered="false" n="3" corresp="#sd4d26df4-8997-4f6c-a26f-069241baa8bb">
+                <genDesc xml:id="ge59b2a33-2623-474c-8c76-35f32418f1ea" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p003.svg#z68bda352-2ddc-4d16-9aba-a77da59aae5a" label="1">
+                    <genState xml:id="g48548841-168b-4ed3-8db6-2d8219b7856d" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p003.svg#lf85e6ad9-96e3-4800-9a87-251899a9b2c0" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="ge3cca442-c4c6-4339-a18d-1b9bbde6af9c" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p003.svg#z9f90557f-e5ab-4ad5-9944-9e00b25a0207" label="2">
+                    <genState xml:id="g6ccd4e4e-efc6-42d5-9ecd-da465220c114" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p003.svg#lfb005758-acdb-42d0-9c22-243abc8e51d9" label="#final"/>
+                    <genState xml:id="gb6205fad-3fb1-4703-a4f3-20e14855209e" class="#geneticOrder_writingLayerLevel" corresp="./svg/F-Pn_Ms_96_p003.svg#l9a31fc63-7b3c-4fde-978a-19447bdb3562" label="1"/>
+                </genDesc>
+                <genDesc xml:id="g57bf4f09-acd6-416f-b4be-980ec8811528" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p003.svg#zdb367b0a-3aa3-43aa-8732-66bafcadd634" label="3">
+                    <genState xml:id="g770e1340-022d-4933-a620-4e236eebbc49" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p003.svg#l389376d2-7a93-4e2a-a27a-897978b419ef" label="#final"/>
+                </genDesc>
+            </genDesc>
+            <genDesc xml:id="g47f01a12-a2ff-4a19-961e-5ff4a0b4c889" class="#geneticOrder_pageLevel" ordered="false" n="4" corresp="#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"/>
+            <genDesc xml:id="g5bd2c463-9018-46df-a16b-eb8235b20bc0" class="#geneticOrder_pageLevel" ordered="false" n="5" corresp="#s549e45a1-051e-465c-b973-048f5d3f65cf">
+                <genDesc xml:id="gd5b99dc4-dea5-4ca0-a0cd-87a6fac16e3d" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p005.svg#zf2074cf2-ddbe-43c3-a8aa-d3114d0f9959" label="1">
+                    <genState xml:id="ge89b7cf9-edd7-42e6-a987-c3e04cf95706" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p005.svg#l3b05e3ca-a9db-4df4-b14f-af3a0ba44c34" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="gcd75c1e2-f7da-47a8-bfa9-914dc5fec9ec" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p005.svg#z73eeea44-03ce-4e0f-bee1-bd5a9bf3543c" label="2">
+                    <genState xml:id="gffb795ab-695c-424d-bb22-989787d5e05c" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p005.svg#lf5f78890-b35a-482b-a26e-c79b0aecc5a0" label="#final"/>
+                </genDesc>
+            </genDesc>
+            <genDesc xml:id="g0b17a868-f935-4197-8def-5024c22aa73b" class="#geneticOrder_pageLevel" ordered="false" n="6" corresp="#s49809936-9ab7-4f47-9fb6-d98c03f75703"/>
+            <genDesc xml:id="g8ea58f0e-8ef5-4509-8b0d-45b9a04e931c" class="#geneticOrder_pageLevel" ordered="false" n="7" corresp="#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"/>
+            <genDesc xml:id="gffd6745d-7fd8-435b-a821-90ebc0c602d5" class="#geneticOrder_pageLevel" ordered="false" n="8" corresp="#s7437e117-4a2a-4e99-a09a-49e435ac2486">
+                <genDesc xml:id="g922a18ac-6b94-4ac4-ae91-bd4bb70932cb" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#z88da8df6-b438-461b-98b4-fbcb8c2253cb" label="1">
+                    <genState xml:id="g6c541dab-957d-45aa-8c99-a01daec3ea7f" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#lcac8c509-eaa3-400a-abb0-98068e8287de" label="#final"/>
+                    <genState xml:id="g715bdeaf-ead9-48b6-8fd6-921ef3fa657d" class="#geneticOrder_writingLayerLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#l19ca0813-03d0-45c0-86e9-59ecba4b9a70" label="1"/>
+                </genDesc>
+                <genDesc xml:id="ge24d8cc7-2f34-42a2-87d6-8bd79dab226d" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#z6126b136-7c5a-4369-b0e3-3c690fb4d3bf" label="2">
+                    <genState xml:id="g9c665b73-c34e-4c68-9398-1bfad0a8d9da" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#laacd0cfd-97a8-47f0-a03a-fdb73698b9db" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="gdc2e82ae-effa-4567-b0ab-7037f75eee01" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#zedc5c56d-8665-4597-ae58-7617d0e41d73" label="3">
+                    <genState xml:id="gd2774608-57d7-4154-b933-a9bbf2854e14" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#l92631f01-9dca-4da1-9774-88afbedd1ac1" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g7ec8466f-a762-487b-9dc7-606679800a35" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#z88f2e182-2368-41bd-97e0-0c21f2f91027" label="4">
+                    <genState xml:id="gcae3ebb4-513f-4f1c-bd66-7e7b1d42cca0" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#l9567c885-6f98-4f88-ab9e-6c4bfb8959fe" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g58a3e3f6-3fea-48a0-ac00-dd8887958e56" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#ze41457dd-d738-4a04-ba00-6c95925d7bff" label="5">
+                    <genState xml:id="ga0bdead9-d192-4023-a9a5-80a67f292710" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#l3d69dc46-9ad4-41f5-9296-016c23c799dc" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="gd69a1b02-265c-4853-86e3-a2d5de40f983" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#z0b520e67-0fd6-49d2-9d84-ed297fa5c8a2" label="6">
+                    <genState xml:id="g10299664-7a64-48a8-a257-2ced586202ab" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#l34de0441-1a97-471c-8fc9-af92dc10b819" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g61db8428-973d-4264-962a-b60650a677e4" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#zd911ca59-89d8-42c6-bec0-18ecbdd068f2" label="7">
+                    <genState xml:id="g735b7325-ef2d-4beb-ab51-f6cf95a2ebd2" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#l755ceb59-d24c-47d8-9c61-5b3446373e1b" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="g9b312b44-46c9-4eac-9c54-5629856a7cc9" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#z6067d50f-4029-403c-abe1-116bc040644a" label="8">
+                    <genState xml:id="ge0a4d441-7ba8-43f4-be30-1ecb2918de1d" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#l8411e7f5-78a7-413a-966f-d47da65eb026" label="#final"/>
+                </genDesc>
+                <genDesc xml:id="gf1f51c15-9119-4092-bfa7-0a710d8bdc7a" class="#geneticOrder_writingZoneLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#zc109f784-f370-444e-a31e-75e6777e6506" label="9">
+                    <genState xml:id="g39edc39c-621c-4d76-934f-baf0a5a2f6f1" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/F-Pn_Ms_96_p008.svg#laa622976-690c-46ff-b618-456026f10d42" label="#final"/>
+                    <genState xml:id="g1c65306d-6dbf-4484-86ac-d4f0eb322722" class="#geneticOrder_writingLayerLevel" corresp="./svg/F-Pn_Ms_96_p008.svg#l207dbbfd-9fa4-4312-86ee-6423be0dcfdf" label="1"/>
+                </genDesc>
+            </genDesc>
+        </genDesc>
+    </music>
 </mei>
