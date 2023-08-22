@@ -91,6 +91,7 @@
             <moduleRef key="MEI.header"
                except="componentList acquisition altId attUsage audience byline captureMode carrierForm catRel classification condition contentItem contents context cutout editionStmt exhibHist extMeta fileChar fingerprint hand handList history incipCode incipText inscription key mensuration meter namespace notesStmt otherChar patch perfDuration physMedium playingSpeed price provenance segmentation soundChan specRepro stdVals sysReq tagsDecl tagUsage termList trackConfig treatHist treatSched useRestrict watermark"/>
             <moduleRef key="MEI.lyrics"/>
+            <moduleRef key="MEI.msDesc" include="layoutDesc layout"/>
             <moduleRef key="MEI.namesdates"
                except="addName bloc country district famName foreName genName geogFeat nameLink periodName postBox postCode region roleName settlement street styleName"/>
             <moduleRef key="MEI.shared"
@@ -216,6 +217,182 @@
             </elementSpec>
             
             
+            <elementSpec ident="layout" module="MEI.msDesc" mode="change">
+               <desc xml:lang="en">Describes how text is laid out on the page, including information about any ruling, pricking, or other evidence of page-preparation techniques.</desc>
+               <!--<classes>
+                  <memberOf key="att.common"/>
+                  <memberOf key="att.bibl"/>
+                  <memberOf key="att.lang"/>
+               </classes>-->
+               <content>
+                  <rng:choice>
+                     <rng:ref name="macro.struc-unstrucContent"/>
+                     <rng:ref name="rastrumDesc"/>
+                  </rng:choice>
+                  <rng:ref name="macro.struc-unstrucContent"/>
+               </content>
+               <!--<attList>
+                  <attDef ident="cols" usage="opt">
+                     <desc xml:lang="en">Specifies the number of columns per page.</desc>
+                     <datatype minOccurs="1" maxOccurs="2">
+                        <rng:data type="nonNegativeInteger"/>
+                     </datatype>
+                     <remarks xml:lang="en">
+                        <p>A single number indicates that all pages have this number of columns. Two numbers mean that the number of columns per page varies between the values supplied.</p>
+                     </remarks>
+                  </attDef>
+                  <attDef ident="ruledlines" usage="opt">
+                     <desc xml:lang="en">Specifies the number of ruled text lines per column.</desc>
+                     <datatype minOccurs="1" maxOccurs="2">
+                        <rng:data type="nonNegativeInteger"/>
+                     </datatype>
+                     <remarks xml:lang="en">
+                        <p> A single number indicates that all columns have this number of ruled lines. Two numbers mean that the number of text lines per column varies between the values supplied.</p>
+                     </remarks>
+                  </attDef>
+                  <attDef ident="writtenlines" usage="opt">
+                     <desc xml:lang="en">Specifies the number of written text lines per column.</desc>
+                     <datatype minOccurs="1" maxOccurs="2">
+                        <rng:data type="nonNegativeInteger"/>
+                     </datatype>
+                     <remarks xml:lang="en">
+                        <p>A single number indicates that all columns have this number of written text lines. Two numbers mean that the number of text lines per column varies between the values supplied.</p>
+                     </remarks>
+                  </attDef>
+                  <attDef ident="ruledstaves" usage="opt">
+                     <desc xml:lang="en">Specifies the number of ruled staves per column.</desc>
+                     <datatype minOccurs="1" maxOccurs="2">
+                        <rng:data type="nonNegativeInteger"/>
+                     </datatype>
+                     <remarks xml:lang="en">
+                        <p>A single number indicates that all columns have this number of ruled staves. Two numbers mean that the number of ruled staves per column varies between the values supplied.</p>
+                     </remarks>
+                  </attDef>
+                  <attDef ident="writtenstaves" usage="opt">
+                     <desc xml:lang="en">Specifies the number of written staves per column.</desc>
+                     <datatype minOccurs="1" maxOccurs="2">
+                        <rng:data type="nonNegativeInteger"/>
+                     </datatype>
+                     <remarks xml:lang="en">
+                        <p>A single number indicates that all columns have this number of written staves. Two numbers mean that the number of written staves per column varies between the values supplied.</p>
+                     </remarks>
+                  </attDef>
+               </attList>-->
+               <remarks xml:lang="en">
+                  <p>The model of this element is based on the <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-layout.html">layout</ref> element of the Text Encoding Initiative (TEI).</p>
+               </remarks>
+            </elementSpec>
+            
+            
+            
+            <elementSpec ident="rastrumDesc" module="MEI.msDesc" mode="add">
+               <desc xml:lang="en">Describes the use of rastrums on a given (set of) page(s).</desc>
+               <classes>
+                  <memberOf key="att.common"/>
+               </classes>
+               <content>
+                  <rng:zeroOrMore>
+                     <rng:ref name="model.rastrumLike"/>
+                  </rng:zeroOrMore>
+               </content>
+            </elementSpec>
+            
+            <elementSpec ident="rastrum" module="MEI.msDesc" mode="add">
+               <desc xml:lang="en">Describes a rastrum used to prepare a page with staff lines.</desc>
+               <classes>
+                  <memberOf key="att.common"/>
+                  <memberOf key="model.rastrumLike"/>
+                  <memberOf key="att.rastrum.log"/>
+                  <memberOf key="att.rastrum.vis"/>
+                  <memberOf key="att.rastrum.ges"/>
+                  <memberOf key="att.rastrum.anl"/>
+               </classes>
+               <content>
+                  <rng:empty/>
+               </content>
+               <constraintSpec ident="Check_rastrum" scheme="schematron">
+                  <constraint>
+                     <sch:rule context="mei:rastrum">
+                        <sch:assert test="not(@systems = '1' and exists(@system.dist))">A rastrum with only one system must not specify a distance between multiple systems.</sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+               <remarks xml:lang="en">
+                  <p>A rastrum is a traditional tool used to draw staff lines on paper. It may draw one or more systems at a time.
+                     The rastrum element tries to reflect this. It is most useful when describing manuscripts, even when they use
+                     industrially produced paper. One rastrum element is used per block of systems / staff lines that are produced 
+                     simultaneously. The <att>systems</att> attribute indicates the number of systems produced by this rastrum, 
+                     while <att>system.height</att> and <att>system.dist</att> describe the height of and distance between these
+                     systems.</p>
+                  <p>In oder to achieve compatibility with traditional printed source descriptions, it is highly recommended to 
+                     provide all measurements in real-world units, like millimeters.</p>
+               </remarks>
+            </elementSpec>
+            
+            <classSpec ident="model.rastrumLike" type="model" mode="add">
+               <desc xml:lang="en">Groups elements describing the rastrum.</desc>
+            </classSpec>
+            
+            <classSpec ident="att.rastrum.log" type="atts" module="MEI.shared" mode="add">
+               <desc xml:lang="en">Attributes that capture logical domain information about rastrums.</desc>
+               <classes>
+                  <memberOf key="att.systemCount"/>
+               </classes>
+            </classSpec>
+            
+            <classSpec ident="att.rastrum.vis" type="atts" module="MEI.visual" mode="add">
+               <desc xml:lang="en">Attributes that capture rastrum layout information.</desc>
+               <classes>
+                  <memberOf key="att.systems"/>
+                  <memberOf key="att.dimensions"/>
+                  <memberOf key="att.systemDistance"/>
+                  <memberOf key="att.systemHeight"/>
+               </classes>
+            </classSpec>
+            
+            <classSpec ident="att.rastrum.ges" type="atts" module="MEI.gestural" mode="add">
+               <desc xml:lang="en">Attributes that capture rastrum performance information.</desc>
+            </classSpec>
+            
+            <classSpec ident="att.rastrum.anl" type="atts" module="MEI.analytical" mode="add">
+               <desc xml:lang="en">Attributes that capture analytical information about rastrums.</desc>
+            </classSpec>
+            
+            <classSpec ident="att.systemDistance" type="atts" module="MEI.visual" mode="add">
+               <desc xml:lang="en">Attributes describing the distance between systems.</desc>
+               <attList>
+                  <attDef ident="system.dist" usage="opt">
+                     <desc xml:lang="en">Describes the distance between two adjacent sets of staff lines.</desc>
+                     <datatype>
+                        <rng:ref name="data.MEASUREMENTUNSIGNED"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </classSpec>
+            
+            <classSpec ident="att.systemHeight" type="atts" module="MEI.visual" mode="add">
+               <desc xml:lang="en">Attributes describing the height of a set of staff lines.</desc>
+               <attList>
+                  <attDef ident="system.height" usage="opt">
+                     <desc xml:lang="en">Describes the height of a set of staff lines.</desc>
+                     <datatype>
+                        <rng:ref name="data.MEASUREMENTUNSIGNED"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </classSpec>
+            
+            <classSpec ident="att.systemCount" type="atts" module="MEI.shared" mode="add">
+               <desc xml:lang="en">Attributes describing the of number of staves.</desc>
+               <attList>
+                  <attDef ident="systems" usage="opt">
+                     <desc xml:lang="en">The number of systems / staves on a page.</desc>
+                     <datatype minOccurs="1" maxOccurs="2">
+                        <rng:data type="nonNegativeInteger"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </classSpec>
 
             <elementSpec ident="mei" module="MEI.shared" mode="change">
                <!-- All Schematron rules are gathered here for better orientation. -->
