@@ -150,11 +150,12 @@
     
     <xsl:variable name="surfaceId" select="substring-after($surfaceRef,'#')" as="xs:string"/>
     <xsl:variable name="surface" select="$sourceDoc/id($surfaceId)" as="element(mei:surface)"/>
+    <xsl:variable name="surfaceN" select="$surface/xs:integer(@n)" as="xs:integer"/>
     
     <xsl:variable name="genDescPage" select="$sourceDoc//mei:genDesc[@corresp = '#' || $surfaceId]" as="element(mei:genDesc)"/>
     <xsl:variable name="genDescWz" select="$genDescPage/mei:genDesc[$wzN]" as="element(mei:genDesc)"/>
     
-    <xsl:variable name="outputPNum" select="'_p' || format-number($pageN, '000')" as="xs:string"/>
+    <xsl:variable name="outputPNum" select="'_p' || format-number($surfaceN, '000')" as="xs:string"/>
     <xsl:variable name="outputWzNum" select="'_wz' || format-number($wzN, '00')" as="xs:string"/>
     
     <xsl:variable name="resultPath" select="$basePath || $sourceName || '/annotatedTranscripts/' || $sourceName || $outputPNum || $outputWzNum || '_at.xml'" as="xs:string"/>
