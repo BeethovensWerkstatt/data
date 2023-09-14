@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2023-09-14T07:01:06Z. .
+Schema generated from ODD source 2023-09-14T16:14:25Z. .
 TEI Edition: Version 5.0.0
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -27321,6 +27321,7 @@ Suggested values include: 1] schematron (ISO Schematron)</a:documentation>
             <ref name="mei_model.figureLike"/>
             <ref name="mei_model.identifierLike"/>
             <ref name="mei_model.lbLike"/>
+            <ref name="mei_model.locrefLike"/>
             <ref name="mei_model.measurementLike"/>
             <ref name="mei_model.nameLike"/>
             <ref name="mei_model.nameLike.label"/>
@@ -31341,6 +31342,9 @@ Suggested values include: 1] smufl</a:documentation>
          </oneOrMore>
          <choice>
             <zeroOrMore>
+               <ref name="mei_model.locrefLike"/>
+            </zeroOrMore>
+            <zeroOrMore>
                <ref name="mei_model.pLike"/>
             </zeroOrMore>
          </choice>
@@ -32606,6 +32610,76 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_att.facsimile.attributes"/>
          <ref name="mei_att.lang.attributes"/>
          <ref name="mei_att.name.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="mei_model.locrefLike">
+      <choice>
+         <ref name="mei_ptr"/>
+         <ref name="mei_ref"/>
+      </choice>
+   </define>
+   <define name="mei_model.locrefLike_alternation">
+      <choice>
+         <ref name="mei_ptr"/>
+         <ref name="mei_ref"/>
+      </choice>
+   </define>
+   <define name="mei_model.locrefLike_sequence">
+      <ref name="mei_ptr"/>
+      <ref name="mei_ref"/>
+   </define>
+   <define name="mei_model.locrefLike_sequenceOptional">
+      <optional>
+         <ref name="mei_ptr"/>
+      </optional>
+      <optional>
+         <ref name="mei_ref"/>
+      </optional>
+   </define>
+   <define name="mei_model.locrefLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_ptr"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_ref"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.locrefLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_ptr"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_ref"/>
+      </oneOrMore>
+   </define>
+   <define name="mei_ptr">
+      <element name="ptr">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(pointer) Defines a traversible pointer to another location, using only attributes to describe the destination.</a:documentation>
+         <empty/>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.internetMedia.attributes"/>
+         <ref name="mei_att.metadataPointing.attributes"/>
+         <ref name="mei_att.pointing.attributes"/>
+         <ref name="mei_att.targetEval.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="mei_ref">
+      <element name="ref">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) Defines a traversible reference to another location. May contain text and sub-elements that describe the destination.</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="mei_model.textPhraseLike"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.internetMedia.attributes"/>
+         <ref name="mei_att.lang.attributes"/>
+         <ref name="mei_att.metadataPointing.attributes"/>
+         <ref name="mei_att.pointing.attributes"/>
+         <ref name="mei_att.targetEval.attributes"/>
          <empty/>
       </element>
    </define>
@@ -37003,6 +37077,7 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_model.msInline"/>
          <ref name="mei_model.addressPart"/>
          <ref name="mei_model.nameLike.label"/>
+         <ref name="mei_model.locrefLike"/>
          <ref name="mei_model.addressLike"/>
          <ref name="mei_model.annotLike"/>
          <ref name="mei_model.biblLike"/>
@@ -37026,6 +37101,7 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_model.msInline_alternation"/>
          <ref name="mei_model.addressPart_alternation"/>
          <ref name="mei_model.nameLike.label_alternation"/>
+         <ref name="mei_model.locrefLike_alternation"/>
          <ref name="mei_model.addressLike_alternation"/>
          <ref name="mei_model.annotLike_alternation"/>
          <ref name="mei_model.biblLike_alternation"/>
@@ -37048,6 +37124,7 @@ Suggested values include: 1] smufl</a:documentation>
       <ref name="mei_model.msInline_sequence"/>
       <ref name="mei_model.addressPart_sequence"/>
       <ref name="mei_model.nameLike.label_sequence"/>
+      <ref name="mei_model.locrefLike_sequence"/>
       <ref name="mei_model.addressLike_sequence"/>
       <ref name="mei_model.annotLike_sequence"/>
       <ref name="mei_model.biblLike_sequence"/>
@@ -37076,6 +37153,9 @@ Suggested values include: 1] smufl</a:documentation>
       </optional>
       <optional>
          <ref name="mei_model.nameLike.label_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="mei_model.locrefLike_sequenceOptional"/>
       </optional>
       <optional>
          <ref name="mei_model.addressLike_sequenceOptional"/>
@@ -37137,6 +37217,9 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_model.nameLike.label_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="mei_model.locrefLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="mei_model.addressLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
@@ -37194,6 +37277,9 @@ Suggested values include: 1] smufl</a:documentation>
       </oneOrMore>
       <oneOrMore>
          <ref name="mei_model.nameLike.label_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_model.locrefLike_sequenceRepeatable"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="mei_model.addressLike_sequenceRepeatable"/>
@@ -37985,19 +38071,17 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_mdiv">
       <element name="mdiv">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(musical division) Contains a subdivision of the body of a musical text.</a:documentation>
-         <choice>
-            <group>
-               <optional>
-                  <ref name="mei_model.scoreLike"/>
-               </optional>
-               <optional>
-                  <ref name="mei_model.partsLike"/>
-               </optional>
-            </group>
-            <zeroOrMore>
-               <ref name="mei_model.mdivLike"/>
-            </zeroOrMore>
-         </choice>
+         <group>
+            <optional>
+               <ref name="mei_model.scoreLike"/>
+            </optional>
+            <optional>
+               <ref name="mei_model.partsLike"/>
+            </optional>
+            <optional>
+               <ref name="mei_model.draftsLike"/>
+            </optional>
+         </group>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
          <ref name="mei_att.metadataPointing.attributes"/>
@@ -38646,6 +38730,7 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             <choice>
                <text/>
                <ref name="mei_model.identifierLike"/>
+               <ref name="mei_model.locrefLike"/>
                <ref name="mei_model.milestoneLike.text"/>
                <ref name="mei_model.titleLike"/>
                <ref name="mei_editor"/>
@@ -40343,6 +40428,44 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
             </list>
          </attribute>
       </optional>
+   </define>
+   <define name="mei_model.draftsLike">
+      <choice>
+         <ref name="mei_drafts"/>
+      </choice>
+   </define>
+   <define name="mei_drafts">
+      <element name="drafts">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Provides a container for drafts.</a:documentation>
+         <zeroOrMore>
+            <ref name="mei_model.draftLike"/>
+         </zeroOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="mei_model.draftLike">
+      <choice>
+         <ref name="mei_draft"/>
+      </choice>
+   </define>
+   <define name="mei_draft">
+      <element name="draft">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A version of the musical content that is unfinished – a sketch, draft or similar.</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <ref name="mei_model.annotLike"/>
+               <ref name="mei_model.graphicPrimitiveLike"/>
+               <ref name="mei_model.milestoneLike.music"/>
+               <ref name="mei_model.relationLike"/>
+               <ref name="mei_model.scoreDefLike"/>
+               <ref name="mei_model.scorePart"/>
+               <ref name="mei_model.staffDefLike"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <empty/>
+      </element>
    </define>
    <start>
       <choice>
