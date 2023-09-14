@@ -164,6 +164,21 @@
             <classSpec ident="model.layerPart.mensuralAndNeumes" module="MEI.shared" type="model"
                mode="delete"/>
             
+            <classSpec type="atts" ident="att.linking" mode="change">
+               <attList>
+                  <attDef ident="corresp" usage="opt" mode="change">
+                     <constraintSpec ident="check_correspTarget" scheme="schematron" mode="replace">
+                        <constraint>
+                           <sch:rule context="@corresp">
+                              <sch:assert role="warning" test="not(normalize-space(.) eq '')">@corresp attribute should have content.</sch:assert>
+                              <sch:assert role="warning" test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:*/@xml:id or matches($i, '^([a-z]+://|\.{1,2}/)')">Each value in @corresp should correspond to the @xml:id attribute of an element or be an external URL.</sch:assert>
+                           </sch:rule>
+                        </constraint>
+                     </constraintSpec>
+                  </attDef>
+               </attList>
+            </classSpec>
+            
             <!-- Move model.noteModifierLike from layerPart.mensuralAndNeumes to editTransPart.music -->
             <classSpec ident="model.noteModifierLike" module="MEI.shared" type="model" mode="replace">
                <desc>Groups elements that modify note-like features.</desc>
