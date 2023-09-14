@@ -1,284 +1,522 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg" meiversion="5.0.0-dev" xml:id="x933afd96-4830-43b1-9cef-32e06762c88d">
-    <meiHead meiversion="5.0.0-dev">
-        <fileDesc>
-            <titleStmt>
-                <title>
+<mei xmlns="http://www.music-encoding.org/ns/mei"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     meiversion="5.0.0-dev"
+     xml:id="x933afd96-4830-43b1-9cef-32e06762c88d">
+   <meiHead meiversion="5.0.0-dev">
+      <fileDesc xml:id="h37e16cf9-3a31-440f-977d-dfbde23aa1f2">
+         <titleStmt xml:id="h1ed9636e-1eda-4eaa-9b0f-e3d4653aa474">
+            <title xml:id="h5f4741e8-2c2d-4484-9c52-8a6b976248f3">
                     Ludwig van Beethoven, Skizzenblatt zur Sinfonie Nr. 9 op. 125, 1. Satz,
           Autograph
                 </title>
-                <composer>
-                    <persName>
+            <composer xml:id="hd33cc9bc-22ad-40bc-af91-4d2f7f4ed947">
+               <persName xml:id="h22fce337-f525-4d5c-b1dc-b3e292e87f90">
                         Beethoven, Ludwig van
                     </persName>
-                </composer>
-                <editor>
-                    <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">
+            </composer>
+            <editor xml:id="hb3b37e94-05bd-4470-9623-85e8e5d5959c">
+               <corpName xml:id="BW" auth.uri="https://beethovens-werkstatt.de">
                         Beethovens
             Werkstatt
                     </corpName>
-                </editor>
-                <funder>
-                    <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">
+            </editor>
+            <funder xml:id="h721f343b-d3f0-425f-9f4d-050a43e514bd">
+               <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">
                         Akademie der Wissenschaften und
             der Literatur Mainz
                     </corpName>
-                </funder>
-            </titleStmt>
-            <pubStmt/>
-            <seriesStmt>
-                <title xml:lang="de" level="s">
+            </funder>
+         </titleStmt>
+         <pubStmt xml:id="h7ee7f80b-4a3e-4626-8cd2-1fd21c93c03e"/>
+         <seriesStmt xml:id="h9ab6c64d-eeac-4520-bf87-deafd65989a2">
+            <title xml:id="he0923d9b-58ab-4947-b1a2-6f5378e4d112"
+                   xml:lang="de"
+                   level="s">
                     Skizzenbuchedition
                 </title>
-                <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">
+            <identifier xml:id="haad7a728-36dd-4e8e-882f-85a519cc9288"
+                        auth.uri="https://beethovens-werkstatt.de/modul-4/">
                     sk
                 </identifier>
-            </seriesStmt>
-            <sourceDesc>
-                <source/>
-                <!-- TODO: IIF Manifest ergänzen -->
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc class="#bw_diplomatic_transcript #bw_document_file #bw_module4">
-            <classDecls>
-                <taxonomy label="availableTaxonomies">
-                    <category xml:id="document_type"/>
-                    <category xml:id="bw_observation_type"/>
-                    <category xml:id="bw_implementation_completeness"/>
-                    <!--<category xml:id="bw_monitum_category"/>
+         </seriesStmt>
+         <sourceDesc xml:id="h71354d12-ad9b-4f63-bb6a-0d7329696954">
+            <source xml:id="heff84628-1318-4da8-a615-c8b54a1f00fd"/>
+            <!-- TODO: IIF Manifest ergänzen -->
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc xml:id="h9f396aeb-ed67-45d2-8039-908b78884498"
+                    class="#bw_diplomatic_transcript #bw_document_file #bw_module4">
+         <classDecls xml:id="h0b20fe09-19f5-457d-a874-03f2ac6c337b">
+            <taxonomy xml:id="h1104bc59-48b4-4de6-8a84-681c105f507c"
+                      label="availableTaxonomies">
+               <category xml:id="document_type"/>
+               <category xml:id="bw_observation_type"/>
+               <category xml:id="bw_implementation_completeness"/>
+               <!--<category xml:id="bw_monitum_category"/>
                     -->
-                    <category xml:id="bw_file_type"/>
-                    <category xml:id="bw_monitum_comment"/>
-                    <category xml:id="bw_monitum_classification"/>
-                    <category xml:id="bw_monitum_textoperation"/>
-                    <category xml:id="bw_monitum_object"/>
-                    <category xml:id="bw_monitum_kontext"/>
-                    <category xml:id="bw_monitum_konkordanz"/>
-                    <category xml:id="bw_transcription_type"/>
-                    <category xml:id="bw_module"/>
-                    <category xml:id="bw_geneticOrder"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="music.print" class="#document_type"/>
-                    <category xml:id="music.manuscript" class="#document_type"/>
-                    <category xml:id="letter.manuscript" class="#document_type"/>
-                    <category xml:id="music.sketchbook" class="#document_type"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_monitum" class="#bw_observation_type"/>
-                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
-                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
-                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
-                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_file_type"/>
+               <category xml:id="bw_monitum_comment"/>
+               <category xml:id="bw_monitum_classification"/>
+               <category xml:id="bw_monitum_textoperation"/>
+               <category xml:id="bw_monitum_object"/>
+               <category xml:id="bw_monitum_kontext"/>
+               <category xml:id="bw_monitum_konkordanz"/>
+               <category xml:id="bw_transcription_type"/>
+               <category xml:id="bw_module"/>
+               <category xml:id="bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy xml:id="h737eda2e-d8a1-49dc-b3a9-6ffcd1b0908c">
+               <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy xml:id="h10dc779c-93fd-4fa2-a6b0-ec8b09aa76b5">
+               <category xml:id="music.print" class="#document_type"/>
+               <category xml:id="music.manuscript" class="#document_type"/>
+               <category xml:id="letter.manuscript" class="#document_type"/>
+               <category xml:id="music.sketchbook" class="#document_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h7547e116-c4d4-4e79-ab88-6ed80c39165b">
+               <category xml:id="bw_monitum" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h4b2ace50-638f-43f0-b072-9112d54216c5">
+               <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+               <category xml:id="bw_partially_implemented"
+                         class="#bw_implementation_completeness"/>
+               <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+            </taxonomy>
+            <taxonomy xml:id="h3d3d9323-3ce6-460a-a666-419dd6d31176">
                     <!-- Klassifizierung -->
-                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_classification_korrektur"
+                         label="Korrektur"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_variante"
+                         label="Variante"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_textpraezisierung"
+                         label="Textpräzisierung"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_schriftbildliche_verbesserung"
+                         label="Schriftbildliche Verbesserung"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_paratextliche_eingriffe"
+                         label="Paratextliche Eingriffe"
+                         class="#bw_monitum_classification"/>
+            </taxonomy>
+            <taxonomy xml:id="h93a5f040-7a52-4487-bdc9-56ed6f7a8a2e">
                     <!-- Textoperation -->
-                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
-                    <!--oder erweiterung-->
-                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
-                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
-                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_textoperation_einfuegung"
+                         label="Einfuegung"
+                         class="#bw_monitum_textoperation"/>
+               <!--oder erweiterung-->
+               <category xml:id="bw_textoperation_tilgung"
+                         label="Tilgung"
+                         class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_ersetzung"
+                         label="Ersetzung"
+                         class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_umstellung"
+                         label="Umstellung"
+                         class="#bw_monitum_textoperation"/>
+            </taxonomy>
+            <taxonomy xml:id="h457e5b9f-986c-479e-bae9-a52a8d1ec937">
                     <!-- Revisionsobjekt -->
-                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_object_dynamic"
+                         label="Dynamik"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pitch"
+                         label="Tonbuchstabe"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_bogensetzung"
+                         label="Bogensetzung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rhythm"
+                         label="Rhythmus"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_ornament"
+                         label="Verzierung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_octave"
+                         label="Oktavierung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_articulation"
+                         label="Artikulation"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_clef"
+                         label="Notenschlüssel"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_arpeggio"
+                         label="Arpeggiozeichen"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_fingering"
+                         label="Fingersatz"
+                         class="#bw_monitum_object"/>
+            </taxonomy>
+            <taxonomy xml:id="heeba37ae-6081-4ea7-a531-1b4cbb2b6fb9">
                     <!-- kontextzitat -->
-                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
-                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
-                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_kontext_korrekt"
+                         label="korrekt"
+                         class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_unvollstaendig"
+                         label="unvollständig"
+                         class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_korrumpiert"
+                         label="korrumpiert"
+                         class="#bw_monitum_kontext"/>
+            </taxonomy>
+            <taxonomy xml:id="h21d47e3f-6be9-45cc-a8cc-be46e3dec0f3">
                     <!-- konkordanz -->
-                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
-                    <category xml:id="bw_document_file" class="#bw_file_type"/>
-                    <category xml:id="bw_work_file" class="#bw_file_type"/>
-                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_module4" class="#bw_module"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
-                </taxonomy>
-            </classDecls>
-        </encodingDesc>
-        <manifestationList>
-            <manifestation label="…" class="#music.manuscript">
-                <physDesc>
-                    <foliaDesc>
-                        <folium xml:id="ucf9fc6e5-0a08-4ea1-b133-8d0324dbcff7" width="305" height="232" unit="mm" recto="#x731b0f02-032a-49d6-a417-d16500bea745" verso="#xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9"/>
-                    </foliaDesc>
-                </physDesc>
-                <physLoc>
-                    <repository>
-                        <identifier auth.uri="http://www.rism.info/" auth="RISM">
+               <category xml:id="bw_konkordanz"
+                         label="konkordanz"
+                         class="#bw_monitum_konkordanz"/>
+            </taxonomy>
+            <taxonomy xml:id="h7a903fb7-3ef9-467f-8b8f-3e34ff3d43e7">
+               <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+               <category xml:id="bw_document_file" class="#bw_file_type"/>
+               <category xml:id="bw_work_file" class="#bw_file_type"/>
+               <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h355e1bf7-a7b7-43ad-8644-370ad588a045">
+               <category xml:id="bw_module4" class="#bw_module"/>
+            </taxonomy>
+            <taxonomy xml:id="h85b5557f-9ad4-41f3-89f2-2452623e3402">
+               <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+            </taxonomy>
+         </classDecls>
+      </encodingDesc>
+      <manifestationList xml:id="hc541d966-40f0-431f-a5c9-098ccb2bd652">
+         <manifestation xml:id="h062ab70d-c73b-4fc2-b76a-dbe801117215"
+                        label="…"
+                        class="#music.manuscript">
+            <physDesc xml:id="h59dd1987-556b-4a7d-b918-753014dcc0c5">
+               <foliaDesc xml:id="h5435d96e-27c0-44b7-9003-f21dad5f489e">
+                  <folium xml:id="ucf9fc6e5-0a08-4ea1-b133-8d0324dbcff7"
+                          width="305"
+                          height="232"
+                          unit="mm"
+                          recto="#x731b0f02-032a-49d6-a417-d16500bea745"
+                          verso="#xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9"/>
+               </foliaDesc>
+            </physDesc>
+            <physLoc xml:id="h1323bb34-af8c-412b-a7f6-60cf1784384d">
+               <repository xml:id="h88edda8a-3da2-43bf-b9af-ec81fd969162">
+                  <identifier xml:id="heffc5e4b-9290-4f62-8f32-1ff220c19d42"
+                              auth.uri="http://www.rism.info/"
+                              auth="RISM">
                             D-BNba
                         </identifier>
-                    </repository>
-                    <identifier>
+               </repository>
+               <identifier xml:id="h409a18e3-faba-4ca4-adde-008e3663fa96">
                         D-BNba, BSk 21/69
                     </identifier>
-                </physLoc>
-            </manifestation>
-        </manifestationList>
-        <revisionDesc>
-            <change n="2">
-                <respStmt>
-                    <persName auth.uri="https://github.com/ran-mo">
+            </physLoc>
+         </manifestation>
+      </manifestationList>
+      <revisionDesc xml:id="h9f5f8131-aab6-49ac-8f10-ab50ddca4b1d">
+         <change xml:id="ha3129f63-bd75-41a7-a119-fc41cd7f2da0" n="2">
+            <respStmt xml:id="hfd57b008-d942-45c9-8831-de364ebf58a5">
+               <persName xml:id="h02afab02-2abf-4cd5-87a9-79f3b3e5ef34"
+                         auth.uri="https://github.com/ran-mo">
                         Ran Mo
                     </persName>
-                </respStmt>
-                <changeDesc>
-                    <p>
+            </respStmt>
+            <changeDesc xml:id="hd6171f16-0bb8-47eb-aa77-f67725db88d4">
+               <p xml:id="h48bea60e-2091-4721-96d9-0f581e136cdd">
                         Pages extracted from Notirungbuch_K.xml
                     </p>
-                </changeDesc>
-                <date isodate="2023-02-15"/>
-            </change>
-            <change n="1">
-                <respStmt>
-                    <persName auth.uri="https://github.com/kepper">
+            </changeDesc>
+            <date xml:id="h88b8982b-4a25-41ed-91b6-73946599c333" isodate="2023-02-15"/>
+         </change>
+         <change xml:id="h0e849980-98fb-4daa-bf42-d5a4c3d555aa" n="1">
+            <respStmt xml:id="h04915ca2-7b79-4d9a-a641-a5f07db70cc9">
+               <persName xml:id="h2467f59b-2e33-4618-b886-0fa3b44092b8"
+                         auth.uri="https://github.com/kepper">
                         Johannes Kepper
                     </persName>
-                    <persName auth.uri="https://github.com/jpvoigt">
+               <persName xml:id="hcf465382-e17b-4e4b-b628-c236645a801e"
+                         auth.uri="https://github.com/jpvoigt">
                         Jan-Peter Voigt
                     </persName>
-                </respStmt>
-                <changeDesc>
-                    <p>
+            </respStmt>
+            <changeDesc xml:id="h31772f1e-81b7-4e46-8d25-cfa65b801be3">
+               <p xml:id="h22133628-b24c-42fe-b5d4-a542045cb4f3">
                         File initially generated from IIIF Manifests mentioned in /fileDesc//source.
                     </p>
-                </changeDesc>
-                <date isodate="2022-08-16"/>
-            </change>
-        </revisionDesc>
-    </meiHead>
-    <music meiversion="5.0.0-dev">
-        <facsimile>
-            <surface xml:id="x731b0f02-032a-49d6-a417-d16500bea745" n="1" label="1r" rotate="0">
-                <graphic xml:id="x5485142f-058f-4635-a4bc-9cd3bedb1e09" target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69r.jpg#xywh=179,177,7159,5652" type="facsimile" width="7504" height="6000"/>
-                <graphic xml:id="t45545762-6971-47fc-ba0d-3574a7daa08c" type="shapes" target="./svg/D-BNba_BSk_21-69_p001.svg"/>
-                <zone xml:id="z2a7b3e5a-9c59-46fb-9203-e9041a232093" data="#ge1b0f0dc-3a8e-4f14-81b3-8a8147dba74b" ulx="795" uly="417" lrx="6363" lry="2037"/>
-                <zone xml:id="z170820ba-b621-4d41-a7e0-65941811c299" data="#g8d313ead-d7b2-45e0-a35b-3d781b688bb7" ulx="702" uly="894" lrx="6259" lry="2498"/>
-                <zone xml:id="ze0ac9d21-08c3-473f-bad7-c2cabc9ad445" data="#gfff23ea5-a028-4b16-9baa-5c84aabc50dc" ulx="531" uly="2096" lrx="6549" lry="2921"/>
-                <zone xml:id="z36150680-ed9e-46eb-84f3-a37bf30e24c9" data="#g8115ebe9-6553-4242-9a26-e9458d0eb78a" ulx="1492" uly="2494" lrx="6963" lry="3406"/>
-                <zone xml:id="zd184e1b9-5055-4c97-99f8-40d59fa82ee4" data="#g91c6de03-8924-4e19-aea1-b686e7ee6fed" ulx="1068" uly="3253" lrx="7218" lry="4945"/>
-            </surface>
-            <surface xml:id="xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9" n="2" label="1v" rotate="0">
-                <graphic xml:id="x9f407fc4-e494-40f9-a73d-3edd0e476452" target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69v.jpg#xywh=128,165,7172,5639" type="facsimile" width="7504" height="6000"/>
-                <graphic xml:id="g7b10ec15-c822-4ab1-ae9d-ca62ab0dcb9e" type="shapes" target="./svg/D-BNba_BSk_21-69_p002.svg"/>
-                <zone xml:id="z31a766c5-842e-43cd-b5c6-eae91470fbf6" data="#g83c4c865-ed1c-405b-bcb0-33ac10756605" ulx="1568" uly="252" lrx="5566" lry="1259"/>
-                <zone xml:id="zfec6de1c-730b-4943-b943-8fc70a5e880a" data="#g7303bad9-6386-48e0-b87b-61bf34a96a44" ulx="770" uly="1500" lrx="3430" lry="2575"/>
-                <zone xml:id="ze5b88003-3ec3-4613-9baa-a225461ca492" data="#g5b3f744f-84b7-4572-9560-3f3588ecffa8" ulx="856" uly="2161" lrx="6365" lry="2785"/>
-                <zone xml:id="zdaa3d652-18fd-40b4-9f88-64aca5c0c2e3" data="#g48d111e1-90df-430c-b214-89213da23f07" ulx="1837" uly="2756" lrx="6640" lry="4395"/>
-                <zone xml:id="zcdc44c83-e692-4aad-8ea4-761e45b5cbdb" data="#g76fcc3b2-8723-465b-b229-5a9e75fde4c0" ulx="1339" uly="4282" lrx="7267" lry="5712"/>
-            </surface>
-        </facsimile>
-        <genDesc class="#geneticOrder_documentLevel" ordered="false">
-            <genDesc xml:id="t61f2c8d7-de3e-4f05-8452-82a447b12846" class="#geneticOrder_pageLevel" n="1" ordered="false" corresp="#x731b0f02-032a-49d6-a417-d16500bea745">
-                <genDesc xml:id="ge1b0f0dc-3a8e-4f14-81b3-8a8147dba74b" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#z6c124a58-1c84-427b-9b18-5abb2cbb3096" label="1">
-                    <genState xml:id="g6fd3d93e-a59e-4622-86a4-c2c5387b216b" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p001.svg#l6f9b03bd-c23a-4be7-9897-ef431db02863" label="#final"/>
-                </genDesc>
-                <genDesc xml:id="g8d313ead-d7b2-45e0-a35b-3d781b688bb7" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#zeb7a0bcf-7a31-4fd2-bb4e-540e60b67461" label="2">
-                    <genState xml:id="g76866089-304e-4d90-97d9-bfe5d569d4dc" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p001.svg#l619504d9-0505-4156-b795-f8ed1730c938" label="#final"/>
-                </genDesc>
-                <genDesc xml:id="gfff23ea5-a028-4b16-9baa-5c84aabc50dc" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#zb3585fc4-a333-451c-a4d6-0c5d613fac08" label="3">
-                    <genState xml:id="ga548ba06-8be9-445c-b3ef-f2f515184c3b" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#lc1fbc3cb-c38e-4f4a-a8aa-c58064aab6f9" label="1"/>
-                    <genState xml:id="g8f0f795c-7d9f-4fff-8165-96c6604f1c53" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#l4a3729b4-87b1-4d49-8fe9-96c111697d3c" label="1"/>
-                </genDesc>
-                <genDesc xml:id="g8115ebe9-6553-4242-9a26-e9458d0eb78a" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#zef340f9c-fd9e-460b-9b18-38b674bc1f91" label="4">
-                    <genState xml:id="g57f6b5b9-ca21-43c2-869d-e8d5b942711e" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p001.svg#ld5cbdb70-9abf-426a-9f54-d6dfc54404c3" label="#final"/>
-                </genDesc>
-                <genDesc xml:id="g91c6de03-8924-4e19-aea1-b686e7ee6fed" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#z4bab796f-d906-4e43-b8f8-3b345e245c77" label="5">
-                    <genState xml:id="ga722a5fc-a50a-40c9-b883-ed49e8c01bd2" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p001.svg#l53646ce7-1889-4b3d-a211-ae7871816078" label="#final"/>
-                    <genState xml:id="g0b307ab3-0857-450d-a95a-e36733fb2148" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p001.svg#le561c575-19a4-403f-a5eb-861e4aaaa7f2" label="1"/>
-                </genDesc>
+            </changeDesc>
+            <date xml:id="h1961b9d2-c43c-4fb2-84eb-09a84c9fbec2" isodate="2022-08-16"/>
+         </change>
+      </revisionDesc>
+   </meiHead>
+   <music meiversion="5.0.0-dev">
+      <facsimile>
+         <surface xml:id="x731b0f02-032a-49d6-a417-d16500bea745"
+                  n="1"
+                  label="1r"
+                  rotate="0">
+            <graphic xml:id="x5485142f-058f-4635-a4bc-9cd3bedb1e09"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69r.jpg#xywh=179,177,7159,5652"
+                     type="facsimile"
+                     width="7504"
+                     height="6000"/>
+            <graphic xml:id="t45545762-6971-47fc-ba0d-3574a7daa08c"
+                     type="shapes"
+                     target="./svg/D-BNba_BSk_21-69_p001.svg"/>
+            <zone xml:id="z2a7b3e5a-9c59-46fb-9203-e9041a232093"
+                  data="#ge1b0f0dc-3a8e-4f14-81b3-8a8147dba74b"
+                  ulx="795"
+                  uly="417"
+                  lrx="6363"
+                  lry="2037"
+                  rotate="0"/>
+            <zone xml:id="z170820ba-b621-4d41-a7e0-65941811c299"
+                  data="#g8d313ead-d7b2-45e0-a35b-3d781b688bb7"
+                  ulx="702"
+                  uly="894"
+                  lrx="6259"
+                  lry="2498"
+                  rotate="0"/>
+            <zone xml:id="ze0ac9d21-08c3-473f-bad7-c2cabc9ad445"
+                  data="#gfff23ea5-a028-4b16-9baa-5c84aabc50dc"
+                  ulx="531"
+                  uly="2096"
+                  lrx="6549"
+                  lry="2921"
+                  rotate="0"/>
+            <zone xml:id="z36150680-ed9e-46eb-84f3-a37bf30e24c9"
+                  data="#g8115ebe9-6553-4242-9a26-e9458d0eb78a"
+                  ulx="1492"
+                  uly="2494"
+                  lrx="6963"
+                  lry="3406"
+                  rotate="0"/>
+            <zone xml:id="zd184e1b9-5055-4c97-99f8-40d59fa82ee4"
+                  data="#g91c6de03-8924-4e19-aea1-b686e7ee6fed"
+                  ulx="1068"
+                  uly="3253"
+                  lrx="7218"
+                  lry="4945"
+                  rotate="0"/>
+         </surface>
+         <surface xml:id="xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9"
+                  n="2"
+                  label="1v"
+                  rotate="0">
+            <graphic xml:id="x9f407fc4-e494-40f9-a73d-3edd0e476452"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/D-BNba_HCB_BSk_21-69%2FBSk%2021_69v.jpg#xywh=128,165,7172,5639"
+                     type="facsimile"
+                     width="7504"
+                     height="6000"/>
+            <graphic xml:id="g7b10ec15-c822-4ab1-ae9d-ca62ab0dcb9e"
+                     type="shapes"
+                     target="./svg/D-BNba_BSk_21-69_p002.svg"/>
+            <zone xml:id="z31a766c5-842e-43cd-b5c6-eae91470fbf6"
+                  data="#g83c4c865-ed1c-405b-bcb0-33ac10756605"
+                  ulx="1568"
+                  uly="252"
+                  lrx="5566"
+                  lry="1259"
+                  rotate="0"/>
+            <zone xml:id="zfec6de1c-730b-4943-b943-8fc70a5e880a"
+                  data="#g7303bad9-6386-48e0-b87b-61bf34a96a44"
+                  ulx="770"
+                  uly="1500"
+                  lrx="3430"
+                  lry="2575"
+                  rotate="0"/>
+            <zone xml:id="ze5b88003-3ec3-4613-9baa-a225461ca492"
+                  data="#g5b3f744f-84b7-4572-9560-3f3588ecffa8"
+                  ulx="856"
+                  uly="2161"
+                  lrx="6365"
+                  lry="2785"
+                  rotate="0"/>
+            <zone xml:id="zdaa3d652-18fd-40b4-9f88-64aca5c0c2e3"
+                  data="#g48d111e1-90df-430c-b214-89213da23f07"
+                  ulx="1837"
+                  uly="2756"
+                  lrx="6640"
+                  lry="4395"
+                  rotate="0"/>
+            <zone xml:id="zcdc44c83-e692-4aad-8ea4-761e45b5cbdb"
+                  data="#g76fcc3b2-8723-465b-b229-5a9e75fde4c0"
+                  ulx="1339"
+                  uly="4282"
+                  lrx="7267"
+                  lry="5712"
+                  rotate="0"/>
+         </surface>
+      </facsimile>
+      <genDesc class="#geneticOrder_documentLevel" ordered="false">
+         <genDesc xml:id="t61f2c8d7-de3e-4f05-8452-82a447b12846"
+                  class="#geneticOrder_pageLevel"
+                  n="1"
+                  ordered="false"
+                  corresp="#x731b0f02-032a-49d6-a417-d16500bea745">
+            <genDesc xml:id="ge1b0f0dc-3a8e-4f14-81b3-8a8147dba74b"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p001.svg#z6c124a58-1c84-427b-9b18-5abb2cbb3096"
+                     label="1">
+               <genState xml:id="g6fd3d93e-a59e-4622-86a4-c2c5387b216b"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p001.svg#l6f9b03bd-c23a-4be7-9897-ef431db02863"
+                         label="#final"/>
             </genDesc>
-            <genDesc xml:id="t23520bf1-b33b-4737-94d6-57bc74fbf6fa" class="#geneticOrder_pageLevel" n="1" ordered="false" corresp="#xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9">
-                <genDesc xml:id="g83c4c865-ed1c-405b-bcb0-33ac10756605" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#zcced6578-034d-49bc-ab2e-f188dee08517" label="1">
-                    <genState xml:id="g285bd6ad-89c4-41e6-8d94-033520afc196" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p002.svg#le94a5306-2c9a-433c-9a4a-cdd2bbea04ca" label="#final"/>
-                    <genState xml:id="g4840254c-8c73-4e6f-8b64-8a5de40812f3" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#lcbb69567-044a-4806-87a5-95d979c575f0" label="1"/>
-                </genDesc>
-                <genDesc xml:id="g7303bad9-6386-48e0-b87b-61bf34a96a44" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#ze105ff96-d1e8-4485-a24c-976b3b75e449" label="2">
-                    <genState xml:id="g70538899-d852-4cb1-992e-8bffc725cbea" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p002.svg#lf2701db9-cd66-43da-8083-918ec060fb57" label="#final"/>
-                    <genState xml:id="g9949f176-3b23-4cd4-ad62-151c2513cfca" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#le0dc049c-71b3-4a85-b75a-7019e8d9e92c" label="1"/>
-                </genDesc>
-                <genDesc xml:id="g5b3f744f-84b7-4572-9560-3f3588ecffa8" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#zc7911a8d-0db4-4628-8bc0-f6daa1826bcf" label="3">
-                    <genState xml:id="g75a76859-6c33-45e7-90da-3ba3ec77d675" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p002.svg#l3a389af1-5748-4b3d-9b0f-e7ad64c977a2" label="#final"/>
-                    <genState xml:id="g703bf3a7-f0d0-451f-9e40-c08b338f9b48" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#lcf3faa98-951d-4dd8-af5d-439e094959fb" label="1"/>
-                </genDesc>
-                <genDesc xml:id="g48d111e1-90df-430c-b214-89213da23f07" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#zadf99256-8112-4243-8066-339ef35f509c" label="4">
-                    <genState xml:id="g12629f65-0f78-417c-88b6-4384299ed282" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p002.svg#la434b883-fff9-41aa-82f7-21761799073d" label="#final"/>
-                    <genState xml:id="g199ba82c-adc3-447b-ad19-2e1106fdec52" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#lfd94b727-ec76-4dfe-b2bc-516962390f9b" label="1"/>
-                </genDesc>
-                <genDesc xml:id="g76fcc3b2-8723-465b-b229-5a9e75fde4c0" class="#geneticOrder_writingZoneLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#z03b6077f-703c-4a2c-98ff-22de050036b9" label="5">
-                    <genState xml:id="g6a6e4a97-fba2-463e-b67e-021d1e33b5e8" class="#geneticOrder_writingLayerLevel #geneticOrder_finalState" corresp="./svg/D-BNba_BSk_21-69_p002.svg#l0662ffe4-c62b-46b2-8dc1-e12b92fc45af" label="#final"/>
-                    <genState xml:id="gc410772c-6bbb-4ce3-a2bb-8cc53a67e374" class="#geneticOrder_writingLayerLevel" corresp="./svg/D-BNba_BSk_21-69_p002.svg#l15f55b38-aa87-4985-b412-97c0bc18e167" label="1"/>
-                </genDesc>
+            <genDesc xml:id="g8d313ead-d7b2-45e0-a35b-3d781b688bb7"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p001.svg#zeb7a0bcf-7a31-4fd2-bb4e-540e60b67461"
+                     label="2">
+               <genState xml:id="g76866089-304e-4d90-97d9-bfe5d569d4dc"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p001.svg#l619504d9-0505-4156-b795-f8ed1730c938"
+                         label="#final"/>
             </genDesc>
-        </genDesc>
-        <body>
-            <mdiv>
+            <genDesc xml:id="gfff23ea5-a028-4b16-9baa-5c84aabc50dc"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p001.svg#zb3585fc4-a333-451c-a4d6-0c5d613fac08"
+                     label="3">
+               <genState xml:id="ga548ba06-8be9-445c-b3ef-f2f515184c3b"
+                         class="#geneticOrder_writingLayerLevel"
+                         corresp="./svg/D-BNba_BSk_21-69_p001.svg#lc1fbc3cb-c38e-4f4a-a8aa-c58064aab6f9"
+                         label="1"/>
+               <genState xml:id="g8f0f795c-7d9f-4fff-8165-96c6604f1c53"
+                         class="#geneticOrder_writingLayerLevel"
+                         corresp="./svg/D-BNba_BSk_21-69_p001.svg#l4a3729b4-87b1-4d49-8fe9-96c111697d3c"
+                         label="1"/>
+            </genDesc>
+            <genDesc xml:id="g8115ebe9-6553-4242-9a26-e9458d0eb78a"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p001.svg#zef340f9c-fd9e-460b-9b18-38b674bc1f91"
+                     label="4">
+               <genState xml:id="g57f6b5b9-ca21-43c2-869d-e8d5b942711e"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p001.svg#ld5cbdb70-9abf-426a-9f54-d6dfc54404c3"
+                         label="#final"/>
+            </genDesc>
+            <genDesc xml:id="g91c6de03-8924-4e19-aea1-b686e7ee6fed"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p001.svg#z4bab796f-d906-4e43-b8f8-3b345e245c77"
+                     label="5">
+               <genState xml:id="ga722a5fc-a50a-40c9-b883-ed49e8c01bd2"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p001.svg#l53646ce7-1889-4b3d-a211-ae7871816078"
+                         label="#final"/>
+               <genState xml:id="g0b307ab3-0857-450d-a95a-e36733fb2148"
+                         class="#geneticOrder_writingLayerLevel"
+                         corresp="./svg/D-BNba_BSk_21-69_p001.svg#le561c575-19a4-403f-a5eb-861e4aaaa7f2"
+                         label="1"/>
+            </genDesc>
+         </genDesc>
+         <genDesc xml:id="t23520bf1-b33b-4737-94d6-57bc74fbf6fa"
+                  class="#geneticOrder_pageLevel"
+                  n="1"
+                  ordered="false"
+                  corresp="#xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9">
+            <genDesc xml:id="g83c4c865-ed1c-405b-bcb0-33ac10756605"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p002.svg#zcced6578-034d-49bc-ab2e-f188dee08517"
+                     label="1">
+               <genState xml:id="g285bd6ad-89c4-41e6-8d94-033520afc196"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#le94a5306-2c9a-433c-9a4a-cdd2bbea04ca"
+                         label="#final"/>
+               <genState xml:id="g4840254c-8c73-4e6f-8b64-8a5de40812f3"
+                         class="#geneticOrder_writingLayerLevel"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#lcbb69567-044a-4806-87a5-95d979c575f0"
+                         label="1"/>
+            </genDesc>
+            <genDesc xml:id="g7303bad9-6386-48e0-b87b-61bf34a96a44"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p002.svg#ze105ff96-d1e8-4485-a24c-976b3b75e449"
+                     label="2">
+               <genState xml:id="g70538899-d852-4cb1-992e-8bffc725cbea"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#lf2701db9-cd66-43da-8083-918ec060fb57"
+                         label="#final"/>
+               <genState xml:id="g9949f176-3b23-4cd4-ad62-151c2513cfca"
+                         class="#geneticOrder_writingLayerLevel"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#le0dc049c-71b3-4a85-b75a-7019e8d9e92c"
+                         label="1"/>
+            </genDesc>
+            <genDesc xml:id="g5b3f744f-84b7-4572-9560-3f3588ecffa8"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p002.svg#zc7911a8d-0db4-4628-8bc0-f6daa1826bcf"
+                     label="3">
+               <genState xml:id="g75a76859-6c33-45e7-90da-3ba3ec77d675"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#l3a389af1-5748-4b3d-9b0f-e7ad64c977a2"
+                         label="#final"/>
+               <genState xml:id="g703bf3a7-f0d0-451f-9e40-c08b338f9b48"
+                         class="#geneticOrder_writingLayerLevel"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#lcf3faa98-951d-4dd8-af5d-439e094959fb"
+                         label="1"/>
+            </genDesc>
+            <genDesc xml:id="g48d111e1-90df-430c-b214-89213da23f07"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p002.svg#zadf99256-8112-4243-8066-339ef35f509c"
+                     label="4">
+               <genState xml:id="g12629f65-0f78-417c-88b6-4384299ed282"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#la434b883-fff9-41aa-82f7-21761799073d"
+                         label="#final"/>
+               <genState xml:id="g199ba82c-adc3-447b-ad19-2e1106fdec52"
+                         class="#geneticOrder_writingLayerLevel"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#lfd94b727-ec76-4dfe-b2bc-516962390f9b"
+                         label="1"/>
+            </genDesc>
+            <genDesc xml:id="g76fcc3b2-8723-465b-b229-5a9e75fde4c0"
+                     class="#geneticOrder_writingZoneLevel"
+                     corresp="./svg/D-BNba_BSk_21-69_p002.svg#z03b6077f-703c-4a2c-98ff-22de050036b9"
+                     label="5">
+               <genState xml:id="g6a6e4a97-fba2-463e-b67e-021d1e33b5e8"
+                         class="#geneticOrder_writingLayerLevel #geneticOrder_finalState"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#l0662ffe4-c62b-46b2-8dc1-e12b92fc45af"
+                         label="#final"/>
+               <genState xml:id="gc410772c-6bbb-4ce3-a2bb-8cc53a67e374"
+                         class="#geneticOrder_writingLayerLevel"
+                         corresp="./svg/D-BNba_BSk_21-69_p002.svg#l15f55b38-aa87-4985-b412-97c0bc18e167"
+                         label="1"/>
+            </genDesc>
+         </genDesc>
+      </genDesc>
+      <body>
+         <mdiv>
                 <!-- INFO: Each draft here matches one diplomatic transcript -->
                 <!-- INFO: Annotated Transcripts will be linked from that end -->
-                <drafts>
-                    <!-- INFO: The draft (diplomatic transcript) will link to the SVG writing zone with its @corresp attribute -->
-                    <!-- INFO: The draft will link to the corresponding <genDesc>
-                        with @state -->
-                        <!-- INFO: use label with same naming system to better identify drafts -->
-                        <draft label="NK_p009_wz03" xml:id="tf3b6eb4f-08ca-4005-a3a9-b34d7b17a2d5" class="#diplomaticTranscript" corresp="./svg/D-BNba_BSk_21-69_p001.svg#t1e2933df-5487-4d94-90a3-bb779e046a57" state="#t6351c080-9a63-4891-b315-4f42e0305be8">
-                            <!-- INFO: Every draft should start with a pagebegin (<pb) with @facs pointing to the surface -->
-                                <pb facs="#x731b0f02-032a-49d6-a417-d16500bea745"/>
-                                <!-- INFO: An additional <sb>
+           <!-- <drafts>
+                    <!-\- INFO: The draft (diplomatic transcript) will link to the SVG writing zone with its @corresp attribute -\->
+                    <!-\- INFO: The draft will link to the corresponding <genDesc>
+                        with @state -\->
+                        <!-\- INFO: use label with same naming system to better identify drafts -\->
+               <draft label="NK_p009_wz03"
+                      xml:id="tf3b6eb4f-08ca-4005-a3a9-b34d7b17a2d5"
+                      class="#diplomaticTranscript"
+                      corresp="./svg/D-BNba_BSk_21-69_p001.svg#t1e2933df-5487-4d94-90a3-bb779e046a57"
+                      state="#t6351c080-9a63-4891-b315-4f42e0305be8">
+                            <!-\- INFO: Every draft should start with a pagebegin (<pb) with @facs pointing to the surface -\->
+                  <pb facs="#x731b0f02-032a-49d6-a417-d16500bea745"/>
+                  <!-\- INFO: An additional <sb>
                                     with detailed placement info will be added in each
                                     <staff>
-                                        -->
-                                        <scoreDef>
+                                        -\->
+                  <scoreDef>
                                         </scoreDef>
-                                        <section>
+                  <section>
                                         </section>
-                                    </draft>
-                                </drafts>
-                            </mdiv>
-                        </body>
-                    </music>
-                </mei>
+               </draft>
+            </drafts>-->
+         </mdiv>
+      </body>
+   </music>
+</mei>

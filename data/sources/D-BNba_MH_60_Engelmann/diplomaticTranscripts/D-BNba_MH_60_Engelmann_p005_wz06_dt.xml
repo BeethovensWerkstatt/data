@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.music-encoding.org/ns/mei"
+    meiversion="5.0.0-dev"
+    xml:id="af296a834-d7c3-48d1-a541-74b82e43aed9">
+    <meiHead meiversion="5.0.0-dev" xml:id="xfcca1c67-f0eb-4536-a820-a24c932243af">
+        <fileDesc xml:id="xab402cd9-e132-415d-9615-3bc08ebb67c2">
+            <titleStmt xml:id="x76dc5dee-caee-4375-9483-6d69e6a7e6b5">
+                <title xml:id="x5ae4cc0d-a496-4b31-b647-6a6590ac9e63">
+                    Ludwig van Beethoven, Skizzenbuch "Engelmann" zu den Diabelli-Variationen op. 120 und der 9. Sinfonie op. 125, Autograph
+                </title>
+                <composer xml:id="x4760179f-c3d7-46d2-a9cb-6912ed254b08">
+                    <persName xml:id="x21221055-1f87-415c-bc3e-cfa644618e47">
+                        Beethoven, Ludwig van
+                    </persName>
+                </composer>
+                <editor xml:id="xebed8325-721f-471b-b0d9-5c68e88812db">
+                    <corpName auth.uri="https://beethovens-werkstatt.de"
+                        xml:id="x1b588c63-5094-4425-a164-19f2906d04c7">
+                        Beethovens Werkstatt
+                    </corpName>
+                </editor>
+                <funder xml:id="x9b9f0494-5dd3-435f-aa54-f21c3d3c3af4">
+                    <corpName auth.uri="http://www.adwmainz.de/"
+                        xml:id="x732039e2-afc4-4d52-8427-c2f5bcea16cb">
+                        Akademie der Wissenschaften und der Literatur Mainz
+                    </corpName>
+                </funder>
+            </titleStmt>
+            <pubStmt xml:id="x39ef4508-cfc5-4e65-bc7e-71bca9bb56e8"/>
+            <seriesStmt xml:id="x7059b888-ec0c-4477-a7ee-8af23dda6f9a">
+                <title xml:lang="de"
+                    level="s"
+                    xml:id="x702c2ac7-66d9-4e47-b75a-9ed2c5b6537c">
+                    Skizzenbuchedition
+                </title>
+                <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/"
+                    xml:id="xe570b2c4-3869-437c-9927-1a19dbc300b9">
+                    sk
+                </identifier>
+            </seriesStmt>
+            <sourceDesc xml:id="x2a282b8a-484b-4466-bc82-97d28840a49a">
+                <source n="1"
+                    target="../D-BNba_MH_60_Engelmann.xml#g0abb196c-1b7c-44a4-97f3-25b7467ed96a"
+                    xml:id="x2384c558-cb45-4603-91d6-ed16c8f36ff0"/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc class="#bw_diplomatic_transcript #bw_document_file #bw_module4"
+            xml:id="x8a1b670d-a353-4e35-a070-19701db4304a">
+            <appInfo xmlns:xlink="http://www.w3.org/1999/xlink"
+                xml:id="xf0ea4f1d-1dae-4191-919e-76b6ca6f19ee">
+                <application version="20220500" xml:id="x36514487-cc2c-40bd-83c5-227457c63da7">
+                    <name type="operating-system" xml:id="xad0b8c1f-5f72-4177-b092-4608a0016222">Mac OS X Mountain Lion</name>
+                </application>
+                <application type="plugin"
+                    version="4.0.0"
+                    xml:id="xbaf9d667-bec6-4ca5-b913-7458b5865b75">
+                    <name xml:id="x79ff9ef5-0dfa-4507-a041-5dd001763f0e">Sibelius to MEI 4 Exporter (4.0.0)</name>
+                </application>
+                <application xml:id="sib2annotTrans.xsl" version="2023-05-03">
+                    <name xml:id="xa803109c-24e3-4362-bd05-3ee2e7fd8622">XSLT Transformation for Sibelius MEI to Annotated Transcriptions</name>
+                </application>
+            </appInfo>
+            <classDecls xml:id="xc6649659-4ec8-47ec-8daa-faf928c4e6ff">
+                <taxonomy label="availableTaxonomies"
+                    xml:id="xb1420dbb-9278-464d-992f-355bd746e908">
+                    <category xml:id="document_type"/>
+                    <category xml:id="bw_observation_type"/>
+                    <category xml:id="bw_implementation_completeness"/>
+                    <!--<category xml:id="bw_monitum_category"/>
+                    -->
+                    <category xml:id="bw_file_type"/>
+                    <category xml:id="bw_monitum_comment"/>
+                    <category xml:id="bw_monitum_classification"/>
+                    <category xml:id="bw_monitum_textoperation"/>
+                    <category xml:id="bw_monitum_object"/>
+                    <category xml:id="bw_monitum_kontext"/>
+                    <category xml:id="bw_monitum_konkordanz"/>
+                    <category xml:id="bw_transcription_type"/>
+                    <category xml:id="xb8206fdc-e421-4ac0-b78d-3bee06b54f93"/>
+                    <category xml:id="bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy xml:id="xf9534594-6b9f-476a-a5b1-34a390b55289">
+                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy xml:id="x9a083f9e-6fef-48f3-bc5a-a4d2d804559c">
+                    <category xml:id="music.print" class="#document_type"/>
+                    <category xml:id="music.manuscript" class="#document_type"/>
+                    <category xml:id="letter.manuscript" class="#document_type"/>
+                    <category xml:id="music.sketchbook" class="#document_type"/>
+                </taxonomy>
+                <taxonomy xml:id="xbb431f9a-e747-42d1-a6e9-df79482b4e4b">
+                    <category class="#bw_observation_type"
+                        xml:id="x3ceff1c8-91c0-4aa5-8ecf-925a32fa7551"/>
+                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+                </taxonomy>
+                <taxonomy xml:id="x69e0f88c-7dfa-4355-b881-d1d3b5d4ae1a">
+                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_partially_implemented"
+                        class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+                </taxonomy>
+                <taxonomy xml:id="x79f6540a-517c-4cff-8af6-6adfb48374c8">
+                    <!-- Klassifizierung -->
+                    <category xml:id="bw_classification_korrektur"
+                        label="Korrektur"
+                        class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_variante"
+                        label="Variante"
+                        class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_textpraezisierung"
+                        label="Textpräzisierung"
+                        class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_schriftbildliche_verbesserung"
+                        label="Schriftbildliche Verbesserung"
+                        class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_paratextliche_eingriffe"
+                        label="Paratextliche Eingriffe"
+                        class="#bw_monitum_classification"/>
+                </taxonomy>
+                <taxonomy xml:id="x318d7a3e-5469-4d2a-a9dd-076827599e2d">
+                    <!-- Textoperation -->
+                    <category xml:id="bw_textoperation_einfuegung"
+                        label="Einfuegung"
+                        class="#bw_monitum_textoperation"/>
+                    <!--oder erweiterung-->
+                    <category xml:id="bw_textoperation_tilgung"
+                        label="Tilgung"
+                        class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_ersetzung"
+                        label="Ersetzung"
+                        class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_umstellung"
+                        label="Umstellung"
+                        class="#bw_monitum_textoperation"/>
+                </taxonomy>
+                <taxonomy xml:id="xe1ddbfb4-1620-40cc-9a62-43b31ada09b1">
+                    <!-- Revisionsobjekt -->
+                    <category xml:id="bw_object_dynamic"
+                        label="Dynamik"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pitch"
+                        label="Tonbuchstabe"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_bogensetzung"
+                        label="Bogensetzung"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rhythm"
+                        label="Rhythmus"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_ornament"
+                        label="Verzierung"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_octave"
+                        label="Oktavierung"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_articulation"
+                        label="Artikulation"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_clef"
+                        label="Notenschlüssel"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_arpeggio"
+                        label="Arpeggiozeichen"
+                        class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_fingering"
+                        label="Fingersatz"
+                        class="#bw_monitum_object"/>
+                </taxonomy>
+                <taxonomy xml:id="x89bb71d1-9dab-4efb-83e2-60c84baae357">
+                    <!-- kontextzitat -->
+                    <category xml:id="bw_kontext_korrekt"
+                        label="korrekt"
+                        class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_unvollstaendig"
+                        label="unvollständig"
+                        class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_korrumpiert"
+                        label="korrumpiert"
+                        class="#bw_monitum_kontext"/>
+                </taxonomy>
+                <taxonomy xml:id="x297cea9a-fc37-4bf6-8182-933769572940">
+                    <!-- konkordanz -->
+                    <category xml:id="bw_konkordanz"
+                        label="konkordanz"
+                        class="#bw_monitum_konkordanz"/>
+                </taxonomy>
+                <taxonomy xml:id="x98ea3679-d636-4635-8bfa-1c6753bb236c">
+                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+                    <category xml:id="bw_document_file" class="#bw_file_type"/>
+                    <category xml:id="bw_work_file" class="#bw_file_type"/>
+                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+                </taxonomy>
+                <taxonomy xml:id="x7edaaf7b-88f7-4ca0-aa16-d44cb8d2d27b">
+                    <category class="#bw_module" xml:id="xb93b223b-8888-4f97-a434-d0b6b5711f3f"/>
+                </taxonomy>
+                <taxonomy xml:id="x8c23620b-ddac-437a-8353-981a9cf529f4">
+                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+                    <category xml:id="bw_annotated_transcript" class="#bw_transcription_type"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
+        <revisionDesc xml:id="xa614f3df-a33e-4c60-8147-20b45d4ee56c">
+            <change xmlns:xlink="http://www.w3.org/1999/xlink"
+                n="1"
+                resp="#bw_sc"
+                isodate="2023"
+                xml:id="x09ba5cb6-b13e-485a-9c9b-1d959d4a8c3d">
+                <changeDesc xml:id="x244bf021-afc6-4681-bf60-6ccdbcf9ef33">
+                    <p xml:id="xd058b43e-8eb4-4d90-8fc8-ebdaa5d9156d">Original content transcribed using <ptr target="#sibelius" xml:id="x2c104584-38db-4e16-bce9-1f38c31d2751"/>.</p>
+                </changeDesc>
+            </change>
+            <change xmlns:xlink="http://www.w3.org/1999/xlink"
+                n="2"
+                resp="#bw_rm"
+                isodate="2023-05-08"
+                xml:id="xbb2ae2cf-381e-4d1c-b84d-ee94f84b05cf">
+                <changeDesc xml:id="x6c3c7c14-7671-4228-94ae-eebc207939cc">
+                    <p xml:id="x0e054b3a-2b0e-4729-a9e8-a156e3432490">Sibelius file exported to MEI using <ptr target="#sibmei" xml:id="x954b78ce-3fa3-46ce-a41c-75ab0bf0c4d1"/>.</p>
+                </changeDesc>
+            </change>
+            <change xmlns:xlink="http://www.w3.org/1999/xlink"
+                n="3"
+                resp="#bw_rm"
+                isodate="2023-05-22"
+                xml:id="x415d5806-c195-4872-a632-6d03d3557df8">
+                <changeDesc xml:id="x76a29abf-eea3-43a3-a601-86563edbb209">
+                    <p xml:id="xe158801a-44f1-4566-abf5-5672b9d0cb15">Cleaned up MEI file to match concept of annotated transcription, using <ptr target="#sib2annotTrans.xsl"
+                        xml:id="xde007ea8-3cb7-4bb0-b16a-7affab4f0e78"/>.</p>
+                </changeDesc>
+            </change>
+            <change xml:id="c85de5bf1-3c05-45b2-be36-33e181a32cf1"
+                n="4"
+                resp="#bw_jk"
+                isodate="2023-08-26">
+                <changeDesc xml:id="x30ba6ddf-c724-4d30-ac76-650118a3cf8a">
+                    <p xml:id="x9cde98f2-a5d6-4e26-82f5-a3133e576620">Imported file into data structure using XSLT.</p>
+                </changeDesc>
+            </change>
+        </revisionDesc>
+    </meiHead>
+    <music>
+        <body>
+            <pages type="transcription">
+                <page xmlns="http://www.music-encoding.org/ns/mei" page.width="7712"
+                    page.height="6000" page.leftmar="0" page.rightmar="0"
+                    xml:id="x147ebee6-18a9-4509-add9-1d3e25f2048c"
+                    surface="#x2433e745-3d60-4043-9258-10ab1f1aeb47">
+                    <mdivb xml:id="m8dbe91d5-3539-4230-8060-4b325f990ccd"/>
+                    <secb xml:id="s1edca396-c7e6-4a7c-bca2-a9a1cc54e60c"/>
+                    <score>
+                        <scoreDef>
+                            <staffGrp symbol="none">
+                                <staffDef xml:id="afdbfbe65-6ac2-47a1-bf70-ffc4cf158f50" n="1"
+                                    lines="5" scale="189.0%"/>
+                            </staffGrp>
+                        </scoreDef>
+                    </score>
+                    <!--page 1-->
+
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="758" coord.x2="6599" n="1">
+                            <staff n="1" coord.y1="5416">
+                                <layer n="1"> </layer>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="719" coord.x2="6573" n="1">
+                            <staff n="1" coord.y1="5111">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="732" coord.x2="6586" n="1">
+                            <staff n="1" coord.y1="4805">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="707" coord.x2="6574" n="1">
+                            <staff n="1" coord.y1="4520">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="707" coord.x2="6574" n="1">
+                            <staff n="1" coord.y1="4212">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="719" coord.x2="6573" n="1">
+                            <staff n="1" coord.y1="3930">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="758" coord.x2="6599" n="1">
+                            <staff n="1" coord.y1="3625">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="783" coord.x2="6599" n="1">
+                            <staff n="1" coord.y1="3314">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="796" coord.x2="6663" n="1">
+                            <staff n="1" coord.y1="3019">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="770" coord.x2="6637" n="1">
+                            <staff n="1" coord.y1="2721">
+                                <layer n="1">
+                                    <note xml:id="n49a0eeac-3c05-4c62-b516-8b3868c3fdfc"
+                                        facs="#shape_4b3c6ffe-e241-4a7c-8d98-35aeeb4df499 #shape_105f8c7d-18b4-4f48-a9a0-ccd6d8db7000"
+                                        coord.x1="1313" dur="4" loc="3" stem.dir="up"/>
+
+                                    <note xml:id="n58d26888-5723-4b17-968f-0c6c291d2995"
+                                        facs="#shape_c537d990-30c2-499d-9d88-26968f6be3de #shape_6cfa039f-b109-460d-b229-ee63e353867a"
+                                        coord.x1="1438" dur="4" loc="2" stem.dir="up"/>
+
+                                    <note xml:id="n6016bf20-c5e0-4c96-bd3e-813c7f3cd21d"
+                                        facs="#shape_de5ecf69-7041-4013-b103-fd2647f4d27a"
+                                        coord.x1="1273" dur="8" stem.dir="down" loc="0"/>
+
+                                    <note xml:id="nf7668e01-e26d-4a0c-b353-13a90a0e84a6"
+                                        facs="#shape_a86929a5-42f5-4d5d-a084-e92f9247855f"
+                                        coord.x1="1352" dur="4" stem.dir="down" loc="-1"/>
+
+                                    <note xml:id="n7cf2b812-d621-42af-b9c0-a74b1433bc92"
+                                        facs="#shape_7409ff36-ad71-468a-b428-27905a9dad0b"
+                                        coord.x1="1501" dur="8" stem.dir="down" loc="-1"/>
+
+                                    <note xml:id="nc58fa8a1-8701-47fa-90b7-125ccc20b4b9"
+                                        facs="#shape_cdc93118-4e5f-404c-a445-7fabebb9a839 #shape_0af990ad-c4ca-461f-b787-bc61d8e70334"
+                                        coord.x1="1966" dur="4" loc="2" stem.dir="up"/>
+
+                                    <note xml:id="nba009671-0a13-4596-bb0f-74a21f6fe1b0"
+                                        facs="#shape_7458f387-2aa7-48f1-b028-b51c86315533 #shape_01d78133-29d9-42e2-8af3-8ba501b77abf"
+                                        coord.x1="2079" dur="4" loc="1" stem.dir="up"/>
+
+                                    <note xml:id="ne33b6bee-2c1a-4bef-8530-bf85b0a57a2b"
+                                        facs="#shape_2ccc50df-52cf-4401-bee3-356779472b96"
+                                        coord.x1="1848" dur="8" loc="0" stem.dir="down"/>
+
+                                    <note xml:id="nbced82da-72a5-4d1b-8f6c-4e3e8c30cf8c"
+                                        facs="#shape_5ca1ae86-145b-477f-a976-f57879ffb7a9 #shape_c37486b1-c5a1-47b8-ad56-21b5f4238d23"
+                                        coord.x1="1994" loc="-2" dur="4" stem.dir="down"/>
+
+                                    <note xml:id="nfa3a9b74-1785-41ab-baff-8a5472c38acc"
+                                        facs="#shape_727e7670-e5a6-419c-9aa3-1ff8d2df97b8"
+                                        coord.x1="2153" dur="8" loc="-1" stem.dir="down"/>
+
+                                    <note xml:id="n849a886a-6dbb-4d8e-90a4-4cb5ab1629f6"
+                                        facs="#shape_44ae3000-5e1e-4459-91cf-d02c9d5cf6b4 #shape_dd5c9942-0e91-4778-ad13-e66bc6e24afc"
+                                        coord.x1="2567" dur="4" stem.dir="up" loc="1"/>
+
+                                    <note xml:id="n6c50b08e-2e24-467f-a328-d628ad8828e8"
+                                        facs="#shape_b4fc8302-dfa4-4751-8997-54e0fe8e359b"
+                                        coord.x1="2661" dur="8" stem.dir="down" loc="-1"/>
+
+                                    <note xml:id="n86b95c91-6f6d-49c7-9ab4-b352b12606df"
+                                        facs="#shape_6cd44d11-5278-4e72-8673-d529b18978fd #shape_c1813ffd-2336-4ec8-9064-47fc35a67ae2"
+                                        coord.x1="2805" dur="4" loc="-3" stem.dir="down"/>
+
+                                    <note xml:id="nb7bdf8de-6772-4acd-86d8-b87d9a1c84d9"
+                                        facs="#shape_b768343d-c59f-4698-b516-038b04211d09"
+                                        coord.x1="2917" loc="0" dur="4" stem.dir="up"/>
+
+                                    <note xml:id="n7f375034-54a8-44e7-870e-1fa8a304d0c5"
+                                        facs="#shape_adcc6f0a-1266-440d-ad9b-3900cc1e4a6f #shape_a33fe4c4-b1ed-44a1-bc46-a11f01bbf101 #shape_5acc19b5-a862-4f52-9b74-43b95c30af06"
+                                        coord.x1="2908" dur="8" stem.dir="down" loc="-2"/>
+
+                                    <note xml:id="n81e2006a-ea06-4817-b2a6-0497b012d990"
+                                        facs="#shape_a6512939-3c35-4f02-ab9e-c24af4ed9ef0 #shape_928f7b01-011d-4f92-972e-3a46faa8567d #shape_2585a1f4-9d94-4bcc-9e15-225d6e7ce04d"
+                                        coord.x1="3276" dur="8" loc="-1" stem.dir="up"/>
+
+                                    <note xml:id="n0232d3b1-50ad-4926-9586-edab03a69be4"
+                                        facs="#shape_f89c50cd-145f-4056-afe0-799a2509b1f6 #shape_e8252a0f-dff0-4a38-bce9-9a39c88fa2af"
+                                        coord.x1="3382" dur="4" loc="-3" stem.dir="down"/>
+
+                                    <note xml:id="n3ccfe715-49d6-494e-b119-f6046c0459a3"
+                                        facs="#shape_01a6890b-736f-490c-86a9-aebde61d160a #shape_a307fe75-c0c0-4993-abba-9d28e06a72a3"
+                                        coord.x1="3440" dur="4" loc="2" stem.dir="up"/>
+
+                                    <beam xml:id="bbaceac1d-c461-4e01-ad88-c19f3cf9ede5"
+                                        facs="#shape_58763d1c-135c-4fa4-8741-dbdbb3928483">
+
+                                        <note xml:id="n0d7623be-a150-4dde-8e91-37618159315c"
+                                            facs="#shape_21c0548f-7ad0-4bd0-8206-7ce03304274a #shape_d03adb13-4e7f-4ddd-947c-7e14fac36d17 #shape_12853aa8-ce78-4ba4-bbf0-1dbf7274a800"
+                                            coord.x1="3524" dur="8" stem.dir="down" loc="-4"/>
+
+                                        <note xml:id="nfa2f3208-baf4-42d2-a89d-1f0202c32289"
+                                            facs="#shape_f532c95c-2307-4af4-8eb2-f5de8bd6d48f #shape_ce507c56-323d-4e7b-8573-bae55005dae3"
+                                            coord.x1="3608" dur="8" loc="-3" stem.dir="down"/>
+
+                                    </beam>
+
+                                    <note xml:id="nca019831-c533-4825-a3dd-037149ee3078"
+                                        facs="#shape_aa982e77-dc90-4f95-aa50-13a8861dd534 #shape_bac37092-1b17-407a-add5-167be1255638 #shape_58cd7dd4-ec5d-4020-93c5-c5231d970155"
+                                        coord.x1="3610" dur="8" stem.dir="up" loc="1"/>
+
+                                    <accid xml:id="acdcaf2bf-0d20-4fea-8660-1106105b49cc"
+                                        facs="#shape_8bdd5c8f-5362-4127-bdd5-0dc6c0e547ff #shape_03ea19c8-743c-4e2a-a076-1675b30cb6f8 #shape_74f096cb-9c3a-4442-bd4c-aef5892c6f12 #shape_da1b7545-8f4a-4abc-bf12-d925468d3e30"
+                                        coord.x1="943" accid="s" loc="8"/>
+
+                                    <accid xml:id="a250f34a9-1905-4467-be64-a48f929c811b"
+                                        facs="#shape_9f172ffb-a526-41e4-928a-4aa4e87d9fc8 #shape_63457c38-0a1d-49b2-8986-9425a8b07847 #shape_c6c9030e-9669-4bda-a842-3e1b53df17eb #shape_9e6046f4-2eb3-4841-b1f6-55d2d4de1728"
+                                        coord.x1="1030" accid="s" loc="5"/>
+
+                                    <accid xml:id="a201b4eb0-49dc-4474-8306-4f00391ab2ec"
+                                        facs="#shape_62fe8e17-57e0-4512-9320-7f4f7d4c2009 #shape_6f804fff-23d5-4cf2-9064-31d93acd0d0e #shape_e856b7df-b9b7-41fb-b615-859e6f0fcdbb #shape_2634c305-f296-45f9-9c39-08ead530483f"
+                                        coord.x1="1138" accid="s" loc="9"/>
+
+                                    <accid xml:id="a601ee5c6-0a2d-4a84-88bb-07c2dd7cb804"
+                                        facs="#shape_8112c1f8-b81e-4569-b38d-98d6cd622358 #shape_3ffd646b-0427-45a0-b65a-f06b50540a45 #shape_1df490c7-c2cb-4209-9fb3-b3e002d893ec #shape_055608ea-1cea-43b7-99b7-e894100d0d4a"
+                                        coord.x1="1217" accid="s" loc="6"/>
+
+                                    <accid xml:id="ade56cbc2-ce87-4b61-9b8c-5f46154574a4" accid="n"
+                                        facs="#shape_086a669b-badf-451d-a686-07243fb4c4c7 #shape_35ba2db5-0279-46db-9092-990ec30428d2 #shape_eae27eac-1aa8-4ae6-bb21-16690b6395fa"
+                                        coord.x1="1893" loc="2"/>
+
+                                    <accid xml:id="a8b937d05-4655-4c69-9271-8e7c702af769" accid="n"
+                                        facs="#shape_332ac5f8-2dda-40d1-895c-e6eca0315609 #shape_95482331-8a03-4e70-8ada-6adfd1ceb714 #shape_badcc7bb-1dba-459a-98cc-1fd911e3cfc0 #shape_cf68fe05-37a9-451c-8fce-a40313e6f811"
+                                        coord.x1="2508" loc="1"/>
+
+                                    <accid xml:id="a25479a31-6541-419a-8826-8ab4212863a6" accid="n"
+                                        facs="#shape_44f4e423-8346-4f7f-8ca9-190b48351123 #shape_876a4774-749f-4385-a8f1-04a70f7da4a4 #shape_a8661b65-506f-4d57-a764-109f84d0c7ec #shape_ce507c56-323d-4e7b-8573-bae55005dae3"
+                                        coord.x1="2435" loc="-1"/>
+
+                                    <accid xml:id="a3d02735c-a03e-4d20-9bd0-920c20c883fe"
+                                        facs="#shape_837469f6-c945-465a-8418-cc49d92933c6 #shape_9e9553ab-1e83-4a46-a439-01b93b5ca908 #shape_ac5e2a78-c13f-48cd-9e8a-e124a06cb12b #shape_dfcaf595-0ef7-42e2-b31c-efa6f6f9d18e"
+                                        coord.x1="3471" accid="s" loc="-4"/>
+
+                                    <accid xml:id="a9394cf29-a2ed-4117-9ceb-60267086e82c"
+                                        facs="#shape_c0eca5ef-0941-40b9-bc8e-6fdc4186182f #shape_a54bc505-2a69-41f9-b8c3-6f4074f55bd2 #shape_2ce4778b-d049-4722-861f-abcbba136e21"
+                                        coord.x1="2617" accid="n" loc="-1"/>
+                                    <barLine xml:id="b1cdb0e7f-df1e-47b3-8ee5-2ca2f45a3edf"
+                                        coord.x1="1800"
+                                        facs="#shape_33792eab-b124-4e4d-a187-6abf3032c98b"/>
+                                    <barLine xml:id="b717f7060-b906-4671-be73-6c4a74df72ba"
+                                        coord.x1="2360"
+                                        facs="#shape_e24bcd2f-3936-480a-be4d-26aa493b6800"/>
+                                    <barLine xml:id="ba680c6fb-aa3a-45b5-aef0-33982acb217f"
+                                        coord.x1="3130"
+                                        facs="#shape_0a144ba3-2e6f-4783-beaa-fe72862f28cb"/>
+                                    <barLine xml:id="bac4e8ee9-ffcc-40bb-80a9-9892f7a51f27"
+                                        coord.x1="3780" form="dbl"
+                                        facs="#shape_544a1cd1-a7af-4bea-b068-0a4049a74601 #shape_f9b8524f-c42a-4e40-91cc-2d3bddc2dc98"
+                                    />
+                                </layer>
+                            </staff>
+                            <tie xml:id="td6a061ec-5353-4565-8bcc-d819ff673fbe"
+                                startid="#n7cf2b812-d621-42af-b9c0-a74b1433bc92"
+                                endid="#ne33b6bee-2c1a-4bef-8530-bf85b0a57a2b"
+                                facs="#shape_66d06246-ac35-46ce-91a3-e8442a4d74aa" curvedir="above"/>
+                            <tie xml:id="s0b241d04-0cee-495b-b5b4-90e9e5ff6db0"
+                                startid="#nb7bdf8de-6772-4acd-86d8-b87d9a1c84d9"
+                                endid="#n81e2006a-ea06-4817-b2a6-0497b012d990"
+                                facs="#shape_da03766c-77cb-4cec-8263-75f291ca0caf" curvedir="below"
+                            />
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="770" coord.x2="6624" n="1">
+                            <staff n="1" coord.y1="2406">
+                                <layer n="1">
+                                    <note xml:id="nd08be142-d54a-4dbf-aa98-0463bf3c0ddb"
+                                        facs="#shape_f3526a26-c5c1-41f6-b37f-109605b3390b #shape_6dded9e5-2ef5-44ce-8a65-84006c59070b #shape_f6b2124d-489b-4019-b0e3-bc7e6e4080ac"
+                                        coord.x1="1231" loc="3" dur="8" stem.dir="up"/>
+
+                                    <note xml:id="n5cd8c9cc-9c28-4466-acfd-73a8aa21fb54"
+                                        facs="#shape_d805dfa4-7e8d-4d5b-9c6c-8c97a7be5e7a"
+                                        coord.x1="1341" dur="4" stem.dir="down" loc="2"/>
+
+                                    <note xml:id="n32118f47-882c-4751-91c9-e6ebd1fbabb3"
+                                        facs="#shape_07ecf091-cd3c-4678-9f12-998df9d9cff0 #shape_6465390d-2fcf-46c0-863e-bd788e1ad13e"
+                                        coord.x1="1356" dur="4" loc="6" stem.dir="up"/>
+
+                                    <note xml:id="n7dc96fea-eb7b-4fb1-8431-973f316e63c7"
+                                        facs="#shape_a9f62842-a599-4bc5-9de1-67ae8f5cb5df"
+                                        coord.x1="1485" dur="4" loc="3" stem.dir="down"/>
+
+                                    <note xml:id="n62064993-5908-488a-b389-f7a366c2b522"
+                                        facs="#shape_b8e7ec6e-94b0-49ab-b680-9468bb8104de #shape_29155bc7-0352-432f-af0d-c491449594e7 #shape_1f0b97ce-c88d-4084-9cc4-ca3fbae80e3b"
+                                        coord.x1="1545" loc="5" dur="8" stem.dir="up"/>
+
+                                    <note xml:id="nec78f9b5-dbb7-4a61-aa8f-596a164f919c"
+                                        facs="#shape_f7251930-53f2-4f69-a680-50f722563395 #shape_7fd29213-376e-4574-93d5-6c727446e10c #shape_812528b7-e19e-4d1d-9a36-c375e6e5f2f3"
+                                        coord.x1="1910" dur="8" loc="3" stem.dir="up"/>
+
+                                    <note xml:id="n8d2c5e2b-de5f-4219-b1f7-47d8b2e71610"
+                                        facs="#shape_a9c220e8-8635-4475-8420-9cc52db6939b"
+                                        coord.x1="2023" dur="4" stem.dir="down" loc="0"/>
+
+                                    <note xml:id="n48c9ec88-21a7-4161-b0fc-a538dbca4274"
+                                        facs="#shape_48c66ad7-a7db-42cc-8c84-e3b87d503692 #shape_b3834c72-44f9-494b-84f4-59f83c578a5a"
+                                        coord.x1="2078" dur="4" loc="5" stem.dir="up"/>
+
+                                    <note xml:id="ne0855fd7-402f-4b79-aa1c-e1d4755dd308"
+                                        facs="#shape_e5f9dff5-55dd-4682-91b9-9abf68718ec5"
+                                        coord.x1="2122" dur="4" loc="2" stem.dir="down"/>
+
+                                    <note xml:id="nf6a4b2c2-1fbe-4b2a-bae2-4b0f3580fb38"
+                                        facs="#shape_db9dfe2c-a4e4-43dc-905f-fceda00f9776 #shape_2d0f6fa0-3db5-4fa5-8777-5fea23f4609b #shape_6b169fe1-2e22-4483-bcc1-fdb7e9a64ec9"
+                                        coord.x1="2182" loc="4" dur="8" stem.dir="up"/>
+
+                                    <note xml:id="nb73cb7de-ee66-4feb-947a-42a9934d9313"
+                                        facs="#shape_ce4b66c1-499b-4a97-96ec-f3839287aa1f #shape_5a723bb1-05e7-49fc-affb-4065670b13fb"
+                                        coord.x1="2577" loc="1" dur="8" stem.dir="up"/>
+
+                                    <note xml:id="n82baa979-b90b-4ddf-a777-93aae1b90262"
+                                        facs="#shape_ddfe1cfc-b8ea-452b-ad76-04e031396c19"
+                                        coord.x1="2703" loc="0" dur="4" stem.dir="down"/>
+
+                                    <note xml:id="nf66f45e4-c021-429b-84d7-a96e963f5b5b"
+                                        facs="#shape_98fafb2b-420c-4d72-b81f-a0ce8a71ead3"
+                                        coord.x1="2761" loc="4" dur="4" stem.dir="up"/>
+
+                                    <note xml:id="n0c862f1c-64ef-4171-93fa-a81362631fb8"
+                                        facs="#shape_1e3c2565-0470-48e2-93c7-932183a57bf5"
+                                        coord.x1="2854" loc="1" dur="4" stem.dir="down"/>
+
+                                    <note xml:id="ne3427f17-33af-4943-a8ab-0659514fe2b1"
+                                        facs="#shape_d34b9d61-f570-4872-a4a8-18bbdae8f5cc"
+                                        coord.x1="2906" loc="2" dur="4" stem.dir="up"/>
+
+                                    <note xml:id="nd6ccaa68-b5a3-4650-8b79-18209a7a9e8a"
+                                        facs="#shape_a47b8e47-2a4e-4226-afa7-05b8746af96b"
+                                        coord.x1="3294" dur="8" loc="6" stem.dir="up"/>
+
+                                    <note xml:id="n7fe32498-e6db-4ae6-aab0-d99cf14bbb61"
+                                        facs="#shape_3aca4d6a-a26c-4300-97f7-f09c279ba503 #shape_7eb2be58-740c-4da6-b551-b3f733450fc2"
+                                        coord.x1="3393" dur="2" loc="2" stem.dir="down"/>
+
+                                    <note xml:id="n0d6f084d-9f9e-46bc-b9d2-2936227872b2"
+                                        facs="#shape_94d7addf-1b7d-4b6f-8595-e36fb34a0cb3 #shape_536c4d0c-9cdc-4182-ac9e-2d2192b69964"
+                                        coord.x1="3467" loc="5" dur="4" stem.dir="up"/>
+
+                                    <note xml:id="n5e152ada-ca5d-487c-a53c-1a2a6c0dc803"
+                                        facs="#shape_5052b12f-9420-4617-b546-38eaaeb7106a #shape_f2e7198e-86d4-4f2e-b570-beb9d643d064"
+                                        coord.x1="3604" loc="4" stem.dir="up" dur="8"/>
+
+                                    <accid xml:id="a6f5e2afa-4ee8-4663-9d15-780732cc9ff3"
+                                        facs="#shape_40193c0e-7c58-47ff-92b3-ecccec658333 #shape_22dc102b-ba56-477e-8b4a-9f5c04a03487 #shape_fb6a15d1-d3c4-4574-a6ea-d6848d957a24 #shape_3da264ae-0f0e-4b6f-9a37-29c42a7aca90"
+                                        coord.x1="1285" accid="s" loc="1"/>
+
+                                    <accid xml:id="ae2ce618c-c3ec-43c9-b27d-70c3e02c5ad4"
+                                        facs="#shape_fc8592a2-4ed9-4e92-a7a0-acb9e5480446 #shape_5375556e-8df6-49d6-b153-2b381f2cb3b7 #shape_e680c7c1-36e5-4f7f-ad76-b8d957b5aad8 #shape_5ff4162f-38ff-4de5-8fe9-21b7a210a9af"
+                                        coord.x1="1978" accid="s" loc="0"/>
+
+                                    <accid xml:id="ac1897725-0917-44ae-8c24-60aea599bebf"
+                                        facs="#shape_f1fd171b-dd5d-4a6d-a8d3-8bb0b08ae324 #shape_30d646cc-1d46-4038-a6e0-bd0d909c3a66"
+                                        coord.x1="2037" accid="n" loc="5"/>
+
+                                    <accid xml:id="ab7f52cf4-c174-4a6e-8ab9-9ec2ff439666"
+                                        facs="#shape_5a33a8b1-166d-4db6-8c98-215cb4c61cb1 #shape_434a1f92-b064-4e61-b4b2-41cd1ae95d91 #shape_b93acfba-1866-4e7a-bd02-991b728193ed #shape_ae036fde-7dde-42e0-b80d-c3fdae62059d"
+                                        coord.x1="2643" accid="s" loc="0"/>
+
+                                    <accid xml:id="a8a841e6f-ac8b-460d-8fe7-eb3524b65a77"
+                                        facs="#shape_204a962e-6e89-44be-b2d2-0174a379a361 #shape_b9d59980-58b6-40e0-b027-f6687a686d30 #shape_79294349-a2d0-4bc3-a40b-600abc297454"
+                                        coord.x1="2719" accid="n" loc="4"/>
+
+                                    <barLine xml:id="bf5e408ea-a3bf-4a68-9569-2b6d6c37d3e8"
+                                        coord.x1="1800"
+                                        facs="#shape_33792eab-b124-4e4d-a187-6abf3032c98b"/>
+                                    <barLine xml:id="bbed85379-7751-4300-b96b-0f6eb2cab2bf"
+                                        coord.x1="2360"
+                                        facs="#shape_e24bcd2f-3936-480a-be4d-26aa493b6800"/>
+                                    <barLine xml:id="b981464b4-28b2-40c6-9e92-e1a91ab98433"
+                                        coord.x1="3130"
+                                        facs="#shape_0a144ba3-2e6f-4783-beaa-fe72862f28cb"/>
+                                    <barLine xml:id="b21da71b3-3eeb-4df6-afbf-addc4577834e"
+                                        coord.x1="3780" form="dbl"
+                                        facs="#shape_544a1cd1-a7af-4bea-b068-0a4049a74601 #shape_f9b8524f-c42a-4e40-91cc-2d3bddc2dc98"
+                                    />
+                                </layer>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="783" coord.x2="6637" n="1">
+                            <staff n="1" coord.y1="2084">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="795" coord.x2="6636" n="1">
+                            <staff n="1" coord.y1="1806">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="808" coord.x2="6662" n="1">
+                            <staff n="1" coord.y1="1515">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="783" coord.x2="7018" n="1">
+                            <staff n="1" coord.y1="1192">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+
+                    <system system.leftmar="0" system.rightmar="0">
+                        <measure coord.x1="770" coord.x2="6649" n="1">
+                            <staff n="1" coord.y1="892">
+                                <layer n="1"/>
+                            </staff>
+                        </measure>
+                    </system>
+                </page>
+            </pages>
+        </body>
+    </music>
+</mei>
