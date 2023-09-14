@@ -1,381 +1,511 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg"
-    meiversion="5.0.0-dev" xml:id="m57bab171-9222-451d-8f7d-7fe7db6064bb">
-    <meiHead>
-        <fileDesc>
-            <titleStmt>
-                <title xml:lang="de" type="main">Notirungsbuch K</title>
-                <composer>
-                    <persName xml:id="LvB" auth="GND" auth.uri="http://d-nb.info/gnd/118508288"
-                        >Ludwig van Beethoven</persName>
-                </composer>
-                <funder>
-                    <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der
+<mei xmlns="http://www.music-encoding.org/ns/mei"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     meiversion="5.0.0-dev"
+     xml:id="m57bab171-9222-451d-8f7d-7fe7db6064bb">
+   <meiHead meiversion="5.0.0-dev">
+      <fileDesc xml:id="hec2eecca-f9c8-4123-bc39-1d91dbf7e039">
+         <titleStmt xml:id="h259df255-5deb-402b-b284-11964bfb8118">
+            <title xml:id="h2f138bd2-be1b-4cbc-89dd-9dd74b69f2bd"
+                   xml:lang="de"
+                   type="main">Notirungsbuch K</title>
+            <composer xml:id="hbd4c1770-ddff-4199-8b6e-fdbc49e3977e">
+               <persName xml:id="LvB" auth="GND" auth.uri="http://d-nb.info/gnd/118508288">Ludwig van Beethoven</persName>
+            </composer>
+            <funder xml:id="h8e671172-6e56-4b62-8a14-24850866943e">
+               <corpName xml:id="AdW" auth.uri="http://www.adwmainz.de/">Akademie der
                         Wissenschaften und der Literatur Mainz</corpName>
-                </funder>
-            </titleStmt>
-            <pubStmt/>
-            <seriesStmt>
-                <title xml:lang="de" level="s">Skizzenbuchedition</title>
-                <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/">sk</identifier>
-            </seriesStmt>
-            <sourceDesc>
-                <source target="https://content.staatsbibliothek-berlin.de/dc/800412591/manifest"
+            </funder>
+         </titleStmt>
+         <pubStmt xml:id="h13d8efb9-8f46-4214-8152-fcde8feeca1e"/>
+         <seriesStmt xml:id="h75b31f36-8358-41cb-abff-117140dba302">
+            <title xml:id="ha462d791-730f-4f65-96d3-d18c0fd1e18b"
+                   xml:lang="de"
+                   level="s">Skizzenbuchedition</title>
+            <identifier xml:id="h9fca0bcc-68c3-46f8-8e8c-205c64b3d213"
+                        auth.uri="https://beethovens-werkstatt.de/modul-4/">sk</identifier>
+         </seriesStmt>
+         <sourceDesc xml:id="h2b412b2a-74dd-4e4c-81dc-c8ed440c084f">
+            <source xml:id="h0fddaf17-b2a1-4e60-a124-bebe5783959f"
+                    target="https://content.staatsbibliothek-berlin.de/dc/800412591/manifest"
                     class="http://iiif.io/api/presentation/2#Manifest"/>
-                <source target="https://content.staatsbibliothek-berlin.de/dc/766169545/manifest"
+            <source xml:id="h09147e55-504a-4276-9363-67b6d9f73280"
+                    target="https://content.staatsbibliothek-berlin.de/dc/766169545/manifest"
                     class="http://iiif.io/api/presentation/2#Manifest"/>
-                <source target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b9065146v/manifest.json"
+            <source xml:id="hdd2863ce-4db8-44f5-a593-e643f9c13b7e"
+                    target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b9065146v/manifest.json"
                     class="http://iiif.io/api/presentation/2#Manifest"/>
-                <source target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/manifest.json"
+            <source xml:id="h782fe68d-6b02-4ac3-855a-701bad2436df"
+                    target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b55002519q/manifest.json"
                     class="http://iiif.io/api/presentation/2#Manifest"/>
-                <source target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b550025366/manifest.json"
+            <source xml:id="h5e09eca3-3564-42c1-9469-30c92c6186f4"
+                    target="https://gallica.bnf.fr/iiif/ark:/12148/btv1b550025366/manifest.json"
                     class="http://iiif.io/api/presentation/2#Manifest"/>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc
-            class="#bw_diplomatic_transcript #bw_document_file #bw_module4 #bw_document_reconstruction">
-            <classDecls>
-                <taxonomy label="availableTaxonomies">
-                    <category xml:id="document_type"/>
-                    <category xml:id="bw_observation_type"/>
-                    <category xml:id="bw_implementation_completeness"/>
-                    <!--<category xml:id="bw_monitum_category"/>-->
-                    <category xml:id="bw_file_type"/>
-                    <category xml:id="bw_monitum_comment"/>
-                    <category xml:id="bw_monitum_classification"/>
-                    <category xml:id="bw_monitum_textoperation"/>
-                    <category xml:id="bw_monitum_object"/>
-                    <category xml:id="bw_monitum_kontext"/>
-                    <category xml:id="bw_monitum_konkordanz"/>
-                    <category xml:id="bw_transcription_type"/>
-                    <category xml:id="bw_module"/>
-                    <category xml:id="bw_geneticOrder"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="music.print" class="#document_type"/>
-                    <category xml:id="music.manuscript" class="#document_type"/>
-                    <category xml:id="letter.manuscript" class="#document_type"/>
-                    <category xml:id="music.sketchbook" class="#document_type"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_monitum" class="#bw_observation_type"/>
-                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
-                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
-                    <category xml:id="bw_partially_implemented"
-                        class="#bw_implementation_completeness"/>
-                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
-                </taxonomy>
-                <taxonomy>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc xml:id="hbb31ae63-ebb6-4fdc-9e96-1d633232389a"
+                    class="#bw_diplomatic_transcript #bw_document_file #bw_module4 #bw_document_reconstruction">
+         <classDecls xml:id="h36b155a5-d5d4-4f91-b329-3bcf869ba217">
+            <taxonomy xml:id="hb2f4aaf7-3bac-485c-8d1a-5f955d3d7753"
+                      label="availableTaxonomies">
+               <category xml:id="document_type"/>
+               <category xml:id="bw_observation_type"/>
+               <category xml:id="bw_implementation_completeness"/>
+               <!--<category xml:id="bw_monitum_category"/>-->
+               <category xml:id="bw_file_type"/>
+               <category xml:id="bw_monitum_comment"/>
+               <category xml:id="bw_monitum_classification"/>
+               <category xml:id="bw_monitum_textoperation"/>
+               <category xml:id="bw_monitum_object"/>
+               <category xml:id="bw_monitum_kontext"/>
+               <category xml:id="bw_monitum_konkordanz"/>
+               <category xml:id="bw_transcription_type"/>
+               <category xml:id="bw_module"/>
+               <category xml:id="bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy xml:id="hb1ef1f7b-20bf-429f-830d-f1656a8f4fd8">
+               <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy xml:id="hc7bb3ba5-f1fd-4bc8-86cf-89486b875a07">
+               <category xml:id="music.print" class="#document_type"/>
+               <category xml:id="music.manuscript" class="#document_type"/>
+               <category xml:id="letter.manuscript" class="#document_type"/>
+               <category xml:id="music.sketchbook" class="#document_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h7a67034b-2d0c-4f3a-8a04-b75db3ff6c40">
+               <category xml:id="bw_monitum" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+            </taxonomy>
+            <taxonomy xml:id="hf91bcc19-f76e-4fec-9b07-47ca9139f287">
+               <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+               <category xml:id="bw_partially_implemented"
+                         class="#bw_implementation_completeness"/>
+               <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+            </taxonomy>
+            <taxonomy xml:id="h5ea14379-c520-40fa-b3a7-113d99751f79">
                     <!-- Klassifizierung -->
-                    <category xml:id="bw_classification_korrektur" label="Korrektur"
-                        class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_variante" label="Variante"
-                        class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung"
-                        class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_schriftbildliche_verbesserung"
-                        label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_paratextliche_eingriffe"
-                        label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_classification_korrektur"
+                         label="Korrektur"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_variante"
+                         label="Variante"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_textpraezisierung"
+                         label="Textpräzisierung"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_schriftbildliche_verbesserung"
+                         label="Schriftbildliche Verbesserung"
+                         class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_paratextliche_eingriffe"
+                         label="Paratextliche Eingriffe"
+                         class="#bw_monitum_classification"/>
+            </taxonomy>
+            <taxonomy xml:id="h0153632c-98e6-4f06-8614-ed381a814701">
                     <!-- Textoperation -->
-                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung"
-                        class="#bw_monitum_textoperation"/>
-                    <!--oder erweiterung-->
-                    <category xml:id="bw_textoperation_tilgung" label="Tilgung"
-                        class="#bw_monitum_textoperation"/>
-                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung"
-                        class="#bw_monitum_textoperation"/>
-                    <category xml:id="bw_textoperation_umstellung" label="Umstellung"
-                        class="#bw_monitum_textoperation"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_textoperation_einfuegung"
+                         label="Einfuegung"
+                         class="#bw_monitum_textoperation"/>
+               <!--oder erweiterung-->
+               <category xml:id="bw_textoperation_tilgung"
+                         label="Tilgung"
+                         class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_ersetzung"
+                         label="Ersetzung"
+                         class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_umstellung"
+                         label="Umstellung"
+                         class="#bw_monitum_textoperation"/>
+            </taxonomy>
+            <taxonomy xml:id="ha5f4d0d4-76aa-4ed5-82b6-c83af06e6390">
                     <!-- Revisionsobjekt -->
-                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_pitch" label="Tonbuchstabe"
-                        class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung"
-                        class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_ornament" label="Verzierung"
-                        class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_octave" label="Oktavierung"
-                        class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_articulation" label="Artikulation"
-                        class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_clef" label="Notenschlüssel"
-                        class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen"
-                        class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_fingering" label="Fingersatz"
-                        class="#bw_monitum_object"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_object_dynamic"
+                         label="Dynamik"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pitch"
+                         label="Tonbuchstabe"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_bogensetzung"
+                         label="Bogensetzung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rhythm"
+                         label="Rhythmus"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_ornament"
+                         label="Verzierung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_octave"
+                         label="Oktavierung"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_articulation"
+                         label="Artikulation"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_clef"
+                         label="Notenschlüssel"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_arpeggio"
+                         label="Arpeggiozeichen"
+                         class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_fingering"
+                         label="Fingersatz"
+                         class="#bw_monitum_object"/>
+            </taxonomy>
+            <taxonomy xml:id="h80adb9ec-723f-49c2-bd13-8cc245428352">
                     <!-- kontextzitat -->
-                    <category xml:id="bw_kontext_korrekt" label="korrekt"
-                        class="#bw_monitum_kontext"/>
-                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig"
-                        class="#bw_monitum_kontext"/>
-                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert"
-                        class="#bw_monitum_kontext"/>
-                </taxonomy>
-                <taxonomy>
+               <category xml:id="bw_kontext_korrekt"
+                         label="korrekt"
+                         class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_unvollstaendig"
+                         label="unvollständig"
+                         class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_korrumpiert"
+                         label="korrumpiert"
+                         class="#bw_monitum_kontext"/>
+            </taxonomy>
+            <taxonomy xml:id="h089c689e-0b1e-43fd-97cc-fc2d2d7c6128">
                     <!-- konkordanz -->
-                    <category xml:id="bw_konkordanz" label="konkordanz"
-                        class="#bw_monitum_konkordanz"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
-                    <category xml:id="bw_document_file" class="#bw_file_type"/>
-                    <category xml:id="bw_work_file" class="#bw_file_type"/>
-                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_module4" class="#bw_module"/>
-                </taxonomy>
-                <taxonomy>
-                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
-                </taxonomy>
-            </classDecls>
-        </encodingDesc>
-        <manifestationList>
-            <manifestation xml:id="t83a01023-37fd-4e91-90db-f228da4a14a9" label="…"
-                class="#music.manuscript">
-                <physDesc>
-                    <foliaDesc>
+               <category xml:id="bw_konkordanz"
+                         label="konkordanz"
+                         class="#bw_monitum_konkordanz"/>
+            </taxonomy>
+            <taxonomy xml:id="h5139b0b1-0884-4996-8df1-5e29309d9856">
+               <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+               <category xml:id="bw_document_file" class="#bw_file_type"/>
+               <category xml:id="bw_work_file" class="#bw_file_type"/>
+               <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h29f9a0a4-c6b3-4521-a866-96fa11f0bc39">
+               <category xml:id="bw_module4" class="#bw_module"/>
+            </taxonomy>
+            <taxonomy xml:id="h06ec32ed-fb16-4c30-87ce-5593d7992fde">
+               <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+            </taxonomy>
+         </classDecls>
+      </encodingDesc>
+      <manifestationList xml:id="h4952359a-f15f-47cf-a0a7-4881f48264dc">
+         <manifestation xml:id="t83a01023-37fd-4e91-90db-f228da4a14a9"
+                        label="…"
+                        class="#music.manuscript">
+            <physDesc xml:id="h72a876de-6fe6-475e-805f-f6b94465cc8e">
+               <foliaDesc xml:id="h956963e4-606f-49d3-a2b6-89493a623db7">
                         <!-- 8 pages of D-BNba, MH 60 -->
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x2433e745-3d60-4043-9258-10ab1f1aeb47" 
-                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x57291b2b-71f2-40b4-b3a2-a4b4994ef961" 
-                            inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x6d6721df-b995-479b-a227-cf1bd05dfe7d" 
+                  <bifolium xml:id="h70e6ea64-d200-4a93-883b-8c0811090570"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x2433e745-3d60-4043-9258-10ab1f1aeb47"
+                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x57291b2b-71f2-40b4-b3a2-a4b4994ef961"
+                            inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x6d6721df-b995-479b-a227-cf1bd05dfe7d"
                             outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xb14dce0a-0617-4be8-8272-522706548ae9">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xe1e069ed-67a2-4a63-b4f1-c6b227242876" 
-                                inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xe0df306c-077d-49ea-8e0f-3e3440d50a5d" 
-                                inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xef927fa2-1f31-495f-83f9-9e00a850e003" 
-                                outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x717cfb28-9f73-4a31-a0ec-f6c781f772a5">
+                     <bifolium xml:id="h9bebb179-0c35-4358-a377-0a203f060ebc"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xe1e069ed-67a2-4a63-b4f1-c6b227242876"
+                               inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xe0df306c-077d-49ea-8e0f-3e3440d50a5d"
+                               inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xef927fa2-1f31-495f-83f9-9e00a850e003"
+                               outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x717cfb28-9f73-4a31-a0ec-f6c781f772a5">
                             </bifolium>
-                        </bifolium>
-                        
-                        <!-- 2 pages of D-BNba, BSk 21/69 -->
-                        <!-- 4 pages of D-BNba, MH 60 -->
-                        <!-- 2 pages of D-B, Grasnick 20b -->
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../D-BNba_BSk_21-69/D-BNba_BSk_21-69.xml#x731b0f02-032a-49d6-a417-d16500bea745" 
-                            inner.verso="./../D-BNba_BSk_21-69/D-BNba_BSk_21-69.xml#xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9" 
-                            inner.recto="./../D-B_Grasnick_20b/D-B_Grasnick_20b.xml#s611b7677-bc67-44cb-83ce-687a74cbbe49" 
+                  </bifolium>
+                  <!-- 2 pages of D-BNba, BSk 21/69 -->
+                  <!-- 4 pages of D-BNba, MH 60 -->
+                  <!-- 2 pages of D-B, Grasnick 20b -->
+                  <bifolium xml:id="h06501651-1692-4a1b-a509-4e6f3470bf69"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../D-BNba_BSk_21-69/D-BNba_BSk_21-69.xml#x731b0f02-032a-49d6-a417-d16500bea745"
+                            inner.verso="./../D-BNba_BSk_21-69/D-BNba_BSk_21-69.xml#xd174ea19-b7ae-48c8-aca1-ad6b5701f8b9"
+                            inner.recto="./../D-B_Grasnick_20b/D-B_Grasnick_20b.xml#s611b7677-bc67-44cb-83ce-687a74cbbe49"
                             outer.verso="./../D-B_Grasnick_20b/D-B_Grasnick_20b.xml#s386d6927-260e-4a44-ba8a-f664c34f6300">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x506637f0-9b11-4643-a220-9bbd77965bf7" 
-                                inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xf2f94a93-e5fe-4b94-9518-dcd35b27a88e" 
-                                inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x13167dbf-459c-4408-a8ee-df7c582e2255" 
-                                outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x69931b4f-66d0-4d26-9f4b-8a076f22a60c">
+                     <bifolium xml:id="h36f4e13c-b13b-4a18-9d9a-f3b5eaacb085"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x506637f0-9b11-4643-a220-9bbd77965bf7"
+                               inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xf2f94a93-e5fe-4b94-9518-dcd35b27a88e"
+                               inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x13167dbf-459c-4408-a8ee-df7c582e2255"
+                               outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x69931b4f-66d0-4d26-9f4b-8a076f22a60c">
                             </bifolium>
-                        </bifolium>
-                        
-                        <!-- 24 pages of D-BNba, MH 60 -->
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x5ac4fa83-c044-4c2b-858b-7a95888a5332" 
-                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x8933a040-58f0-4865-9be6-530eeb25157c" 
-                            inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xcd55dabb-8f39-43a4-abbf-138c32f1f93b" 
+                  </bifolium>
+                  <!-- 24 pages of D-BNba, MH 60 -->
+                  <bifolium xml:id="h65602d05-95c8-464c-b0ef-7ae0ee165908"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x5ac4fa83-c044-4c2b-858b-7a95888a5332"
+                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x8933a040-58f0-4865-9be6-530eeb25157c"
+                            inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xcd55dabb-8f39-43a4-abbf-138c32f1f93b"
                             outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x7dcbd745-fe04-4731-8c56-7b6c6fd61ce9">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x616c11a1-7377-48bd-a6d7-ec03ce718eb2" 
-                                inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x989f416b-6af5-4615-82da-09eed754b965" 
-                                inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x6e6bb355-b7bb-4d8f-b8ea-d23d9e9ae795" 
-                                outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xedf924c8-5e68-4508-bf57-5eee7904f096">
+                     <bifolium xml:id="h63a56465-d892-44a6-8168-26e01ebf3957"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x616c11a1-7377-48bd-a6d7-ec03ce718eb2"
+                               inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x989f416b-6af5-4615-82da-09eed754b965"
+                               inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x6e6bb355-b7bb-4d8f-b8ea-d23d9e9ae795"
+                               outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xedf924c8-5e68-4508-bf57-5eee7904f096">
                             </bifolium>
-                        </bifolium>
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xf94dcffd-1999-4278-9711-5bdfb9e1ee85" 
-                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x1b0b15a1-cf03-491c-9fda-d15d4fbe5e66" 
-                            inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x301c694b-9bea-4c50-8213-4a92143caeb4" 
+                  </bifolium>
+                  <bifolium xml:id="hb290a3b5-b451-4b26-9a12-3b9fa0469693"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xf94dcffd-1999-4278-9711-5bdfb9e1ee85"
+                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x1b0b15a1-cf03-491c-9fda-d15d4fbe5e66"
+                            inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x301c694b-9bea-4c50-8213-4a92143caeb4"
                             outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xca097347-c5ad-4863-8d7b-66f50c0550bf">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xc595ffad-c5c4-488b-ba92-45f4e5b4c450" 
-                                inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x73cd7cec-9873-4fd4-9f36-6d96e97ed881" 
-                                inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x50b7ec35-6d68-4ad7-91eb-59a315af7e0c" 
-                                outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x3ff8c2a2-81ef-40cc-8f3f-e135b610fe87">
+                     <bifolium xml:id="hecba6f59-9a98-4fc4-80f8-884b729362a5"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xc595ffad-c5c4-488b-ba92-45f4e5b4c450"
+                               inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x73cd7cec-9873-4fd4-9f36-6d96e97ed881"
+                               inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x50b7ec35-6d68-4ad7-91eb-59a315af7e0c"
+                               outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x3ff8c2a2-81ef-40cc-8f3f-e135b610fe87">
                             </bifolium>
-                        </bifolium>
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xac8888c6-90dc-4e7b-b704-c2f1be8c333d" 
-                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x58a60b82-2e9e-4adf-9415-6ca3063a1f29" 
-                            inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xb2d5df6e-f52a-4021-b5b3-656d1e915c1f" 
+                  </bifolium>
+                  <bifolium xml:id="he13b8a8c-19e3-41e6-845c-5dd08d1c443b"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xac8888c6-90dc-4e7b-b704-c2f1be8c333d"
+                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x58a60b82-2e9e-4adf-9415-6ca3063a1f29"
+                            inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xb2d5df6e-f52a-4021-b5b3-656d1e915c1f"
                             outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x9d3af3e9-b9bb-4392-b1e2-1978c50e0e44">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xaa2712a5-69c9-4a96-bc6c-84f326b61b4e" 
-                                inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x8ca2a944-2b00-4184-af2b-58e2bd33e205" 
-                                inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xa5c51527-c2ed-4565-91db-c6723d3a5d25" 
-                                outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x2433eb34-9ae9-44be-a41a-ff81446a672a">
+                     <bifolium xml:id="he972652f-de66-4871-9f05-432c7da862c0"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xaa2712a5-69c9-4a96-bc6c-84f326b61b4e"
+                               inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x8ca2a944-2b00-4184-af2b-58e2bd33e205"
+                               inner.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xa5c51527-c2ed-4565-91db-c6723d3a5d25"
+                               outer.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x2433eb34-9ae9-44be-a41a-ff81446a672a">
                             </bifolium>
-                        </bifolium>
-                        
-                        <!-- 2 pages of D-BNba, MH 60 -->
-                        <!-- 4 missing pages -->
-                        <!-- 2 pages of F-pn, Ff 12.756 -->
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xbafcb5f6-d42e-4eed-b8c5-d4a93069400f" 
-                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x8a2db5b1-e555-424c-ab52-15c588abd75a" 
-                            inner.recto="./../F-Pn_Fonds_francais_12.756/F-Pn_Fonds_francais_12.756.xml#sbc1d28ab-f3b4-4b28-bfbb-eff71b44926d" 
+                  </bifolium>
+                  <!-- 2 pages of D-BNba, MH 60 -->
+                  <!-- 4 missing pages -->
+                  <!-- 2 pages of F-pn, Ff 12.756 -->
+                  <bifolium xml:id="hfebec8b5-74ad-4770-b1a4-71391397008f"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#xbafcb5f6-d42e-4eed-b8c5-d4a93069400f"
+                            inner.verso="./../D-BNba_MH_60_Engelmann/D-BNba_MH_60_Engelmann.xml#x8a2db5b1-e555-424c-ab52-15c588abd75a"
+                            inner.recto="./../F-Pn_Fonds_francais_12.756/F-Pn_Fonds_francais_12.756.xml#sbc1d28ab-f3b4-4b28-bfbb-eff71b44926d"
                             outer.verso="./../F-Pn_Fonds_francais_12.756/F-Pn_Fonds_francais_12.756.xml#s10967407-7024-4c9e-b8b2-5522982cc265">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="#t02ae4086-9a35-4361-af1d-af7045c56543" 
-                                inner.verso="#t9f551fa1-8967-4aac-90ee-23ac79716c25" 
-                                inner.recto="#td7c89c20-98d9-4d39-9f6f-a69574715dca" 
-                                outer.verso="#ted5d9973-888f-43ac-8e6c-a826032073b9">
+                     <bifolium xml:id="hf7df468a-2304-414f-8c8e-732235005fb2"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="#t02ae4086-9a35-4361-af1d-af7045c56543"
+                               inner.verso="#t9f551fa1-8967-4aac-90ee-23ac79716c25"
+                               inner.recto="#td7c89c20-98d9-4d39-9f6f-a69574715dca"
+                               outer.verso="#ted5d9973-888f-43ac-8e6c-a826032073b9">
                             </bifolium>
-                        </bifolium>
-                        
-                        <!-- 8 pages of F-Pn, Ms. 96 -->
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c" 
-                            inner.verso="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s14ea2bc2-5406-4618-9754-0091b0c1a13f" 
-                            inner.recto="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26" 
+                  </bifolium>
+                  <!-- 8 pages of F-Pn, Ms. 96 -->
+                  <bifolium xml:id="h96220d3d-3821-4e8e-9762-786d87925a64"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s135bbdd5-17a1-4fa4-93e8-edd9570d2c1c"
+                            inner.verso="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s14ea2bc2-5406-4618-9754-0091b0c1a13f"
+                            inner.recto="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#sa5355af8-fdd8-4f62-adb7-dfe777cf5b26"
                             outer.verso="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s7437e117-4a2a-4e99-a09a-49e435ac2486">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#sd4d26df4-8997-4f6c-a26f-069241baa8bb" 
-                                inner.verso="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s17f3fa15-d4a7-4167-b2dc-87530bc0922f" 
-                                inner.recto="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s549e45a1-051e-465c-b973-048f5d3f65cf" 
-                                outer.verso="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s49809936-9ab7-4f47-9fb6-d98c03f75703">
+                     <bifolium xml:id="h6e79e140-fe96-4ad8-bb2b-5efb8e0766b3"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#sd4d26df4-8997-4f6c-a26f-069241baa8bb"
+                               inner.verso="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s17f3fa15-d4a7-4167-b2dc-87530bc0922f"
+                               inner.recto="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s549e45a1-051e-465c-b973-048f5d3f65cf"
+                               outer.verso="./../F-Pn_Ms_96/F-Pn_Ms_96.xml#s49809936-9ab7-4f47-9fb6-d98c03f75703">
                             </bifolium>
-                        </bifolium>
-                        
-                        <!-- 8 pages of D-B, Landsberg 8,1 -->
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s07669e68-2805-4d91-90a4-5636ecb5a327" 
-                            inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s482882fa-268d-4aa7-b61d-03c40add011b" 
-                            inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s2fb66137-b0c8-42a1-a33f-3b7e24d43d5f" 
+                  </bifolium>
+                  <!-- 8 pages of D-B, Landsberg 8,1 -->
+                  <bifolium xml:id="h06ee5e6f-2b15-401d-b5e7-122aa7ca605e"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s07669e68-2805-4d91-90a4-5636ecb5a327"
+                            inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s482882fa-268d-4aa7-b61d-03c40add011b"
+                            inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s2fb66137-b0c8-42a1-a33f-3b7e24d43d5f"
                             outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s29192417-92b0-417a-866a-4c491ef25f22">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sd4aa056d-b0f3-40ff-8437-811bbe334b0c" 
-                                inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#sba101e21-66fd-444c-8d19-6f1dc86e3ee1" 
-                                inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sed995bd3-8b9d-4a9a-ad00-36f7cde7bb5a" 
-                                outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s33ab3ee0-155d-4e69-b5a5-5c36615a172b">
+                     <bifolium xml:id="h0ceefa40-ecf3-483e-96f9-31a21eda85e9"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sd4aa056d-b0f3-40ff-8437-811bbe334b0c"
+                               inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#sba101e21-66fd-444c-8d19-6f1dc86e3ee1"
+                               inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sed995bd3-8b9d-4a9a-ad00-36f7cde7bb5a"
+                               outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s33ab3ee0-155d-4e69-b5a5-5c36615a172b">
                             </bifolium>
-                        </bifolium>
-                        
-                        <!-- 4 pages of D-B, Landsberg 8,1 -->
-                        <!-- 2 pages F-Pn, Ms. 57/2 -->
-                        <!-- 2 pages of D-B, Landsberg 8,1 -->
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s9833ac8c-ccb1-4fce-90e2-e19bd3099738" 
-                            inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s6ace5df9-3178-4f8d-a26d-19f9c388adc2" 
-                            inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s5a4e0315-8d55-4223-82ad-5fdccea32728" 
+                  </bifolium>
+                  <!-- 4 pages of D-B, Landsberg 8,1 -->
+                  <!-- 2 pages F-Pn, Ms. 57/2 -->
+                  <!-- 2 pages of D-B, Landsberg 8,1 -->
+                  <bifolium xml:id="ha5025bb7-ee05-4c2b-9b19-326370e90451"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s9833ac8c-ccb1-4fce-90e2-e19bd3099738"
+                            inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s6ace5df9-3178-4f8d-a26d-19f9c388adc2"
+                            inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s5a4e0315-8d55-4223-82ad-5fdccea32728"
                             outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#scd8c8537-26b0-4efb-86ed-42fbbf4acfb4">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s14d1e262-2821-4fa3-b763-2aba98804cb8" 
-                                inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s387832fe-c9d7-4d4b-8258-27ab055f913c" 
-                                inner.recto="./../F-Pn_Ms_57/F-Pn_Ms_57.xml#s20df2be0-17c4-45d6-9924-eec1898ae075" 
-                                outer.verso="./../F-Pn_Ms_57/F-Pn_Ms_57.xml#s91ca4a8e-856d-4cd0-91f1-8c43d4728c59">
+                     <bifolium xml:id="hca18ba63-2328-45d7-8716-b3fe61de4618"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s14d1e262-2821-4fa3-b763-2aba98804cb8"
+                               inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s387832fe-c9d7-4d4b-8258-27ab055f913c"
+                               inner.recto="./../F-Pn_Ms_57/F-Pn_Ms_57.xml#s20df2be0-17c4-45d6-9924-eec1898ae075"
+                               outer.verso="./../F-Pn_Ms_57/F-Pn_Ms_57.xml#s91ca4a8e-856d-4cd0-91f1-8c43d4728c59">
                             </bifolium>
-                        </bifolium>
-                        
-                        <!-- 16 pages of D-B, Landsberg 8,1 -->
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s15b8e849-988f-4985-9d0e-b32b42461883" 
-                            inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#se6d50d9a-f779-413f-a09c-15f0e98494e0" 
-                            inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s71074e8b-0b76-4e8a-a539-816debef71e4" 
+                  </bifolium>
+                  <!-- 16 pages of D-B, Landsberg 8,1 -->
+                  <bifolium xml:id="h8ce4a15a-b316-4d38-8899-aea063068631"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s15b8e849-988f-4985-9d0e-b32b42461883"
+                            inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#se6d50d9a-f779-413f-a09c-15f0e98494e0"
+                            inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s71074e8b-0b76-4e8a-a539-816debef71e4"
                             outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#se98e6201-c288-4bdb-a617-d4799e0ee6ae">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sc2c82ebc-e460-4ed9-bb3a-91db2cc65021" 
-                                inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s5cff61dd-f8d2-4962-a4c9-3871f7e54101" 
-                                inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s1b35a94b-f578-41e1-bb78-9ec90046b5c9" 
-                                outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s4b95b470-069c-41a9-99e8-91347f81a5a3">
+                     <bifolium xml:id="h0d0043c0-ef27-4ac4-b361-b94b1aa5cc7e"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sc2c82ebc-e460-4ed9-bb3a-91db2cc65021"
+                               inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s5cff61dd-f8d2-4962-a4c9-3871f7e54101"
+                               inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s1b35a94b-f578-41e1-bb78-9ec90046b5c9"
+                               outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s4b95b470-069c-41a9-99e8-91347f81a5a3">
                             </bifolium>
-                        </bifolium>
-                        <bifolium width="305" height="232" unit="mm" 
-                            outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sc86443f1-8081-4cc9-a6e6-5d1842589730" 
-                            inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s5ca753e8-956f-4e25-b653-371c1fe65015" 
-                            inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sb9134010-835a-40f6-a800-b9c32a33de17" 
+                  </bifolium>
+                  <bifolium xml:id="hdb2f2de7-3138-4e23-9e7d-0781ef1ef62c"
+                            width="305"
+                            height="232"
+                            unit="mm"
+                            outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sc86443f1-8081-4cc9-a6e6-5d1842589730"
+                            inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s5ca753e8-956f-4e25-b653-371c1fe65015"
+                            inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sb9134010-835a-40f6-a800-b9c32a33de17"
                             outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#s529b8ea8-602f-4d96-8ade-a16b801ca349">
-                            <bifolium width="305" height="232" unit="mm" 
-                                outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sbea9999f-8d86-46ec-b856-575e10e5b24c" 
-                                inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#sc7212032-1973-45d5-94ef-24a42e2904c8" 
-                                inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s479c9217-764e-4ce5-ad06-1b5e340aa4d6" 
-                                outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#sbf46e23c-d031-4d8d-b724-9ce27f86e682">
+                     <bifolium xml:id="h52537900-ed36-4daa-b030-f9fbfd215e0b"
+                               width="305"
+                               height="232"
+                               unit="mm"
+                               outer.recto="./../Landsberg_8-1/Landsberg_8-1.xml#sbea9999f-8d86-46ec-b856-575e10e5b24c"
+                               inner.verso="./../Landsberg_8-1/Landsberg_8-1.xml#sc7212032-1973-45d5-94ef-24a42e2904c8"
+                               inner.recto="./../Landsberg_8-1/Landsberg_8-1.xml#s479c9217-764e-4ce5-ad06-1b5e340aa4d6"
+                               outer.verso="./../Landsberg_8-1/Landsberg_8-1.xml#sbf46e23c-d031-4d8d-b724-9ce27f86e682">
                             </bifolium>
-                        </bifolium>
-                    </foliaDesc>
-                </physDesc>
-                <physLoc>
-                    <repository>
-                        <identifier auth.uri="http://www.rism.info/" auth="RISM">…</identifier>
-                    </repository>
-                    <identifier/>
-                </physLoc>
-            </manifestation>
-        </manifestationList>
-        <revisionDesc>
-            <change n="2" isodate="2023">
-                <respStmt>
-                    <persName auth.uri="https://github.com/ran-mo">Ran Mo</persName>
-                </respStmt>
-                <changeDesc>
-                    <p>merged Manifest files, added self-hosted pages.</p>
-                </changeDesc>
-            </change>
-            <change n="1">
-                <respStmt>
-                    <persName auth.uri="https://github.com/kepper">Johannes Kepper</persName>
-                    <persName auth.uri="https://github.com/jpvoigt">Jan-Peter Voigt</persName>
-                </respStmt>
-                <changeDesc>
-                    <p>File initially generated from IIIF Manifests mentioned in
+                  </bifolium>
+               </foliaDesc>
+            </physDesc>
+            <physLoc xml:id="h2893c3d5-9d07-4715-9a55-cb7df3bdedf5">
+               <repository xml:id="h39de0233-29a3-4152-957e-ed2a92e3b61b">
+                  <identifier xml:id="hfae64334-4d56-4531-a662-f40976358ee3"
+                              auth.uri="http://www.rism.info/"
+                              auth="RISM">…</identifier>
+               </repository>
+               <identifier xml:id="h43de3683-aeb2-4caf-ab09-490ff1d04d1b"/>
+            </physLoc>
+         </manifestation>
+      </manifestationList>
+      <revisionDesc xml:id="hdec3a4e5-9906-4b30-b20e-b41bc9734358">
+         <change xml:id="hebf4767c-e857-4571-be2c-75715e973f7f" n="2" isodate="2023">
+            <respStmt xml:id="h90e82f1a-8251-4a02-b3e0-cbe6f345802f">
+               <persName xml:id="h1b6ef964-2ecc-4603-b0ec-d7d72bcfdc32"
+                         auth.uri="https://github.com/ran-mo">Ran Mo</persName>
+            </respStmt>
+            <changeDesc xml:id="h61cb5d74-b008-4fbf-8b0a-e2866221254e">
+               <p xml:id="h303470c0-e962-4a39-b5f0-4140fcf2af4f">merged Manifest files, added self-hosted pages.</p>
+            </changeDesc>
+         </change>
+         <change xml:id="ha5d0bd90-e441-4430-90a1-404a436e5a6c" n="1">
+            <respStmt xml:id="h3696457e-8b73-420a-b07b-94fa4e8c0bf0">
+               <persName xml:id="h80b5c160-e748-4788-9f50-9664082f09d9"
+                         auth.uri="https://github.com/kepper">Johannes Kepper</persName>
+               <persName xml:id="h719acd3e-c74f-4116-aa26-9a1f4d08e6df"
+                         auth.uri="https://github.com/jpvoigt">Jan-Peter Voigt</persName>
+            </respStmt>
+            <changeDesc xml:id="h6de87c96-8aba-4ae0-9d99-71a71782b4ac">
+               <p xml:id="h5198ad52-ccc2-4b91-b970-257d30898fd3">File initially generated from IIIF Manifests mentioned in
                         /fileDesc//source.</p>
-                </changeDesc>
-                <date isodate="2022-08-16"/>
-            </change>
-        </revisionDesc>
-    </meiHead>
-    <music>
-        <facsimile>
-            <surface xml:id="t02ae4086-9a35-4361-af1d-af7045c56543" n="43" ulx="0" uly="0" lrx="3050" lry="2320" label="43 (missing)">
-                <graphic xml:id="t5efc2173-49c6-48c6-92e4-c3869c23f349" 
-                    target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/lostPagePlaceholders%2FNotirungsbuch-K_305x232mm.jpeg"
-                    type="facsimile"
-                    width="3050"
-                    height="2320"/>
-            </surface>
-            <surface xml:id="t9f551fa1-8967-4aac-90ee-23ac79716c25" n="44" ulx="0" uly="0" lrx="3050" lry="2320" label="44 (missing)">
-                <graphic xml:id="tb0dd81dc-29e8-4572-b2b3-07a8c43b0d11"
-                    target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/lostPagePlaceholders%2FNotirungsbuch-K_305x232mm.jpeg"
-                    type="facsimile"
-                    width="3050"
-                    height="2320"/>
-            </surface>
-            <surface xml:id="td7c89c20-98d9-4d39-9f6f-a69574715dca" n="45" ulx="0" uly="0" lrx="3050" lry="2320" label="45 (missing)">
-                <graphic xml:id="t088b4803-2287-4690-8a7f-4d95b4d0bb74"
-                    target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/lostPagePlaceholders%2FNotirungsbuch-K_305x232mm.jpeg"
-                    type="facsimile"
-                    width="3050"
-                    height="2320"/>
-            </surface>
-            <surface xml:id="ted5d9973-888f-43ac-8e6c-a826032073b9" n="46" ulx="0" uly="0" lrx="3050" lry="2320" label="46 (missing)">
-                <graphic xml:id="tf1db37d9-d107-4d0d-b24d-5e9eee719545" 
-                    target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/lostPagePlaceholders%2FNotirungsbuch-K_305x232mm.jpeg"
-                    type="facsimile"
-                    width="3050"
-                    height="2320"/>
-            </surface>
-        </facsimile>
-    </music>
+            </changeDesc>
+            <date xml:id="hac6d2c61-a903-499c-b149-523cb1a15e9b" isodate="2022-08-16"/>
+         </change>
+      </revisionDesc>
+   </meiHead>
+   <music meiversion="5.0.0-dev">
+      <facsimile>
+         <surface xml:id="t02ae4086-9a35-4361-af1d-af7045c56543"
+                  n="43"
+                  ulx="0"
+                  uly="0"
+                  lrx="3050"
+                  lry="2320"
+                  label="43 (missing)"
+                  rotate="0">
+            <graphic xml:id="t5efc2173-49c6-48c6-92e4-c3869c23f349"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/lostPagePlaceholders%2FNotirungsbuch-K_305x232mm.jpeg"
+                     type="facsimile"
+                     width="3050"
+                     height="2320"/>
+         </surface>
+         <surface xml:id="t9f551fa1-8967-4aac-90ee-23ac79716c25"
+                  n="44"
+                  ulx="0"
+                  uly="0"
+                  lrx="3050"
+                  lry="2320"
+                  label="44 (missing)"
+                  rotate="0">
+            <graphic xml:id="tb0dd81dc-29e8-4572-b2b3-07a8c43b0d11"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/lostPagePlaceholders%2FNotirungsbuch-K_305x232mm.jpeg"
+                     type="facsimile"
+                     width="3050"
+                     height="2320"/>
+         </surface>
+         <surface xml:id="td7c89c20-98d9-4d39-9f6f-a69574715dca"
+                  n="45"
+                  ulx="0"
+                  uly="0"
+                  lrx="3050"
+                  lry="2320"
+                  label="45 (missing)"
+                  rotate="0">
+            <graphic xml:id="t088b4803-2287-4690-8a7f-4d95b4d0bb74"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/lostPagePlaceholders%2FNotirungsbuch-K_305x232mm.jpeg"
+                     type="facsimile"
+                     width="3050"
+                     height="2320"/>
+         </surface>
+         <surface xml:id="ted5d9973-888f-43ac-8e6c-a826032073b9"
+                  n="46"
+                  ulx="0"
+                  uly="0"
+                  lrx="3050"
+                  lry="2320"
+                  label="46 (missing)"
+                  rotate="0">
+            <graphic xml:id="tf1db37d9-d107-4d0d-b24d-5e9eee719545"
+                     target="https://edirom-images.beethovens-werkstatt.de/Scaler/IIIF/lostPagePlaceholders%2FNotirungsbuch-K_305x232mm.jpeg"
+                     type="facsimile"
+                     width="3050"
+                     height="2320"/>
+         </surface>
+      </facsimile>
+   </music>
 </mei>
