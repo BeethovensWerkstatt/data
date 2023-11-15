@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="x1d892e91-d7d0-4ba1-8abd-5a39c481f5ac">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Harmonievergleich</title>
+            <author key="#xml:id">Agnes Seipelt</author>
+            <author key="#xml:id">Andreas Münzmay</author>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName key="#xml:id von BW">Beethovens Werkstatt</orgName>
+               <address>
+                  <street></street>
+                  <postCode></postCode>
+                  <placeName></placeName>
+               </address>
+            </publisher>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+     <revisionDesc>
+        <change n="2" when="2023-11-14">
+           <persName key="#xml:id">Ran Mo</persName>
+           <desc>Überführung in TEI</desc>
+           erstell
+        </change>
+        <change n="1" when="2020">
+           <persName>Agnes Seipelt</persName>
+           <persName>Andreas Münzmay</persName>
+           <desc>Version 1.0 veröffentlicht</desc>
+        </change>
+     </revisionDesc>
+  </teiHeader>
+  <text type="glossary">
+      <body xml:lang="DE">
+         <p>
+            Die Perspektive des Harmonievergleichs (engl. harmonic comparison) ist neben der <ref target="#xml:id von Fassungssynopse">Fassungssynopse</ref> (engl. plain comparison), den <ref target="#">Bearbeitungsmaßnahmen</ref> (engl. genetic comparison), dem <ref target="#">Einzelnotenvergleich</ref> (engl. single note comparison), der <ref target="#">Stimmenkontur</ref> (engl. melodic contour) und der Darstellung der <ref target="#">Ereignisdichte</ref> (engl. event density) eine von sechs Perspektiven der <ref target="#">VideApp-Arr</ref>, mit deren Hilfe <ref target="#">Fassungen</ref> computergestützt verglichen werden können.
+         </p>
+         <p>
+            Der Harmonievergleich analysiert zwei Fassungen eines Werkes unabhängig voneinander im Hinblick auf ihre Harmonik und hebt die Unterschiede in den Analyseergebnissen entsprechend hervor. Alle zu jeder vollen Zählzeit gleichzeitig erklingenden Töne werden als Akkord analysiert und die Akkordsymbole unter die obere (Ausgangs-)Fassung und über die untere (Bearbeitungs-)Fassung geschrieben. Dreiklänge werden durch einfache Akkordsymbole bezeichnet, Vier- und Fünfklänge, wie beispielsweise Erweiterungen durch die Stufen 7 oder 9 oder verminderte und übermäßige Intervalle, werden durch entsprechend erweiterte Symbole (s. Tabelle unten) bezeichnet. Ein (sinnvoller) Vergleich der Harmonik von Fassungen, die in unterschiedlichen Tonarten stehen (z. B. op. 14/1), kann nur stattfinden, wenn der*die Nutzer*in eine der Fassungen vor der Analyse in die Tonart der anderen Fassung transponiert oder wenn beide Fassungen in eine vorzeichenfreie Tonart transponiert werden.
+         </p>
+         <p>
+            Die maschinelle Analyse der Harmonik setzt einen komplexen Auswertungsvorgang voraus, dessen Einzelheiten im Folgenden beschrieben werden.
+         </p>
+         <p>
+            Für die Analyse wird zunächst der Grundton der jeweiligen gleichzeitig erklingenden Töne (mindestens 2 unterschiedliche Tonnamen) ermittelt. Dies geschieht über Terzschichtung, wobei davon ausgegangen wird, dass die dichteste Schichtung (= die engste Lage) für den am meisten wahrscheinlichen Akkord steht. Die Terzen werden über dem Grundton durchnummeriert, beispielsweise bekommt die erste Terz über einem C, also E oder Es, die Nummer 1, das G (bzw. Ges oder Gis) die Nummer 2 usw. Dann werden über jeden klingenden Ton Terzen geschichtet, was bedeutet, dass jeder Ton zunächst als Grundton interpretiert wird. Die niedrigste Zahl aller Terzen mit der jeweils höchsten Nummer (= die dichteste Schachtelung) bestimmt dann, über welchem Ton der Akkord wahrscheinlich aufgebaut ist. Beispiel: Aus den Tönen F, C und A sollen Akkorde gebildet werden. Über C ist das F die 5. Terz, bekommt also die Ziffer 5. A ist die folgende Terz, bekommt also die Nummer 6 (C-E-G-H-D-F-A). Die höchste Nummer ist also 6. Über F ist das A die 1. Terz, C ist die 2. Terz, bekommt also die Nummer 2. Über A ist C die 1. und F die 6. Terz, also zählt 6. So zeigt sich, dass der Akkord ein einfacher Dreiklang über F ist, da die Nummer 2 die niedrigste aller höchsten Terzen ist:
+            <figure><graphic url="images/x1d892e91-d7d0-4ba1-8abd-5a39c481f5ac/terzschichtung.001-1-1-e1594815119906-680x132.jpg"></graphic></figure>
+         </p>
+         <p>
+            In diesem Zuge werden auch Arpeggien erkannt und daraufhin untersucht, ob sie als Akkord für die jeweilige Zählzeit interpretiert werden können. Hierfür werden die unter einem Balken stehenden Noten so in Terzen geschichtet, dass sie eine möglichst enge Lage haben. Arpeggien werden nur für diese Berechnungen als zusammen erklingende, also Akkordtöne, betrachtet. Das Notenbild wird dadurch nicht verändert. Durch die Terzschichtung kann ermittelt werden, ob es sich beispielsweise um Läufe, die dann nicht mit in die Harmonie einbezogen werden, oder um Harmonien, handelt.
+            <figure><graphic url="images/x1d892e91-d7d0-4ba1-8abd-5a39c481f5ac/Arpeggio_op20_38_mdiv1_m269_271-729x1024.png" ></graphic><head>Vergleich op. 20/38 I. Satz, T. 269–271</head></figure>
+         </p>
+         <p>
+            Bevor auf Grundlage des ermittelten Grundtons die exakten Intervalle zu allen weiteren Tönen berechnet werden können, werden zuvor die sogenannten ‚harmoniefremden‘ Töne ‚herausgefiltert‘. Darunter werden für die Harmonie irrelevante Töne wie Durchgangstöne oder Wechseltöne subsummiert, die aus den Akkordberechnungen herausgenommen werden, da sie meist nur melodische Verzierung sind. Ebenfalls werden in diesem Schritt etwaige Vorhalte erkannt und die jeweiligen Vorhaltstöne werden in ihrer aufgelösten Form für die Akkorderkennung berücksichtigt. Alle Informationen zu den harmoniefremden Tönen sind mit einem Mouseover sicht- und nachvollziehbar.
+         </p>
+         <p>
+            Für die Einordnung der harmoniefremden Töne werden an jede Note im Vorfeld Informationen zu ihren nachfolgenden bzw. vorangegangenen Noten und den Intervallen hinzugefügt. Die harmoniefremden Töne haben eine satztechnische Funktion und unterliegen bestimmten Regeln. Alle Töne, die eine Quarte, Sexte, Septime, None oder Sekunde über dem aktuell errechneten Grundton liegen, werden untersucht. Beispielsweise muss bei einem Vorhalt die „vorgehaltene“, dissonante Note auf einer betonten, schweren Zählzeit liegen und sie muss sich nach unten in den entsprechenden Akkordton, zum Beispiel von einer Quarte in die Terz, also schrittweise, auflösen. Der Grundton darf sich dabei nicht verändern, muss also länger sein bzw. sich wiederholen, wobei Oktavpendel erlaubt sind. Wenn diese Bedingungen auf eine Note zutreffen, werden diese Töne entweder aus der Akkordbewertung herausgerechnet (Durchgangs- oder Wechselnoten) oder in ihrer aufgelösten Form bewertet (Vorhalte). Dadurch wird der Akkord bzw. der Grundton beeinflusst und in einem zweiten Durchgang der Terzschichtung (s.o.) neu interpretiert. Bei mehreren möglichen Interpretationen eines Akkords, also mehreren gleich „dichten“ Terzen, wird diejenige Interpretation bevorzugt, deren Grundton die längere Dauer hat. Wenn beispielsweise in einem Tonvorrat drei Viertel und zwei Achtel vorhanden sind und eine der Achtelnoten sowie eine Viertelnote als mögliche Grundtöne fungieren können, dann wird die Interpretation mit der Viertelnote als Grundton bevorzugt.
+         </p>
+         <p>
+            Im letzten Schritt werden die Akkorde auf ihr Tongeschlecht und ihre gegebenenfalls zusätzlichen Töne hin untersucht. Dabei werden die Intervallabstände zwischen Grundton und Terz, Quinte, Septime und None untersucht. Je nachdem, welche Intervalle vorhanden sind und wie groß diese sind, werden die Akkorde unterschiedlich bezeichnet. Die an sich zahlreichen Kombinationsmöglichkeiten wurden für diese Zwecke und die betreffende musikalische Epoche eingeschränkt. Neben Drei- und Vierklängen werden teilweise auch Zweiklänge bezeichnet. Wenn beispielsweise eine Terz vorhanden ist, wird dies als Dreiklang mit entsprechend großer oder kleiner Terz beschrieben. Die Tonkombination Grundton plus Quinte wird als „leere“ Quinte mit „‘Grundton‘no3“ benannt. Da in solch einem Fall weder Dur- noch Moll-Akkord erkennbar sind, wurde beschlossen, alle Akkordgrundtöne mit einer Majuskel zu kennzeichnen und zusätzlich ein „m“ zur Kennzeichnung von Mollakkorden zu verwenden. Septimen und Nonen werden hochgestellt und abhängig von ihrem Intervallabstand zum Grundton auch mit weiteren Zeichen näher beschrieben. Der jeweilige Basston des Akkords wird – wenn es sich nicht um den Grundton handelt – separat nach einem eingefügten „/“ angegeben, z. B. G/D. In folgender Tabelle sind in der ersten Spalte die Intervallkombinationen und in der zweiten Spalte die dazugehörigen Akkordbezeichnungen aufgelistet:
+            <table rows="3" cols="2">
+               <row><cell>Intervallabstände</cell>	<cell>Akkordbezeichnung</cell></row>
+               <row><cell>gr.3, r.5</cell>	<cell>G</cell></row>
+               <row><cell>gr.3, keine 5</cell>	<cell>G</cell></row>
+               <row><cell>keine 3, r.5</cell>	<cell>Gno3</cell></row>
+               <row><cell>gr.3, überm.5</cell>	<cell>G+</cell></row>
+               <row><cell>gr.3, r.5, kl.7</cell>	<cell>G 7</cell></row>
+               <row><cell>gr.3, r.5, gr.7</cell>	<cell>1</cell></row>
+               <row><cell>gr.3, r.5, kl.7, gr.9</cell>	<cell>G 79</cell></row>
+               <row><cell>gr.3, r.5, kl.7, kl.9</cell>	<cell>G 7b9</cell></row>
+               <row><cell>gr.3, r.5, kl.7, überm.9</cell>	<cell>G 7#9</cell></row>
+               <row><cell>kl.3, r.5, 9</cell>	<cell>G add9</cell></row>
+               <row><cell>kl.3, r.5</cell>	<cell>Gm</cell></row>
+               <row><cell>kl.3, keine 5</cell>	<cell>Gm</cell></row>
+               <row><cell>kl.3, verm. 5</cell>	<cell>Gdim</cell></row>
+               <row><cell>kl.3, r.5, kl.7</cell>	<cell>Gm 7</cell></row>
+               <row><cell>kl.3, verm.5, kl.7</cell>	<cell>Gm 7b5</cell></row>
+               <row><cell>kl.3, r.5, gr.7</cell>	<cell>Gm maj7</cell></row>
+               <row><cell>kl.3, r.5, kl.7, gr.9</cell>	<cell>Gm 79</cell></row>
+               <row><cell>Quartvorhalt</cell>	<cell>4-3</cell></row>
+               <row><cell>Sextvorhalt</cell>	<cell>6-5</cell></row>
+               <row><cell>Septimvorhalt</cell>	<cell>7-8</cell></row>
+               <row><cell>Nonenvorhalt</cell>	<cell>9-8</cell></row>
+               <row><cell>Sekundvorhalt</cell>	<cell>2-3</cell></row>
+            </table>
+         </p>
+         <p>
+            Neben der Anzeige der Harmonien bietet der Vergleich die Möglichkeit, mit einem Mouseover jede Note anzuwählen und ihre Funktion im jeweiligen Akkord und im melodischen Gefüge anzuzeigen, beispielsweise um welches Intervall über dem Grundton es sich handelt oder ob es eine Wechselnote ist. Sich wiederholende Harmonien werden nicht angezeigt.
+         </p>
+         <p>
+            <title type="subtitle">Grenzen der automatisierten Harmoniebestimmung</title>
+            Die Ergebnisse der automatisch berechneten Harmonien sind stets zu hinterfragen. Die Analyse geht immer von einem Grundton aus und berechnet dann die Intervallabstände zu den anderen Tönen, weswegen beispielsweise keine verkürzt notierten Akkorde erkannt werden können, da ja ein Grundton Voraussetzung ist. Lediglich der Befund, dass eine Terz und eine verminderte Quinte über einem Grundton stehen, kann mit der Analyse herausgefunden (und als dim-Akkord, s.o., bezeichnet) werden. Dass diese Kombination auf einen verkürzten Dominantseptakkord hindeuten könnte, können die nur auf Intervallabständen basierenden Regeln der Analyse nicht erkennen. Der Harmonievergleich ist ein auf Harmonien bzw. Intervalle fokussiertes „Vorlesen“ der klingenden Töne und keine Interpretation von Funktionen oder Stufen.
+            Sehr deutlich wird das, wenn mehrere harmoniebestimmende Töne fehlen, beispielsweise wenn der Grundton fehlt oder später hinzukommt und gleichzeitig ein Vorhalt vorliegt, wie in op. 38, II. Satz, Takt 2:
+            <figure><graphic url="images/x1d892e91-d7d0-4ba1-8abd-5a39c481f5ac/op38_measure1_3.png"></graphic></figure>
+         </p>
+         <p>
+            Die für die automatisierte Analyse formalisierten Regeln für eine Erkennung der Akkorde sind sehr basal gehalten und können somit nur die (für den hier vorliegenden musikgeschichtlichen Zeitraum) grundlegenden harmonischen Phänomene problemlos erkennen. Erweiterte oder je nach musikalischem Kontext variierende harmonische Besonderheiten in den Werken können jedoch mit allgemein gültigen Regeln der Skripte nicht erfasst werden: Würde man eine Regel für eine bestimmte Stelle X anpassen, würde sie an Stelle Y andere Fehler verursachen.
+         </p>
+         <p>
+            Der Harmonievergleich ist ein Hilfsmittel, das den Benutzerinnen und Benutzern dabei hilft, Unterschiede und Gemeinsamkeiten der beiden Fassungen zu erkennen. So wie im Einzelnotenvergleich werden gleichzeitig erklingende Töne miteinander in Beziehung gesetzt. Dadurch werden rasch Veränderungen im Detail – z. B. Dreiklangserweiterungen, die sich in der Vergleichsfassung nicht finden – sichtbar. Da die harmonischen Informationen aufgrund von Platzmangel und Überlappungen der Zeichen in der Ansicht nur an die vollen Zählzeiten geschrieben werden, ist der Vergleich zwar in der Horizontalen lückenhafter, ergänzt die anderen Perspektiven dafür aber in der Vertikalen.
+         </p>
+         <!--<closer><seg><rs key="#xml:id von Agnes" type="person">AS</rs>, <rs key="#xml:id von Andreas" type="person">AM</rs></seg></closer>-->
+      </body>
+  </text>
+</TEI>
