@@ -361,6 +361,18 @@
                   <memberOf key="att.systemDistance"/>
                   <memberOf key="att.systemHeight"/>
                </classes>
+               <attList>
+                  <attDef ident="rotate">
+                     <desc xml:lang="en"> Indicates the amount by which the rastrum is rotated relative to the page. Origin of rotation is the top left or the rastrum, i.e. the left end of the top staff line. The orientation is expressed in arc degrees. </desc>
+                     <datatype minOccurs="1" maxOccurs="1">
+                        <rng:ref name="data.DEGREES"/>
+                     </datatype>
+                     <defaultVal>0</defaultVal>
+                     <remarks xml:lang="en">
+                        <p>This attribute is based on the TEI attribute of the same name.</p>
+                     </remarks>
+                  </attDef>
+               </attList>
             </classSpec>
             
             <classSpec ident="att.rastrum.ges" type="atts" module="MEI.gestural" mode="add">
@@ -529,6 +541,21 @@
                   </p>
                </remarks>
             </elementSpec>
+            
+            <classSpec ident="att.meiVersion" module="MEI.shared" type="atts" mode="replace">
+               <desc xml:lang="en">Attributes that record the version of MEI in use.</desc>
+               <attList>
+                  <attDef ident="meiversion" usage="opt">
+                     <desc xml:lang="en">Specifies a generic MEI version label.</desc>
+                     <defaultVal>5.0</defaultVal>
+                     <valList type="closed">
+                        <valItem ident="6.0+beethovensWerkstatt">
+                           <desc xml:lang="en">MEI 6.0 with customizations by Beethovens Werkstatt</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+               </attList>
+            </classSpec>
 
          </schemaSpec>
       </body>
