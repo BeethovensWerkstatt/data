@@ -12,31 +12,6 @@
                <resp>Authored by</resp>
                <name xml:id="JK">Johannes Kepper</name>
             </respStmt>
-            <!--<respStmt>
-               <resp>Project Team of Beethoven in the House</resp>
-               <name xml:id="bithTeam_ch" role="res" from="2021-10" to="2021-11">Christin Heitmann</name>
-               <name xml:id="bithTeam_dl" role="res"
-                  ref="https://orcid.org/0000-0003-4151-0499">David Lewis</name>
-               <name xml:id="bithTeam_lr" role="res"
-                  ref="https://orcid.org/0000-0002-4826-4553">Lisa Rosendahl</name>
-               <name xml:id="bithTeam_ms" role="res"
-                  ref="https://orcid.org/0000-0002-4635-7684">Mark Saccomano</name>
-               <name xml:id="bithTeam_es" role="res"
-                  ref="https://orcid.org/0009-0004-0272-8377">Elisabete Shibata</name>
-               <name xml:id="bithTeam_ah" role="led"
-                  ref="https://orcid.org/0000-0003-2663-0003">Andrew Hankinson</name>
-               <name xml:id="bithTeam_jk" role="led"
-                  ref="https://orcid.org/0000-0003-4891-260X">Johannes Kepper</name>
-               <name xml:id="bithTeam_kp" role="led"
-                  ref="https://orcid.org/0000-0002-1668-6540">Kevin Page</name>
-               <name xml:id="bithTeam_cs" role="led">Christine Siegert</name>
-               <name xml:id="bithTeam_fs" role="ctb" from="2020-10" to="2020-12">Fabian Schmidt</name>
-            </respStmt>-->
-            <!--<funder>
-               <ident type="projectNumber">429039809</ident>
-               <name ref="viaf-of-dfg">Deutsche Forschungsgemeinschaft
-                  (DFG)</name>
-            </funder>-->
          </titleStmt>
          <publicationStmt>
             <publisher>
@@ -211,7 +186,6 @@
                </attList>
             </classSpec>
             
-            
             <elementSpec ident="unknownFoliation" module="MEI.header" mode="add">
                <desc xml:lang="en">Captures two subsequent surfaces for which the foliation / binding is unknown.</desc>
                <classes>
@@ -230,8 +204,7 @@
                   <p>When the exact folium setup can't be identified, it is advised to use <gi scheme="MEI">folium</gi> elements only (and not guess about the presence of <gi scheme="MEI">bifolium</gi>s in the document).</p>
                </remarks>
             </elementSpec>
-            
-            
+                        
             <elementSpec ident="layout" module="MEI.msDesc" mode="change">
                <desc xml:lang="en">Describes how text is laid out on the page, including information about any ruling, pricking, or other evidence of page-preparation techniques.</desc>
                <!--<classes>
@@ -460,6 +433,54 @@
                         <sch:assert test="$localRef or $remoteRef"><sch:value-of select="local-name()"/> must point to a surface element, either locally or in a different source document.</sch:assert>
                      </sch:rule>
                      
+                     <!-- make sure a file has a type -->
+                     <sch:rule context="mei:meiHead">
+                        <sch:assert test="mei:encodingDesc">Each MEI file needs to have an encodingDesc.</sch:assert>
+                     </sch:rule>
+                     <sch:rule context="mei:encodingDesc">
+                        <sch:assert test="@class">Each encodingDesc needs to identify the right type of file using @class.</sch:assert>
+                     </sch:rule>
+                     
+                     <!-- make sure a file is of proper type -->
+                     <sch:rule context="mei:encodingDesc/@class">
+                        <sch:let name="classes" value="tokenize(normalize-space(.),' ')"/>
+                        <sch:let name="doc" value="'#bw_document_file' = $classes"/>
+                        <sch:let name="dt" value="'#bw_diplomatic_transcript' = $classes"/>
+                        <sch:let name="at" value="'#bw_annotated_transcript' = $classes"/>
+                        <sch:assert test="$doc or $dt or $at">This MEI file does not specify its type correctly. Should be either '#bw_document_file', '#bw_annotated_transcript', or '#bw_diplomatic_transcript'.</sch:assert>
+                        <sch:assert test="not(($doc and $dt) or ($doc and $at) or ($dt and $at))">This MEI file cannot have multiple types simultaneously. Please decide between '#bw_document_file', '#bw_annotated_transcript', and '#bw_diplomatic_transcript'.</sch:assert>
+                     </sch:rule>
+                     
+                     <!-- check for child elements of music -->
+                     <sch:rule context="mei:music/mei:*">
+                        <sch:let name="fileClasses" value="tokenize(normalize-space(ancestor::mei:mei//mei:encodingDesc/@class))"/>
+                        <sch:let name="isDocFile" value="'#bw_document_file' = $fileClasses"/>
+                        <sch:let name="isDt" value="'#bw_diplomatic_transcript' = $fileClasses"/>
+                        <sch:let name="isAt" value="'#bw_annotated_transcript' = $fileClasses"/>
+                        <sch:let name="localName" value="local-name(.)"/>
+                        <sch:assert test="not($isDocFile) or ($localName = ('facsimile', 'genDesc'))">A document file may only have facsimile and genDesc child elements, but not <sch:value-of select="$localName"/>.</sch:assert>
+                        <sch:assert test="not($isDt) or ($localName = ('body'))">A diplomatic transcript may only have an mei:body as child, but not <sch:value-of select="$localName"/>.</sch:assert>
+                        <sch:assert test="not($isAt) or ($localName = ('body'))">An annotated transcript may only have an mei:body as child, but not <sch:value-of select="$localName"/>.</sch:assert>
+                     </sch:rule>
+                     
+                     <!-- check for child elements of mdiv -->
+                     <sch:rule context="mei:mdiv">
+                        <sch:let name="fileClasses" value="tokenize(normalize-space(ancestor::mei:mei//mei:encodingDesc/@class))"/>
+                        <sch:let name="isDocFile" value="'#bw_document_file' = $fileClasses"/>
+                        <sch:let name="isDt" value="'#bw_diplomatic_transcript' = $fileClasses"/>
+                        <sch:let name="isAt" value="'#bw_annotated_transcript' = $fileClasses"/>
+                        <sch:let name="label" value="if($isDt) then('diplomatic') else if($isAt) then('annotated') else ('')"/>
+                        <sch:assert test="if($isDt or $isAt) then(exists(mei:drafts) and count(child::mei:*) = 1) else(true())">A <sch:value-of select="label"/> transcript must have a drafts child element.</sch:assert>
+                     </sch:rule>
+                     
+                     <!-- check events in diplomatic transcripts -->
+                     <sch:rule context="mei:note/@*">
+                        <sch:let name="fileClasses" value="tokenize(normalize-space(ancestor::mei:mei//mei:encodingDesc/@class))"/>
+                        <sch:let name="isDt" value="'#bw_diplomatic_transcript' = $fileClasses"/>
+                        <sch:let name="forbiddenAttributes" value="('pname', 'oct', 'dur', 'dur.ges', 'oct.ges', 'dots', 'dots.ges')"/>
+                        <sch:let name="localName" value="local-name(.)"/>
+                        <sch:assert test="not($isDt) or not($localName = $forbiddenAttributes)">In diplomatic transcripts, notes may not use the <sch:value-of select="$localName"/> attribute.</sch:assert>
+                     </sch:rule>
                   </constraint>
                </constraintSpec>
             </elementSpec>
@@ -547,7 +568,7 @@
                <attList>
                   <attDef ident="meiversion" usage="opt">
                      <desc xml:lang="en">Specifies a generic MEI version label.</desc>
-                     <defaultVal>5.0</defaultVal>
+                     <defaultVal>6.0+beethovensWerkstatt</defaultVal>
                      <valList type="closed">
                         <valItem ident="6.0+beethovensWerkstatt">
                            <desc xml:lang="en">MEI 6.0 with customizations by Beethovens Werkstatt</desc>
@@ -556,7 +577,7 @@
                   </attDef>
                </attList>
             </classSpec>
-
+            
          </schemaSpec>
       </body>
    </text>
