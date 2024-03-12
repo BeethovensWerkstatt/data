@@ -176,9 +176,18 @@
                      <constraintSpec ident="check_facsTarget" scheme="schematron" mode="replace">
                         <constraint>
                            <sch:rule context="@facs">
+                              <sch:let name="fileClasses" value="tokenize(normalize-space(ancestor::mei:mei//mei:encodingDesc/@class))"/>
+                              <sch:let name="isDocFile" value="'#bw_document_file' = $fileClasses"/>
+                              <sch:let name="isDt" value="'#bw_diplomatic_transcript' = $fileClasses"/>
+                              <sch:let name="isAt" value="'#bw_annotated_transcript' = $fileClasses"/>
+                              
+                              <sch:assert role="error" test="not($isDocFile)">Document files must not use the @facs attribute.</sch:assert>
+                              <sch:assert role="error" test="not($isAt)">Annotated transcripts must not use the @facs attribute. For referencing the corresponding notes in a diplomatic transcript, use @corresp instead.</sch:assert>
                               <sch:assert role="warning" test="not(normalize-space(.) eq '')">@facs attribute should have content.</sch:assert>
                               <sch:assert role="warning" test="normalize-space(.) = .">@facs should use normalized space</sch:assert>
-                              <sch:assert role="warning" test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)) or ancestor::mei:mei//mei:encodingDesc['#bw_module3_textFile' = tokenize(@class,' ')]">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>
+                              <!--<sch:assert role="warning" test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=(//mei:surface/@xml:id, //mei:zone/@xml:id, //svg:path/@id)) or
+                                 ancestor::mei:mei//mei:encodingDesc['#bw_module3_textFile' = tokenize(@class,' ')]">Each value in @facs should correspond to the @xml:id attribute of a surface or zone element, or to an svg:shape's @id attribute.</sch:assert>-->
+                              <sch:assert role="error" test="not($isDt) or (every $i in tokenize(., '\s+') satisfies starts-with($i, '../svg/'))">In diplomatic transcripts, @facs must point to a separate SVG file (link starting with '../svg/').</sch:assert>
                            </sch:rule>
                         </constraint>
                      </constraintSpec>
@@ -391,9 +400,9 @@
                   </attDef>
                </attList>
             </classSpec>
-
+            
+            <!-- All Schematron rules are gathered here for better orientation. -->
             <elementSpec ident="mei" module="MEI.shared" mode="change">
-               <!-- All Schematron rules are gathered here for better orientation. -->
                <constraintSpec ident="check-mei-id" scheme="schematron" mode="add">
                   <constraint>
                      <sch:rule context="mei:mei">
@@ -480,6 +489,17 @@
                         <sch:let name="forbiddenAttributes" value="('pname', 'oct', 'dur', 'dur.ges', 'oct.ges', 'dots', 'dots.ges')"/>
                         <sch:let name="localName" value="local-name(.)"/>
                         <sch:assert test="not($isDt) or not($localName = $forbiddenAttributes)">In diplomatic transcripts, notes may not use the <sch:value-of select="$localName"/> attribute.</sch:assert>
+                     </sch:rule>
+                     
+                     <!-- check notes in both types of transcripts -->
+                     <sch:rule context="mei:note">
+                        <sch:let name="fileClasses" value="tokenize(normalize-space(ancestor::mei:mei//mei:encodingDesc/@class))"/>
+                        <sch:let name="isDt" value="'#bw_diplomatic_transcript' = $fileClasses"/>
+                        <sch:let name="isAt" value="'#bw_diplomatic_transcript' = $fileClasses"/>
+                        <sch:let name="requiredAttributesDt" value="('id', 'loc', 'coord.x1', 'facs')"/>
+                        <sch:let name="requiredAttributesAt" value="('id', 'pname', 'oct')"/>
+                        <sch:assert test="not($isDt) or (every $att in $requiredAttributesDt satisfies exists(@*[local-name(.) eq $att]))">In diplomatic transcripts, every note is required to have all of the <sch:value-of select="string-join($requiredAttributesDt, ', ')"/> attributes.</sch:assert>
+                        <sch:assert test="not($isAt) or (every $att in $requiredAttributesAt satisfies exists(@*[local-name(.) eq $att]))">In annotated transcripts, every note is required to have all of the <sch:value-of select="string-join($requiredAttributesAt, ', ')"/> attributes.</sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
