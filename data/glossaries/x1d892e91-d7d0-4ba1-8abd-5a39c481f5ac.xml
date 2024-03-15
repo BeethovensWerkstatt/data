@@ -2,26 +2,29 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="x1d892e91-d7d0-4ba1-8abd-5a39c481f5ac">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:loc="http://id.loc.gov/vocabulary/relators" xmlns:bw="https://beethovens-werkstatt.de/"
+   xml:id="x1d892e91-d7d0-4ba1-8abd-5a39c481f5ac">
   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Harmonievergleich</title>
+            <author ref="bw:x8a040533-85d0-4cb1-9dd3-ee62278d5a65">Agnes Seipelt</author>
             <respStmt>
-               <!--https://www.loc.gov/marc/relators/relaterm.html-->
-               <name role="aut">Agnes Seipelt</name>
-               <name role="pfr">Andreas Münzmay</name>
-               <name role="trc">Ran Mo</name>
+               <resp key="aut" ref="http://id.loc.gov/vocabulary/relators/aut">Autorschaft</resp>
+               <persName ref="bw:x8a040533-85d0-4cb1-9dd3-ee62278d5a65">Agnes Seipelt</persName>
+            </respStmt>
+            <respStmt>
+               <resp key="pfr" ref="http://id.loc.gov/vocabulary/relators/pfr">Korrekturlesung</resp>
+               <persName ref="#">Andreas Münzmay</persName>
+            </respStmt>
+            <respStmt>
+               <resp key="trc" ref="http://id.loc.gov/vocabulary/relators/trc">Transkribierung (html2tei)</resp>
+               <persName ref="#">Ran Mo</persName>
             </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>
-               <orgName key="#xml:id von BW">Beethovens Werkstatt</orgName>
-               <address>
-                  <street></street>
-                  <postCode></postCode>
-                  <placeName></placeName>
-               </address>
+               <orgName ref="#">Beethovens Werkstatt</orgName>
             </publisher>
          </publicationStmt>
          <sourceDesc>
@@ -30,13 +33,12 @@
       </fileDesc>
      <revisionDesc>
         <change n="2" when="2023-11-14">
-           <persName key="#xml:id">Ran Mo</persName>
-           <desc>Überführung in TEI</desc>
-           erstell
+           <persName role="loc:trc" ref="#">Ran Mo</persName>
+           <desc>Transkription (html2tei) erstellt</desc>
         </change>
         <change n="1" when="2020">
-           <persName>Agnes Seipelt</persName>
-           <persName>Andreas Münzmay</persName>
+           <persName role="loc:aut" ref="bw:x8a040533-85d0-4cb1-9dd3-ee62278d5a65">Agnes Seipelt</persName>
+           <persName role="loc:pfr" ref="#">Andreas Münzmay</persName>
            <desc>Version 1.0 veröffentlicht</desc>
         </change>
      </revisionDesc>
