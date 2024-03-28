@@ -165,6 +165,7 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="/">
+        <xsl:message select="'writing file ' || $resultPath"/>
         <xsl:result-document href="{$resultPath}" indent="yes" method="xml" exclude-result-prefixes="xlink">
             <xsl:processing-instruction name="xml-model">href="../../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
             <xsl:processing-instruction name="xml-model">href="../../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:processing-instruction>
