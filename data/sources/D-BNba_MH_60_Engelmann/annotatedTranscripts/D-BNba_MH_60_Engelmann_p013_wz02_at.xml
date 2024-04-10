@@ -231,7 +231,7 @@
                 </draft></drafts>-->
             <score>
                <scoreDef xml:id="x2b3a1ca1-ff0e-48b7-aea4-4dcf2551f0d4">
-                  <meterSig count="2" unit="2"/>
+                  <meterSig count="2" unit="2" sym="cut"/>
                   <staffGrp xml:id="x2b29480d-7c8a-49f6-af7c-c7062e3d93f4" bar.thru="true">
                      <staffDef xml:id="x0750c7ca-c8af-4044-8fbb-db398501fb0c" lines="5" n="1">
                         <keySig sig="1f" mode="minor"/>
@@ -285,21 +285,18 @@
                                  stem.dir="down"/>
                         </layer>
                      </staff>
-                     <dynam xml:id="xbd4f81e9-be6d-459a-b97a-8fd861544632"
+                     <dir xml:id="xbd4f81e9-be6d-459a-b97a-8fd861544632"
+                            layer="1"
+                            staff="1 2"
+                            tstamp="1" place="between">Blasende Instrumente</dir>
+                     <dir xml:id="xa3debb7f-d8f0-4992-aa8c-14dd5fc5cad5"
                             layer="1"
                             staff="1"
-                            startid="#x0f7b58c7-32eb-4716-96dc-54edad8d7246"
-                            tstamp="1">Blasende Instrumente</dynam>
-                     <dynam xml:id="xa3debb7f-d8f0-4992-aa8c-14dd5fc5cad5"
+                            tstamp="0.5" place="above">d moll fugirt</dir>
+                     <dir xml:id="x8b56e5cf-44ff-4d27-a269-4aaff9475176"
                             layer="1"
                             staff="1"
-                            startid="#x0f7b58c7-32eb-4716-96dc-54edad8d7246"
-                            tstamp="1">d moll fugirt</dynam>
-                     <dynam xml:id="x8b56e5cf-44ff-4d27-a269-4aaff9475176"
-                            layer="1"
-                            staff="1"
-                            startid="#x0f7b58c7-32eb-4716-96dc-54edad8d7246"
-                            tstamp="1">mineur</dynam>
+                            tstamp="0.5" place="above">mineur</dir>
                   </measure>
                   <measure xml:id="xec159e44-5e85-438c-9ec2-f110a95314a9" n="2">
                      <staff xml:id="x59a039c5-2d01-40f1-baed-0178d38d1638" n="1">
@@ -370,7 +367,8 @@
                      </staff>
                      <staff xml:id="x7def5c6a-11c3-4a92-8194-021c04301c05" n="2">
                         <layer xml:id="xbe230ee5-0496-4b84-b080-4d9ee2fa8eab" n="1">
-                           <tuplet xml:id="x19decb27-0043-47e6-ab75-45565bf29e68"
+                           <beam xml:id="xe6aab082-9ea4-465c-ab63-79ee93a55918">
+                           	<tuplet xml:id="x19decb27-0043-47e6-ab75-45565bf29e68"
                                    bracket.visible="false"
                                    endid="#x8409ad67-3541-4013-a0d7-a73ac7443496"
                                    num="3"
@@ -378,7 +376,6 @@
                                    numbase="2"
                                    startid="#x0d5c0649-b51f-4e08-a3ed-b92d44ac8adc">
                               <rest xml:id="x0d5c0649-b51f-4e08-a3ed-b92d44ac8adc" dur="8"/>
-                              <beam xml:id="xe6aab082-9ea4-465c-ab63-79ee93a55918">
                                  <note xml:id="xe1a1d830-169d-46e2-8ff6-fe8448b0c753"
                                        dur="8"
                                        oct="3"
@@ -391,7 +388,6 @@
                                        stem.dir="down">
                                     <accid xml:id="xe45c52da-3c7e-4b8c-9660-da888c00293f" accid.ges="f"/>
                                  </note>
-                              </beam>
                            </tuplet>
                            <tuplet xml:id="xc80fc22e-8884-41ff-b82c-cb10133854ba"
                                    bracket.visible="false"
@@ -400,7 +396,6 @@
                                    num.format="count"
                                    numbase="2"
                                    startid="#x51c0ba9d-d63a-4892-b06e-4357f7cf72e7">
-                              <beam xml:id="x5a9e5aa9-de43-471e-b9a1-3077819007f0">
                                  <note xml:id="x51c0ba9d-d63a-4892-b06e-4357f7cf72e7"
                                        dur="8"
                                        oct="2"
@@ -418,8 +413,8 @@
                                        stem.dir="down">
                                     <accid xml:id="xe1dce98f-5c5b-4583-a018-f1cf97931435" accid="s"/>
                                  </note>
+                          	 </tuplet>
                               </beam>
-                           </tuplet>
                            <tuplet xml:id="x78f98448-0379-4a7f-b1c0-5cbbb103ec34"
                                    bracket.visible="false"
                                    endid="#xb17c6fa2-db18-4215-8c90-c9b2215dcfc5"
@@ -570,6 +565,7 @@
                                        stem.dir="down"/>
                               </beam>
                            </tuplet>
+                              <beam xml:id="x88025556-4a04-4655-813d-0a82ec099e89">
                            <tuplet xml:id="x667bad4a-df49-4ce8-97b2-bd8486521068"
                                    bracket.visible="false"
                                    endid="#x2d2f545e-bdff-443c-ba24-93fae735b1f6"
@@ -601,7 +597,6 @@
                                    num.format="count"
                                    numbase="2"
                                    startid="#xcb071d3a-71de-4625-838b-e4b531a1d921">
-                              <beam xml:id="x88025556-4a04-4655-813d-0a82ec099e89">
                                  <note xml:id="xcb071d3a-71de-4625-838b-e4b531a1d921"
                                        dur="8"
                                        oct="6"
@@ -621,8 +616,8 @@
                                        stem.dir="down">
                                     <accid xml:id="x4dbd0ff7-5888-4292-bc1f-98a6dbe6e0a3" accid.ges="f"/>
                                  </note>
-                              </beam>
-                           </tuplet>
+                           	</tuplet>
+                           </beam>
                         </layer>
                      </staff>
                      <staff xml:id="x893f8381-e504-42d1-acdc-53af48b63b87" n="2">
