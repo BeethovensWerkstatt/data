@@ -252,6 +252,7 @@
                      </staff>
                      <staff xml:id="x656dc9c2-680e-4b54-a859-7887bd44cbe5" n="2">
                         <layer xml:id="xe1b6df0e-9a91-4ed9-bf3d-9605d1ad7fed" n="1">
+                           <!-- ToDo!: G-Schlüssel vor dem F-Schlüssel -->
                            <note xml:id="xb8dbc1f3-85f9-4a30-a288-37b9df28bb2a"
                                  dots="1"
                                  dur="4"
@@ -272,18 +273,21 @@
                                     pname="b"
                                     stem.dir="down"/>
                            </beam>
+                           <bTrem unitdur="8" dur="2">
                            <note xml:id="x8dd20bf1-c2c5-4049-b35d-9d93a48d1423"
                                  dur="2"
                                  oct="3"
                                  pname="b"
                                  stem.dir="down"
                                  stem.mod="1slash"/>
+                              </bTrem>
                         </layer>
                      </staff>
-                     <dynam xml:id="x6d2db3f5-8a74-4ec0-9ab3-7a06d81007cc"
+                     <dir xml:id="x6d2db3f5-8a74-4ec0-9ab3-7a06d81007cc"
                             layer="1"
+                            place="above"
                             staff="1"
-                            tstamp="1">leztes</dynam>
+                            tstamp="1">leztes</dir>
                   </measure>
                   <measure xml:id="x0b0e8ff6-a1e5-4519-94d0-7d39ef0a5c78" n="2">
                      <staff xml:id="x620992b7-eaaa-4fef-9d17-eb8e81f98149" n="1">
@@ -324,7 +328,7 @@
                         </layer>
                      </staff>
                   </measure>
-                  <measure xml:id="x323b28b1-47fb-4aa3-b6a7-be0c6f581cc6" n="3">
+                  <measure xml:id="x323b28b1-47fb-4aa3-b6a7-be0c6f581cc6" n="3" right="invis">
                      <staff xml:id="x595a54a3-e7cd-4c4c-85f4-3662112b3d17" n="1">
                         <layer xml:id="x87595284-47e1-41ac-85cd-e94654b53e0c" n="1">
                            <mSpace xml:id="s6fd2ebf4-7376-4dab-a3d6-ed97ad9a44e7"/>
@@ -335,10 +339,11 @@
                            <mSpace xml:id="s7581edf5-394f-499f-83ae-eab01fe2d827"/>
                         </layer>
                      </staff>
-                     <dynam xml:id="x9e6a9080-974d-4e4f-bfde-9d8a351862e7"
+                     <dir xml:id="x9e6a9080-974d-4e4f-bfde-9d8a351862e7"
                             layer="1"
-                            staff="2"
-                            tstamp="1.5898">etc nun 8ve</dynam>
+                            place="between"
+                            staff="1 2"
+                            tstamp="0.5">etc nun 8ve</dir>
                   </measure>
                </section>
             </score>
