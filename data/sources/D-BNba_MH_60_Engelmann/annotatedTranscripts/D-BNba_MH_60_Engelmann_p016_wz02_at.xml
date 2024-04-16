@@ -282,6 +282,7 @@
                         <measure xml:id="x5331fb75-5be1-4a59-b722-94cf54d609d3" n="2">
                             <staff xml:id="x87a75d6a-1f99-413e-ab86-07236f788e0c" n="1">
                                 <layer xml:id="x2f3c4348-f777-4bdd-93ef-cd413a0a3c50" n="1">
+                                   <!-- ToDo! Punktierung über Taktgrenzen hinaus muss ergänzt werden -->
                                     <space xml:id="xa221b271-9cdf-4797-b85d-403ea5404168" dur="16"/>
                                     <beam xml:id="x5668ee05-5b8c-48ef-92f2-ca137e32fe1f">
                                         <note xml:id="x589664ae-a153-4d42-bd18-22759890c181"
@@ -440,39 +441,40 @@
                             </staff>
                             <tie xml:id="x73ea54ca-17ab-4687-937d-942b3289e07e"
                           endid="#x5c3ea7f5-73fa-46ac-81f8-51b5ad33c59f"
-                          startid="#x834faac3-6981-49c1-9db7-5f88d00be169"/>
+                          startid="#x834faac3-6981-49c1-9db7-5f88d00be169"
+                                 curvedir="above"/>
                             <tie xml:id="x60697bd4-26f6-40ce-b1b4-a5667932c466"
                           endid="#x39a6c2ff-93de-4c1e-95cc-2935fe9a9a58"
-                          startid="#xccba9753-95ff-4e11-99e6-dc354f1c8b93"/>
+                          startid="#xccba9753-95ff-4e11-99e6-dc354f1c8b93"
+                                 curvedir="above"/>
                             <tie xml:id="xc6de52be-8dda-4123-822a-0c95c355b2cd"
                           endid="#x6d434e06-9aed-492c-80a1-3c46a1b2b1eb"
-                          startid="#xd7acb515-f282-442f-a707-c4f52e95bd83"/>
-                            <dynam xml:id="x3fe586bc-a3b9-409b-b8c1-ecf34ebf9d8b"
+                          startid="#xd7acb515-f282-442f-a707-c4f52e95bd83"
+                                 curvedir="above"/>
+                            <dir xml:id="x3fe586bc-a3b9-409b-b8c1-ecf34ebf9d8b"
                             layer="1"
                             staff="2"
-                            startid="#x77d88cac-fcc8-4ad9-b92f-0fb8242874aa"
-                            tstamp="1.6875">simile</dynam>
-                            <dynam xml:id="x5be0b9ca-7da1-4fe2-8ebd-c67eefd6c79a"
+                             tstamp="1.5" place="within">simile</dir>
+                           <!-- ToDo! Unklare Lesart von 2. und 3. "Simile" -->
+                            <dir xml:id="x5be0b9ca-7da1-4fe2-8ebd-c67eefd6c79a"
                             layer="1"
                             staff="2"
-                            startid="#x77d88cac-fcc8-4ad9-b92f-0fb8242874aa"
-                            tstamp="2">simile</dynam>
-                            <dynam xml:id="xe8854cb3-223b-469e-bc94-e48597e39d45"
+                            tstamp="2" place="within">simile</dir>
+                            <dir xml:id="xe8854cb3-223b-469e-bc94-e48597e39d45"
                             layer="1"
                             staff="2"
-                            startid="#x77d88cac-fcc8-4ad9-b92f-0fb8242874aa"
-                            tstamp="2.5">simile</dynam>
+                            tstamp="2.5" place="within">simile</dir>
                         </measure>
-                        
-                        <measure xml:id="xda8b1064-fc68-468f-bdab-a6edd0bb68ab" n="5">
+                         <measure xml:id="xda8b1064-fc68-468f-bdab-a6edd0bb68ab" n="5">
                             <staff xml:id="x1c1e7ff1-cc99-4dc1-a03e-5a5d36ef5810" n="1">
                                 <layer xml:id="x46053aad-1463-4a53-8dfd-92cb1add72af" n="1">
-                                    <note xml:id="xf277ded3-1ca1-4d8a-ab8e-59a29388dd42"
+                                   <bTrem unitdur="8" dur="4"> 
+                                      <note xml:id="xf277ded3-1ca1-4d8a-ab8e-59a29388dd42"
                                  dur="4"
                                  oct="5"
                                  pname="a"
                                  stem.dir="down"
-                                 stem.mod="1slash"/>
+                                 stem.mod="1slash"/> </bTrem>
                                     <rest xml:id="x88112d03-bf8c-4698-98b7-4797d473859b" dots="1" dur="8"/>
                                     <note xml:id="xdc8a2281-ad91-4e8b-81b9-00fd53241d09"
                                  dur="16"
@@ -502,8 +504,7 @@
                              layer="1"
                              staff="1"
                              startid="#xf277ded3-1ca1-4d8a-ab8e-59a29388dd42"
-                             tstamp="1"
-                             tstamp2="1m+2.8672"/>
+                            endid="#x00febeb9-8c81-439e-b033-e20e51caabb3"/>
                         </measure>
                         <measure xml:id="x71a9c23d-bf82-48dd-a8ac-bd2a9ab4b8ad" n="6">
                             <staff xml:id="x76136a4d-c769-47f7-b675-3b03b038809d" n="1">
@@ -593,7 +594,7 @@
                                  pname="d"
                                  stem.dir="down"/>
                                 </layer>
-                            </staff>
+                          </staff>
                             <staff xml:id="x2da403f3-6aca-40a7-8ee0-1f6cb3413395" n="2">
                                 <layer xml:id="x00cf889b-9be1-44d5-9538-0d61ff8e3c97" n="1">
                                     <mSpace xml:id="sf0dd26cd-18e6-4493-aa6d-8096d9629574"/>
@@ -603,7 +604,8 @@
                            endid="#x797bd135-d6d3-4ef7-8d4c-21ff15a79103"
                            layer="1"
                            staff="1"
-                           startid="#x797bd135-d6d3-4ef7-8d4c-21ff15a79103"/>
+                                  curvedir="below"
+                           startid="#xee403ad0-5f88-4f6f-bf0e-8f6924f1eff2"/>
                         </measure>
                     </section>
                     
