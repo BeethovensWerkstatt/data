@@ -259,7 +259,8 @@
                            <space xml:id="x8a7e9557-a3b9-4687-bc2f-3c9269d1ce93" dur="4"/>
                         </layer>
                      </staff>
-                     <tempo xml:id="x7e89e710-2b64-4b80-915b-3aaf666283f3" layer="1" tstamp="1">Ende andante</tempo>
+                     <!--ToDo!: Semantik unklar -->
+                     <dir xml:id="x7e89e710-2b64-4b80-915b-3aaf666283f3" layer="1" tstamp="0" place="above" staff="1">Ende andante</dir>
                   </measure>
                   <measure xml:id="x2461de21-6365-4c55-841a-63c3e7c1b0d7" metcon="false" n="2">
                      <staff xml:id="x7056133f-d2d8-4221-8090-a261de0be2ca" n="1">
@@ -279,6 +280,7 @@
                                  oct="2"
                                  pname="g"
                                  stem.dir="down"/>
+                           <!--ToDo!: Vergleich mit händischer Transkription -->
                            <note xml:id="xc5ade18e-7eea-4d26-88a4-6d99ebb3f525"
                                  dur="2"
                                  oct="2"
@@ -291,18 +293,19 @@
                               layer="1"
                               shape="curved"
                               staff="1"
-                              startid="#x68291dae-e5be-4a77-95dd-5cceb1096692"
+                              startid="#x9491ba7b-61d4-4e45-974d-309fa3e273ef"
                               tstamp="2"/>
                      <fermata xml:id="xabf73856-0746-4d63-9f8f-956315cdce2d"
                               form="norm"
                               layer="1"
                               shape="curved"
                               staff="2"
-                              startid="#xabd2554c-578a-4909-b63a-6a4cad2959af"
+                              startid="#xc5ade18e-7eea-4d26-88a4-6d99ebb3f525"
                               tstamp="2"/>
                      <harm xml:id="x3bbbbb9d-5782-4c6c-9762-f1b0f14a9233"
                            corresp="#m-57"
                            layer="1"
+                           place="above"
                            staff="2"
                            tstamp="2">
                         <fb xml:id="xcb71fba3-92b1-4e5b-baff-c795ad59d34b">
@@ -517,11 +520,12 @@
                            <space xml:id="xf4f5611e-0348-4a3c-b595-0da69ae0ac2b" dur="4"/>
                         </layer>
                      </staff>
-                     <dynam xml:id="x1b78653d-de50-4595-8fbb-b7cb5e080a5a"
+                     <dir xml:id="x1b78653d-de50-4595-8fbb-b7cb5e080a5a"
                             layer="1"
                             staff="2"
+                          		place="within"
                             startid="#xf4f5611e-0348-4a3c-b595-0da69ae0ac2b"
-                            tstamp="2">etc</dynam>
+                            tstamp="2">etc</dir>
                   </measure>
                   <scoreDef xml:id="x33fda982-3488-49f9-a29b-ceb36c56073f">
                      <meterSig count="4" unit="4"/>
@@ -730,15 +734,12 @@
                            <mSpace xml:id="s7aa7ff68-6aff-4340-a71c-4b09ab2d1b7b"/>
                         </layer>
                      </staff>
-                     <dynam xml:id="x4c20a570-33b2-4f72-9bb9-6b1c771c4b83"
-                            layer="1"
-                            staff="1"
-                            tstamp="2.7695">ToDo<lb xml:id="x9595cadb-4bac-4b62-9ddc-554180a1787a"/>
-                     </dynam>
+                     <!-- ToDo!-->
                      <dynam xml:id="x9da52468-df4d-4702-a4a0-9dad9d1dcdc8"
                             layer="1"
                             staff="1"
-                            tstamp="2.918">siml</dynam>
+                            place="within"
+                            tstamp="0.5">siml</dynam>
                   </measure>
                   <measure xml:id="x8f34bbb9-9418-41ad-8b79-d2d83bf1d15f" n="13">
                      <staff xml:id="x47015983-03fe-4f3b-857f-6b9393c690c2" n="1">
@@ -977,7 +978,7 @@
                   </measure>
                   <measure xml:id="xfeeaa7fd-67aa-4643-a673-3d930c024c11"
                            metcon="false"
-                           n="18">
+                           n="18" right="invis">
                      <staff xml:id="x89dffcfc-9919-49ec-be02-51476c7970ac" n="1">
                         <layer xml:id="xb3f9759a-aa38-4096-a3b6-4ed4479e1639" n="1">
                            <note xml:id="x07e60d52-6faf-4d08-8dbe-cde470c8514c"
