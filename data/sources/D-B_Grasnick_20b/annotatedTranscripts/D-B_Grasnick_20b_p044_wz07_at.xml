@@ -289,20 +289,22 @@
                      </staff>
                      <tie xml:id="x7a985efc-2f93-4835-82e8-02eb07eb9270"
                           endid="#x2f06f391-a7c5-4cfe-95ab-c13781dd362c"
-                          startid="#x6a49602b-3da8-4587-b675-7d00e143fbe4"/>
+                          startid="#x6a49602b-3da8-4587-b675-7d00e143fbe4"
+                          curvedir="below"/>
                      <tie xml:id="xf95d6809-c321-4814-860f-db012d2b51e5"
                           endid="#x4f15096d-4444-4526-a296-48f970707bae"
-                          startid="#xe738a0c5-49c6-4676-bc14-21244ea2dc2d"/>
-                     <dynam xml:id="xca34ac7a-b8fc-4df7-a327-a3a376221387"
+                          startid="#xe738a0c5-49c6-4676-bc14-21244ea2dc2d"
+                          curvedir="above"/>
+                     <dir xml:id="xca34ac7a-b8fc-4df7-a327-a3a376221387"
                             layer="1"
-                            staff="1"
-                            startid="#x6a49602b-3da8-4587-b675-7d00e143fbe4"
-                            tstamp="1">clarinette</dynam>
+                            staff="1 2"
+                            tstamp="1.2"
+                          place="between">clarinette</dir>
                   </measure>
                   <measure xml:id="x405c8500-af6d-413a-93dd-126b6174cdcc" n="2">
                      <staff xml:id="xed4b93e3-dbb3-40ce-86c4-48091c1e4732" n="1">
-                        <layer xml:id="xf5a6fb3b-e525-48ef-9fb2-0030850e96d7" n="1">
-                           <beam xml:id="x2166e42f-97d6-4a09-8cd2-a384d6c4c41b">
+                        <layer>
+                      <beam xml:id="x2166e42f-97d6-4a09-8cd2-a384d6c4c41b">
                               <note xml:id="x2f06f391-a7c5-4cfe-95ab-c13781dd362c"
                                     dur="8"
                                     oct="4"
@@ -322,6 +324,8 @@
                                  <accid xml:id="xa30906c0-2397-4421-b575-457748c30f35" accid.ges="f"/>
                               </note>
                            </beam>
+                           <bTrem
+                                  unitdur="8" dur="4"> 
                            <note xml:id="xe1a70a38-6ffb-4cb3-9380-8b3b46ce3195"
                                  dur="4"
                                  oct="4"
@@ -329,9 +333,9 @@
                                  stem.dir="up"
                                  stem.mod="1slash">
                               <accid xml:id="x210c17e4-3dfc-4d31-b270-ea850aac8a19" accid.ges="f"/>
-                           </note>
-                        </layer>
-                        <layer xml:id="x165a11ba-2a06-4132-93a9-40a7a4310187" n="2">
+                        </note></bTrem>
+                      </layer>
+                           <layer xml:id="x165a11ba-2a06-4132-93a9-40a7a4310187" n="2">
                            <note xml:id="x17e0520a-a503-49cf-bb1e-cc37b1b93f2d"
                                  dur="8"
                                  oct="4"
@@ -365,7 +369,8 @@
                      </staff>
                      <tie xml:id="x30188f9b-cd56-4158-bae7-02ccc6520172"
                           endid="#xf0c4c7e1-4538-4477-9be9-da243ee51867"
-                          startid="#x4f15096d-4444-4526-a296-48f970707bae"/>
+                          startid="#x4f15096d-4444-4526-a296-48f970707bae"
+                          curvedir="below"/>
                   </measure>
                   <measure xml:id="x8c0ed659-99fa-4f47-bfde-d339d42f8670" n="3">
                      <staff xml:id="xab336d53-804a-47c6-a603-83fcdfd26fa4" n="1">
@@ -417,10 +422,12 @@
                      </staff>
                      <tie xml:id="x87d95266-cd53-4617-94d5-606b3fb71a2f"
                           endid="#x8a60edd9-7cfc-472d-97db-3aa7998990a5"
-                          startid="#xbf85fe99-3607-482f-b43e-f994be2eff6a"/>
+                          startid="#xbf85fe99-3607-482f-b43e-f994be2eff6a"
+                          curvedir="above"/>
                      <tie xml:id="xbb254a22-e002-4ec8-93e1-db8c1892f0df"
                           endid="#x385ab30d-e537-4d1f-82ea-d859eebfa3d8"
-                          startid="#x03c81d92-6328-43a9-8d0d-dce9f57b509f"/>
+                          startid="#x03c81d92-6328-43a9-8d0d-dce9f57b509f"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x7d723c14-d72c-49a0-a887-9fdffaad1e44" n="4">
                      <staff xml:id="x68bc4527-5d3b-4087-9bb9-9248ce45893b" n="1">
@@ -443,12 +450,14 @@
                                     pname="g"
                                     stem.dir="up"/>
                            </beam>
+                           <bTrem unitdur="8" dur="4"> 
                            <note xml:id="x58ad1e1c-0867-4980-abd2-233713756250"
                                  dur="4"
                                  oct="4"
                                  pname="g"
                                  stem.dir="up"
                                  stem.mod="1slash"/>
+                              </bTrem>
                         </layer>
                         <layer xml:id="xa037feae-d240-4016-94c7-8389458389fe" n="2">
                            <note xml:id="x18741ea2-492b-40a6-89ec-a75a2184c58d"
@@ -533,7 +542,8 @@
                      </staff>
                      <tie xml:id="x77d985dc-a545-4d80-9f3f-d1261a32d803"
                           endid="#x51cc8089-7391-4cd2-854d-9a3c90e5797d"
-                          startid="#xc0a0b195-2718-435a-ae88-6c2884f7fb79"/>
+                          startid="#xc0a0b195-2718-435a-ae88-6c2884f7fb79"
+                          curvedir="below"/>
                   </measure>
                   <measure xml:id="x2047f088-69af-4df3-ba49-fb8af25a7e6a" n="6">
                      <staff xml:id="x6a4c385b-8df3-4998-959e-1c552122ea67" n="1">
@@ -558,6 +568,7 @@
                                  <accid xml:id="x37d2b139-69cc-42aa-98c6-3576f4342640" accid="f"/>
                               </note>
                            </beam>
+                           <bTrem unitdur="8" dur="4"> 
                            <note xml:id="xe3033eff-4ee3-4f60-bbfe-34bf04de0fed"
                                  dur="4"
                                  oct="4"
@@ -566,6 +577,7 @@
                                  stem.mod="1slash">
                               <accid xml:id="xedf63e7f-ec55-43a1-9ab0-8ff65e635d7d" accid.ges="f"/>
                            </note>
+                              </bTrem>
                         </layer>
                         <layer xml:id="xdea22b68-03ac-4ffa-939d-1d0618aaaf4a" n="2">
                            <note xml:id="x673be2d1-5393-445d-b83c-f4e7883d7e26"
