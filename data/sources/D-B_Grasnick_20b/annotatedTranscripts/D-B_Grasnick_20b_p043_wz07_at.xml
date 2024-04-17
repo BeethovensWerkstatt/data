@@ -274,20 +274,21 @@
                                  stem.dir="up"/>
                         </layer>
                         <layer xml:id="x21a5d491-fefa-4977-9f23-11c5d7e58042" n="2">
+                           <fTrem unitdur="16" beams="2"> <!-- ToDo!: fTrem richtig codiert? -->
                            <note xml:id="xef69d7e1-d932-45ec-b26e-08269dc7bca2"
                                  dots="1"
-                                 dur="4"
+                                 dur="2"
                                  oct="5"
                                  pname="e"
                                  stem.dir="down"/>
                            <note xml:id="x125eece9-51fe-4980-9ab5-1855fe9e022c"
                                  dots="1"
-                                 dur="4"
+                                 dur="2"
                                  oct="4"
                                  pname="a"
                                  stem.dir="down"/>
-                           <space xml:id="xe59a4d9e-5133-4af3-ac17-ad9a0dbf85c8" dur="4"/>
-                           <space xml:id="xa7c5db80-9f45-4ec0-9cd1-21a08169af81" dur="8"/>
+                              </fTrem>
+                           <space xml:id="xe59a4d9e-5133-4af3-ac17-ad9a0dbf85c8" dur="2"/>
                         </layer>
                      </staff>
                      <staff xml:id="x95ddecbd-1625-4117-93aa-e35eb0f2e74f" n="2">
@@ -295,28 +296,26 @@
                            <mSpace xml:id="s1cbcde8f-b188-40f1-9536-495918ac5dc7"/>
                         </layer>
                      </staff>
-                     <dynam xml:id="x0895199d-865b-4a0b-8ea7-c4883888be56"
+                     <dir xml:id="x0895199d-865b-4a0b-8ea7-c4883888be56"
                             layer="1"
                             staff="1"
-                            startid="#x3c239f2a-1de6-49fc-b766-4cf6b7743b7c"
-                            tstamp="1">auf dieses<lb xml:id="xe9635a78-b834-4c6f-b605-343cbb112f06"/>Allegro</dynam>
-                     <dynam xml:id="x32f79eff-3a8f-4e7b-a02d-85c91d03d807"
+                            tstamp="0" place="above">auf dieses<lb xml:id="xe9635a78-b834-4c6f-b605-343cbb112f06"/>Allegro</dir>
+                     <dir xml:id="x32f79eff-3a8f-4e7b-a02d-85c91d03d807"
                             layer="1"
-                            staff="1"
-                            startid="#x938c11d8-cb34-45c6-8a46-98af2bbc2a7f"
-                            tstamp="5">Clarinetten</dynam>
+                            staff="2"
+                            tstamp="5" place="above">Clarinetten</dir>
                   </measure>
                   <measure xml:id="x483a2a0b-fd8c-4539-8008-039b5dcd318b" n="2">
                      <staff xml:id="x29aa156f-1cc5-4065-b613-0d5710d9ca81" n="1">
                         <layer xml:id="xb3bd9810-57a1-4ebb-9335-13686d63193e" n="1">
-                           <tuplet xml:id="x0f6f202f-14aa-4921-a8bb-c6a9c53b96de"
+                           <beam xml:id="xdeff369d-cfaa-4cd4-8596-5cdeccbb7059">
+                           	<tuplet xml:id="x0f6f202f-14aa-4921-a8bb-c6a9c53b96de"
                                    bracket.visible="false"
-                                   endid="#x8fd30b62-f4a2-4bba-afa4-a3c96c042e3a"
+                                   endid="#xab8ecce9-0be0-466c-96a9-a112bcecf9e5"
                                    num="3"
                                    num.format="count"
                                    numbase="2"
                                    startid="#x6b57849a-3159-485a-ad1f-31eb34e83e2d">
-                              <beam xml:id="xdeff369d-cfaa-4cd4-8596-5cdeccbb7059">
                                  <note xml:id="x6b57849a-3159-485a-ad1f-31eb34e83e2d"
                                        dur="16"
                                        oct="5"
@@ -332,16 +331,14 @@
                                        oct="5"
                                        pname="e"
                                        stem.dir="down"/>
-                              </beam>
                            </tuplet>
-                           <tuplet xml:id="xcba175ff-9d71-4ced-bad5-1daf5f78aac5"
+                           <tuplet xml:id="xcba175fd-9d71-4ced-bad5-1daf5f78aac5"
                                    bracket.visible="false"
                                    endid="#x2ad38a67-f297-4380-ba46-c6e0d88d1c54"
                                    num="3"
                                    num.format="count"
                                    numbase="2"
                                    startid="#x5891011f-dc2a-40ed-8880-ffac0073270b">
-                              <beam xml:id="x7e5aaacd-119a-40ae-b34c-24f4d5bc6316">
                                  <note xml:id="x5891011f-dc2a-40ed-8880-ffac0073270b"
                                        dur="16"
                                        oct="4"
@@ -357,9 +354,9 @@
                                        oct="4"
                                        pname="a"
                                        stem.dir="down"/>
+                           	</tuplet>
                               </beam>
-                           </tuplet>
-                           <space xml:id="xfa423364-9790-40a0-9205-0672db43c216" dur="4"/>
+                           <halfmRpt xml:id="xfa423364-9790-40a0-9205-0672db43c216"/>
                         </layer>
                      </staff>
                      <staff xml:id="x2bed597b-1958-4396-844d-6fe392509ec0" n="2">
@@ -387,14 +384,14 @@
                   <measure xml:id="x7ecb6d59-a57e-401d-8705-1d1255526061" n="3">
                      <staff xml:id="x264e7ced-0fa1-4d18-9846-286fc5b17b4d" n="1">
                         <layer xml:id="x4c2561f5-baba-4cec-850c-7fce3486ab6f" n="1">
-                           <tuplet xml:id="x09dcf4ae-6427-453a-83ac-487ad333e360"
+                           <beam xml:id="xd7a1e617-0785-4c63-8827-2bf424db11b0">
+                           	<tuplet xml:id="x09dcf4ae-6427-453a-83ac-487ad333e360"
                                    bracket.visible="false"
                                    endid="#xab8ecce9-0be0-466c-96a9-a112bcecf9e5"
                                    num="3"
                                    num.format="count"
                                    numbase="2"
                                    startid="#x13e60d09-da53-4cf8-9013-709756bb4559">
-                              <beam xml:id="xd7a1e617-0785-4c63-8827-2bf424db11b0">
                                  <note xml:id="x13e60d09-da53-4cf8-9013-709756bb4559"
                                        dur="16"
                                        oct="5"
@@ -410,6 +407,14 @@
                                        oct="5"
                                        pname="e"
                                        stem.dir="down"/>
+                                 </tuplet>
+                                 <tuplet xml:id="x09dcf4ae-6427-453a-83ac-487ad333e360"
+                                   bracket.visible="false"
+                                   endid="#x81b2f691-5156-46e5-a562-826321b0554c"
+                                   num="3"
+                                   num.format="count"
+                                   numbase="2"
+                                   startid="#x335db3cb-19e5-496a-ba06-40dfede812b8">
                                  <note xml:id="x335db3cb-19e5-496a-ba06-40dfede812b8"
                                        dur="16"
                                        oct="4"
@@ -425,49 +430,8 @@
                                        oct="4"
                                        pname="a"
                                        stem.dir="down"/>
-                              </beam>
                            </tuplet>
-                           <tuplet xml:id="x8bcb5628-695d-4205-bfd2-965c794c382c"
-                                   bracket.visible="false"
-                                   endid="#x81b2f691-5156-46e5-a562-826321b0554c"
-                                   num="3"
-                                   num.format="count"
-                                   numbase="2"
-                                   startid="#x335db3cb-19e5-496a-ba06-40dfede812b8">
-                              <beam xml:id="x5832d68e-bbb0-4ccd-9e15-591d671e9ec7">
-                                 <note xml:id="xb4e299b4-13ba-4ff5-87f6-2e4ff2a14c7d"
-                                       dur="16"
-                                       oct="5"
-                                       pname="e"
-                                       stem.dir="down"/>
-                                 <note xml:id="x690c284b-1ed3-465d-ab87-d8d23685eb66"
-                                       dur="16"
-                                       oct="4"
-                                       pname="a"
-                                       stem.dir="down"/>
-                                 <note xml:id="x09b4d098-126b-4112-a271-3e2cb712999c"
-                                       dur="16"
-                                       oct="5"
-                                       pname="e"
-                                       stem.dir="down"/>
-                                 <note xml:id="x4f2cbdf5-5b34-4c26-bf78-429280551312"
-                                       dur="16"
-                                       oct="4"
-                                       pname="a"
-                                       stem.dir="down"/>
-                                 <note xml:id="xd9484242-6e90-403d-b293-9e12da123ee6"
-                                       dur="16"
-                                       oct="5"
-                                       pname="e"
-                                       stem.dir="down"/>
-                                 <note xml:id="xca102b76-051b-48cd-8f06-4c0e67a3868e"
-                                       dur="16"
-                                       oct="4"
-                                       pname="a"
-                                       stem.dir="down"/>
-                              </beam>
-                           </tuplet>
-                           <space xml:id="x628fdccf-8a58-41e0-8082-c7fa8ae7287b" dur="4"/>
+                           </beam>
                         </layer>
                      </staff>
                      <staff xml:id="x7c5e0339-c028-42b3-b1fb-f08f8f27c05e" n="2">
@@ -482,20 +446,19 @@
                      <dynam xml:id="x6b0dedc2-ddf7-4f87-9abe-11f36d5f1dde"
                             layer="1"
                             staff="1"
-                            startid="#x13e60d09-da53-4cf8-9013-709756bb4559"
-                            tstamp="1">f</dynam>
+                            tstamp="1" place="above">f</dynam>
                   </measure>
                   <measure xml:id="x2c9eb366-d0cd-4a52-8308-139eba3627c1" n="4">
                      <staff xml:id="x36c555e7-3d10-46ee-b9d5-dfb7fdac27ec" n="1">
                         <layer xml:id="xecd882f0-77e6-4113-a6c5-630bbc283ddb" n="1">
-                           <tuplet xml:id="x4fa32584-cc79-4285-8bd6-4a2b771b74e5"
+                           <beam xml:id="x69dd0393-c650-4306-bfcc-cdb287fe5e9b">
+                           	<tuplet xml:id="x4fa32584-cc79-4285-8bd6-4a2b771b74e5"
                                    bracket.visible="false"
                                    endid="#x486fb695-2c23-4e88-bd66-4b7d27715118"
                                    num="3"
                                    num.format="count"
                                    numbase="2"
                                    startid="#x94ab86fd-ac89-4488-9de3-e3ec0cc01ed6">
-                              <beam xml:id="x69dd0393-c650-4306-bfcc-cdb287fe5e9b">
                                  <note xml:id="x94ab86fd-ac89-4488-9de3-e3ec0cc01ed6"
                                        dur="16"
                                        oct="5"
@@ -511,6 +474,14 @@
                                        oct="5"
                                        pname="a"
                                        stem.dir="down"/>
+                              </tuplet>
+                                 <tuplet xml:id="x4fa32585-cc79-4285-8bd6-4a2b771b74e5"
+                                   bracket.visible="false"
+                                   endid="#xfd5d10ef-76ef-4c5d-b924-7fc9a7f3a151"
+                                   num="3"
+                                   num.format="count"
+                                   numbase="2"
+                                   startid="#x8270e36a-6097-45d1-9ef3-b4ffa614d561">
                                  <note xml:id="x8270e36a-6097-45d1-9ef3-b4ffa614d561"
                                        dur="16"
                                        oct="4"
@@ -526,49 +497,9 @@
                                        oct="4"
                                        pname="a"
                                        stem.dir="down"/>
+                           	</tuplet>
                               </beam>
-                           </tuplet>
-                           <tuplet xml:id="x3fde985a-d3f6-4c35-a279-6cd3e4d3e2a6"
-                                   bracket.visible="false"
-                                   endid="#xfd5d10ef-76ef-4c5d-b924-7fc9a7f3a151"
-                                   num="3"
-                                   num.format="count"
-                                   numbase="2"
-                                   startid="#x8270e36a-6097-45d1-9ef3-b4ffa614d561">
-                              <beam xml:id="x55404293-7a40-40d7-b6ae-b5a7ee0e0553">
-                                 <note xml:id="x61dad87f-036e-4cfd-9e86-80162681938f"
-                                       dur="16"
-                                       oct="5"
-                                       pname="a"
-                                       stem.dir="down"/>
-                                 <note xml:id="x28fda27b-f5ff-4b11-b2ec-2e692d76b4f7"
-                                       dur="16"
-                                       oct="4"
-                                       pname="a"
-                                       stem.dir="down"/>
-                                 <note xml:id="x473b43c7-c90b-40f2-8b00-dfeaf5828dee"
-                                       dur="16"
-                                       oct="5"
-                                       pname="a"
-                                       stem.dir="down"/>
-                                 <note xml:id="x112077e2-4fdb-4814-9420-28832f1b59d8"
-                                       dur="16"
-                                       oct="4"
-                                       pname="a"
-                                       stem.dir="down"/>
-                                 <note xml:id="xefb3cdba-7679-4b32-b4a9-1784e25f4436"
-                                       dur="16"
-                                       oct="5"
-                                       pname="a"
-                                       stem.dir="down"/>
-                                 <note xml:id="x780568de-eece-4c5f-9894-eb000ba28040"
-                                       dur="16"
-                                       oct="4"
-                                       pname="a"
-                                       stem.dir="down"/>
-                              </beam>
-                           </tuplet>
-                           <space xml:id="xfd725104-6c35-4977-afa7-20a01702ad81" dur="4"/>
+                           <halfmRpt xml:id="xfd725104-6c35-4977-afa7-20a01702ad81"/>
                         </layer>
                      </staff>
                      <staff xml:id="x23fd0f16-2e6c-40c9-939e-4f51f93549a6" n="2">
@@ -584,7 +515,7 @@
                   <measure xml:id="x605d69e9-17d0-45da-8e2e-7dc39826a2d2" metcon="false" n="5">
                      <staff xml:id="x5bd2c822-49bd-4770-8e64-5474c074dc06" n="1">
                         <layer xml:id="x8057cbaf-959e-4bbc-8ce6-4b41d4fa9d67" n="1">
-                           <space xml:id="x8c5d3a2f-77b8-4cfb-8044-1bc54a8e2772" dur="4"/>
+                           <halfmRpt xml:id="x8c5d3a2f-77b8-4cfb-8044-1bc54a8e2772"/>
                            <tuplet xml:id="x18d51a0c-f931-4d9e-b9fa-9d5834272474"
                                    bracket.visible="false"
                                    endid="#xa4c05b09-1b31-44d2-80e3-fe31ddd03849"
@@ -668,7 +599,7 @@
                         </layer>
                      </staff>
                   </measure>
-                  <measure xml:id="x95eb8c99-12cb-4665-b9f7-2d5a617c2efa" n="6">
+                  <measure xml:id="x95eb8c99-12cb-4665-b9f7-2d5a617c2efa" n="6" right="invis">
                      <staff xml:id="xa2c3e6c5-4ce0-4e39-a083-48ec7110529e" n="1">
                         <layer xml:id="x9b1f8920-694f-4fcb-b1e4-91e122bec045" n="1">
                            <space xml:id="x59bd9d1e-61c4-4687-9fee-f62816ce76ee" dur="2"/>
@@ -693,18 +624,15 @@
                                     pname="f"
                                     stem.dir="down"/>
                            </beam>
-                           <space xml:id="xc8a36abd-37cd-4f09-92d9-279146b88e4d" dur="32"/>
-                           <space xml:id="x16bb7748-087e-4110-9c9a-0b898ca8b190" dur="8"/>
-                           <space xml:id="xf51f21c4-754a-49e3-90ab-caf252ee403d" dur="4"/>
                         </layer>
                      </staff>
-                     <dynam xml:id="x121da6fd-97b3-4125-883a-0c8dad0ff1c1"
+                     <tie startid="#x9ddffd01-40f4-4687-a567-e572b4cf62c8" endid="#x910f56cd-aa21-4787-85c4-74a6e2f2fd0b" curvedir="above"/>
+                     <dir xml:id="x121da6fd-97b3-4125-883a-0c8dad0ff1c1"
                             layer="1"
                             staff="2"
-                            startid="#xf51f21c4-754a-49e3-90ab-caf252ee403d"
-                            tstamp="2.9961">
+                            tstamp="2" place="within">
                                 etc
-                            </dynam>
+                            </dir>
                   </measure>
                </section>
             </score>
