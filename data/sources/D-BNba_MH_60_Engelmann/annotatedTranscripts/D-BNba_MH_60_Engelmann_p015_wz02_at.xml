@@ -240,6 +240,7 @@
                   </staffGrp>
                </scoreDef>
                <section xml:id="xad8f9b46-c78c-4d89-9063-7772e5d3a3af">
+                  <!-- ToDo! Taktstrich hier hinzufügen oder wie in handschriftl. Transkription weg lassen? -->
                   <measure xml:id="x1da7ddd7-b196-4a00-bba6-d4b8e981439b" metcon="false" n="1">
                      <staff xml:id="x15b309ce-ff77-4adc-ab8b-3cc1230732af" n="1">
                         <layer xml:id="x0083759f-d3b4-4388-8fb9-4b130bb5da67" n="1">
@@ -247,14 +248,14 @@
                                  dur="8"
                                  oct="4"
                                  pname="d"
-                                 stem.dir="up"/>
+                                 stem.dir="down"/>
                         </layer>
                      </staff>
-                     <dynam xml:id="x8444ae39-c956-4a71-b2f7-eddca7fc2fe7"
+                     <dir xml:id="x8444ae39-c956-4a71-b2f7-eddca7fc2fe7"
                             layer="1"
                             staff="1"
-                            startid="#x1ba799af-c20c-4e23-983c-a0e5b9192140"
-                            tstamp="1">im allegro Mittelgedanke</dynam>
+                            place="above"
+                            tstamp="0">im allegro Mittelgedanke</dir>
                   </measure>
                   <measure xml:id="xcd004470-572b-4f49-aa45-e6c22a3ffa86" n="2">
                      <staff xml:id="x3cebf8f7-0c25-46c9-8a25-30d160ab0035" n="1">
@@ -284,7 +285,7 @@
                            endid="#x54c4dcb3-2bcc-4a19-a746-e0490eaf4151"
                            layer="1"
                            staff="1"
-                           startid="#x142803f8-6980-432f-af0d-b2d9ceab888e"/>
+                           startid="#x142803f8-6980-432f-af0d-b2d9ceab888e" curvedir="below"/>
                   </measure>
                   <measure xml:id="x6a386c3e-54ab-427f-85f2-f4c27286527f" n="3">
                      <staff xml:id="xf4e98af0-713d-419b-b107-858da6e68da3" n="1">
@@ -343,7 +344,7 @@
                         </layer>
                      </staff>
                   </measure>
-                  <measure xml:id="x216c9028-60d2-4ff1-8a47-8a5f9fbfa6b6" n="6">
+                  <measure xml:id="x216c9028-60d2-4ff1-8a47-8a5f9fbfa6b6" n="6" right="invis">
                      <staff xml:id="x63cfb634-aa1c-4b97-832f-d8d31614a678" n="1">
                         <layer xml:id="x52be4a75-4242-4d43-8341-d9b0d7249014" n="1">
                            <note xml:id="x5cdb9f7f-84d0-4199-9b1f-a9afa61264ee"
@@ -351,14 +352,14 @@
                                  oct="5"
                                  pname="d"
                                  stem.dir="up"/>
-                           <space xml:id="xa7a2cbe2-12e5-40d2-88c2-6c154cd8ce2e" dur="4"/>
                         </layer>
                      </staff>
                      <slur xml:id="xc4e00ca3-05f1-4105-b3c2-554da0b0c321"
-                           endid="#xa7a2cbe2-12e5-40d2-88c2-6c154cd8ce2e"
+                           tstamp2="0m+2"
+                           tstamp="1"
                            layer="1"
-                           staff="1"
-                           startid="#x5cdb9f7f-84d0-4199-9b1f-a9afa61264ee"/>
+                           staff="1" curvedir="above"
+                           />
                   </measure>
                </section>
             </score>
