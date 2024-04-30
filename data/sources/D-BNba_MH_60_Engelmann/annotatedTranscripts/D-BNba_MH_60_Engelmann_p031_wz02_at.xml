@@ -256,19 +256,19 @@
                                  stem.dir="down"/>
                         </layer>
                         <layer xml:id="x8473eac0-025e-436d-ba24-129879414882" n="2">
+                          <bTrem unitdur="8" dur="2"> 
                            <chord xml:id="x1b690821-056a-4b08-926e-27a84bdbf0e2"
                                   dur="2"
                                   stem.dir="down"
                                   stem.mod="1slash">
                               <note xml:id="x30df819a-1675-48cb-8e65-7370062c3bae"
-                                    dur="2"
                                     oct="3"
-                                    pname="a"/>
+                                    pname="a" staff="2"/>
                               <note xml:id="x13995a5c-d905-4e68-b5cc-1a7c4a559932"
-                                    dur="2"
                                     oct="4"
                                     pname="e"/>
                            </chord>
+                         </bTrem>
                         </layer>
                      </staff>
                      <staff xml:id="x7cb6771d-f53c-424d-8f79-b8e883f1e0aa" n="2">
@@ -406,7 +406,7 @@
                                  oct="2"
                                  pname="a"
                                  stem.dir="down"/>
-                           <rest xml:id="xb2157897-e681-4950-8ff3-6b0f63418db1" dur="4"/>
+                           <space xml:id="xb2157897-e681-4950-8ff3-6b0f63418db1" dur="4"/>
                         </layer>
                      </staff>
                   </measure>
@@ -645,6 +645,7 @@
                            </beam>
                         </layer>
                      </staff>
+                     <!-- ToDo! unklar, ob hier noch eine ganze Note wie im Faksimile ergänzt werden muss. Lässt sich die Darstellung (Balkung) der ersten 16tel Gruppe optimieren? -->
                      <staff xml:id="xc9274156-cff2-448a-8ffd-3bfed02e9f48" n="2">
                         <layer xml:id="x49062085-f8b0-49eb-b312-bdcba39a32ae" n="1">
                            <beam xml:id="xeaec3827-b45a-49cf-90bd-666521a9a457">
@@ -652,7 +653,7 @@
                                     dur="16"
                                     oct="4"
                                     pname="e"
-                                    stem.dir="down"/>
+                                    stem.dir="down" staff="1"/>
                               <note xml:id="x9a89a148-a075-4285-b847-67ed62f952a3"
                                     dur="16"
                                     oct="3"
@@ -771,7 +772,7 @@
                      </staff>
                      <tie xml:id="xce62fa1f-9ba2-4e1a-b410-f095a4845f74"
                           endid="#x71e8693d-b4c3-4441-a1d6-199d72e7ab60"
-                          startid="#x175f4a44-4456-4d6a-9da5-5bf2da9679d0"/>
+                          startid="#x175f4a44-4456-4d6a-9da5-5bf2da9679d0" curvedir="above"/>
                   </measure>
                   <measure xml:id="xedc87f40-9cbb-41ad-930e-0d06b3315552" n="14">
                      <staff xml:id="xfc667265-30f0-4b08-b20f-ba280d581c24" n="1">
@@ -812,7 +813,7 @@
                      </staff>
                      <tie xml:id="xe9274819-646a-4349-98e6-e1f23e16200d"
                           endid="#x8c8eb611-a9c3-4687-a903-3592fb6bc126"
-                          startid="#x594849f2-4ec2-4757-9d43-b1b0c25cf129"/>
+                          startid="#x594849f2-4ec2-4757-9d43-b1b0c25cf129" curvedir="above"/>
                   </measure>
                   <measure xml:id="x3213cda3-1522-4e18-946b-6ffb42ffdb9b" n="15">
                      <staff xml:id="x8be329da-8143-407e-a757-d70f26997ecd" n="1">
@@ -868,9 +869,8 @@
                               form="norm"
                               layer="1"
                               shape="curved"
-                              staff="1"
-                              startid="#x72e5595a-d6ba-4fab-ac7d-0841e9512a66"
-                              tstamp="2"/>
+                              staff="1" place="above"
+                              startid="#xa32a7be6-d3e2-4ca7-b7cd-e72e2fac0e28"/>
                   </measure>
                   <measure xml:id="xcdf9940b-c9eb-47eb-9f51-f7ad45a8ad80" n="17">
                      <staff xml:id="x7ace2831-a343-431c-93c4-a5f0702314a1" n="1">
@@ -911,7 +911,7 @@
                      </staff>
                      <tie xml:id="x02ed3db5-9d71-4026-868c-4c8aa13273e4"
                           endid="#xe2135755-874a-4d36-8315-95daa0010f45"
-                          startid="#x98419a20-8cd1-48fb-af00-ed8b376c4154"/>
+                          startid="#x98419a20-8cd1-48fb-af00-ed8b376c4154" curvedir="above"/>
                   </measure>
                   <measure xml:id="x250c7c5a-1513-4e68-987d-99dd40ee3236" n="18">
                      <staff xml:id="x532284c9-bf9e-4068-8f01-4190c5ce3d52" n="1">
