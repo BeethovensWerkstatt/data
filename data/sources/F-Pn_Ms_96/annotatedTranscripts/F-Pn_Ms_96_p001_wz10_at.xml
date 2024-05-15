@@ -231,7 +231,7 @@
                 </draft></drafts>-->
             <score>
                <scoreDef xml:id="xc72cb9cf-398a-46ca-b4a2-7ead4726074b">
-                  <meterSig count="2" unit="2"/>
+                  <meterSig count="2" unit="2" sym="cut"/>
                   <staffGrp xml:id="x16f362ae-1e3f-4b3c-8e33-bf8344076ae0" bar.thru="true">
                      <staffDef xml:id="x046aad95-fbc2-4fb9-a37f-e1be7f1879d0" lines="5" n="1">
                         <keySig sig="3f" mode="major"/>
@@ -367,7 +367,11 @@
                                  staff="1"
                                  tstamp="2.5"/>
                         </layer>
+                        <!-- ToDo! Hier stimmt die Anzeige der Viertelnote nicht, die bestenfalls schon im Bassschlüssel stehen sollte. Den Schlüsselwechsel noch entsprechend anpassen -->
                         <layer xml:id="x67106fd4-7c9a-44a8-a6c0-629a21a0068f" n="2">
+                           <space dur="4"/>
+                           <space dur="4"/>
+                           <space dur="4"/>
                            <note xml:id="x8669e281-6ea8-460c-91c2-727814742493"
                                  dur="4"
                                  oct="1"
@@ -376,7 +380,8 @@
                         </layer>
                      </staff>
                      <tie xml:id="xe074cd72-5ccf-41bc-b041-9557c96aecc0"
-                          startid="#x8669e281-6ea8-460c-91c2-727814742493"/>
+                          startid="#x8669e281-6ea8-460c-91c2-727814742493"
+                          endid="#x12c79e0d-c3be-4352-93ee-bce51e11d978" curvedir="above"/>
                   </measure>
                   <measure xml:id="xaa505e41-750a-4e49-979c-a2966debad41" n="5">
                      <staff xml:id="x2a0cebf8-385d-4112-be03-15cc3363308e" n="1">
