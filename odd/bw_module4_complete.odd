@@ -47,6 +47,8 @@
                      uri="http://www.w3.org/2000/svg"/>
                   <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="tei"
                      uri="http://www.tei-c.org/ns/1.0"/>
+                  <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="bw"
+                     uri="https://www.beethovens-werkstatt.de/ns/mei/proposal"/>
                </constraint>
             </constraintSpec>
             <!-- Include all modules -->
@@ -195,7 +197,7 @@
                </attList>
             </classSpec>
             
-            <elementSpec ident="unknownFoliation" module="MEI.header" mode="add">
+            <elementSpec ident="unknownFoliation" module="MEI.header" mode="add" prefix="bw_" ns="https://www.beethovens-werkstatt.de/ns/mei/proposal">
                <desc xml:lang="en">Captures two subsequent surfaces for which the foliation / binding is unknown.</desc>
                <classes>
                   <memberOf key="att.common"/>
@@ -224,7 +226,7 @@
                <content>
                   <rng:choice>
                      <rng:ref name="macro.struc-unstrucContent"/>
-                     <rng:ref name="rastrumDesc"/>
+                     <rng:ref name="bw_rastrumDesc"/>
                   </rng:choice>
                   <rng:ref name="macro.struc-unstrucContent"/>
                </content>
@@ -280,7 +282,7 @@
                </remarks>
             </elementSpec>
             
-            <elementSpec ident="rastrumDesc" module="MEI.msDesc" mode="add">
+            <elementSpec ident="rastrumDesc" module="MEI.msDesc" mode="add" prefix="bw_" ns="https://www.beethovens-werkstatt.de/ns/mei/proposal">
                <desc xml:lang="en">Describes the use of rastrums on a given (set of) page(s).</desc>
                <classes>
                   <memberOf key="att.common"/>
@@ -292,7 +294,7 @@
                </content>
             </elementSpec>
             
-            <elementSpec ident="rastrum" module="MEI.msDesc" mode="add">
+            <elementSpec ident="rastrum" module="MEI.msDesc" mode="add"  prefix="bw_" ns="https://www.beethovens-werkstatt.de/ns/mei/proposal">
                <desc xml:lang="en">Describes a rastrum used to prepare a page with staff lines.</desc>
                <classes>
                   <memberOf key="att.common"/>
@@ -518,11 +520,14 @@
                         <rng:optional>
                            <rng:ref name="model.draftsLike"/>
                         </rng:optional>
+                        <rng:optional>
+                           <rng:ref name="bw_proposal"/>
+                        </rng:optional>
                      </rng:group>
                   </rng:choice>
                </content>
                <remarks xml:lang="en">
-                  <p>In Beethovens Werkstatt, the <gi scheme="MEI">mdiv</gi> element may contain <gi scheme="MEI">drafts</gi>, but may not be nested.</p>
+                  <p>In Beethovens Werkstatt, the <gi scheme="MEI">mdiv</gi> element may contain <gi>drafts</gi>, but may not be nested.</p>
                </remarks>
             </elementSpec>
             
@@ -530,7 +535,7 @@
                <desc xml:lang="en">Groups elements similar to drafts containers.</desc>
             </classSpec>
             
-            <elementSpec ident="drafts" module="MEI.genetic" mode="add">
+            <elementSpec ident="drafts" module="MEI.genetic" mode="add" prefix="bw_" ns="https://www.beethovens-werkstatt.de/ns/mei/proposal">
                <desc>Provides a container for drafts.</desc>
                <classes>
                   <memberOf key="att.common"/>
@@ -548,7 +553,7 @@
                <desc xml:lang="en">Groups elements similar to drafts.</desc>
             </classSpec>
 
-            <elementSpec ident="draft" module="MEI.genetic" mode="add">
+            <elementSpec ident="draft" module="MEI.genetic" mode="add" prefix="bw_" ns="https://www.beethovens-werkstatt.de/ns/mei/proposal">
                <desc>A version of the musical content that is unfinished – a sketch, draft or similar.</desc>
                <classes>
                   <memberOf key="att.common"/>
@@ -595,9 +600,16 @@
                         </valItem>
                      </valList>
                   </attDef>
+                  <attDef ident="attribute" usage="opt" ns="https://www.beethovens-werkstatt.de/ns/mei/proposal">
+                     <defaultVal>test</defaultVal>
+                     <valList type="closed">
+                        <valItem ident="test">
+                           <desc xml:lang="en">Test attribute in different namespace.</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
                </attList>
             </classSpec>
-            
          </schemaSpec>
       </body>
    </text>
