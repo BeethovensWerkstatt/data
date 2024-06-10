@@ -10,4 +10,4 @@ Each module will receive a separate folder inside the /data path. The content it
 * /module4 -> /sk
 * /module5 -> /ed
 
-test again
+test it
