@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../../rng/bw_module3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../../../rng/bw_module3.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <mei xmlns="http://www.music-encoding.org/ns/mei"
      xmlns:xi="http://www.w3.org/2001/XInclude"
      meiversion="5.0.0-dev"
@@ -34,7 +35,7 @@
       </fileDesc>
       <encodingDesc class="#bw_module3_documentFile #bw_module3_staticExample"/>
       <manifestationList>
-         <manifestation xml:id=" GB-Lbl_Department of Music_h.376.(13)" label="Zieldokument" class="#music.print">
+         <manifestation xml:id=" GB-Lbl_Department_of_Music_h.376_13" label="Zieldokument" class="#music.print">
             <physDesc>
                <foliaDesc/>
             </physDesc>
@@ -59,7 +60,8 @@
       </revisionDesc>
    </meiHead>
    <music>
-       <mdiv n="1" label="Introduzione. Largo. Allegro risoluto">
+      <body> 
+       <mdiv xml:id="x9464904c-57a0-41f7-a186-bdaa208f97d4" n="1" label="Introduzione. Largo. Allegro risoluto">
          <score xml:id="pf1952956-33ea-4df7-b8dc-8d65e48b1b8a">
    <scoreDef xml:id="s5433e87b-f892-49bc-a3c9-27ad099ac1ae">
       <staffGrp xml:id="s6a3475b0-5a26-4f54-a95a-ed1377c123df">
@@ -228,10 +230,10 @@
          </annot>
       </measure>
       <measure n="118" label="118" xml:id="m22479af8-f469-4dcc-8b33-1f4d0bcfd419">
-          <annot xml:id="xa3cd2f69-3e15-4443-b2fd-9953acef5353"
+         <annot xml:id="ta6de38e7-d50b-428a-9f42-3598922ec6ce"
             class="#bw_monitum_context #bw_monitum_fully_implemented"
             staff="1">
-            <annot xml:id="x42f1c492-0402-45b8-9419-4829bb9f19d5"
+            <annot xml:id="a8acced8e-b340-4294-932f-d22097629fca"
                class="#bw_monitum_comment">
                <p/>
             </annot>
@@ -560,5 +562,6 @@
  </section>
 </score>
       </mdiv>
+      </body>
    </music>
 </mei>
