@@ -288,7 +288,8 @@
                      </staff>
                      <tie xml:id="x761d8a13-31fc-4f7b-a4c3-d15567f2ac83"
                           endid="#xb7501345-33b1-46d2-9cbf-b1a16ace1a7e"
-                          startid="#xae64965f-9b44-4fe9-bfa4-2ad41a02b9c9"/>
+                          startid="#xae64965f-9b44-4fe9-bfa4-2ad41a02b9c9"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x4f1bfa6c-0c07-491e-a815-4af422ce1886" n="2">
                      <staff xml:id="x53d6f536-ef94-4852-9e2d-52c82fa5dfe5" n="1">
@@ -325,7 +326,8 @@
                      </staff>
                      <tie xml:id="x7313b06f-8170-4777-8e62-3f724a8f4e3c"
                           endid="#x1f9ef201-6ff0-4c88-907c-416d3ab6257e"
-                          startid="#xc6b3ae81-02e4-4e88-ac11-fbbdf5c7cb19"/>
+                          startid="#xc6b3ae81-02e4-4e88-ac11-fbbdf5c7cb19"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x185016ad-156d-4be9-b667-c0533431da42" n="3">
                      <staff xml:id="x423a2a30-f233-4f19-a2a4-786891319ad5" n="1">
@@ -365,7 +367,8 @@
                            endid="#xe80a2d4f-7d51-4e6d-8130-b940b402d4e7"
                            layer="1"
                            staff="1"
-                           startid="#x08b4e161-ae17-40d9-8c8e-2498ca699993"/>
+                           startid="#x08b4e161-ae17-40d9-8c8e-2498ca699993"
+                           curvedir="above"/>
                   </measure>
                   <measure xml:id="x39c2aa15-2e1a-452e-9e25-d5507812bab0" n="4">
                      <staff xml:id="x78e27c34-7867-4b3b-b19b-2f2904119211" n="1">
@@ -721,8 +724,8 @@
                      <dynam xml:id="x3478a6c5-724f-4e1a-9894-acf5738ddd15"
                             layer="1"
                             staff="1"
-                            startid="#x2fcd57a6-ddf0-4d8b-a5dd-31d773c2fc78"
-                            tstamp="1">p:</dynam>
+                            tstamp="1"
+                            place="below">p:</dynam>
                   </measure>
                   <measure xml:id="x0ee9d543-a87d-4c42-a9c8-7bbc20b107b0" n="12">
                      <staff xml:id="x467c1add-9dc1-402a-8b6b-35adb44fb94a" n="1">
@@ -744,9 +747,13 @@
                         </layer>
                      </staff>
                      <tie xml:id="x4f4e7797-5b09-4fc9-a612-cb6229033d87"
-                          startid="#xbb4fe740-3f23-449d-84f7-84492c5ce78a"/>
+                          startid="#xbb4fe740-3f23-449d-84f7-84492c5ce78a"
+                          tstamp2="1m+1"
+                          curvedir="above"/>
                      <tie xml:id="x963173e7-e9a2-4350-ba70-5cdc122e3c2a"
-                          startid="#x2b32f3c3-6141-466d-9733-759624d78a9b"/>
+                          startid="#x2b32f3c3-6141-466d-9733-759624d78a9b"
+                          tstamp2="1m+1"
+                          curvedir="below"/>
                   </measure>
                   <measure xml:id="x953948b1-4d78-4696-8e42-ecc6a7af03c1" n="13">
                      <staff xml:id="xee69843b-f72d-464a-8a12-a317c1c477a9" n="1">
@@ -853,11 +860,11 @@
                            <space xml:id="x2ef0d586-5cf5-4672-99be-93ce57496ce4" dur="4"/>
                         </layer>
                      </staff>
-                     <dynam xml:id="x6d5fba2e-518d-4bf0-8f06-133fd1523e7c"
+                     <dir xml:id="x6d5fba2e-518d-4bf0-8f06-133fd1523e7c"
                             layer="1"
                             staff="2"
-                            startid="#x2ef0d586-5cf5-4672-99be-93ce57496ce4"
-                            tstamp="2">etc.</dynam>
+                            tstamp="2.5"
+                            place="within">etc.</dir>
                   </measure>
                   <measure xml:id="x4f05b353-a809-46e4-8e4a-a58f63d130c1" n="17">
                      <staff xml:id="xb49e537a-fcba-4bfe-9613-d1dbf963db7d" n="1">
@@ -884,6 +891,7 @@
                      </staff>
                      <staff xml:id="x86efd4ad-5b56-443f-a8ae-4bba3a796d13" n="2">
                         <layer xml:id="xa82cc1b2-dbd6-4a87-bb35-ba7454ad0192" n="1">
+                           <!-- TODO: Die folgenden Note müsste durch den Notenhals mit dem Akkord in staff 1 verbunden sein. -->
                            <note xml:id="x1c35dc21-8936-4544-a1c0-bcc36aa1f362"
                                  dur="4"
                                  oct="3"
@@ -988,12 +996,13 @@
                   <measure xml:id="x34f009da-c8e9-4b06-b12d-e5a6237dc845" n="22">
                      <staff xml:id="xd9e128b8-4a7a-4e76-aa2c-443d757f33c8" n="1">
                         <layer xml:id="xb4740c40-cdfd-4df4-9baa-c7edd335caf6" n="1">
-                           <note xml:id="xb4ac533b-e183-49fc-98be-8b034b628b0b"
+                           <bTrem unitdur="8" dur="4"><note xml:id="xb4ac533b-e183-49fc-98be-8b034b628b0b"
                                  dur="4"
                                  oct="4"
                                  pname="a"
                                  stem.dir="down"
                                  stem.mod="1slash"/>
+                              </bTrem>
                            <note xml:id="x8639bffc-0caa-4967-b7c2-1ead49fdd423"
                                  dur="4"
                                  oct="5"
@@ -1024,11 +1033,11 @@
                            </note>
                         </layer>
                      </staff>
-                     <dynam xml:id="xd8c6f78b-0ba5-45a5-877a-075a706d9970"
+                     <dir xml:id="xd8c6f78b-0ba5-45a5-877a-075a706d9970"
                             layer="1"
                             staff="2"
-                            startid="#x5a497015-56ce-422c-9ef1-642513095c18"
-                            tstamp="2.5">fugirt</dynam>
+                            tstamp="2.5"
+                          place="within">fugirt</dir>
                   </measure>
                   <measure xml:id="x09951a10-690c-4bb9-8257-ffa15883646a" n="23">
                      <staff xml:id="x6ba22f79-bf42-491b-8234-880f653fb0e9" n="1">
@@ -1064,7 +1073,8 @@
                            endid="#x0e0127df-835b-4d94-8195-dbf430eaadf7"
                            layer="1"
                            staff="1"
-                           startid="#x031df965-a69e-4ba3-a126-661f7e9b1a69"/>
+                           startid="#x031df965-a69e-4ba3-a126-661f7e9b1a69"
+                           curvedir="above"/>
                   </measure>
                   <measure xml:id="x5c5efd62-e101-4eed-92a0-40a628da50d6" n="24">
                      <staff xml:id="x4fc0942d-a25a-43ef-a6fd-1b7d3df23788" n="1">
@@ -1155,7 +1165,8 @@
                      </staff>
                      <tie xml:id="x43264fc9-2302-417e-97f8-e8d1a2b33c0c"
                           endid="#x5753add0-d79f-4d6a-a2d6-4aa0fdf2a36f"
-                          startid="#x5323fab8-4e04-4839-8403-bc92955db2cb"/>
+                          startid="#x5323fab8-4e04-4839-8403-bc92955db2cb"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x768ee385-d50d-44e1-83e7-1ee20665c59d" n="26">
                      <staff xml:id="x7e32d8b0-7224-4711-a7aa-3c764eb6d25f" n="1">
@@ -1236,7 +1247,8 @@
                      </staff>
                      <tie xml:id="xda9386d9-e478-4caf-884c-a4353f1afee6"
                           endid="#xa15495fc-bff7-4a45-8824-b57e80f88f1b"
-                          startid="#xaa225360-3740-408d-86e0-74effcd92ead"/>
+                          startid="#xaa225360-3740-408d-86e0-74effcd92ead"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x379a80e2-ecc8-4f4f-bdf3-5914ba5f2449" n="28">
                      <staff xml:id="xf78adf9a-686d-426b-bbb5-05876a43e246" n="1">
@@ -1334,7 +1346,8 @@
                      </staff>
                      <tie xml:id="xd34cc2ee-7df5-4306-8a2e-52f16910f91f"
                           endid="#x9ad374d2-4497-40a3-8d03-2c7575f951b0"
-                          startid="#xf270059d-51d3-4948-b7c7-66bb9d8c41e3"/>
+                          startid="#xf270059d-51d3-4948-b7c7-66bb9d8c41e3"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x2a2a6efa-8c50-4167-a8c1-38cecc3d51ff" n="30">
                      <staff xml:id="xc2ba6a69-8da6-4af4-bd9a-a9f5dc5aefe6" n="1">
@@ -1422,7 +1435,8 @@
                      </staff>
                      <tie xml:id="x1b2c494e-4fcb-46c1-b6f5-ee09676f4458"
                           endid="#x3441c23f-71f6-404c-84a3-0124e4b584a7"
-                          startid="#xb43ec8c3-8261-40b5-908e-874907f46d61"/>
+                          startid="#xb43ec8c3-8261-40b5-908e-874907f46d61"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x8ad72e10-a52e-449d-925c-bb4dfc35b0fe" n="32">
                      <staff xml:id="x4db8d7ae-9f2e-448b-b98e-b2792acc32fd" n="1">
@@ -1530,7 +1544,8 @@
                      </staff>
                      <tie xml:id="x1f52c128-26e6-48a9-9436-7760cd8e9bdf"
                           endid="#x9811191d-1067-480a-a1d1-81448eaadbfe"
-                          startid="#xb2e09e6d-ae0c-4f0b-b73c-d0e04b30f63e"/>
+                          startid="#xb2e09e6d-ae0c-4f0b-b73c-d0e04b30f63e"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x32c1d5b5-eb9b-4a1e-96dd-954067f81f35" n="35">
                      <staff xml:id="x3a3d4fb4-7129-4de3-a9ed-d4a70aa27613" n="1">
@@ -1585,7 +1600,8 @@
                      </staff>
                      <tie xml:id="x660cca30-eef2-48ca-9929-8a1196262e5b"
                           endid="#xa82965d2-6d3f-42bb-8d10-dce61886a1a0"
-                          startid="#xb5118580-a47f-4f51-898a-85288e17d33c"/>
+                          startid="#xb5118580-a47f-4f51-898a-85288e17d33c"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x3c9ac018-3b5e-48d3-b4ff-341413c00175" n="36">
                      <staff xml:id="x482c6522-868b-4a9e-827e-d2f3b7dc3f9e" n="1">
@@ -1651,7 +1667,8 @@
                      </staff>
                      <tie xml:id="x9c84a278-ba18-4d34-bf0b-09d791c3220d"
                           endid="#xc022e016-0a02-4e3d-a74e-38871af8b1a0"
-                          startid="#x3f53832b-ea6e-43c7-90e5-20f9ddd1bfca"/>
+                          startid="#x3f53832b-ea6e-43c7-90e5-20f9ddd1bfca"
+                          curvedir="above"/>
                   </measure>
                </section>
             </score>
