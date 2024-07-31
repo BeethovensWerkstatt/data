@@ -454,7 +454,7 @@
                      <dynam xml:id="x1f906ea3-20ea-4255-8c90-92c06f12da39"
                             layer="1"
                             staff="2"
-                            startid="#x80314a51-de6f-4132-9cf8-e3bad815710e"
+                            place="below"
                             tstamp="2.5">dim</dynam>
                   </measure>
                   <measure xml:id="xf48a6eb6-1fee-49d3-b43e-eafa48c8aa8a" n="4">
@@ -513,7 +513,7 @@
                      <dynam xml:id="x647544ad-9912-480a-b1dd-6e9973c108df"
                             layer="1"
                             staff="2"
-                            startid="#x570393c6-14a9-48c6-a40d-f4076457dc1f"
+                            place="below"
                             tstamp="1">p</dynam>
                   </measure>
                   <measure xml:id="xfe64aa8e-ef78-49e2-ba57-d50cbba20022" n="5">
@@ -607,11 +607,19 @@
                      </staff>
                   </measure>
                   <scoreDef xml:id="xf1ce79fc-48ab-4171-8694-79b32236e6b2">
-                     <meterSig count="" unit=""/>
+                     <staffGrp xml:id="x2ecbd4c0-cdb0-4323-9b97-102730dac028" bar.thru="true">
+                     <staffDef xml:id="x94474451-cbda-40bc-862c-fb289c1b4600" lines="5" n="1">
+                        <keySig sig="1f" mode="minor"/>
+                     </staffDef>
+                     <staffDef xml:id="c2f4ff27-c5bc-4e2f-8ca5-9f5258878f7b" lines="5" n="2">
+                        <keySig sig="1f" mode="minor"/>
+                     </staffDef>
+                  </staffGrp>
                   </scoreDef>
                   <measure xml:id="x2c5522b1-ea75-4beb-b8fc-a4b02ec8a48b" metcon="false" n="8">
                      <staff xml:id="x77237a0e-4a94-4007-9f3a-2f83c4d86200" n="1">
                         <layer xml:id="xac944914-c81c-48dd-9766-57f0ab611f3b" n="2">
+                           <bTrem unitdur="16" dur="2" dots="1">
                            <note xml:id="xbec648e7-d58d-4659-bfe7-7cabf19010f5"
                                  dots="1"
                                  dur="2"
@@ -619,6 +627,7 @@
                                  pname="a"
                                  stem.dir="down"
                                  stem.mod="2slash"/>
+                              </bTrem>
                         </layer>
                         <layer xml:id="x5e6fca6e-372d-4bc8-b90d-3b789e0664d8" n="1">
                            <space xml:id="x9033cdfa-3e0d-4f58-ba9e-c1d00a1a381f"
@@ -641,6 +650,11 @@
                            <mSpace xml:id="s88f57ab9-c6a8-49a6-96c2-4491dd6e3b39"/>
                         </layer>
                      </staff>
+                     <dir xml:id="bec58b46-e5cb-470e-bca5-0688a89bc404"
+                            layer="2"
+                            staff="1"
+                            place="below"
+                            tstamp="0">triolen<lb/>meilleur</dir>
                   </measure>
                   <measure xml:id="xc58a2846-b114-48c7-ab10-793324389f86" n="9">
                      <staff xml:id="xcfc7a270-4d3c-4222-a39a-46f0fe74e724" n="1">
@@ -659,7 +673,7 @@
                      </staff>
                      <staff xml:id="xacd5db8a-1a19-4c7b-bcf6-178dffe93742" n="2">
                         <layer xml:id="x47770df5-9b10-4289-ad40-62ae559da14b" n="1">
-                           <mSpace xml:id="s4e2e43a9-01b6-443d-8b0d-e43973448473"/>
+                           <space xml:id="s4e2e43a9-01b6-443d-8b0d-e43973448473" dur="2"/>
                            <clef xml:id="xc7120fb6-2856-418e-a97c-54d217297645"
                                  line="4"
                                  shape="F"
