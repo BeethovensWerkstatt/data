@@ -279,7 +279,6 @@
                                  oct="4"
                                  pname="g"
                                  stem.dir="up"/>
-                           <space xml:id="xd951b7b5-083c-4875-88f7-d9288a8aa5e0" dur="8"/>
                         </layer>
                         <layer xml:id="xbd84c01f-cb19-4ee7-b7db-c8981c5a953e" n="2">
                            <space xml:id="x4c81caec-d704-41c2-9c5c-0f79c91ca5fb" dur="4"/>
@@ -293,27 +292,34 @@
                                  oct="4"
                                  pname="e"
                                  stem.dir="down"/>
-                           <space xml:id="xbacc057d-1fc4-4b1d-ab56-31cc3a96250f" dur="8"/>
                         </layer>
                      </staff>
                      <tie xml:id="xa5d4b85b-361f-4ae8-bd45-1ed55bf58a2f"
-                          startid="#x3831983c-75b4-4a5a-a57b-52195e58c968"/>
+                          startid="#x3831983c-75b4-4a5a-a57b-52195e58c968"
+                          endid="#x50d6e70e-09bd-4da4-8c4e-364c6f45a8e0"
+                          curvedir="below"/>
                      <fermata xml:id="x5190efd0-4258-4f98-8476-7a87f8734bf0"
-                              form="inv"
+                              form="norm"
                               layer="2"
                               shape="curved"
                               staff="1"
-                              tstamp="2.5"/>
-                     <dynam xml:id="x1d72b1fd-4027-4973-8adc-0a8aae333ef9"
+                              place="above"
+                              startid="#xee20ef28-3e6e-49e0-b149-610e5356556a"/>
+                     <dir xml:id="x1d72b1fd-4027-4973-8adc-0a8aae333ef9"
                             layer="1"
                             staff="1"
-                            startid="#xe76d8078-d6c7-4a8e-805a-b7a01f460479"
-                            tstamp="1">Ebendaselbst</dynam>
-                     <dynam xml:id="xe3b20e84-51b5-4a87-8635-6afd256aecf7"
+                            place="above"
+                            tstamp="0">Ebendaselbst</dir>
+                     <dir xml:id="xe3b20e84-51b5-4a87-8635-6afd256aecf7"
                             layer="2"
                             staff="1"
-                            startid="#xbacc057d-1fc4-4b1d-ab56-31cc3a96250f"
-                            tstamp="2.582">+ ped</dynam>
+                            place="below"
+                            tstamp="2.7">+ ped</dir>
+                     <pedal dir="down"
+                            staff="1"
+                            layer="2"
+                            startid="#xee20ef28-3e6e-49e0-b149-610e5356556a"
+                            place="below"></pedal>
                   </measure>
                </section>
             </score>
