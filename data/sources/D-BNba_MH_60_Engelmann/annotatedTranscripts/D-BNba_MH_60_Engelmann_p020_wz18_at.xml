@@ -242,7 +242,7 @@
                   </staffGrp>
                </scoreDef>
                <section xml:id="x34c5c4a1-bc63-46f7-b84a-744b5eae93e1">
-                  <measure xml:id="xf3f8cd2a-b97b-40c1-b787-474908fe50fb" n="1">
+                  <measure xml:id="xf3f8cd2a-b97b-40c1-b787-474908fe50fb" n="1" metcon="false">
                      <staff xml:id="x247eb57a-8851-4b08-ad7b-ef1109667f7a" n="1">
                         <layer xml:id="x4d30866e-c332-468e-8787-16a3bec6b164" n="1">
                            <tuplet xml:id="xcf4b1060-4f9d-4e2d-acc6-8035a9f9d47f"
@@ -287,15 +287,17 @@
                      </staff>
                      <tie xml:id="xb64aeb61-d602-48a5-8f8b-0157bf4d52f9"
                           endid="#xf2e05d04-dcee-43de-8df7-5b23f951949a"
-                          startid="#xdf6822eb-bc06-4ea7-90e8-cb88e30457aa"/>
+                          startid="#xdf6822eb-bc06-4ea7-90e8-cb88e30457aa"
+                          curvedir="below"/>
                      <tie xml:id="xb1565847-15f6-4b4c-99b9-99fef70f1022"
                           endid="#x7d039f23-964d-4138-ad3c-dc84e4ff6b0d"
-                          startid="#x2d3f123b-859a-4f2c-ac02-bd832eff6870"/>
-                     <dynam xml:id="x0e5b44c6-3783-403f-92db-f4baa12ca198"
+                          startid="#x2d3f123b-859a-4f2c-ac02-bd832eff6870"
+                          curvedir="above"/>
+                     <dir xml:id="x0e5b44c6-3783-403f-92db-f4baa12ca198"
                             layer="1"
                             staff="1"
-                            startid="#x7d2fc91f-c5f1-419e-8758-b9197c3394b4"
-                            tstamp="3">Variation 11</dynam>
+                            place="above"
+                            tstamp="0">Variation 11</dir>
                   </measure>
                   <measure xml:id="x62248bb7-f4f1-4c95-80cc-53f575a35232" n="2" right="dbl">
                      <staff xml:id="xa71ff56b-4f5d-40e1-b35d-d7c6468941ad" n="1">
@@ -342,12 +344,14 @@
                      </staff>
                      <tie xml:id="xf5ccde67-c047-4d63-a1db-317be4b43e4c"
                           endid="#xbdec4992-c0b2-4676-948e-b76ff0b74c70"
-                          startid="#xf2e05d04-dcee-43de-8df7-5b23f951949a"/>
-                     <dynam xml:id="xb47837fd-0b90-457a-9010-a00be6ae353e"
+                          startid="#xf2e05d04-dcee-43de-8df7-5b23f951949a"
+                          curvedir="below"/>
+                     <!-- ToDo! Vor "vor g" muss ein Bogen stehen.-->
+                     <dir xml:id="xb47837fd-0b90-457a-9010-a00be6ae353e"
                             layer="2"
                             staff="1"
-                            startid="#x65b41700-d1ed-446a-a3d3-c534775717a2"
-                            tstamp="2">vor g</dynam>
+                            place="within"
+                            tstamp="3">vor g</dir>
                   </measure>
                </section>
             </score>
