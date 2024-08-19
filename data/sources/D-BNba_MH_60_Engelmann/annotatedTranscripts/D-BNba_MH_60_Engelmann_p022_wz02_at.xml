@@ -242,7 +242,7 @@
                   </staffGrp>
                </scoreDef>
                <section xml:id="xea1e17af-b1e6-4060-95a4-b68b88a1569b">
-                  <measure xml:id="x0d5f932a-c9f8-41e8-8956-b0c963643f94" n="1">
+                  <measure xml:id="x0d5f932a-c9f8-41e8-8956-b0c963643f94" n="1" metcon="false" right="invis">
                      <staff xml:id="x6778fc44-1688-46e8-bf9e-61ec5f4950af" n="1">
                         <layer xml:id="xd9c0ac9d-6ef1-4c9a-bca1-b287736c1a09" n="2">
                            <beam xml:id="xc7bfa7be-428d-4c0b-8d9a-54c453bf4461">
@@ -482,7 +482,6 @@
                            </beam>
                         </layer>
                         <layer xml:id="x9df561c0-f291-4c05-a46a-ad4056a9e8c8" n="1">
-                           <beam xml:id="xc2dccfb7-73cd-4934-9367-710f9212a97b">
                               <note xml:id="xf8798721-8bd2-4bac-ba56-5434c140a389"
                                     dur="8"
                                     oct="6"
@@ -495,7 +494,6 @@
                                     stem.dir="up">
                                  <accid xml:id="x253d4d1f-1343-402a-b7b3-4a2216aaa48f" accid.ges="f"/>
                               </note>
-                           </beam>
                            <space xml:id="xe53bf348-3e90-4733-8227-252b83157e32" dur="16"/>
                            <space xml:id="x7e78c825-49e6-4a45-84e2-bdf6f7924299" dur="8"/>
                            <note xml:id="x2d7576cd-1273-4c20-bb1d-ca179b8b42bf"
@@ -509,27 +507,30 @@
                      </staff>
                      <tie xml:id="xf1fc58c5-bf2b-4de3-a724-88e4e3938d9e"
                           endid="#xe9a140a9-0fca-488a-84ad-f2c2ea8b790b"
-                          startid="#xa10bf8aa-99d6-42fe-a68a-6f9576b6b9b8"/>
+                          startid="#xa10bf8aa-99d6-42fe-a68a-6f9576b6b9b8"
+                          curvedir="above"/>
                      <dynam xml:id="x66f6111d-7f34-4a6e-8346-4ad00ae83b25"
                             layer="2"
                             staff="1"
-                            startid="#xca810771-ec75-49f5-9e81-697d63534da2"
-                            tstamp="4">cresc.</dynam>
+                            place="below"
+                            tstamp="1">cresc.</dynam>
                      <dynam xml:id="x364508a0-0539-4583-8a4c-ef42bb5affd7"
                             layer="2"
                             staff="1"
-                            startid="#x06f6f403-c0e6-4182-84cf-cd8a5680fd2f"
-                            tstamp="6.125">p</dynam>
+                            place="below"
+                            tstamp="3.125">p</dynam>
                      <dynam xml:id="x0ec88c67-3c24-4bbc-86e3-9b591c130d70"
                             layer="2"
                             staff="1"
-                            startid="#xeda70266-e171-4e85-ac6a-2aa7493df3ca"
-                            tstamp="6.625">cresc.</dynam>
+                            place="below"
+                            tstamp="3.625"
+                            extender="true"
+                            endid="#xf91915f4-7079-4cee-9943-9a0f75e87720">cresc.</dynam>
                      <dynam xml:id="x330de012-b3d6-4dfa-8224-ef532f4d60e0"
                             layer="2"
                             staff="1"
-                            startid="#x3147d56e-2d6b-46b9-a7b9-df50a4bf6474"
-                            tstamp="9.5">dim.</dynam>
+                            place="above"
+                            tstamp="6.5">dim.</dynam>
                   </measure>
                </section>
             </score>
