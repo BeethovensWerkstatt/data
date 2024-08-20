@@ -246,9 +246,10 @@
                   </staffGrp>
                </scoreDef>
                <section xml:id="xe19c80b2-c4db-4a92-8135-75d7edcef36f">
-                  <measure xml:id="xf9526a5d-6a73-488f-916d-5c7cbe8438e5" n="1">
+                  <measure xml:id="xf9526a5d-6a73-488f-916d-5c7cbe8438e5" metcon="false" n="1">
                      <staff xml:id="xa55194af-435c-432c-89ab-53d5645020de" n="1">
                         <layer xml:id="xc8512090-d13c-4f6a-b4d2-4d7f934baab2" n="1">
+                           <beam xml:id="xb6a1f981-b81e-4a03-994b-faa542daa688">
                            <tuplet xml:id="xfd0476df-253a-4786-bf08-03ef81ab6c13"
                                    bracket.visible="false"
                                    endid="#x65311192-7416-4c82-8c13-37c8afe30dd1"
@@ -256,7 +257,7 @@
                                    num.format="count"
                                    numbase="2"
                                    startid="#x3e367da8-4c2a-414f-a328-06265c53c86d">
-                              <beam xml:id="xb6a1f981-b81e-4a03-994b-faa542daa688">
+                              
                                  <note xml:id="x3e367da8-4c2a-414f-a328-06265c53c86d"
                                        dur="16"
                                        oct="3"
@@ -272,7 +273,7 @@
                                        oct="4"
                                        pname="e"
                                        stem.dir="up"/>
-                              </beam>
+                              
                            </tuplet>
                            <tuplet xml:id="xa3ac18a6-c23c-431f-8920-edeea4a621f8"
                                    bracket.visible="false"
@@ -281,12 +282,13 @@
                                    num.format="count"
                                    numbase="2"
                                    startid="#x50139d51-24e4-4837-a754-b2691150a628">
-                              <beam xml:id="x9fca5acc-286a-44b4-8abe-8a4723e6b1a4">
+                              
                                  <note xml:id="x50139d51-24e4-4837-a754-b2691150a628"
                                        dur="16"
                                        oct="4"
                                        pname="d"
                                        stem.dir="up"/>
+                              <!-- ToDo! Über dieser Note muss ein Auflösungszeichen stehen.-->
                                  <note xml:id="x97c1599b-e478-431b-9696-724699e38d3a"
                                        dur="16"
                                        oct="4"
@@ -302,11 +304,13 @@
                                     <note xml:id="x68cd798a-2490-4c86-91b8-5c9b158e7f46"
                                           dur="16"
                                           oct="3"
-                                          pname="f"/>
+                                          pname="f"
+                                          staff="2"/>
                                     <note xml:id="xfcbbd665-7182-413f-a51d-b4d92d3f30a3"
                                           dur="16"
                                           oct="3"
-                                          pname="a">
+                                          pname="a"
+                                          staff="2">
                                        <accid xml:id="xd757fe47-939f-497c-af89-9fef00555abc" accid="f"/>
                                     </note>
                                     <note xml:id="x72e3fc53-ea6e-4ff8-99bf-b3b4f79999d3"
@@ -314,8 +318,9 @@
                                           oct="3"
                                           pname="b"/>
                                  </chord>
-                              </beam>
+                              
                            </tuplet>
+                           </beam>
                         </layer>
                      </staff>
                      <staff xml:id="x762feaaf-e43a-46c1-b52a-a047c41be8e7" n="2">
@@ -324,9 +329,13 @@
                         </layer>
                      </staff>
                      <tie xml:id="xd4e0fea3-d171-4936-a8ba-b9931f09f6b6"
-                          startid="#x68cd798a-2490-4c86-91b8-5c9b158e7f46"/>
+                          startid="#x68cd798a-2490-4c86-91b8-5c9b158e7f46"
+                          endid="#x02d5bb6d-054d-40c1-b860-e527b122e2fe"
+                          curvedir="below"/>
                      <tie xml:id="xbc37def8-3140-46d6-868c-84987f6e9215"
-                          startid="#xfcbbd665-7182-413f-a51d-b4d92d3f30a3"/>
+                          startid="#xfcbbd665-7182-413f-a51d-b4d92d3f30a3"
+                          endid="#x524c50ab-da22-44e4-a62b-afdb4c3141e8"
+                          curvedir="above"/>
                   </measure>
                   <measure xml:id="x270e44c3-9128-48be-bf55-8a6960a3f48c" n="2" right="dbl">
                      <staff xml:id="xfc4150a9-5718-401e-abca-b30d65928289" n="1">
@@ -350,8 +359,7 @@
                                  <accid xml:id="x7ac48e60-d9eb-4a95-8ff1-18c3905694ab" accid="f"/>
                               </note>
                            </chord>
-                           <space xml:id="x28102aba-3c4e-4bca-a9e0-4161c267106b" dur="4"/>
-                           <space xml:id="xda8190e7-eac8-426d-b64f-a75ac2b47993" dur="4"/>
+                           <space xml:id="x28102aba-3c4e-4bca-a9e0-4161c267106b" dur="2"/>
                         </layer>
                      </staff>
                   </measure>
