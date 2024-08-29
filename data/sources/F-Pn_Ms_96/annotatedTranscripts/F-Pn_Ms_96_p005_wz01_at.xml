@@ -244,12 +244,9 @@
                   </staffGrp>
                </scoreDef>
                <section xml:id="xcf3aa6a8-ae0b-40cd-865d-f5a1ed7a7326">
-                  <measure xml:id="x2b88794f-4ea9-4559-b6b7-2477a82f4c51" n="1">
+                  <measure xml:id="x2b88794f-4ea9-4559-b6b7-2477a82f4c51" metcon="false" n="1">
                      <staff xml:id="x6d067764-f382-43e5-ad1a-bbc9bc902d14" n="1">
                         <layer xml:id="xe261c12f-4e6a-4f1a-b145-a8978fab27b6" n="1">
-                           <space xml:id="x59cedfcc-5c8f-4580-aad3-39f2ae83df80" dur="4"/>
-                           <space xml:id="xae5e0d97-d3e6-4866-a16d-51d0b8979da1" dur="8"/>
-                           <space xml:id="x3505f35d-9edf-4ab6-9606-10d63e673d55" dur="16"/>
                            <note xml:id="xea9c995f-f485-48de-8074-4f9b6cb07a2d"
                                  dur="16"
                                  oct="6"
@@ -335,19 +332,17 @@
                                  pname="a"
                                  stem.dir="down"/>
                         </layer>
-                        <layer xml:id="x66eb5db8-4291-4507-893d-9b2107761515" n="2">
-                           <note xml:id="x87ebc3c6-c164-4bd6-b7f6-d78c52af0e39"
-                                 dur="2"
-                                 oct="4"
-                                 pname="d"
-                                 stem.dir="down"/>
-                        </layer>
                      </staff>
                      <staff xml:id="x60c00810-5dca-43d1-ad96-39ddffb466f8" n="2">
                         <layer xml:id="x75076d22-9d8c-44c3-9a45-dc22b12f6c24" n="1">
                            <chord xml:id="xcd2a0eec-3e66-4b0f-b9c8-430e987d1646"
                                   dur="2"
                                   stem.dir="down">
+                              <note xml:id="x87ebc3c6-c164-4bd6-b7f6-d78c52af0e39"
+                                    dur="2"
+                                    oct="4"
+                                    pname="d"
+                                    staff="1"/>
                               <note xml:id="x86b8c27e-afbf-45df-b26a-1b59ed66ef7e"
                                     dur="2"
                                     oct="3"
@@ -426,11 +421,7 @@
                                  oct="4"
                                  pname="a"
                                  stem.dir="down"/>
-                           <note xml:id="xa3ec3add-e0a8-416a-8093-f7f6eee27d87"
-                                 dur="2"
-                                 oct="4"
-                                 pname="a"
-                                 stem.dir="down"/>
+                           <space dur="2"/>
                            <note xml:id="xed319bd7-247a-4bd8-a1d1-d84d289a5768"
                                  dur="4"
                                  oct="4"
@@ -448,11 +439,18 @@
                            <space xml:id="xb0bf301f-2386-4a11-84e3-2f50a0223379" dur="4"/>
                            <space xml:id="x15c27d8e-1d14-46b1-8246-7ac5ac982c82" dur="8"/>
                            <space xml:id="x1c47ec51-d9c2-445b-8f9f-2da21b82c4de" dur="4"/>
+                           <chord dur="2"
+                                  stem.dir="down">
+                              <note xml:id="xa3ec3add-e0a8-416a-8093-f7f6eee27d87"
+                                 dur="2"
+                                 oct="4"
+                                 pname="a"
+                                 staff="1"/>
                            <note xml:id="xa0a99ce3-7a68-4bb7-add2-9c654a87e686"
                                  dur="2"
                                  oct="3"
-                                 pname="a"
-                                 stem.dir="down"/>
+                                 pname="a"/>
+                              </chord>
                            <space xml:id="xc33a228f-42f6-49b2-abe0-9f42cf56bd4c" dur="8"/>
                            <space xml:id="xddbb6d7f-f4c2-46ac-b524-d2a12b0ed69f" dur="8"/>
                            <space xml:id="x001b59ac-e51a-4002-80a8-6c18226e0a2b" dur="16"/>
@@ -567,21 +565,6 @@
                                     pname="d"
                                     stem.dir="down"/>
                            </beam>
-                        </layer>
-                     </staff>
-                     <staff xml:id="xbbd5410d-b648-4057-b762-06dd44bfcee5" n="2">
-                        <layer xml:id="x813a67a2-0c8c-4540-8871-b02f01311272" n="1">
-                           <mSpace xml:id="sdbf35599-b10b-424e-a52c-eccc8a9d0f5c"/>
-                        </layer>
-                     </staff>
-                     <tie xml:id="x3630efd7-6198-405f-be1f-25c0dad5f930"
-                          endid="#xc8b1e3b2-9f70-4226-bd00-f2440fcda0e8"
-                          startid="#xaacf1fc2-c467-4222-8a4e-ebaddba880cf" curvedir="above"/>
-                  </measure>
-                  <!-- ToDo! Diesen Takt bzw. Taktstrich hier wirklich einfügen? Steht nicht im Manuskript und macht metrisch auch keinen Sinn. -->
-                  <measure xml:id="x281a70e8-e18f-4166-902f-b8775337190c" n="11">
-                     <staff xml:id="x76c48758-c0d7-45ab-9b5a-00c6274b1aeb" n="1">
-                        <layer xml:id="x73b23f8e-132d-432a-9e37-5542ab41df7b" n="1">
                            <beam xml:id="xc8ffbedf-add0-405a-b56c-7973f3ba2650">
                               <note xml:id="x617dc834-1b7d-4bd0-9276-2d6975d6b299"
                                     dur="16"
@@ -604,16 +587,18 @@
                                     pname="a"
                                     stem.dir="down"/>
                            </beam>
-                           <space xml:id="xcd0a2ece-9a0a-4ca4-8b3d-cb8d7efaee29" dur="4"/>
                         </layer>
                      </staff>
-                     <staff xml:id="x6a9504be-8f0c-4540-8068-122999c51921" n="2">
-                        <layer xml:id="x2afde6cd-5b06-4a84-9ade-025b08057742" n="1">
-                           <mSpace xml:id="s60a3e83c-4f87-4f82-8c09-e1a760720f74"/>
+                     <staff xml:id="xbbd5410d-b648-4057-b762-06dd44bfcee5" n="2">
+                        <layer xml:id="x813a67a2-0c8c-4540-8871-b02f01311272" n="1">
+                           <mSpace xml:id="sdbf35599-b10b-424e-a52c-eccc8a9d0f5c"/>
                         </layer>
                      </staff>
+                     <tie xml:id="x3630efd7-6198-405f-be1f-25c0dad5f930"
+                          endid="#xc8b1e3b2-9f70-4226-bd00-f2440fcda0e8"
+                          startid="#xaacf1fc2-c467-4222-8a4e-ebaddba880cf" curvedir="above"/>
                   </measure>
-                  <measure xml:id="x8e55118a-c6aa-45a2-ad3b-6d75f9c81e9d" n="12">
+                  <measure xml:id="x8e55118a-c6aa-45a2-ad3b-6d75f9c81e9d" n="11">
                      <staff xml:id="x98921fda-f162-4893-863c-c8431d59cffd" n="1">
                         <layer xml:id="x972c2601-046b-4f81-b088-1c3514610c51" n="1">
                            <note xml:id="xc2421e25-0d1c-450d-90f7-4086b81b4406"
@@ -635,7 +620,7 @@
                      </staff>
                   </measure>
                   <measure xml:id="x2a024a24-3ca1-411d-8121-d071907c5a32"
-                           n="13"
+                           n="12"
                            right="single">
                      <staff xml:id="x2cacced8-312c-43a9-a588-72925ab690cf" n="1">
                         <layer xml:id="x04bb07aa-0371-4f40-be2c-328ada94833e" n="1">
