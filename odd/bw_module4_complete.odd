@@ -67,7 +67,7 @@
             <moduleRef key="MEI.gestural"/>
             <moduleRef key="MEI.harmony" except="chordDef chordMember chordTable"/>
             <moduleRef key="MEI.header"
-               except="componentList acquisition altId attUsage audience byline captureMode carrierForm catRel classification condition contentItem contents context cutout editionStmt exhibHist extMeta fileChar hand handList history incipCode incipText inscription key mensuration meter namespace notesStmt otherChar patch perfDuration physMedium playingSpeed price provenance segmentation soundChan specRepro stdVals sysReq tagsDecl tagUsage termList trackConfig treatHist treatSched useRestrict watermark"/>
+               except="componentList acquisition altId attUsage audience byline captureMode carrierForm catRel classification condition contentItem contents context cutout editionStmt exhibHist extMeta fileChar hand handList history incipCode incipText inscription key mensuration meter namespace otherChar patch perfDuration physMedium playingSpeed price provenance segmentation soundChan specRepro stdVals sysReq tagsDecl tagUsage termList trackConfig treatHist treatSched useRestrict watermark"/>
             <moduleRef key="MEI.lyrics"/>
             <moduleRef key="MEI.msDesc" include="layoutDesc layout"/>
             <moduleRef key="MEI.namesdates"
@@ -155,6 +155,16 @@
                </attList>
             </classSpec>
             
+            <!-- require a specific header -->
+            <elementSpec ident="fileDesc" module="MEI.header" mode="change">
+               <content>
+                  <elementRef key="titleStmt"/>
+                  <elementRef key="pubStmt"/>
+                  <elementRef key="seriesStmt"/>
+                  <elementRef key="relationList" minOccurs="0"/>
+                  <elementRef key="sourceDesc"/>
+               </content>
+            </elementSpec>
             
             <!-- Disable mensural- and neume-specific model classes in the shared module -->
             <classSpec ident="model.sectionPart.mensuralAndNeumes" module="MEI.shared" type="model"
@@ -527,6 +537,13 @@
                         <sch:assert test="not($isDt) or (every $att in $requiredAttributesDt satisfies exists(@*[local-name(.) eq $att]))">In diplomatic transcripts, every note is required to have all of the <sch:value-of select="string-join($requiredAttributesDt, ', ')"/> attributes.</sch:assert>
                         <sch:assert test="not($isAt) or (every $att in $requiredAttributesAt satisfies exists(@*[local-name(.) eq $att]))">In annotated transcripts, every note is required to have all of the <sch:value-of select="string-join($requiredAttributesAt, ', ')"/> attributes.</sch:assert>
                      </sch:rule>
+                     
+                     <!-- check notes in both types of transcripts -->
+                     <!--<sch:rule context="mei:notesStmt">
+                        <sch:let name="fileClasses" value="tokenize(normalize-space(ancestor::mei:mei//mei:encodingDesc/@class))"/>
+                        <sch:let name="isDt" value="'#bw_diplomatic_transcript' = $fileClasses"/>
+                        <sch:assert test="$isDt">notesStmt is only allowed in diplomatic transcripts.</sch:assert>
+                     </sch:rule>-->
                      
                      <!-- rules for annotated transcripts -->
                      <sch:rule context="mei:tie">
