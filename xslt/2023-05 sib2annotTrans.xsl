@@ -164,6 +164,10 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="mei:mRest">
+        <xsl:element name="mSpace" xmlns="http://www.music-encoding.org/ns/mei"/>
+    </xsl:template>
+    
     <xsl:template match="//mei:instrDef"/>
     <xsl:template match="//@color"/>
     <xsl:template match="//@midi.bpm"/>  

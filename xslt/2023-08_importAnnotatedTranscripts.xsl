@@ -165,10 +165,11 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="/">
+        <xsl:message select="'writing file ' || $resultPath"/>
         <xsl:result-document href="{$resultPath}" indent="yes" method="xml" exclude-result-prefixes="xlink">
             <xsl:processing-instruction name="xml-model">href="../../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
             <xsl:processing-instruction name="xml-model">href="../../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:processing-instruction>
-            <mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0.0-dev" xml:id="a{uuid:randomUUID()}" xmlns:svg="http://www.w3.org/2000/svg">
+            <mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="6.0+beethovensWerkstatt" xml:id="a{uuid:randomUUID()}" xmlns:svg="http://www.w3.org/2000/svg">
                 <xsl:variable name="step1">
                     <xsl:apply-templates select="$sourceDoc//mei:meiHead" mode="header"/>
                     <xsl:apply-templates select="$inputFile//mei:music" mode="body"/>
@@ -194,7 +195,7 @@
     </xsl:template>
     <xsl:template match="mei:encodingDesc" mode="header">
         <xsl:copy>
-            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="@*" mode="#current"/>
             <xsl:apply-templates select="$inputFile//mei:appInfo" mode="#current" exclude-result-prefixes="xlink"/>
             <xsl:apply-templates select="node()" mode="#current"/>
         </xsl:copy>
@@ -214,16 +215,24 @@
         <category xmlns="http://www.music-encoding.org/ns/mei" xml:id="bw_annotated_transcript" class="#bw_transcription_type" xsl:exclude-result-prefixes="xlink"/>
     </xsl:template>
     <xsl:template match="mei:score" mode="body">
-        <drafts xmlns="http://www.music-encoding.org/ns/mei" xml:id="s{uuid:randomUUID()}" xsl:exclude-result-prefixes="xlink">
-            <draft xml:id="d{uuid:randomUUID()}" class="#bw_annotated_transcript">
-                <xsl:apply-templates select="node()" mode="#current"/>
-            </draft>
-        </drafts>
+        <xsl:variable name="lt" as="xs:string">&lt;</xsl:variable>
+        <xsl:variable name="gt" as="xs:string">&gt;</xsl:variable>
+        <xsl:comment>
+            <xsl:value-of select="$lt"/>drafts xml:id="s<xsl:value-of select="uuid:randomUUID()"/>"<xsl:value-of select="$gt"/>
+                <xsl:value-of select="$lt"/>draft xml:id="d<xsl:value-of select="uuid:randomUUID()"/>" class="#bw_annotated_transcript"<xsl:value-of select="$gt"/>
+                    move content of score here when finished with data cleanup
+                <xsl:value-of select="$lt"/>/draft<xsl:value-of select="$gt"/>
+            <xsl:value-of select="$lt"/>/drafts<xsl:value-of select="$gt"/>
+        </xsl:comment>
+        
+        <xsl:copy>
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
     </xsl:template>
     
     <xsl:template match="mei:*[ancestor-or-self::mei:meiHead]" mode="cleanIds1">
         <xsl:choose>
-            <xsl:when test="@xml:id and string-length(@xml:id) gt 10">
+            <xsl:when test="@xml:id and string-length(@xml:id) gt 8">
                 <xsl:next-match/>
             </xsl:when>
             <xsl:otherwise>
@@ -238,7 +247,7 @@
     
     <xsl:template match="mei:*[ancestor-or-self::mei:music]" mode="cleanIds1">
         <xsl:choose>
-            <xsl:when test="@xml:id and string-length(@xml:id) gt 10">
+            <xsl:when test="@xml:id and string-length(@xml:id) gt 8">
                 <xsl:next-match/>
             </xsl:when>
             <xsl:otherwise>
@@ -255,12 +264,156 @@
         <xsl:attribute name="xml:id" select="parent::mei:*/@newId"/>
     </xsl:template>
     <xsl:template match="@startid[ancestor-or-self::mei:music]" mode="cleanIds2">
-        <xsl:attribute name="startid" select="'#' || root()/id(substring(., 2))/@newId"/> 
+        <xsl:variable name="id" select="substring(., 2)" as="xs:string"/>
+        <xsl:variable name="target" select="root()/id($id)" as="element()"/>
+        <xsl:attribute name="startid" select="'#' || $target/@newId"/> 
     </xsl:template>
     <xsl:template match="@endid[ancestor-or-self::mei:music]" mode="cleanIds2">
-        <xsl:attribute name="endid" select="'#' || root()/id(substring(., 2))/@newId"/> 
+        <xsl:variable name="id" select="substring(., 2)" as="xs:string"/>
+        <xsl:variable name="target" select="root()/id($id)" as="element()"/>
+        <xsl:attribute name="endid" select="'#' || $target/@newId"/> 
     </xsl:template>
     <xsl:template match="@newId" mode="cleanIds2"/>
+    
+    <!-- CLEAN UP SIBELIUS -->
+    
+    <xsl:template match="mei:scoreDef" mode="body">
+        <xsl:copy>
+            <xsl:apply-templates select="@* except (@meter.count, @meter.unit, @meter.sym)" mode="#current"/>
+            <meterSig xmlns="http://www.music-encoding.org/ns/mei" count="{@meter.count}" unit="{@meter.unit}">
+                <xsl:if test="@meter.sym">
+                    <xsl:attribute name="meter.sym" select="@meter.sym"/>
+                </xsl:if>
+            </meterSig>
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="mei:staffDef" mode="body">
+        <xsl:copy>
+            <xsl:apply-templates select="@* except (@clef.line, @clef.shape, @key.mode, @key.sig)" mode="#current"/>
+            <keySig xmlns="http://www.music-encoding.org/ns/mei" sig="{@key.sig}" mode="{@key.mode}"/>
+            <clef xmlns="http://www.music-encoding.org/ns/mei" shape="{@clef.shape}" line="{@clef.line}"/>
+            
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!-- remove comments auto-generated by Sibelius / sibmei -->
+    <xsl:template match="comment()" priority="1" mode="body"/>
+    
+    
+    
+    <!--  -->
+    <xsl:template match="mei:note[@artic]" mode="body">
+        <xsl:copy>
+            <xsl:apply-templates select="@* except @artic" mode="#current"/>
+            <artic xmlns="http://www.music-encoding.org/ns/mei" artic="{@artic}"/>
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="mei:octave[@startid and @endid]" mode="body">
+        <xsl:copy>
+            <xsl:if test="@startid and @endid">
+                <xsl:apply-templates select="@* except (@tstamp, @tstamp2)" mode="#current"/>
+            </xsl:if>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="mei:tupletSpan[not(@endid)]" mode="body"/>
+    <xsl:template match="mei:line">
+        <xsl:copy>
+            <xsl:attribute name="type" select="'unchecked'"/>
+            <xsl:apply-templates select="node() | @*" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="mei:slur" mode="body">
+        <xsl:copy>
+            <xsl:choose>
+                <xsl:when test="@startid and @endid">
+                    <xsl:apply-templates select="@* except (@tstamp, @tstamp2)" mode="#current"/>
+                </xsl:when>
+                <xsl:when test="@startid">
+                    <xsl:apply-templates select="@* except @tstamp" mode="#current"/>
+                </xsl:when>
+                <xsl:when test="@endid">
+                    <xsl:apply-templates select="@* except @tstamp2" mode="#current"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="@*" mode="#current"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="mei:mRest[@visible='false']" mode="body">
+        <xsl:element name="mSpace" xmlns="http://www.music-encoding.org/ns/mei">
+            <xsl:attribute name="xml:id" select="'s' || uuid:randomUUID()"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="//mei:instrDef" mode="body"/>
+    <xsl:template match="//@color" mode="body"/>
+    <xsl:template match="//@midi.bpm" mode="body"/>  
+    <xsl:template match="//mei:pb" mode="body"/>
+    <xsl:template match="//mei:sb" mode="body"/>
+    <xsl:template match="//mei:rend" mode="body">
+        <xsl:value-of select="."/>
+    </xsl:template>
+    <xsl:template match="//@ploc" mode="body"/>
+    <xsl:template match="//@oloc" mode="body"/>
+    <xsl:template match="//@dur.ppq" mode="body"/>
+    <xsl:template match="//@dur.ges" mode="body"/>
+    <xsl:template match="//@ppq" mode="body"/>
+    <xsl:template match="//@pnum" mode="body"/>
+    <xsl:template match="//@tstamp.ges" mode="body"/>
+    <xsl:template match="//@tstamp.real" mode="body"/>
+    
+    <xsl:template match="//@vgrp" mode="body"/>
+    <xsl:template match="//@val" mode="body"/>
+    <xsl:template match="mei:pgHead" mode="body"/>
+    <xsl:template match="mei:pgFoot" mode="body"/>
+    <xsl:template match="mei:rend" mode="body"/>
+    <xsl:template match="mei:verse[not(exists(descendant::mei:syl))]" mode="body"/>
+    <xsl:template match="mei:note/@instr" mode="body"/>
+    <xsl:template match="mei:chord/@instr" mode="body"/>
+    <xsl:template match="mei:anchoredText" mode="body">
+        <xsl:value-of select="."/>
+    </xsl:template>
+    <xsl:template match="mei:*/@ho" mode="body"/>
+    <xsl:template match="mei:*/@vo" mode="body"/>
+    <xsl:template match="mei:dynam/@vel" mode="body"/>
+    <xsl:template match="mei:*/@page.leftmar" mode="body"/>
+    <xsl:template match="mei:*/@page.rightmar" mode="body"/>
+    <xsl:template match="mei:*/@page.topmar" mode="body"/>
+    <xsl:template match="mei:*/@page.height" mode="body"/>
+    <xsl:template match="mei:*/@page.botmar" mode="body"/>
+    <xsl:template match="mei:*/@page.width" mode="body"/>
+    <xsl:template match="mei:*/@spacing.staff" mode="body"/>
+    <xsl:template match="mei:*/@text.name" mode="body"/>
+    <xsl:template match="mei:*/@spacing.system" mode="body"/>
+    <xsl:template match="mei:*/@vu.height" mode="body"/>
+    <xsl:template match="mei:*/@vel" mode="body"/>
+    <xsl:template match="mei:*/@lyric.name" mode="body"/>
+    <xsl:template match="mei:*/@music.name" mode="body"/>
+    <xsl:template match="mei:annot[@type='duration']" mode="body"/>
+    
+    
+    <xsl:template match="@key.sig" mode="body">
+    </xsl:template>
+    <xsl:template match="mei:instrDef" mode="body"/>
+    <xsl:template match="mei:scoreDef//mei:label" mode="body"/>
+    <xsl:template match="mei:scoreDef//mei:labelAbbr" mode="body"/>
+    <xsl:template match="mei:scoreDef/mei:staffGrp" mode="body">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            <xsl:attribute name="bar.thru" select="'true'"/>
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
     
     <xd:doc>
         <xd:desc>
