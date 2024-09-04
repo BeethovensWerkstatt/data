@@ -385,7 +385,7 @@
                         <layer xml:id="x133d924d-fce9-41cc-8c0d-dc5331e0fc4d" n="1">
                            <space xml:id="x70afd5a3-63d0-41d1-8cb3-2a4fb7c89655" dur="4"/>
                            <space xml:id="xab4ea810-4f54-49ce-8f62-be10a2201a10" dur="8"/>
-                           <!-- ToDo! Positionierung der folgenden Note prüfen. -->
+                           <!-- ToDo! Positionierung der folgenden Note prüfen. Wäre es besser, die Note nicht im anderen layer, sondern mit metcon=false am Ende des Taktes zu platzieren? Soll sie gleichzeitig zum a erklingen? -->
                            <note xml:id="x4a809a39-6e3f-4f00-83e8-49244990412d"
                                  dur="8"
                                  oct="6"
@@ -642,8 +642,7 @@
                                  stem.dir="down">
                               <accid xml:id="x4eef11dd-f62d-4e78-a7e3-d1b371b96354" accid.ges="f"/>
                            </note>
-                           <space xml:id="xaf72fa88-ce37-499b-883d-3504d4b64494" dur="8"/>
-                           <space xml:id="xda19fa9f-9de2-4adc-9e7a-bad794070d27" dur="4"/>
+                           <rest xml:id="xda19fa9f-9de2-4adc-9e7a-bad794070d27" dur="4" dots="1"/>
                         </layer>
                      </staff>
                      <staff xml:id="x6263d8a3-26ca-4f30-b096-900b312478d0" n="2">
@@ -732,7 +731,7 @@
                                  stem.dir="down">
                               <accid xml:id="x7fa3b835-ed53-428d-80eb-72b3bc5b6bd1" accid="s"/>
                            </note>
-                           <space xml:id="x718aeef4-cfd1-4802-a721-08266ee7c282" dur="4"/>
+                           <rest xml:id="x718aeef4-cfd1-4802-a721-08266ee7c282" dur="4"/>
                         </layer>
                      </staff>
                      <staff xml:id="xb01d2cc6-f4a6-408c-9fb5-68ef0cb50615" n="2">
@@ -783,7 +782,7 @@
                                  oct="5"
                                  pname="g"
                                  stem.dir="down"/>
-                           <space xml:id="xd0bd7a25-6962-4998-960c-25d16697890f" dur="8"/>
+                           <rest xml:id="xd0bd7a25-6962-4998-960c-25d16697890f" dur="8"/>
                         </layer>
                      </staff>
                      <staff xml:id="x0d720b08-3958-4f7d-8bd6-a1d3e3fc0199" n="2">
@@ -1036,6 +1035,7 @@
                                  stem.dir="down"/>
                         </layer>
                         <layer xml:id="xb5c72271-b2cf-4b04-a661-6c2c018d7498" n="2">
+                           <bTrem unitdur="16" dur="2">
                            <chord xml:id="xf064dc8c-c0f9-414d-8a20-26ecf119216c"
                                   dur="2"
                                   stem.dir="down"
@@ -1049,6 +1049,7 @@
                                     oct="4"
                                     pname="a"/>
                            </chord>
+                              </bTrem>
                         </layer>
                      </staff>
                      <staff xml:id="xa5269db8-c83c-4374-bff1-a9f0b0b0d138" n="2">
@@ -1114,7 +1115,7 @@
                   <measure xml:id="x9d95f78f-c419-47cb-a451-eb153fb24f4a" n="28">
                      <staff xml:id="x456c32c5-6d1a-4ed4-94ff-f84734beb444" n="1">
                         <layer xml:id="xfa494c2a-7d63-4a1f-8301-ad5bd6bc43bd" n="1">
-                           <space xml:id="xca2c2932-f6c6-4a64-a58c-b40a35de458f" dur="4"/>
+                           <rest xml:id="xca2c2932-f6c6-4a64-a58c-b40a35de458f" dur="4"/>
                            <note xml:id="xe7ecb2df-09ce-40b7-bbec-ea832dcbc5f5"
                                  dur="4"
                                  oct="6"
