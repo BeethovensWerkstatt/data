@@ -230,13 +230,14 @@
                     move content of score here when finished with data cleanup
                 </draft></drafts>-->
             <score>
-               <scoreDef xml:id="xedfcf4c7-0123-44fa-b5a3-c5ed85406abf">
-                  <meterSig count="2" unit="4"/>
-                  <staffGrp xml:id="x357ef95c-07d2-4cff-9177-017fead13d8c" bar.thru="true">
-                     <staffDef xml:id="x3f137e14-499a-43ea-aa1b-9bbcd1a9d36d" lines="5" n="1">
+               <scoreDef>
+                  <staffGrp bar.thru="true">
+                     <staffDef lines="5" n="1">
                         <keySig sig="1f" mode="minor"/>
                         <clef shape="G" line="2"/>
+                        <meterSig count="2" unit="4"/>
                      </staffDef>
+                     <staffDef lines="5" n="2"/>
                   </staffGrp>
                </scoreDef>
                <section xml:id="x092f6f20-aeae-4a73-8269-7766d80faa46">
@@ -340,6 +341,11 @@
                                     pname="e"
                                     stem.dir="down"/>
                            </beam>
+                        </layer>
+                     </staff>
+                     <staff n="2">
+                        <layer n="1">
+                           <mSpace/>
                         </layer>
                      </staff>
                   </measure>
