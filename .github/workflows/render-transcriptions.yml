@@ -29,6 +29,12 @@ jobs:
         run: docker run --rm -v $(pwd)/data:/usr/src/app/data -v $(pwd)/cache:/usr/src/app/cache ghcr.io/beethovenswerkstatt/liquifier:latest node index.js
 
       # check repo status before push to avoid overlapping commits
+
+      - name: configure git
+        run: |
+          echo "Configuring git..."
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
       
       - name: Commit
         run: |
