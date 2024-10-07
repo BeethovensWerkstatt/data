@@ -1,0 +1,43 @@
+# documentation awaits instantiation
+
+name: Generate and cache diplomatic, annotated, and fluid transcriptions
+
+on:
+  push:
+    branches: 
+      - 'dev'
+    paths:
+      - 'data/sources/**/annotatedTranscripts/**/*.xml'
+      - 'data/sources/**/diplomaticTranscripts/**/*.xml'
+    
+env:
+  # temporary directories
+  SCHEMA_DIR: schema-dir
+  GUIDELINES_DIR: guidelines-dir
+  TARGET_DIR: '' # will be set dynamically in steps below
+
+
+jobs:
+  build:
+    name: Generate Cache files
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+
+      - name: ensure cache
+        run: mkdir -p cache
+
+      - name: run Docker image
+        run: docker run --rm -v $(pwd)/data:/usr/src/app/data -v $(pwd)/cache:/usr/src/app/cache ghcr.io/beethovenswerkstatt/liquifier:latest node index.js
+
+      # check repo status before push to avoid overlapping commits
+      
+      - name: Commit
+        run: |
+          git add .
+          git commit -m "generate and cache transcriptions for @${{ github.sha }}"
+
