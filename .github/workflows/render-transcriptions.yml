@@ -9,13 +9,7 @@ on:
     paths:
       - 'data/sources/**/annotatedTranscripts/**/*.xml'
       - 'data/sources/**/diplomaticTranscripts/**/*.xml'
-    
-env:
-  # temporary directories
-  SCHEMA_DIR: schema-dir
-  GUIDELINES_DIR: guidelines-dir
-  TARGET_DIR: '' # will be set dynamically in steps below
-
+  workflow_dispatch:
 
 jobs:
   build:
