@@ -529,39 +529,61 @@
                      </sch:rule>
                      
                      <!-- rules for annotated transcripts -->
-                     <sch:rule context="mei:tie">
-                        <sch:assert test="@curvedir">Every tie needs a curvedir attribute.</sch:assert>
-                     </sch:rule>
-                     <sch:rule context="mei:slur">
-                        <sch:assert test="@curvedir">Every slur needs a curvedir attribute.</sch:assert>
-                     </sch:rule>
-                     
-                     <sch:rule context="mei:dynam">
-                        <sch:assert test="@place">Every dynam needs a place attribute.</sch:assert>
-                     </sch:rule>
                      <sch:rule context="mei:artic">
                         <sch:assert test="@place">Every artic needs a place attribute.</sch:assert>
+                     </sch:rule>
+                     <sch:rule context="mei:beamSpan">
+                        <sch:assert test="@plist">Every beamSpan needs a plist attribute.</sch:assert>
+                     </sch:rule>
+                     <sch:rule context="mei:dir">
+                        <sch:assert test="@place">Every dir needs a place attribute.</sch:assert>
+                        <sch:assert test="@layer">Every dir needs a layer attribute.</sch:assert>
+                        <sch:assert test="@staff">Every dir needs a staff attribute.</sch:assert>
+                        <sch:assert test="@tstamp">Every dir needs a tstamp attribute.</sch:assert>
+                     </sch:rule>
+                     <sch:rule context="mei:dynam">
+                        <sch:assert test="@place">Every dynam needs a place attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:fermata">
                         <sch:assert test="@place">Every fermata needs a place attribute.</sch:assert>
                      </sch:rule>
-                     <sch:rule context="mei:harm">
-                        <sch:assert test="@place">Every harm needs a place attribute.</sch:assert>
+                     <sch:rule context="mei:fing">
+                        <sch:assert test="@place">Every fing needs a place attribute.</sch:assert>
+                        <sch:assert test="@staff">Every fing needs a staff attribute.</sch:assert>
+                        <sch:assert test="@layer">Every fing needs a layer attribute.</sch:assert>
+                        <sch:assert test="@startid">Every fing needs a startid attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:hairpin">
                         <sch:assert test="@place">Every hairpin needs a place attribute.</sch:assert>
                      </sch:rule>
+                     <sch:rule context="mei:harm">
+                        <sch:assert test="@place">Every harm needs a place attribute.</sch:assert>
+                     </sch:rule>
                      <sch:rule context="mei:octave">
                         <sch:assert test="@dis.place">Every octave needs a dis.place attribute.</sch:assert>
                      </sch:rule>
-                     <sch:rule context="mei:dir">
-                        <sch:assert test="@place">Every dir needs a place attribute.</sch:assert>
+                     <sch:rule context="mei:pedal">
+                        <sch:assert test="@place">Every pedal needs a place attribute.</sch:assert>
+                        <sch:assert test="@staff">Every pedal needs a staff attribute.</sch:assert>
+                        <sch:assert test="@layer">Every pedal needs a layer attribute.</sch:assert>
+                        <sch:assert test="@tstamp">Every pedal needs a tstamp attribute.</sch:assert>
+                     </sch:rule>
+                     <sch:rule context="mei:slur">
+                        <sch:assert test="@curvedir">Every slur needs a curvedir attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:syl">
                         <sch:assert test="@place">Every syl needs a place attribute.</sch:assert>
+                        <sch:assert test="@con">Every syl needs a con attribute.</sch:assert>
+                        <sch:assert test="@wordpos">Every syl needs a wordpos attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:tempo">
                         <sch:assert test="@place">Every tempo needs a place attribute.</sch:assert>
+                        <sch:assert test="@tstamp">Every tempo needs a tstamp attribute.</sch:assert>
+                        <sch:assert test="@layer">Every tempo needs a layer attribute.</sch:assert>
+                        <sch:assert test="@staff">Every tempo needs a staff attribute.</sch:assert>
+                     </sch:rule>
+                     <sch:rule context="mei:tie">
+                        <sch:assert test="@curvedir">Every tie needs a curvedir attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:trill">
                         <sch:assert test="@place">Every trill needs a place attribute.</sch:assert>
