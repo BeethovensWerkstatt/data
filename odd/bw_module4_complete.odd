@@ -591,6 +591,20 @@
                   </constraint>
                </constraintSpec>
             </elementSpec>
+            
+            <!-- annotated transcripts: restrict values  -->
+            <elementSpec ident="artic" module="MEI.shared" mode="change">
+               <attList>
+                  <attDef ident="artic" mode="replace" usage="req">
+                     <desc versionDate="2024-10-14" resp="#KH">articulation is restricted to the values: acc, dot, stress, stroke, ten, unstress</desc>
+                     <valList type="closed">
+                        <valItem ident="acc"/>
+                        <valItem ident="dot"/>
+                        <!-- add some more -->
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
 
             <elementSpec ident="mdiv" module="MEI.shared" mode="change">
                <content>
