@@ -592,7 +592,7 @@
                </constraintSpec>
             </elementSpec>
             
-            <!-- annotated transcripts: restrict values  -->
+            <!-- annotated transcripts: restrict attribute values  -->
             <elementSpec ident="artic" module="MEI.shared" mode="change">
                <attList>
                   <attDef ident="artic" mode="replace" usage="req">
@@ -604,6 +604,17 @@
                      </valList>
                   </attDef>
                </attList>
+            </elementSpec>
+            
+            <!-- annotated transcripts: restrict element content  -->
+            <elementSpec ident="dynam" module="MEI.shared" mode="change">
+               <desc versionDate="2024-10-14" resp="#KH">dynam is restricted to: cresc., dim., f, ff, fp, p, pp, sf</desc>
+               <content>
+                  <valList type="closed">
+                     <valItem ident="dim"/>
+                     <!-- add some more -->
+                  </valList>
+               </content>
             </elementSpec>
 
             <elementSpec ident="mdiv" module="MEI.shared" mode="change">
