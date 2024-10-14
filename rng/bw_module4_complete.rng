@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2024-10-09T12:19:08Z. .
+Schema generated from ODD source 2024-10-14T14:00:15Z. .
 TEI Edition: Development Version
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -34452,10 +34452,6 @@ Suggested values include: 1] smufl</a:documentation>
          </attribute>
       </optional>
    </define>
-   <define name="mei_att.artic.log.attributes">
-      <ref name="mei_att.articulation.attributes"/>
-      <ref name="mei_att.controlEvent.attributes"/>
-   </define>
    <define name="mei_att.articulation.attributes">
       <ref name="mei_att.articulation.attribute.artic"/>
    </define>
@@ -39049,8 +39045,33 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_att.facsimile.attributes"/>
          <ref name="mei_att.artic.anl.attributes"/>
          <ref name="mei_att.artic.ges.attributes"/>
-         <ref name="mei_att.artic.log.attributes"/>
+         <ref name="mei_att.layerIdent.attribute.layer"/>
+         <ref name="mei_att.partIdent.attribute.part"/>
+         <ref name="mei_att.partIdent.attribute.partstaff"/>
+         <ref name="mei_att.plist.attribute.plist"/>
+         <ref name="mei_att.staffIdent.attribute.staff"/>
+         <ref name="mei_att.targetEval.attribute.evaluate"/>
+         <ref name="mei_att.timestamp.log.attribute.tstamp"/>
+         <ref name="mei_att.timestamp.ges.attribute.tstamp.ges"/>
+         <ref name="mei_att.timestamp.ges.attribute.tstamp.real"/>
          <ref name="mei_att.artic.vis.attributes"/>
+         <attribute name="artic">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">articulation is restricted to the values: acc, dot, stress, stroke, ten, unstress</a:documentation>
+            <choice>
+               <value>acc</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>dot</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>stress</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>stroke</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>ten</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>unstress</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -39409,13 +39430,11 @@ Suggested values include: 1] smufl</a:documentation>
    </define>
    <define name="mei_dynam">
       <element name="dynam">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(dynamic) Indication of the volume of a note, phrase, or section of music.</a:documentation>
-         <zeroOrMore>
-            <choice>
-               <text/>
-               <ref name="mei_model.textPhraseLike.limited"/>
-            </choice>
-         </zeroOrMore>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(dynamic) dynam is restricted to: cresc., dim., f, ff, fp, p, pp, sf</a:documentation>
+         <choice>
+            <value>dim</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         </choice>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="mei-dynam-dynam_start-type_attributes_required-constraint-rule-101">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
