@@ -163,6 +163,11 @@
                mode="delete"/>
             <classSpec ident="model.layerPart.mensuralAndNeumes" module="MEI.shared" type="model"
                mode="delete"/>
+            <!-- delete atribute classes -->
+            <classSpec ident="att.timestamp.ges" module="MEI.gestural" type="atts"
+               mode="delete"/>
+            <classSpec ident="att.timestamp2.ges" module="MEI.gestural" type="atts"
+               mode="delete"/>
             
             <classSpec type="atts" ident="att.linking" module="MEI.shared" mode="change">
                <attList>
@@ -426,6 +431,11 @@
                </attList>
             </classSpec>
             
+            <!--<elementSpec ident="dir" mode="change" module="shared">
+               
+               
+            </elementSpec>-->
+            
             <!-- All Schematron rules are gathered here for better orientation. -->
             <elementSpec ident="mei" module="MEI.shared" mode="change">
                <constraintSpec ident="check-mei-id" scheme="schematron" mode="add">
@@ -528,7 +538,14 @@
                         <sch:assert test="not($isAt) or (every $att in $requiredAttributesAt satisfies exists(@*[local-name(.) eq $att]))">In annotated transcripts, every note is required to have all of the <sch:value-of select="string-join($requiredAttributesAt, ', ')"/> attributes.</sch:assert>
                      </sch:rule>
                      
+                     
+                     
                      <!-- rules for annotated transcripts -->
+                     <sch:rule context="mei:dir">
+                        <sch:assert test="not(@tstamp.ges) and not(@tstamp.real) and (@tstamp or @startid)">
+                           dir is not allowed to have @tstamp.ges, @tstamp.real, but needs @tstamp or @startid 
+                        </sch:assert>
+                     </sch:rule>
                      <sch:rule context="mei:artic">
                         <sch:assert test="@place">Every artic needs a place attribute.</sch:assert>
                      </sch:rule>
@@ -539,7 +556,6 @@
                         <sch:assert test="@place">Every dir needs a place attribute.</sch:assert>
                         <sch:assert test="@layer">Every dir needs a layer attribute.</sch:assert>
                         <sch:assert test="@staff">Every dir needs a staff attribute.</sch:assert>
-                        <sch:assert test="@tstamp">Every dir needs a tstamp attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:dynam">
                         <sch:assert test="@place">Every dynam needs a place attribute.</sch:assert>
@@ -608,6 +624,7 @@
                   </attDef>
                </attList>
             </elementSpec>
+            
             <elementSpec ident="fermata" module="MEI.shared" mode="change">
                <attList>
                   <attDef ident="shape" mode="replace" usage="req">
@@ -618,6 +635,7 @@
                   </attDef>
                </attList>
             </elementSpec>
+            
             <!-- annotated transcripts: restrict element content  -->
             <elementSpec ident="dynam" module="MEI.shared" mode="change">
                <desc versionDate="2024-10-14" resp="#KH">dynam is restricted to: cresc., dim., f, ff, fp, p, pp, sf</desc>
@@ -657,6 +675,39 @@
                <remarks xml:lang="en">
                   <p>In Beethovens Werkstatt, the <gi scheme="MEI">mdiv</gi> element may contain <gi>drafts</gi>, but may not be nested.</p>
                </remarks>
+            </elementSpec>
+            
+            <elementSpec ident="note" module="MEI.shared" mode="change">
+               <gloss versionDate="2024-10-15" resp="#KH" xml:lang="en">stem dir</gloss>
+               <gloss versionDate="2024-10-15" resp="#KH" xml:lang="de">Notenhalsrichtung</gloss>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">Stem direction is taken from the source and not standardised. In the annotated transcription, there must be a stem direction for all notes except whole notes. In a chord, this determines the stem direction of the notes it contains.</desc>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Halsung wird nach Skizze übernommen und nicht normiert. In der Annotierten Transkription muss es für alle Noten ausser ganzen Noten eine Halsrichtung geben. Bei einem Akkord bestimmt dieser die Halsrichtung der enthaltenen Noten.</desc>
+               <constraintSpec ident="check-note-stem" scheme="schematron" mode="add">
+                  <constraint>
+                     <sch:rule context="mei:note">
+                        <sch:assert test="not(@dur='1' and @stem.dir)">
+                           notes with dur="1" are not allowed to have a @stem.dir Attribute
+                        </sch:assert>
+                        <sch:assert test="@stem.dir or (ancestor::mei:chord[@stem.dir])">
+                           every note needs a @stem.dir or is a child of a chord element with a @stem.dir
+                        </sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="keySig" module="MEI.shared" mode="change">
+               <gloss versionDate="2024-10-15" resp="#KH" xml:lang="en">mode</gloss>
+               <gloss versionDate="2024-10-15" resp="#KH" xml:lang="de">Dur-Moll_Tonalität</gloss>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">No information regarding mode (minor, major) is given</desc>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Es wird keine Angabe zur Dur-Moll-Tonalität gemacht.</desc>
+               <constraintSpec ident="check-keysig-mode" scheme="schematron" mode="add">
+                  <constraint>
+                     <sch:rule context="mei:keySig">
+                        <sch:assert test="not(@mode)">keySig is not allowed to have @mode</sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
             </elementSpec>
             
             <classSpec ident="model.draftsLike" type="model" module="MEI.genetic" mode="add">
