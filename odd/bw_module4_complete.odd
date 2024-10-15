@@ -604,23 +604,37 @@
                         <valItem ident="stroke"/>
                         <valItem ident="ten"/>
                         <valItem ident="unstress"/>
-                        <!-- add some more -->
                      </valList>
                   </attDef>
                </attList>
             </elementSpec>
-            
+            <elementSpec ident="fermata" module="MEI.shared" mode="change">
+               <attList>
+                  <attDef ident="shape" mode="replace" usage="req">
+                     <desc versionDate="2024-10-15" resp="#SC">shape of fermatas is restricted to the values: curved</desc>
+                     <valList type="closed">
+                        <valItem ident="curved"/>
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
             <!-- annotated transcripts: restrict element content  -->
             <elementSpec ident="dynam" module="MEI.shared" mode="change">
                <desc versionDate="2024-10-14" resp="#KH">dynam is restricted to: cresc., dim., f, ff, fp, p, pp, sf</desc>
                <content>
                   <valList type="closed">
-                     <valItem ident="dim"/>
-                     <!-- add some more -->
+                     <valItem ident="cresc."/>
+                     <valItem ident="dim."/>
+                     <valItem ident="f"/>
+                     <valItem ident="ff"/>
+                     <valItem ident="fp"/>
+                     <valItem ident="p"/>
+                     <valItem ident="pp"/>
+                     <valItem ident="sf"/>
                   </valList>
                </content>
             </elementSpec>
-
+            
             <elementSpec ident="mdiv" module="MEI.shared" mode="change">
                <content>
                   <rng:choice>

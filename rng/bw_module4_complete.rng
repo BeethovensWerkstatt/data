@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2024-10-14T14:00:15Z. .
+Schema generated from ODD source 2024-10-15T07:37:41Z. .
 TEI Edition: Development Version
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -30634,9 +30634,37 @@ Suggested values include: 1] sustain; 2] soft; 3] sostenuto; 4] silent</a:docume
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
          <ref name="mei_att.fermata.log.attributes"/>
-         <ref name="mei_att.fermata.vis.attributes"/>
+         <ref name="mei_att.fermata.vis.attribute.form"/>
+         <ref name="mei_att.altSym.attribute.altsym"/>
+         <ref name="mei_att.color.attribute.color"/>
+         <ref name="mei_att.enclosingChars.attribute.enclose"/>
+         <ref name="mei_att.extSym.auth.attribute.glyph.auth"/>
+         <ref name="mei_att.extSym.auth.attribute.glyph.uri"/>
+         <ref name="mei_att.extSym.names.attribute.glyph.name"/>
+         <ref name="mei_att.extSym.names.attribute.glyph.num"/>
+         <ref name="mei_att.placementRelStaff.attribute.place"/>
+         <ref name="mei_att.typography.attribute.fontfam"/>
+         <ref name="mei_att.typography.attribute.fontname"/>
+         <ref name="mei_att.typography.attribute.fontsize"/>
+         <ref name="mei_att.typography.attribute.fontstyle"/>
+         <ref name="mei_att.typography.attribute.fontweight"/>
+         <ref name="mei_att.typography.attribute.letterspacing"/>
+         <ref name="mei_att.typography.attribute.lineheight"/>
+         <ref name="mei_att.verticalGroup.attribute.vgrp"/>
+         <ref name="mei_att.visualOffset.ho.attribute.ho"/>
+         <ref name="mei_att.visualOffset.to.attribute.to"/>
+         <ref name="mei_att.visualOffset.vo.attribute.vo"/>
+         <ref name="mei_att.xy.attribute.x"/>
+         <ref name="mei_att.xy.attribute.y"/>
          <ref name="mei_att.fermata.ges.attributes"/>
          <ref name="mei_att.fermata.anl.attributes"/>
+         <attribute name="shape">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">shape of fermatas is restricted to the values: curved</a:documentation>
+            <choice>
+               <value>curved</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -39432,7 +39460,21 @@ Suggested values include: 1] smufl</a:documentation>
       <element name="dynam">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(dynamic) dynam is restricted to: cresc., dim., f, ff, fp, p, pp, sf</a:documentation>
          <choice>
-            <value>dim</value>
+            <value>cresc.</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>dim.</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>f</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>ff</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>fp</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>p</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>pp</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>sf</value>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          </choice>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -41400,19 +41442,6 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
       <ref name="mei_att.visualOffset.attributes"/>
       <ref name="mei_att.xy.attributes"/>
    </define>
-   <define name="mei_att.fermata.vis.attributes">
-      <ref name="mei_att.altSym.attributes"/>
-      <ref name="mei_att.color.attributes"/>
-      <ref name="mei_att.enclosingChars.attributes"/>
-      <ref name="mei_att.extSym.attributes"/>
-      <ref name="mei_att.placementRelStaff.attributes"/>
-      <ref name="mei_att.typography.attributes"/>
-      <ref name="mei_att.verticalGroup.attributes"/>
-      <ref name="mei_att.visualOffset.attributes"/>
-      <ref name="mei_att.xy.attributes"/>
-      <ref name="mei_att.fermata.vis.attribute.form"/>
-      <ref name="mei_att.fermata.vis.attribute.shape"/>
-   </define>
    <define name="mei_att.fermata.vis.attribute.form">
       <optional>
          <attribute name="form">
@@ -41422,21 +41451,6 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Inverted, i.e., curve or bracket below the dot.</a:documentation>
                <value>norm</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Upright; i.e., curve or bracket above the dot.</a:documentation>
-            </choice>
-         </attribute>
-      </optional>
-   </define>
-   <define name="mei_att.fermata.vis.attribute.shape">
-      <optional>
-         <attribute name="shape">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Describes the visual appearance of the fermata; that is, whether it has a curved, square, or angular shape.</a:documentation>
-            <choice>
-               <value>curved</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A curve above or below the dot.</a:documentation>
-               <value>square</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A bracket above or below the dot.</a:documentation>
-               <value>angular</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A triangle above or below the dot.</a:documentation>
             </choice>
          </attribute>
       </optional>
