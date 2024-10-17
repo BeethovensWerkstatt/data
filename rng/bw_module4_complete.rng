@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2024-10-15T14:29:57Z. .
+Schema generated from ODD source 2024-10-17T09:18:02Z. .
 TEI Edition: Development Version
 TEI Edition Location: https://www.tei-c.org/Vault/P5//
   
@@ -39520,7 +39520,7 @@ Suggested values include: 1] smufl</a:documentation>
    </define>
    <define name="mei_dynam">
       <element name="dynam">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(dynamic) dynam is restricted to: cresc., dim., f, ff, fp, p, pp, sf</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dynamic) Information on dynamics and dynamic changes (e.g. ‘crescendo’) is notated with horizontal and vertical position in abbreviated and the following standardised notation: cresc., dim., f, ff, fp, p, pp, and sf. If dynamics apply to two systems, the dynamics specification is positioned between the two systems.</a:documentation>
          <choice>
             <value>cresc.</value>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -39540,7 +39540,17 @@ Suggested values include: 1] smufl</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          </choice>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-dynam-dynam_start-type_attributes_required-constraint-rule-109">
+                  id="mei-dynam-check-dynam-position-constraint-rule-109">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="mei:dynam">
+               <sch:assert test="(contains(@staff, ' ') and (@place='between')) or (not(contains(@staff, ' ')) and (@place='below' or @place='above' or @place='within'))">if @staff has two values (eg @staff="1 2") @place needs to be @place="between"</sch:assert>
+            </sch:rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="mei-dynam-dynam_start-type_attributes_required-constraint-rule-110">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -39552,7 +39562,7 @@ Suggested values include: 1] smufl</a:documentation>
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-dynam-dynam_end-type_attributes-constraint-rule-110">
+                  id="mei-dynam-dynam_end-type_attributes-constraint-rule-111">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -39640,7 +39650,7 @@ Suggested values include: 1] smufl</a:documentation>
             <ref name="mei_model.labelLike"/>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-grpSym-check_grpSym_attributes_scoreDef-constraint-rule-111">
+                  id="mei-grpSym-check_grpSym_attributes_scoreDef-constraint-rule-112">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -39652,7 +39662,7 @@ Suggested values include: 1] smufl</a:documentation>
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-grpSym-check_grpSym_attributes_staffDef-constraint-rule-112">
+                  id="mei-grpSym-check_grpSym_attributes_staffDef-constraint-rule-113">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -39713,7 +39723,7 @@ Suggested values include: 1] smufl</a:documentation>
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-keySig-check-keysig-mode-constraint-rule-113">
+                  id="mei-keySig-check-keysig-mode-constraint-rule-114">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -39723,7 +39733,7 @@ Suggested values include: 1] smufl</a:documentation>
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-keySig-check_keyAccid_oct-constraint-rule-114">
+                  id="mei-keySig-check_keyAccid_oct-constraint-rule-115">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -39736,7 +39746,7 @@ Suggested values include: 1] smufl</a:documentation>
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-keySig-check_keySig_editorial-constraint-rule-115">
+                  id="mei-keySig-check_keySig_editorial-constraint-rule-116">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -39897,7 +39907,7 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_meiHead"/>
          <ref name="mei_music"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-mei-check-mei-id-constraint-rule-116">
+                  id="mei-mei-check-mei-id-constraint-rule-117">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -40104,15 +40114,6 @@ Suggested values include: 1] smufl</a:documentation>
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="mei:slur">
                <sch:assert test="@curvedir">Every slur needs a curvedir attribute.</sch:assert>
-            </sch:rule>
-            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      context="mei:syl">
-               <sch:assert test="@place">Every syl needs a place attribute.</sch:assert>
-               <sch:assert test="@con">Every syl needs a con attribute.</sch:assert>
-               <sch:assert test="@wordpos">Every syl needs a wordpos attribute.</sch:assert>
             </sch:rule>
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -41017,13 +41018,26 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
    </define>
    <define name="mei_syl">
       <element name="syl">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(syllable) Individual lyric syllable.</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(lyric syllable) The obligatory position of the text is notated according to the source. Hyphenation marks are transcribed in standardised form.</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
                <ref name="mei_model.textPhraseLike.limited"/>
             </choice>
          </zeroOrMore>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="mei-syl-check-syl-stem-constraint-rule-163">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="mei:syl">
+               <sch:assert test="@place">Every syl needs a place attribute.</sch:assert>
+               <sch:assert test="(@wordpos='i' and @con='d')                             or (@wordpos='m' and @con='d')                             or (@wordpos='t' and @con='u')                            or (@wordpos='t' and not(@con))                             or (not(@wordpos) and not(@con))">
+                           for attribute @con only 'd' is allowed. if syl is longer than one note, of course @con="u" is allowed.
+                        </sch:assert>
+            </sch:rule>
+         </pattern>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -41039,7 +41053,7 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A reference to a previously defined symbol.</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-symbol-symbolDef_symbol_attributes_required-constraint-rule-163">
+                  id="mei-symbol-symbolDef_symbol_attributes_required-constraint-rule-164">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -41073,7 +41087,7 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-tempo-tempo_in_header_disallow_most_attrs-constraint-rule-164">
+                  id="mei-tempo-tempo_in_header_disallow_most_attrs-constraint-rule-165">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -41086,7 +41100,7 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-tempo-tempo_start-type_attributes_required-constraint-rule-165">
+                  id="mei-tempo-tempo_start-type_attributes_required-constraint-rule-166">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -41203,7 +41217,7 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="mei-att.altSym-altsym-check_altsymTarget-constraint-rule-166">
+            id="mei-att.altSym-altsym-check_altsymTarget-constraint-rule-167">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -41607,7 +41621,7 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="mei-att.fTrem.vis-beams.float-check_beams.floating-constraint-rule-167">
+            id="mei-att.fTrem.vis-beams.float-check_beams.floating-constraint-rule-168">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -42354,7 +42368,7 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Describes a rastrum used to prepare a page with staff lines.</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-rastrum-Check_rastrum-constraint-rule-168">
+                  id="mei-rastrum-Check_rastrum-constraint-rule-169">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"

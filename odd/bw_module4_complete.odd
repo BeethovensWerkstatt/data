@@ -587,11 +587,6 @@
                      <sch:rule context="mei:slur">
                         <sch:assert test="@curvedir">Every slur needs a curvedir attribute.</sch:assert>
                      </sch:rule>
-                     <sch:rule context="mei:syl">
-                        <sch:assert test="@place">Every syl needs a place attribute.</sch:assert>
-                        <sch:assert test="@con">Every syl needs a con attribute.</sch:assert>
-                        <sch:assert test="@wordpos">Every syl needs a wordpos attribute.</sch:assert>
-                     </sch:rule>
                      <sch:rule context="mei:tempo">
                         <sch:assert test="@place">Every tempo needs a place attribute.</sch:assert>
                         <sch:assert test="@tstamp">Every tempo needs a tstamp attribute.</sch:assert>
@@ -636,9 +631,12 @@
                </attList>
             </elementSpec>
             
-            <!-- annotated transcripts: restrict element content  -->
+            <!-- annotated transcripts: restrict element content for dynam -->
             <elementSpec ident="dynam" module="MEI.shared" mode="change">
-               <desc versionDate="2024-10-14" resp="#KH">dynam is restricted to: cresc., dim., f, ff, fp, p, pp, sf</desc>
+               <gloss versionDate="2024-10-16" resp="#KH" xml:lang="en">Dynamic</gloss>
+               <gloss versionDate="2024-10-16" resp="#KH" xml:lang="de">Dynamik</gloss>
+               <desc versionDate="2024-10-14" resp="#KH" xml:lang="en">Information on dynamics and dynamic changes (e.g. ‘crescendo’) is notated with horizontal and vertical position in abbreviated and the following standardised notation: cresc., dim., f, ff, fp, p, pp, and sf. If dynamics apply to two systems, the dynamics specification is positioned between the two systems.</desc>
+               <desc versionDate="2024-10-14" resp="#KH" xml:lang="de">Angaben zu Dynamik und Dynamikveränderungen (z.B. “crescendo”) werden mit horizontaler und vertikaler Position in gekürzter und folgender normierter Schreibweise notiert: cresc., dim., f, ff, fp, p, pp, und sf. Wenn Dynamik für zwei Systeme gilt, wird die Dynamikangabe zwischen den beiden Systemen positioniert.</desc>
                <content>
                   <valList type="closed">
                      <valItem ident="cresc."/>
@@ -651,6 +649,27 @@
                      <valItem ident="sf"/>
                   </valList>
                </content>
+               <constraintSpec ident="check-dynam-position" scheme="schematron" mode="add">
+                  <constraint>
+                     <sch:rule context="mei:dynam">
+                        <sch:assert test="(contains(@staff, ' ') and (@place='between')) or (not(contains(@staff, ' ')) and (@place='below' or @place='above' or @place='within'))">if @staff has two values (eg @staff="1 2") @place needs to be @place="between"</sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="keySig" module="MEI.shared" mode="change">
+               <gloss versionDate="2024-10-15" resp="#KH" xml:lang="en">mode</gloss>
+               <gloss versionDate="2024-10-15" resp="#KH" xml:lang="de">Dur-Moll_Tonalität</gloss>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">No information regarding mode (minor, major) is given</desc>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Es wird keine Angabe zur Dur-Moll-Tonalität gemacht.</desc>
+               <constraintSpec ident="check-keysig-mode" scheme="schematron" mode="add">
+                  <constraint>
+                     <sch:rule context="mei:keySig">
+                        <sch:assert test="not(@mode)">keySig is not allowed to have @mode</sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
             </elementSpec>
             
             <elementSpec ident="mdiv" module="MEI.shared" mode="change">
@@ -696,19 +715,33 @@
                </constraintSpec>
             </elementSpec>
             
-            <elementSpec ident="keySig" module="MEI.shared" mode="change">
-               <gloss versionDate="2024-10-15" resp="#KH" xml:lang="en">mode</gloss>
-               <gloss versionDate="2024-10-15" resp="#KH" xml:lang="de">Dur-Moll_Tonalität</gloss>
-               <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">No information regarding mode (minor, major) is given</desc>
-               <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Es wird keine Angabe zur Dur-Moll-Tonalität gemacht.</desc>
-               <constraintSpec ident="check-keysig-mode" scheme="schematron" mode="add">
+            <elementSpec ident="syl" module="MEI.shared" mode="change">
+               <gloss versionDate="2024-10-17" resp="#KH" xml:lang="en">lyric syllable</gloss>
+               <gloss versionDate="2024-10-17" resp="#KH" xml:lang="de">Text(teile)</gloss>
+               <desc versionDate="2024-10-17" resp="#KH" xml:lang="en">The obligatory position of the text is notated according to the source. Hyphenation marks are transcribed in standardised form.</desc>
+               <desc versionDate="2024-10-17" resp="#KH" xml:lang="de">Die obligatorische Positionsangabe des Singtextes wird nach Skizze notiert. Silbentrennstriche werden in normierter Form transkribiert.</desc>
+               <constraintSpec ident="check-syl-stem" scheme="schematron" mode="add">
                   <constraint>
-                     <sch:rule context="mei:keySig">
-                        <sch:assert test="not(@mode)">keySig is not allowed to have @mode</sch:assert>
+                     <sch:rule context="mei:syl">
+                        <sch:assert test="@place">Every syl needs a place attribute.</sch:assert>
+                        <sch:assert test="(@wordpos='i' and @con='d') 
+                           or (@wordpos='m' and @con='d') 
+                           or (@wordpos='t' and @con='u')
+                           or (@wordpos='t' and not(@con)) 
+                           or (not(@wordpos) and not(@con))">
+                           for attribute @con only 'd' is allowed. if syl is longer than one note, of course @con="u" is allowed.
+                        </sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
             </elementSpec>
+            
+            <!--<sch:rule context="mei:syl">
+               <sch:assert test="@place">Every syl needs a place attribute.</sch:assert>
+               <sch:assert test="@con">Every syl needs a con attribute.</sch:assert>
+               <sch:assert test="@wordpos">Every syl needs a wordpos attribute.</sch:assert>
+            </sch:rule>-->
+            
             
             <classSpec ident="model.draftsLike" type="model" module="MEI.genetic" mode="add">
                <desc xml:lang="en">Groups elements similar to drafts containers.</desc>
