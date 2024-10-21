@@ -607,10 +607,11 @@
             <elementSpec ident="artic" module="MEI.shared" mode="change">
                <attList>
                   <attDef ident="artic" mode="replace" usage="req">
-                     <desc versionDate="2024-10-14" resp="#KH">articulation is restricted to the values: acc, dot, stress, stroke, ten, unstress</desc>
+                     <desc versionDate="2024-10-14" resp="#KH">articulation is restricted to the values: acc, dot, stacc, stress, stroke, ten, unstress</desc>
                      <valList type="closed">
                         <valItem ident="acc"/>
                         <valItem ident="dot"/>
+                        <valItem ident="stacc"/>
                         <valItem ident="stress"/>
                         <valItem ident="stroke"/>
                         <valItem ident="ten"/>
@@ -635,8 +636,8 @@
             <elementSpec ident="dynam" module="MEI.shared" mode="change">
                <gloss versionDate="2024-10-16" resp="#KH" xml:lang="en">Dynamic</gloss>
                <gloss versionDate="2024-10-16" resp="#KH" xml:lang="de">Dynamik</gloss>
-               <desc versionDate="2024-10-14" resp="#KH" xml:lang="en">Information on dynamics and dynamic changes (e.g. ‘crescendo’) is notated with horizontal and vertical position in abbreviated and the following standardised notation: cresc., dim., f, ff, fp, p, pp, and sf. If dynamics apply to two systems, the dynamics specification is positioned between the two systems.</desc>
-               <desc versionDate="2024-10-14" resp="#KH" xml:lang="de">Angaben zu Dynamik und Dynamikveränderungen (z.B. “crescendo”) werden mit horizontaler und vertikaler Position in gekürzter und folgender normierter Schreibweise notiert: cresc., dim., f, ff, fp, p, pp, und sf. Wenn Dynamik für zwei Systeme gilt, wird die Dynamikangabe zwischen den beiden Systemen positioniert.</desc>
+               <desc versionDate="2024-10-14" resp="#KH" xml:lang="en">Information on dynamics and dynamic changes (e.g. ‘crescendo’) is notated with horizontal and vertical position in abbreviated and the following standardised notation: cresc., dim., f, ff, fp, p, pp, sempre pp and sf. If dynamics apply to two systems, the dynamics specification is positioned between the two systems.</desc>
+               <desc versionDate="2024-10-14" resp="#KH" xml:lang="de">Angaben zu Dynamik und Dynamikveränderungen (z.B. “crescendo”) werden mit horizontaler und vertikaler Position in gekürzter und folgender normierter Schreibweise notiert: cresc., dim., f, ff, fp, p, pp, sempre pp und sf. Wenn Dynamik für zwei Systeme gilt, wird die Dynamikangabe zwischen den beiden Systemen positioniert.</desc>
                <content>
                   <valList type="closed">
                      <valItem ident="cresc."/>
@@ -646,6 +647,7 @@
                      <valItem ident="fp"/>
                      <valItem ident="p"/>
                      <valItem ident="pp"/>
+                     <valItem ident="sempre pp"/>
                      <valItem ident="sf"/>
                   </valList>
                </content>
