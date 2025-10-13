@@ -271,8 +271,8 @@
                            attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:hairpin">
-                        <sch:assert test="@place">Every hairpin needs a place
-                           attribute.</sch:assert>
+                        <!--<sch:assert test="@place">Every hairpin needs a place
+                           attribute.</sch:assert>-->
                      </sch:rule>
                      <sch:rule context="mei:harm">
                         <sch:assert test="@place">Every harm needs a place attribute.</sch:assert>
@@ -293,10 +293,6 @@
                            attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:tempo">
-                        <sch:assert test="@place">Every tempo needs a place attribute.</sch:assert>
-                        <sch:assert test="@tstamp">Every tempo needs a tstamp
-                           attribute.</sch:assert>
-                        <sch:assert test="@layer">Every tempo needs a layer attribute.</sch:assert>
                         <sch:assert test="@staff">Every tempo needs a staff attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:tie">
@@ -310,7 +306,7 @@
                </constraintSpec>
             </elementSpec>
 
-         
+
             <elementSpec ident="artic" module="MEI.shared" mode="change">
                <attList>
                   <attDef ident="artic" mode="replace" usage="req">
@@ -365,13 +361,15 @@
                   <memberOf key="model.draftLike"/>
                </classes>
                <content>
-                  <rng:ref name="model.pbLike"/>
-                  <rng:oneOrMore>
-                     <rng:ref name="model.bwSystemLike"/>
-                  </rng:oneOrMore>
-                  <rng:zeroOrMore>
-                     <rng:ref name="del"/>
-                  </rng:zeroOrMore>
+                  <rng:group>
+                     <rng:ref name="model.pbLike"/>
+                     <rng:oneOrMore>
+                        <rng:ref name="model.bwSystemLike"/>
+                     </rng:oneOrMore>
+                     <rng:zeroOrMore>
+                        <rng:ref name="del"/>
+                     </rng:zeroOrMore>
+                  </rng:group>
                </content>
                <remarks>
                   <p>Drafts may have any kind of score setup – an incomplete particell with multiple
@@ -399,8 +397,10 @@
                   <memberOf key="model.bwSystemLike"/>
                </classes>
                <content>
-                  <rng:ref name="model.scoreDefLike"/>
-                  <rng:ref name="model.sectionLike"/>
+                  <rng:group>
+                     <rng:ref name="model.scoreDefLike"/>
+                     <rng:ref name="model.sectionLike"/>
+                  </rng:group>
                </content>
                <remarks>
                   <p>A system may use any of the existing staff lines on a page, or may use
@@ -509,18 +509,20 @@
                   <memberOf key="model.sectionLike"/>
                </classes>
                <content>
-                  <rng:oneOrMore>
-                     <rng:ref name="model.staffLike"/>
-                  </rng:oneOrMore>
-                  <rng:zeroOrMore>
-                     <rng:choice>
-                        <rng:ref name="model.graphicPrimitiveLike"/>
-                        <rng:ref name="model.controlEventLike"/>
-                        <rng:ref name="model.controlEventLike.cmn"/>
-                        <rng:ref name="model.wordLike"/>
-                        <rng:ref name="model.dtControlEvents"/>
-                     </rng:choice>
-                  </rng:zeroOrMore>
+                  <rng:group>
+                     <rng:oneOrMore>
+                        <rng:ref name="model.staffLike"/>
+                     </rng:oneOrMore>
+                     <rng:zeroOrMore>
+                        <rng:choice>
+                           <rng:ref name="model.graphicPrimitiveLike"/>
+                           <rng:ref name="model.controlEventLike"/>
+                           <rng:ref name="model.controlEventLike.cmn"/>
+                           <rng:ref name="model.wordLike"/>
+                           <rng:ref name="model.dtControlEvents"/>
+                        </rng:choice>
+                     </rng:zeroOrMore>
+                  </rng:group>
                </content>
             </elementSpec>
 
@@ -561,6 +563,8 @@
                         <rng:ref name="model.milestoneLike.music"/>
                         <rng:ref name="model.noteModifierLike"/>
                         <rng:ref name="model.transcriptionLike"/>
+                        <rng:ref name="clef"/>
+                        <rng:ref name="meterSig"/>
                      </rng:choice>
                   </rng:zeroOrMore>
                </content>
@@ -701,7 +705,7 @@
                <desc xml:lang="en">Groups elements that are used as Control Events in the Diplomatic
                   Transcriptions.</desc>
             </classSpec>
-            
+
             <elementSpec ident="tempo" module="MEI.shared" mode="change">
                <classes>
                   <memberOf key="att.id"/>
@@ -711,8 +715,20 @@
                   <memberOf key="att.xy"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
+               <constraintSpec ident="tempo_in_header_disallow_most_attrs" scheme="schematron"
+                  mode="replace">
+                  <constraint>
+                     <!-- empty -->
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="tempo_start-type_attributes_required" scheme="schematron"
+                  mode="replace">
+                  <constraint>
+                     <!-- empty -->
+                  </constraint>
+               </constraintSpec>
             </elementSpec>
-            
+
             <elementSpec ident="dir" module="MEI.shared" mode="change">
                <classes>
                   <memberOf key="att.id"/>
@@ -722,6 +738,12 @@
                   <memberOf key="att.xy"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
+               <constraintSpec ident="dir_start-type_attributes_required" scheme="schematron"
+                  mode="replace">
+                  <constraint>
+                     <!-- empty -->
+                  </constraint>
+               </constraintSpec>
             </elementSpec>
 
             <elementSpec ident="curve" module="MEI.usersymbols" mode="change">
@@ -743,21 +765,6 @@
                   <memberOf key="att.facsimile"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
-               <constraintSpec ident="barLine_start-_and_end-type_attributes_required"
-                  scheme="schematron">
-                  <constraint>
-                     <sch:rule context="mei:barLine">
-                        <sch:assert test="@x and @y">Every barline must have an @x and
-                           @y.</sch:assert>
-                        <sch:assert test="@x2 and @y2">Every barline must have an @x2 and
-                           @y2.</sch:assert>
-                        <sch:assert
-                           test="not(@dur or @dur.ges or @endid or @tstamp2 or @startid or @tstamp or @tstamp.ges or @tstamp.real)"
-                           >Barlines must not use the following attributes: startid, tstamp,
-                           tstamp.ges, tstamp.real, dur, dur.ges, endid, or tstamp2.</sch:assert>
-                     </sch:rule>
-                  </constraint>
-               </constraintSpec>
             </elementSpec>
 
             <elementSpec ident="trill" module="MEI.cmnOrnaments" mode="change">
@@ -768,16 +775,10 @@
                   <memberOf key="att.xy"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
-               <constraintSpec ident="trill_start-_and_end-type_attributes_required"
-                  scheme="schematron">
+               <constraintSpec ident="trill_start-type_attributes_required" scheme="schematron"
+                  mode="replace">
                   <constraint>
-                     <sch:rule context="mei:trill">
-                        <sch:assert test="@x and @y">Every trill must have an @x and
-                           @y attribute.</sch:assert>
-                        <sch:assert test="not@startid or @tstamp or @tstamp.ges or @tstamp.real"
-                           >Must not have one of the attributes: startid, tstamp, tstamp.ges or
-                           tstamp.real.</sch:assert>
-                     </sch:rule>
+                     <!-- empty -->
                   </constraint>
                </constraintSpec>
             </elementSpec>
@@ -791,6 +792,50 @@
                   <memberOf key="att.startEndId"/>
                   <memberOf key="att.plist"/>
                   <memberOf key="model.dtControlEvents"/>
+               </classes>
+            </elementSpec>
+            
+            <elementSpec ident="fermata" module="MEI.cmn" mode="change">
+               
+            </elementSpec>
+            
+            <elementSpec ident="dynam" module="MEI.shared" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.width"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="att.staffIdent"/>
+                  <memberOf key="model.dtControlEvents"/>
+               </classes>
+               <constraintSpec ident="dynam_start-type_attributes_required" scheme="schematron" mode="replace">
+                  <constraint>
+                     <!-- empty -->
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="dynam_end-type_attributes" scheme="schematron" mode="replace">
+                  <constraint>
+                     <!-- empty -->
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+
+            <elementSpec ident="clef" module="MEI.shared" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="att.clefShape"/>
+                  <memberOf key="att.lineLoc"/>
+               </classes>
+            </elementSpec>
+
+            <elementSpec ident="meterSig" module="MEI.cmn" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="att.meterSig.log"/>
                </classes>
             </elementSpec>
 
