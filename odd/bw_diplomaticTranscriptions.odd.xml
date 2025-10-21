@@ -285,8 +285,8 @@
                         <sch:assert test="@place">Every pedal needs a place attribute.</sch:assert>
                         <sch:assert test="@staff">Every pedal needs a staff attribute.</sch:assert>
                         <sch:assert test="@layer">Every pedal needs a layer attribute.</sch:assert>
-                        <sch:assert test="@tstamp">Every pedal needs a tstamp
-                           attribute.</sch:assert>
+                        <!--<sch:assert test="@tstamp">Every pedal needs a tstamp
+                           attribute.</sch:assert>-->
                      </sch:rule>
                      <sch:rule context="mei:slur">
                         <sch:assert test="@curvedir">Every slur needs a curvedir
@@ -298,9 +298,6 @@
                      <sch:rule context="mei:tie">
                         <sch:assert test="@curvedir">Every tie needs a curvedir
                            attribute.</sch:assert>
-                     </sch:rule>
-                     <sch:rule context="mei:curve">
-                        <sch:assert test="@staff">Every curve needs a staff attribute.</sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -794,11 +791,9 @@
                   <memberOf key="model.dtControlEvents"/>
                </classes>
             </elementSpec>
-            
-            <elementSpec ident="fermata" module="MEI.cmn" mode="change">
-               
-            </elementSpec>
-            
+
+            <elementSpec ident="fermata" module="MEI.cmn" mode="change"> </elementSpec>
+
             <elementSpec ident="dynam" module="MEI.shared" mode="change">
                <classes>
                   <memberOf key="att.id"/>
@@ -808,7 +803,8 @@
                   <memberOf key="att.staffIdent"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
-               <constraintSpec ident="dynam_start-type_attributes_required" scheme="schematron" mode="replace">
+               <constraintSpec ident="dynam_start-type_attributes_required" scheme="schematron"
+                  mode="replace">
                   <constraint>
                      <!-- empty -->
                   </constraint>
@@ -839,6 +835,34 @@
                </classes>
             </elementSpec>
 
+            <elementSpec ident="octave" module="MEI.cmn" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="att.width"/>
+                  <memberOf key="att.staffIdent"/>
+                  <memberOf key="att.octaveDisplacement"/>
+                  <memberOf key="model.dtControlEvents"/>
+               </classes>
+               <constraintSpec ident="octave_start-_and_end-type_attributes_required" scheme="schematron" mode="replace">
+                  <constraint>
+                     <!-- empty -->
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+            
+           <!-- <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
+               <classes>
+                  <memberOf key="model.dtControlEvents"/>
+               </classes>
+               <constraintSpec ident="metaMark_start-type_attributes_required" scheme="schematron" mode="replace">
+                  <constraint>
+                     <!-\- empty -\->
+                  </constraint>
+               </constraintSpec>
+            </elementSpec> -->
+            
             <classSpec ident="att.meiVersion" module="MEI.shared" type="atts" mode="replace">
                <desc xml:lang="en">Attributes that record the version of MEI in use.</desc>
                <attList>
