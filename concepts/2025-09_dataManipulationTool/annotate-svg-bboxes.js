@@ -54,7 +54,7 @@ function getPathBBox(d) {
   const tokens = d.match(/[a-zA-Z]|-?\d*\.?\d+(?:e[-+]?\d+)?/g);
   if (!tokens) return null;
   let i = 0;
-    while (i < tokens.length) {
+  while (i < tokens.length) {
     const token = tokens[i];
     if (/^[a-zA-Z]$/.test(token)) {
       lastCmd = token;
