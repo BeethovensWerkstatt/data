@@ -26,7 +26,7 @@ jobs:
         run: mkdir -p cache
 
       - name: run Docker image
-        run: docker run --rm -v $(pwd)/data:/usr/src/app/data -v $(pwd)/cache:/usr/src/app/cache ghcr.io/beethovenswerkstatt/liquifier:latest node index.js
+        run: docker run --rm -v $(pwd)/data:/usr/src/app/data -v $(pwd)/cache:/usr/src/app/cache -v $(pwd)/.git:/usr/src/app/.git:ro ghcr.io/beethovenswerkstatt/liquifier:latest node index.js
 
       # check repo status before push to avoid overlapping commits
 
