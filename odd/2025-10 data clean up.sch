@@ -15,6 +15,14 @@
     
     <!-- <sb/> pb? in DTs -->
     
+    <sch:pattern id="check_refs_in-AT">
+        <sch:rule context="mei:section[ancestor::mei:score][not(preceding::mei:section)]">
+            <sch:assert test="child::element()[1]/local-name() = 'pb'">The first child in the first section must be a pb.</sch:assert>
+            <sch:assert test="child::element()[2]/local-name() = 'annot'">The second child in the first section must be an annot.</sch:assert>
+            <sch:assert test="child::element()[2]/@class = '#bw_writingZoneBegin'">The annot must use @class = '#bw_writingZoneBegin'</sch:assert>
+            <sch:assert test="child::element()[3]/local-name() = 'sb'">The third child in the first section must be a sb.</sch:assert>
+        </sch:rule>
+    </sch:pattern>
     
     <!-- <sb/> in ATs -->
     <sch:pattern id="check_pb_in_AT">
