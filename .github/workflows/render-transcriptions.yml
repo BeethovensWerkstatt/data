@@ -19,14 +19,27 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+      - name: Checkout data repository
+        uses: actions/checkout@v5
+        with:
+          path: ./data
 
-      - name: ensure cache
-        run: mkdir -p cache
+      - name: Checkout cache repository
+        uses: actions/checkout@v5
+        with:
+          repository: BeethovensWerkstatt/data-cache
+          token: ${{ secrets.DATA_TRIGGER_SECRET }}
+          path: ./data-cache
+          ref: main
+
+      - name: Geänderte Dateien ermitteln
+        uses: tj-actions/changed-files@v47
+        id: changed-files
+        with:
+          files: '**/*_dt.xml'  # Filter für Dateien TODO: muss auch at.xml beachtet werden?
 
       - name: run Docker image
-        run: docker run --rm -v $(pwd)/data:/usr/src/app/data -v $(pwd)/cache:/usr/src/app/cache -v $(pwd)/.git:/usr/src/app/.git:ro ghcr.io/beethovenswerkstatt/liquifier:latest node index.js
+        run: docker run --rm -v $(pwd)/data/data:/usr/src/app/data -v $(pwd)/data-cache/cache:/usr/src/app/cache -v $(pwd)/data/.git:/usr/src/app/.git:ro ghcr.io/beethovenswerkstatt/liquifier:latest node index.js ${{ steps.changed-files.outputs.added_files }} ${{ steps.changed-files.outputs.modified_files }}
 
       # check repo status before push to avoid overlapping commits
 
@@ -38,7 +51,9 @@ jobs:
       
       - name: Commit
         run: |
+          cd cache
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
           git add .
-          git commit -m "generate and cache transcriptions for @${{ github.sha }}"
-          git push
-
+          git commit -m "Update cached data from data-repository"
+          git push https://${{ secrets.DATA_TRIGGER_SECRET }}@github.com/BeethovensWerkstatt/data-cache.git main
