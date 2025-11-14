@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../../rng/bw_diplomaticTranscriptions.odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../../../rng/bw_diplomaticTranscriptions.odd.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:bw="https://beethovens-werkstatt.de/ns/meiAdditions" xmlns:svg="http://www.w3.org/2000/svg" meiversion="6.0+beethovensWerkstatt" xml:id="md3b36fea-864b-4cb6-8a4a-cda8dc79d7d0">
+    <meiHead meiversion="6.0+beethovensWerkstatt" xml:id="m7c94ff8f-5cd7-454e-9bc1-7543e006be90">
+        <fileDesc xml:id="f65a85221-da29-4034-b489-76b4115c7328">
+            <titleStmt xml:id="t387cd2b0-b80f-4e8c-9980-52c1171643a7">
+                <title xml:id="t42077c48-ef29-4737-9168-66f00d6a8de9">
+                    Ludwig van Beethoven, Skizzenbuch "Engelmann" zu den Diabelli-Variationen op. 120 und der 9. Sinfonie op. 125, Autograph
+                </title>
+                <composer xml:id="c00c58b41-a3dd-441b-97f3-99c84622a0bf">
+                    <persName xml:id="p2698ed77-97a7-48db-97c7-026347cf10d0">
+                        Beethoven, Ludwig van
+                    </persName>
+                </composer>
+                <editor xml:id="e74684c78-6715-4847-9715-b205317e5d72">
+                    <corpName auth.uri="https://beethovens-werkstatt.de" xml:id="c324af1d1-c4f1-4345-ae1a-5ee4bb8ff4dc">
+                        Beethovens Werkstatt
+                    </corpName>
+                </editor>
+                <funder xml:id="f484407d8-243d-4003-9d6d-29897e873078">
+                    <corpName auth.uri="http://www.adwmainz.de/" xml:id="c08208f08-1442-4074-a46c-9cb6c26ad106">
+                        Akademie der Wissenschaften und der Literatur Mainz
+                    </corpName>
+                </funder>
+            </titleStmt>
+            <pubStmt xml:id="pbdb93739-e9ff-428b-95a1-7f197ad88eb9"/>
+            <seriesStmt xml:id="sf4dcd749-3159-417f-9274-a584966da439">
+                <title xml:lang="de" level="s" xml:id="t868e7fe1-644c-4bbe-adce-03ee59c8c4cc">
+                    Skizzenbuchedition
+                </title>
+                <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/" xml:id="if4304685-4cb2-443b-bda8-07e141d01c6a">
+                    sk
+                </identifier>
+            </seriesStmt>
+            <sourceDesc xml:id="sa208c74d-67bb-4e27-876d-486c30fcc333">
+                <source n="1" target="../F-Pn_Ms_96.xml#ge24d8cc7-2f34-42a2-87d6-8bd79dab226d" xml:id="s10c6edf4-a433-48df-bd62-c38155987d4f"/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc class="#bw_diplomatic_transcript #bw_module4" xml:id="e80d831db-151f-4149-ae46-a6b1b15c9f34">
+            <appInfo xml:id="acd7733b1-f42b-4498-baa6-d97af3be0d49">
+                <application version="0.2.1" xml:id="facsimileExplorer">
+                    <name>
+                        Facsimile Explorer
+                    </name>
+                </application>
+            </appInfo>
+            <classDecls xml:id="c42b5b979-b0ab-4730-b490-7a878df6d8c3">
+                <taxonomy label="availableTaxonomies" xml:id="t48bd74a4-a94b-42b1-acd9-eb12d9b4309d">
+                    <category xml:id="document_type"/>
+                    <category xml:id="bw_observation_type"/>
+                    <category xml:id="bw_implementation_completeness"/>
+                    <!--<category xml:id="bw_monitum_category"/>
+                    -->
+                    <category xml:id="bw_file_type"/>
+                    <category xml:id="bw_monitum_comment"/>
+                    <category xml:id="bw_monitum_classification"/>
+                    <category xml:id="bw_monitum_textoperation"/>
+                    <category xml:id="bw_monitum_object"/>
+                    <category xml:id="bw_monitum_kontext"/>
+                    <category xml:id="bw_monitum_konkordanz"/>
+                    <category xml:id="bw_transcription_type"/>
+                    <category xml:id="bw_module"/>
+                    <category xml:id="bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy xml:id="t27152031-df5e-4270-8630-24f0aac2d413">
+                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy xml:id="ta95b4074-fd6f-4578-a6b3-cfbba093541d">
+                    <category xml:id="music.print" class="#document_type"/>
+                    <category xml:id="music.manuscript" class="#document_type"/>
+                    <category xml:id="letter.manuscript" class="#document_type"/>
+                    <category xml:id="music.sketchbook" class="#document_type"/>
+                </taxonomy>
+                <taxonomy xml:id="tf7005cc6-47e4-4478-8cb3-be3c81c88bb5">
+                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+                </taxonomy>
+                <taxonomy xml:id="tdb64fcf1-be23-4dd7-a46a-ea4969426632">
+                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+                </taxonomy>
+                <taxonomy xml:id="t6f6e9c3b-5887-4d38-8bbe-0ca68aafc363">
+                    <!-- Klassifizierung -->
+                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
+                </taxonomy>
+                <taxonomy xml:id="t57eb9af2-22a6-438c-98bd-d508b13ef3d1">
+                    <!-- Textoperation -->
+                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
+                    <!--oder erweiterung-->
+                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
+                </taxonomy>
+                <taxonomy xml:id="t8de23839-0d5c-4036-8502-5962c34a566c">
+                    <!-- Revisionsobjekt -->
+                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
+                </taxonomy>
+                <taxonomy xml:id="t401a2f87-117b-476a-a26c-7eb76ffe8b35">
+                    <!-- kontextzitat -->
+                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
+                </taxonomy>
+                <taxonomy xml:id="t05c6a198-a189-4708-8034-a23065a73173">
+                    <!-- konkordanz -->
+                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
+                </taxonomy>
+                <taxonomy xml:id="t96dfc189-92ec-4fd5-8c86-130d94d24a22">
+                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+                    <category xml:id="bw_document_file" class="#bw_file_type"/>
+                    <category xml:id="bw_work_file" class="#bw_file_type"/>
+                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+                </taxonomy>
+                <taxonomy xml:id="t9e1efd8d-e800-42aa-bb74-5c6be0dd5d59">
+                    <category class="#bw_module" xml:id="bw_module4"/>
+                </taxonomy>
+                <taxonomy xml:id="t54f5a158-8bbc-4d2d-b787-ac53fb78b26e">
+                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+                    <category xml:id="bw_annotated_transcript" class="#bw_transcription_type"/>
+                    <category xml:id="bw_writingZoneBegin"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
+        <revisionDesc xml:id="rb189d402-745e-4a56-a05a-e478d2efcd81">
+            <!-- GitHub user als resp?!, Datum anpassen -->
+            <change n="1" resp="#bw_jk" isodate="2025-02-10" xml:id="c493fe25f-d52c-4de2-8759-06e3a13b7623">
+                <changeDesc xml:id="cef7f9be0-72ed-41a8-bd5e-0db76dd0a8d0">
+                    <p xml:id="pc8237eae-5379-4281-9510-dcd54e833afe">
+                        Generated file for diplomatic transcription with
+                        <ptr target="#facsimileExplorer"/>
+                        using template file.
+                    </p>
+                </changeDesc>
+            </change>
+        </revisionDesc>
+    </meiHead>
+    <music meiversion="6.0+beethovensWerkstatt">
+        <body>
+            <mdiv xml:id="m7e0015c3-228e-46c7-b017-92274e0e5870">
+                <bw:drafts xml:id="d1a696c97-06ca-4b5d-8c4d-8c4f053008f3">
+                    <bw:draft xml:id="d31abf827-9ec9-4fe0-8bca-5c5d27a8d5ff" class="#bw_diplomatic_transcript">
+                        <pb xml:id="p39380f45-069c-4c0f-9024-0781264a5540" target="../F-Pn_Ms_96.xml#s7437e117-4a2a-4e99-a09a-49e435ac2486"/>
+                        <bw:system xml:id="s2e508143-ac40-41ce-8a2d-05775375b78e">
+                            <scoreDef xml:id="s540642ea-8760-4ff3-81b8-12eacd2d7fde">
+                                <staffGrp xml:id="scb8758f6-f468-43da-8d0f-2b3408148af6" symbol="none" bar.thru="false">
+                                    <staffDef xml:id="s99fbe212-32fe-4523-8960-801f344686e3" n="1" lines="5" decls="../F-Pn_Ms_96.xml#r6af6fc43-18d1-443f-b4f3-122ee83b0873"/>
+                                </staffGrp>
+                            </scoreDef>
+                            <section xml:id="sbb29945d-376a-41b6-bdf6-435dec37aa81">
+                                <staff n="1" xml:id="sc8e2b370-52e7-4e4f-b81d-0d433200574f" rotate="-0.1" decls="../F-Pn_Ms_96.xml#r6af6fc43-18d1-443f-b4f3-122ee83b0873">
+                                    <layer n="1" xml:id="l5ef37996-f05d-4fed-bf01-901e5c44af97">
+                                        <accid xml:id="d99ab0655-60b3-4362-bb4f-c0f0caaa3785" x="33.3" facs="../svg/F-Pn_Ms_96_p008.svg#shape_3c0d4cee-ca8a-4950-ac06-f7f64951c91f" accid="f" loc="7"/>
+                                        <note xml:id="d055380c3-6277-4cd6-9d9e-341aa3140659" x="35.0" facs="../svg/F-Pn_Ms_96_p008.svg#shape_2dfa433d-2266-4161-a797-e5ed4e1b6722" loc="7" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="d0c46fc3f-f595-45b4-8f82-4fd23df61188" x="36.8" facs="../svg/F-Pn_Ms_96_p008.svg#shape_6e51c827-bfcf-450c-b7d8-f5c0be43ad4f" loc="8" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="d18dc2a68-22bb-49df-a8ad-3716de879140" x="39.1" facs="../svg/F-Pn_Ms_96_p008.svg#shape_a06054d6-228c-4943-98df-3a23fe1af90c ../svg/F-Pn_Ms_96_p008.svg#shape_a1d5fc50-33c2-40ee-bd04-e011f99812ce ../svg/F-Pn_Ms_96_p008.svg#shape_1893e6fb-dac0-49c0-a16d-ffc09763756c" loc="9" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="4"/>
+                                        <note xml:id="d1e9c904a-2b09-4079-9a47-89b880c546e6" x="43.3" facs="../svg/F-Pn_Ms_96_p008.svg#shape_a9ce569a-0291-4fcf-9d8d-9dff4c7d6d92" loc="5" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="4"/>
+                                        <note xml:id="d8d245fe0-d21c-4843-a93a-9f4d40aac280" x="45" facs="../svg/F-Pn_Ms_96_p008.svg#shape_4f24d04a-3f9f-4768-b74c-6a25a1a78600" loc="6" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="d1396ec81-3668-4de1-a0be-e12c76823e72" x="47" facs="../svg/F-Pn_Ms_96_p008.svg#shape_257dfddd-5b5f-4188-8290-a0b2d33f510d ../svg/F-Pn_Ms_96_p008.svg#shape_6fa296dc-d84b-45ee-909b-f46e8cbf9c6a" loc="7" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="5"/>
+                                        <note xml:id="dfd685ff0-7b53-4eef-a3ad-e8b7dfcc7fed" x="54.3" facs="../svg/F-Pn_Ms_96_p008.svg#shape_f9252ef8-bd5b-4bba-8147-b08caa51dc1b" loc="3" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="de06c217b-8b05-4205-8975-4c437af4c8a0" x="56.4" facs="../svg/F-Pn_Ms_96_p008.svg#shape_43986c2b-4194-418c-b71f-943045042cc8" loc="4" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="2"/>
+                                        <note xml:id="d7fe4fbb0-50a7-418c-8887-8fbac1dd21e3" x="58.7" facs="../svg/F-Pn_Ms_96_p008.svg#shape_b6ea4bfc-01c3-4c12-b6b2-3de98e6db38c" loc="5" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="ddd729c59-9794-4f3c-978d-bf8d7ad19542" x="60" facs="../svg/F-Pn_Ms_96_p008.svg#shape_dff7aeea-8367-449b-8c69-a761d77a688d" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="d99d9dba8-fa12-4145-8594-c5cd81ba0bf1" x="62" facs="../svg/F-Pn_Ms_96_p008.svg#shape_9eda4083-5a3a-4da6-a7f1-a268dea4a9da" loc="2" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <accid xml:id="d7b24e9c7-2afa-4e36-8a22-e4e9981b5764" x="63.0" facs="../svg/F-Pn_Ms_96_p008.svg#shape_b1bfc3b2-99f6-47e3-994f-4ed6f81a5bad" accid="f" loc="0"/>
+                                        <note xml:id="d493a12de-63cd-4c59-91e3-d963ae6a4b37" x="64" facs="../svg/F-Pn_Ms_96_p008.svg#shape_a49c8702-2a0b-42a1-b4eb-1f3cb5256d7d" loc="0" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                    </layer>
+                                </staff>
+                                <line xml:id="b29641e15-dfee-4d3f-ad6c-1d9b4f62ac37" func="beam" staff="1" x="37.90" y="3.66" x2="41.55" y2="1.94" facs="../svg/F-Pn_Ms_96_p008.svg#shape_992e119d-dc44-468d-b9cd-a975fb7ac01d"/>
+                                <line xml:id="b327dbb2b-3a31-4231-8d13-99b51a91eddb" func="beam" staff="1" x="35.22" y="7.01" x2="40.21" y2="3.95" facs="../svg/F-Pn_Ms_96_p008.svg#shape_9e7cda4f-5717-46fd-937f-3fa6ae8b1d6d"/>
+                                <line xml:id="b61bf6a49-840f-4418-892f-d1c5dffb60f6" func="beam" staff="1" x="45.79" y="6.26" x2="49.59" y2="4.55" facs="../svg/F-Pn_Ms_96_p008.svg#shape_b10659ac-53ea-4eae-b641-53de551aaa02"/>
+                                <line xml:id="b05115318-2211-4580-afd9-5208bf03c806" func="beam" staff="1" x="43.04" y="9.02" x2="48.77" y2="5.74" facs="../svg/F-Pn_Ms_96_p008.svg#shape_a2d9766b-3064-41ff-b0ba-786a6b7760df"/>
+                                <line xml:id="bae3e6376-c9f8-4572-8037-a65916a6756b" func="beam" staff="1" x="55.84" y="6.86" x2="58.67" y2="6.78" facs="../svg/F-Pn_Ms_96_p008.svg#shape_53de0c9e-478e-449f-8d22-944b79a04556"/>
+                                <line xml:id="bff191c14-dfee-4905-9e48-988d96d7b2b8" func="beam" staff="1" x="53.46" y="9.61" x2="58.82" y2="8.20" facs="../svg/F-Pn_Ms_96_p008.svg#shape_9c42e392-b019-4e9e-b474-4964c80454e9"/>
+                                <line xml:id="b69d824f2-89a1-4fdc-ab8f-d08cce9af7f1" func="beam" staff="1" x="61.35" y="10.28" x2="63.44" y2="10.65" facs="../svg/F-Pn_Ms_96_p008.svg#shape_037b5cb1-a4f2-4cc1-a993-aa0424871ed0"/>
+                                <line xml:id="b013d2f9a-b8ae-4230-a9ad-07914b2d3436" func="beam" staff="1" x="59.12" y="11.92" x2="63.96" y2="12.07" facs="../svg/F-Pn_Ms_96_p008.svg#shape_d6387b24-cb97-4196-ad35-2d898ba5e614"/>
+                                <curve xml:id="d14b1c874-bd03-4a1b-aeb6-eb7b01ea2cc8" facs="../svg/F-Pn_Ms_96_p008.svg#shape_35b0714c-90e9-41a2-b8f5-55fb9a601725" staff="1" bezier="35.73 -2.47 41.47 -6.63 63.42 -4.30 66.99 2.27"/>
+                                <barLine xml:id="dc2e3e9c6-b075-4c37-bb05-6a0b2db80ca5" x="53.10" facs="../svg/F-Pn_Ms_96_p008.svg#shape_bfa8b0c6-fb7e-495c-b7bc-5c092ccb1091" form="single" y="-1.20" x2="50.11" y2="13.24"/>
+                                <barLine xml:id="d8180670b-7d12-4184-bf6a-0c78a9cd32db" x="68.49" facs="../svg/F-Pn_Ms_96_p008.svg#shape_98157816-6756-4428-8c15-e652ef1fa381" form="single" y="-0.14" x2="67.49" y2="9.92"/>
+                            </section>
+                        </bw:system>
+                    </bw:draft>
+                </bw:drafts>
+            </mdiv>
+        </body>
+    </music>
+</mei>

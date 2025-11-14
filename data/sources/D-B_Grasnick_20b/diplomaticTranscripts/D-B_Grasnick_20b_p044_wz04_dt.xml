@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../../rng/bw_diplomaticTranscriptions.odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../../../rng/bw_diplomaticTranscriptions.odd.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:bw="https://beethovens-werkstatt.de/ns/meiAdditions" xmlns:svg="http://www.w3.org/2000/svg" meiversion="6.0+beethovensWerkstatt" xml:id="md2de2a84-09f7-4f6f-be2b-ef83d2512b81">
+    <meiHead meiversion="6.0+beethovensWerkstatt" xml:id="m4f4a044b-75de-4934-8b6f-353f5e68d757">
+        <fileDesc xml:id="f63969962-8a8e-4a27-ae04-d503e954f0f6">
+            <titleStmt xml:id="t68835472-6593-42df-a397-194a30d5e4f7">
+                <title xml:id="te0fabe86-3b35-4911-b659-fa6dc62e8729">
+                    Ludwig van Beethoven, Skizzenbuch "Engelmann" zu den Diabelli-Variationen op. 120 und der 9. Sinfonie op. 125, Autograph
+                </title>
+                <composer xml:id="c4ce77916-3c8d-4715-b8cb-7b80196ce8a8">
+                    <persName xml:id="pe2830c49-76ba-4537-a716-4e4049c5bcc4">
+                        Beethoven, Ludwig van
+                    </persName>
+                </composer>
+                <editor xml:id="e3a105228-b3cc-43a7-a23e-de8ed18ea524">
+                    <corpName auth.uri="https://beethovens-werkstatt.de" xml:id="c3b574d39-fce0-42c7-9fcd-5a6ae4d5a042">
+                        Beethovens Werkstatt
+                    </corpName>
+                </editor>
+                <funder xml:id="f4e30abfe-411c-4b8d-9c9e-c7a55c570473">
+                    <corpName auth.uri="http://www.adwmainz.de/" xml:id="c5714abe6-42e0-41f4-9f6c-d9c6f238f207">
+                        Akademie der Wissenschaften und der Literatur Mainz
+                    </corpName>
+                </funder>
+            </titleStmt>
+            <pubStmt xml:id="pea5ab5ee-9997-4880-ade2-a354e7f9c26b"/>
+            <seriesStmt xml:id="s2f0c4fd5-9640-47f4-b228-756c936e4ab2">
+                <title xml:lang="de" level="s" xml:id="te030e3ec-4feb-4cd8-8f0e-138a078e5ca9">
+                    Skizzenbuchedition
+                </title>
+                <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/" xml:id="i604e363d-e136-44cd-90ee-f7313327ccaf">
+                    sk
+                </identifier>
+            </seriesStmt>
+            <sourceDesc xml:id="sf8b1007b-96e5-4703-97c4-0a3c21917ee2">
+                <source n="1" target="../D-B_Grasnick_20b.xml#g1fc7bd99-8f7c-411f-bfb4-c818bc14e53f" xml:id="s021261fd-0716-49a2-adee-54c5392c265c"/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc class="#bw_diplomatic_transcript #bw_module4" xml:id="ee023391e-5b0e-44c6-a7ff-5ee5a7058793">
+            <appInfo xml:id="a17bd058a-b40f-4fc8-9f3c-3ffbce5bd186">
+                <application version="0.2.1" xml:id="facsimileExplorer">
+                    <name>
+                        Facsimile Explorer
+                    </name>
+                </application>
+            </appInfo>
+            <classDecls xml:id="cacbd95f2-c60d-42ef-97ee-526c3f0953e9">
+                <taxonomy label="availableTaxonomies" xml:id="t8a7e5872-38f2-4787-8f8b-15b1b115b857">
+                    <category xml:id="document_type"/>
+                    <category xml:id="bw_observation_type"/>
+                    <category xml:id="bw_implementation_completeness"/>
+                    <!--<category xml:id="bw_monitum_category"/>
+                    -->
+                    <category xml:id="bw_file_type"/>
+                    <category xml:id="bw_monitum_comment"/>
+                    <category xml:id="bw_monitum_classification"/>
+                    <category xml:id="bw_monitum_textoperation"/>
+                    <category xml:id="bw_monitum_object"/>
+                    <category xml:id="bw_monitum_kontext"/>
+                    <category xml:id="bw_monitum_konkordanz"/>
+                    <category xml:id="bw_transcription_type"/>
+                    <category xml:id="bw_module"/>
+                    <category xml:id="bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy xml:id="t27152031-df5e-4270-8630-24f0aac2d413">
+                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy xml:id="ta95b4074-fd6f-4578-a6b3-cfbba093541d">
+                    <category xml:id="music.print" class="#document_type"/>
+                    <category xml:id="music.manuscript" class="#document_type"/>
+                    <category xml:id="letter.manuscript" class="#document_type"/>
+                    <category xml:id="music.sketchbook" class="#document_type"/>
+                </taxonomy>
+                <taxonomy xml:id="tf7005cc6-47e4-4478-8cb3-be3c81c88bb5">
+                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+                </taxonomy>
+                <taxonomy xml:id="tdb64fcf1-be23-4dd7-a46a-ea4969426632">
+                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+                </taxonomy>
+                <taxonomy xml:id="t6f6e9c3b-5887-4d38-8bbe-0ca68aafc363">
+                    <!-- Klassifizierung -->
+                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
+                </taxonomy>
+                <taxonomy xml:id="t57eb9af2-22a6-438c-98bd-d508b13ef3d1">
+                    <!-- Textoperation -->
+                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
+                    <!--oder erweiterung-->
+                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
+                </taxonomy>
+                <taxonomy xml:id="t8de23839-0d5c-4036-8502-5962c34a566c">
+                    <!-- Revisionsobjekt -->
+                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
+                </taxonomy>
+                <taxonomy xml:id="t401a2f87-117b-476a-a26c-7eb76ffe8b35">
+                    <!-- kontextzitat -->
+                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
+                </taxonomy>
+                <taxonomy xml:id="t05c6a198-a189-4708-8034-a23065a73173">
+                    <!-- konkordanz -->
+                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
+                </taxonomy>
+                <taxonomy xml:id="t96dfc189-92ec-4fd5-8c86-130d94d24a22">
+                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+                    <category xml:id="bw_document_file" class="#bw_file_type"/>
+                    <category xml:id="bw_work_file" class="#bw_file_type"/>
+                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+                </taxonomy>
+                <taxonomy xml:id="t9e1efd8d-e800-42aa-bb74-5c6be0dd5d59">
+                    <category class="#bw_module" xml:id="bw_module4"/>
+                </taxonomy>
+                <taxonomy xml:id="t54f5a158-8bbc-4d2d-b787-ac53fb78b26e">
+                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+                    <category xml:id="bw_annotated_transcript" class="#bw_transcription_type"/>
+                    <category xml:id="bw_writingZoneBegin"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
+        <revisionDesc xml:id="ra07e8db3-9df6-4a21-8085-0699a77eedd4">
+            <!-- GitHub user als resp?!, Datum anpassen -->
+            <change n="1" resp="#bw_jk" isodate="2025-02-18" xml:id="cdd84d902-a7d5-42c2-8af3-713ed7df11fa">
+                <changeDesc xml:id="c72c696e1-ca33-41ef-a0c3-b048a13d5ec0">
+                    <p xml:id="pe0d61d14-d9ed-468a-b6c4-f15884a22899">
+                        Generated file for diplomatic transcription with
+                        <ptr target="#facsimileExplorer"/>
+                        using template file.
+                    </p>
+                </changeDesc>
+            </change>
+        </revisionDesc>
+    </meiHead>
+    <music meiversion="6.0+beethovensWerkstatt">
+        <body>
+            <mdiv xml:id="m93d453c3-ba40-402e-9657-e4762999283b">
+                <bw:drafts xml:id="d7d8c87b1-098f-4d33-88a0-ccd5788c8257">
+                    <bw:draft xml:id="d8c4a1c51-ad28-411b-b3fb-b3887cd08f28" class="#bw_diplomatic_transcript">
+                        <pb xml:id="p8df764d6-b10b-45be-8e34-7f09c41e1358" target="../D-B_Grasnick_20b.xml#s386d6927-260e-4a44-ba8a-f664c34f6300"/>
+                        <bw:system xml:id="se2af5c2f-9703-4a4c-8bff-c3e7c9a0bfdf">
+                            <scoreDef xml:id="se5a3826f-c577-4be9-9635-35cbfe2997e1">
+                                <staffGrp xml:id="s12079ba0-1b3b-4967-a020-f3399f2134e3" symbol="none" bar.thru="false">
+                                    <staffDef xml:id="s396d3ed9-f8b1-43b3-93f2-2dd1a3a72169" n="1" lines="5" decls="../D-B_Grasnick_20b.xml#r722c9cc2-7750-418a-ab79-a99ebb077f81"/>
+                                    <staffDef xml:id="seec706ea-59ad-4c21-b97e-fae2a54715ee" n="2" lines="5" decls="../D-B_Grasnick_20b.xml#r2f04fc1a-6b27-4877-ae24-b4eae4103b0d"/>
+                                </staffGrp>
+                            </scoreDef>
+                            <section xml:id="s5e453db9-9ab7-4393-ba7a-bdadfadd6d54">
+                                <staff n="1" xml:id="s83cfb85e-4ac5-4f1d-b5af-4990b1fba5b5" rotate="0.2" decls="../D-B_Grasnick_20b.xml#r722c9cc2-7750-418a-ab79-a99ebb077f81">
+                                    <layer n="1" xml:id="l44d96c7d-a900-4c21-94da-f19ad6e9bf27">
+                                        <clef xml:id="dce9bb83a-8912-4fe2-ab7c-a8312f1d436d" x="21" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_288e283d-acac-44e8-b029-c7508adb2dce" shape="G" line="2"/>
+                                        <chord xml:id="dd2934a59-bd63-4e79-959a-02c08afef023" x="27.2" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_ad2a9f12-e8a7-478a-af61-a7be6a1ec09f ../svg/D-B_Grasnick_20b_p044.svg#shape_d34d4387-4011-48e9-ad97-fc845103035a ../svg/D-B_Grasnick_20b_p044.svg#shape_e677c4fc-ac37-4f3e-aa3a-635774d94b54" stem.dir="down" stem.len="5">
+                                            <note xml:id="d3fbefb20-0276-43c0-9416-ee8534e1db89" loc="9" head.shape="quarter"/>
+                                            <note xml:id="d26cc5026-f431-4d4e-92f7-3fc963944a68" loc="11" head.shape="quarter"/>
+                                        </chord>
+                                        <chord xml:id="d2eab7451-36fc-4932-ad96-ac8eb391dfb3" x="32.4" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_c7272a83-dd08-45ce-a5ef-2869e0215dc1 ../svg/D-B_Grasnick_20b_p044.svg#shape_d9fd567e-fa0f-47cf-93da-553bf3ea566c ../svg/D-B_Grasnick_20b_p044.svg#shape_29aad90e-6413-47ce-924f-0915585d29fa" bw:stem.flags="0" stem.dir="down" stem.len="10">
+                                            <note xml:id="d74d5c792-e8d4-480c-9941-f376c8cb04e1" loc="9" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d5818684d-457d-41c3-8cf4-a83418b886e4" loc="11" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="d912f6274-959e-4cd8-bec7-f0dd4ddeed7c" x="36" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_19770bc4-0ac5-431d-a406-07885759fe31 ../svg/D-B_Grasnick_20b_p044.svg#shape_1d960301-73b3-4690-8f54-edfd854f5425 ../svg/D-B_Grasnick_20b_p044.svg#shape_d9d7b4dd-6515-406b-a094-b243f2d25b78 ../svg/D-B_Grasnick_20b_p044.svg#shape_b7a8c4ea-0b16-461e-9b7b-dfc98b227f28" bw:stem.flags="0" stem.dir="down" stem.len="10">
+                                            <note xml:id="d57e8addd-7bd2-4baf-92d4-ed546a1ae39e" loc="11" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="df1983197-249a-4dca-a6e6-b0d7786c88ae" loc="13" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="db8372bef-db91-4bda-bf43-899e8147722c" x="39.3" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_cc6eb6ac-a2ae-4e1c-914c-dbe349b0ceb4 ../svg/D-B_Grasnick_20b_p044.svg#shape_116c0d9c-a021-49b3-827e-02ec469ed5c4 ../svg/D-B_Grasnick_20b_p044.svg#shape_0f717684-960e-4e5d-9f85-58e4c8b95d4a ../svg/D-B_Grasnick_20b_p044.svg#shape_fbf92470-e424-4768-9603-fd9ee562dea3" bw:stem.flags="0" stem.dir="down" stem.len="6">
+                                            <note xml:id="d520b6d00-a5a2-4b0c-bc8a-d4194db9906d" loc="10" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="dc8122ac3-7a3d-44e7-a2a4-f192d8f89d9c" loc="12" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="dfc340e22-7104-4b29-97d7-1e00ae7ea199" x="42.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_be841f1f-6e93-4d92-bb9e-d1663eb47b9a ../svg/D-B_Grasnick_20b_p044.svg#shape_6587753a-2de4-4063-b84f-e4d747df9ff1 ../svg/D-B_Grasnick_20b_p044.svg#shape_21753680-2db4-442a-b3c2-dd5b6ce4410c" bw:stem.flags="0" stem.dir="down" stem.len="3">
+                                            <note xml:id="d593f0774-aaa6-44f3-9c29-bade0868b8ff" loc="9" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="dc7cb3a99-4c44-4add-8c6b-9f80aa1a379b" loc="11" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="da7c31d7a-7d0c-412e-aec0-b0c9648b5ae2" x="47.0" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_64c90a7b-3d72-4caa-a69d-ba21036c2adf ../svg/D-B_Grasnick_20b_p044.svg#shape_bed50ca7-8602-4124-bbf9-66277064fa24 ../svg/D-B_Grasnick_20b_p044.svg#shape_20a9e802-8817-4c90-b2b9-513f2725ee13" stem.dir="down" stem.len="3">
+                                            <note xml:id="dd251d7b7-e76a-435c-a437-8b66a3537445" loc="3" head.shape="quarter"/>
+                                            <note xml:id="da5e43a07-383b-447d-b9d4-8235f5b573a0" loc="5" head.shape="quarter"/>
+                                        </chord>
+                                        <chord xml:id="d91d22b0a-158a-4a4e-b3bd-8c8896cb6b10" x="51.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_59c99d7f-cbcd-4c1a-80ed-4e9ab44fcd0c ../svg/D-B_Grasnick_20b_p044.svg#shape_ace03e24-7a5a-403b-b244-783b69bfa116" bw:stem.flags="0" stem.dir="down" stem.len="1">
+                                            <note xml:id="d5376c388-3a2d-43a5-b53e-332d27621cf2" loc="3" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d79186a78-95ec-47a4-8474-6d9bc5ffd868" loc="5" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <accid xml:id="d35441811-b2f9-4967-9f80-1884173329cb" x="53.1" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_df6c5d44-a4f6-4e7e-8e7e-b40465072c91" accid="f" loc="7"/>
+                                        <chord xml:id="dc4904ad5-dba7-4aa7-8651-cfe93f27540b" x="54.8" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_889b9490-1873-4eb6-9d76-2253b8aa2852 ../svg/D-B_Grasnick_20b_p044.svg#shape_c85a4285-9ab7-49f6-8d8b-7477e94025ca" bw:stem.flags="0" stem.dir="down" stem.len="1">
+                                            <note xml:id="d8d37154c-2021-438a-9078-815395268024" loc="5" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d68879743-e343-441e-8bb1-542f92e61d24" loc="7" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="d31c3a8ae-c0f9-455a-8834-887397418137" x="57" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_9de85d65-6ff8-453a-8a8c-e0182905a6c8 ../svg/D-B_Grasnick_20b_p044.svg#shape_e6c8f77e-ba2f-47e9-82dd-10b5678be8e3" bw:stem.flags="0" stem.dir="down" stem.len="1">
+                                            <note xml:id="d2eb1831e-d27e-496a-afd6-5783f8402514" loc="4" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d4eff78ab-aeb3-4af7-8a08-855383f6f26c" loc="6" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="d34954973-cf88-4e31-bd96-ad1d2765ffcf" x="58.8" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_0336d963-514d-40bc-9ec9-2c46a541bf92 ../svg/D-B_Grasnick_20b_p044.svg#shape_e21852dd-3470-4878-919f-64c1c5ded281" bw:stem.flags="0" stem.dir="down" stem.len="1">
+                                            <note xml:id="d58d4be91-4df7-4755-9591-60a6b84001b7" loc="3" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d9afb2c1f-42c4-4248-b6c5-d56155c2c927" loc="5" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="df9acf0b5-759b-486e-a55e-dffe3f9cad59" x="62.7" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_6adb4543-0aba-4218-94ac-18c3996e2b9a ../svg/D-B_Grasnick_20b_p044.svg#shape_2aa248fa-153f-46fe-bdbe-e01b3bccbee6" stem.dir="down" stem.len="2">
+                                            <note xml:id="d4e8d8910-23d4-4d5f-affd-d5ebf47eda29" loc="5" head.shape="quarter"/>
+                                            <note xml:id="d1881e043-1d8d-42ba-90c4-60adb6ef73f4" loc="7" head.shape="quarter"/>
+                                        </chord>
+                                        <chord xml:id="dcd5cf26c-ce30-46e8-8ef3-ecf4d6c2ebfd" x="65.6" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_1f2481dc-648a-40bc-889e-8ac5c463e263 ../svg/D-B_Grasnick_20b_p044.svg#shape_3ab4de49-e89c-4f7d-a035-3640d6a337f3 ../svg/D-B_Grasnick_20b_p044.svg#shape_9bf32dad-ccd6-48ba-9294-b77f47645c2c" bw:stem.flags="0" stem.dir="down" stem.len="5">
+                                            <note xml:id="dc47c0f09-749e-4276-a3b4-22a20da19a67" loc="5" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="dae8865cd-d207-4b04-b7aa-7c2dd04933c7" loc="7" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="d78a442fb-4030-4170-b61e-969c7b09abc3" x="67.7" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_09748f95-7d1a-4a10-8577-fb404809a17d ../svg/D-B_Grasnick_20b_p044.svg#shape_f0481050-db1b-4a51-a33c-1dec1701f625" bw:stem.flags="0" stem.dir="down" stem.len="2">
+                                            <note xml:id="d25f360fb-dc0c-4b20-99e8-04c75486a983" loc="7" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="dd7f6b6d1-f52a-4763-83e9-8c1b254790df" loc="9" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="dadddeeab-bb6a-4d86-99c6-9d2f1b6f8e05" x="69.7" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_686e73fd-944b-4523-b26e-ec3b4e7857cd ../svg/D-B_Grasnick_20b_p044.svg#shape_03afd032-379c-4d85-814a-3845b0d63292" bw:stem.flags="0" stem.dir="down" stem.len="2">
+                                            <note xml:id="d5ec25b81-fe6d-46c8-a2bc-a589b59768ea" loc="6" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d0272adea-813a-4cae-9b83-8e18c43e4e2a" loc="8" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="dead09a9a-8314-468b-a78f-15f5a644de72" x="71.7" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_336acff6-46dc-411a-a612-1a7f7211185b ../svg/D-B_Grasnick_20b_p044.svg#shape_5820eb34-3bcf-4d94-b9e5-e1cc8c994bdf" bw:stem.flags="0" stem.dir="down" stem.len="1">
+                                            <note xml:id="df6329b52-b391-4767-b3e0-51d2bca29ba9" loc="5" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d0377348b-eb65-4dcb-871a-e6339a1df936" loc="7" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                    </layer>
+                                </staff>
+                                <staff n="2" xml:id="s836e783f-efc5-4651-869d-c69eb09ced17" rotate="0.2" decls="../D-B_Grasnick_20b.xml#r2f04fc1a-6b27-4877-ae24-b4eae4103b0d">
+                                    <layer n="1" xml:id="l5d3980ec-f095-4f46-8117-3085bd08a8a6">
+                                        <clef xml:id="d19225d1c-1408-4db7-8e79-c33c72560dde" x="24.1" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_c06e9caa-816d-49e8-ac48-a7099832a5b7 ../svg/D-B_Grasnick_20b_p044.svg#shape_2152b510-d1d8-4727-ae34-f2bc7824dbd2 ../svg/D-B_Grasnick_20b_p044.svg#shape_b186815f-ee44-4e10-9428-1892dc6201bf ../svg/D-B_Grasnick_20b_p044.svg#shape_fa4652c1-5e53-4a85-aea6-391ed2f5d185" shape="F" line="4"/>
+                                        <note xml:id="db9464c47-b1bb-46a6-a259-8526146c20a5" x="30.6" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_1b7b60a3-5295-4339-9709-17828e188068" loc="0" head.shape="quarter" stem.dir="down" stem.len="6"/>
+                                        <note xml:id="d43cf4fda-1ae2-4366-81c7-9a00061d4a3e" x="34.6" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_1f2a0895-857c-4a96-9937-51d4b1a53969" loc="0" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="d4f7972d9-98b5-4687-9cca-1557dbc25a7f" x="36.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_88419c77-0898-45c2-856b-d43671832e5b" loc="0" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="2"/>
+                                        <note xml:id="d5bc78912-4af7-4bd1-bf7c-26368d87a925" x="37.9" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_7e3ba25c-c649-4761-9146-2c6ee4930390" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="1"/>
+                                        <note xml:id="d97e5f682-7d6a-4b18-974d-3fdc882621b5" x="38.8" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_d5bbd0d5-ee70-44f7-a886-e58c4b954aed" loc="2" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="2"/>
+                                        <note xml:id="dcacdab99-9b00-40e9-a0b3-ae21f8e75215" x="47.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_aad7950d-9c08-42ae-b2a4-80c680824935 ../svg/D-B_Grasnick_20b_p044.svg#shape_073dd284-4083-49e5-b16f-4c53e02ac52c ../svg/D-B_Grasnick_20b_p044.svg#shape_0c2a7f30-70f7-4cf9-a269-6ccd5ba7794a" loc="-2" head.shape="quarter" stem.dir="down" stem.len="5"/>
+                                        <note xml:id="d18e4d922-8d86-4add-b94b-5bcbc2de5d2d" x="51.4" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_99c81398-fc89-4db6-bf57-3878d4be4078" loc="-2" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="4"/>
+                                        <note xml:id="d70f918f3-6736-4304-95de-e95474713dbf" x="52.2" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_04e2ff6b-f2b2-4e44-85e7-ed0488a424a8 ../svg/D-B_Grasnick_20b_p044.svg#shape_42a580b8-1a3e-4124-83e6-7ec872a6cd62" loc="-1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="6"/>
+                                        <note xml:id="d6c0c0a7c-e0bb-447c-9d71-07003dd34fac" x="53.9" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_f6414f57-d99a-42a9-b435-7f533fb1c884" loc="0" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="d708e18ca-906f-4bef-99d9-e9ea123f78bc" x="55.0" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_21fd8feb-c138-4aef-b8e5-3ad108e2a52f" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="d7106483f-357e-461e-b72d-2da6e46e6fe8" x="62" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_177f8601-ec37-4e55-9d67-c501612e78a8" loc="-1" head.shape="quarter" stem.dir="down" stem.len="4"/>
+                                        <note xml:id="d44bc81cb-415e-481d-ae5a-05be64095311" x="65" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_85ae84eb-d753-422e-989e-448995909554" loc="-1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="3"/>
+                                        <note xml:id="dfa34cd77-235b-421c-a88d-9206af73be8c" x="66.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_e9acd225-681a-4c36-9b12-85b418f2d4e6" loc="-1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="1"/>
+                                        <note xml:id="d6c4f3918-b22d-47d6-8ad9-e97d7afa93a1" x="68" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_2f0045ef-4758-4829-ac90-84ac292e34f0" loc="0" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="2"/>
+                                        <note xml:id="d21dfb050-2f86-41c4-a31e-f53262e3f5c9" x="69" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_1f047b41-4301-4541-9892-fa6a88214d13" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="2"/>
+                                    </layer>
+                                </staff>
+                                <line xml:id="b5b39886f-3359-4cda-b1a3-f19978fbe313" func="beam" staff="1" x="31.64" y="5.27" x2="43.91" y2="2.00" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_5d400086-66f7-4473-accf-0ac0cc6c7c3b"/>
+                                <line xml:id="bab2752c5-6fec-476a-a057-3288ad09cd8e" func="beam" staff="1" x="30.83" y="8.85" x2="40.84" y2="7.21" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_c21e4ab9-434c-49df-89d6-9d3871a452bc"/>
+                                <line xml:id="b8b6025ed-e2d4-412e-b52a-0c1575bf720c" func="beam" staff="1" x="50.24" y="11.91" x2="58.72" y2="5.58" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_0ccf42b2-91c5-4d88-92bb-3ca4144cb9df"/>
+                                <line xml:id="b8dcb3eaa-7320-4e7e-8769-b35fa521f252" func="beam" staff="1" x="50.65" y="13.96" x2="58.11" y2="8.34" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_b5b10fe7-dfe6-4995-923f-862d40d0f78e"/>
+                                <line xml:id="b688cd50f-a285-4ced-86a3-c67a058965e1" func="beam" staff="1" x="64.24" y="10.07" x2="72.52" y2="4.25" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_c912d7b4-9614-4088-ab83-c9df255e8a9f"/>
+                                <line xml:id="bcfcf021c-e9ec-4abd-b148-468f01d08a00" func="beam" staff="1" x="64.85" y="12.53" x2="67.30" y2="10.38" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_d78a74e0-4b6c-43d4-8b23-60d730040b17"/>
+                                <line xml:id="b9cc67b05-cba5-4d4c-8ca0-ffb79ca8f366" func="beam" staff="2" x="34.46" y="11.56" x2="38.74" y2="7.38" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_b7856c21-d100-4f3c-af1c-6fc1a42fc375"/>
+                                <line xml:id="b7214877b-610e-4385-818e-998f6e239ed2" func="beam" staff="2" x="35.92" y="11.93" x2="38.83" y2="9.02" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_b6dfdfa5-ab05-49e8-9521-d9b972c6a44b"/>
+                                <line xml:id="b2bf86ce0-cbc5-478e-95c6-53df78aa2c54" func="beam" staff="2" x="49.47" y="14.66" x2="56.29" y2="7.74" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_e04f493a-3c3b-4908-8581-f33b986844a0"/>
+                                <line xml:id="bab96452c-6ec3-44f5-b380-98821b94a7d1" func="beam" staff="2" x="49.10" y="16.57" x2="54.74" y2="10.11" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_9094387c-61bc-4820-9d29-cb376f6d1f83"/>
+                                <line xml:id="b33e2a58c-221e-4472-8988-64ab5d4c29d3" func="beam" staff="2" x="64.83" y="12.11" x2="70.20" y2="7.65" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_c2ae6efb-f11d-4670-b9f4-11fa26d49b4d"/>
+                                <line xml:id="b0ad4ffb0-b796-4530-b31f-34ac7aa423e9" func="beam" staff="2" x="66.29" y="13.02" x2="69.93" y2="9.02" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_469f3e8d-4964-4400-aae8-3f964ed98f3f"/>
+                                <curve xml:id="d47f0d2ca-4d6a-40b6-b72f-c4433343bfff" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_80240147-1d4d-4722-9c89-8a2582e8972e" staff="1" bezier="29.54 -2.33 28.76 -5.50 32.15 -6.21 31.51 -1.77"/>
+                                <curve xml:id="da87dc667-5582-4bbb-ab11-bbd9d1347b0f" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_3d4ac6fa-7e42-465c-b57b-38db97137d6f" staff="2" bezier="31.33 17.84 31.61 14.25 33.37 13.93 34.08 17.21"/>
+                                <barLine xml:id="da4dab7bc-100d-4c7d-ab5f-33c0811c1d54" x="46.01" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_721e65a5-359e-41a2-b0ce-f16e6d853ebe ../svg/D-B_Grasnick_20b_p044.svg#shape_0a87354c-7499-4ca4-948d-a4393202254f" form="single" y="-1.50" x2="45.40" y2="28.84"/>
+                                <curve xml:id="dc6aaef0a-d4b3-457e-92a9-6be25e61baa8" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_5a471291-90ba-40bd-95e8-3bc2eab0ee74" staff="1" bezier="48.43 1.89 48.86 0.55 50.27 0.76 50.13 2.81"/>
+                                <curve xml:id="dc4eea4c8-09c1-410e-a113-2d5182e3459a" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_072b718a-76e4-4169-ad9d-eb167f90aa8a" staff="1" bezier="48.50 5.27 49.14 6.61 49.91 6.61 50.62 5.13"/>
+                                <curve xml:id="d699fc76c-a73e-4600-9160-c897ecc14d40" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_8b0ad79d-b0b3-4821-9248-170687270935" staff="2" bezier="48.21 19.77 49.82 14.95 50.83 15.20 50.83 20.79"/>
+                                <barLine xml:id="dda1e7d39-d5b9-42a0-9834-3b61e6676fc2" x="61.50" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_f5c53c3c-4fe8-470d-94a3-b0823eb4c70f" form="single" y="-2.75" x2="58.28" y2="30.73"/>
+                                <curve xml:id="dd8d69fc1-1d92-4b92-9790-f784780ed527" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_8be440fd-8bef-4660-9625-51fe784cb654" staff="1" bezier="62.79 -0.13 63.99 -2.60 65.12 -2.60 65.47 -0.69"/>
+                                <curve xml:id="d59a1f898-ed9b-4169-8e52-987557f53873" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_b35ca0d6-5924-4842-a519-5b5d26348211 ../svg/D-B_Grasnick_20b_p044.svg#shape_3da34c19-e316-47ca-bac7-bc35de8a6849" staff="2" bezier="62.64 19.10 65.10 15.43 66.23 15.53 66.51 18.25"/>
+                                <barLine xml:id="d69c53547-aaad-47ea-914c-889cd9f8219a" x="74.68" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_734474b4-9c85-448e-b516-9287fce92d86" form="single" y="-1.07" x2="72.22" y2="26.48"/>
+                            </section>
+                        </bw:system>
+                        <bw:system xml:id="s5687ea64-bb38-437a-bd9f-31090050c897">
+                            <scoreDef xml:id="sdb356141-3a68-4030-83fe-9e7d978ccab3">
+                                <staffGrp xml:id="sd5c73aeb-6bca-4a6e-bf12-717fc20352b3" symbol="none" bar.thru="false">
+                                    <staffDef xml:id="s1bcf830e-60b5-4302-a622-713d48b1e6b9" n="1" lines="5" decls="../D-B_Grasnick_20b.xml#rbda793ef-cf7c-4d87-a810-6656f61d3f5a"/>
+                                    <staffDef xml:id="sd28df5e0-6b38-4668-8620-76e5e3a1871c" n="2" lines="5" decls="../D-B_Grasnick_20b.xml#r30f0610e-1902-4c71-bfe5-202bf6d98db1"/>
+                                </staffGrp>
+                            </scoreDef>
+                            <section xml:id="s56f22399-6043-471d-8de8-a7358ec12b16">
+                                <staff n="1" xml:id="s588a92b1-dede-4b07-9cc4-1780e3ae5877" rotate="0.2" decls="../D-B_Grasnick_20b.xml#rbda793ef-cf7c-4d87-a810-6656f61d3f5a">
+                                    <layer n="1" xml:id="ld1dba0ec-2f82-489b-8941-53fbfa13437a">
+                                        <chord xml:id="db4e5d712-891d-4e73-803d-7d6f316a4a24" x="3.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_f5c4545d-f17f-4706-9f30-6d06038146b1 ../svg/D-B_Grasnick_20b_p044.svg#shape_be4213ec-301b-4eaf-ab9b-8631187c96cd ../svg/D-B_Grasnick_20b_p044.svg#shape_c8f819ff-0dd3-484d-9a47-f9edcdb84b1f" stem.dir="down" stem.len="5">
+                                            <note xml:id="df241f7ca-2deb-42a4-bf60-b85c44c49da2" loc="4" head.shape="quarter"/>
+                                            <note xml:id="dec9e5918-c209-4a53-9d60-00c4bce03faf" loc="6" head.shape="quarter"/>
+                                            <note xml:id="d3a0e1f90-07de-428e-8439-b9761a4e169a" loc="9" head.shape="quarter"/>
+                                        </chord>
+                                        <chord xml:id="d3eae14d6-1fc4-4778-9c9e-cdc7f76d21f5" x="10.4" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_008e9e50-76ff-4566-bd75-e66c050e1ca2 ../svg/D-B_Grasnick_20b_p044.svg#shape_045e5bb2-22ea-4150-a290-287bf38d4fcd ../svg/D-B_Grasnick_20b_p044.svg#shape_3281e92b-66dc-4982-b886-9cd733035f91" bw:stem.flags="0" stem.dir="down" stem.len="6">
+                                            <note xml:id="dcc6d413e-52d9-4424-81d9-a94ec90848a0" loc="4" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d31c3d306-37db-4b2e-8285-a9ae97615b77" loc="6" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="d543faf4b-4930-49ca-97f2-ac123b3e02f2" loc="9" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="d1a0c77a2-a3ba-4bd1-8273-42818dbc4a7d" x="14.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_467d785c-f75e-4a4a-bf83-caf7973e1c84 ../svg/D-B_Grasnick_20b_p044.svg#shape_c4ae13b7-05c0-424d-b191-62ddc106295d ../svg/D-B_Grasnick_20b_p044.svg#shape_212c71cd-f4da-4a6a-8f7d-9c2e54811b81" bw:stem.flags="0" stem.dir="down" stem.len="8">
+                                            <note xml:id="d1daf946a-14af-4bf9-924b-83338d6a35c8" loc="9" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="dc7047d2a-c6dd-4304-bf3a-658b7663bdb6" loc="11" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <accid xml:id="def02fc2a-52e8-4dc9-ae1f-bee32b509031" x="17.4" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_63a63f19-09b2-40aa-b74f-01a699a08fd8 ../svg/D-B_Grasnick_20b_p044.svg#shape_b165b483-edf7-46ee-914d-d669ef24a485 ../svg/D-B_Grasnick_20b_p044.svg#shape_6aab5c77-96b6-405d-bd40-6d90adf4f3f6 ../svg/D-B_Grasnick_20b_p044.svg#shape_ba9f108d-9619-4e79-83b9-c0ffe5d4816e" accid="s" loc="8"/>
+                                        <chord xml:id="d769bb7ed-c276-42e2-a72e-ab0357047fe0" x="19" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_5fa56cda-11da-43da-bf64-bc968b7319b9 ../svg/D-B_Grasnick_20b_p044.svg#shape_973d636a-e247-41f4-b213-83afacc79a74 ../svg/D-B_Grasnick_20b_p044.svg#shape_a7bd27c6-7097-41fc-85af-b80daa9d3cea" bw:stem.flags="0" stem.dir="down" stem.len="4">
+                                            <note xml:id="dc51a1c04-cc33-4898-bc1f-9c06045d1264" loc="8" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="de32e7857-61f7-4d94-9356-9e5591aa1fab" loc="10" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <chord xml:id="d4fd45aea-ba4f-403a-a0d1-8609dfece1f8" x="21" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_26ebdc07-1cd3-44da-9b3f-c0a33302a3c6 ../svg/D-B_Grasnick_20b_p044.svg#shape_8ce4fcd6-75ef-4f16-99aa-fa73aab8606a" bw:stem.flags="0" stem.dir="down" stem.len="3">
+                                            <note xml:id="d9d50395b-2da0-46cb-a0d9-535611d1a545" loc="7" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="ddbab43d2-5dd1-41c2-a0fa-de0400353b70" loc="9" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                    </layer>
+                                </staff>
+                                <staff n="2" xml:id="sce691e68-4bc8-41eb-95a5-26b5ed276cda" rotate="0.2" decls="../D-B_Grasnick_20b.xml#r30f0610e-1902-4c71-bfe5-202bf6d98db1">
+                                    <layer n="1" xml:id="lca5e186a-9dc0-4717-aa00-9f2ccff81eac">
+                                        <chord xml:id="dc488c35c-6712-4244-9337-78d63e284b19" x="7.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_1bc87035-2867-46b5-8b53-375c39c8f122 ../svg/D-B_Grasnick_20b_p044.svg#shape_9caae459-2686-4dc5-806f-354aa8280896" stem.dir="down" stem.len="6">
+                                            <note xml:id="d72701f38-1ebc-4aa2-ad80-65ac6900396b" loc="0" head.shape="quarter"/>
+                                            <note xml:id="dadb21fd0-bb46-49cd-8eac-21cb3578eb02" loc="7" head.shape="quarter"/>
+                                        </chord>
+                                        <chord xml:id="d1e5da942-2a2a-4cfa-8371-6b071b57e8d6" x="13.3" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_cd13c9ec-b2f4-452d-9134-4f9a7689fd22 ../svg/D-B_Grasnick_20b_p044.svg#shape_0d4d008a-9ebd-4ec5-b556-54e24138a3f7" bw:stem.flags="0" stem.dir="down" stem.len="5">
+                                            <note xml:id="dc43b198e-250e-4e3c-8cfa-efd2893e1e52" loc="0" head.shape="quarter" bw:stem.flags="0"/>
+                                            <note xml:id="dccd437e5-d8ea-45f4-a399-4fcf2c4ad496" loc="7" head.shape="quarter" bw:stem.flags="0"/>
+                                        </chord>
+                                        <note xml:id="d44eecaf3-9282-445b-bec6-bb9bbeeb637b" x="17.2" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_55ba4a7d-291e-469c-87ef-3e0fa7bddec2" loc="0" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="4"/>
+                                        <note xml:id="d60d1b70f-e574-41d5-9346-c454ae6e2819" x="19" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_d80bf92e-dd28-420f-b508-c0e7d1f2c1c4" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="2"/>
+                                        <note xml:id="d82595d0f-f717-4985-9f18-b0c1828dfe04" x="20.4" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_a72e26df-5432-408d-b0c4-362630c00894" loc="2" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="4"/>
+                                    </layer>
+                                </staff>
+                                <line xml:id="bdb5d4a8c-204f-446d-9676-fed46a3e8600" func="beam" staff="1" x="12.85" y="10.59" x2="22.45" y2="2.08" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_ecbe5a01-7939-49f0-840a-401f8439a843"/>
+                                <line xml:id="b57268d8c-b131-4e9f-98ca-e90e525ae4cd" func="beam" staff="1" x="14.27" y="12.12" x2="22.02" y2="4.37" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_1861cfd5-b2d2-4fe4-8c30-d9f6e72d4ea0"/>
+                                <line xml:id="b786afdfe-b220-401c-8f18-ef25aca75c99" func="beam" staff="2" x="14" y="14" x2="21" y2="7.5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_8be7d2a4-3e31-45a2-9b59-3812e2f8ab92"/>
+                                <line xml:id="b3d6afcb2-4cee-47e4-9d3f-00955b299f01" func="beam" staff="2" x="15" y="16" x2="21.6" y2="9" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_8adf9406-1300-4a9c-bf25-932bbb32719d"/>
+                                <barLine xml:id="db0d961b7-720f-4053-8366-a0806bd00f2a" x="24.45" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_f5eab440-e363-49f1-b747-181ce47dbff0" form="single" y="0.47" x2="25.30" y2="26.30"/>
+                                <curve xml:id="d50e69902-3512-4f0e-993a-dcab53a74cf5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_45ce7bc8-4ea5-4dea-9a0b-b6571c2c1eb1" staff="1" bezier="4.91 0.39 5.69 -2.07 7.24 -2.22 7.52 1.10"/>
+                                <curve xml:id="d45304773-96e7-463c-a16b-f8bad1bfa93f" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_03d4f818-b8b8-46f0-8844-0ade777a78a3" staff="1" bezier="6.18 2.23 6.61 1.17 7.45 1.31 8.02 4.06"/>
+                                <curve xml:id="d02db966a-0520-4f55-9251-8bf524d80b75" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_207a272f-c63b-42a7-8b56-2e9c40202f70" staff="1" bezier="6.04 5.19 6.61 2.23 8.83 1.73 9.07 3.43"/>
+                                <curve xml:id="d32fb87dc-6bc8-4ffd-82d8-aa4c99693e53" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_8ac42e31-ebea-4b63-9725-48fabb9128ab" staff="2" bezier="8.09 14.78 9.14 10.19 10.84 10.34 11.75 16.68"/>
+                                <curve xml:id="d8104d4f3-2ad7-428d-aebf-000876777fd5" facs="../svg/D-B_Grasnick_20b_p044.svg#shape_29f4d063-3cc9-49d1-8101-6692ef2c3ada" staff="2" bezier="8.44 20.70 8.65 22.04 10.98 23.45 12.25 17.95"/>
+                            </section>
+                        </bw:system>
+                    </bw:draft>
+                </bw:drafts>
+            </mdiv>
+        </body>
+    </music>
+</mei>

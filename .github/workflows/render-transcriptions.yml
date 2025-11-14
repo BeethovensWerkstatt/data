@@ -1,0 +1,59 @@
+# documentation awaits instantiation
+
+name: Generate and cache diplomatic, annotated, and fluid transcriptions
+
+on:
+  push:
+    branches: 
+      - 'never' # was: 'dev'
+    paths:
+      - 'data/sources/**/annotatedTranscripts/**/*.xml'
+      - 'data/sources/**/diplomaticTranscripts/**/*.xml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Generate Cache files
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout data repository
+        uses: actions/checkout@v5
+        with:
+          path: ./data
+
+      - name: Checkout cache repository
+        uses: actions/checkout@v5
+        with:
+          repository: BeethovensWerkstatt/data-cache
+          token: ${{ secrets.DATA_TRIGGER_SECRET }}
+          path: ./data-cache
+          ref: main
+
+      - name: Geänderte Dateien ermitteln
+        uses: tj-actions/changed-files@v47
+        id: changed-files
+        with:
+          files: '**/*_dt.xml'  # Filter für Dateien TODO: muss auch at.xml beachtet werden?
+
+      - name: run Docker image
+        run: docker run --rm -v $(pwd)/data/data:/usr/src/app/data -v $(pwd)/data-cache/cache:/usr/src/app/cache -v $(pwd)/data/.git:/usr/src/app/.git:ro ghcr.io/beethovenswerkstatt/liquifier:latest node index.js ${{ steps.changed-files.outputs.added_files }} ${{ steps.changed-files.outputs.modified_files }}
+
+      # check repo status before push to avoid overlapping commits
+
+      - name: configure git
+        run: |
+          echo "Configuring git..."
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+      
+      - name: Commit
+        run: |
+          cd cache
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Update cached data from data-repository"
+          git push https://${{ secrets.DATA_TRIGGER_SECRET }}@github.com/BeethovensWerkstatt/data-cache.git main

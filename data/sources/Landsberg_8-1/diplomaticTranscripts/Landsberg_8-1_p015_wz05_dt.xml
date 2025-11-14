@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../../rng/bw_diplomaticTranscriptions.odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../../../rng/bw_diplomaticTranscriptions.odd.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:bw="https://beethovens-werkstatt.de/ns/meiAdditions" xmlns:svg="http://www.w3.org/2000/svg" meiversion="6.0+beethovensWerkstatt" xml:id="md0f1fcd0-2adb-4660-9919-009987b5a214">
+    <meiHead meiversion="6.0+beethovensWerkstatt" xml:id="m06168b01-aa3d-4de6-96d6-c0f3da36a73b">
+        <fileDesc xml:id="fb588112f-903c-4665-8447-f6f664b604ed">
+            <titleStmt xml:id="ta34df0b8-ca3c-4c94-b61e-cb48926466a2">
+                <title xml:id="t71974185-f32f-49e3-aa68-bf3d9a818fd4">
+                    Ludwig van Beethoven, Skizzenbuch "Engelmann" zu den Diabelli-Variationen op. 120 und der 9. Sinfonie op. 125, Autograph
+                </title>
+                <composer xml:id="cc08ea2cc-f71c-43cc-bb34-2f17954bed16">
+                    <persName xml:id="p37169a04-6e67-40f8-ba51-6e55ae0515f6">
+                        Beethoven, Ludwig van
+                    </persName>
+                </composer>
+                <editor xml:id="ea65f802d-f28c-4817-b4e9-0b0fac4e7b75">
+                    <corpName auth.uri="https://beethovens-werkstatt.de" xml:id="ce8f9683e-f296-42fd-a732-b6c474d09d6d">
+                        Beethovens Werkstatt
+                    </corpName>
+                </editor>
+                <funder xml:id="f600f4b82-f69f-4d53-8043-4dab81307e67">
+                    <corpName auth.uri="http://www.adwmainz.de/" xml:id="cd72cb215-f5c0-41a3-846a-7a548c3829f3">
+                        Akademie der Wissenschaften und der Literatur Mainz
+                    </corpName>
+                </funder>
+            </titleStmt>
+            <pubStmt xml:id="p745c928d-a5f1-4de9-9d6d-2dae8e22e14f"/>
+            <seriesStmt xml:id="sd2b70d0c-8794-4936-8504-db398db7240c">
+                <title xml:lang="de" level="s" xml:id="t83e74b25-3c4a-4781-b729-1b602d23b8bf">
+                    Skizzenbuchedition
+                </title>
+                <identifier auth.uri="https://beethovens-werkstatt.de/modul-4/" xml:id="ie3233765-8634-4255-8fa7-bb0a4cb393a4">
+                    sk
+                </identifier>
+            </seriesStmt>
+            <sourceDesc xml:id="sa152093e-f9c1-4a30-83a9-e010ba4b9eef">
+                <source n="1" target="../Landsberg_8-1.xml#gb647b657-0470-49a0-b29a-adc4d0b371f9" xml:id="sb49c1fdd-dfdc-40b5-84e3-b9e9bdc1a756"/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc class="#bw_diplomatic_transcript #bw_module4" xml:id="ee689c6be-4149-4461-b909-d7838f4e275f">
+            <appInfo xml:id="af72e086a-1fb1-4917-9e83-0ff1fe67600c">
+                <application version="0.2.1" xml:id="facsimileExplorer">
+                    <name>
+                        Facsimile Explorer
+                    </name>
+                </application>
+            </appInfo>
+            <classDecls xml:id="c31b1f5cb-7d88-4757-bf9e-d493e2b2a29c">
+                <taxonomy label="availableTaxonomies" xml:id="t0ce77144-7c92-499b-a7d3-1df71e3038c4">
+                    <category xml:id="document_type"/>
+                    <category xml:id="bw_observation_type"/>
+                    <category xml:id="bw_implementation_completeness"/>
+                    <!--<category xml:id="bw_monitum_category"/>
+                    -->
+                    <category xml:id="bw_file_type"/>
+                    <category xml:id="bw_monitum_comment"/>
+                    <category xml:id="bw_monitum_classification"/>
+                    <category xml:id="bw_monitum_textoperation"/>
+                    <category xml:id="bw_monitum_object"/>
+                    <category xml:id="bw_monitum_kontext"/>
+                    <category xml:id="bw_monitum_konkordanz"/>
+                    <category xml:id="bw_transcription_type"/>
+                    <category xml:id="bw_module"/>
+                    <category xml:id="bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy xml:id="t27152031-df5e-4270-8630-24f0aac2d413">
+                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+                    <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
+                </taxonomy>
+                <taxonomy xml:id="ta95b4074-fd6f-4578-a6b3-cfbba093541d">
+                    <category xml:id="music.print" class="#document_type"/>
+                    <category xml:id="music.manuscript" class="#document_type"/>
+                    <category xml:id="letter.manuscript" class="#document_type"/>
+                    <category xml:id="music.sketchbook" class="#document_type"/>
+                </taxonomy>
+                <taxonomy xml:id="tf7005cc6-47e4-4478-8cb3-be3c81c88bb5">
+                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+                </taxonomy>
+                <taxonomy xml:id="tdb64fcf1-be23-4dd7-a46a-ea4969426632">
+                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+                </taxonomy>
+                <taxonomy xml:id="t6f6e9c3b-5887-4d38-8bbe-0ca68aafc363">
+                    <!-- Klassifizierung -->
+                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
+                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
+                </taxonomy>
+                <taxonomy xml:id="t57eb9af2-22a6-438c-98bd-d508b13ef3d1">
+                    <!-- Textoperation -->
+                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
+                    <!--oder erweiterung-->
+                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
+                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
+                </taxonomy>
+                <taxonomy xml:id="t8de23839-0d5c-4036-8502-5962c34a566c">
+                    <!-- Revisionsobjekt -->
+                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
+                </taxonomy>
+                <taxonomy xml:id="t401a2f87-117b-476a-a26c-7eb76ffe8b35">
+                    <!-- kontextzitat -->
+                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
+                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
+                </taxonomy>
+                <taxonomy xml:id="t05c6a198-a189-4708-8034-a23065a73173">
+                    <!-- konkordanz -->
+                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
+                </taxonomy>
+                <taxonomy xml:id="t96dfc189-92ec-4fd5-8c86-130d94d24a22">
+                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+                    <category xml:id="bw_document_file" class="#bw_file_type"/>
+                    <category xml:id="bw_work_file" class="#bw_file_type"/>
+                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+                </taxonomy>
+                <taxonomy xml:id="t9e1efd8d-e800-42aa-bb74-5c6be0dd5d59">
+                    <category class="#bw_module" xml:id="bw_module4"/>
+                </taxonomy>
+                <taxonomy xml:id="t54f5a158-8bbc-4d2d-b787-ac53fb78b26e">
+                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+                    <category xml:id="bw_annotated_transcript" class="#bw_transcription_type"/>
+                    <category xml:id="bw_writingZoneBegin"/>
+                </taxonomy>
+            </classDecls>
+        </encodingDesc>
+        <revisionDesc xml:id="r6dc73cf6-3d22-4781-b318-bc7696001320">
+            <!-- GitHub user als resp?!, Datum anpassen -->
+            <change n="1" resp="#bw_jk" isodate="2024-12-16" xml:id="c0392794e-25a5-4982-8135-271f1f2d3d55">
+                <changeDesc xml:id="cacca0980-f654-435a-893f-4da70276114a">
+                    <p xml:id="p0031e58f-fb61-4687-bf7c-8dbdabf4c4bb">
+                        Generated file for diplomatic transcription with
+                        <ptr target="#facsimileExplorer"/>
+                        using template file.
+                    </p>
+                </changeDesc>
+            </change>
+        </revisionDesc>
+    </meiHead>
+    <music meiversion="6.0+beethovensWerkstatt">
+        <body>
+            <mdiv xml:id="m0e30f43a-9e97-4574-8dad-420e0233b406">
+                <bw:drafts xml:id="dcd2e35c8-de1e-462c-affd-fd05eed317d9">
+                    <bw:draft xml:id="d8d6984f7-10e0-41c1-95a0-6f5088265698" class="#bw_diplomatic_transcript">
+                        <pb xml:id="p539d4c98-8f22-4d2f-96f5-455e5a7cb919" target="../Landsberg_8-1.xml#s07669e68-2805-4d91-90a4-5636ecb5a327"/>
+                        <bw:system xml:id="s5c4bc56d-2be1-42d4-837b-26e720c5c6fe">
+                            <scoreDef xml:id="s49050544-0514-4ec2-8b39-a08602282b9e">
+                                <staffGrp xml:id="s85eb4676-d9ee-40e2-8d7a-1cca9d29d8a2" symbol="none" bar.thru="false">
+                                    <staffDef xml:id="s765105e3-99b5-40db-ad83-8a3aa8c3fbe7" n="1" lines="5" decls="../Landsberg_8-1.xml#r68fa18a0-691d-46ab-8dd5-8366111786b6"/>
+                                    <staffDef xml:id="sc5db90d5-52f9-4853-978d-964de422d7ca" n="2" lines="5" decls="../Landsberg_8-1.xml#rcb4d75e7-a295-4d95-9bf8-4c0efd54a9b9"/>
+                                </staffGrp>
+                            </scoreDef>
+                            <section xml:id="s0e3f49e3-f94e-42bd-84c9-0eed1fe56850">
+                                <staff n="1" xml:id="s8bf247d5-e147-4978-a287-b5349db5cdee" rotate="-0.05" decls="../Landsberg_8-1.xml#r68fa18a0-691d-46ab-8dd5-8366111786b6">
+                                    <layer n="1" xml:id="l21cbec3b-a208-46d1-bead-fe05aba951f0">
+                                        <clef xml:id="dc48d5b3d-162f-4118-beab-1bc11e3c74e2" x="85.5" facs="../svg/Landsberg_8-1_p015.svg#shape_21dbe3a6-7591-4ab4-81cf-5311f1693e10" shape="G" line="2"/>
+                                        <dot xml:id="d5ce61ed1-cba0-460c-a96c-1c29d9635410" x="93" facs="../svg/Landsberg_8-1_p015.svg#shape_f509d09f-8ab7-4e65-96b3-997c1cd4d882" y="24" type="repeat"/>
+                                        <dot xml:id="d5224b6f5-f75b-4234-9065-1e311d6869ba" x="93" facs="../svg/Landsberg_8-1_p015.svg#shape_a58b4ef7-065c-4701-ab4a-19f050675f13" y="12" type="repeat"/>
+                                        <note xml:id="dc2c64cd9-c47a-4724-9ca2-ae860a715a2b" x="97" facs="../svg/Landsberg_8-1_p015.svg#shape_a72035b3-40ee-4905-bef3-2456167dc779 ../svg/Landsberg_8-1_p015.svg#shape_e2b5893d-874b-4b74-927e-cce13dae5622" loc="10" head.shape="quarter" stem.dir="down" stem.len="5"/>
+                                        <note xml:id="d7d50e999-585d-44a8-861f-045047f17831" x="103" facs="../svg/Landsberg_8-1_p015.svg#shape_52461bc2-e96d-454e-8830-2999770d158f ../svg/Landsberg_8-1_p015.svg#shape_fd824ffd-6ecf-43ad-bb58-58c5d939c44f ../svg/Landsberg_8-1_p015.svg#shape_04d6c1a4-0837-4dcc-92e7-fb7f267ae278 ../svg/Landsberg_8-1_p015.svg#shape_2fd1d0fe-c2ca-470c-9ef3-b994fa7eb1cc" loc="10" head.shape="half" stem.dir="up" stem.len="7"/>
+                                        <note xml:id="d3da773be-58a8-4a3f-b86e-e77fd28b8f02" x="101.1" facs="../svg/Landsberg_8-1_p015.svg#shape_2b37e29c-c5a8-4090-8dea-a99a7dbcc92b" loc="8" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="5"/>
+                                        <note xml:id="d6769141c-abb4-44e7-8968-1060505b926a" x="103.6" facs="../svg/Landsberg_8-1_p015.svg#shape_83ee6569-f3ec-4b3f-be48-946abc0b5266" loc="6" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="4"/>
+                                        <note xml:id="d00703edd-95c9-4a1a-9e13-f9a217f55d94" x="110.2" facs="../svg/Landsberg_8-1_p015.svg#shape_e26b29cb-9f03-48a2-8da0-b62e35add431 ../svg/Landsberg_8-1_p015.svg#shape_11204fda-abcf-43b8-86cf-6e1d43319099" loc="6" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="4"/>
+                                        <note xml:id="d1fa05100-4748-4101-a1de-8872c8b71d0e" x="117" facs="../svg/Landsberg_8-1_p015.svg#shape_8a55b0f3-9a4f-45aa-98f3-aaee9ae1ad03 ../svg/Landsberg_8-1_p015.svg#shape_d5e37418-4899-4bc1-ae19-5099a8296445 ../svg/Landsberg_8-1_p015.svg#shape_52c22f90-2008-432e-b923-5efdaa009e77" loc="10" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="7"/>
+                                        <note xml:id="d127cdfdd-53ec-4598-b477-6216322515e3" x="120.5" facs="../svg/Landsberg_8-1_p015.svg#shape_e515e981-e5c2-462e-ade7-4fcfa390f09d" loc="8" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="5"/>
+                                        <note xml:id="de297a2f1-a97a-4027-8813-cb60dfcde636" x="122.5" facs="../svg/Landsberg_8-1_p015.svg#shape_87b821f9-5765-47d3-ab72-c5535ac701d8 ../svg/Landsberg_8-1_p015.svg#shape_8f557d56-9f0a-478e-88ab-2470f056f527 ../svg/Landsberg_8-1_p015.svg#shape_9c387640-ccf2-4a0e-b76e-0d230e83ae67 ../svg/Landsberg_8-1_p015.svg#shape_00804cde-6253-4525-a372-bbc3537e58e6" loc="10" head.shape="half" stem.dir="up" stem.len="8"/>
+                                        <note xml:id="d6a1af7f6-ce4d-4f5f-ac80-84486c41e4a8" x="122.7" facs="../svg/Landsberg_8-1_p015.svg#shape_b8f8ae3a-94d0-46e6-aa03-1945c97314e8" loc="6" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="6"/>
+                                        <note xml:id="d232a3325-037f-4740-a1b4-f0d293a7de01" x="136.3" facs="../svg/Landsberg_8-1_p015.svg#shape_78d80c0e-128b-46c9-9f0f-b79e1cce6984 ../svg/Landsberg_8-1_p015.svg#shape_73bf088a-16ce-4dd3-9d42-ecc7be2ef81b" loc="10" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="5"/>
+                                        <note xml:id="d3557e926-06ef-4f5b-9190-d90c2ef46685" x="140.6" facs="../svg/Landsberg_8-1_p015.svg#shape_cb705564-6455-4412-8ba9-41908e2d69fb" loc="9" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="7"/>
+                                        <note xml:id="d6470e171-242e-4d53-b7c5-661ce419d685" x="146" facs="../svg/Landsberg_8-1_p015.svg#shape_7ea5a08c-5c1b-441f-b875-fe84ad8c7e4d ../svg/Landsberg_8-1_p015.svg#shape_c2c0cd03-2354-4a5e-a745-e4d257be8304 ../svg/Landsberg_8-1_p015.svg#shape_de38158b-446e-45a3-b224-323a4f57e314 ../svg/Landsberg_8-1_p015.svg#shape_baec9066-1c6d-4745-a537-02d931166379 ../svg/Landsberg_8-1_p015.svg#shape_c2c0cd03-2354-4a5e-a745-e4d257be8304" loc="11" head.shape="half" stem.dir="up" stem.len="6"/>
+                                        <note xml:id="d1eb6c209-4987-450b-975c-afdb84b7c1c7" x="143.5" facs="../svg/Landsberg_8-1_p015.svg#shape_540e3759-3995-416d-80ef-1d9980424f96" loc="8" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="7"/>
+                                        <note xml:id="d04cec3db-fd72-44be-89d8-caac6d9b5904" x="146" facs="../svg/Landsberg_8-1_p015.svg#shape_689443ed-03c0-4a59-ac1c-9930a1da3584" loc="7" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="10"/>
+                                        <accid xml:id="d116be73c-b4cf-4815-b808-344575e64145" x="157" facs="../svg/Landsberg_8-1_p015.svg#shape_26533d80-b9ed-4380-b5d7-5ae6338f6136 ../svg/Landsberg_8-1_p015.svg#shape_917f23d8-fdf4-43ec-96cb-6f9acf063b49 ../svg/Landsberg_8-1_p015.svg#shape_ecc4922d-ff59-4384-a808-ab5147f82c4f ../svg/Landsberg_8-1_p015.svg#shape_3ea84389-b08b-4f9d-9cc1-571e58b35a14" accid="s" loc="5"/>
+                                        <accid xml:id="d4aabb5b1-ca22-451f-8473-fe04b38f28c2" x="161" facs="../svg/Landsberg_8-1_p015.svg#shape_26514d19-85eb-485d-b98e-199f5ffb0455 ../svg/Landsberg_8-1_p015.svg#shape_efdfc0df-e531-4091-8d11-73e52b93f5ad ../svg/Landsberg_8-1_p015.svg#shape_d53356c7-89ff-41f3-9636-f9b991e23286 ../svg/Landsberg_8-1_p015.svg#shape_261cb1f5-4d53-4f90-babb-9f857293da93" accid="s" loc="12"/>
+                                        <note xml:id="dcf257f71-68a9-4261-a368-2c4eb78be19d" x="160.8" facs="../svg/Landsberg_8-1_p015.svg#shape_b2922e5c-0c01-49c5-bd3f-77462677b9d8" loc="5" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="7"/>
+                                        <note xml:id="d428a45aa-8424-4c48-a69e-9e9a82841494" x="165.3" facs="../svg/Landsberg_8-1_p015.svg#shape_ec1f8d5e-eb96-454f-a952-8a84617bedcf" loc="4" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="7"/>
+                                        <note xml:id="d4c419dc8-40c7-4e4c-9e11-67af558634da" x="170" facs="../svg/Landsberg_8-1_p015.svg#shape_81703663-29a5-4b00-94e3-47e6105e1f43 ../svg/Landsberg_8-1_p015.svg#shape_28478d1a-b6f4-4424-ae8c-6e635e261656 ../svg/Landsberg_8-1_p015.svg#shape_0dc0328b-ce71-4d14-9e83-978744e488ab ../svg/Landsberg_8-1_p015.svg#shape_dba941a4-240d-4e95-901e-ef00b006100a ../svg/Landsberg_8-1_p015.svg#shape_13763466-de56-4369-82fc-b64284f576ea" loc="12" head.shape="half" stem.dir="up" stem.len="8"/>
+                                        <note xml:id="d87f5986b-98df-41b5-904c-bfbd942f1d81" x="169" facs="../svg/Landsberg_8-1_p015.svg#shape_3c11b556-7810-4375-8e29-2814a4fbca6f" loc="2" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="6"/>
+                                        <dot xml:id="dcc06b670-7d48-4679-8ff0-c7881a6c6712" x="174" facs="../svg/Landsberg_8-1_p015.svg#shape_ee13b73d-7eb4-467a-b701-1c1123a5be2c" y="21" type="repeat"/>
+                                        <note xml:id="d9b6ef657-07a9-4b54-977d-a1d5a829aa63" x="172" facs="../svg/Landsberg_8-1_p015.svg#shape_70035c23-33f0-4469-8212-e9866de9696b" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="9"/>
+                                        <dot xml:id="d44543475-f72f-43fa-8bae-fbb3231c78b4" x="174" facs="../svg/Landsberg_8-1_p015.svg#shape_74b24877-8d90-43c3-ab92-752e72bd59a5" y="12.2" type="repeat"/>
+                                        <note xml:id="d64fc6396-c844-4d18-8588-7eed5d4b0364" x="200" facs="../svg/Landsberg_8-1_p015.svg#shape_3efe3f5b-0e53-4f9a-8ce2-d4264dd5d9d8 ../svg/Landsberg_8-1_p015.svg#shape_239df0ac-2062-4798-aab9-eac4e02b661b ../svg/Landsberg_8-1_p015.svg#shape_66124578-26f3-47b7-829a-191d9d65f66b" loc="13" head.shape="half" stem.dir="down" stem.len="9"/>
+                                        <note xml:id="d76a2334d-418f-4ba1-824e-cb3307e7f1f2" x="222" facs="../svg/Landsberg_8-1_p015.svg#shape_ad09ba07-cc9e-434b-88eb-ee83cdc72025 ../svg/Landsberg_8-1_p015.svg#shape_99a52d44-c741-4f1e-ba48-e99e33cc69c7 ../svg/Landsberg_8-1_p015.svg#shape_cf2a8efa-af25-4e6d-b047-3d56169871f4 ../svg/Landsberg_8-1_p015.svg#shape_fdf1ec16-f471-42a3-b3dd-c019c92f3f5c ../svg/Landsberg_8-1_p015.svg#shape_08b01bc3-41a5-4988-b56a-19acb74f983b" loc="15" head.shape="half" stem.dir="down" stem.len="11"/>
+                                        <note xml:id="d0c850c70-7851-4e61-ae41-07ef8e80bff0" x="240.5" facs="../svg/Landsberg_8-1_p015.svg#shape_5c589340-0d7c-4853-ba21-3df228fa1fba ../svg/Landsberg_8-1_p015.svg#shape_c4a204ff-203e-4bd2-9bd0-542b3f614cbe ../svg/Landsberg_8-1_p015.svg#shape_12b1385b-891f-43f1-84af-6d2045f1df0c ../svg/Landsberg_8-1_p015.svg#shape_6428338a-40ea-4335-acd6-dae98f8cf027 ../svg/Landsberg_8-1_p015.svg#shape_85ce9214-91aa-44d1-b73e-ef6e711b9111 ../svg/Landsberg_8-1_p015.svg#shape_0fdd460a-3b45-4f2d-8fd9-241884e78dfc" loc="17" head.shape="half" stem.dir="down" stem.len="12"/>
+                                    </layer>
+                                </staff>
+                                <staff n="2" xml:id="sc89d8ec3-bc60-4ca6-a81c-5cc059c5e7a9" rotate="-0.05" decls="../Landsberg_8-1.xml#rcb4d75e7-a295-4d95-9bf8-4c0efd54a9b9">
+                                    <layer n="1" xml:id="l2661a380-0819-4a32-b698-cb3cf461082d">
+                                        <note xml:id="d038c80ef-ab72-4459-8f87-71418d098369" x="101" facs="../svg/Landsberg_8-1_p015.svg#shape_40c9b3b0-4175-47c3-bc9f-75bd0fa5671e ../svg/Landsberg_8-1_p015.svg#shape_f346923e-2703-4c39-9703-0a6c606d1b2e ../svg/Landsberg_8-1_p015.svg#shape_cdb4bfb1-05c7-485f-bec7-c74051c51710" loc="1" head.shape="half" stem.dir="up" stem.len="9"/>
+                                        <note xml:id="dc11e257e-564f-4d8a-83b5-fede781a5bcc" x="193" facs="../svg/Landsberg_8-1_p015.svg#shape_db1b0dda-edfa-4c77-8b01-14931bd7b3e2" loc="4" head.shape="quarter" stem.dir="down" stem.len="11"/>
+                                        <note xml:id="de2d92913-03aa-468d-99f5-fe85f85c5e65" x="199.1" facs="../svg/Landsberg_8-1_p015.svg#shape_b8a038b3-47e9-44c0-9241-dff8b5a233a5" loc="1" head.shape="quarter" stem.dir="down" stem.len="5"/>
+                                        <dot xml:id="dc3888915-9907-4fb7-9828-8c415c0e9e73" x="204" facs="../svg/Landsberg_8-1_p015.svg#shape_c4664cbc-c7e1-42c2-b9fd-b49c75081462" loc="1" type="augmentation"/>
+                                        <note xml:id="dacd8b7bf-9387-45ce-8deb-a4124e4269ea" x="206" facs="../svg/Landsberg_8-1_p015.svg#shape_fe1aaba2-aab5-4102-b1e9-47eb0d6bbfd7" loc="0" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="9"/>
+                                        <note xml:id="dea58356d-6808-40d3-9727-45f73213d74a" x="213.6" facs="../svg/Landsberg_8-1_p015.svg#shape_8b54c016-6196-4a23-ad84-ae47e3a0b40b" loc="4" head.shape="quarter" stem.dir="down" stem.len="7"/>
+                                        <dot xml:id="d4ea56896-f36c-4625-9ab2-6dd664e40afe" x="218" facs="../svg/Landsberg_8-1_p015.svg#shape_b7cab76d-11d5-4f18-8140-409316a5f01f" loc="3" type="augmentation"/>
+                                        <note xml:id="d615703ba-809f-4b38-934a-fc4d06d8707d" x="219.6" facs="../svg/Landsberg_8-1_p015.svg#shape_52016ad8-c20b-454f-ac20-74adfbbf6e58" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="4"/>
+                                        <note xml:id="df0465452-e3d7-4b37-ac18-77d1ed088e11" x="221.6" facs="../svg/Landsberg_8-1_p015.svg#shape_76097d9a-effc-479e-883a-ad88287b0455" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="6"/>
+                                        <note xml:id="d141dba20-ee6c-4555-9a28-1bd8a2a71f3d" x="227.3" facs="../svg/Landsberg_8-1_p015.svg#shape_bfbcea70-9c62-4210-ae29-f7f11ccf3080" loc="4" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="12"/>
+                                        <note xml:id="d02a952f2-401e-4da7-a6a7-e9bf68121991" x="234" facs="../svg/Landsberg_8-1_p015.svg#shape_5aa017f8-cc49-48c6-b9f3-ddacc4f5eba8" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="5"/>
+                                        <note xml:id="d5d390e47-e8e7-4651-915c-c8c2d5960242" x="239" facs="../svg/Landsberg_8-1_p015.svg#shape_649a91a1-bc7e-44f1-958e-36d198039b62" loc="1" head.shape="quarter" bw:stem.flags="0" stem.dir="down" stem.len="5"/>
+                                        <note xml:id="d4c6d8cf4-9f31-4019-86f9-46e40dbdecdf" x="257" facs="../svg/Landsberg_8-1_p015.svg#shape_54930777-dbf0-4200-a9f5-b2d4b8e8afd2" loc="3" head.shape="quarter" bw:stem.flags="1" stem.dir="down" stem.len="10"/>
+                                        <rest xml:id="d691cc83a-ea49-4f7d-8242-999def2cbc88" x="266" facs="../svg/Landsberg_8-1_p015.svg#shape_daa042f7-8573-4f95-8179-ae08694b6b36" loc="5" glyph.name="rest8th" glyph.auth="smufl"/>
+                                        <rest xml:id="da462f21b-d2f3-494f-a994-a26c91e3ae5b" x="273" facs="../svg/Landsberg_8-1_p015.svg#shape_8b287f82-312b-44e0-9193-b74f184d8d7d" loc="6" glyph.name="restQuarter" glyph.auth="smufl"/>
+                                    </layer>
+                                </staff>
+                                <line xml:id="b4eb7690c-5f78-408e-982d-51720afaa990" func="beam" staff="1" x="102.53" y="6.11" x2="106.21" y2="3.65" facs="../svg/Landsberg_8-1_p015.svg#shape_4a241ae4-b337-4018-bc62-12163c963958"/>
+                                <line xml:id="bb55b0d6c-7341-4866-a247-8913a45ad90b" func="beam" staff="1" x="136.66" y="2.20" x2="148.93" y2="11.46" facs="../svg/Landsberg_8-1_p015.svg#shape_7a57e3c8-b736-4c87-9209-18da073d31e4"/>
+                                <line xml:id="b3397ada6-b3ba-42f9-822a-a88fec4a4763" func="beam" staff="1" x="160.86" y="8.56" x2="175.25" y2="20.05" facs="../svg/Landsberg_8-1_p015.svg#shape_66ccc442-2ed3-4575-a637-4b30d8476649"/>
+                                <line xml:id="b2ccc6293-4f6b-4d79-8acd-e34a7e589b72" func="beam" staff="2" x="218.15" y="16.69" x2="226.88" y2="12.23" facs="../svg/Landsberg_8-1_p015.svg#shape_3517d02e-1438-4888-922a-83f751c99ffd"/>
+                                <line xml:id="b2ac4be87-c340-46bd-97c5-34104bb0ecb9" func="beam" staff="2" x="222.05" y="17.53" x2="228.93" y2="10.74" facs="../svg/Landsberg_8-1_p015.svg#shape_cb2cb3e2-dcb7-4977-a320-30970472adcc"/>
+                                <line xml:id="bfda9f5fe-5c88-4f19-b8f4-983e406278a4" func="beam" staff="2" x="228.5" y="17.7" x2="233.7" y2="3.6" facs="../svg/Landsberg_8-1_p015.svg#shape_bfbcea70-9c62-4210-ae29-f7f11ccf3080"/>
+                                <line xml:id="bbe28ca7d-a307-4e01-9663-1b671274b7e0" func="beam" staff="2" x="233.11" y="12.78" x2="241.38" y2="11.76" facs="../svg/Landsberg_8-1_p015.svg#shape_d38aa59d-6edf-4544-81bb-6e394b97a7e7"/>
+                                <line xml:id="b80ab2d20-3dcc-4a9b-bd96-af70a361e746" func="beam" staff="2" x="231.07" y="16.87" x2="237.48" y2="15.39" facs="../svg/Landsberg_8-1_p015.svg#shape_a0f02c5f-4431-48a2-8309-cf550bbd9c83"/>
+                                <barLine xml:id="d74b0e3a7-5ece-4cfd-8c51-b9d03a5e223d" x="106.91" facs="../svg/Landsberg_8-1_p015.svg#shape_e620e0be-6c55-4db3-9215-7ec0f709f656" form="single" y="-2.39" x2="110.07" y2="27.55"/>
+                                <barLine xml:id="d50ef1451-0daf-4a59-b1bd-be1e41812700" x="130.67" facs="../svg/Landsberg_8-1_p015.svg#shape_585a9f71-46b5-45e7-86aa-879e3df000a8" form="single" y="-0.19" x2="131.78" y2="26.87"/>
+                                <barLine xml:id="d4075e74a-6f39-4118-94bb-ce3e340e75e1" x="151.27" facs="../svg/Landsberg_8-1_p015.svg#shape_1ef614dc-8c2c-429e-ba56-f754c7397d98" form="single" y="-2.80" x2="151.27" y2="22.74"/>
+                                <barLine xml:id="d4b1f7938-0f84-4053-ac91-35f4ca89b2d2" x="214.00" facs="../svg/Landsberg_8-1_p015.svg#shape_1fe9167a-ff3c-42e2-a3c6-13c10f79eb91" form="single" y="-5.90" x2="210.06" y2="32.22"/>
+                                <barLine xml:id="ddb11dc4c-836e-451f-b80b-554119a00446" x="231.70" facs="../svg/Landsberg_8-1_p015.svg#shape_cbcb2852-8bc1-48a4-ab20-6a5e67a913d9" form="single" y="-4.80" x2="225.17" y2="34.28"/>
+                                <barLine xml:id="dbe033cad-995c-4759-b480-5b32568b8c3b" x="247.00" facs="../svg/Landsberg_8-1_p015.svg#shape_936d37ec-d629-4dee-bfa7-d4b5b1afeb83" form="single" y="-3.30" x2="237.81" y2="22.74"/>
+                                <barLine xml:id="dd5f5d93d-4690-420f-ae9c-2ea62c81db24" x="251.8" facs="../svg/Landsberg_8-1_p015.svg#shape_16ae91dd-ab66-4cc1-9056-8e5d78e4587c" form="single" y="0.3" x2="247.3" y2="32.8"/>
+                                <barLine xml:id="d86f4e2af-e673-494a-979d-f475a2c2915a" x="261.00" facs="../svg/Landsberg_8-1_p015.svg#shape_86913323-57db-4863-bc3d-77fedbadaeb0" form="single" y="-7.30" x2="254.70" y2="37.72"/>
+                                <curve xml:id="d59ac8f7d-6366-404d-a4e2-1b47d00cb241" facs="../svg/Landsberg_8-1_p015.svg#shape_6aaf6ef4-e5a1-4373-b456-74f8188209bb" staff="1" bezier="111.50 -4.80 111.58 -2.53 116.43 -0.80 118.72 -4.18"/>
+                                <dir xml:id="d2ee4ba5a-d90f-4df7-aa79-5f714fb43442" x="257" facs="../svg/Landsberg_8-1_p015.svg#shape_e599fa35-560c-461f-aa3a-5f26c613b1e2" width="18" y="7" staff="1">
+                                    etc
+                                </dir>
+                                <barLine xml:id="d9aa469d2-7bdd-4694-aa42-2a6c43754bcc" x="92.30" facs="../svg/Landsberg_8-1_p015.svg#shape_9dfe37e9-5dc2-41ba-84f6-0b65a9d5a72f" form="single" y="-3.90" x2="89.16" y2="28.81"/>
+                                <barLine xml:id="df9096a9d-5631-4ff7-b351-1e43305b3d01" x="179.20" facs="../svg/Landsberg_8-1_p015.svg#shape_dca1d14a-3695-4dc0-b458-2e322a3af1e1" form="single" y="-1.90" x2="178.09" y2="34.29"/>
+                                <line xml:id="d0a0cee0a-42ad-4b96-9999-1f8553fbea82" x="113.46" facs="../svg/Landsberg_8-1_p015.svg#shape_8eec4c90-87e9-48d3-a22b-4ca9b7aec573" func="beam" staff="1" y="7.45" x2="127.62" y2="5.22"/>
+                                <line xml:id="d3ac72462-5969-4b9f-8d4e-29ee54e24d67" x="201" facs="../svg/Landsberg_8-1_p015.svg#shape_f0687238-a5e4-4f45-9949-679f53557808" func="beam" staff="2" y="14.7" x2="207.60" y2="14"/>
+                                <line xml:id="d93fd2692-7796-44c6-beab-8dd22bbf49eb" x="202.2" facs="../svg/Landsberg_8-1_p015.svg#shape_40f87aa8-f913-45b1-a297-b7c500520d05" func="beam" staff="2" y="17.5" x2="206.7" y2="15.3"/>
+                                <line xml:id="dfd84428e-0011-4328-8b93-8e98feabcb0d" x="242" facs="../svg/Landsberg_8-1_p015.svg#shape_ac360c97-ca9c-4fdd-8b56-ad0b8b040010" func="halfmRpt" staff="2" y="12.1" x2="247" y2="7"/>
+                                <line xml:id="df3b4e31c-3670-41f5-ac7f-f1980a4a9fff" x="247" facs="../svg/Landsberg_8-1_p015.svg#shape_a1398078-374f-4850-8736-a1146352e11f" func="mRpt" staff="2" y="15.3" x2="253.7" y2="6"/>
+                                <line xml:id="dec3fea18-f98e-48c7-9e99-85b3a3620ba5" x="251" facs="../svg/Landsberg_8-1_p015.svg#shape_3417b85f-10a9-4e32-aa06-5cbfd7ae945f" func="mRpt" staff="2" y="15.8" x2="255.2" y2="8.4"/>
+                            </section>
+                        </bw:system>
+                        <del xml:id="xa8af748b-8f7c-479c-acdc-3befbc73844a" facs="../svg/Landsberg_8-1_p015.svg#shape_e77334c0-a4f6-450e-bfee-c0535d47039e">
+                            <svg:path id="s889d501b-2ff7-4fef-a2b3-86b408703e90" d="M120.1,61 L124.39999999999999,61 L124.39999999999999,66.7 L120.1,66.7 Z"/>
+                        </del>
+                    </bw:draft>
+                </bw:drafts>
+            </mdiv>
+        </body>
+    </music>
+</mei>
