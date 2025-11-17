@@ -45,18 +45,11 @@ jobs:
 
       # check repo status before push to avoid overlapping commits
 
-      - name: configure git
-        run: |
-          echo "Configuring git..."
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-      
       - name: Commit
         run: |
-          cd cache
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add .
+          git add cache
           git commit -m "Update cached data from data-repository"
           git push origin main
         working-directory: ./data-cache
