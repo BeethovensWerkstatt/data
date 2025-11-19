@@ -189,6 +189,7 @@
             </classSpec>
 
 
+
             <!-- All Schematron rules are gathered here for better orientation. -->
             <elementSpec ident="mei" module="MEI.shared" mode="change">
                <constraintSpec ident="check-mei-id" scheme="schematron" mode="add">
@@ -260,10 +261,6 @@
                      <sch:rule context="mei:fermata">
                         <sch:assert test="@x and @y">Every fermata must have an @x and @y
                            attribute.</sch:assert>
-                        <sch:assert
-                           test="not(@dur or @dur.ges or @endid or @tstamp2 or @startid or @tstamp or @tstamp.ges or @tstamp.real)"
-                           >Every fermata must not use the following attributes: startid, tstamp,
-                           tstamp.ges, tstamp.real, dur, dur.ges, endid, or tstamp2.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:fing">
                         <sch:assert test="@staff">Every fing needs a staff attribute.</sch:assert>
@@ -281,17 +278,17 @@
                         <sch:assert test="@dis.place">Every octave needs a dis.place
                            attribute.</sch:assert>
                      </sch:rule>
-                     <sch:rule context="mei:pedal">
+                     <!--<sch:rule context="mei:pedal">
                         <sch:assert test="@place">Every pedal needs a place attribute.</sch:assert>
                         <sch:assert test="@staff">Every pedal needs a staff attribute.</sch:assert>
                         <sch:assert test="@layer">Every pedal needs a layer attribute.</sch:assert>
-                        <!--<sch:assert test="@tstamp">Every pedal needs a tstamp
-                           attribute.</sch:assert>-->
-                     </sch:rule>
-                     <sch:rule context="mei:slur">
+                        <!-\-<sch:assert test="@tstamp">Every pedal needs a tstamp
+                           attribute.</sch:assert>-\->
+                     </sch:rule>-->
+                     <!--<sch:rule context="mei:slur">
                         <sch:assert test="@curvedir">Every slur needs a curvedir
                            attribute.</sch:assert>
-                     </sch:rule>
+                     </sch:rule>-->
                      <sch:rule context="mei:tempo">
                         <sch:assert test="@staff">Every tempo needs a staff attribute.</sch:assert>
                      </sch:rule>
@@ -562,6 +559,7 @@
                         <rng:ref name="model.transcriptionLike"/>
                         <rng:ref name="clef"/>
                         <rng:ref name="meterSig"/>
+                        <rng:ref name="model.eventLike"/>
                      </rng:choice>
                   </rng:zeroOrMore>
                </content>
@@ -792,7 +790,21 @@
                </classes>
             </elementSpec>
 
-            <elementSpec ident="fermata" module="MEI.cmn" mode="change"> </elementSpec>
+            <elementSpec ident="fermata" module="MEI.cmn" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.staffIdent"/>
+                  <memberOf key="model.dtControlEvents"/>
+                  <memberOf key="att.fermata.vis"/>
+               </classes>
+               <constraintSpec ident="fermata_start-type_attributes_required" scheme="schematron"
+                  mode="replace">
+                  <constraint>
+                     <!-- empty -->
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
 
             <elementSpec ident="dynam" module="MEI.shared" mode="change">
                <classes>
@@ -810,6 +822,45 @@
                   </constraint>
                </constraintSpec>
                <constraintSpec ident="dynam_end-type_attributes" scheme="schematron" mode="replace">
+                  <constraint>
+                     <!-- empty -->
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+
+            <elementSpec ident="pedal" module="MEI.cmn" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="att.staffIdent"/>
+                  <memberOf key="att.dir"/>
+                  <memberOf key="model.dtControlEvents"/>
+               </classes>
+               <constraintSpec ident="pedal_start-type_attributes_required" scheme="schematron" mode="replace">
+                  <constraint>
+                     <sch:rule context="mei:pedal">
+                        <!-- empty -->
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="slur" module="MEI.cmn" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="model.dtControlEvents"/>
+               </classes>
+               <constraintSpec ident="slur_start-_and_end-type_attributes_required" scheme="schematron" mode="replace">
+                  <constraint>
+                     <sch:rule context="mei:slur">
+                        <!-- empty -->
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec ident="slur_containing_curve" scheme="schematron" mode="replace">
                   <constraint>
                      <!-- empty -->
                   </constraint>
@@ -845,14 +896,15 @@
                   <memberOf key="att.octaveDisplacement"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
-               <constraintSpec ident="octave_start-_and_end-type_attributes_required" scheme="schematron" mode="replace">
+               <constraintSpec ident="octave_start-_and_end-type_attributes_required"
+                  scheme="schematron" mode="replace">
                   <constraint>
                      <!-- empty -->
                   </constraint>
                </constraintSpec>
             </elementSpec>
-            
-           <!-- <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
+
+            <!-- <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
                <classes>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
@@ -862,7 +914,64 @@
                   </constraint>
                </constraintSpec>
             </elementSpec> -->
-            
+
+            <elementSpec ident="note" module="MEI.shared" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="att.staffLoc"/>
+                  <memberOf key="att.noteHeads"/>
+                  <memberOf key="att.stems"/>
+                  <memberOf key="att.stemFlags"/>
+                  <memberOf key="model.eventLike"/>
+                  <memberOf key="model.chordPart"/>
+               </classes>
+            </elementSpec>
+
+            <elementSpec ident="chord" module="MEI.shared" mode="change">
+               <desc xml:lang="en">A simultaneous sounding of two or more notes in the same layer
+                  *with the same duration*.</desc>
+               <classes>
+                  <memberOf key="att.common"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.chord.anl"/>
+                  <memberOf key="att.chord.ges"/>
+                  <memberOf key="att.chord.log"/>
+                  <memberOf key="att.chord.vis"/>
+                  <memberOf key="model.eventLike"/>
+                  <memberOf key="att.stemFlags"/>
+               </classes>
+               <content>
+                  <rng:zeroOrMore>
+                     <rng:choice>
+                        <rng:ref name="model.chordPart"/>
+                        <rng:ref name="model.appLike"/>
+                        <rng:ref name="model.editLike"/>
+                        <rng:ref name="model.sylLike"/>
+                        <rng:ref name="model.transcriptionLike"/>
+                        <rng:ref name="model.verseLike"/>
+                     </rng:choice>
+                  </rng:zeroOrMore>
+               </content>
+            </elementSpec>
+
+            <classSpec type="atts" ident="att.stemFlags" mode="add" module="MEI">
+               <desc xml:lang="en">Attributes recording the number of flags attached to a note
+                  stem.</desc>
+               <attList>
+                  <attDef ident="stem.flags" usage="opt"
+                     ns="https://beethovens-werkstatt.de/ns/meiAdditions">
+                     <desc xml:lang="de"> Indicates the number of flags attached to the note stem. A
+                        value of 0 means no flags, 1 corresponds to an eighth note, 2 to a sixteenth
+                        note, and so on. </desc>
+                     <datatype>
+                        <rng:data type="nonNegativeInteger"/>
+                     </datatype>
+                  </attDef>
+               </attList>
+            </classSpec>
+
             <classSpec ident="att.meiVersion" module="MEI.shared" type="atts" mode="replace">
                <desc xml:lang="en">Attributes that record the version of MEI in use.</desc>
                <attList>
