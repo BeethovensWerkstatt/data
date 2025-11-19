@@ -75,7 +75,7 @@
                except="addName bloc country district famName foreName genName geogFeat nameLink periodName postBox postCode region roleName settlement street styleName"/>
             <moduleRef key="MEI.ptrref"/>
             <moduleRef key="MEI.shared"
-               except="actor address addrLine ambitus ambNote analytic author barLine caption castGrp castItem cb castList colLayout contributor custos depth dim dimensions distributor div dot edition event eventList expansion extent genre group height imprint incip keyAccid lg librettist monogr pad pgDesc pgFoot pgHead phrase recipient relatedItem role roleDesc speaker sponsor stack term textLang titlePage titlePart width"/>
+               except="actor address addrLine ambitus ambNote analytic author barLine caption castGrp castItem cb castList colLayout contributor custos depth dim dimensions distributor div dot edition event eventList expansion extent genre group height imprint incip lg librettist monogr pad pgDesc pgFoot pgHead phrase recipient relatedItem role roleDesc speaker sponsor stack term textLang titlePage titlePart width"/>
             <moduleRef key="MEI.visual"/>
             
             <!-- changing Schematron rule -->
@@ -376,11 +376,20 @@
                <gloss versionDate="2024-10-15" resp="#KH" xml:lang="de">Dur-Moll_Tonalität</gloss>
                <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">No information regarding mode (minor, major) is given</desc>
                <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Es wird keine Angabe zur Dur-Moll-Tonalität gemacht.</desc>
+               <classes mode="replace">
+                  <memberOf key="model.keySigLike"/>
+                  <memberOf key="att.id"/>
+               </classes>
+               <content>
+                  <rng:zeroOrMore>
+                     <rng:ref name="model.keyAccidLike"/>
+                  </rng:zeroOrMore>
+               </content>
                <constraintSpec ident="check-keysig-mode" scheme="schematron" mode="add">
                   <constraint>
                      <sch:rule context="mei:keySig">
                         <sch:assert test="not(@mode)">keySig is not allowed to have @mode</sch:assert>
-                     </sch:rule>
+                     </sch:rule>x
                   </constraint>
                </constraintSpec>
             </elementSpec>
@@ -440,8 +449,9 @@
                   <memberOf key="model.scoreDefLike"/>
                </classes>
                <content>
-                  <rng:ref name="model.meterSigLike"/>
-                  <rng:ref name="model.staffGrpLike"/>
+                  <rng:oneOrMore>
+                     <rng:ref name="model.staffGrpLike"/>
+                  </rng:oneOrMore>
                </content>
             </elementSpec>
             
@@ -484,8 +494,9 @@
                   <memberOf key="model.staffDefLike"/>
                </classes>
                <content>
-                  <rng:ref name="model.keySigLike"/>
-                  <rng:ref name="clef"/>
+                  <rng:zeroOrMore>
+                     <rng:ref name="model.staffDefPart"/>
+                  </rng:zeroOrMore>
                </content>
                <constraintSpec ident="check-staffDefs" scheme="schematron" mode="add">
                   <constraint>
