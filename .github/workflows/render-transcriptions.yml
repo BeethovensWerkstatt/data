@@ -5,7 +5,7 @@ name: Generate and cache diplomatic, annotated, and fluid transcriptions
 on:
   push:
     branches: 
-      - 'never' # 'dev'
+      - 'dev'
     paths:
       - 'data/sources/**/annotatedTranscripts/**/*.xml'
       - 'data/sources/**/diplomaticTranscripts/**/*.xml'
@@ -18,7 +18,7 @@ jobs:
     permissions:
       contents: write
     concurrency:
-      group: render-transcriptions-${{ github.ref }}
+      group: render-transcriptions
       cancel-in-progress: true
 
     steps:
@@ -52,7 +52,10 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add cache
-          git commit -m "Update cached data from data-repository"
-          git push origin main
+          if [ -n "$(git status --porcelain cache)" ]
+          then
+            git add cache
+            git commit -m "Update cached data from data-repository"
+            git push origin main
+          fi
         working-directory: ./data-cache
