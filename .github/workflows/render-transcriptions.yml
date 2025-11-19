@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    concurrency:
+      group: render-transcriptions-${{ github.ref }}
+      cancel-in-progress: true
 
     steps:
       - name: Checkout data repository
