@@ -292,7 +292,9 @@
     <xsl:template match="mei:staffDef" mode="body">
         <xsl:copy>
             <xsl:apply-templates select="@* except (@clef.line, @clef.shape, @key.mode, @key.sig)" mode="#current"/>
-            <keySig xmlns="http://www.music-encoding.org/ns/mei" sig="{@key.sig}" mode="{@key.mode}"/>
+            <keySig xmlns="http://www.music-encoding.org/ns/mei" sig="{@key.sig}" mode="{@key.mode}">
+                <!-- TODO -->
+            </keySig>
             <clef xmlns="http://www.music-encoding.org/ns/mei" shape="{@clef.shape}" line="{@clef.line}"/>
             
             <xsl:apply-templates select="node()" mode="#current"/>
