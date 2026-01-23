@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2025-11-18T10:08:46Z. . 
+Schema generated from ODD source 2026-01-22T14:07:56Z. . 
 TEI Edition: MEI 6.0-dev 
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -7927,6 +7927,106 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
          <ref name="mei_model.ornamentLike.cmn"/>
       </choice>
    </define>
+   <define name="mei_model.controlEventLike.cmn_alternation">
+      <choice>
+         <ref name="mei_arpeg"/>
+         <ref name="mei_attacca"/>
+         <ref name="mei_hairpin"/>
+         <ref name="mei_harpPedal"/>
+         <ref name="mei_lv"/>
+         <ref name="mei_reh"/>
+         <ref name="mei_tie"/>
+         <ref name="mei_model.ornamentLike.cmn_alternation"/>
+      </choice>
+   </define>
+   <define name="mei_model.controlEventLike.cmn_sequence">
+      <ref name="mei_arpeg"/>
+      <ref name="mei_attacca"/>
+      <ref name="mei_hairpin"/>
+      <ref name="mei_harpPedal"/>
+      <ref name="mei_lv"/>
+      <ref name="mei_reh"/>
+      <ref name="mei_tie"/>
+      <ref name="mei_model.ornamentLike.cmn_sequence"/>
+   </define>
+   <define name="mei_model.controlEventLike.cmn_sequenceOptional">
+      <optional>
+         <ref name="mei_arpeg"/>
+      </optional>
+      <optional>
+         <ref name="mei_attacca"/>
+      </optional>
+      <optional>
+         <ref name="mei_hairpin"/>
+      </optional>
+      <optional>
+         <ref name="mei_harpPedal"/>
+      </optional>
+      <optional>
+         <ref name="mei_lv"/>
+      </optional>
+      <optional>
+         <ref name="mei_reh"/>
+      </optional>
+      <optional>
+         <ref name="mei_tie"/>
+      </optional>
+      <optional>
+         <ref name="mei_model.ornamentLike.cmn_sequenceOptional"/>
+      </optional>
+   </define>
+   <define name="mei_model.controlEventLike.cmn_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_arpeg"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_attacca"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_hairpin"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_harpPedal"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_lv"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_reh"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_tie"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_model.ornamentLike.cmn_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.controlEventLike.cmn_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_arpeg"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_attacca"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_hairpin"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_harpPedal"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_lv"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_reh"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_tie"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_model.ornamentLike.cmn_sequenceRepeatable"/>
+      </oneOrMore>
+   </define>
    <define name="mei_model.eventLike.cmn">
       <choice>
          <ref name="mei_beam"/>
@@ -8125,6 +8225,29 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
       <choice>
          <ref name="mei_measure"/>
       </choice>
+   </define>
+   <define name="mei_model.measureLike_alternation">
+      <choice>
+         <ref name="mei_measure"/>
+      </choice>
+   </define>
+   <define name="mei_model.measureLike_sequence">
+      <ref name="mei_measure"/>
+   </define>
+   <define name="mei_model.measureLike_sequenceOptional">
+      <optional>
+         <ref name="mei_measure"/>
+      </optional>
+   </define>
+   <define name="mei_model.measureLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_measure"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.measureLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_measure"/>
+      </oneOrMore>
    </define>
    <define name="mei_model.measurePart">
       <choice>
@@ -9235,13 +9358,50 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
    <define name="mei_model.editLike">
       <notAllowed/>
    </define>
+   <define name="mei_model.editTransPart">
+      <choice>
+         <ref name="mei_model.editTransPart.music"/>
+         <ref name="mei_model.editTransPart.text"/>
+         <ref name="mei_model.sylLike"/>
+      </choice>
+   </define>
+   <define name="mei_model.editTransPart.music">
+      <choice>
+         <ref name="mei_model.controlEventLike.cmn"/>
+         <ref name="mei_model.verseLike"/>
+         <ref name="mei_volta"/>
+         <ref name="mei_model.controlEventLike"/>
+         <ref name="mei_model.layerLike"/>
+         <ref name="mei_model.noteModifierLike"/>
+      </choice>
+   </define>
+   <define name="mei_model.editTransPart.text">
+      <choice>
+         <ref name="mei_model.textComponentLike"/>
+         <ref name="mei_model.textPhraseLike.limited"/>
+      </choice>
+   </define>
    <define name="mei_model.transcriptionLike">
       <notAllowed/>
    </define>
    <define name="mei_del">
       <element name="del">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(deletion) Contains information deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the copy text by an author, scribe, annotator, or corrector.</a:documentation>
-         <empty/>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="mei_model.editLike"/>
+               <ref name="mei_model.editTransPart"/>
+               <ref name="mei_model.fLike"/>
+               <ref name="mei_model.graphicPrimitiveLike"/>
+               <ref name="mei_model.keyAccidLike"/>
+               <ref name="mei_model.layerPart"/>
+               <ref name="mei_model.milestoneLike.music"/>
+               <ref name="mei_model.sectionPart"/>
+               <ref name="mei_model.staffGrpLike"/>
+               <ref name="mei_model.transcriptionLike"/>
+            </choice>
+         </zeroOrMore>
          <ref name="mei_att.id.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
          <empty/>
@@ -9432,6 +9592,21 @@ Suggested values include: 1] smufl</a:documentation>
       </choice>
    </define>
    <define name="mei_model.tableLike">
+      <notAllowed/>
+   </define>
+   <define name="mei_model.tableLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="mei_model.tableLike_sequence">
+      <empty/>
+   </define>
+   <define name="mei_model.tableLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="mei_model.tableLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="mei_model.tableLike_sequenceRepeatable">
       <notAllowed/>
    </define>
    <define name="mei_graphic">
@@ -9887,7 +10062,6 @@ Suggested values include: 1] smufl</a:documentation>
       </sch:rule>
    </pattern>
    <define name="mei_att.f.log.attributes">
-      <ref name="mei_att.controlEvent.attributes"/>
       <ref name="mei_att.duration.additive.attributes"/>
       <ref name="mei_att.startEndId.attributes"/>
       <ref name="mei_att.timestamp2.log.attributes"/>
@@ -11133,6 +11307,40 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_refrain"/>
          <ref name="mei_verse"/>
       </choice>
+   </define>
+   <define name="mei_model.verseLike_alternation">
+      <choice>
+         <ref name="mei_refrain"/>
+         <ref name="mei_verse"/>
+      </choice>
+   </define>
+   <define name="mei_model.verseLike_sequence">
+      <ref name="mei_refrain"/>
+      <ref name="mei_verse"/>
+   </define>
+   <define name="mei_model.verseLike_sequenceOptional">
+      <optional>
+         <ref name="mei_refrain"/>
+      </optional>
+      <optional>
+         <ref name="mei_verse"/>
+      </optional>
+   </define>
+   <define name="mei_model.verseLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_refrain"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_verse"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.verseLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_refrain"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_verse"/>
+      </oneOrMore>
    </define>
    <define name="mei_refrain">
       <element name="refrain">
@@ -14487,6 +14695,106 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_ornam"/>
       </choice>
    </define>
+   <define name="mei_model.controlEventLike_alternation">
+      <choice>
+         <ref name="mei_gliss"/>
+         <ref name="mei_repeatMark"/>
+         <ref name="mei_model.stageDirLike_alternation"/>
+         <ref name="mei_sp"/>
+         <ref name="mei_model.fingeringLike_alternation"/>
+         <ref name="mei_model.controlEventLike.harmony_alternation"/>
+         <ref name="mei_caesura"/>
+         <ref name="mei_ornam"/>
+      </choice>
+   </define>
+   <define name="mei_model.controlEventLike_sequence">
+      <ref name="mei_gliss"/>
+      <ref name="mei_repeatMark"/>
+      <ref name="mei_model.stageDirLike_sequence"/>
+      <ref name="mei_sp"/>
+      <ref name="mei_model.fingeringLike_sequence"/>
+      <ref name="mei_model.controlEventLike.harmony_sequence"/>
+      <ref name="mei_caesura"/>
+      <ref name="mei_ornam"/>
+   </define>
+   <define name="mei_model.controlEventLike_sequenceOptional">
+      <optional>
+         <ref name="mei_gliss"/>
+      </optional>
+      <optional>
+         <ref name="mei_repeatMark"/>
+      </optional>
+      <optional>
+         <ref name="mei_model.stageDirLike_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="mei_sp"/>
+      </optional>
+      <optional>
+         <ref name="mei_model.fingeringLike_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="mei_model.controlEventLike.harmony_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="mei_caesura"/>
+      </optional>
+      <optional>
+         <ref name="mei_ornam"/>
+      </optional>
+   </define>
+   <define name="mei_model.controlEventLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_gliss"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_repeatMark"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_model.stageDirLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_sp"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_model.fingeringLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_model.controlEventLike.harmony_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_caesura"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_ornam"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.controlEventLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_gliss"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_repeatMark"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_model.stageDirLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_sp"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_model.fingeringLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_model.controlEventLike.harmony_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_caesura"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_ornam"/>
+      </oneOrMore>
+   </define>
    <define name="mei_model.dateLike">
       <choice>
          <ref name="mei_date"/>
@@ -14650,6 +14958,29 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_layer"/>
       </choice>
    </define>
+   <define name="mei_model.layerLike_alternation">
+      <choice>
+         <ref name="mei_layer"/>
+      </choice>
+   </define>
+   <define name="mei_model.layerLike_sequence">
+      <ref name="mei_layer"/>
+   </define>
+   <define name="mei_model.layerLike_sequenceOptional">
+      <optional>
+         <ref name="mei_layer"/>
+      </optional>
+   </define>
+   <define name="mei_model.layerLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_layer"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.layerLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_layer"/>
+      </oneOrMore>
+   </define>
    <define name="mei_model.layerPart">
       <choice>
          <ref name="mei_model.layerPart.cmn"/>
@@ -14806,6 +15137,51 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_dot"/>
       </choice>
    </define>
+   <define name="mei_model.noteModifierLike_alternation">
+      <choice>
+         <ref name="mei_accid"/>
+         <ref name="mei_artic"/>
+         <ref name="mei_dot"/>
+      </choice>
+   </define>
+   <define name="mei_model.noteModifierLike_sequence">
+      <ref name="mei_accid"/>
+      <ref name="mei_artic"/>
+      <ref name="mei_dot"/>
+   </define>
+   <define name="mei_model.noteModifierLike_sequenceOptional">
+      <optional>
+         <ref name="mei_accid"/>
+      </optional>
+      <optional>
+         <ref name="mei_artic"/>
+      </optional>
+      <optional>
+         <ref name="mei_dot"/>
+      </optional>
+   </define>
+   <define name="mei_model.noteModifierLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_accid"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_artic"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_dot"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.noteModifierLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_accid"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_artic"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_dot"/>
+      </oneOrMore>
+   </define>
    <define name="mei_model.numLike">
       <choice>
          <ref name="mei_num"/>
@@ -14875,6 +15251,29 @@ Suggested values include: 1] smufl</a:documentation>
       <choice>
          <ref name="mei_p"/>
       </choice>
+   </define>
+   <define name="mei_model.pLike_alternation">
+      <choice>
+         <ref name="mei_p"/>
+      </choice>
+   </define>
+   <define name="mei_model.pLike_sequence">
+      <ref name="mei_p"/>
+   </define>
+   <define name="mei_model.pLike_sequenceOptional">
+      <optional>
+         <ref name="mei_p"/>
+      </optional>
+   </define>
+   <define name="mei_model.pLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_p"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.pLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_p"/>
+      </oneOrMore>
    </define>
    <define name="mei_model.relationLike">
       <choice>
@@ -15051,6 +15450,15 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_section"/>
       </choice>
    </define>
+   <define name="mei_model.sectionPart">
+      <choice>
+         <ref name="mei_model.sectionPart.cmn"/>
+         <ref name="mei_model.endingLike"/>
+         <ref name="mei_model.scoreDefLike"/>
+         <ref name="mei_model.sectionLike"/>
+         <ref name="mei_model.staffDefLike"/>
+      </choice>
+   </define>
    <define name="mei_model.staffDefLike">
       <choice>
          <ref name="mei_staffDef"/>
@@ -15082,6 +15490,40 @@ Suggested values include: 1] smufl</a:documentation>
          <ref name="mei_model.tableLike"/>
          <ref name="mei_model.pLike"/>
       </choice>
+   </define>
+   <define name="mei_model.textComponentLike_alternation">
+      <choice>
+         <ref name="mei_model.tableLike_alternation"/>
+         <ref name="mei_model.pLike_alternation"/>
+      </choice>
+   </define>
+   <define name="mei_model.textComponentLike_sequence">
+      <ref name="mei_model.tableLike_sequence"/>
+      <ref name="mei_model.pLike_sequence"/>
+   </define>
+   <define name="mei_model.textComponentLike_sequenceOptional">
+      <optional>
+         <ref name="mei_model.tableLike_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="mei_model.pLike_sequenceOptional"/>
+      </optional>
+   </define>
+   <define name="mei_model.textComponentLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_model.tableLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_model.pLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.textComponentLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_model.tableLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="mei_model.pLike_sequenceRepeatable"/>
+      </oneOrMore>
    </define>
    <define name="mei_model.textPhraseLike">
       <choice>
@@ -17545,7 +17987,6 @@ Suggested values include: 1] coloration; 2] ligature; 3] unknown</a:documentatio
       <ref name="mei_att.altSym.attributes"/>
       <ref name="mei_att.color.attributes"/>
       <ref name="mei_att.extender.attributes"/>
-      <ref name="mei_att.placementRelStaff.attributes"/>
       <ref name="mei_att.visualOffset.attributes"/>
       <ref name="mei_att.xy.attributes"/>
    </define>
