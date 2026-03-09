@@ -22,7 +22,10 @@
             <sch:assert test="child::element()[2]/@class = '#bw_writingZoneBegin'">The annot must use @class = '#bw_writingZoneBegin'</sch:assert>
             <sch:assert test="child::element()[3]/local-name() = 'sb'">The third child in the first section must be a sb.</sch:assert>
         </sch:rule>
-    </sch:pattern>
+        </sch:pattern>
+        
+    
+    
     
     <!-- <sb/> in ATs -->
     <sch:pattern id="check_pb_in_AT">

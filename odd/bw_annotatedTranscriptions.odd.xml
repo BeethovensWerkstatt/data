@@ -14,16 +14,16 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>
-            </publisher>
+            <publisher> </publisher>
             <date when="2023"/>
             <availability>
-               <licence target="http://creativecommons.org/licenses/by-sa/4.0/">
-                  Creative Commons Attribution-ShareAlike 4.0 International </licence>
+               <licence target="http://creativecommons.org/licenses/by-sa/4.0/"> Creative Commons
+                  Attribution-ShareAlike 4.0 International </licence>
             </availability>
          </publicationStmt>
          <sourceDesc>
-            <p>Original work by the Beethovens Werkstatt, but inspired by the great work of many other projects.</p>
+            <p>Original work by the Beethovens Werkstatt, but inspired by the great work of many
+               other projects.</p>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
@@ -37,15 +37,15 @@
    </teiHeader>
    <text>
       <body>
-         <schemaSpec ident="mei" ns="http://www.music-encoding.org/ns/mei" prefix="mei_"
-            start="mei" source="https://raw.githubusercontent.com/music-encoding/schema/refs/heads/main/dev/mei-all_compiled.odd">
+         <schemaSpec ident="mei" ns="http://www.music-encoding.org/ns/mei" prefix="mei_" start="mei"
+            source="https://raw.githubusercontent.com/music-encoding/schema/refs/heads/main/dev/mei-all_compiled.odd">
             <!-- Declare MEI and XLink namespaces for use in Schematron -->
             <constraintSpec ident="set_ns" scheme="schematron" mode="add">
                <constraint>
                   <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="mei"
                      uri="http://www.music-encoding.org/ns/mei"/>
                   <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="xlink"
-                     uri   ="http://www.w3.org/1999/xlink"/>
+                     uri="http://www.w3.org/1999/xlink"/>
                   <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="svg"
                      uri="http://www.w3.org/2000/svg"/>
                   <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="tei"
@@ -56,8 +56,7 @@
             </constraintSpec>
             <!-- Include all modules -->
             <moduleRef key="MEI"/>
-            <moduleRef key="MEI.cmn"
-               except="bend bracketSpan breath meterSigGrp mNum tupletSpan"/>
+            <moduleRef key="MEI.cmn" except="bend bracketSpan breath meterSigGrp mNum tupletSpan"/>
             <moduleRef key="MEI.cmnOrnaments"/>
             <moduleRef key="MEI.drama" except="sp"/>
             <moduleRef key="MEI.externalsymbols"/>
@@ -77,29 +76,39 @@
             <moduleRef key="MEI.shared"
                except="actor address addrLine ambitus ambNote analytic barLine caption castGrp castItem cb castList colLayout contributor custos depth dim dimensions distributor div edition event eventList expansion extent genre group height imprint incip lg monogr pad pgDesc pgFoot pgHead phrase recipient relatedItem role roleDesc speaker sponsor stack term textLang titlePage titlePart width"/>
             <moduleRef key="MEI.visual"/>
-            
+            <moduleRef key="MEI.edittrans"
+            except="abbr choice corr cpMark damage expan gap handShift metaMark orig reg sic subst supplied unclear"/>
+
             <!-- changing Schematron rule -->
             <!-- TODO: This is a temporary fix -->
             <classSpec ident="att.responsibility" module="MEI.shared" type="atts" mode="change">
-               <desc xml:lang="en">Attributes capturing information regarding responsibility for some aspect of the text's creation, transcription, editing, or encoding.</desc>
+               <desc xml:lang="en">Attributes capturing information regarding responsibility for
+                  some aspect of the text's creation, transcription, editing, or encoding.</desc>
                <attList>
                   <attDef ident="resp" usage="opt" mode="change">
-                     <desc xml:lang="en">Indicates the agent(s) responsible for some aspect of the text’s transcription, editing, or encoding. Its value must point to one or more identifiers declared in the document header.</desc>
+                     <desc xml:lang="en">Indicates the agent(s) responsible for some aspect of the
+                        text’s transcription, editing, or encoding. Its value must point to one or
+                        more identifiers declared in the document header.</desc>
                      <datatype maxOccurs="unbounded">
                         <rng:ref name="data.URI"/>
                      </datatype>
                      <constraintSpec ident="check_respTarget" scheme="schematron" mode="change">
                         <constraint>
                            <sch:rule context="@resp">
-                              <sch:assert role="warning" test="not(normalize-space(.) eq '')">@resp attribute should have content.</sch:assert>
-                              <sch:assert role="warning" test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:*[ancestor::mei:meiHead]/@xml:id) or . = '#bw_jk'">The value in @resp should correspond to the @xml:id attribute of an element within the metadata header, or reference #bw_jk.</sch:assert>
+                              <sch:assert role="warning" test="not(normalize-space(.) eq '')">@resp
+                                 attribute should have content.</sch:assert>
+                              <sch:assert role="warning"
+                                 test="(every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:*[ancestor::mei:meiHead]/@xml:id) or . = '#bw_jk'"
+                                 >The value in @resp should correspond to the @xml:id attribute of
+                                 an element within the metadata header, or reference
+                                 #bw_jk.</sch:assert>
                            </sch:rule>
                         </constraint>
                      </constraintSpec>
                   </attDef>
                </attList>
             </classSpec>
-            
+
             <classSpec type="atts" ident="att.linking" module="MEI.shared" mode="change">
                <attList>
                   <attDef ident="dot-corresp" usage="opt" mode="add">
@@ -110,15 +119,15 @@
                                  >@dot-corresp attribute should have content.</sch:assert>
                               <sch:assert role="warning"
                                  test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:*/@xml:id or matches($i, '^([a-z]+://|\.{1,2}/)')"
-                                 >Each value in @dot-corresp should correspond to the @xml:id attribute
-                                 of an element or be an external URL.</sch:assert>
+                                 >Each value in @dot-corresp should correspond to the @xml:id
+                                 attribute of an element or be an external URL.</sch:assert>
                            </sch:rule>
                         </constraint>
                      </constraintSpec>
                   </attDef>
                </attList>
             </classSpec>
-            
+
             <!-- Disable mensural- and neume-specific model classes in the shared module -->
             <classSpec ident="model.sectionPart.mensuralAndNeumes" module="MEI.shared" type="model"
                mode="delete"/>
@@ -127,37 +136,40 @@
             <classSpec ident="model.layerPart.mensuralAndNeumes" module="MEI.shared" type="model"
                mode="delete"/>
             <!-- delete atribute classes -->
-            <classSpec ident="att.timestamp.ges" module="MEI.gestural" type="atts"
-               mode="delete"/>
-            <classSpec ident="att.timestamp2.ges" module="MEI.gestural" type="atts"
-               mode="delete"/>
-            
+            <classSpec ident="att.timestamp.ges" module="MEI.gestural" type="atts" mode="delete"/>
+            <classSpec ident="att.timestamp2.ges" module="MEI.gestural" type="atts" mode="delete"/>
+
             <classSpec type="atts" ident="att.linking" module="MEI.shared" mode="change">
                <attList>
                   <attDef ident="corresp" usage="opt" mode="change">
                      <constraintSpec ident="check_correspTarget" scheme="schematron" mode="replace">
                         <constraint>
                            <sch:rule context="@corresp">
-                              <sch:assert role="warning" test="not(normalize-space(.) eq '')">@corresp attribute should have content.</sch:assert>
-                              <sch:assert role="warning" test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:*/@xml:id or matches($i, '^([a-z]+://|\.{1,2}/)')">Each value in @corresp should correspond to the @xml:id attribute of an element or be an external URL.</sch:assert>
+                              <sch:assert role="warning" test="not(normalize-space(.) eq '')"
+                                 >@corresp attribute should have content.</sch:assert>
+                              <sch:assert role="warning"
+                                 test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:*/@xml:id or matches($i, '^([a-z]+://|\.{1,2}/)')"
+                                 >Each value in @corresp should correspond to the @xml:id attribute
+                                 of an element or be an external URL.</sch:assert>
                            </sch:rule>
                         </constraint>
                      </constraintSpec>
                   </attDef>
                </attList>
             </classSpec>
-            
+
             <!-- Move model.noteModifierLike from layerPart.mensuralAndNeumes to editTransPart.music -->
-            <classSpec ident="model.noteModifierLike" module="MEI.shared" type="model" mode="replace">
+            <classSpec ident="model.noteModifierLike" module="MEI.shared" type="model"
+               mode="replace">
                <desc>Groups elements that modify note-like features.</desc>
                <classes>
                   <memberOf key="model.editTransPart.music"/>
                </classes>
             </classSpec>
-            
+
             <macroSpec ident="macro.metaLike.page" module="MEI.shared" mode="delete"/>
-            
-            
+
+
             <!-- All Schematron rules are gathered here for better orientation. -->
             <elementSpec ident="mei" module="MEI.shared" mode="change">
                <constraintSpec ident="check-mei-id" scheme="schematron" mode="add">
@@ -165,50 +177,56 @@
                      <sch:rule context="mei:mei">
                         <sch:assert test="@xml:id">An mei file must have an id</sch:assert>
                      </sch:rule>
-                     
                      <!-- make sure a file has a type -->
                      <sch:rule context="mei:meiHead">
-                        <sch:assert test="mei:encodingDesc">Each MEI file needs to have an encodingDesc.</sch:assert>
+                        <sch:assert test="mei:encodingDesc">Each MEI file needs to have an
+                           encodingDesc.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:encodingDesc">
-                        <sch:assert test="@class">Each encodingDesc needs to identify the right type of file using @class.</sch:assert>
+                        <sch:assert test="@class">Each encodingDesc needs to identify the right type
+                           of file using @class.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:encodingDesc">
                         <sch:let name="classes" value="tokenize(normalize-space(.),' ')"/>
                         <sch:let name="doc" value="'#bw_document_file' = $classes"/>
                         <sch:let name="dt" value="'#bw_diplomatic_transcript' = $classes"/>
                         <sch:let name="at" value="'#bw_annotated_transcript' = $classes"/>
-                        <sch:assert test="$at">An annotated transcription must use @class "#bw_annotated_transcript".</sch:assert>
-                        <sch:assert test="not($dt)">An annotated transcription must not use @class "#bw_diplomatic_transcript".</sch:assert>
-                        <sch:assert test="not($doc)">An annotated transcription must not use @class "#bw_document_file".</sch:assert>
+                        <sch:assert test="$at">An annotated transcription must use @class
+                           "#bw_annotated_transcript".</sch:assert>
+                        <sch:assert test="not($dt)">An annotated transcription must not use @class
+                           "#bw_diplomatic_transcript".</sch:assert>
+                        <sch:assert test="not($doc)">An annotated transcription must not use @class
+                           "#bw_document_file".</sch:assert>
                      </sch:rule>
-                     
                      <!-- check events in annotated transcripts -->
                      <sch:rule context="mei:note/@*">
                         <sch:let name="forbiddenAttributes" value="('loc', 'x', 'facs')"/>
                         <sch:let name="localName" value="local-name(.)"/>
-                        <sch:assert test="not($localName = $forbiddenAttributes)">In diplomatic transcripts, notes may not use the <sch:value-of select="$localName"/> attribute.</sch:assert>
+                        <sch:assert test="not($localName = $forbiddenAttributes)">In diplomatic
+                           transcripts, notes may not use the <sch:value-of select="$localName"/>
+                           attribute.</sch:assert>
                      </sch:rule>
-                     
                      <sch:rule context="mei:note">
-                        <sch:assert test="@xml:id">A note is required to have an @xml:id.</sch:assert>
-                        <sch:assert test="@dur or parent::mei:chord/@dur">A note must have a @dur.</sch:assert>
-                        <sch:assert test="@pname and @oct">In an annotated transcription, a note must provide @pname and @oct.</sch:assert>
+                        <sch:assert test="@xml:id">A note is required to have an
+                           @xml:id.</sch:assert>
+                        <sch:assert test="@dur or parent::mei:chord/@dur">A note must have a
+                           @dur.</sch:assert>
+                        <sch:assert test="@pname and @oct">In an annotated transcription, a note
+                           must provide @pname and @oct.</sch:assert>
                      </sch:rule>
-                     
-                     
-                     
                      <!-- rules for annotated transcripts -->
                      <sch:rule context="mei:dir">
-                        <sch:assert test="not(@tstamp.ges) and not(@tstamp.real) and (@tstamp or @startid)">
-                           dir is not allowed to have @tstamp.ges, @tstamp.real, but needs @tstamp or @startid 
-                        </sch:assert>
+                        <sch:assert
+                           test="not(@tstamp.ges) and not(@tstamp.real) and (@tstamp or @startid)">
+                           dir is not allowed to have @tstamp.ges, @tstamp.real, but needs @tstamp
+                           or @startid </sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:artic">
                         <sch:assert test="@place">Every artic needs a place attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:beamSpan">
-                        <sch:assert test="@plist">Every beamSpan needs a plist attribute.</sch:assert>
+                        <sch:assert test="@plist">Every beamSpan needs a plist
+                           attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:dir">
                         <sch:assert test="@place">Every dir needs a place attribute.</sch:assert>
@@ -219,124 +237,170 @@
                         <sch:assert test="@place">Every dynam needs a place attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:fermata">
-                        <sch:assert test="@place">Every fermata needs a place attribute.</sch:assert>
+                        <sch:assert test="@place">Every fermata needs a place
+                           attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:fing">
                         <sch:assert test="@place">Every fing needs a place attribute.</sch:assert>
                         <sch:assert test="@staff">Every fing needs a staff attribute.</sch:assert>
                         <sch:assert test="@layer">Every fing needs a layer attribute.</sch:assert>
-                        <sch:assert test="@startid">Every fing needs a startid attribute.</sch:assert>
+                        <sch:assert test="@startid">Every fing needs a startid
+                           attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:hairpin">
-                        <sch:assert test="@place">Every hairpin needs a place attribute.</sch:assert>
+                        <sch:assert test="@place">Every hairpin needs a place
+                           attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:harm">
                         <sch:assert test="@place">Every harm needs a place attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:octave">
-                        <sch:assert test="@dis.place">Every octave needs a dis.place attribute.</sch:assert>
+                        <sch:assert test="@dis.place">Every octave needs a dis.place
+                           attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:pedal">
                         <sch:assert test="@place">Every pedal needs a place attribute.</sch:assert>
                         <sch:assert test="@staff">Every pedal needs a staff attribute.</sch:assert>
                         <sch:assert test="@layer">Every pedal needs a layer attribute.</sch:assert>
-                        <sch:assert test="@tstamp">Every pedal needs a tstamp attribute.</sch:assert>
+                        <sch:assert test="@tstamp">Every pedal needs a tstamp
+                           attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:slur">
-                        <sch:assert test="@curvedir">Every slur needs a curvedir attribute.</sch:assert>
+                        <sch:assert test="@curvedir">Every slur needs a curvedir
+                           attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:tempo">
                         <sch:assert test="@place">Every tempo needs a place attribute.</sch:assert>
-                        <sch:assert test="@tstamp">Every tempo needs a tstamp attribute.</sch:assert>
+                        <sch:assert test="@tstamp">Every tempo needs a tstamp
+                           attribute.</sch:assert>
                         <sch:assert test="@layer">Every tempo needs a layer attribute.</sch:assert>
                         <sch:assert test="@staff">Every tempo needs a staff attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:tie">
-                        <sch:assert test="@curvedir">Every tie needs a curvedir attribute.</sch:assert>
+                        <sch:assert test="@curvedir">Every tie needs a curvedir
+                           attribute.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:trill">
                         <sch:assert test="@place">Every trill needs a place attribute.</sch:assert>
                      </sch:rule>
-                     
                      <sch:rule context="mei:pb">
-                        <sch:assert test="@corresp">Every pb needs a @corresp, pointing to a surface element in a document file.</sch:assert>
+                        <sch:assert test="@corresp">Every pb needs a @corresp, pointing to a surface
+                           element in a document file.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:annot">
-                        <sch:assert test="not(parent::mei:section) or (@class and @class = '#bw_writingZoneBegin' and @corresp)">Every annot needs to have @class="#bw_writingZoneBegin" and @corresp, where the latter points to a genDesc.</sch:assert>
+                        <sch:assert
+                           test="not(parent::mei:section) or (@class and @class = '#bw_writingZoneBegin' and @corresp)"
+                           >Every annot needs to have @class="#bw_writingZoneBegin" and @corresp,
+                           where the latter points to a genDesc.</sch:assert>
                      </sch:rule>
                      <sch:rule context="mei:sb">
-                        <sch:assert test="@corresp">Every sb needs a @corresp, pointing to a bw:system element in a diplomatic transcription.</sch:assert>
+                        <sch:assert test="@corresp">Every sb needs a @corresp, pointing to a
+                           bw:system element in a diplomatic transcription.</sch:assert>
                      </sch:rule>
-                     
                      <sch:rule context="mei:pb/@corresp">
-                        <sch:assert test="not(normalize-space(.) = '')">@corresp must not be empty.</sch:assert>
-                        <sch:assert test="normalize-space(.) = .">@corresp should be written with normalized space.</sch:assert>
-                        <sch:assert test="starts-with(., '../')">@corresp should use a relative link.</sch:assert>
-                        <sch:assert test="contains(., '#')">@dcorresp should have an ID pointing somewhere in the target file.</sch:assert>
+                        <sch:assert test="not(normalize-space(.) = '')">@corresp must not be
+                           empty.</sch:assert>
+                        <sch:assert test="normalize-space(.) = .">@corresp should be written with
+                           normalized space.</sch:assert>
+                        <sch:assert test="starts-with(., '../')">@corresp should use a relative
+                           link.</sch:assert>
+                        <sch:assert test="contains(., '#')">@dcorresp should have an ID pointing
+                           somewhere in the target file.</sch:assert>
                         <sch:let name="relativeLink" value="substring-before(., '#')"/>
                         <sch:let name="targetId" value="substring-after(., '#')"/>
                         <sch:let name="base" value="base-uri()"/>
                         <sch:let name="targetFileUri" value="resolve-uri($relativeLink, $base)"/>
-                        <sch:assert test="doc-available($targetFileUri)">There is no file available at <sch:value-of select="$targetFileUri"/>.</sch:assert>
+                        <sch:assert test="doc-available($targetFileUri)">There is no file available
+                           at <sch:value-of select="$targetFileUri"/>.</sch:assert>
                         <sch:let name="targetFile" value="document($targetFileUri)"/>
-                        <sch:let name="targetFileClasses" value="tokenize($targetFile//mei:encodingDesc/@class, '\s+')"/>
-                        <sch:assert test="'#bw_document_file' = $targetFileClasses">The target file must be a document file.</sch:assert>
+                        <sch:let name="targetFileClasses"
+                           value="tokenize($targetFile//mei:encodingDesc/@class, '\s+')"/>
+                        <sch:assert test="'#bw_document_file' = $targetFileClasses">The target file
+                           must be a document file.</sch:assert>
                         <sch:let name="target" value="$targetFile/id($targetId)"/>
-                        <sch:assert test="exists($target)">An element with ID <sch:value-of select="$targetId"/> cannot be found in <sch:value-of select="$targetFileUri"/>.</sch:assert>
+                        <sch:assert test="exists($target)">An element with ID <sch:value-of
+                              select="$targetId"/> cannot be found in <sch:value-of
+                              select="$targetFileUri"/>.</sch:assert>
                         <sch:let name="name" value="local-name($target)"/>
-                        <sch:assert test="$name = 'surface'"><sch:value-of select="$targetId"/> points to a <sch:value-of select="$name"/> element, must be a 'surface' instead.</sch:assert>
+                        <sch:assert test="$name = 'surface'"><sch:value-of select="$targetId"/>
+                           points to a <sch:value-of select="$name"/> element, must be a 'surface'
+                           instead.</sch:assert>
                      </sch:rule>
-                     
                      <sch:rule context="mei:annot[@class='#bw_writingZoneBegin']/@corresp">
-                        <sch:assert test="not(normalize-space(.) = '')">@corresp must not be empty.</sch:assert>
-                        <sch:assert test="normalize-space(.) = .">@corresp should be written with normalized space.</sch:assert>
-                        <sch:assert test="starts-with(., '../')">@corresp should use a relative link.</sch:assert>
-                        <sch:assert test="contains(., '#')">@dcorresp should have an ID pointing somewhere in the target file.</sch:assert>
+                        <sch:assert test="not(normalize-space(.) = '')">@corresp must not be
+                           empty.</sch:assert>
+                        <sch:assert test="normalize-space(.) = .">@corresp should be written with
+                           normalized space.</sch:assert>
+                        <sch:assert test="starts-with(., '../')">@corresp should use a relative
+                           link.</sch:assert>
+                        <sch:assert test="contains(., '#')">@dcorresp should have an ID pointing
+                           somewhere in the target file.</sch:assert>
                         <sch:let name="relativeLink" value="substring-before(., '#')"/>
                         <sch:let name="targetId" value="substring-after(., '#')"/>
                         <sch:let name="base" value="base-uri()"/>
                         <sch:let name="targetFileUri" value="resolve-uri($relativeLink, $base)"/>
-                        <sch:assert test="doc-available($targetFileUri)">There is no file available at <sch:value-of select="$targetFileUri"/>.</sch:assert>
+                        <sch:assert test="doc-available($targetFileUri)">There is no file available
+                           at <sch:value-of select="$targetFileUri"/>.</sch:assert>
                         <sch:let name="targetFile" value="document($targetFileUri)"/>
-                        <sch:let name="targetFileClasses" value="tokenize($targetFile//mei:encodingDesc/@class, '\s+')"/>
-                        <sch:assert test="'#bw_document_file' = $targetFileClasses">The target file must be a document file.</sch:assert>
+                        <sch:let name="targetFileClasses"
+                           value="tokenize($targetFile//mei:encodingDesc/@class, '\s+')"/>
+                        <sch:assert test="'#bw_document_file' = $targetFileClasses">The target file
+                           must be a document file.</sch:assert>
                         <sch:let name="target" value="$targetFile/id($targetId)"/>
-                        <sch:assert test="exists($target)">An element with ID <sch:value-of select="$targetId"/> cannot be found in <sch:value-of select="$targetFileUri"/>.</sch:assert>
+                        <sch:assert test="exists($target)">An element with ID <sch:value-of
+                              select="$targetId"/> cannot be found in <sch:value-of
+                              select="$targetFileUri"/>.</sch:assert>
                         <sch:let name="name" value="local-name($target)"/>
-                        <sch:assert test="$name = 'genDesc'"><sch:value-of select="$targetId"/> points to a <sch:value-of select="$name"/> element, must be a 'genDesc' instead.</sch:assert>
-                        <sch:assert test="$target/@class = '#geneticOrder_writingZoneLevel'">The link target must be a //genDesc[@class='#geneticOrder_writingZoneLevel']</sch:assert>
+                        <sch:assert test="$name = 'genDesc'"><sch:value-of select="$targetId"/>
+                           points to a <sch:value-of select="$name"/> element, must be a 'genDesc'
+                           instead.</sch:assert>
+                        <sch:assert test="$target/@class = '#geneticOrder_writingZoneLevel'">The
+                           link target must be a
+                           //genDesc[@class='#geneticOrder_writingZoneLevel']</sch:assert>
                      </sch:rule>
-                     
                      <sch:rule context="mei:sb/@corresp">
-                        <sch:assert test="not(normalize-space(.) = '')">@corresp must not be empty.</sch:assert>
-                        <sch:assert test="normalize-space(.) = .">@corresp should be written with normalized space.</sch:assert>
-                        <sch:assert test="starts-with(., '../')">@corresp should use a relative link.</sch:assert>
-                        <sch:assert test="contains(., '#')">@dcorresp should have an ID pointing somewhere in the target file.</sch:assert>
+                        <sch:assert test="not(normalize-space(.) = '')">@corresp must not be
+                           empty.</sch:assert>
+                        <sch:assert test="normalize-space(.) = .">@corresp should be written with
+                           normalized space.</sch:assert>
+                        <sch:assert test="starts-with(., '../')">@corresp should use a relative
+                           link.</sch:assert>
+                        <sch:assert test="contains(., '#')">@dcorresp should have an ID pointing
+                           somewhere in the target file.</sch:assert>
                         <sch:let name="relativeLink" value="substring-before(., '#')"/>
                         <sch:let name="targetId" value="substring-after(., '#')"/>
                         <sch:let name="base" value="base-uri()"/>
                         <sch:let name="targetFileUri" value="resolve-uri($relativeLink, $base)"/>
                         <sch:let name="docThere" value="doc-available($targetFileUri)"/>
-                        <sch:assert test="$docThere">There is no file available at <sch:value-of select="$targetFileUri"/>.</sch:assert>
+                        <sch:assert test="$docThere">There is no file available at <sch:value-of
+                              select="$targetFileUri"/>.</sch:assert>
                         <sch:let name="targetFile" value="document($targetFileUri)"/>
-                        <sch:let name="targetFileClasses" value="tokenize($targetFile//mei:encodingDesc/@class, '\s+')"/>
-                        <sch:let name="correctFileClass" value="'#bw_diplomatic_transcript' = $targetFileClasses"/>
-                        <sch:assert test="not($docThere) or $correctFileClass">The target file must be a diplomatic transcription.</sch:assert>
+                        <sch:let name="targetFileClasses"
+                           value="tokenize($targetFile//mei:encodingDesc/@class, '\s+')"/>
+                        <sch:let name="correctFileClass"
+                           value="'#bw_diplomatic_transcript' = $targetFileClasses"/>
+                        <sch:assert test="not($docThere) or $correctFileClass">The target file must
+                           be a diplomatic transcription.</sch:assert>
                         <sch:let name="target" value="$targetFile/id($targetId)"/>
-                        <sch:assert test="(not($docThere) or not($correctFileClass)) or exists($target)">An element with ID <sch:value-of select="$targetId"/> cannot be found in <sch:value-of select="$targetFileUri"/>.</sch:assert>
+                        <sch:assert
+                           test="(not($docThere) or not($correctFileClass)) or exists($target)">An
+                           element with ID <sch:value-of select="$targetId"/> cannot be found in
+                              <sch:value-of select="$targetFileUri"/>.</sch:assert>
                         <sch:let name="name" value="local-name($target)"/>
-                        <sch:assert test="$name = 'system'"><sch:value-of select="$targetId"/> points to a <sch:value-of select="$name"/> element, must be a 'bw:system' instead.</sch:assert>
+                        <sch:assert test="$name = 'system'"><sch:value-of select="$targetId"/>
+                           points to a <sch:value-of select="$name"/> element, must be a 'bw:system'
+                           instead.</sch:assert>
                      </sch:rule>
-                     
                   </constraint>
                </constraintSpec>
             </elementSpec>
-            
+
             <!-- annotated transcripts: restrict attribute values  -->
             <elementSpec ident="artic" module="MEI.shared" mode="change">
                <attList>
                   <attDef ident="artic" mode="replace" usage="req">
-                     <desc versionDate="2024-10-14" resp="#KH">articulation is restricted to the values: acc, dot, stacc, stress, stroke, ten, unstress</desc>
+                     <desc versionDate="2024-10-14" resp="#KH">articulation is restricted to the
+                        values: acc, dot, stacc, stress, stroke, ten, unstress</desc>
                      <valList type="closed">
                         <valItem ident="acc"/>
                         <valItem ident="dot"/>
@@ -349,18 +413,19 @@
                   </attDef>
                </attList>
             </elementSpec>
-            
+
             <elementSpec ident="fermata" module="MEI.shared" mode="change">
                <attList>
                   <attDef ident="shape" mode="replace" usage="req">
-                     <desc versionDate="2024-10-15" resp="#SC">shape of fermatas is restricted to the values: curved</desc>
+                     <desc versionDate="2024-10-15" resp="#SC">shape of fermatas is restricted to
+                        the values: curved</desc>
                      <valList type="closed">
                         <valItem ident="curved"/>
                      </valList>
                   </attDef>
                </attList>
             </elementSpec>
-            
+
             <!-- annotated transcripts: restrict element content for dynam. JK: not sure we're still that strict…? -->
             <!--<elementSpec ident="dynam" module="MEI.shared" mode="change">
                <gloss versionDate="2024-10-16" resp="#KH" xml:lang="en">Dynamic</gloss>
@@ -388,12 +453,14 @@
                   </constraint>
                </constraintSpec>
             </elementSpec>-->
-            
+
             <elementSpec ident="keySig" module="MEI.shared" mode="change">
                <gloss versionDate="2024-10-15" resp="#KH" xml:lang="en">mode</gloss>
                <gloss versionDate="2024-10-15" resp="#KH" xml:lang="de">Dur-Moll_Tonalität</gloss>
-               <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">No information regarding mode (minor, major) is given</desc>
-               <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Es wird keine Angabe zur Dur-Moll-Tonalität gemacht.</desc>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">No information regarding mode
+                  (minor, major) is given</desc>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Es wird keine Angabe zur
+                  Dur-Moll-Tonalität gemacht.</desc>
                <classes mode="replace">
                   <memberOf key="model.keySigLike"/>
                   <memberOf key="att.id"/>
@@ -406,45 +473,55 @@
                <constraintSpec ident="check-keysig-mode" scheme="schematron" mode="add">
                   <constraint>
                      <sch:rule context="mei:keySig">
-                        <sch:assert test="not(@mode)">keySig is not allowed to have @mode</sch:assert>
-                     </sch:rule>x
-                  </constraint>
+                        <sch:assert test="not(@mode)">keySig is not allowed to have
+                           @mode</sch:assert>
+                     </sch:rule>x </constraint>
                </constraintSpec>
             </elementSpec>
-            
+
             <elementSpec ident="mdiv" module="MEI.shared" mode="change">
                <content>
                   <rng:ref name="model.scoreLike"/>
                </content>
                <remarks xml:lang="en">
-                  <p>In Beethovens Werkstatt, an annotated transcripts is always considered to make use of a <gi scheme="MEI">score</gi> element only.</p>
+                  <p>In Beethovens Werkstatt, an annotated transcripts is always considered to make
+                     use of a <gi scheme="MEI">score</gi> element only.</p>
                </remarks>
             </elementSpec>
-            
+
             <elementSpec ident="note" module="MEI.shared" mode="change">
                <gloss versionDate="2024-10-15" resp="#KH" xml:lang="en">stem dir</gloss>
                <gloss versionDate="2024-10-15" resp="#KH" xml:lang="de">Notenhalsrichtung</gloss>
-               <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">Stem direction is taken from the source and not standardised. In the annotated transcription, there must be a stem direction for all notes except whole notes. In a chord, this determines the stem direction of the notes it contains.</desc>
-               <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Halsung wird nach Skizze übernommen und nicht normiert. In der Annotierten Transkription muss es für alle Noten ausser ganzen Noten eine Halsrichtung geben. Bei einem Akkord bestimmt dieser die Halsrichtung der enthaltenen Noten.</desc>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="en">Stem direction is taken from
+                  the source and not standardised. In the annotated transcription, there must be a
+                  stem direction for all notes except whole notes. In a chord, this determines the
+                  stem direction of the notes it contains.</desc>
+               <desc versionDate="2024-10-15" resp="#KH" xml:lang="de">Halsung wird nach Skizze
+                  übernommen und nicht normiert. In der Annotierten Transkription muss es für alle
+                  Noten ausser ganzen Noten eine Halsrichtung geben. Bei einem Akkord bestimmt
+                  dieser die Halsrichtung der enthaltenen Noten.</desc>
                <constraintSpec ident="check-note-stem" scheme="schematron" mode="add">
                   <constraint>
                      <sch:rule context="mei:note">
-                        <sch:assert test="not(@dur='1' and @stem.dir)">
-                           notes with dur="1" are not allowed to have a @stem.dir Attribute
-                        </sch:assert>
-                        <sch:assert test="@stem.dir or (ancestor::mei:chord[@stem.dir])">
-                           every note needs a @stem.dir or is a child of a chord element with a @stem.dir
+                        <sch:assert test="not(@dur='1' and @stem.dir)"> notes with dur="1" are not
+                           allowed to have a @stem.dir Attribute </sch:assert>
+                        <sch:assert test="@stem.dir or (ancestor::mei:chord[@stem.dir])"> every note
+                           needs a @stem.dir or is a child of a chord element with a @stem.dir
                         </sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
             </elementSpec>
-            
+
             <elementSpec ident="syl" module="MEI.shared" mode="change">
                <gloss versionDate="2024-10-17" resp="#KH" xml:lang="en">lyric syllable</gloss>
                <gloss versionDate="2024-10-17" resp="#KH" xml:lang="de">Text(teile)</gloss>
-               <desc versionDate="2024-10-17" resp="#KH" xml:lang="en">The obligatory position of the text is notated according to the source. Hyphenation marks are transcribed in standardised form.</desc>
-               <desc versionDate="2024-10-17" resp="#KH" xml:lang="de">Die obligatorische Positionsangabe des Singtextes wird nach Skizze notiert. Silbentrennstriche werden in normierter Form transkribiert.</desc>
+               <desc versionDate="2024-10-17" resp="#KH" xml:lang="en">The obligatory position of
+                  the text is notated according to the source. Hyphenation marks are transcribed in
+                  standardised form.</desc>
+               <desc versionDate="2024-10-17" resp="#KH" xml:lang="de">Die obligatorische
+                  Positionsangabe des Singtextes wird nach Skizze notiert. Silbentrennstriche werden
+                  in normierter Form transkribiert.</desc>
                <constraintSpec ident="check-syl-stem" scheme="schematron" mode="add">
                   <constraint>
                      <sch:rule context="mei:syl">
@@ -453,14 +530,14 @@
                            or (@wordpos='m' and @con='d') 
                            or (@wordpos='t' and @con='u')
                            or (@wordpos='t' and not(@con)) 
-                           or (not(@wordpos) and not(@con))">
-                           for attribute @con only 'd' is allowed. if syl is longer than one note, of course @con="u" is allowed.
-                        </sch:assert>
+                           or (not(@wordpos) and not(@con))"> for attribute
+                           @con only 'd' is allowed. if syl is longer than one note, of course
+                           @con="u" is allowed. </sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
             </elementSpec>
-            
+
             <elementSpec ident="scoreDef" module="MEI.shared" mode="change">
                <classes mode="replace">
                   <memberOf key="att.id"/>
@@ -472,7 +549,7 @@
                   </rng:oneOrMore>
                </content>
             </elementSpec>
-            
+
             <elementSpec ident="meterSig" module="MEI.cmn" mode="change">
                <classes mode="replace">
                   <memberOf key="att.id"/>
@@ -480,7 +557,7 @@
                   <memberOf key="model.meterSigLike"/>
                </classes>
             </elementSpec>
-            
+
             <elementSpec ident="staffGrp" module="MEI.shared" mode="change">
                <classes mode="replace">
                   <memberOf key="att.id"/>
@@ -500,10 +577,10 @@
                   </constraint>
                </constraintSpec>
             </elementSpec>
-            
+
             <classSpec type="atts" ident="att.barring" module="MEI.shared" mode="delete"/>
             <classSpec type="atts" ident="att.visibility" module="MEI.shared" mode="delete"/>
-            
+
             <elementSpec ident="staffDef" module="MEI.shared" mode="change">
                <classes mode="replace">
                   <memberOf key="att.id"/>
@@ -525,7 +602,7 @@
                   </constraint>
                </constraintSpec>
             </elementSpec>
-            
+
             <classSpec type="atts" ident="att.cleffing.log" module="MEI.shared" mode="delete"/>
             <classSpec type="atts" ident="att.duration.default" module="MEI.shared" mode="delete"/>
             <classSpec type="atts" ident="att.keySigDefault.log" module="MEI.shared" mode="delete"/>
@@ -534,7 +611,7 @@
             <classSpec type="atts" ident="att.octaveDefault" module="MEI.shared" mode="delete"/>
             <classSpec type="atts" ident="att.transposition" module="MEI.shared" mode="delete"/>
             <classSpec type="atts" ident="att.staffDef.log.cmn" module="MEI.cmn" mode="delete"/>
-            
+
             <elementSpec ident="section" module="MEI.shared" mode="change">
                <classes mode="replace">
                   <memberOf key="att.id"/>
@@ -542,25 +619,53 @@
                </classes>
                <content>
                   <rng:oneOrMore>
-                     <rng:group>
-                        <rng:ref name="model.pbLike"/>
-                        <rng:ref name="model.annotLike"/>
-                        <rng:oneOrMore>
-                           <rng:group>
+                     <rng:element name="add">
+                        <rng:group>
+                           <rng:optional>
+                              <rng:ref name="model.pbLike"/>
+                           </rng:optional>
+
+                           <rng:optional>
+                              <rng:ref name="model.annotLike"/>
+                           </rng:optional>
+
+                           <rng:optional>
                               <rng:ref name="sb"/>
-                              <rng:oneOrMore>
-                                 <rng:choice>
-                                    <rng:ref name="model.measureLike"/>
-                                    <rng:ref name="model.scoreDefLike"/>
-                                 </rng:choice>
-                              </rng:oneOrMore>
-                           </rng:group>
-                        </rng:oneOrMore>
-                     </rng:group>
+                           </rng:optional>
+
+                           <rng:optional>
+                              <rng:ref name="del"/>
+                           </rng:optional>
+                           <rng:oneOrMore>
+                              <rng:choice>
+                                 <rng:ref name="model.measureLike"/>
+                                 <rng:ref name="model.scoreDefLike"/>
+                              </rng:choice>
+                           </rng:oneOrMore>
+
+                        </rng:group>
+                     </rng:element>
                   </rng:oneOrMore>
                </content>
             </elementSpec>
-            
+
+            <elementSpec ident="add" module="MEI.edittrans" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.metadataPointing"/>
+                  <memberOf key="att.labelled"/>
+               </classes>
+               <content>
+                  <rng:zeroOrMore>
+                     <rng:choice>
+                        <rng:ref name="model.annotLike"/>
+                        <rng:ref name="model.transcriptionLike"/>
+                        <rng:ref name="model.milestoneLike.music"/>
+                     </rng:choice>
+                  </rng:zeroOrMore>
+               </content>
+            </elementSpec>
+
             <classSpec ident="att.meiVersion" module="MEI.shared" type="atts" mode="replace">
                <desc xml:lang="en">Attributes that record the version of MEI in use.</desc>
                <attList>
@@ -568,7 +673,8 @@
                      <desc xml:lang="en">Specifies a generic MEI version label.</desc>
                      <valList type="closed">
                         <valItem ident="6.0+beethovensWerkstatt">
-                           <desc xml:lang="en">MEI 6.0 with customizations by Beethovens Werkstatt</desc>
+                           <desc xml:lang="en">MEI 6.0 with customizations by Beethovens
+                              Werkstatt</desc>
                         </valItem>
                      </valList>
                   </attDef>
