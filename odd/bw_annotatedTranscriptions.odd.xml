@@ -77,7 +77,7 @@
                except="actor address addrLine ambitus ambNote analytic barLine caption castGrp castItem cb castList colLayout contributor custos depth dim dimensions distributor div edition event eventList expansion extent genre group height imprint incip lg monogr pad pgDesc pgFoot pgHead phrase recipient relatedItem role roleDesc speaker sponsor stack term textLang titlePage titlePart width"/>
             <moduleRef key="MEI.visual"/>
             <moduleRef key="MEI.edittrans"
-            except="abbr choice corr cpMark damage expan gap handShift metaMark orig reg sic subst supplied unclear"/>
+               except="abbr choice corr cpMark damage expan gap handShift metaMark orig reg sic subst supplied unclear"/>
 
             <!-- changing Schematron rule -->
             <!-- TODO: This is a temporary fix -->
@@ -612,7 +612,7 @@
             <classSpec type="atts" ident="att.transposition" module="MEI.shared" mode="delete"/>
             <classSpec type="atts" ident="att.staffDef.log.cmn" module="MEI.cmn" mode="delete"/>
 
-            <elementSpec ident="section" module="MEI.shared" mode="change">
+            <!--<elementSpec ident="section" module="MEI.shared" mode="change">
                <classes mode="replace">
                   <memberOf key="att.id"/>
                   <memberOf key="model.sectionLike"/>
@@ -647,13 +647,41 @@
                      </rng:element>
                   </rng:oneOrMore>
                </content>
+            </elementSpec>-->
+
+            <elementSpec ident="section" module="MEI.shared" mode="change">
+               <classes mode="replace">
+                  <memberOf key="att.id"/>
+                  <memberOf key="model.sectionLike"/>
+               </classes>
+               <content>
+                  <rng:oneOrMore>
+                     <rng:group>
+                        <rng:ref name="model.pbLike"/>
+                        <rng:ref name="model.annotLike"/>
+                        <rng:oneOrMore>
+                           <rng:group>
+                              <rng:ref name="sb"/>
+                              <rng:oneOrMore>
+                                 <rng:choice>
+                                    <rng:ref name="model.transcriptionLike"/>
+                                    <rng:ref name="model.measureLike"/>
+                                    <rng:ref name="model.scoreDefLike"/>
+                                 </rng:choice>
+                              </rng:oneOrMore>
+                           </rng:group>
+                        </rng:oneOrMore>
+                     </rng:group>
+                  </rng:oneOrMore>
+               </content>
             </elementSpec>
 
             <elementSpec ident="add" module="MEI.edittrans" mode="change">
                <classes>
                   <memberOf key="att.id"/>
-                  <memberOf key="att.metadataPointing"/>
                   <memberOf key="att.labelled"/>
+                  <memberOf key="model.transcriptionLike"/>
+                  <memberOf key="att.geneticState"/>
                </classes>
                <content>
                   <rng:zeroOrMore>
@@ -661,10 +689,55 @@
                         <rng:ref name="model.annotLike"/>
                         <rng:ref name="model.transcriptionLike"/>
                         <rng:ref name="model.milestoneLike.music"/>
+                        <rng:ref name="model.measureLike"/>
+                        <rng:ref name="model.eventLike.cmn"/>
+                        <rng:ref name="model.eventLike"/>
+                        <rng:ref name="model.controlEventLike.cmn"/>
+                        <rng:ref name="model.controlEventLike"/>
+                        <rng:ref name="model.layerLike"/>
+                        <rng:ref name="model.noteModifierLike"/>
                      </rng:choice>
                   </rng:zeroOrMore>
                </content>
             </elementSpec>
+            
+            <classSpec ident="att.geneticState" module="MEI.genetic" type="atts" mode="change">
+               <constraintSpec ident="check_changeState.targets" scheme="schematron" mode="replace">
+                  <constraint>
+                     <sch:ns prefix="mei" uri="http://www.music-encoding.org/ns/mei"/>
+                     
+                     <sch:rule context="mei:*[@state]">
+                        <sch:let name="tokens" value="tokenize(normalize-space(@state), '\s+')"/>
+                        
+                        <sch:assert role="warning" test="normalize-space(@state) != ''">
+                           @state attribute should have content.
+                        </sch:assert>
+                        
+                        <sch:assert role="warning"
+                           test="
+                           every $t in $tokens satisfies
+                           contains($t, '#')
+                           ">
+                           Every value in @state must contain a fragment identifier (#...).
+                        </sch:assert>
+                        
+                        <sch:assert role="warning"
+                           test="
+                           every $t in $tokens satisfies
+                           let $docPart := substring-before($t, '#'),
+                           $frag    := substring-after($t, '#'),
+                           $uri     := resolve-uri($docPart, base-uri(.))
+                           return
+                           $frag != ''
+                           and doc-available($uri)
+                           and exists(doc($uri)//mei:genState[@xml:id = $frag])
+                           ">
+                           Every value in @state must point to a reachable mei:genState in the referenced document.
+                        </sch:assert>
+                     </sch:rule>
+                  </constraint>
+               </constraintSpec>
+            </classSpec>
 
             <classSpec ident="att.meiVersion" module="MEI.shared" type="atts" mode="replace">
                <desc xml:lang="en">Attributes that record the version of MEI in use.</desc>
@@ -680,7 +753,7 @@
                   </attDef>
                </attList>
             </classSpec>
-         </schemaSpec>
+           </schemaSpec>
       </body>
    </text>
 </TEI>

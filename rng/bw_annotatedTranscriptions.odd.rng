@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2026-02-03T09:49:57Z. . 
+Schema generated from ODD source 2026-03-09T16:32:26Z. . 
 TEI Edition: MEI 6.0-dev 
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -1876,8 +1876,8 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
    <define name="mei_att.beamRend.attribute.slope">
       <optional>
          <attribute name="slope">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Records the slope of the beam.</a:documentation>
-            <data type="decimal"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Records the slope of a beam; e.g., in MEI virtual units. Positive values indicate upward slope, negative values indicate slope downward, and a zero value indicates the beam is horizontal.</a:documentation>
+            <ref name="mei_data.MEASUREMENTSIGNED"/>
          </attribute>
       </optional>
    </define>
@@ -1938,7 +1938,10 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5//
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">"Cut-out" style.</a:documentation>
             <choice>
                <value>cutout</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The staff lines should not be drawn.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Means that the staff lines "behind" the element are hidden for the entire duration of the element, based on <code xmlns="http://www.w3.org/1999/xhtml"
+                        xmlns:rng="http://relaxng.org/ns/structure/1.0">@dur</code> and <code xmlns="http://www.w3.org/1999/xhtml"
+                        xmlns:rng="http://relaxng.org/ns/structure/1.0">@dots</code>. <code xmlns="http://www.w3.org/1999/xhtml"
+                        xmlns:rng="http://relaxng.org/ns/structure/1.0">@cutout</code> does not imply that any other elements are hidden. Only barlines directly adjacent to the cut-out area may be hidden or shortened. When rendering, barline handling is up to the rendering application.</a:documentation>
             </choice>
          </attribute>
       </optional>
@@ -4324,19 +4327,31 @@ Suggested values include: 1] smufl</a:documentation>
          </attribute>
       </optional>
    </define>
+   <sch:ns xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+           prefix="mei"
+           uri="http://www.music-encoding.org/ns/mei"/>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="mei-att.geneticState-check_changeState.targets-constraint-rule-45">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                context="@state">
-         <sch:assert role="warning" test="not(normalize-space(.) eq '')">@state attribute should
-            have content.</sch:assert>
+                context="mei:*[@state]">
+         <sch:let name="tokens" value="tokenize(normalize-space(@state), '\s+')"/>
+         <sch:assert role="warning" test="normalize-space(@state) != ''">
+                           @state attribute should have content.
+                        </sch:assert>
          <sch:assert role="warning"
-                     test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:genState/@xml:id">The value in @state should correspond to the @xml:id attribute of a genState (genetic state)
-            element.</sch:assert>
+                     test="                            every $t in $tokens satisfies                            contains($t, '#')                            ">
+                           Every value in @state must contain a fragment identifier (#...).
+                        </sch:assert>
+         <sch:assert role="warning"
+                     test="                            every $t in $tokens satisfies                            let $docPart := substring-before($t, '#'),                            $frag    := substring-after($t, '#'),                            $uri     := resolve-uri($docPart, base-uri(.))                            return                            $frag != ''                            and doc-available($uri)                            and exists(doc($uri)//mei:genState[@xml:id = $frag])                            ">
+                           Every value in @state must point to a reachable mei:genState in the referenced document.
+                        </sch:assert>
       </sch:rule>
    </pattern>
    <define name="mei_att.accid.ges.attributes">
@@ -6592,6 +6607,20 @@ Suggested values include: 1] smufl</a:documentation>
       <ref name="mei_att.startEndId.attributes"/>
       <ref name="mei_att.timestamp.log.attributes"/>
       <ref name="mei_att.timestamp2.log.attributes"/>
+      <ref name="mei_att.annot.log.attribute.func"/>
+   </define>
+   <define name="mei_att.annot.log.attribute.func">
+      <optional>
+         <attribute name="func">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates the function intended for this annotation. In particular, to distinguish annotations suitable for display (e.g. via an engraving tool), the value "display" may be used.
+Suggested values include: 1] display</a:documentation>
+            <choice>
+               <value>display</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates that the annotation is suitable for display (e.g. via an engraving tool)</a:documentation>
+               <data type="Name"/>
+            </choice>
+         </attribute>
+      </optional>
    </define>
    <define name="mei_att.articulation.attributes">
       <ref name="mei_att.articulation.attribute.artic"/>
@@ -8770,6 +8799,7 @@ Suggested values include: 1] smufl</a:documentation>
       </sch:rule>
    </pattern>
    <define name="mei_att.staffDef.log.attributes">
+      <ref name="mei_att.duration.ratio.attributes"/>
       <ref name="mei_att.staffDef.log.attribute.lines"/>
    </define>
    <define name="mei_att.staffDef.log.attribute.lines">
@@ -10926,7 +10956,7 @@ Suggested values include: 1] smufl</a:documentation>
    </define>
    <define name="mei_annot">
       <element name="annot">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(annotation) Provides a statement explaining the text or indicating the basis for an assertion.</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(annotation) Associates a statement or other information with a part of the encoding.</a:documentation>
          <choice>
             <group>
                <zeroOrMore>
@@ -12463,28 +12493,22 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
       <element name="section">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Segment of music data.</a:documentation>
          <oneOrMore>
-            <element name="add">
-               <group>
-                  <optional>
-                     <ref name="mei_model.pbLike"/>
-                  </optional>
-                  <optional>
-                     <ref name="mei_model.annotLike"/>
-                  </optional>
-                  <optional>
+            <group>
+               <ref name="mei_model.pbLike"/>
+               <ref name="mei_model.annotLike"/>
+               <oneOrMore>
+                  <group>
                      <ref name="mei_sb"/>
-                  </optional>
-                  <optional>
-                     <ref name="mei_del"/>
-                  </optional>
-                  <oneOrMore>
-                     <choice>
-                        <ref name="mei_model.measureLike"/>
-                        <ref name="mei_model.scoreDefLike"/>
-                     </choice>
-                  </oneOrMore>
-               </group>
-            </element>
+                     <oneOrMore>
+                        <choice>
+                           <ref name="mei_model.transcriptionLike"/>
+                           <ref name="mei_model.measureLike"/>
+                           <ref name="mei_model.scoreDefLike"/>
+                        </choice>
+                     </oneOrMore>
+                  </group>
+               </oneOrMore>
+            </group>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13104,8 +13128,8 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
    <define name="mei_att.beaming.vis.attribute.beam.slope">
       <optional>
          <attribute name="beam.slope">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Captures beam slope.</a:documentation>
-            <data type="decimal"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Records the slope of a beam; e.g., in terms of MEI virtual units. Positive values indicate upward slope, negative values indicate slope downward, and a zero value indicates the beam is horizontal.</a:documentation>
+            <ref name="mei_data.MEASUREMENTSIGNED"/>
          </attribute>
       </optional>
    </define>
@@ -13710,6 +13734,7 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
       <ref name="mei_att.color.attributes"/>
       <ref name="mei_att.numberPlacement.attributes"/>
       <ref name="mei_att.tuplet.vis.attribute.bracket.place"/>
+      <ref name="mei_att.tuplet.vis.attribute.bracket.slope"/>
       <ref name="mei_att.tuplet.vis.attribute.bracket.visible"/>
       <ref name="mei_att.tuplet.vis.attribute.num.format"/>
    </define>
@@ -13718,6 +13743,14 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
          <attribute name="bracket.place">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Used to state where a tuplet bracket will be placed in relation to the note heads.</a:documentation>
             <ref name="mei_data.STAFFREL.basic"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="mei_att.tuplet.vis.attribute.bracket.slope">
+      <optional>
+         <attribute name="bracket.slope">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Records the slope of a bracket; e.g., in terms of MEI virtual units. Positive values indicate upward slope, negative values indicate slope downward, and a zero value indicates the bracket is horizontal.</a:documentation>
+            <ref name="mei_data.MEASUREMENTSIGNED"/>
          </attribute>
       </optional>
    </define>
@@ -13806,6 +13839,7 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
    </define>
    <define name="mei_model.transcriptionLike">
       <choice>
+         <ref name="mei_add"/>
          <ref name="mei_del"/>
          <ref name="mei_restore"/>
       </choice>
@@ -13818,11 +13852,18 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
                <ref name="mei_model.annotLike"/>
                <ref name="mei_model.transcriptionLike"/>
                <ref name="mei_model.milestoneLike.music"/>
+               <ref name="mei_model.measureLike"/>
+               <ref name="mei_model.eventLike.cmn"/>
+               <ref name="mei_model.eventLike"/>
+               <ref name="mei_model.controlEventLike.cmn"/>
+               <ref name="mei_model.controlEventLike"/>
+               <ref name="mei_model.layerLike"/>
+               <ref name="mei_model.noteModifierLike"/>
             </choice>
          </zeroOrMore>
          <ref name="mei_att.id.attributes"/>
-         <ref name="mei_att.metadataPointing.attributes"/>
          <ref name="mei_att.labelled.attributes"/>
+         <ref name="mei_att.geneticState.attributes"/>
          <optional>
             <attribute name="place">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Location of the addition.</a:documentation>
