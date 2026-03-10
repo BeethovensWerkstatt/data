@@ -276,10 +276,10 @@
                         <sch:assert test="@layer">Every tempo needs a layer attribute.</sch:assert>
                         <sch:assert test="@staff">Every tempo needs a staff attribute.</sch:assert>
                      </sch:rule>
-                     <sch:rule context="mei:tie">
+                     <!--<sch:rule context="mei:tie">
                         <sch:assert test="@curvedir">Every tie needs a curvedir
                            attribute.</sch:assert>
-                     </sch:rule>
+                     </sch:rule>-->
                      <sch:rule context="mei:trill">
                         <sch:assert test="@place">Every trill needs a place attribute.</sch:assert>
                      </sch:rule>
@@ -700,29 +700,33 @@
                   </rng:zeroOrMore>
                </content>
             </elementSpec>
-            
+
+            <elementSpec ident="measure" module="MEI.cmn" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.labelled"/>
+                  <memberOf key="att.nNumberLike"/>
+                  <memberOf key="att.meterConformance.bar"/>
+                  <memberOf key="att.measure.log"/>
+                  <memberOf key="att.joined"/>
+                  <memberOf key="model.measureLike"/>
+               </classes>
+            </elementSpec>
+
             <classSpec ident="att.geneticState" module="MEI.genetic" type="atts" mode="change">
                <constraintSpec ident="check_changeState.targets" scheme="schematron" mode="replace">
                   <constraint>
                      <sch:ns prefix="mei" uri="http://www.music-encoding.org/ns/mei"/>
-                     
                      <sch:rule context="mei:*[@state]">
                         <sch:let name="tokens" value="tokenize(normalize-space(@state), '\s+')"/>
-                        
-                        <sch:assert role="warning" test="normalize-space(@state) != ''">
-                           @state attribute should have content.
-                        </sch:assert>
-                        
-                        <sch:assert role="warning"
-                           test="
+                        <sch:assert role="warning" test="normalize-space(@state) != ''"> @state
+                           attribute should have content. </sch:assert>
+                        <sch:assert role="warning" test="
                            every $t in $tokens satisfies
                            contains($t, '#')
-                           ">
-                           Every value in @state must contain a fragment identifier (#...).
-                        </sch:assert>
-                        
-                        <sch:assert role="warning"
-                           test="
+                           "> Every value in @state must contain a fragment
+                           identifier (#...). </sch:assert>
+                        <sch:assert role="warning" test="
                            every $t in $tokens satisfies
                            let $docPart := substring-before($t, '#'),
                            $frag    := substring-after($t, '#'),
@@ -731,9 +735,8 @@
                            $frag != ''
                            and doc-available($uri)
                            and exists(doc($uri)//mei:genState[@xml:id = $frag])
-                           ">
-                           Every value in @state must point to a reachable mei:genState in the referenced document.
-                        </sch:assert>
+                           "> Every value in @state must point to a
+                           reachable mei:genState in the referenced document. </sch:assert>
                      </sch:rule>
                   </constraint>
                </constraintSpec>
@@ -753,7 +756,7 @@
                   </attDef>
                </attList>
             </classSpec>
-           </schemaSpec>
+         </schemaSpec>
       </body>
    </text>
 </TEI>
