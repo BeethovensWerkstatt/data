@@ -14,6 +14,7 @@
             <xd:p><xd:b>Created on:</xd:b> Aug 25, 2023</xd:p>
             <xd:p><xd:b>Author:</xd:b> Johannes Kepper</xd:p>
             <xd:p>This XSLT imports MEI files as annotated transcriptions into our data model. It requires proper files names.</xd:p>
+            <xd:p>slightly updated on 2025-12 to match current data model and software expectations.</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:output indent="yes" method="xml"/>
@@ -167,8 +168,8 @@
     <xsl:template match="/">
         <xsl:message select="'writing file ' || $resultPath"/>
         <xsl:result-document href="{$resultPath}" indent="yes" method="xml" exclude-result-prefixes="xlink">
-            <xsl:processing-instruction name="xml-model">href="../../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
-            <xsl:processing-instruction name="xml-model">href="../../../../rng/bw_module4_complete.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:processing-instruction>
+            <xsl:processing-instruction name="xml-model">href="../../../../rng/bw_annotatedTranscriptions.odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
+            <xsl:processing-instruction name="xml-model">href="../../../../rng/bw_annotatedTranscriptions.odd.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:processing-instruction>
             <mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="6.0+beethovensWerkstatt" xml:id="a{uuid:randomUUID()}" xmlns:svg="http://www.w3.org/2000/svg">
                 <xsl:variable name="step1">
                     <xsl:apply-templates select="$sourceDoc//mei:meiHead" mode="header"/>
@@ -213,6 +214,7 @@
     <xsl:template match="mei:category[@xml:id = 'bw_diplomatic_transcript']" mode="header">
         <xsl:next-match/>
         <category xmlns="http://www.music-encoding.org/ns/mei" xml:id="bw_annotated_transcript" class="#bw_transcription_type" xsl:exclude-result-prefixes="xlink"/>
+        <category xmlns="http://www.music-encoding.org/ns/mei" xml:id="bw_writingZoneBegin" xsl:exclude-result-prefixes="xlink"/>
     </xsl:template>
     <xsl:template match="mei:score" mode="body">
         <xsl:variable name="lt" as="xs:string">&lt;</xsl:variable>
@@ -226,6 +228,21 @@
         </xsl:comment>
         
         <xsl:copy>
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="mei:score/mei:section[1]" mode="body">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            <pb xmlns="http://www.music-encoding.org/ns/mei" 
+                xml:id="p{uuid:randomUUID()}"
+                corresp="{'../' || $sourceName || '.xml#' || $surfaceId}"/>
+            <annot xmlns="http://www.music-encoding.org/ns/mei" 
+                xml:id="a{uuid:randomUUID()}"
+                class="#bw_writingZoneBegin"
+                corresp="{'../' || $sourceName || '.xml#' || $genDescWz/@xml:id}"/>
+            <sb xmlns="http://www.music-encoding.org/ns/mei" xml:id="s{uuid:randomUUID()}"/>
             <xsl:apply-templates select="node()" mode="#current"/>
         </xsl:copy>
     </xsl:template>
@@ -292,7 +309,25 @@
     <xsl:template match="mei:staffDef" mode="body">
         <xsl:copy>
             <xsl:apply-templates select="@* except (@clef.line, @clef.shape, @key.mode, @key.sig)" mode="#current"/>
-            <keySig xmlns="http://www.music-encoding.org/ns/mei" sig="{@key.sig}" mode="{@key.mode}"/>
+            <keySig xmlns="http://www.music-encoding.org/ns/mei" xml:id="k{uuid:randomUUID()}">
+                
+                <xsl:variable name="sharps" select="('f','c','g','d','a','e','b')" as="xs:string+"/>
+                <xsl:variable name="flats" select="('b','e','a','d','g','c','f')" as="xs:string+"/>
+                
+                <xsl:variable name="sig" select="@key.sig" as="xs:string"/>
+                <xsl:variable name="dir" select="substring($sig,2)" as="xs:string"/>
+                <xsl:variable name="count" select="substring($sig,1,1) cast as xs:integer" as="xs:integer"/>
+                <xsl:for-each select="(1 to $count)">
+                    <xsl:variable name="i" select="."/>
+                    <xsl:variable name="pname" select="if ($dir = 's') then($sharps[$i]) else($flats[$i])" as="xs:string"/>
+                    <keyAccid xmlns="http://www.music-encoding.org/ns/mei">
+                        <xsl:attribute name="xml:id" select="'k' || uuid:randomUUID()"/>
+                        <xsl:attribute name="accid" select="$dir"/>
+                        <xsl:attribute name="pname" select="$pname"/>
+                    </keyAccid>
+                </xsl:for-each>
+                
+            </keySig>
             <clef xmlns="http://www.music-encoding.org/ns/mei" shape="{@clef.shape}" line="{@clef.line}"/>
             
             <xsl:apply-templates select="node()" mode="#current"/>
