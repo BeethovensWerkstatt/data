@@ -2,318 +2,295 @@
 <?xml-model href="../../../../rng/bw_annotatedTranscriptions.odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../../../rng/bw_annotatedTranscriptions.odd.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg" meiversion="6.0+beethovensWerkstatt" xml:id="a6b8cec03-a7d9-47bf-af0e-081e2e815432">
-    <meiHead meiversion="6.0+beethovensWerkstatt" xml:id="xb825a30f-e2f1-4d7b-a843-da9632e2f07c">
-        <fileDesc xml:id="ha0f112e3-b71b-45af-b4b9-e5a1ab24c7d9">
-            <titleStmt xml:id="h3745f6c4-6abe-4b1f-83c9-53bbc9f00503">
-                <title xml:id="hac441280-c38d-4dc4-9ce5-d1ed7abc4e4a">
-                    Beethoven, Ludwig van: Sinfonien.
-               Skizzen; d-Moll; op. 125[cover title, by Anton Gräffer:] Notirungsbuch | O | 36
-                </title>
-                <composer xml:id="h58edc35a-a0cc-407c-b368-399f7eda05c6">
-                    <persName xml:id="hcbf96124-c1f9-4daa-a3b7-3d3273c2dc4f">
-                        Beethoven, Ludwig van
-                    </persName>
-                </composer>
-                <editor xml:id="hd1a3a8cc-aaf0-4e68-93c1-d7e6b0627df0">
-                    <corpName auth.uri="https://beethovens-werkstatt.de" xml:id="x1e6e7f2c-be04-45b2-9a39-9ea9c8416610">
-                        Beethovens Werkstatt
-                    </corpName>
-                </editor>
-                <funder xml:id="hcedd0c48-3c43-4aa0-9c3f-725a4a7f6794">
-                    <corpName auth.uri="http://www.adwmainz.de/" xml:id="xd3470ad2-e124-4857-89c9-e024467d05fd">
-                        Akademie der Wissenschaften und
-                  der Literatur Mainz
-                    </corpName>
-                </funder>
-            </titleStmt>
-            <pubStmt xml:id="hddff7159-ecea-470a-8c6e-4af3065ccc2e"/>
-            <seriesStmt xml:id="h125a03c8-e130-4c36-aa1a-d216f5e3a69e">
-                <title xml:id="h1f8a7305-d023-409a-ac6f-dadbed700c39" xml:lang="de" level="s">
-                    Skizzenbuchedition
-                </title>
-                <identifier xml:id="h20be8996-ad48-43fa-bb6e-461af4216747" auth.uri="https://beethovens-werkstatt.de/modul-4/">
-                    sk
-                </identifier>
-            </seriesStmt>
-            <sourceDesc xml:id="ha8eb3d2d-84a0-4ad6-92fe-9f5bf4afbd9d">
-                <source n="1" target="../Landsberg_8-1.xml#gc4e3cc60-c875-4dba-8d9e-a23c093b92bd" xml:id="x7181ff1b-eb00-4de1-b8a9-6791faac6d7b"/>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc xml:id="h15b55819-1ec3-4d8d-9918-5220facc5ebd" class="#bw_annotated_transcript #bw_module4">
-            <appInfo xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="xeb561fb9-d753-4363-92a5-7c5256e7b650">
-                <application isodate="2024-8-5T13:26:49Z" version="20210200" xml:id="x8a307b09-0bcf-4db4-b613-d83170367957">
-                    <name type="operating-system" xml:id="x20d87469-6e10-47fd-8634-2ab6d74fa4c3">
-                        Mac OS X
-                  Mountain Lion
-                    </name>
-                </application>
-                <application type="plugin" version="4.0.0" xml:id="xa8ce9ccc-6ec8-4aaa-95c9-09a79b2950df">
-                    <name xml:id="xf6314eae-665e-4e18-bdf5-37ef1085d857">
-                        Sibelius to MEI 4 Exporter
-                  (4.0.0)
-                    </name>
-                </application>
-            </appInfo>
-            <classDecls xml:id="h9481da12-bc4c-42fa-b2e9-9ecd3325c3a8">
-                <taxonomy xml:id="h1f1eeefe-96f6-4367-aa17-7d58ae21f64a" label="availableTaxonomies">
-                    <category xml:id="document_type"/>
-                    <category xml:id="bw_observation_type"/>
-                    <category xml:id="bw_implementation_completeness"/>
-                    <!--<category xml:id="bw_monitum_category"/>
+   <meiHead meiversion="6.0+beethovensWerkstatt" xml:id="xb825a30f-e2f1-4d7b-a843-da9632e2f07c">
+      <fileDesc xml:id="ha0f112e3-b71b-45af-b4b9-e5a1ab24c7d9">
+         <titleStmt xml:id="h3745f6c4-6abe-4b1f-83c9-53bbc9f00503">
+            <title xml:id="hac441280-c38d-4dc4-9ce5-d1ed7abc4e4a"> Beethoven, Ludwig van: Sinfonien. Skizzen; d-Moll; op. 125[cover title, by Anton Gräffer:] Notirungsbuch | O | 36 </title>
+            <composer xml:id="h58edc35a-a0cc-407c-b368-399f7eda05c6">
+               <persName xml:id="hcbf96124-c1f9-4daa-a3b7-3d3273c2dc4f"> Beethoven, Ludwig van </persName>
+            </composer>
+            <editor xml:id="hd1a3a8cc-aaf0-4e68-93c1-d7e6b0627df0">
+               <corpName auth.uri="https://beethovens-werkstatt.de" xml:id="x1e6e7f2c-be04-45b2-9a39-9ea9c8416610"> Beethovens Werkstatt </corpName>
+            </editor>
+            <funder xml:id="hcedd0c48-3c43-4aa0-9c3f-725a4a7f6794">
+               <corpName auth.uri="http://www.adwmainz.de/" xml:id="xd3470ad2-e124-4857-89c9-e024467d05fd"> Akademie der Wissenschaften und der Literatur Mainz </corpName>
+            </funder>
+         </titleStmt>
+         <pubStmt xml:id="hddff7159-ecea-470a-8c6e-4af3065ccc2e"/>
+         <seriesStmt xml:id="h125a03c8-e130-4c36-aa1a-d216f5e3a69e">
+            <title xml:id="h1f8a7305-d023-409a-ac6f-dadbed700c39" xml:lang="de" level="s"> Skizzenbuchedition </title>
+            <identifier xml:id="h20be8996-ad48-43fa-bb6e-461af4216747" auth.uri="https://beethovens-werkstatt.de/modul-4/"> sk </identifier>
+         </seriesStmt>
+         <sourceDesc xml:id="ha8eb3d2d-84a0-4ad6-92fe-9f5bf4afbd9d">
+            <source n="1" target="../Landsberg_8-1.xml#gc4e3cc60-c875-4dba-8d9e-a23c093b92bd" xml:id="x7181ff1b-eb00-4de1-b8a9-6791faac6d7b"/>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc xml:id="h15b55819-1ec3-4d8d-9918-5220facc5ebd" class="#bw_annotated_transcript #bw_module4">
+         <appInfo xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="xeb561fb9-d753-4363-92a5-7c5256e7b650">
+            <application isodate="2024-8-5T13:26:49Z" version="20210200" xml:id="x8a307b09-0bcf-4db4-b613-d83170367957">
+               <name type="operating-system" xml:id="x20d87469-6e10-47fd-8634-2ab6d74fa4c3"> Mac OS X Mountain Lion </name>
+            </application>
+            <application type="plugin" version="4.0.0" xml:id="xa8ce9ccc-6ec8-4aaa-95c9-09a79b2950df">
+               <name xml:id="xf6314eae-665e-4e18-bdf5-37ef1085d857"> Sibelius to MEI 4 Exporter (4.0.0) </name>
+            </application>
+         </appInfo>
+         <classDecls xml:id="h9481da12-bc4c-42fa-b2e9-9ecd3325c3a8">
+            <taxonomy xml:id="h1f1eeefe-96f6-4367-aa17-7d58ae21f64a" label="availableTaxonomies">
+               <category xml:id="document_type"/>
+               <category xml:id="bw_observation_type"/>
+               <category xml:id="bw_implementation_completeness"/>
+               <!--<category xml:id="bw_monitum_category"/>
                     -->
-                    <category xml:id="bw_file_type"/>
-                    <category xml:id="bw_monitum_comment"/>
-                    <category xml:id="bw_monitum_classification"/>
-                    <category xml:id="bw_monitum_textoperation"/>
-                    <category xml:id="bw_monitum_object"/>
-                    <category xml:id="bw_monitum_kontext"/>
-                    <category xml:id="bw_monitum_konkordanz"/>
-                    <category xml:id="bw_transcription_type"/>
-                    <category xml:id="bw_module"/>
-                    <category xml:id="bw_geneticOrder"/>
-                </taxonomy>
-                <taxonomy xml:id="hb44a4ec8-c8ea-4d6d-81f9-9ec0ffc995b0">
-                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
-                </taxonomy>
-                <taxonomy xml:id="hde26d729-891c-4862-9282-10277b510773">
-                    <category xml:id="music.print" class="#document_type"/>
-                    <category xml:id="music.manuscript" class="#document_type"/>
-                    <category xml:id="letter.manuscript" class="#document_type"/>
-                    <category xml:id="music.sketchbook" class="#document_type"/>
-                </taxonomy>
-                <taxonomy xml:id="h18523bc5-5802-4c31-b82f-ebb7190fcdce">
-                    <category xml:id="bw_monitum" class="#bw_observation_type"/>
-                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
-                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
-                </taxonomy>
-                <taxonomy xml:id="h553ca8a6-defa-4cfc-9b20-db731334722c">
-                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
-                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
-                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
-                </taxonomy>
-                <taxonomy xml:id="hdb2e3baf-1672-497c-ae0d-43157374e7fb">
-                    <!-- Klassifizierung -->
-                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
-                </taxonomy>
-                <taxonomy xml:id="hbc52095a-aed7-41ba-8e06-075d9f720db3">
-                    <!-- Textoperation -->
-                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
-                    <!--oder erweiterung-->
-                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
-                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
-                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
-                </taxonomy>
-                <taxonomy xml:id="he89ebc67-b476-4a4f-8867-4e6920ac08d8">
-                    <!-- Revisionsobjekt -->
-                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
-                </taxonomy>
-                <taxonomy xml:id="hde304446-f7d1-4e42-a524-93d3cc9feb50">
-                    <!-- kontextzitat -->
-                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
-                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
-                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
-                </taxonomy>
-                <taxonomy xml:id="h8972f55e-e5b0-4109-a309-fc0bcb157b1a">
-                    <!-- konkordanz -->
-                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
-                </taxonomy>
-                <taxonomy xml:id="hb14dfd76-dbe2-49c6-92fc-7baf211e73b7">
-                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
-                    <category xml:id="bw_document_file" class="#bw_file_type"/>
-                    <category xml:id="bw_work_file" class="#bw_file_type"/>
-                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
-                </taxonomy>
-                <taxonomy xml:id="h08fe92ac-28a5-413f-9ab1-ef45e7e00716">
-                    <category xml:id="bw_module4" class="#bw_module"/>
-                </taxonomy>
-                <taxonomy xml:id="h3904d303-e13c-4d2c-bbd5-300036536d6d">
-                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
-                    <category xml:id="bw_annotated_transcript" class="#bw_transcription_type"/>
-                    <category xml:id="bw_writingZoneBegin"/>
-                </taxonomy>
-            </classDecls>
-        </encodingDesc>
-        <revisionDesc xml:id="x1fc8f49b-1451-451f-a720-8f0340e70261">
-            <change xml:id="ca8cd4db4-0bcf-4d3e-8d84-1931b104a247" n="1" resp="#bw_jk" isodate="2024-08-05">
-                <changeDesc xml:id="x00386060-e4c8-4c6e-80ee-29fc37e70651">
-                    <p xml:id="x52b66f89-853f-4ae0-86e0-db5ade96f7c6">
-                        Imported file into data structure
-                  using XSLT.
-                    </p>
-                </changeDesc>
-            </change>
-        </revisionDesc>
-    </meiHead>
-    <music xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="xc8e67d02-f794-413d-82f7-981338faf489">
-        <body xml:id="xb7c2b866-413a-4bc7-9d25-d83ad5b9922d">
-            <mdiv xml:id="x33e4806e-261a-48cc-9dab-114857c921ed">
-                <!--<drafts xml:id="s3d0a8ddb-ced3-4b00-8363-fb7ba24bb322">
+               <category xml:id="bw_file_type"/>
+               <category xml:id="bw_monitum_comment"/>
+               <category xml:id="bw_monitum_classification"/>
+               <category xml:id="bw_monitum_textoperation"/>
+               <category xml:id="bw_monitum_object"/>
+               <category xml:id="bw_monitum_kontext"/>
+               <category xml:id="bw_monitum_konkordanz"/>
+               <category xml:id="bw_transcription_type"/>
+               <category xml:id="bw_module"/>
+               <category xml:id="bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy xml:id="hb44a4ec8-c8ea-4d6d-81f9-9ec0ffc995b0">
+               <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy xml:id="hde26d729-891c-4862-9282-10277b510773">
+               <category xml:id="music.print" class="#document_type"/>
+               <category xml:id="music.manuscript" class="#document_type"/>
+               <category xml:id="letter.manuscript" class="#document_type"/>
+               <category xml:id="music.sketchbook" class="#document_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h18523bc5-5802-4c31-b82f-ebb7190fcdce">
+               <category xml:id="bw_monitum" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h553ca8a6-defa-4cfc-9b20-db731334722c">
+               <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+               <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+               <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+            </taxonomy>
+            <taxonomy xml:id="hdb2e3baf-1672-497c-ae0d-43157374e7fb">
+               <!-- Klassifizierung -->
+               <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
+            </taxonomy>
+            <taxonomy xml:id="hbc52095a-aed7-41ba-8e06-075d9f720db3">
+               <!-- Textoperation -->
+               <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
+               <!--oder erweiterung-->
+               <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
+            </taxonomy>
+            <taxonomy xml:id="he89ebc67-b476-4a4f-8867-4e6920ac08d8">
+               <!-- Revisionsobjekt -->
+               <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
+            </taxonomy>
+            <taxonomy xml:id="hde304446-f7d1-4e42-a524-93d3cc9feb50">
+               <!-- kontextzitat -->
+               <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
+            </taxonomy>
+            <taxonomy xml:id="h8972f55e-e5b0-4109-a309-fc0bcb157b1a">
+               <!-- konkordanz -->
+               <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
+            </taxonomy>
+            <taxonomy xml:id="hb14dfd76-dbe2-49c6-92fc-7baf211e73b7">
+               <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+               <category xml:id="bw_document_file" class="#bw_file_type"/>
+               <category xml:id="bw_work_file" class="#bw_file_type"/>
+               <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h08fe92ac-28a5-413f-9ab1-ef45e7e00716">
+               <category xml:id="bw_module4" class="#bw_module"/>
+            </taxonomy>
+            <taxonomy xml:id="h3904d303-e13c-4d2c-bbd5-300036536d6d">
+               <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+               <category xml:id="bw_annotated_transcript" class="#bw_transcription_type"/>
+               <category xml:id="bw_writingZoneBegin"/>
+            </taxonomy>
+         </classDecls>
+      </encodingDesc>
+      <revisionDesc xml:id="x1fc8f49b-1451-451f-a720-8f0340e70261">
+         <change xml:id="ca8cd4db4-0bcf-4d3e-8d84-1931b104a247" n="1" resp="#bw_jk" isodate="2024-08-05">
+            <changeDesc xml:id="x00386060-e4c8-4c6e-80ee-29fc37e70651">
+               <p xml:id="x52b66f89-853f-4ae0-86e0-db5ade96f7c6"> Imported file into data structure using XSLT. </p>
+            </changeDesc>
+         </change>
+      </revisionDesc>
+   </meiHead>
+   <music xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="xc8e67d02-f794-413d-82f7-981338faf489">
+      <body xml:id="xb7c2b866-413a-4bc7-9d25-d83ad5b9922d">
+         <mdiv xml:id="x33e4806e-261a-48cc-9dab-114857c921ed">
+            <!--<drafts xml:id="s3d0a8ddb-ced3-4b00-8363-fb7ba24bb322">
                     <draft xml:id="da83d98d3-3535-4c91-8979-e974b64d0bde" class="#bw_annotated_transcript">
                         move content of score here when finished with data cleanup
                     </draft>
                 </drafts>
                 -->
-                <score xml:id="saa44c8ce-5667-479f-a888-2d0aa9a7b951">
-                    <scoreDef xml:id="x5e243b29-d161-4990-8b7e-b5d95e93256e">
-                        <staffGrp xml:id="xdc214ea1-c251-4526-99c2-891e582ecb2a" bar.thru="true">
-                            <staffDef xml:id="x1b6f6d5d-93fe-4e5d-979d-6b2fa2b78535" lines="5" n="1">
-                                <keySig xml:id="k2c564cdd-dfc6-49e4-b303-72480d905808">
-                                    <keyAccid xml:id="ke622a957-fbe9-46c8-b537-c137c348aac3" accid="f" pname="b"/>
-                                </keySig>
-                                <clef xml:id="cf5c3e35f-9405-4c41-af3d-60298f4596a4" shape="G" line="2"/>
-                                <meterSig xml:id="m595879a0-7156-4e6c-88da-4fabdaa9a4de" count="2" unit="4"/>
-                            </staffDef>
-                        </staffGrp>
-                    </scoreDef>
-                    <section xml:id="xa17e5d69-a975-4612-b7e3-ae319d9f6d00">
-                        <pb xml:id="pf0def34a-6751-4949-b0c5-0573d2e7a4b5" corresp="../Landsberg_8-1.xml#se6d50d9a-f779-413f-a09c-15f0e98494e0"/>
-                        <annot xml:id="bbd2ced80-6079-4afb-a6d5-f8246000683a" class="#bw_writingZoneBegin" corresp="../Landsberg_8-1.xml#gc4e3cc60-c875-4dba-8d9e-a23c093b92bd"/>
-                        <sb xml:id="sc3671146-4a22-4142-9efb-fe0200e45a7c" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#s4013eb29-6a9f-410a-884d-4c0d423209c2"/>
-                        <measure xml:id="x1b1b066b-b0fc-4116-8e7d-4f1ac63c9e36" n="1">
-                            <staff xml:id="x051f5470-4f30-4ee9-ac0e-7bd05f55915b" n="1">
-                                <layer xml:id="x7e4699e5-100f-49dd-86a8-53c40ad67020" n="1">
-                                    <note xml:id="xc0e538c6-6cc2-49f0-a194-c294029aa199" dur="4" oct="4" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d9d0dece7-caee-498c-bf5b-a82a960afe19"/>
-                                    <beam xml:id="xfc21de05-8d70-4821-9989-86472b606736" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b8e323dff-9b41-48d1-bdaf-6cce5681b11a ../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b48b4e5a5-4cc8-4613-9ee0-d19f8157459f">
-                                        <note xml:id="xe1344f51-1011-4397-84f6-66ba5d3610f9" dur="16" oct="4" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5d6fd94b-ece1-4ce6-b8b0-7e723aa34f10"/>
-                                        <note xml:id="x9b38a768-c09e-42b3-b191-f4826b7577e1" dur="16" oct="4" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#da5393c85-1f5e-4082-bfd0-1f367d65c98d">
-                                            <accid xml:id="x053d73ab-9545-48c3-ac39-d6f552caf159" accid="s" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5c20f4a1-ecd4-4974-802e-f74416e2557d"/>
-                                        </note>
-                                        <note xml:id="xfba83171-30b1-421d-87f8-5c344d18f030" dur="16" oct="4" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d1b7f6d85-1db0-4fd7-95ce-e7f73a6c5a24"/>
-                                        <note xml:id="x794edd7d-69b8-40af-bbda-be794afa84df" dur="16" oct="4" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dcf60b6dc-264b-4d15-9ee3-14b0a0b09d8a"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <tie xml:id="x8f0a8ade-cf92-4b71-8bed-07dc9d9fcc7e" endid="#xe1344f51-1011-4397-84f6-66ba5d3610f9" startid="#xc0e538c6-6cc2-49f0-a194-c294029aa199" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#db24f837f-41b8-40b1-8890-2154c131f3aa"/>
-                        </measure>
-                        <measure xml:id="x850df268-72a3-4d3f-a075-7327d797ca42" n="2" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dcfb1c903-f395-42ab-b04d-86bdbebe23dd">
-                            <staff xml:id="x3ecb9c28-a6f6-432b-b9ce-f54f8da6ca40" n="1">
-                                <layer xml:id="xd779d6d0-0f37-4370-86c3-85f1f8bd2a34" n="1">
-                                    <beam xml:id="xfc19d711-b44b-4c04-9ce8-c10405585a52" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#bc71e9df9-5513-45fe-82ca-d8d41ce5db97">
-                                        <note xml:id="x47b69981-56a5-47fe-bcce-fefd9f166bee" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dc64a4ea6-c20a-45c1-9c4e-cee75b871be6"/>
-                                        <note xml:id="x3deb4fed-d9f2-4560-91ca-42e3b99b4546" dur="8" oct="4" pname="g" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d60257309-2683-4c2a-8865-5d6429bd03ad"/>
-                                        <note xml:id="x6551a716-6f79-43d1-ae67-c3c6778d3068" dur="8" oct="4" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dbadbdcfb-904f-4502-8b64-7d31dac20ac1"/>
-                                        <note xml:id="x9a483e96-2367-47a2-8b6a-c5b09f49d019" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d39bf747a-e261-4b2c-9846-b6e5493ca887"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <tie xml:id="x15a395ae-f9ef-44d4-806d-7361add54f90" endid="#x45fc9709-18ee-4831-b7d0-e0326acdd230" startid="#x9a483e96-2367-47a2-8b6a-c5b09f49d019" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#db326abe6-a072-4f4b-8d33-020d44b35498"/>
-                        </measure>
-                        <measure xml:id="x8a12f254-3a9a-49e3-8ba1-32916f22ff96" n="3" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dd49fcdb7-fb97-4701-b0be-9ac02583662d">
-                            <staff xml:id="xb9ac4d8e-4eec-42a4-a313-bba503bca013" n="1">
-                                <layer xml:id="xf33d79fd-9c30-4743-8745-9f7325649a2a" n="1">
-                                    <beam xml:id="xb55d210f-a595-4d9a-8fc5-484f934ff2ee" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b89c02485-4f74-49e7-99f8-019d0df758cb">
-                                        <note xml:id="x45fc9709-18ee-4831-b7d0-e0326acdd230" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d93f7e8dc-2b98-4eb8-86e4-88a0c669895f"/>
-                                        <note xml:id="x1d206207-994f-487d-a50a-6affa3b1272c" dur="8" oct="4" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d069db1c8-2d60-4b9f-ad9f-8996374ff5c0">
-                                            <accid xml:id="x9f5564fa-0e68-4049-8eb0-993f44da4390" accid="s"/>
-                                        </note>
-                                        <note xml:id="x10a223c3-0f51-485a-aa6c-92ecaf29e648" dur="8" oct="4" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d6378dfb8-ada8-4f28-b921-8cf1a88df6b8"/>
-                                        <note xml:id="x2267d4ca-e4fd-4fcd-9679-64a13dc25863" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d7e6d971a-46db-4aef-a8b9-156137f69aa5"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <tie xml:id="xc36575e3-733d-421b-aba4-102148951107" endid="#x2bba9c1e-30fe-4f44-a951-bce0a82bf89b" startid="#x2267d4ca-e4fd-4fcd-9679-64a13dc25863" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d6cb49e68-d9dd-4b88-a6a1-1b06d6cb7b8d"/>
-                        </measure>
-                        <measure xml:id="xae637f42-3179-4421-a11a-7fc827c61bcd" n="4" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d04e4c84e-25ad-4db5-b74e-f70878922e8d">
-                            <staff xml:id="x2af8a0a0-33ed-456c-8488-165ff57dd393" n="1">
-                                <layer xml:id="xaeda4a5f-3d08-4ec9-9c4a-5a1380264483" n="1">
-                                    <beam xml:id="x1d33c7a5-3969-4200-88e8-6550199ca14d" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b1777b46a-1f75-4b4c-a81e-95d509fcddd9">
-                                        <note xml:id="x2bba9c1e-30fe-4f44-a951-bce0a82bf89b" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d9907c5e0-040c-41bb-9bd5-2dd9c934f53d"/>
-                                        <note xml:id="x36db763d-f44c-49c9-b927-55790ac66bc1" dur="8" oct="4" pname="g" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d09e48f40-d89b-426a-9929-7a7b5cab82f6"/>
-                                        <note xml:id="x362f3fb6-9ada-45ed-ae76-57f1a6a61124" dur="8" oct="4" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d23332b29-a896-4a55-960b-954c713a6354"/>
-                                        <note xml:id="x85cd8dd8-7973-4211-a53f-b001d127b7c0" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dae671d28-b882-49c8-b530-6446804b690a"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                        </measure>
-                        <measure xml:id="xc3f44913-0f94-4058-b1dd-982b3c8af516" n="5">
-                            <staff xml:id="x8292ed58-5230-45aa-9586-badc7dc10043" n="1">
-                                <layer xml:id="x299b9168-c5c4-4896-b3a2-41c70f76f2c2" n="1">
-                                    <note xml:id="x54d6d7b7-7ce7-41eb-ac4b-f9ecd28199e5" dur="4" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d8a7d6214-9327-4a31-ba11-d1241113f187"/>
-                                    <beam xml:id="x79e80bad-89e5-4148-9976-6d8dc5954864" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b96286633-a841-4d89-a1a9-6d88cfac713c ../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#bebb15661-67b9-4106-b580-7cbfbd401d2f">
-                                        <note xml:id="xa56330cb-0fb0-4cb9-9b75-6d911dd38e29" dur="16" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#de397f31e-7883-4734-8bbe-979c82768411"/>
-                                        <note xml:id="x280b5606-fd83-43e9-879e-aa19189d58cc" dur="16" oct="5" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dfb184e08-5953-4f35-a6d8-f0e611bd8320"/>
-                                        <note xml:id="x76bf18e8-4947-43db-b224-8191dac61d58" dur="16" oct="5" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d592d6699-e340-495a-91b8-2ca906336c99"/>
-                                        <note xml:id="x3ce74500-dfde-42b8-a311-991f1bc1c88b" dur="16" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5db70ac3-f387-4e4c-ab95-53e33b376554"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <tie xml:id="x4012cdaa-d4c0-4901-8627-30418214e1dd" endid="#xa56330cb-0fb0-4cb9-9b75-6d911dd38e29" startid="#x54d6d7b7-7ce7-41eb-ac4b-f9ecd28199e5" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dd4049123-506e-4f6a-8986-dcd900b51af0"/>
-                        </measure>
-                        <measure xml:id="x37aa8cbd-6678-4f73-980c-c7624eedfe89" n="6" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#df5094e69-e362-4f0c-ad2d-b5d15dd392ee">
-                            <staff xml:id="xd55289ba-a05a-4889-aab2-6399b7aaadc2" n="1">
-                                <layer xml:id="xc09fcdc4-8ea1-47fb-bbb9-47f65940dafb" n="1">
-                                    <beam xml:id="xf1677e83-dd6f-4d1b-8a34-5e648589728b" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b339c338b-0773-48c8-90e2-50159bb681e2">
-                                        <note xml:id="x9f9c5f80-5f2a-40f4-b1f5-6cb9087f5c1e" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d12329ebd-40b6-4fc8-b491-9c8892920553"/>
-                                        <note xml:id="xb700b7c0-d16c-482c-b44f-d45d48699f3a" dur="8" oct="5" pname="g" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d21af28d5-0516-4577-adcd-fe813c3a0dca"/>
-                                        <note xml:id="x9ed888f1-859f-44bf-8885-75213bd4c4a0" dur="8" oct="5" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5eb3800b-eb0e-4a6b-ad2d-e0d6e88a3fe5"/>
-                                        <note xml:id="x92c3ba77-1629-4eb6-83c6-576566f8953d" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d55cb9503-0378-4247-8e85-cb1139066108"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <tie xml:id="xc83ddcc9-e5eb-4e12-a3eb-ca44981640d6" endid="#x3464f4e3-911b-4a8b-a1e8-2210a8bb0982" startid="#x92c3ba77-1629-4eb6-83c6-576566f8953d" curvedir="above"/>
-                        </measure>
-                        <measure xml:id="x3393a644-488c-4566-b1a1-94516a6be672" n="7" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d43dd2886-f7a4-4f20-8d4e-74c07322a34d">
-                            <staff xml:id="xbebcd4a8-31e9-49c5-896d-ee71bafb0704" n="1">
-                                <layer xml:id="xbf6347e0-4c0f-4cfe-8ef3-4b310053358a" n="1">
-                                    <beam xml:id="xb780a365-6861-4f11-adf7-0d3e220cb447">
-                                        <note xml:id="x3464f4e3-911b-4a8b-a1e8-2210a8bb0982" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#deea86b36-4193-4c5d-8354-79733e3723a9"/>
-                                        <note xml:id="x68e23b3a-70e5-4e2b-a934-aea785fefa54" dur="8" oct="5" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#df87fdb92-9b20-4d35-9682-6c44d0f2f95a"/>
-                                        <note xml:id="x1af05bd5-662c-403a-84a5-0905c14c64fc" dur="8" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dc2120ff5-5528-400f-9808-3448f7bbcd2e"/>
-                                        <note xml:id="xcaa3c462-35f3-4fc3-8490-ea7c0c2b9c11" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dd7595f54-5654-4754-b4f5-ce893779b06f"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <tie xml:id="x819e88d9-9632-41a2-b4dc-86dae1796cec" endid="#xc122b0ab-2928-473d-a5a5-e957ea834e06" startid="#xcaa3c462-35f3-4fc3-8490-ea7c0c2b9c11" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d18dfe828-1383-46d9-8244-6c065c5de799"/>
-                        </measure>
-                        <measure xml:id="xb75d0757-f06a-4efb-9b53-3d4424f32e43" n="8" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d63d4ae93-413a-4602-b107-970431ecdd79">
-                            <staff xml:id="x09ad720d-c6d1-4f3d-a63f-6b568ca217dc" n="1">
-                                <layer xml:id="xd63a145d-d5bb-434a-a728-904ba88ecf09" n="1">
-                                    <beam xml:id="x676107d5-a38c-45a2-99b0-da064a1c67e5">
-                                        <note xml:id="xc122b0ab-2928-473d-a5a5-e957ea834e06" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dbf111c14-549a-4ed8-b0fb-eea32817822f"/>
-                                        <note xml:id="x5d64efb4-74e0-4195-9520-23bd90fa7fac" dur="8" oct="5" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d70743d66-8c4e-4041-b102-c1f3a10c71d5"/>
-                                        <note xml:id="x7ba1c15d-9946-4326-948c-e0265a1ddf25" dur="8" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#da929f9bc-a0dc-44ca-baf4-9e6345b6f4df"/>
-                                        <note xml:id="x9bf1caae-d3c6-406f-b70c-9ad9a7bdc88e" dur="8" oct="6" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d437b952d-e6d7-4481-8c36-4b77e9c16af3"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <tie xml:id="x0b770800-7b49-4bac-b1fc-7c2d0309a495" endid="#x56e12925-e4b8-4dc9-b1dd-0426fdb2fba7" startid="#x9bf1caae-d3c6-406f-b70c-9ad9a7bdc88e" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d6d443f24-dc46-4fef-ba29-7cd24bdd228c"/>
-                        </measure>
-                        <measure xml:id="xc078c5e0-6a32-47d2-b558-302e9839af53" n="9">
-                            <staff xml:id="x52a3895b-e52c-49ba-9004-e854fed6c9d3" n="1">
-                                <layer xml:id="xce8534a5-8595-408e-9763-ca4cb4aa64f9" n="1">
-                                    <note xml:id="x56e12925-e4b8-4dc9-b1dd-0426fdb2fba7" dur="4" oct="6" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#df00e9a19-1bab-443a-8c7a-948b30724597"/>
-                                    <beam xml:id="xda3c3efa-f3e1-4301-af8b-e1f2a73b8cea" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b36e932dd-7a4a-4ccf-8630-c252370cc4a4">
-                                        <note xml:id="xf034a95e-2b99-459f-9d06-ec9f5c7b203a" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dd980bcb2-669e-4712-a270-2a808da7d122"/>
-                                        <note xml:id="x7bd97bd4-e946-449f-b723-7c0d491c55b4" dur="8" oct="5" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5f255454-c388-499e-b49a-ff7da6703e3f"/>
-                                    </beam>
-                                </layer>
-                            </staff>
-                        </measure>
-                    </section>
-                </score>
-            </mdiv>
-        </body>
-    </music>
+            <score xml:id="saa44c8ce-5667-479f-a888-2d0aa9a7b951">
+               <scoreDef xml:id="x5e243b29-d161-4990-8b7e-b5d95e93256e">
+                  <staffGrp xml:id="xdc214ea1-c251-4526-99c2-891e582ecb2a" bar.thru="true">
+                     <staffDef xml:id="x1b6f6d5d-93fe-4e5d-979d-6b2fa2b78535" lines="5" n="1">
+                        <keySig xml:id="k2c564cdd-dfc6-49e4-b303-72480d905808">
+                           <keyAccid xml:id="ke622a957-fbe9-46c8-b537-c137c348aac3" accid="f" pname="b"/>
+                        </keySig>
+                        <clef xml:id="cf5c3e35f-9405-4c41-af3d-60298f4596a4" shape="G" line="2"/>
+                        <meterSig xml:id="m595879a0-7156-4e6c-88da-4fabdaa9a4de" count="2" unit="4"/>
+                     </staffDef>
+                  </staffGrp>
+               </scoreDef>
+               <section xml:id="xa17e5d69-a975-4612-b7e3-ae319d9f6d00">
+                  <pb xml:id="pf0def34a-6751-4949-b0c5-0573d2e7a4b5" corresp="../Landsberg_8-1.xml#se6d50d9a-f779-413f-a09c-15f0e98494e0"/>
+                  <annot xml:id="bbd2ced80-6079-4afb-a6d5-f8246000683a" class="#bw_writingZoneBegin" corresp="../Landsberg_8-1.xml#gc4e3cc60-c875-4dba-8d9e-a23c093b92bd"/>
+                  <sb xml:id="sc3671146-4a22-4142-9efb-fe0200e45a7c" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#s4013eb29-6a9f-410a-884d-4c0d423209c2"/>
+                  <measure xml:id="x1b1b066b-b0fc-4116-8e7d-4f1ac63c9e36" n="1">
+                     <staff xml:id="x051f5470-4f30-4ee9-ac0e-7bd05f55915b" n="1">
+                        <layer xml:id="x7e4699e5-100f-49dd-86a8-53c40ad67020" n="1">
+                           <note xml:id="xc0e538c6-6cc2-49f0-a194-c294029aa199" dur="4" oct="4" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d9d0dece7-caee-498c-bf5b-a82a960afe19"/>
+                           <beam xml:id="xfc21de05-8d70-4821-9989-86472b606736" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b8e323dff-9b41-48d1-bdaf-6cce5681b11a ../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b48b4e5a5-4cc8-4613-9ee0-d19f8157459f">
+                              <note xml:id="xe1344f51-1011-4397-84f6-66ba5d3610f9" dur="16" oct="4" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5d6fd94b-ece1-4ce6-b8b0-7e723aa34f10"/>
+                              <note xml:id="x9b38a768-c09e-42b3-b191-f4826b7577e1" dur="16" oct="4" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#da5393c85-1f5e-4082-bfd0-1f367d65c98d">
+                                 <accid xml:id="x053d73ab-9545-48c3-ac39-d6f552caf159" accid="s" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5c20f4a1-ecd4-4974-802e-f74416e2557d"/>
+                              </note>
+                              <note xml:id="xfba83171-30b1-421d-87f8-5c344d18f030" dur="16" oct="4" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d1b7f6d85-1db0-4fd7-95ce-e7f73a6c5a24"/>
+                              <note xml:id="x794edd7d-69b8-40af-bbda-be794afa84df" dur="16" oct="4" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dcf60b6dc-264b-4d15-9ee3-14b0a0b09d8a"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <tie xml:id="x8f0a8ade-cf92-4b71-8bed-07dc9d9fcc7e" endid="#xe1344f51-1011-4397-84f6-66ba5d3610f9" startid="#xc0e538c6-6cc2-49f0-a194-c294029aa199" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#db24f837f-41b8-40b1-8890-2154c131f3aa"/>
+                  </measure>
+                  <measure xml:id="x850df268-72a3-4d3f-a075-7327d797ca42" n="2" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dcfb1c903-f395-42ab-b04d-86bdbebe23dd">
+                     <staff xml:id="x3ecb9c28-a6f6-432b-b9ce-f54f8da6ca40" n="1">
+                        <layer xml:id="xd779d6d0-0f37-4370-86c3-85f1f8bd2a34" n="1">
+                           <beam xml:id="xfc19d711-b44b-4c04-9ce8-c10405585a52" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#bc71e9df9-5513-45fe-82ca-d8d41ce5db97">
+                              <note xml:id="x47b69981-56a5-47fe-bcce-fefd9f166bee" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dc64a4ea6-c20a-45c1-9c4e-cee75b871be6"/>
+                              <note xml:id="x3deb4fed-d9f2-4560-91ca-42e3b99b4546" dur="8" oct="4" pname="g" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d60257309-2683-4c2a-8865-5d6429bd03ad"/>
+                              <note xml:id="x6551a716-6f79-43d1-ae67-c3c6778d3068" dur="8" oct="4" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dbadbdcfb-904f-4502-8b64-7d31dac20ac1"/>
+                              <note xml:id="x9a483e96-2367-47a2-8b6a-c5b09f49d019" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d39bf747a-e261-4b2c-9846-b6e5493ca887"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <tie xml:id="x15a395ae-f9ef-44d4-806d-7361add54f90" endid="#x45fc9709-18ee-4831-b7d0-e0326acdd230" startid="#x9a483e96-2367-47a2-8b6a-c5b09f49d019" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#db326abe6-a072-4f4b-8d33-020d44b35498"/>
+                  </measure>
+                  <measure xml:id="x8a12f254-3a9a-49e3-8ba1-32916f22ff96" n="3" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dd49fcdb7-fb97-4701-b0be-9ac02583662d">
+                     <staff xml:id="xb9ac4d8e-4eec-42a4-a313-bba503bca013" n="1">
+                        <layer xml:id="xf33d79fd-9c30-4743-8745-9f7325649a2a" n="1">
+                           <beam xml:id="xb55d210f-a595-4d9a-8fc5-484f934ff2ee" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b89c02485-4f74-49e7-99f8-019d0df758cb">
+                              <note xml:id="x45fc9709-18ee-4831-b7d0-e0326acdd230" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d93f7e8dc-2b98-4eb8-86e4-88a0c669895f"/>
+                              <note xml:id="x1d206207-994f-487d-a50a-6affa3b1272c" dur="8" oct="4" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d069db1c8-2d60-4b9f-ad9f-8996374ff5c0">
+                                 <accid xml:id="x9f5564fa-0e68-4049-8eb0-993f44da4390" accid="s"/>
+                              </note>
+                              <note xml:id="x10a223c3-0f51-485a-aa6c-92ecaf29e648" dur="8" oct="4" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d6378dfb8-ada8-4f28-b921-8cf1a88df6b8"/>
+                              <note xml:id="x2267d4ca-e4fd-4fcd-9679-64a13dc25863" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d7e6d971a-46db-4aef-a8b9-156137f69aa5"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <tie xml:id="xc36575e3-733d-421b-aba4-102148951107" endid="#x2bba9c1e-30fe-4f44-a951-bce0a82bf89b" startid="#x2267d4ca-e4fd-4fcd-9679-64a13dc25863" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d6cb49e68-d9dd-4b88-a6a1-1b06d6cb7b8d"/>
+                  </measure>
+                  <measure xml:id="xae637f42-3179-4421-a11a-7fc827c61bcd" n="4" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d04e4c84e-25ad-4db5-b74e-f70878922e8d">
+                     <staff xml:id="x2af8a0a0-33ed-456c-8488-165ff57dd393" n="1">
+                        <layer xml:id="xaeda4a5f-3d08-4ec9-9c4a-5a1380264483" n="1">
+                           <beam xml:id="x1d33c7a5-3969-4200-88e8-6550199ca14d" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b1777b46a-1f75-4b4c-a81e-95d509fcddd9">
+                              <note xml:id="x2bba9c1e-30fe-4f44-a951-bce0a82bf89b" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d9907c5e0-040c-41bb-9bd5-2dd9c934f53d"/>
+                              <note xml:id="x36db763d-f44c-49c9-b927-55790ac66bc1" dur="8" oct="4" pname="g" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d09e48f40-d89b-426a-9929-7a7b5cab82f6"/>
+                              <note xml:id="x362f3fb6-9ada-45ed-ae76-57f1a6a61124" dur="8" oct="4" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d23332b29-a896-4a55-960b-954c713a6354"/>
+                              <note xml:id="x85cd8dd8-7973-4211-a53f-b001d127b7c0" dur="8" oct="4" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dae671d28-b882-49c8-b530-6446804b690a"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  </measure>
+                  <measure xml:id="xc3f44913-0f94-4058-b1dd-982b3c8af516" n="5">
+                     <staff xml:id="x8292ed58-5230-45aa-9586-badc7dc10043" n="1">
+                        <layer xml:id="x299b9168-c5c4-4896-b3a2-41c70f76f2c2" n="1">
+                           <note xml:id="x54d6d7b7-7ce7-41eb-ac4b-f9ecd28199e5" dur="4" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d8a7d6214-9327-4a31-ba11-d1241113f187"/>
+                           <beam xml:id="x79e80bad-89e5-4148-9976-6d8dc5954864" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b96286633-a841-4d89-a1a9-6d88cfac713c ../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#bebb15661-67b9-4106-b580-7cbfbd401d2f">
+                              <note xml:id="xa56330cb-0fb0-4cb9-9b75-6d911dd38e29" dur="16" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#de397f31e-7883-4734-8bbe-979c82768411"/>
+                              <note xml:id="x280b5606-fd83-43e9-879e-aa19189d58cc" dur="16" oct="5" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dfb184e08-5953-4f35-a6d8-f0e611bd8320"/>
+                              <note xml:id="x76bf18e8-4947-43db-b224-8191dac61d58" dur="16" oct="5" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d592d6699-e340-495a-91b8-2ca906336c99"/>
+                              <note xml:id="x3ce74500-dfde-42b8-a311-991f1bc1c88b" dur="16" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5db70ac3-f387-4e4c-ab95-53e33b376554"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <tie xml:id="x4012cdaa-d4c0-4901-8627-30418214e1dd" endid="#xa56330cb-0fb0-4cb9-9b75-6d911dd38e29" startid="#x54d6d7b7-7ce7-41eb-ac4b-f9ecd28199e5" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dd4049123-506e-4f6a-8986-dcd900b51af0"/>
+                  </measure>
+                  <measure xml:id="x37aa8cbd-6678-4f73-980c-c7624eedfe89" n="6" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#df5094e69-e362-4f0c-ad2d-b5d15dd392ee">
+                     <staff xml:id="xd55289ba-a05a-4889-aab2-6399b7aaadc2" n="1">
+                        <layer xml:id="xc09fcdc4-8ea1-47fb-bbb9-47f65940dafb" n="1">
+                           <beam xml:id="xf1677e83-dd6f-4d1b-8a34-5e648589728b" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b339c338b-0773-48c8-90e2-50159bb681e2">
+                              <note xml:id="x9f9c5f80-5f2a-40f4-b1f5-6cb9087f5c1e" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d12329ebd-40b6-4fc8-b491-9c8892920553"/>
+                              <note xml:id="xb700b7c0-d16c-482c-b44f-d45d48699f3a" dur="8" oct="5" pname="g" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d21af28d5-0516-4577-adcd-fe813c3a0dca"/>
+                              <note xml:id="x9ed888f1-859f-44bf-8885-75213bd4c4a0" dur="8" oct="5" pname="e" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5eb3800b-eb0e-4a6b-ad2d-e0d6e88a3fe5"/>
+                              <note xml:id="x92c3ba77-1629-4eb6-83c6-576566f8953d" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d55cb9503-0378-4247-8e85-cb1139066108"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <tie xml:id="xc83ddcc9-e5eb-4e12-a3eb-ca44981640d6" endid="#x3464f4e3-911b-4a8b-a1e8-2210a8bb0982" startid="#x92c3ba77-1629-4eb6-83c6-576566f8953d" curvedir="above"/>
+                  </measure>
+                  <measure xml:id="x3393a644-488c-4566-b1a1-94516a6be672" n="7" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d43dd2886-f7a4-4f20-8d4e-74c07322a34d">
+                     <staff xml:id="xbebcd4a8-31e9-49c5-896d-ee71bafb0704" n="1">
+                        <layer xml:id="xbf6347e0-4c0f-4cfe-8ef3-4b310053358a" n="1">
+                           <beam xml:id="xb780a365-6861-4f11-adf7-0d3e220cb447">
+                              <note xml:id="x3464f4e3-911b-4a8b-a1e8-2210a8bb0982" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#deea86b36-4193-4c5d-8354-79733e3723a9"/>
+                              <note xml:id="x68e23b3a-70e5-4e2b-a934-aea785fefa54" dur="8" oct="5" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#df87fdb92-9b20-4d35-9682-6c44d0f2f95a"/>
+                              <note xml:id="x1af05bd5-662c-403a-84a5-0905c14c64fc" dur="8" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dc2120ff5-5528-400f-9808-3448f7bbcd2e"/>
+                              <note xml:id="xcaa3c462-35f3-4fc3-8490-ea7c0c2b9c11" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dd7595f54-5654-4754-b4f5-ce893779b06f"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <tie xml:id="x819e88d9-9632-41a2-b4dc-86dae1796cec" endid="#xc122b0ab-2928-473d-a5a5-e957ea834e06" startid="#xcaa3c462-35f3-4fc3-8490-ea7c0c2b9c11" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d18dfe828-1383-46d9-8244-6c065c5de799"/>
+                  </measure>
+                  <measure xml:id="xb75d0757-f06a-4efb-9b53-3d4424f32e43" n="8" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d63d4ae93-413a-4602-b107-970431ecdd79">
+                     <staff xml:id="x09ad720d-c6d1-4f3d-a63f-6b568ca217dc" n="1">
+                        <layer xml:id="xd63a145d-d5bb-434a-a728-904ba88ecf09" n="1">
+                           <beam xml:id="x676107d5-a38c-45a2-99b0-da064a1c67e5">
+                              <note xml:id="xc122b0ab-2928-473d-a5a5-e957ea834e06" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dbf111c14-549a-4ed8-b0fb-eea32817822f"/>
+                              <note xml:id="x5d64efb4-74e0-4195-9520-23bd90fa7fac" dur="8" oct="5" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d70743d66-8c4e-4041-b102-c1f3a10c71d5"/>
+                              <note xml:id="x7ba1c15d-9946-4326-948c-e0265a1ddf25" dur="8" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#da929f9bc-a0dc-44ca-baf4-9e6345b6f4df"/>
+                              <note xml:id="x9bf1caae-d3c6-406f-b70c-9ad9a7bdc88e" dur="8" oct="6" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d437b952d-e6d7-4481-8c36-4b77e9c16af3"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <tie xml:id="x0b770800-7b49-4bac-b1fc-7c2d0309a495" endid="#x56e12925-e4b8-4dc9-b1dd-0426fdb2fba7" startid="#x9bf1caae-d3c6-406f-b70c-9ad9a7bdc88e" curvedir="above" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d6d443f24-dc46-4fef-ba29-7cd24bdd228c"/>
+                  </measure>
+                  <measure xml:id="xc078c5e0-6a32-47d2-b558-302e9839af53" n="9">
+                     <staff xml:id="x52a3895b-e52c-49ba-9004-e854fed6c9d3" n="1">
+                        <layer xml:id="xce8534a5-8595-408e-9763-ca4cb4aa64f9" n="1">
+                           <note xml:id="x56e12925-e4b8-4dc9-b1dd-0426fdb2fba7" dur="4" oct="6" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#df00e9a19-1bab-443a-8c7a-948b30724597"/>
+                           <beam xml:id="xda3c3efa-f3e1-4301-af8b-e1f2a73b8cea" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#b36e932dd-7a4a-4ccf-8630-c252370cc4a4">
+                              <note xml:id="xf034a95e-2b99-459f-9d06-ec9f5c7b203a" dur="8" oct="5" pname="a" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#dd980bcb2-669e-4712-a270-2a808da7d122"/>
+                              <note xml:id="x7bd97bd4-e946-449f-b723-7c0d491c55b4" dur="8" oct="5" pname="f" stem.dir="down" corresp="../diplomaticTranscripts/Landsberg_8-1_p032_wz05_dt.xml#d5f255454-c388-499e-b49a-ff7da6703e3f"/>
+                           </beam>
+                        </layer>
+                     </staff>
+                  </measure>
+               </section>
+            </score>
+         </mdiv>
+      </body>
+   </music>
 </mei>
