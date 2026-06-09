@@ -34,6 +34,7 @@
     </xsl:template>
 
     <xsl:template match="mei:bTrem/@dots"/>
+    <xsl:template match="mei:fTrem/@dots"/>
 
     <xsl:template match="mei:chord/@dots"/>
     <xsl:template match="mei:chord/@dot-corresp"/>
