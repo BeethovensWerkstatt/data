@@ -2,235 +2,213 @@
 <?xml-model href="../../../../rng/bw_annotatedTranscriptions.odd.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../../../rng/bw_annotatedTranscriptions.odd.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <mei xmlns="http://www.music-encoding.org/ns/mei" xmlns:svg="http://www.w3.org/2000/svg" meiversion="6.0+beethovensWerkstatt" xml:id="acefa7d7c-8f81-4301-9310-68974744e564">
-    <meiHead meiversion="6.0+beethovensWerkstatt" xml:id="x93fa82ab-870c-4226-8be6-ee37274cdf5b">
-        <fileDesc xml:id="hbe083f99-3d29-453d-9c0c-1b5e41a9d7f6">
-            <titleStmt xml:id="h9c4a4754-775c-4153-930e-13dc4e0911fb">
-                <title xml:id="h46e25404-f63d-42e7-8419-b09b2abfde32">
-                    Ludwig van Beethoven, Skizzenbuch "Engelmann" zu den Diabelli-Variationen op. 120 und der 9. Sinfonie op. 125, Autograph
-                </title>
-                <title type="abbreviated" xml:id="xcb39bbf4-10a2-40c2-a221-ead6f60b6af1">
-                    Engelmann
-                </title>
-                <composer xml:id="h69358af5-1945-4dc0-a905-f895bb2676a8">
-                    <persName xml:id="hc1b97a81-04fc-428d-8f0f-aacbc061d65b">
-                        Beethoven, Ludwig van
-                    </persName>
-                </composer>
-                <editor xml:id="h74e02712-3e9d-47df-b10c-9f5f8ec25bd3">
-                    <corpName auth.uri="https://beethovens-werkstatt.de" xml:id="xe31a6b9c-320b-4fd4-b144-8b4606850264">
-                        Beethovens Werkstatt
-                    </corpName>
-                </editor>
-                <funder xml:id="h83b6b6bb-4ef1-4ee7-bdec-22342a29e1c3">
-                    <corpName auth.uri="http://www.adwmainz.de/" xml:id="xf233b21f-9b7d-4fe7-9967-362708b52e3f">
-                        Akademie der Wissenschaften und der Literatur Mainz
-                    </corpName>
-                </funder>
-            </titleStmt>
-            <pubStmt xml:id="h294f85c0-11e1-41b4-9bb4-a8d4c17349d9"/>
-            <seriesStmt xml:id="heade4bc7-dd1b-47ec-8e8b-cddca999ce6f">
-                <title xml:id="h08da2d6d-1c26-412e-84d9-fc521e012832" xml:lang="de" level="s">
-                    Skizzenbuchedition
-                </title>
-                <identifier xml:id="hd07558e4-9889-4a36-b226-2962b3ce8148" auth.uri="https://beethovens-werkstatt.de/modul-4/">
-                    sk
-                </identifier>
-            </seriesStmt>
-            <sourceDesc xml:id="hc0d98380-92d0-4497-bcb0-d9a53f93fb14">
-                <source n="1" target="../D-BNba_MH_60_Engelmann.xml#g0341f668-0871-4dc9-9add-da3983b3047f" xml:id="x9f7dbfd1-4faa-46cd-b16a-dcf8e9de547b"/>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc xml:id="he79fbe6c-afbd-4e16-83b5-aadad31a80b0" class="#bw_annotated_transcript #bw_module4">
-            <appInfo xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="x36702b77-ce8c-44b9-90a7-602fbce4f5ff">
-                <application isodate="2025-12-1T12:14:15Z" version="20210200" xml:id="xe1bdfd26-3896-4b0c-a51a-e9a6281932bd">
-                    <name type="operating-system" xml:id="xf326bc09-e9ec-45b5-8b64-7bd771032f9f">
-                        Mac OS X Mountain Lion
-                    </name>
-                </application>
-                <application type="plugin" version="4.0.0" xml:id="xadcdfc15-3211-4ac2-8bcd-fd6781f4c59b">
-                    <name xml:id="xae0ac49f-a78c-4dee-a2d1-f00ee42c490b">
-                        Sibelius to MEI 4 Exporter (4.0.0)
-                    </name>
-                </application>
-            </appInfo>
-            <classDecls xml:id="h849ed650-b94a-458f-8e9a-bc6dd77bd292">
-                <taxonomy xml:id="h13a215b6-5d06-446d-8535-29140e2b7dfb" label="availableTaxonomies">
-                    <category xml:id="document_type"/>
-                    <category xml:id="bw_observation_type"/>
-                    <category xml:id="bw_implementation_completeness"/>
-                    <!--<category xml:id="bw_monitum_category"/>
+   <meiHead meiversion="6.0+beethovensWerkstatt" xml:id="x93fa82ab-870c-4226-8be6-ee37274cdf5b">
+      <fileDesc xml:id="hbe083f99-3d29-453d-9c0c-1b5e41a9d7f6">
+         <titleStmt xml:id="h9c4a4754-775c-4153-930e-13dc4e0911fb">
+            <title xml:id="h46e25404-f63d-42e7-8419-b09b2abfde32"> Ludwig van Beethoven, Skizzenbuch "Engelmann" zu den Diabelli-Variationen op. 120 und der 9. Sinfonie op. 125, Autograph </title>
+            <title type="abbreviated" xml:id="xcb39bbf4-10a2-40c2-a221-ead6f60b6af1"> Engelmann </title>
+            <composer xml:id="h69358af5-1945-4dc0-a905-f895bb2676a8">
+               <persName xml:id="hc1b97a81-04fc-428d-8f0f-aacbc061d65b"> Beethoven, Ludwig van </persName>
+            </composer>
+            <editor xml:id="h74e02712-3e9d-47df-b10c-9f5f8ec25bd3">
+               <corpName auth.uri="https://beethovens-werkstatt.de" xml:id="xe31a6b9c-320b-4fd4-b144-8b4606850264"> Beethovens Werkstatt </corpName>
+            </editor>
+            <funder xml:id="h83b6b6bb-4ef1-4ee7-bdec-22342a29e1c3">
+               <corpName auth.uri="http://www.adwmainz.de/" xml:id="xf233b21f-9b7d-4fe7-9967-362708b52e3f"> Akademie der Wissenschaften und der Literatur Mainz </corpName>
+            </funder>
+         </titleStmt>
+         <pubStmt xml:id="h294f85c0-11e1-41b4-9bb4-a8d4c17349d9"/>
+         <seriesStmt xml:id="heade4bc7-dd1b-47ec-8e8b-cddca999ce6f">
+            <title xml:id="h08da2d6d-1c26-412e-84d9-fc521e012832" xml:lang="de" level="s"> Skizzenbuchedition </title>
+            <identifier xml:id="hd07558e4-9889-4a36-b226-2962b3ce8148" auth.uri="https://beethovens-werkstatt.de/modul-4/"> sk </identifier>
+         </seriesStmt>
+         <sourceDesc xml:id="hc0d98380-92d0-4497-bcb0-d9a53f93fb14">
+            <source n="1" target="../D-BNba_MH_60_Engelmann.xml#g0341f668-0871-4dc9-9add-da3983b3047f" xml:id="x9f7dbfd1-4faa-46cd-b16a-dcf8e9de547b"/>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc xml:id="he79fbe6c-afbd-4e16-83b5-aadad31a80b0" class="#bw_annotated_transcript #bw_module4">
+         <appInfo xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="x36702b77-ce8c-44b9-90a7-602fbce4f5ff">
+            <application isodate="2025-12-1T12:14:15Z" version="20210200" xml:id="xe1bdfd26-3896-4b0c-a51a-e9a6281932bd">
+               <name type="operating-system" xml:id="xf326bc09-e9ec-45b5-8b64-7bd771032f9f"> Mac OS X Mountain Lion </name>
+            </application>
+            <application type="plugin" version="4.0.0" xml:id="xadcdfc15-3211-4ac2-8bcd-fd6781f4c59b">
+               <name xml:id="xae0ac49f-a78c-4dee-a2d1-f00ee42c490b"> Sibelius to MEI 4 Exporter (4.0.0) </name>
+            </application>
+         </appInfo>
+         <classDecls xml:id="h849ed650-b94a-458f-8e9a-bc6dd77bd292">
+            <taxonomy xml:id="h13a215b6-5d06-446d-8535-29140e2b7dfb" label="availableTaxonomies">
+               <category xml:id="document_type"/>
+               <category xml:id="bw_observation_type"/>
+               <category xml:id="bw_implementation_completeness"/>
+               <!--<category xml:id="bw_monitum_category"/>
                     -->
-                    <category xml:id="bw_file_type"/>
-                    <category xml:id="bw_monitum_comment"/>
-                    <category xml:id="bw_monitum_classification"/>
-                    <category xml:id="bw_monitum_textoperation"/>
-                    <category xml:id="bw_monitum_object"/>
-                    <category xml:id="bw_monitum_kontext"/>
-                    <category xml:id="bw_monitum_konkordanz"/>
-                    <category xml:id="bw_transcription_type"/>
-                    <category xml:id="bw_module"/>
-                    <category xml:id="bw_geneticOrder"/>
-                </taxonomy>
-                <taxonomy xml:id="h8c613809-9f9b-407a-95d4-7a38e2687721">
-                    <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
-                    <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
-                </taxonomy>
-                <taxonomy xml:id="he017d0bf-2158-4476-9f52-3f0371fa172f">
-                    <category xml:id="music.print" class="#document_type"/>
-                    <category xml:id="music.manuscript" class="#document_type"/>
-                    <category xml:id="letter.manuscript" class="#document_type"/>
-                    <category xml:id="music.sketchbook" class="#document_type"/>
-                </taxonomy>
-                <taxonomy xml:id="h2f6c71c2-37e7-46c9-8f3a-7ad014b5219d">
-                    <category xml:id="bw_monitum" class="#bw_observation_type"/>
-                    <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
-                    <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
-                </taxonomy>
-                <taxonomy xml:id="h5c8f0086-8ac5-48d4-8208-9b3566a9b61f">
-                    <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
-                    <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
-                    <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
-                </taxonomy>
-                <taxonomy xml:id="h62765bda-e1a5-4c17-a270-033fbe6db36a">
-                    <!-- Klassifizierung -->
-                    <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
-                    <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
-                </taxonomy>
-                <taxonomy xml:id="h20165ca5-c95c-4e1a-ac6b-03951dabc255">
-                    <!-- Textoperation -->
-                    <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
-                    <!--oder erweiterung-->
-                    <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
-                    <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
-                    <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
-                </taxonomy>
-                <taxonomy xml:id="h899a3389-f968-4036-b64c-eb2991a74e66">
-                    <!-- Revisionsobjekt -->
-                    <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
-                    <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
-                </taxonomy>
-                <taxonomy xml:id="h806c3009-8312-4637-b335-cda2c9428f37">
-                    <!-- kontextzitat -->
-                    <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
-                    <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
-                    <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
-                </taxonomy>
-                <taxonomy xml:id="h963e61fd-8100-4d3e-8f04-5b07c707b56c">
-                    <!-- konkordanz -->
-                    <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
-                </taxonomy>
-                <taxonomy xml:id="h6d566016-2cae-40be-a8cc-20a7482823a5">
-                    <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
-                    <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
-                    <category xml:id="bw_document_file" class="#bw_file_type"/>
-                    <category xml:id="bw_work_file" class="#bw_file_type"/>
-                    <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
-                </taxonomy>
-                <taxonomy xml:id="h52621c33-f190-421b-ae58-5a5dfe082dc6">
-                    <category class="#bw_module" xml:id="bw_module"/>
-                    <category class="#bw_module" xml:id="bw_module4"/>
-                </taxonomy>
-                <taxonomy xml:id="h61fb0840-7f9e-4c74-8aa8-769d06fb4425">
-                    <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
-                    <category xml:id="bw_annotated_transcript" class="#bw_transcription_type"/>
-                    <category xml:id="bw_writingZoneBegin"/>
-                </taxonomy>
-            </classDecls>
-        </encodingDesc>
-        <revisionDesc xml:id="x900b882f-e581-44f2-a38e-9b447b7a7bcb">
-            <change xml:id="ca375131b-0d24-4f3d-8c5c-96b324c72778" n="1" resp="#bw_jk" isodate="2025-12-04">
-                <changeDesc xml:id="x404be536-a3a1-4f8e-9625-0dba0b5cf43e">
-                    <p xml:id="x91b2b118-67fa-49c9-9a7f-f04b8df20a27">
-                        Imported file into data structure using XSLT.
-                    </p>
-                </changeDesc>
-            </change>
-        </revisionDesc>
-    </meiHead>
-    <music xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="xbedac9ac-30e7-460e-bf79-7b6f8b11f695">
-        <body xml:id="x5a64819d-a8fc-481b-bf49-48a363773237">
-            <mdiv xml:id="xd1fb6c4f-a72c-4dab-aee9-d5e75df43496">
-                <!--<drafts xml:id="s28215fe8-55f3-493b-9a0b-40db779114e6">
+               <category xml:id="bw_file_type"/>
+               <category xml:id="bw_monitum_comment"/>
+               <category xml:id="bw_monitum_classification"/>
+               <category xml:id="bw_monitum_textoperation"/>
+               <category xml:id="bw_monitum_object"/>
+               <category xml:id="bw_monitum_kontext"/>
+               <category xml:id="bw_monitum_konkordanz"/>
+               <category xml:id="bw_transcription_type"/>
+               <category xml:id="bw_module"/>
+               <category xml:id="bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy xml:id="h8c613809-9f9b-407a-95d4-7a38e2687721">
+               <category xml:id="geneticOrder_documentLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_pageLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingZoneLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_writingLayerLevel" class="#bw_geneticOrder"/>
+               <category xml:id="geneticOrder_finalState" class="#bw_geneticOrder"/>
+            </taxonomy>
+            <taxonomy xml:id="he017d0bf-2158-4476-9f52-3f0371fa172f">
+               <category xml:id="music.print" class="#document_type"/>
+               <category xml:id="music.manuscript" class="#document_type"/>
+               <category xml:id="letter.manuscript" class="#document_type"/>
+               <category xml:id="music.sketchbook" class="#document_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h2f6c71c2-37e7-46c9-8f3a-7ad014b5219d">
+               <category xml:id="bw_monitum" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_context" class="#bw_observation_type"/>
+               <category xml:id="bw_monitum_effect" class="#bw_observation_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h5c8f0086-8ac5-48d4-8208-9b3566a9b61f">
+               <category xml:id="bw_fully_implemented" class="#bw_implementation_completeness"/>
+               <category xml:id="bw_partially_implemented" class="#bw_implementation_completeness"/>
+               <category xml:id="bw_not_implemented" class="#bw_implementation_completeness"/>
+            </taxonomy>
+            <taxonomy xml:id="h62765bda-e1a5-4c17-a270-033fbe6db36a">
+               <!-- Klassifizierung -->
+               <category xml:id="bw_classification_korrektur" label="Korrektur" class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_variante" label="Variante" class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_textpraezisierung" label="Textpräzisierung" class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_schriftbildliche_verbesserung" label="Schriftbildliche Verbesserung" class="#bw_monitum_classification"/>
+               <category xml:id="bw_classification_paratextliche_eingriffe" label="Paratextliche Eingriffe" class="#bw_monitum_classification"/>
+            </taxonomy>
+            <taxonomy xml:id="h20165ca5-c95c-4e1a-ac6b-03951dabc255">
+               <!-- Textoperation -->
+               <category xml:id="bw_textoperation_einfuegung" label="Einfuegung" class="#bw_monitum_textoperation"/>
+               <!--oder erweiterung-->
+               <category xml:id="bw_textoperation_tilgung" label="Tilgung" class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_ersetzung" label="Ersetzung" class="#bw_monitum_textoperation"/>
+               <category xml:id="bw_textoperation_umstellung" label="Umstellung" class="#bw_monitum_textoperation"/>
+            </taxonomy>
+            <taxonomy xml:id="h899a3389-f968-4036-b64c-eb2991a74e66">
+               <!-- Revisionsobjekt -->
+               <category xml:id="bw_object_dynamic" label="Dynamik" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pitch" label="Tonbuchstabe" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_bogensetzung" label="Bogensetzung" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rhythm" label="Rhythmus" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_ornament" label="Verzierung" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_octave" label="Oktavierung" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_pedal" label="Pedal" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_articulation" label="Artikulation" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_clef" label="Notenschlüssel" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_arpeggio" label="Arpeggiozeichen" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_rest" label="Pause" class="#bw_monitum_object"/>
+               <category xml:id="bw_object_fingering" label="Fingersatz" class="#bw_monitum_object"/>
+            </taxonomy>
+            <taxonomy xml:id="h806c3009-8312-4637-b335-cda2c9428f37">
+               <!-- kontextzitat -->
+               <category xml:id="bw_kontext_korrekt" label="korrekt" class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_unvollstaendig" label="unvollständig" class="#bw_monitum_kontext"/>
+               <category xml:id="bw_kontext_korrumpiert" label="korrumpiert" class="#bw_monitum_kontext"/>
+            </taxonomy>
+            <taxonomy xml:id="h963e61fd-8100-4d3e-8f04-5b07c707b56c">
+               <!-- konkordanz -->
+               <category xml:id="bw_konkordanz" label="konkordanz" class="#bw_monitum_konkordanz"/>
+            </taxonomy>
+            <taxonomy xml:id="h6d566016-2cae-40be-a8cc-20a7482823a5">
+               <category xml:id="bw_module3_corpusFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_textFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_linkingFile" class="#bw_file_type"/>
+               <category xml:id="bw_module3_documentFile" class="#bw_file_type"/>
+               <category xml:id="bw_document_file" class="#bw_file_type"/>
+               <category xml:id="bw_work_file" class="#bw_file_type"/>
+               <category xml:id="bw_document_reconstruction" class="#bw_file_type"/>
+            </taxonomy>
+            <taxonomy xml:id="h52621c33-f190-421b-ae58-5a5dfe082dc6">
+               <category class="#bw_module" xml:id="bw_module"/>
+               <category class="#bw_module" xml:id="bw_module4"/>
+            </taxonomy>
+            <taxonomy xml:id="h61fb0840-7f9e-4c74-8aa8-769d06fb4425">
+               <category xml:id="bw_diplomatic_transcript" class="#bw_transcription_type"/>
+               <category xml:id="bw_annotated_transcript" class="#bw_transcription_type"/>
+               <category xml:id="bw_writingZoneBegin"/>
+            </taxonomy>
+         </classDecls>
+      </encodingDesc>
+      <revisionDesc xml:id="x900b882f-e581-44f2-a38e-9b447b7a7bcb">
+         <change xml:id="ca375131b-0d24-4f3d-8c5c-96b324c72778" n="1" resp="#bw_jk" isodate="2025-12-04">
+            <changeDesc xml:id="x404be536-a3a1-4f8e-9625-0dba0b5cf43e">
+               <p xml:id="x91b2b118-67fa-49c9-9a7f-f04b8df20a27"> Imported file into data structure using XSLT. </p>
+            </changeDesc>
+         </change>
+      </revisionDesc>
+   </meiHead>
+   <music xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="xbedac9ac-30e7-460e-bf79-7b6f8b11f695">
+      <body xml:id="x5a64819d-a8fc-481b-bf49-48a363773237">
+         <mdiv xml:id="xd1fb6c4f-a72c-4dab-aee9-d5e75df43496">
+            <!--<drafts xml:id="s28215fe8-55f3-493b-9a0b-40db779114e6">
                     <draft xml:id="daa275b4b-b938-4b20-bbc9-92ff6d04d556" class="#bw_annotated_transcript">
                         move content of score here when finished with data cleanup
                     </draft>
                 </drafts>
                 -->
-                <score>
-                    <scoreDef xml:id="x26661c7d-3bda-48a9-a8b9-ca4059f76e91">
-                        <meterSig count="3" unit="4"/>
-                        <staffGrp xml:id="x3dbf3815-1809-45c3-bca0-3ca4835e5146" bar.thru="true">
-                            <staffDef xml:id="x3f80da0e-8f55-4193-8cb8-fa576c7cf030" lines="5" n="1">
-                                <keySig xml:id="tcad8e390-d18e-49e5-9dd6-782313094e5f"/>
-                                <clef xml:id="t5ed7888d-aad9-47ff-832e-2592d3b2e6f9" shape="G" line="2" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dbab0f608-36f3-42e3-b431-2c95ca954738"/>
-                            </staffDef>
-                            <staffDef xml:id="x35bcff90-552c-43e5-a960-5032ad2b39aa" lines="5" n="2">
-                                <keySig xml:id="te67be202-527f-46f6-a5f0-362194bedc7a"/>
-                                <clef xml:id="te91484a3-4d86-4f64-b6ee-15797c98d35e" shape="F" line="4" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dd5c7951d-f4e7-4a35-ba49-f416a8ef331d"/>
-                            </staffDef>
-                        </staffGrp>
-                    </scoreDef>
-                    <section xml:id="xd76f6a71-fb71-4934-90ea-c69c10514e20">
-                        <pb xml:id="t5269c816-1085-4e2c-ad4f-3808c65c96be" corresp="../D-BNba_MH_60_Engelmann.xml#x989f416b-6af5-4615-82da-09eed754b965"/>
-                        <annot xml:id="te7136446-de57-4aa0-836c-26a2f66acf54" class="#bw_writingZoneBegin" corresp="../D-BNba_MH_60_Engelmann.xml#g0341f668-0871-4dc9-9add-da3983b3047f"/>
-                        <sb xml:id="td1a6c9ae-3f2c-4e8b-97f3-e1d183e50b32" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#s6cb39494-de2f-4494-bd41-be4719fd8b46"/>
-                        <measure xml:id="x382a5a61-5c9a-4794-b9dd-a6ab3d95ff27" n="1" right="dbl" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d011be83f-314c-4a53-91a3-c40eca90235d ../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d7b25f41d-7800-4321-93dd-94cb523e6a56">
-                            <staff xml:id="x26c06bfa-d3a0-4c28-a937-93e3975db223" n="1">
-                                <layer xml:id="x016a00fe-f216-4597-a6d4-2c9be2c8fed5" n="1">
-                                    <beam xml:id="x9a822766-d114-4ae0-a960-41bf1e83684b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d1e68cbe4-98d1-43d4-88e5-1959144097af">
-                                        <chord xml:id="x6d7e3b0c-1e80-4042-b80c-c3edb2f32ca8" dur="8" stem.dir="down" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#de3a0ac55-4cf7-43f3-9e7c-a5d2242a55a6">
-                                            <note xml:id="x1d75f084-bcff-4316-b3b6-8aeeb1c8a5fe" dur="8" oct="5" pname="f" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d0f09e3ff-079b-40c9-b322-329e01adbd76">
-                                                <accid xml:id="xbc81476b-9ac0-4f39-84ff-04026eb7c920" accid="s" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dafc46a65-5b03-461a-9c58-181b74d46e1a"/>
-                                            </note>
-                                            <note xml:id="x9e256bc6-9c03-415c-9a76-8fc92c80b99f" dur="8" oct="5" pname="a" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dfa84bcb1-a1a2-4fa9-951a-bd3089d45533"/>
-                                            <note xml:id="x567b046c-2e76-476c-86b2-3c02a9d87b2e" dur="8" oct="6" pname="c" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d01683671-7606-4266-9ca5-603c24b924d1"/>
-                                        </chord>
-                                        <note xml:id="x58e41857-2572-4cdc-99d3-fccbffb009a3" dur="8" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#da9d60b00-823d-4966-ba39-f9db567b22be">
-                                            <accid xml:id="x7820aae5-f74c-4929-b48f-44956265a813" accid="s" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#de07712ff-8153-4795-9ae7-419168a5b890"/>
-                                        </note>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <staff xml:id="xd38ec5ab-edc9-4817-9500-d088a7a9874a" n="2">
-                                <layer xml:id="xdb1fc53a-39fe-4f58-82c9-dc4dcb1e55cc" n="1">
-                                    <beam xml:id="x225f1a4a-219d-449c-a37d-dee76d67c119" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#db8073473-4f3e-46e2-a742-5a72148db77a">
-                                        <chord xml:id="xee166cb3-778f-4bc5-9d08-9456665c4543" dur="8" stem.dir="down" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d7a894574-3f4e-409e-98b2-07eb8bf9ec27">
-                                            <note xml:id="x66fceb35-09fb-4296-9177-3f9c54b24ecb" dur="8" oct="1" pname="b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d7a75267d-9da8-4f90-9e2a-2481d21afa5f"/>
-                                            <note xml:id="x5bb52636-2488-4e00-a16a-5dd558433a56" dur="8" oct="2" pname="b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d904e485c-8777-44f6-819f-39ec0f179b1a"/>
-                                        </chord>
-                                        <chord xml:id="x7c6a8c88-9351-445a-a580-bc02b3220474" dur="8" stem.dir="down" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d1aef5137-d6a6-4dfd-9c5f-cfe7f4b373e4">
-                                            <note xml:id="x19f9334e-8d7d-4a54-b0c9-7d13e0bebea3" dur="8" oct="2" pname="b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dca263e3e-3d50-4cf6-92ce-50c274599985"/>
-                                            <note xml:id="x23c1f1af-6bc6-4a63-8755-1b22c6d60481" dur="8" oct="3" pname="b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dbdffa118-465c-43cc-a9a2-5d1ea8cbc3e2"/>
-                                        </chord>
-                                    </beam>
-                                </layer>
-                            </staff>
-                            <slur xml:id="x13c2e869-7f87-4f5a-9270-1c99c1d56a00" tstamp2="0m+4" layer="1" staff="1" startid="#x6d7e3b0c-1e80-4042-b80c-c3edb2f32ca8" curvedir="above" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d8b14071b-b828-445d-8055-b3721fefec2a"/>
-                            <dir xml:id="xb33ce623-7fb4-4c8b-a226-541ed3b29776" layer="1" staff="1" tstamp="0" place="above" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d01807780-fc89-40fd-8c09-2c8db68ff9ba">
-                                Variation 4
-                            </dir>
-                        </measure>
-                    </section>
-                </score>
-            </mdiv>
-        </body>
-    </music>
+            <score>
+               <scoreDef xml:id="x26661c7d-3bda-48a9-a8b9-ca4059f76e91">
+                  <meterSig count="3" unit="4"/>
+                  <staffGrp xml:id="x3dbf3815-1809-45c3-bca0-3ca4835e5146" bar.thru="true">
+                     <staffDef xml:id="x3f80da0e-8f55-4193-8cb8-fa576c7cf030" lines="5" n="1">
+                        <keySig xml:id="tcad8e390-d18e-49e5-9dd6-782313094e5f"/>
+                        <clef xml:id="t5ed7888d-aad9-47ff-832e-2592d3b2e6f9" shape="G" line="2" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dbab0f608-36f3-42e3-b431-2c95ca954738"/>
+                     </staffDef>
+                     <staffDef xml:id="x35bcff90-552c-43e5-a960-5032ad2b39aa" lines="5" n="2">
+                        <keySig xml:id="te67be202-527f-46f6-a5f0-362194bedc7a"/>
+                        <clef xml:id="te91484a3-4d86-4f64-b6ee-15797c98d35e" shape="F" line="4" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dd5c7951d-f4e7-4a35-ba49-f416a8ef331d"/>
+                     </staffDef>
+                  </staffGrp>
+               </scoreDef>
+               <section xml:id="xd76f6a71-fb71-4934-90ea-c69c10514e20">
+                  <pb xml:id="t5269c816-1085-4e2c-ad4f-3808c65c96be" corresp="../D-BNba_MH_60_Engelmann.xml#x989f416b-6af5-4615-82da-09eed754b965"/>
+                  <annot xml:id="te7136446-de57-4aa0-836c-26a2f66acf54" class="#bw_writingZoneBegin" corresp="../D-BNba_MH_60_Engelmann.xml#g0341f668-0871-4dc9-9add-da3983b3047f"/>
+                  <sb xml:id="td1a6c9ae-3f2c-4e8b-97f3-e1d183e50b32" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#s6cb39494-de2f-4494-bd41-be4719fd8b46"/>
+                  <measure xml:id="x382a5a61-5c9a-4794-b9dd-a6ab3d95ff27" n="1" right="dbl" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d011be83f-314c-4a53-91a3-c40eca90235d ../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d7b25f41d-7800-4321-93dd-94cb523e6a56">
+                     <staff xml:id="x26c06bfa-d3a0-4c28-a937-93e3975db223" n="1">
+                        <layer xml:id="x016a00fe-f216-4597-a6d4-2c9be2c8fed5" n="1">
+                           <beam xml:id="x9a822766-d114-4ae0-a960-41bf1e83684b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d1e68cbe4-98d1-43d4-88e5-1959144097af">
+                              <chord xml:id="x6d7e3b0c-1e80-4042-b80c-c3edb2f32ca8" dur="8" stem.dir="down" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#de3a0ac55-4cf7-43f3-9e7c-a5d2242a55a6">
+                                 <note xml:id="x1d75f084-bcff-4316-b3b6-8aeeb1c8a5fe" dur="8" oct="5" pname="f" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d0f09e3ff-079b-40c9-b322-329e01adbd76">
+                                    <accid xml:id="xbc81476b-9ac0-4f39-84ff-04026eb7c920" accid="s" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dafc46a65-5b03-461a-9c58-181b74d46e1a"/>
+                                 </note>
+                                 <note xml:id="x9e256bc6-9c03-415c-9a76-8fc92c80b99f" dur="8" oct="5" pname="a" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dfa84bcb1-a1a2-4fa9-951a-bd3089d45533"/>
+                                 <note xml:id="x567b046c-2e76-476c-86b2-3c02a9d87b2e" dur="8" oct="6" pname="c" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d01683671-7606-4266-9ca5-603c24b924d1"/>
+                              </chord>
+                              <note xml:id="x58e41857-2572-4cdc-99d3-fccbffb009a3" dur="8" oct="5" pname="d" stem.dir="down" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#da9d60b00-823d-4966-ba39-f9db567b22be">
+                                 <accid xml:id="x7820aae5-f74c-4929-b48f-44956265a813" accid="s" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#de07712ff-8153-4795-9ae7-419168a5b890"/>
+                              </note>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <staff xml:id="xd38ec5ab-edc9-4817-9500-d088a7a9874a" n="2">
+                        <layer xml:id="xdb1fc53a-39fe-4f58-82c9-dc4dcb1e55cc" n="1">
+                           <beam xml:id="x225f1a4a-219d-449c-a37d-dee76d67c119" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#db8073473-4f3e-46e2-a742-5a72148db77a">
+                              <chord xml:id="xee166cb3-778f-4bc5-9d08-9456665c4543" dur="8" stem.dir="down" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d7a894574-3f4e-409e-98b2-07eb8bf9ec27">
+                                 <note xml:id="x66fceb35-09fb-4296-9177-3f9c54b24ecb" dur="8" oct="1" pname="b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d7a75267d-9da8-4f90-9e2a-2481d21afa5f"/>
+                                 <note xml:id="x5bb52636-2488-4e00-a16a-5dd558433a56" dur="8" oct="2" pname="b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d904e485c-8777-44f6-819f-39ec0f179b1a"/>
+                              </chord>
+                              <chord xml:id="x7c6a8c88-9351-445a-a580-bc02b3220474" dur="8" stem.dir="down" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d1aef5137-d6a6-4dfd-9c5f-cfe7f4b373e4">
+                                 <note xml:id="x19f9334e-8d7d-4a54-b0c9-7d13e0bebea3" dur="8" oct="2" pname="b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dca263e3e-3d50-4cf6-92ce-50c274599985"/>
+                                 <note xml:id="x23c1f1af-6bc6-4a63-8755-1b22c6d60481" dur="8" oct="3" pname="b" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#dbdffa118-465c-43cc-a9a2-5d1ea8cbc3e2"/>
+                              </chord>
+                           </beam>
+                        </layer>
+                     </staff>
+                     <slur xml:id="x13c2e869-7f87-4f5a-9270-1c99c1d56a00" tstamp2="0m+4" layer="1" staff="1" startid="#x6d7e3b0c-1e80-4042-b80c-c3edb2f32ca8" curvedir="above" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d8b14071b-b828-445d-8055-b3721fefec2a"/>
+                     <dir xml:id="xb33ce623-7fb4-4c8b-a226-541ed3b29776" layer="1" staff="1" tstamp="0" place="above" corresp="../diplomaticTranscripts/D-BNba_MH_60_Engelmann_p020_wz04_dt.xml#d01807780-fc89-40fd-8c09-2c8db68ff9ba"> Variation 4 </dir>
+                  </measure>
+               </section>
+            </score>
+         </mdiv>
+      </body>
+   </music>
 </mei>
