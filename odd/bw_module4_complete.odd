@@ -69,7 +69,7 @@
             <moduleRef key="MEI.header"
                except="componentList acquisition altId attUsage audience byline captureMode carrierForm catRel classification condition contentItem contents context cutout editionStmt exhibHist extMeta fileChar hand handList history incipCode incipText inscription key mensuration meter namespace notesStmt otherChar patch perfDuration physMedium playingSpeed price provenance segmentation soundChan specRepro stdVals sysReq tagsDecl tagUsage termList trackConfig treatHist treatSched useRestrict watermark"/>
             <moduleRef key="MEI.lyrics"/>
-            <moduleRef key="MEI.msDesc" include="layoutDesc layout"/>
+            <moduleRef key="MEI.msDesc" include="layoutDesc layout rastrum"/>
             <moduleRef key="MEI.namesdates"
                except="addName bloc country district famName foreName genName geogFeat nameLink periodName postBox postCode region roleName settlement street styleName"/>
             <moduleRef key="MEI.ptrref"/>
@@ -254,7 +254,7 @@
                <content>
                   <rng:choice>
                      <rng:ref name="macro.struc-unstrucContent"/>
-                     <rng:ref name="bw_rastrumDesc"/>
+                     <rng:ref name="rastrumDesc"/>
                   </rng:choice>
                   <rng:ref name="macro.struc-unstrucContent"/>
                </content>
@@ -310,7 +310,7 @@
                </remarks>
             </elementSpec>
             
-            <elementSpec ident="rastrumDesc" module="MEI.msDesc" mode="add" prefix="bw_" ns="https://www.beethovens-werkstatt.de/ns/mei/proposal">
+            <elementSpec ident="rastrumDesc" module="MEI.msDesc" mode="add">
                <desc xml:lang="en">Describes the use of rastrums on a given (set of) page(s).</desc>
                <classes>
                   <memberOf key="att.common"/>
@@ -322,7 +322,7 @@
                </content>
             </elementSpec>
             
-            <elementSpec ident="rastrum" module="MEI.msDesc" mode="add"  prefix="bw_" ns="https://www.beethovens-werkstatt.de/ns/mei/proposal">
+            <elementSpec ident="rastrum" module="MEI.msDesc" mode="add">
                <desc xml:lang="en">Describes a rastrum used to prepare a page with staff lines.</desc>
                <classes>
                   <memberOf key="att.common"/>
