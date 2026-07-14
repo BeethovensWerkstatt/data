@@ -425,6 +425,22 @@
                   </attDef>
                </attList>
             </elementSpec>
+            
+            <elementSpec ident="titleStmt" module="MEI.header" mode="change">
+               <content>
+                  <rng:group>
+                     <rng:oneOrMore>
+                        <rng:ref name="title"/>
+                     </rng:oneOrMore>
+                     
+                     <rng:zeroOrMore>
+                        <rng:choice>
+                           <rng:ref name="model.respLike"/>
+                        </rng:choice>
+                     </rng:zeroOrMore>
+                  </rng:group>
+               </content>
+            </elementSpec>
 
             <!-- annotated transcripts: restrict element content for dynam. JK: not sure we're still that strict…? -->
             <!--<elementSpec ident="dynam" module="MEI.shared" mode="change">
@@ -500,6 +516,22 @@
                   übernommen und nicht normiert. In der Annotierten Transkription muss es für alle
                   Noten ausser ganzen Noten eine Halsrichtung geben. Bei einem Akkord bestimmt
                   dieser die Halsrichtung der enthaltenen Noten.</desc>
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.linking"/>
+                  <memberOf key="att.pitched"/>
+                  <memberOf key="att.duration.log"/>
+                  <memberOf key="att.stems"/>
+                  <memberOf key="model.chordPart"/>
+                  <memberOf key="model.eventLike"/>
+               </classes>
+               <content>
+                  <rng:zeroOrMore>
+                     <rng:choice>
+                        <rng:ref name="model.noteModifierLike"/>
+                     </rng:choice>
+                  </rng:zeroOrMore>
+               </content>
                <constraintSpec ident="check-note-stem" scheme="schematron" mode="add">
                   <constraint>
                      <sch:rule context="mei:note">

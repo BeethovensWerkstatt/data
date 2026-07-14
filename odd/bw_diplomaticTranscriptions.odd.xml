@@ -85,7 +85,10 @@
                prefix="svg_">
                <content>
                   <rng:define name="mei_model.graphicLike" combine="choice">
-                     <rng:ref name="svg_svg"/>
+                     <rng:choice>
+                        <rng:ref name="svg_svg"/>
+                        <rng:ref name="svg_path"/>
+                     </rng:choice>
                   </rng:define>
                </content>
             </moduleRef>
@@ -496,6 +499,22 @@
             <classSpec type="atts" ident="att.staffDef.log.cmn" module="MEI.cmn" mode="delete"/>
             <classSpec type="atts" ident="att.timestamp.log" module="MEI.shared" mode="delete"/>
             <classSpec type="atts" ident="att.timestamp.ges" module="MEI.gestural" mode="delete"/>
+            
+            <elementSpec ident="titleStmt" module="MEI.header" mode="change">
+               <content>
+                  <rng:group>
+                     <rng:oneOrMore>
+                        <rng:ref name="title"/>
+                     </rng:oneOrMore>
+                     
+                     <rng:zeroOrMore>
+                        <rng:choice>
+                           <rng:ref name="model.respLike"/>
+                        </rng:choice>
+                     </rng:zeroOrMore>
+                  </rng:group>
+               </content>
+            </elementSpec>
 
             <elementSpec ident="section" module="MEI.shared" mode="change">
                <classes mode="replace">
@@ -526,6 +545,7 @@
                   <memberOf key="att.nInteger"/>
                   <memberOf key="att.rotation"/>
                   <memberOf key="model.staffLike"/>
+                  <memberOf key="att.metadataPointing"/>  <!--What is happening with decls?-->
                </classes>
                <content>
                   <rng:ref name="model.layerLike"/>
@@ -570,9 +590,11 @@
                   <memberOf key="att.id"/>
                   <memberOf key="att.facsimile"/>
                </classes>
-               <!--<content>
-                  <empty/>
-               </content>-->
+               <content>
+                  <rng:zeroOrMore>
+                     <rng:ref name="model.graphicLike"/>
+                  </rng:zeroOrMore>
+               </content>
             </elementSpec>
 
             <elementSpec ident="word" module="MEI.lyrics" mode="add">
@@ -837,7 +859,8 @@
                   <memberOf key="att.dir"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
-               <constraintSpec ident="pedal_start-type_attributes_required" scheme="schematron" mode="replace">
+               <constraintSpec ident="pedal_start-type_attributes_required" scheme="schematron"
+                  mode="replace">
                   <constraint>
                      <sch:rule context="mei:pedal">
                         <!-- empty -->
@@ -845,7 +868,7 @@
                   </constraint>
                </constraintSpec>
             </elementSpec>
-            
+
             <elementSpec ident="slur" module="MEI.cmn" mode="change">
                <classes>
                   <memberOf key="att.id"/>
@@ -853,7 +876,8 @@
                   <memberOf key="att.xy"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
-               <constraintSpec ident="slur_start-_and_end-type_attributes_required" scheme="schematron" mode="replace">
+               <constraintSpec ident="slur_start-_and_end-type_attributes_required"
+                  scheme="schematron" mode="replace">
                   <constraint>
                      <sch:rule context="mei:slur">
                         <!-- empty -->
