@@ -1,0 +1,38 @@
+name: "Find stale generated files"
+description: "Composite Python Action: finde Quell-Dateien, deren generierte Gegenstücke in data-cache fehlen oder älter sind als der letzte Git-Commit für die Quelldatei. Liefert unter `files` eine newline-getrennte Liste von relativen Pfaden (relativ zu `src_dir`)."
+author: "GitHub Copilot"
+inputs:
+  src_dir:
+    description: 'Pfad zum Quellverzeichnis (checkout path).'
+    required: false
+    default: './data'
+  cache_dir:
+    description: 'Pfad zum Cache-Verzeichnis (checkout path der data-cache repository), z. B. ./data-cache/cache.'
+    required: false
+    default: './data-cache/cache'
+  patterns:
+    description: 'Glob-Patterns (newline-getrennt) der Quelldateien, z.B. **/*_dt.xml. Standard: **/*_dt.xml und **/*_at.xml.'
+    required: false
+    default: |
+      **/*_dt.xml
+      **/*_at.xml
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.14'
+
+    - name: Locate stale files
+      id: finder
+      shell: bash
+      run: |
+        python "$GITHUB_ACTION_PATH/find_stale.py" \
+          --src "${{ inputs.src_dir }}" \
+          --cache "${{ inputs.cache_dir }}" \
+          --patterns "$([[ -n "${{ inputs.patterns }}" ]] && printf "%s" "${{ inputs.patterns }}")"
+        echo "files<<EOF" >> $GITHUB_OUTPUT
+        cat "$GITHUB_ACTION_PATH/_stale_output.txt" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
