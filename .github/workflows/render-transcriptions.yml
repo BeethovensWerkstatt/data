@@ -41,7 +41,7 @@ jobs:
         run: |
           {
             echo 'files<<EOF'
-            git -C ./data/.git log --since="$(git -C ./data-cache/.git show -s --format=%cI HEAD)" --name-only --pretty=format: -- ':(glob)**/*[ad]t.xml' | sed '/^$/d' | sort -u
+            git -C ./data/.git log --since="$(git -C ./data-cache/.git show -s --format=%cI HEAD)" --name-only --pretty=format: -- ':(glob)**/*[ad]t.xml' | sed '/^$/d' | sort -u | while read f ; do echo "/usr/src/app/data/$f" ; done
             echo 'EOF'
           } >>"$GITHUB_OUTPUT"
         # uses: tj-actions/changed-files@v47
