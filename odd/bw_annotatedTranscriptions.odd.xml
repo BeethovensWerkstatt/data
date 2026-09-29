@@ -7,7 +7,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Beethovens Werkstatt Data Model Customization</title>
+            <title>Beethovens Werkstatt Data Model Customization: Annotated Transcriptions</title>
             <respStmt>
                <resp>Authored by</resp>
                <name xml:id="JK">Johannes Kepper</name>
@@ -202,7 +202,7 @@
                      <sch:rule context="mei:note/@*">
                         <sch:let name="forbiddenAttributes" value="('loc', 'x', 'facs')"/>
                         <sch:let name="localName" value="local-name(.)"/>
-                        <sch:assert test="not($localName = $forbiddenAttributes)">In diplomatic
+                        <sch:assert test="not($localName = $forbiddenAttributes)">In annotated
                            transcripts, notes may not use the <sch:value-of select="$localName"/>
                            attribute.</sch:assert>
                      </sch:rule>
@@ -425,14 +425,14 @@
                   </attDef>
                </attList>
             </elementSpec>
-            
+
             <elementSpec ident="titleStmt" module="MEI.header" mode="change">
                <content>
                   <rng:group>
                      <rng:oneOrMore>
                         <rng:ref name="title"/>
                      </rng:oneOrMore>
-                     
+
                      <rng:zeroOrMore>
                         <rng:choice>
                            <rng:ref name="model.respLike"/>
@@ -524,6 +524,9 @@
                   <memberOf key="att.stems"/>
                   <memberOf key="model.chordPart"/>
                   <memberOf key="model.eventLike"/>
+                  <memberOf key="att.duration.ges"/>
+                  <memberOf key="att.graced"/>
+                  <memberOf key="att.staffIdent"/>
                </classes>
                <content>
                   <rng:zeroOrMore>
@@ -532,17 +535,15 @@
                      </rng:choice>
                   </rng:zeroOrMore>
                </content>
-               <constraintSpec ident="check-note-stem" scheme="schematron" mode="add">
-                  <constraint>
-                     <sch:rule context="mei:note">
-                        <sch:assert test="not(@dur='1' and @stem.dir)"> notes with dur="1" are not
-                           allowed to have a @stem.dir Attribute </sch:assert>
-                        <sch:assert test="@stem.dir or (ancestor::mei:chord[@stem.dir])"> every note
-                           needs a @stem.dir or is a child of a chord element with a @stem.dir
-                        </sch:assert>
-                     </sch:rule>
-                  </constraint>
-               </constraintSpec>
+               <constraintSpec ident="check-note-stem" scheme="schematron" mode="delete"/>
+            </elementSpec>
+
+            <elementSpec ident="verse" module="MEI.lyrics" mode="change">
+               <classes mode="replace">
+                  <memberOf key="model.noteModifierLike"/>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.nNumberLike"/>
+               </classes>
             </elementSpec>
 
             <elementSpec ident="syl" module="MEI.shared" mode="change">
@@ -587,6 +588,7 @@
                   <memberOf key="att.id"/>
                   <memberOf key="att.meterSig.log"/>
                   <memberOf key="model.meterSigLike"/>
+                  <memberOf key="att.linking"/>
                </classes>
             </elementSpec>
 

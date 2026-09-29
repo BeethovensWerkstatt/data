@@ -7,7 +7,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Beethovens Werkstatt Data Model Customization</title>
+            <title>Beethovens Werkstatt Data Model Customization: Diplomatic Transcriptions</title>
             <respStmt>
                <resp>Authored by</resp>
                <name xml:id="JK">Johannes Kepper</name>
@@ -60,7 +60,7 @@
             <moduleRef key="MEI.cmn" except="bend bracketSpan breath meterSigGrp mNum tupletSpan"/>
             <moduleRef key="MEI.cmnOrnaments"/>
             <moduleRef key="MEI.drama"/>
-            <moduleRef key="MEI.edittrans" include="del"/>
+            <moduleRef key="MEI.edittrans" include="del metaMark"/>
             <moduleRef key="MEI.externalsymbols"/>
             <moduleRef key="MEI.facsimile"/>
             <moduleRef key="MEI.figtable" include="graphic"/>
@@ -232,8 +232,8 @@
                      <sch:rule context="mei:note">
                         <sch:assert test="@xml:id">A note is required to have an
                            @xml:id.</sch:assert>
-                        <sch:assert test="@x or parent::mei:chord/@x">A note must have an @x
-                           position.</sch:assert>
+                        <sch:assert test="@x or parent::mei:chord/@x">Every note must provide an @x
+                           coordinate.</sch:assert>
                         <sch:assert test="@facs or parent::mei:chord/@facs">In a diplomatic
                            transcription, a note must provide a @facs reference.</sch:assert>
                         <sch:assert test="@loc">A @loc is required for notes.</sch:assert>
@@ -242,7 +242,7 @@
                         <!--<sch:assert test="@stem.dir">A @stem.dir is required in almost all cases.</sch:assert>-->
                      </sch:rule>
                      <sch:rule context="mei:artic">
-                        <sch:assert test="@place">Every artic needs a place attribute.</sch:assert>
+                        <!--<sch:assert test="@place">Every artic needs a place attribute.</sch:assert>-->
                      </sch:rule>
                      <sch:rule context="mei:beamSpan">
                         <sch:assert test="@plist">Every beamSpan needs a plist
@@ -313,6 +313,7 @@
                         <valItem ident="acc"/>
                         <valItem ident="dot"/>
                         <valItem ident="stroke"/>
+                        <valItem ident="stacc"/>
                      </valList>
                   </attDef>
                </attList>
@@ -499,14 +500,15 @@
             <classSpec type="atts" ident="att.staffDef.log.cmn" module="MEI.cmn" mode="delete"/>
             <classSpec type="atts" ident="att.timestamp.log" module="MEI.shared" mode="delete"/>
             <classSpec type="atts" ident="att.timestamp.ges" module="MEI.gestural" mode="delete"/>
-            
+            <classSpec type="atts" ident="att.fing.log" module="MEI.fingering" mode="delete"/>
+
             <elementSpec ident="titleStmt" module="MEI.header" mode="change">
                <content>
                   <rng:group>
                      <rng:oneOrMore>
                         <rng:ref name="title"/>
                      </rng:oneOrMore>
-                     
+
                      <rng:zeroOrMore>
                         <rng:choice>
                            <rng:ref name="model.respLike"/>
@@ -545,19 +547,20 @@
                   <memberOf key="att.nInteger"/>
                   <memberOf key="att.rotation"/>
                   <memberOf key="model.staffLike"/>
-                  <memberOf key="att.metadataPointing"/>  <!--What is happening with decls?-->
+                  <memberOf key="att.metadataPointing"/>
+                  <!--What is happening with decls?-->
                </classes>
                <content>
                   <rng:ref name="model.layerLike"/>
                </content>
-               <constraintSpec ident="check_staffRotation" scheme="schematron" mode="add">
+               <!--<constraintSpec ident="check_staffRotation" scheme="schematron" mode="add">
                   <constraint>
                      <sch:rule context="mei:staff">
                         <sch:assert test="@rotate">In a diplomatic transcription, each staff must
                            specify its rotation using @rotate.</sch:assert>
                      </sch:rule>
                   </constraint>
-               </constraintSpec>
+               </constraintSpec>-->
             </elementSpec>
 
             <elementSpec ident="layer" module="MEI.shared" mode="change">
@@ -577,12 +580,26 @@
                         <rng:ref name="model.milestoneLike.music"/>
                         <rng:ref name="model.noteModifierLike"/>
                         <rng:ref name="model.transcriptionLike"/>
+                        <rng:ref name="model.numLike"/>
+                        <rng:ref name="model.fLike"/>
                         <rng:ref name="clef"/>
                         <rng:ref name="meterSig"/>
                         <rng:ref name="model.eventLike"/>
+                        <rng:ref name="octave"/>
+                        <!--wegen Engelmann p7wz1, nochmal prüfen-->
                      </rng:choice>
                   </rng:zeroOrMore>
                </content>
+            </elementSpec>
+            
+            <elementSpec ident="f" module="MEI.harmony" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.staffIdent"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="model.fLike"/>
+               </classes>
             </elementSpec>
 
             <elementSpec ident="del" module="MEI.edittrans" mode="change">
@@ -605,10 +622,7 @@
                   <memberOf key="att.facsimile"/>
                   <memberOf key="att.staffIdent"/>
                   <memberOf key="att.xy"/>
-                  <!--<memberOf key="att.word.log"/>
-                  <memberOf key="att.word.vis"/>
-                  <memberOf key="att.word.ges"/>
-                  <memberOf key="att.word.anl"/>-->
+                  <memberOf key="att.width"/>
                   <memberOf key="model.wordLike"/>
                </classes>
                <content>
@@ -733,17 +747,19 @@
                   <memberOf key="model.dtControlEvents"/>
                </classes>
                <constraintSpec ident="tempo_in_header_disallow_most_attrs" scheme="schematron"
-                  mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
+                  mode="delete"/>
                <constraintSpec ident="tempo_start-type_attributes_required" scheme="schematron"
-                  mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
+                  mode="delete"/>
+            </elementSpec>
+
+            <elementSpec ident="num" module="MEI.shared" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="att.typed"/>
+                  <memberOf key="model.numLike"/>
+               </classes>
             </elementSpec>
 
             <elementSpec ident="dir" module="MEI.shared" mode="change">
@@ -754,13 +770,10 @@
                   <memberOf key="att.width"/>
                   <memberOf key="att.xy"/>
                   <memberOf key="model.dtControlEvents"/>
+                  <memberOf key="att.typography"/>
                </classes>
                <constraintSpec ident="dir_start-type_attributes_required" scheme="schematron"
-                  mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
+                  mode="delete"/>
             </elementSpec>
 
             <elementSpec ident="curve" module="MEI.usersymbols" mode="change">
@@ -793,11 +806,7 @@
                   <memberOf key="model.dtControlEvents"/>
                </classes>
                <constraintSpec ident="trill_start-type_attributes_required" scheme="schematron"
-                  mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
+                  mode="delete"/>
             </elementSpec>
 
             <elementSpec ident="beamSpan" module="MEI.cmn" mode="change">
@@ -821,11 +830,7 @@
                   <memberOf key="att.fermata.vis"/>
                </classes>
                <constraintSpec ident="fermata_start-type_attributes_required" scheme="schematron"
-                  mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
+                  mode="delete"/>
             </elementSpec>
 
             <elementSpec ident="dynam" module="MEI.shared" mode="change">
@@ -838,16 +843,8 @@
                   <memberOf key="model.dtControlEvents"/>
                </classes>
                <constraintSpec ident="dynam_start-type_attributes_required" scheme="schematron"
-                  mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
-               <constraintSpec ident="dynam_end-type_attributes" scheme="schematron" mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
+                  mode="delete"/>
+               <constraintSpec ident="dynam_end-type_attributes" scheme="schematron" mode="delete"/>
             </elementSpec>
 
             <elementSpec ident="pedal" module="MEI.cmn" mode="change">
@@ -860,13 +857,7 @@
                   <memberOf key="model.dtControlEvents"/>
                </classes>
                <constraintSpec ident="pedal_start-type_attributes_required" scheme="schematron"
-                  mode="replace">
-                  <constraint>
-                     <sch:rule context="mei:pedal">
-                        <!-- empty -->
-                     </sch:rule>
-                  </constraint>
-               </constraintSpec>
+                  mode="delete"/>
             </elementSpec>
 
             <elementSpec ident="slur" module="MEI.cmn" mode="change">
@@ -877,18 +868,8 @@
                   <memberOf key="model.dtControlEvents"/>
                </classes>
                <constraintSpec ident="slur_start-_and_end-type_attributes_required"
-                  scheme="schematron" mode="replace">
-                  <constraint>
-                     <sch:rule context="mei:slur">
-                        <!-- empty -->
-                     </sch:rule>
-                  </constraint>
-               </constraintSpec>
-               <constraintSpec ident="slur_containing_curve" scheme="schematron" mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
+                  scheme="schematron" mode="delete"/>
+               <constraintSpec ident="slur_containing_curve" scheme="schematron" mode="delete"/>
             </elementSpec>
 
             <elementSpec ident="clef" module="MEI.shared" mode="change">
@@ -921,29 +902,29 @@
                   <memberOf key="model.dtControlEvents"/>
                </classes>
                <constraintSpec ident="octave_start-_and_end-type_attributes_required"
-                  scheme="schematron" mode="replace">
-                  <constraint>
-                     <!-- empty -->
-                  </constraint>
-               </constraintSpec>
+                  scheme="schematron" mode="delete"/>
             </elementSpec>
 
-            <!-- <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
+            <elementSpec ident="metaMark" module="MEI.edittrans" mode="change">
                <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="att.pointing"/>
+                  <memberOf key="att.staffIdent"/>
+                  <memberOf key="att.width"/>
                   <memberOf key="model.dtControlEvents"/>
                </classes>
-               <constraintSpec ident="metaMark_start-type_attributes_required" scheme="schematron" mode="replace">
-                  <constraint>
-                     <!-\- empty -\->
-                  </constraint>
-               </constraintSpec>
-            </elementSpec> -->
+               <constraintSpec ident="metaMark_start-type_attributes_required" scheme="schematron"
+                  mode="delete"/>
+            </elementSpec>
 
             <elementSpec ident="note" module="MEI.shared" mode="change">
                <classes>
                   <memberOf key="att.id"/>
                   <memberOf key="att.facsimile"/>
                   <memberOf key="att.xy"/>
+                  <memberOf key="att.staffIdent"/>
                   <memberOf key="att.staffLoc"/>
                   <memberOf key="att.noteHeads"/>
                   <memberOf key="att.stems"/>
@@ -951,6 +932,19 @@
                   <memberOf key="model.eventLike"/>
                   <memberOf key="model.chordPart"/>
                </classes>
+            </elementSpec>
+
+            <elementSpec ident="fing" module="MEI.fingering" mode="change">
+               <classes>
+                  <memberOf key="att.id"/>
+                  <memberOf key="att.facsimile"/>
+                  <memberOf key="att.xy"/>
+                  <memberOf key="model.dtControlEvents"/>
+                  <memberOf key="att.staffIdent"/>
+               </classes>
+               <constraintSpec ident="fing_start-type_attributes_required" scheme="schematron"
+                  mode="delete"/>
+               <constraintSpec ident="stack_exclusion" scheme="schematron" mode="delete"/>
             </elementSpec>
 
             <elementSpec ident="chord" module="MEI.shared" mode="change">
