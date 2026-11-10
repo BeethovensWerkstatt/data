@@ -1,0 +1,69 @@
+# documentation awaits instantiation
+
+name: Generate and cache diplomatic, annotated, and fluid transcriptions
+
+on:
+  push:
+    branches: 
+      - 'dev'
+    paths:
+      - 'data/sources/**/annotatedTranscripts/**/*.xml'
+      - 'data/sources/**/diplomaticTranscripts/**/*.xml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Generate Cache files
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: render-transcriptions
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout data repository
+        uses: actions/checkout@v5
+        with:
+          path: ./data
+          fetch-depth: 0  # Vollständige Git-Historie abrufen
+
+      - name: Checkout cache repository
+        uses: actions/checkout@v5
+        with:
+          repository: BeethovensWerkstatt/data-cache
+          token: ${{ secrets.GH_VOIGT_TOKEN }}
+          path: ./data-cache
+          ref: main
+
+      - name: Dateien ermitteln, die neu erzeugt werden müssen
+        uses: ./actions/find-stale-files
+        id: find-stale
+        with:
+          src_dir: ./data
+          cache_dir: ./data-cache/cache
+          patterns: |
+            **/*_dt.xml
+            **/*_at.xml
+
+      - name: run Docker image
+        run: |
+          docker run --rm \
+            -v $(pwd)/data/data:/usr/src/app/data \
+            -v $(pwd)/data-cache/cache:/usr/src/app/cache \
+            -v $(pwd)/data/.git:/usr/src/app/.git:ro \
+            ghcr.io/beethovenswerkstatt/liquifier:latest node index.js ${{ steps.find-stale.outputs.files }}
+
+      # check repo status before push to avoid overlapping commits
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain cache)" ]
+          then
+            git add cache
+            git commit -m "Update cached data from data-repository"
+            git push origin main
+          fi
+        working-directory: ./data-cache
